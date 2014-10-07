@@ -29,6 +29,12 @@
         case 1:
             identifier = @"secondSegue";
             break;
+        case 2:
+            identifier = @"thirdSegue";
+            break;
+        case 3:
+            identifier = @"forthSegue";
+            break;
 
     }
     return identifier;

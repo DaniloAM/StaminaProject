@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6245" systemVersion="13F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="egZ-Br-g0s">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6245" systemVersion="13F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="h6A-wv-HXR">
     <dependencies>
         <deployment defaultVersion="1808" identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6238"/>
@@ -92,7 +92,7 @@
                                             </subviews>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <segue destination="QXW-bd-3LZ" kind="custom" customClass="AMSlideMenuContentSegue" id="6Sv-5j-duI"/>
+                                            <segue destination="QXW-bd-3LZ" kind="custom" identifier="thirdSegue" customClass="AMSlideMenuContentSegue" id="6Sv-5j-duI"/>
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="61" id="PkT-Qx-fa7">
@@ -111,7 +111,7 @@
                                             </subviews>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <segue destination="9sA-uq-h1s" kind="custom" trigger="accessoryAction" customClass="AMSlideMenuContentSegue" id="Nr4-mQ-nPR"/>
+                                            <segue destination="9sA-uq-h1s" kind="custom" identifier="forthSegue" trigger="accessoryAction" customClass="AMSlideMenuContentSegue" id="Nr4-mQ-nPR"/>
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="61" id="1a2-pU-X6a">
@@ -332,7 +332,7 @@
                                 </connections>
                             </button>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="DYK-Se-g6V">
-                                <rect key="frame" x="0.0" y="0.0" width="319.5" height="39"/>
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="39"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="stamina.com" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jyJ-Dz-XvA">
@@ -410,6 +410,54 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x9F-Hz-axx" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1527" y="-151"/>
+        </scene>
+        <!--CategoriaTVC-->
+        <scene sceneID="C35-ii-2O6">
+            <objects>
+                <viewController id="cmr-nU-4yv" customClass="CategoriaTVC" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="nGT-97-g6k"/>
+                        <viewControllerLayoutGuide type="bottom" id="ZDc-i8-v6E"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8r7-tj-Fkf">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" bounces="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="b6Q-mF-mSj">
+                                <rect key="frame" x="0.0" y="58" width="320" height="510"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <color key="sectionIndexBackgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <tableView key="tableFooterView" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="Lj6-KR-mqb">
+                                    <rect key="frame" x="0.0" y="66" width="320" height="484"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                    <color key="sectionIndexBackgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                    <sections/>
+                                </tableView>
+                                <prototypes>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="Azg-TC-ssV">
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Azg-TC-ssV" id="NU7-If-iBb">
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                                <sections/>
+                            </tableView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="wireframe_categorias.png" translatesAutoresizingMaskIntoConstraints="NO" id="MdZ-uE-U4H">
+                                <rect key="frame" x="0.0" y="-7" width="320" height="575"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" red="0.97647058823529409" green="0.84705882352941175" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="5E6-RD-P7p"/>
+                    <connections>
+                        <outlet property="table" destination="b6Q-mF-mSj" id="vws-Gf-rFW"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="33p-3R-0Uy" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2063" y="-624"/>
         </scene>
         <!--User CalendarVC-->
         <scene sceneID="Mmo-Mq-xjo">
@@ -857,7 +905,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lo0-DD-MRc">
-                                <rect key="frame" x="0.0" y="502" width="162" height="65.5"/>
+                                <rect key="frame" x="0.0" y="502" width="162" height="66"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="35"/>
                                 <state key="normal" title="Take">
                                     <color key="titleColor" red="0.1137254902" green="0.1176470588" blue="0.12549019610000001" alpha="1" colorSpace="calibratedRGB"/>
@@ -1083,7 +1131,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fgY-Vw-BE9" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1527" y="-1419"/>
+            <point key="canvasLocation" x="1520" y="-1372"/>
         </scene>
         <!--Home ScreenVC-->
         <scene sceneID="JbV-Ke-MIq">
@@ -1098,7 +1146,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="wireframe_home.png" translatesAutoresizingMaskIntoConstraints="NO" id="4gh-7A-PuK">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <rect key="frame" x="-5" y="-6" width="325" height="580"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="igo-7Z-bsi">
                                 <rect key="frame" x="0.0" y="37" width="65" height="49"/>
@@ -1107,7 +1155,7 @@
                                 </state>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Lb2-Gf-nBp">
-                                <rect key="frame" x="158" y="359" width="133" height="139"/>
+                                <rect key="frame" x="170" y="372" width="103" height="104"/>
                                 <state key="normal">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -1116,7 +1164,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8IQ-Vn-83q">
-                                <rect key="frame" x="32" y="359" width="124" height="139"/>
+                                <rect key="frame" x="43" y="372" width="102" height="104"/>
                                 <state key="normal">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -1124,6 +1172,27 @@
                                     <segue destination="G87-vY-y2C" kind="push" id="d2F-4d-qGR"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="C6E-Pa-bLb">
+                                <rect key="frame" x="71" y="142" width="233" height="26"/>
+                                <fontDescription key="fontDescription" name="Avenir-Roman" family="Avenir" pointSize="18"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="App-Stamina.png" translatesAutoresizingMaskIntoConstraints="NO" id="qCZ-cR-K4k">
+                                <rect key="frame" x="32" y="132" width="40" height="43"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="icon_corrida.png" translatesAutoresizingMaskIntoConstraints="NO" id="KZo-kr-ogE">
+                                <rect key="frame" x="170" y="205" width="35" height="19"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="icon_velocimetro.png" translatesAutoresizingMaskIntoConstraints="NO" id="22f-CW-dR8">
+                                <rect key="frame" x="30" y="254" width="35" height="35"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="icon_pontos.png" translatesAutoresizingMaskIntoConstraints="NO" id="Nje-pi-Ga3">
+                                <rect key="frame" x="169" y="255" width="35" height="35"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="icon_calorias.png" translatesAutoresizingMaskIntoConstraints="NO" id="VNq-z7-WY2">
+                                <rect key="frame" x="33" y="196" width="35" height="35"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
@@ -1259,15 +1328,18 @@
         <!--Navigation Controller-->
         <scene sceneID="cR4-Kx-5UD">
             <objects>
-                <navigationController id="9sA-uq-h1s" sceneMemberID="viewController">
+                <navigationController navigationBarHidden="YES" id="9sA-uq-h1s" sceneMemberID="viewController">
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="oHr-YW-Hei">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
+                    <connections>
+                        <segue destination="cmr-nU-4yv" kind="relationship" relationship="rootViewController" id="IAh-9U-sEa"/>
+                    </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="883-Wk-C6u" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1527" y="-787"/>
+            <point key="canvasLocation" x="1580" y="-624"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="5NL-yJ-TXv">
@@ -1331,14 +1403,20 @@
         </scene>
     </scenes>
     <resources>
+        <image name="App-Stamina.png" width="142" height="152"/>
         <image name="Logo_Stamina.png" width="813" height="688"/>
         <image name="caminhada_tela.png" width="754" height="1586"/>
         <image name="fb_sign.png" width="454" height="71"/>
+        <image name="icon_calorias.png" width="1354" height="1354"/>
+        <image name="icon_corrida.png" width="1354" height="686"/>
+        <image name="icon_pontos.png" width="1354" height="1354"/>
+        <image name="icon_velocimetro.png" width="1354" height="1354"/>
         <image name="ok_icon.png" width="248" height="248"/>
         <image name="wireframe_academia.jpg" width="884" height="1574"/>
         <image name="wireframe_academia_inicio.jpg" width="886" height="1574"/>
         <image name="wireframe_cadastro.jpg" width="876" height="1567"/>
         <image name="wireframe_calendario.png" width="885" height="1575"/>
+        <image name="wireframe_categorias.png" width="886" height="1576"/>
         <image name="wireframe_home.png" width="418" height="744"/>
         <image name="wireframe_termina_caminhada.jpg" width="636" height="1134"/>
     </resources>
