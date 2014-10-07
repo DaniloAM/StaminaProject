@@ -1,0 +1,211 @@
+//
+//  RunningMapVC.m
+//  Stamina
+//
+//  Created by Danilo Augusto Mative on 26/09/14.
+//  Copyright (c) 2014 Danilo Augusto Mative. All rights reserved.
+//
+
+#import "RunningMapVC.h"
+
+@interface RunningMapVC ()
+
+@end
+
+@implementation RunningMapVC
+
+- (void)viewDidLoad {
+    [super viewDidLoad];
+    
+    [[UIApplication sharedApplication] setIdleTimerDisabled:true];
+    
+    [self setOverlayArray:[NSMutableArray array]];
+    [self setPointsForRoute:[[MapRoutePoints alloc] init]];
+    
+    [[self mapRunningView] setDelegate:self];
+    [self setLocationManager:[[CLLocationManager alloc] init]];
+    [[self locationManager] setDelegate:self];
+    
+    if([[[UIDevice currentDevice] systemVersion] floatValue] >= 8.0) {
+        [[self locationManager] requestAlwaysAuthorization];
+    }
+    
+    [[self mapRunningView] setShowsUserLocation:true];
+    [[self locationManager] setDesiredAccuracy:kCLLocationAccuracyBest];
+    
+}
+
+-(void)viewDidAppear:(BOOL)animated {
+    [super viewDidAppear:animated];
+    
+    [[self locationManager] startUpdatingLocation];
+    [[self mapRunningView] setShowsUserLocation:true];
+
+    [self zoomToUserRegion];
+    
+    _timer = [NSTimer scheduledTimerWithTimeInterval:1.0 target:self selector:@selector(startReloadingUserPosition) userInfo:nil repeats:true];
+    
+}
+
+-(void)viewWillDisappear:(BOOL)animated {
+    [super viewWillDisappear:animated];
+    
+    [[UIApplication sharedApplication] setIdleTimerDisabled:false];
+    
+}
+
+-(void)zoomToUserRegion {
+    
+    MKCoordinateRegion region;
+    region.center.latitude = self.mapRunningView.userLocation.coordinate.latitude;
+    region.center.longitude = self.mapRunningView.userLocation.coordinate.longitude;
+    region.span.latitudeDelta = 0.002;
+    region.span.longitudeDelta = 0.002;
+    
+    [self.mapRunningView setRegion:region animated:true];
+    
+}
+
+-(void)startReloadingUserPosition {
+    
+    [self zoomToUserRegion];
+    [self updateTextInTimeLabel];
+    _seconds++;
+    
+    if(_seconds >= 60) {
+        _minutes++;
+        _seconds = 0;
+    }
+    
+}
+
+
+-(void)updateTextInTimeLabel {
+    
+    [[self timeLabel] setText:[NSString stringWithFormat:@"%d:%02d:%02d", (_minutes / 60), (_minutes % 60), _seconds]];
+    
+}
+
+
+-(void)locationManager:(CLLocationManager *)manager didUpdateLocations:(NSArray *)locations {
+    
+    if(!_oldLocation) {
+        _firstLocation = [locations lastObject];
+        _oldLocation = [locations lastObject];
+        return;
+    }
+    
+    CLLocation *newLocation;
+    
+    for(int i = 0; i < [locations count]; i++) {
+        
+        newLocation = [locations objectAtIndex:i];
+        
+        CLLocationDistance distance = [_oldLocation distanceFromLocation:newLocation];
+        _distanceInMeters += distance;
+        
+        [self drawRouteLayerWithPointOne:_oldLocation andTwo:newLocation];
+        MKMapPoint point = MKMapPointForCoordinate(newLocation.coordinate);
+        [[self pointsForRoute] addPointToRouteInX:point.x andY:point.y];
+        
+        _oldLocation = newLocation;
+    }
+    
+    if([newLocation speed] >= 0)
+        [[self speedLabel] setText:[NSString stringWithFormat:@"%.01f Km/h", ([newLocation speed] * 3.6)]];
+    
+    [self updateTextInDistanceLabel];
+
+}
+
+
+-(void)drawRouteLayerWithPointOne: (CLLocation *)locationOne andTwo: (CLLocation *)locationTwo  {
+    
+    if (!locationOne || !locationTwo)
+    {
+        return;
+    }
+    
+    
+    CLLocationCoordinate2D coordinates[2];
+    
+    coordinates[0] = locationOne.coordinate;
+    coordinates[1] = locationTwo.coordinate;
+    
+    
+    _routeLine = [MKPolyline polylineWithCoordinates:coordinates count:2];
+    
+    [[self mapRunningView] addOverlay:_routeLine];
+    
+}
+
+-(void)updateTextInDistanceLabel {
+    
+    if(_distanceInMeters >= 1000.0f) {
+        [[self distanceLabel] setText:[NSString stringWithFormat:@"%.01f Km", _distanceInMeters / 1000]];
+    }
+    
+    else {
+        [[self distanceLabel] setText:[NSString stringWithFormat:@"%d m", (int) _distanceInMeters]];
+    }
+    
+}
+
+
+- (MKOverlayView *)mapView:(MKMapView *)mapView viewForOverlay:(id <MKOverlay>)overlay
+{
+    MKOverlayView* overlayView = nil;
+    self.routeLineView = [[MKPolylineView alloc] initWithPolyline:[self routeLine]];
+    [[self routeLineView] setFillColor:[UIColor colorWithRed:167/255.0f green:210/255.0f blue:244/255.0f alpha:1.0]];
+    [[self routeLineView] setStrokeColor:[UIColor colorWithRed:106/255.0f green:151/255.0f blue:232/255.0f alpha:1.0]];
+    [[self routeLineView] setLineWidth:15.0];
+    [[self routeLineView] setLineCap:kCGLineCapRound];
+    overlayView = [self routeLineView];
+    
+    [[self overlayArray] addObject:overlayView];
+    return overlayView;
+}
+
+
+-(IBAction)finishButton {
+    
+    UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Parar" message:@"Deseja parar a corrida?" delegate:self cancelButtonTitle:@"Não!" otherButtonTitles:@"Sim", nil];
+    
+    [alertView show];
+    
+}
+
+
+- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex {
+    
+    if (buttonIndex == 0) {
+        return;
+    }
+    if (buttonIndex == 1) {
+        [self finishRunning];
+    }
+}
+
+-(void)finishRunning {
+    
+    [[self pointsForRoute] prepareForCartesian];
+    [_timer invalidate];
+    
+    RunningRoute *route = [[RunningRoute alloc] init];
+    
+    [route setTimeInSeconds:_seconds];
+    [route setTimeInMinutes:_minutes];
+    [route setDistanceInMeters:_distanceInMeters];
+    [route setRoutePoints:[self pointsForRoute]];
+    
+    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+    
+    FinishedRunningVC *myVC = (FinishedRunningVC *)[storyboard instantiateViewControllerWithIdentifier:@"finishedRunning"];
+    
+    [myVC receiveRunningRoute:route];
+    [self.navigationController pushViewController:myVC animated:YES];
+    
+}
+
+
+@end
