@@ -31,11 +31,13 @@
     temp.size.height = [[self arrayOfCat] count]*57 + [[self arrayOfCat] count]*1;
     [[self table] setFrame:temp];
     [[self table] setContentSize:CGSizeMake(self.table.frame.size.width, temp.size.height)];
+
 }
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
     return [[self arrayOfCat] count];
 }
@@ -68,6 +70,12 @@
     // Pass the selected object to the new view controller.
 }
 */
+
+-(void)viewWillAppear:(BOOL)animated{
+    [super viewWillAppear:NO];
+    
+}
+
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     return 57;

@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6245" systemVersion="13F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="h6A-wv-HXR">
     <dependencies>
-        <deployment defaultVersion="1808" identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6238"/>
     </dependencies>
     <scenes>
@@ -385,8 +384,8 @@
         <!--Navigation Controller-->
         <scene sceneID="UvL-fw-dCo">
             <objects>
-                <navigationController definesPresentationContext="YES" navigationBarHidden="YES" id="zYX-g3-UJR" sceneMemberID="viewController">
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="hgK-Ml-Lwf">
+                <navigationController definesPresentationContext="YES" id="zYX-g3-UJR" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="hgK-Ml-Lwf">
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                     </navigationBar>
@@ -420,7 +419,7 @@
                         <viewControllerLayoutGuide type="bottom" id="ZDc-i8-v6E"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="8r7-tj-Fkf">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="504"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" bounces="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="b6Q-mF-mSj">
@@ -452,12 +451,13 @@
                     </view>
                     <navigationItem key="navigationItem" id="5E6-RD-P7p"/>
                     <connections>
+                        <outlet property="image" destination="MdZ-uE-U4H" id="JxQ-UH-qsE"/>
                         <outlet property="table" destination="b6Q-mF-mSj" id="vws-Gf-rFW"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="33p-3R-0Uy" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2063" y="-624"/>
+            <point key="canvasLocation" x="2837" y="-2762"/>
         </scene>
         <!--User CalendarVC-->
         <scene sceneID="Mmo-Mq-xjo">
@@ -961,7 +961,7 @@
                         <viewControllerLayoutGuide type="bottom" id="Ywr-Q3-dlF"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="Cne-Ta-Qcz">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="504"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="caminhada_tela.png" translatesAutoresizingMaskIntoConstraints="NO" id="OmI-An-THx">
@@ -1027,12 +1027,21 @@
                         <viewControllerLayoutGuide type="bottom" id="v69-69-NBe"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="JXv-S0-xQO">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="504"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="wireframe_academia_inicio.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="mKV-D2-aJY">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                             </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xPH-g1-WCz">
+                                <rect key="frame" x="47" y="361" width="228" height="37"/>
+                                <state key="normal">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="cmr-nU-4yv" kind="push" id="dcl-V6-cDf"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
@@ -1142,12 +1151,9 @@
                         <viewControllerLayoutGuide type="bottom" id="i38-uy-qnk"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="Qdg-QK-njK">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="504"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="wireframe_home.png" translatesAutoresizingMaskIntoConstraints="NO" id="4gh-7A-PuK">
-                                <rect key="frame" x="-5" y="-6" width="325" height="580"/>
-                            </imageView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="igo-7Z-bsi">
                                 <rect key="frame" x="0.0" y="37" width="65" height="49"/>
                                 <state key="normal">
@@ -1173,25 +1179,28 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="C6E-Pa-bLb">
-                                <rect key="frame" x="71" y="142" width="233" height="26"/>
+                                <rect key="frame" x="74" y="62" width="233" height="26"/>
                                 <fontDescription key="fontDescription" name="Avenir-Roman" family="Avenir" pointSize="18"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="App-Stamina.png" translatesAutoresizingMaskIntoConstraints="NO" id="qCZ-cR-K4k">
-                                <rect key="frame" x="32" y="132" width="40" height="43"/>
+                                <rect key="frame" x="35" y="56" width="40" height="43"/>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="icon_corrida.png" translatesAutoresizingMaskIntoConstraints="NO" id="KZo-kr-ogE">
-                                <rect key="frame" x="170" y="205" width="35" height="19"/>
+                                <rect key="frame" x="173" y="129" width="35" height="19"/>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="icon_velocimetro.png" translatesAutoresizingMaskIntoConstraints="NO" id="22f-CW-dR8">
-                                <rect key="frame" x="30" y="254" width="35" height="35"/>
+                                <rect key="frame" x="33" y="178" width="35" height="35"/>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="icon_pontos.png" translatesAutoresizingMaskIntoConstraints="NO" id="Nje-pi-Ga3">
-                                <rect key="frame" x="169" y="255" width="35" height="35"/>
+                                <rect key="frame" x="172" y="179" width="35" height="35"/>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="icon_calorias.png" translatesAutoresizingMaskIntoConstraints="NO" id="VNq-z7-WY2">
-                                <rect key="frame" x="33" y="196" width="35" height="35"/>
+                                <rect key="frame" x="36" y="120" width="35" height="35"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="wireframe_home.png" translatesAutoresizingMaskIntoConstraints="NO" id="4gh-7A-PuK">
+                                <rect key="frame" x="0.0" y="0.0" width="326" height="504"/>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -1333,9 +1342,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
-                    <connections>
-                        <segue destination="cmr-nU-4yv" kind="relationship" relationship="rootViewController" id="IAh-9U-sEa"/>
-                    </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="883-Wk-C6u" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -1375,7 +1381,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dXu-R4-Oh0" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2890" y="-2762"/>
+            <point key="canvasLocation" x="3214" y="-2755"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="NMJ-Pw-R4N">
@@ -1417,7 +1423,7 @@
         <image name="wireframe_cadastro.jpg" width="876" height="1567"/>
         <image name="wireframe_calendario.png" width="885" height="1575"/>
         <image name="wireframe_categorias.png" width="886" height="1576"/>
-        <image name="wireframe_home.png" width="418" height="744"/>
+        <image name="wireframe_home.png" width="418" height="633"/>
         <image name="wireframe_termina_caminhada.jpg" width="636" height="1134"/>
     </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">

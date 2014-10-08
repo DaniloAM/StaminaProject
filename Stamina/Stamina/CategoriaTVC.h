@@ -11,4 +11,5 @@
 @interface CategoriaTVC : UIViewController <UITableViewDataSource, UITableViewDelegate>
 @property NSArray *arrayOfCat;
 @property (weak, nonatomic) IBOutlet UITableView *table;
+@property (weak, nonatomic) IBOutlet UIImageView *image;
 @end
