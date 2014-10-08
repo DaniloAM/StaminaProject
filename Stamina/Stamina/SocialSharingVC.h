@@ -9,7 +9,9 @@
 #import <UIKit/UIKit.h>
 #import <FacebookSDK/FacebookSDK.h>
 #import <AVFoundation/AVFoundation.h>
+#import <Social/Social.h>
 #import "AVCamPreviewView.h"
+#import "AppDelegate.h"
 
 @interface SocialSharingVC : UIViewController <UIDocumentInteractionControllerDelegate>
 

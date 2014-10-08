@@ -39,7 +39,24 @@
     return YES;
 }
 
+//- (BOOL)application:(UIApplication *)application
+//            openURL:(NSURL *)url
+//  sourceApplication:(NSString *)sourceApplication
+//         annotation:(id)annotation {
+//    
+//    BOOL urlWasHandled = [FBAppCall handleOpenURL:url
+//                                sourceApplication:sourceApplication
+//                                  fallbackHandler:^(FBAppCall *call) {
+//                                      NSLog(@"Unhandled deep link: %@", url);
+//                                      // Here goes the code to handle the links
+//                                      // Use the links to show a relevant view of your app to the user
+//                                  }];
+//    
+//    return urlWasHandled;
+//}
+
 -(BOOL)application:(UIApplication *)application openURL:(NSURL *)url sourceApplication:(NSString *)sourceApplication annotation:(id)annotation {
+   
     BOOL wasHadled = [FBAppCall handleOpenURL:url sourceApplication:sourceApplication];
     
     return wasHadled;
@@ -112,29 +129,7 @@
     NSError *error = nil;
     _persistentStoreCoordinator = [[NSPersistentStoreCoordinator alloc] initWithManagedObjectModel:[self managedObjectModel]];
     if (![_persistentStoreCoordinator addPersistentStoreWithType:NSSQLiteStoreType configuration:nil URL:storeURL options:nil error:&error]) {
-        /*
-         Replace this implementation with code to handle the error appropriately.
-         
-         abort() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development.
-         
-         Typical reasons for an error here include:
-         * The persistent store is not accessible;
-         * The schema for the persistent store is incompatible with current managed object model.
-         Check the error message to determine what the actual problem was.
-         
-         
-         If the persistent store is not accessible, there is typically something wrong with the file path. Often, a file URL is pointing into the application's resources directory instead of a writeable directory.
-         
-         If you encounter schema incompatibility errors during development, you can reduce their frequency by:
-         * Simply deleting the existing store:
-         [[NSFileManager defaultManager] removeItemAtURL:storeURL error:nil]
-         
-         * Performing automatic lightweight migration by passing the following dictionary as the options parameter:
-         @{NSMigratePersistentStoresAutomaticallyOption:@YES, NSInferMappingModelAutomaticallyOption:@YES}
-         
-         Lightweight migration will only work for a limited set of schema changes; consult "Core Data Model Versioning and Data Migration Programming Guide" for details.
-         
-         */
+
         NSLog(@"Unresolved error %@, %@", error, [error userInfo]);
         abort();
     }
@@ -169,4 +164,62 @@
 {
     return [[[NSFileManager defaultManager] URLsForDirectory:NSDocumentDirectory inDomains:NSUserDomainMask] lastObject];
 }
+
+
+//- (BOOL)application:(UIApplication *)application
+//            openURL:(NSURL *)url
+//  sourceApplication:(NSString *)sourceApplication
+//         annotation:(id)annotation {
+//    
+//    BOOL urlWasHandled =
+//    [FBAppCall handleOpenURL:url
+//           sourceApplication:sourceApplication
+//             fallbackHandler:
+//     ^(FBAppCall *call) {
+//         // Parse the incoming URL to look for a target_url parameter
+//         NSString *query = [url query];
+//         NSDictionary *params = [self parseURLParams:query];
+//         // Check if target URL exists
+//         NSString *appLinkDataString = [params valueForKey:@"al_applink_data"];
+//         if (appLinkDataString) {
+//             NSError *error = nil;
+//             NSDictionary *applinkData =
+//             [NSJSONSerialization JSONObjectWithData:[appLinkDataString dataUsingEncoding:NSUTF8StringEncoding]
+//                                             options:0
+//                                               error:&error];
+//             if (!error &&
+//                 [applinkData isKindOfClass:[NSDictionary class]] &&
+//                 applinkData[@"target_url"]) {
+//                 self.refererAppLink = applinkData[@"referer_app_link"];
+//                 NSString *targetURLString = applinkData[@"target_url"];
+//                 // Show the incoming link in an alert
+//                 // Your code to direct the user to the
+//                 // appropriate flow within your app goes here
+//                 [[[UIAlertView alloc] initWithTitle:@"Received link:"
+//                                             message:targetURLString
+//                                            delegate:nil
+//                                   cancelButtonTitle:@"OK"
+//                                   otherButtonTitles:nil] show];
+//             }
+//         }
+//     }];
+//    
+//    return urlWasHandled;
+//}
+
+// A function for parsing URL parameters
+- (NSDictionary*)parseURLParams:(NSString *)query {
+    NSArray *pairs = [query componentsSeparatedByString:@"&"];
+    NSMutableDictionary *params = [[NSMutableDictionary alloc] init];
+    for (NSString *pair in pairs) {
+        NSArray *kv = [pair componentsSeparatedByString:@"="];
+        NSString *val = [[kv objectAtIndex:1]
+                         stringByReplacingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
+        [params setObject:val forKey:[kv objectAtIndex:0]];
+    }
+    return params;
+}
+
+
+
 @end

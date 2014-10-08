@@ -99,6 +99,7 @@
 		FFAC194519E31D5600B17487 /* TrajectoryExample.m in Sources */ = {isa = PBXBuildFile; fileRef = FFAC194419E31D5600B17487 /* TrajectoryExample.m */; };
 		FFAC194819E31E6F00B17487 /* TrajectoryObject.m in Sources */ = {isa = PBXBuildFile; fileRef = FFAC194719E31E6F00B17487 /* TrajectoryObject.m */; };
 		FFAC194A19E3355000B17487 /* icon_compartilhar.png in Resources */ = {isa = PBXBuildFile; fileRef = FFAC194919E3355000B17487 /* icon_compartilhar.png */; };
+		FFF51A5219E48066000BED6B /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FFF51A5119E48066000BED6B /* Social.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -255,6 +256,7 @@
 		FFAC194619E31E6F00B17487 /* TrajectoryObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TrajectoryObject.h; sourceTree = "<group>"; };
 		FFAC194719E31E6F00B17487 /* TrajectoryObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TrajectoryObject.m; sourceTree = "<group>"; };
 		FFAC194919E3355000B17487 /* icon_compartilhar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon_compartilhar.png; sourceTree = "<group>"; };
+		FFF51A5119E48066000BED6B /* Social.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Social.framework; path = System/Library/Frameworks/Social.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -262,6 +264,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FFF51A5219E48066000BED6B /* Social.framework in Frameworks */,
 				C5EB6C1119D9DD5D00C528FC /* MapKit.framework in Frameworks */,
 				FF15998519C0E32200D9236F /* FacebookSDK.framework in Frameworks */,
 			);
@@ -530,6 +533,7 @@
 		FF15987319C0E2F000D9236F /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				FFF51A5119E48066000BED6B /* Social.framework */,
 				C5EB6C1019D9DD5D00C528FC /* MapKit.framework */,
 				FF15987419C0E32100D9236F /* FacebookSDK */,
 			);

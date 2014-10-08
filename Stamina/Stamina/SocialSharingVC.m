@@ -310,36 +310,40 @@
     
 }
 
+
+
 -(void)sharePictureOnFB {
     
-    if(![self checkPhotoSharingPossible]) {
-        return;
+    if([FBDialogs canPresentShareDialogWithPhotos]) {
         
-        //Error
+        NSLog(@"canPresent");
+        
+        
+        FBPhotoParams *params = [[FBPhotoParams alloc] init];
+        params.photos = @[_userPicture];
+        
+        
+        [FBDialogs presentShareDialogWithPhotoParams:params
+                                         clientState:nil
+                                             handler:^(FBAppCall *call, NSDictionary *results, NSError *error) {
+                                                 if (error) {
+                                                     NSLog(@"Error: %@", error.description);
+                                                 } else {
+                                                     NSLog(@"Success!");
+                                                 }
+                                             }];
+        
     }
     
-    FBPhotoParams *params = [[FBPhotoParams alloc] init];
-    
-    // Note that params.photos can be an array of images.  In this example
-    // we only use a single image, wrapped in an array.
-    params.photos = @[_userPicture];
-    
-    [FBDialogs presentShareDialogWithPhotoParams:params
-                                     clientState:nil
-                                         handler:^(FBAppCall *call,
-                                                   NSDictionary *results,
-                                                   NSError *error) {
-                                             if (error) {
-                                                 NSLog(@"Error: %@",
-                                                       error.description);
-                                             } else {
-                                                 NSLog(@"Success!");
-                                             }
-                                         }];
+    else {
+        //The user doesn't have the Facebook for iOS app installed, so we can't present the Share Dialog
+
+    }
     
     _isOnShareMenu = false;
     [self returnToCamera];
     
 }
+
 
 @end
