@@ -113,6 +113,7 @@
 
 -(void)allocArray {
     [self setTrainingsArray:[NSMutableArray array]];
+    [self setRoutesArray:[NSMutableArray array]];
 }
 
 -(void)saveOnUserDefaults {

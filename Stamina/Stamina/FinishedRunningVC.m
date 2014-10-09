@@ -21,10 +21,6 @@
     
 }
 
-- (void)viewDidLoad {
-    [super viewDidLoad];
-    // Do any additional setup after loading the view.
-}
 
 -(void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
@@ -32,8 +28,47 @@
     if(_route) {
         
         [self drawTrajectoryDone];
-        
     }
+}
+
+-(void)viewDidLoad{
+    [super viewDidLoad];
+    self.navigationController.navigationBar.translucent = YES;
+}
+-(void)viewWillDisappear:(BOOL)animated {
+    
+    [super viewWillDisappear:animated];
+    self.navigationController.navigationBar.translucent = NO;
+    
+    NSString *name = @"Name";
+    
+    AppDelegate *app = [[UIApplication sharedApplication] delegate];
+    NSManagedObjectContext *context = [app managedObjectContext];
+    NSError *error = nil;
+    
+    TrajectoryFile *file = [NSEntityDescription insertNewObjectForEntityForName:@"TrajectoryFile" inManagedObjectContext:context];
+    
+    [file setTrajectoryName:name];
+    [file setDateDone:[NSDate date]];
+    [file setDuration:[NSNumber numberWithInt:([_route timeInSeconds] + [_route timeInMinutes] * 60)]];
+    [file setDistance:[NSNumber numberWithDouble:[_route distanceInMeters]]];
+    
+    
+    if(_saveRoute) {
+    
+        TrajectoryRoute *saveRoute = [NSEntityDescription insertNewObjectForEntityForName:@"TrajectoryRoute" inManagedObjectContext:context];
+        
+        [saveRoute setArrayOfPointsInX:[NSKeyedArchiver archivedDataWithRootObject:_route.routePoints.arrayOfPointsX]];
+        [saveRoute setArrayOfPointsInY:[NSKeyedArchiver archivedDataWithRootObject:_route.routePoints.arrayOfPointsY]];
+        [saveRoute setTrajectoryName:name];
+        [saveRoute setTrajectoryDistance:[NSNumber numberWithDouble:[_route distanceInMeters]]];
+        
+        UserData *userData = [UserData alloc];
+        [[userData routesArray] addObject:saveRoute];
+    
+    }
+    
+    [context save:&error];
     
 }
 
@@ -107,7 +142,10 @@
 }
 
 
--(void)saveTrajectory {
+-(IBAction)saveTrajectory {
+    
+    _saveRoute = true;
+    [self goHome];
     
 }
 

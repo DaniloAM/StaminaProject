@@ -9,6 +9,9 @@
 #import <UIKit/UIKit.h>
 #import "FinishedRoute.h"
 #import "SocialSharingVC.h"
+#import "TrajectoryRoute.h"
+#import "TrajectoryFile.h"
+#import "UserData.h"
 
 @interface FinishedRunningVC : UIViewController
 
@@ -19,6 +22,8 @@
 @property (weak, nonatomic) IBOutlet UILabel *timeLabel;
 @property (weak, nonatomic) IBOutlet UILabel *pointsLabel;
 @property (weak, nonatomic) IBOutlet UIImageView *routeImageView;
+
+@property BOOL saveRoute;
 
 -(void)receiveRunningRoute: (FinishedRoute *)runningRoute;
 

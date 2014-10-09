@@ -12,7 +12,7 @@
 @interface RoutePointsCartesian : NSObject
 
 
-@property NSMutableArray *arrayOfPointsX, *arrayOfPointsY;
+@property NSMutableArray *arrayOfPointsX, *arrayOfPointsY, *arrayOfPoints;
 @property double xMaxValue, xMinValue, yMaxValue, yMinValue;
 @property CGRect frameForView, smallRouteFrame;
 

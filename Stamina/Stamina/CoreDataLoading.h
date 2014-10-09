@@ -20,6 +20,7 @@
 #import "Exercises.h"
 #import "TrainingDayObject.h"
 #import "TrainingExercises.h"
+#import "TrajectoryRoute.h"
 #import "AppDelegate.h"
 #import "CalendarObject.h"
 #import "UserData.h"

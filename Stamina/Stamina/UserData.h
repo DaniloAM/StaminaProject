@@ -28,6 +28,7 @@
 @interface UserData : NSObject
 
 @property NSMutableArray *trainingsArray;
+@property NSMutableArray *routesArray;
 @property NSString *name;
 @property int heightInCentimeters;
 @property int weightInKilograms;

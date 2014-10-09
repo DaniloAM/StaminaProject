@@ -171,6 +171,7 @@
     
     UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Parar" message:@"Deseja parar a corrida?" delegate:self cancelButtonTitle:@"Não!" otherButtonTitles:@"Sim", nil];
     
+    
     [alertView show];
     
 }
@@ -203,6 +204,8 @@
     FinishedRunningVC *myVC = (FinishedRunningVC *)[storyboard instantiateViewControllerWithIdentifier:@"finishedRunning"];
     
     [myVC receiveRunningRoute:route];
+
+    
     [self.navigationController pushViewController:myVC animated:YES];
     
 }

@@ -21,9 +21,10 @@
     
     [self loadExercisesList];
     [self loadCalendarInfo];
-    [self loadTrainingsCreated];
+    [self loadTrainingsAndRoutesCreated];
 }
 #pragma mark - Load Calendar
+
 
 -(void)loadCalendarInfo {
     
@@ -58,6 +59,7 @@
     [calendarObj addDayObjects:dayObjectsArray];
     
 }
+
 
 #pragma mark - Load Exercises
 
@@ -106,25 +108,35 @@
 
 #pragma mark - Load Trainings
 
--(void)loadTrainingsCreated {
+-(void)loadTrainingsAndRoutesCreated {
     
     UserData *data = [UserData alloc];
-    
     [data allocArray];
     
     NSManagedObjectContext *context = [[self appdel] managedObjectContext];
     NSFetchRequest *request = [NSFetchRequest fetchRequestWithEntityName:@"TrainingExercises"];
     NSError *error;
     
-    NSArray *objectArray = [context executeFetchRequest:request error:&error];
+    NSArray *exercisesArray = [context executeFetchRequest:request error:&error];
     
-    for(int x = 0; x < [objectArray count]; x++) {
+    for(int x = 0; x < [exercisesArray count]; x++) {
         
-        TrainingExercises *training = [objectArray objectAtIndex:x];
-        
-        
+        TrainingExercises *training = [exercisesArray objectAtIndex:x];
         [[data trainingsArray] addObject:training];
+        
     }
+    
+    request = [NSFetchRequest fetchRequestWithEntityName:@"TrajectoryRoute"];
+    NSArray *routesArray = [context executeFetchRequest:request error:&error];
+    
+    for(int x = 0; x < [routesArray count]; x++) {
+        
+        TrajectoryRoute *route = [routesArray objectAtIndex:x];
+        [[data routesArray] addObject:route];
+        
+    }
+    
+    
     
 }
 

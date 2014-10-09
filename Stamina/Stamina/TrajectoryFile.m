@@ -2,7 +2,7 @@
 //  TrajectoryFile.m
 //  Stamina
 //
-//  Created by Danilo Augusto Mative on 08/10/14.
+//  Created by Danilo Augusto Mative on 09/10/14.
 //  Copyright (c) 2014 Danilo Augusto Mative. All rights reserved.
 //
 
@@ -11,8 +11,9 @@
 
 @implementation TrajectoryFile
 
-@dynamic trajectoryName;
 @dynamic dateDone;
 @dynamic duration;
+@dynamic trajectoryName;
+@dynamic distance;
 
 @end
