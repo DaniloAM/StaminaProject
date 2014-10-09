@@ -9,7 +9,6 @@
 #import <UIKit/UIKit.h>
 #import "CalendarPreparer.h"
 #import "UserData.h"
-
 @interface UserCalendarVC : UIViewController
 
 @property (weak, nonatomic) IBOutlet UILabel *yearLabel;

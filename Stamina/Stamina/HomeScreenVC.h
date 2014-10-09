@@ -7,10 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "AMSlideMenuMainViewController.h"
+#import "MenuVC.h"
+@interface HomeScreenVC : MenuVC
 
-@interface HomeScreenVC : UIViewController
-
-@property (weak, nonatomic) IBOutlet UIButton *leftMenuBtn;
 
 @end

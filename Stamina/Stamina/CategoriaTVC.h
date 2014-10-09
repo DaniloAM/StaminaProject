@@ -6,9 +6,8 @@
 //  Copyright (c) 2014 Danilo Augusto Mative. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
-
-@interface CategoriaTVC : UIViewController <UITableViewDataSource, UITableViewDelegate>
+#import "HideBBVC.h"
+@interface CategoriaTVC : HideBBVC <UITableViewDataSource, UITableViewDelegate>
 @property NSArray *arrayOfCat;
 @property (weak, nonatomic) IBOutlet UITableView *table;
 @property (weak, nonatomic) IBOutlet UIImageView *image;

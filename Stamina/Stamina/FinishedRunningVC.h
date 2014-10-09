@@ -6,14 +6,14 @@
 //  Copyright (c) 2014 Danilo Augusto Mative. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
+#import "HideBBVC.h"
 #import "FinishedRoute.h"
 #import "SocialSharingVC.h"
 #import "TrajectoryRoute.h"
 #import "TrajectoryFile.h"
 #import "UserData.h"
 
-@interface FinishedRunningVC : UIViewController
+@interface FinishedRunningVC : HideBBVC
 
 @property FinishedRoute* route;
 
