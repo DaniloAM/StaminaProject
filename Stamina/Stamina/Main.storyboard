@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6245" systemVersion="13F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="h6A-wv-HXR">
     <dependencies>
+        <deployment defaultVersion="1808" identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6238"/>
     </dependencies>
     <scenes>
@@ -443,12 +444,9 @@
                                 </prototypes>
                                 <sections/>
                             </tableView>
-<<<<<<< HEAD
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="wireframe_categorias.png" translatesAutoresizingMaskIntoConstraints="NO" id="MdZ-uE-U4H">
                                 <rect key="frame" x="0.0" y="-71" width="320" height="575"/>
                             </imageView>
-=======
->>>>>>> FETCH_HEAD
                         </subviews>
                         <color key="backgroundColor" red="0.97647058823529409" green="0.84705882352941175" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
@@ -1060,12 +1058,9 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="504"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-<<<<<<< HEAD
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="wireframe_academia_inicio.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="mKV-D2-aJY">
                                 <rect key="frame" x="0.0" y="-64" width="320" height="568"/>
                             </imageView>
-=======
->>>>>>> FETCH_HEAD
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xPH-g1-WCz">
                                 <rect key="frame" x="47" y="361" width="228" height="37"/>
                                 <state key="normal">
@@ -1099,6 +1094,9 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="wireframe_termina_caminhada.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="NkO-G1-P1B">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                            </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="300 cal" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Q6Q-vy-Vy3">
                                 <rect key="frame" x="59" y="193" width="88" height="34"/>
                                 <fontDescription key="fontDescription" name="Avenir-Roman" family="Avenir" pointSize="19"/>
@@ -1136,7 +1134,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OJ0-q1-2TY">
-                                <rect key="frame" x="111" y="50" width="99" height="85"/>
+                                <rect key="frame" x="159" y="92" width="99" height="85"/>
                                 <state key="normal">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -1144,9 +1142,6 @@
                                     <action selector="sharePicture" destination="evo-Rb-OIp" eventType="touchUpInside" id="2hu-Ex-Aqb"/>
                                 </connections>
                             </button>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="wireframe_termina_caminhada.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="NkO-G1-P1B">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
@@ -1450,6 +1445,7 @@
         <image name="wireframe_academia_inicio.jpg" width="886" height="1574"/>
         <image name="wireframe_cadastro.jpg" width="876" height="1567"/>
         <image name="wireframe_calendario.png" width="885" height="1575"/>
+        <image name="wireframe_categorias.png" width="886" height="1576"/>
         <image name="wireframe_home.png" width="418" height="633"/>
         <image name="wireframe_termina_caminhada.jpg" width="636" height="1134"/>
     </resources>
