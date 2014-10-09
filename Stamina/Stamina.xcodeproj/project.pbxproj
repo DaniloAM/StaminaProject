@@ -7,10 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		325F1FD719E702F400001EB0 /* bg_bar.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 325F1FD619E702F400001EB0 /* bg_bar.jpg */; };
 		32C6B39019E47EEF00DE13AC /* CategoriaTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 32C6B38F19E47EEF00DE13AC /* CategoriaTVC.m */; };
 		32C6B39219E484CB00DE13AC /* wireframe_categorias.png in Resources */ = {isa = PBXBuildFile; fileRef = 32C6B39119E484CB00DE13AC /* wireframe_categorias.png */; };
-		32F8315319E5C6240043BF9C /* menu.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 32F8315219E5C6240043BF9C /* menu.jpg */; };
-		32F8315519E5C67F0043BF9C /* menu.png in Resources */ = {isa = PBXBuildFile; fileRef = 32F8315419E5C67F0043BF9C /* menu.png */; };
 		C527A39519DB1FB300C72B21 /* fb_sign.png in Resources */ = {isa = PBXBuildFile; fileRef = C527A38619DB1FB300C72B21 /* fb_sign.png */; };
 		C527A39619DB1FB300C72B21 /* icon_batimento.png in Resources */ = {isa = PBXBuildFile; fileRef = C527A38719DB1FB300C72B21 /* icon_batimento.png */; };
 		C527A39819DB1FB300C72B21 /* icon_calendario.png in Resources */ = {isa = PBXBuildFile; fileRef = C527A38919DB1FB300C72B21 /* icon_calendario.png */; };
@@ -115,11 +114,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		325F1FD619E702F400001EB0 /* bg_bar.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = bg_bar.jpg; sourceTree = "<group>"; };
 		32C6B38E19E47EEF00DE13AC /* CategoriaTVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CategoriaTVC.h; sourceTree = "<group>"; };
 		32C6B38F19E47EEF00DE13AC /* CategoriaTVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CategoriaTVC.m; sourceTree = "<group>"; };
 		32C6B39119E484CB00DE13AC /* wireframe_categorias.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = wireframe_categorias.png; sourceTree = "<group>"; };
-		32F8315219E5C6240043BF9C /* menu.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = menu.jpg; sourceTree = "<group>"; };
-		32F8315419E5C67F0043BF9C /* menu.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = menu.png; sourceTree = "<group>"; };
 		C527A38619DB1FB300C72B21 /* fb_sign.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = fb_sign.png; sourceTree = "<group>"; };
 		C527A38719DB1FB300C72B21 /* icon_batimento.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon_batimento.png; sourceTree = "<group>"; };
 		C527A38919DB1FB300C72B21 /* icon_calendario.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon_calendario.png; sourceTree = "<group>"; };
@@ -320,8 +318,7 @@
 		C5E99E5D19DB3AA200513CDE /* wireframes */ = {
 			isa = PBXGroup;
 			children = (
-				32F8315419E5C67F0043BF9C /* menu.png */,
-				32F8315219E5C6240043BF9C /* menu.jpg */,
+				325F1FD619E702F400001EB0 /* bg_bar.jpg */,
 				FFAC193919E3105B00B17487 /* wireframe_termina_caminhada.jpg */,
 				C56108E819DD81990090CE5D /* wireframe_home.png */,
 				C5E99E5E19DB3AA200513CDE /* wireframe_academia.jpg */,
@@ -700,7 +697,6 @@
 				C527A39519DB1FB300C72B21 /* fb_sign.png in Resources */,
 				C527A39B19DB1FB300C72B21 /* icon_corrida.png in Resources */,
 				C5E99E7219DB3AA200513CDE /* wireframe_guardar_trajeto.jpg in Resources */,
-				32F8315319E5C6240043BF9C /* menu.jpg in Resources */,
 				FFAC190D19DC9C7C00B17487 /* stamina_logo.png in Resources */,
 				C527A39D19DB1FB300C72B21 /* icon_menu.png in Resources */,
 				C527A3AA19DB266B00C72B21 /* icon_cadeado.png in Resources */,
@@ -718,7 +714,7 @@
 				FFAC190F19DDB63800B17487 /* ok_icon.png in Resources */,
 				C5E99E7019DB3AA200513CDE /* wireframe_caminhada_inicio.jpg in Resources */,
 				C5CE7D7619D4BA10003E1595 /* fb_sign.png in Resources */,
-				32F8315519E5C67F0043BF9C /* menu.png in Resources */,
+				325F1FD719E702F400001EB0 /* bg_bar.jpg in Resources */,
 				C5E99E7B19DB48BA00513CDE /* wireframe_cadastro.jpg in Resources */,
 				C5E99E7619DB3AA200513CDE /* wireframe_informacoes.jpg in Resources */,
 				C53A352E19D33BA700AC1383 /* Main.storyboard in Resources */,

@@ -32,7 +32,8 @@
     
     [[self mapRunningView] setShowsUserLocation:true];
     [[self locationManager] setDesiredAccuracy:kCLLocationAccuracyBest];
-    
+    self.navigationItem.hidesBackButton = YES;
+
 }
 
 -(void)viewDidAppear:(BOOL)animated {
@@ -44,7 +45,6 @@
     [self zoomToUserRegion];
     
     _timer = [NSTimer scheduledTimerWithTimeInterval:1.0 target:self selector:@selector(startReloadingUserPosition) userInfo:nil repeats:true];
-    
 }
 
 -(void)viewWillDisappear:(BOOL)animated {
