@@ -444,15 +444,11 @@
                                 </prototypes>
                                 <sections/>
                             </tableView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="wireframe_categorias.png" translatesAutoresizingMaskIntoConstraints="NO" id="MdZ-uE-U4H">
-                                <rect key="frame" x="0.0" y="-7" width="320" height="575"/>
-                            </imageView>
                         </subviews>
                         <color key="backgroundColor" red="0.97647058823529409" green="0.84705882352941175" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
                     <navigationItem key="navigationItem" id="5E6-RD-P7p"/>
                     <connections>
-                        <outlet property="image" destination="MdZ-uE-U4H" id="JxQ-UH-qsE"/>
                         <outlet property="table" destination="b6Q-mF-mSj" id="vws-Gf-rFW"/>
                     </connections>
                 </viewController>
@@ -1047,10 +1043,10 @@
             </objects>
             <point key="canvasLocation" x="2479" y="-3382"/>
         </scene>
-        <!--View Controller-->
+        <!--AcademiaVC-->
         <scene sceneID="syk-1u-5DQ">
             <objects>
-                <viewController id="G87-vY-y2C" sceneMemberID="viewController">
+                <viewController id="G87-vY-y2C" customClass="AcademiaVC" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="kdY-6q-aOX"/>
                         <viewControllerLayoutGuide type="bottom" id="v69-69-NBe"/>
@@ -1059,9 +1055,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="504"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="wireframe_academia_inicio.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="mKV-D2-aJY">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                            </imageView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xPH-g1-WCz">
                                 <rect key="frame" x="47" y="361" width="228" height="37"/>
                                 <state key="normal">
@@ -1071,8 +1064,11 @@
                                     <segue destination="cmr-nU-4yv" kind="push" id="dcl-V6-cDf"/>
                                 </connections>
                             </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="wireframe_academia_inicio.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="EvV-MM-tYL">
+                                <rect key="frame" x="0.0" y="-65" width="325" height="569"/>
+                            </imageView>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.97647058819999999" green="0.84705882349999995" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
                     <navigationItem key="navigationItem" id="P4a-jL-ARf"/>
                 </viewController>
@@ -1183,12 +1179,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="504"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="igo-7Z-bsi">
-                                <rect key="frame" x="0.0" y="37" width="65" height="49"/>
-                                <state key="normal">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                            </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Lb2-Gf-nBp">
                                 <rect key="frame" x="170" y="372" width="103" height="104"/>
                                 <state key="normal">
@@ -1235,9 +1225,6 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" id="RGQ-tE-vRn"/>
-                    <connections>
-                        <outlet property="leftMenuBtn" destination="igo-7Z-bsi" id="Ldq-EQ-drS"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Om7-7Q-Ry4" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -1452,7 +1439,6 @@
         <image name="wireframe_academia_inicio.jpg" width="886" height="1574"/>
         <image name="wireframe_cadastro.jpg" width="876" height="1567"/>
         <image name="wireframe_calendario.png" width="885" height="1575"/>
-        <image name="wireframe_categorias.png" width="886" height="1576"/>
         <image name="wireframe_home.png" width="418" height="633"/>
         <image name="wireframe_termina_caminhada.jpg" width="636" height="1134"/>
     </resources>

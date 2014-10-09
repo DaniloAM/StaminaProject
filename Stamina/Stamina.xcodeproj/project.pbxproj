@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		325F1FD719E702F400001EB0 /* bg_bar.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 325F1FD619E702F400001EB0 /* bg_bar.jpg */; };
+		325F1FDA19E7091C00001EB0 /* AcademiaVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 325F1FD919E7091C00001EB0 /* AcademiaVC.m */; };
+		325F1FE319E7143C00001EB0 /* MenuVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 325F1FE219E7143C00001EB0 /* MenuVC.m */; };
+		325F1FE919E7229C00001EB0 /* HideBBVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 325F1FE819E7229C00001EB0 /* HideBBVC.m */; };
 		32C6B39019E47EEF00DE13AC /* CategoriaTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 32C6B38F19E47EEF00DE13AC /* CategoriaTVC.m */; };
 		32C6B39219E484CB00DE13AC /* wireframe_categorias.png in Resources */ = {isa = PBXBuildFile; fileRef = 32C6B39119E484CB00DE13AC /* wireframe_categorias.png */; };
 		C527A39519DB1FB300C72B21 /* fb_sign.png in Resources */ = {isa = PBXBuildFile; fileRef = C527A38619DB1FB300C72B21 /* fb_sign.png */; };
@@ -116,6 +119,12 @@
 
 /* Begin PBXFileReference section */
 		325F1FD619E702F400001EB0 /* bg_bar.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = bg_bar.jpg; sourceTree = "<group>"; };
+		325F1FD819E7091C00001EB0 /* AcademiaVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AcademiaVC.h; path = wireframes/AcademiaVC.h; sourceTree = "<group>"; };
+		325F1FD919E7091C00001EB0 /* AcademiaVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AcademiaVC.m; path = wireframes/AcademiaVC.m; sourceTree = "<group>"; };
+		325F1FE119E7143C00001EB0 /* MenuVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MenuVC.h; path = wireframes/MenuVC.h; sourceTree = "<group>"; };
+		325F1FE219E7143C00001EB0 /* MenuVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MenuVC.m; path = wireframes/MenuVC.m; sourceTree = "<group>"; };
+		325F1FE719E7229C00001EB0 /* HideBBVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HideBBVC.h; sourceTree = "<group>"; };
+		325F1FE819E7229C00001EB0 /* HideBBVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HideBBVC.m; sourceTree = "<group>"; };
 		32C6B38E19E47EEF00DE13AC /* CategoriaTVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CategoriaTVC.h; sourceTree = "<group>"; };
 		32C6B38F19E47EEF00DE13AC /* CategoriaTVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CategoriaTVC.m; sourceTree = "<group>"; };
 		32C6B39119E484CB00DE13AC /* wireframe_categorias.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = wireframe_categorias.png; sourceTree = "<group>"; };
@@ -462,6 +471,8 @@
 			children = (
 				FFAC194119E319F300B17487 /* Cadastro */,
 				FFAC193E19E3172300B17487 /* Exercitar */,
+				325F1FD819E7091C00001EB0 /* AcademiaVC.h */,
+				325F1FD919E7091C00001EB0 /* AcademiaVC.m */,
 				C5EB6C0019D9DBD300C528FC /* AVCamPreviewView.h */,
 				C5EB6C0119D9DBD300C528FC /* AVCamPreviewView.m */,
 				C53A352119D33B8900AC1383 /* ErrorVC.h */,
@@ -474,6 +485,10 @@
 				FF17BD5E19C8C1A000B5EF46 /* InstagramShareVC.m */,
 				FF17BD6319C8C21600B5EF46 /* MainVC.h */,
 				FF17BD6419C8C21600B5EF46 /* MainVC.m */,
+				325F1FE119E7143C00001EB0 /* MenuVC.h */,
+				325F1FE219E7143C00001EB0 /* MenuVC.m */,
+				325F1FE719E7229C00001EB0 /* HideBBVC.h */,
+				325F1FE819E7229C00001EB0 /* HideBBVC.m */,
 				FF17BD5A19C8C18200B5EF46 /* StartVC.h */,
 				FF17BD5B19C8C18200B5EF46 /* StartVC.m */,
 				C5EB6BFC19D9DBD300C528FC /* UserCalendarVC.h */,
@@ -766,6 +781,7 @@
 				C53A352B19D33B9A00AC1383 /* RWBlurPopover.m in Sources */,
 				FF15972519C0D96E00D9236F /* AMSlideMenuContentSegue.m in Sources */,
 				FF17BD5C19C8C18200B5EF46 /* StartVC.m in Sources */,
+				325F1FE319E7143C00001EB0 /* MenuVC.m in Sources */,
 				FF1596F619C0CBC900D9236F /* Stamina.xcdatamodeld in Sources */,
 				FF17BDB719C9F78E00B5EF46 /* Exercises.m in Sources */,
 				C53A352419D33B8900AC1383 /* ErrorVC.m in Sources */,
@@ -780,10 +796,12 @@
 				C53A351D19D33B7700AC1383 /* LoginViewController.m in Sources */,
 				FF13E9D119E5B9100005BA49 /* TrajectoryRoute.m in Sources */,
 				C5EB6BFB19D9DB6B00C528FC /* CalendarMath.m in Sources */,
+				325F1FE919E7229C00001EB0 /* HideBBVC.m in Sources */,
 				FF794D7719CA288F00808144 /* TrainingExercises.m in Sources */,
 				FF15986F19C0E24F00D9236F /* UIColor+CreateMethods.m in Sources */,
 				C5EB6C0919D9DBD300C528FC /* FBLoginVC.m in Sources */,
 				C5EB6C0A19D9DBD300C528FC /* AVCamPreviewView.m in Sources */,
+				325F1FDA19E7091C00001EB0 /* AcademiaVC.m in Sources */,
 				FF15972819C0D96E00D9236F /* AMSlideMenuMainViewController.m in Sources */,
 				C5A2418619CB512700064E54 /* TemporaryVC.m in Sources */,
 				FF1596F319C0CBC900D9236F /* AppDelegate.m in Sources */,
