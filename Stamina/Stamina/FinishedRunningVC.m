@@ -15,7 +15,7 @@
 @implementation FinishedRunningVC
 
 
--(void)receiveRunningRoute: (RunningRoute *)runningRoute {
+-(void)receiveRunningRoute: (FinishedRoute *)runningRoute {
     
     _route = runningRoute;
     

@@ -14,37 +14,11 @@
 
 @implementation SocialSharingVC
 
+
+
 - (void)viewDidLoad  {
     
     [super viewDidLoad];
-    
-    _fbBtn = [[UIButton alloc] initWithFrame:CGRectMake(120, 120, 80, 80)];
-    _instaBtn = [[UIButton alloc] initWithFrame:CGRectMake(109, 320, 103, 103)];
-    _cancelBtn = [[UIButton alloc] initWithFrame:CGRectMake(120, 220, 80, 80)];
-    
-    [_fbBtn addTarget:self action:@selector(sharePictureOnFB) forControlEvents:UIControlEventTouchUpInside];
-    [_instaBtn addTarget:self action:@selector(sharePictureOnInstagram) forControlEvents:UIControlEventTouchUpInside];
-    [_cancelBtn addTarget:self action:@selector(returnToCamera) forControlEvents:UIControlEventTouchUpInside];
-    
-    [_fbBtn setTitle:@"f" forState:UIControlStateNormal];
-    [_instaBtn setTitle:@"i" forState:UIControlStateNormal];
-    
-    _fbBtn.titleLabel.font = [UIFont fontWithName:@"Avenir" size:70.0f];
-    _instaBtn.titleLabel.font = [UIFont fontWithName:@"Avenir" size:70.0f];
-
-    _shareLogo = [[UIImageView alloc] initWithFrame:CGRectMake(125, 220, 70, 70)];
-    
-    _shareLogo.image = [UIImage imageNamed:@"icon_compartilhar.png"];
-    
-    [self.view addSubview:_fbBtn];
-    [self.view addSubview:_instaBtn];
-    [self.view addSubview:_cancelBtn];
-    [self.view addSubview:_shareLogo];
-    
-    [_fbBtn setHidden:true];
-    [_instaBtn setHidden:true];
-    [_cancelBtn setHidden:true];
-    [_shareLogo setHidden:true];
     
     [self setDarkenView:[[UIImageView alloc]init]];
     [self setImageView:[[UIImageView alloc]init]];
@@ -52,6 +26,9 @@
     [[self imageView] setFrame:_cameraView.frame];
     [[self darkenView] setHidden:true];
     [[self imageView] setHidden:true];
+    [[self facebookButton] setHidden:true];
+    [[self instagramButton] setHidden:true];
+    [[self sharingImageView] setHidden:true];
     
     [self.view addSubview:[self darkenView]];
 
@@ -75,6 +52,7 @@
     [self startCameraPreviewWithCamera:[self frontCamera]];
     
 }
+
 
 
 -(void)startCameraPreviewWithCamera: (AVCaptureDevice *)camera {
@@ -150,29 +128,19 @@
 
 
 
--(BOOL)checkPhotoSharingPossible {
-    if ([FBDialogs canPresentShareDialogWithPhotos]) {
-        
-        return true;
-        
-    } else {
-        return false;
-    }
-}
-
-
-
 - (IBAction)snapStillImage:(id)sender  {
 
+    if(_isOnShareMenu) {
+        return;
+    }
+    
     if(![[self imageView] isHidden]) {
         [self presentShareMenu];
         return;
     }
     
-    
     //Perfom these selectors with delays to remove any noises from still images
     [self performSelector:@selector(takePicture) withObject:nil afterDelay:0.2];
-    [self performSelector:@selector(takePicture) withObject:nil afterDelay:0.25];
     [self performSelector:@selector(takePicture) withObject:nil afterDelay:0.3];
     [self performSelector:@selector(changeImageView) withObject:nil afterDelay:0.4];
     
@@ -181,10 +149,9 @@
 
 -(void)returnToCamera {
     
-    [_fbBtn setHidden:true];
-    [_instaBtn setHidden:true];
-    [_cancelBtn setHidden:true];
-    [_shareLogo setHidden:true];
+    [[self facebookButton] setHidden:true];
+    [[self instagramButton] setHidden:true];
+    [[self sharingImageView] setHidden:true];
     
     _isOnShareMenu = false;
     
@@ -208,9 +175,7 @@
 
 -(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
     
-    if(!_isOnShareMenu) {
-        [self returnToCamera];
-    }
+    [self returnToCamera];
     
 }
 
@@ -223,6 +188,7 @@
         if (imageDataSampleBuffer)
         {
             NSData *imageData = [AVCaptureStillImageOutput jpegStillImageNSDataRepresentation:imageDataSampleBuffer];
+            
             _userPicture = [[UIImage alloc] initWithData:imageData];
             
             if(_usingFrontCamera) {
@@ -241,18 +207,17 @@
     _isOnShareMenu = true;
     
     [self.view bringSubviewToFront:[self darkenView]];
-    [self.view bringSubviewToFront:[self shareLogo]];
-    [self.view bringSubviewToFront:[self fbBtn]];
-    [self.view bringSubviewToFront:[self instaBtn]];
-    [self.view bringSubviewToFront:[self cancelBtn]];
+    [self.view bringSubviewToFront:[self facebookButton]];
+    [self.view bringSubviewToFront:[self instagramButton]];
+    [self.view bringSubviewToFront:[self sharingImageView]];
+
     
     [[self darkenView] setHidden:false];
     [[self darkenView] setImage:[self darkenImageOfScreen]];
     
-    [_fbBtn setHidden:false];
-    [_instaBtn setHidden:false];
-    [_cancelBtn setHidden:false];
-    [_shareLogo setHidden:false];
+    [[self facebookButton] setHidden:false];
+    [[self instagramButton] setHidden:false];
+    [[self sharingImageView] setHidden:false];
     
 }
 
@@ -303,47 +268,23 @@
 }
 
 
--(void)sharePictureOnInstagram {
+
+-(IBAction)sharePictureOnFacebook {
     
-    _isOnShareMenu = false;
+    [SharingResponse sharePictureOnFacebook:_userPicture];
+    
     [self returnToCamera];
     
 }
 
-
-
--(void)sharePictureOnFB {
+-(IBAction)sharePictureOnInstagram {
     
-    if([FBDialogs canPresentShareDialogWithPhotos]) {
-        
-        NSLog(@"canPresent");
-        
-        
-        FBPhotoParams *params = [[FBPhotoParams alloc] init];
-        params.photos = @[_userPicture];
-        
-        
-        [FBDialogs presentShareDialogWithPhotoParams:params
-                                         clientState:nil
-                                             handler:^(FBAppCall *call, NSDictionary *results, NSError *error) {
-                                                 if (error) {
-                                                     NSLog(@"Error: %@", error.description);
-                                                 } else {
-                                                     NSLog(@"Success!");
-                                                 }
-                                             }];
-        
-    }
+    [SharingResponse sharePictureOnInstagram:_userPicture];
     
-    else {
-        //The user doesn't have the Facebook for iOS app installed, so we can't present the Share Dialog
-
-    }
-    
-    _isOnShareMenu = false;
     [self returnToCamera];
     
 }
+
 
 
 @end

@@ -1,15 +1,14 @@
 //
-//  MapRoutePoints.m
+//  RoutePointsCartesian.m
 //  Stamina
 //
-//  Created by Danilo Augusto Mative on 30/09/14.
+//  Created by Danilo Augusto Mative on 08/10/14.
 //  Copyright (c) 2014 Danilo Augusto Mative. All rights reserved.
 //
 
-#import "MapRoutePoints.h"
+#import "RoutePointsCartesian.h"
 
-@implementation MapRoutePoints
-
+@implementation RoutePointsCartesian
 
 -(void)addPointToRouteInX: (double)pointX andY: (double)pointY {
     
@@ -55,7 +54,7 @@
         }
         
     }
-   
+    
     _xMaxValue = xMax;
     _xMinValue = xMin;
     _yMaxValue = yMax;
@@ -72,7 +71,7 @@
         
     } else {
         fator = ( _frameForView.size.height / ySize );
-    
+        
     }
     
     
@@ -94,7 +93,7 @@
         
         [newArrayOfPointsX addObject:xNumber];
         [newArrayOfPointsY addObject:yNumber];
-
+        
     }
     
     [self setArrayOfPointsX:newArrayOfPointsX];

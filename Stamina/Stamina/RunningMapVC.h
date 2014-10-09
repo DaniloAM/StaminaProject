@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import <MapKit/MapKit.h>
-#import "RunningRoute.h"
+#import "FinishedRoute.h"
 #import "FinishedRunningVC.h"
 
 @interface RunningMapVC : UIViewController <MKMapViewDelegate , CLLocationManagerDelegate, UIAlertViewDelegate>
@@ -20,7 +20,7 @@
 @property CLLocation *oldLocation;
 @property CLLocation *firstLocation;
 
-@property MapRoutePoints *pointsForRoute;
+@property RoutePointsCartesian *pointsForRoute;
 
 @property IBOutlet UILabel *timeLabel;
 @property IBOutlet UILabel *speedLabel;

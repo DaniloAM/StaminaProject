@@ -20,7 +20,7 @@
     [[UIApplication sharedApplication] setIdleTimerDisabled:true];
     
     [self setOverlayArray:[NSMutableArray array]];
-    [self setPointsForRoute:[[MapRoutePoints alloc] init]];
+    [self setPointsForRoute:[[RoutePointsCartesian alloc] init]];
     
     [[self mapRunningView] setDelegate:self];
     [self setLocationManager:[[CLLocationManager alloc] init]];
@@ -191,7 +191,7 @@
     [[self pointsForRoute] prepareForCartesian];
     [_timer invalidate];
     
-    RunningRoute *route = [[RunningRoute alloc] init];
+    FinishedRoute *route = [[FinishedRoute alloc] init];
     
     [route setTimeInSeconds:_seconds];
     [route setTimeInMinutes:_minutes];

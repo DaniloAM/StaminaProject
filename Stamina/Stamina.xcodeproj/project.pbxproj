@@ -65,6 +65,11 @@
 		C5EB6C0D19D9DBD300C528FC /* RunningMapVC.m in Sources */ = {isa = PBXBuildFile; fileRef = C5EB6C0719D9DBD300C528FC /* RunningMapVC.m */; };
 		C5EB6C0F19D9DC5B00C528FC /* caminhada_tela.png in Resources */ = {isa = PBXBuildFile; fileRef = C5EB6C0E19D9DC5B00C528FC /* caminhada_tela.png */; };
 		C5EB6C1119D9DD5D00C528FC /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C5EB6C1019D9DD5D00C528FC /* MapKit.framework */; };
+		FF13E9D119E5B9100005BA49 /* TrajectoryRoute.m in Sources */ = {isa = PBXBuildFile; fileRef = FF13E9D019E5B9100005BA49 /* TrajectoryRoute.m */; };
+		FF13E9D419E5B9100005BA49 /* TrajectoryFile.m in Sources */ = {isa = PBXBuildFile; fileRef = FF13E9D319E5B9100005BA49 /* TrajectoryFile.m */; };
+		FF13E9D719E5BE160005BA49 /* RoutePointsCartesian.m in Sources */ = {isa = PBXBuildFile; fileRef = FF13E9D619E5BE160005BA49 /* RoutePointsCartesian.m */; };
+		FF13E9DA19E5BE330005BA49 /* FinishedRoute.m in Sources */ = {isa = PBXBuildFile; fileRef = FF13E9D919E5BE330005BA49 /* FinishedRoute.m */; };
+		FF13E9DD19E5BF840005BA49 /* SharingResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = FF13E9DC19E5BF840005BA49 /* SharingResponse.m */; };
 		FF1596F019C0CBC900D9236F /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = FF1596EF19C0CBC900D9236F /* main.m */; };
 		FF1596F319C0CBC900D9236F /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = FF1596F219C0CBC900D9236F /* AppDelegate.m */; };
 		FF1596F619C0CBC900D9236F /* Stamina.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = FF1596F419C0CBC900D9236F /* Stamina.xcdatamodeld */; };
@@ -89,16 +94,12 @@
 		FF17BDBA19C9F78F00B5EF46 /* TrainingDayObject.m in Sources */ = {isa = PBXBuildFile; fileRef = FF17BDB919C9F78F00B5EF46 /* TrainingDayObject.m */; };
 		FF17BDC019CA2E5600B5EF46 /* UserTraining.m in Sources */ = {isa = PBXBuildFile; fileRef = FF17BDBF19CA2E5600B5EF46 /* UserTraining.m */; };
 		FF794D7719CA288F00808144 /* TrainingExercises.m in Sources */ = {isa = PBXBuildFile; fileRef = FF794D7619CA288F00808144 /* TrainingExercises.m */; };
-		FFAC18FC19DB1BF200B17487 /* MapRoutePoints.m in Sources */ = {isa = PBXBuildFile; fileRef = FFAC18FB19DB1BF200B17487 /* MapRoutePoints.m */; };
 		FFAC18FF19DB200E00B17487 /* FinishedRunningVC.m in Sources */ = {isa = PBXBuildFile; fileRef = FFAC18FE19DB200E00B17487 /* FinishedRunningVC.m */; };
-		FFAC190519DB21E400B17487 /* RunningRoute.m in Sources */ = {isa = PBXBuildFile; fileRef = FFAC190419DB21E400B17487 /* RunningRoute.m */; };
 		FFAC190B19DC86C400B17487 /* SocialSharingVC.m in Sources */ = {isa = PBXBuildFile; fileRef = FFAC190A19DC86C400B17487 /* SocialSharingVC.m */; };
 		FFAC190D19DC9C7C00B17487 /* stamina_logo.png in Resources */ = {isa = PBXBuildFile; fileRef = FFAC190C19DC9C7C00B17487 /* stamina_logo.png */; };
 		FFAC190F19DDB63800B17487 /* ok_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = FFAC190E19DDB63800B17487 /* ok_icon.png */; };
 		FFAC193A19E3105B00B17487 /* wireframe_termina_caminhada.jpg in Resources */ = {isa = PBXBuildFile; fileRef = FFAC193919E3105B00B17487 /* wireframe_termina_caminhada.jpg */; };
 		FFAC193D19E3171C00B17487 /* HomeScreenVC.m in Sources */ = {isa = PBXBuildFile; fileRef = FFAC193C19E3171C00B17487 /* HomeScreenVC.m */; };
-		FFAC194519E31D5600B17487 /* TrajectoryExample.m in Sources */ = {isa = PBXBuildFile; fileRef = FFAC194419E31D5600B17487 /* TrajectoryExample.m */; };
-		FFAC194819E31E6F00B17487 /* TrajectoryObject.m in Sources */ = {isa = PBXBuildFile; fileRef = FFAC194719E31E6F00B17487 /* TrajectoryObject.m */; };
 		FFAC194A19E3355000B17487 /* icon_compartilhar.png in Resources */ = {isa = PBXBuildFile; fileRef = FFAC194919E3355000B17487 /* icon_compartilhar.png */; };
 		FFF51A5219E48066000BED6B /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FFF51A5119E48066000BED6B /* Social.framework */; };
 /* End PBXBuildFile section */
@@ -193,6 +194,16 @@
 		C5EB6C0719D9DBD300C528FC /* RunningMapVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RunningMapVC.m; sourceTree = "<group>"; };
 		C5EB6C0E19D9DC5B00C528FC /* caminhada_tela.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = caminhada_tela.png; sourceTree = "<group>"; };
 		C5EB6C1019D9DD5D00C528FC /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		FF13E9CF19E5B9100005BA49 /* TrajectoryRoute.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TrajectoryRoute.h; sourceTree = "<group>"; };
+		FF13E9D019E5B9100005BA49 /* TrajectoryRoute.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TrajectoryRoute.m; sourceTree = "<group>"; };
+		FF13E9D219E5B9100005BA49 /* TrajectoryFile.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TrajectoryFile.h; sourceTree = "<group>"; };
+		FF13E9D319E5B9100005BA49 /* TrajectoryFile.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TrajectoryFile.m; sourceTree = "<group>"; };
+		FF13E9D519E5BE160005BA49 /* RoutePointsCartesian.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RoutePointsCartesian.h; sourceTree = "<group>"; };
+		FF13E9D619E5BE160005BA49 /* RoutePointsCartesian.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RoutePointsCartesian.m; sourceTree = "<group>"; };
+		FF13E9D819E5BE330005BA49 /* FinishedRoute.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FinishedRoute.h; sourceTree = "<group>"; };
+		FF13E9D919E5BE330005BA49 /* FinishedRoute.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FinishedRoute.m; sourceTree = "<group>"; };
+		FF13E9DB19E5BF840005BA49 /* SharingResponse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SharingResponse.h; sourceTree = "<group>"; };
+		FF13E9DC19E5BF840005BA49 /* SharingResponse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SharingResponse.m; sourceTree = "<group>"; };
 		FF1596EA19C0CBC900D9236F /* Stamina.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Stamina.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FF1596EE19C0CBC900D9236F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FF1596EF19C0CBC900D9236F /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -240,12 +251,8 @@
 		FF17BDBF19CA2E5600B5EF46 /* UserTraining.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserTraining.m; sourceTree = "<group>"; };
 		FF794D7519CA288F00808144 /* TrainingExercises.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TrainingExercises.h; sourceTree = "<group>"; };
 		FF794D7619CA288F00808144 /* TrainingExercises.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TrainingExercises.m; sourceTree = "<group>"; };
-		FFAC18FA19DB1BF200B17487 /* MapRoutePoints.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MapRoutePoints.h; sourceTree = "<group>"; };
-		FFAC18FB19DB1BF200B17487 /* MapRoutePoints.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MapRoutePoints.m; sourceTree = "<group>"; };
 		FFAC18FD19DB200E00B17487 /* FinishedRunningVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FinishedRunningVC.h; sourceTree = "<group>"; };
 		FFAC18FE19DB200E00B17487 /* FinishedRunningVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FinishedRunningVC.m; sourceTree = "<group>"; };
-		FFAC190319DB21E400B17487 /* RunningRoute.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RunningRoute.h; sourceTree = "<group>"; };
-		FFAC190419DB21E400B17487 /* RunningRoute.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RunningRoute.m; sourceTree = "<group>"; };
 		FFAC190919DC86C400B17487 /* SocialSharingVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SocialSharingVC.h; sourceTree = "<group>"; };
 		FFAC190A19DC86C400B17487 /* SocialSharingVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SocialSharingVC.m; sourceTree = "<group>"; };
 		FFAC190C19DC9C7C00B17487 /* stamina_logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = stamina_logo.png; path = icones/stamina_logo.png; sourceTree = "<group>"; };
@@ -253,10 +260,6 @@
 		FFAC193919E3105B00B17487 /* wireframe_termina_caminhada.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = wireframe_termina_caminhada.jpg; sourceTree = "<group>"; };
 		FFAC193B19E3171C00B17487 /* HomeScreenVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeScreenVC.h; sourceTree = "<group>"; };
 		FFAC193C19E3171C00B17487 /* HomeScreenVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeScreenVC.m; sourceTree = "<group>"; };
-		FFAC194319E31D5600B17487 /* TrajectoryExample.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TrajectoryExample.h; sourceTree = "<group>"; };
-		FFAC194419E31D5600B17487 /* TrajectoryExample.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TrajectoryExample.m; sourceTree = "<group>"; };
-		FFAC194619E31E6F00B17487 /* TrajectoryObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TrajectoryObject.h; sourceTree = "<group>"; };
-		FFAC194719E31E6F00B17487 /* TrajectoryObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TrajectoryObject.m; sourceTree = "<group>"; };
 		FFAC194919E3355000B17487 /* icon_compartilhar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon_compartilhar.png; sourceTree = "<group>"; };
 		FFF51A5119E48066000BED6B /* Social.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Social.framework; path = System/Library/Frameworks/Social.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
@@ -497,12 +500,12 @@
 				FF15979E19C0DA5A00D9236F /* UserData.m */,
 				FF159A5119C22BD400D9236F /* ExercisesList.m */,
 				FF159A5019C22BD400D9236F /* ExercisesList.h */,
-				FFAC18FA19DB1BF200B17487 /* MapRoutePoints.h */,
-				FFAC18FB19DB1BF200B17487 /* MapRoutePoints.m */,
-				FFAC190319DB21E400B17487 /* RunningRoute.h */,
-				FFAC190419DB21E400B17487 /* RunningRoute.m */,
-				FFAC194619E31E6F00B17487 /* TrajectoryObject.h */,
-				FFAC194719E31E6F00B17487 /* TrajectoryObject.m */,
+				FF13E9D519E5BE160005BA49 /* RoutePointsCartesian.h */,
+				FF13E9D619E5BE160005BA49 /* RoutePointsCartesian.m */,
+				FF13E9D819E5BE330005BA49 /* FinishedRoute.h */,
+				FF13E9D919E5BE330005BA49 /* FinishedRoute.m */,
+				FF13E9DB19E5BF840005BA49 /* SharingResponse.h */,
+				FF13E9DC19E5BF840005BA49 /* SharingResponse.m */,
 			);
 			name = NSObjects;
 			sourceTree = "<group>";
@@ -554,6 +557,10 @@
 		FF794D7819CA28BA00808144 /* CoreData */ = {
 			isa = PBXGroup;
 			children = (
+				FF13E9D219E5B9100005BA49 /* TrajectoryFile.h */,
+				FF13E9D319E5B9100005BA49 /* TrajectoryFile.m */,
+				FF13E9CF19E5B9100005BA49 /* TrajectoryRoute.h */,
+				FF13E9D019E5B9100005BA49 /* TrajectoryRoute.m */,
 				FF159A4A19C21D1B00D9236F /* CoreDataLoading.h */,
 				FF159A4B19C21D1B00D9236F /* CoreDataLoading.m */,
 				FF794D7519CA288F00808144 /* TrainingExercises.h */,
@@ -562,8 +569,6 @@
 				FF17BDB919C9F78F00B5EF46 /* TrainingDayObject.m */,
 				FF17BDB519C9F78E00B5EF46 /* Exercises.h */,
 				FF17BDB619C9F78E00B5EF46 /* Exercises.m */,
-				FFAC194319E31D5600B17487 /* TrajectoryExample.h */,
-				FFAC194419E31D5600B17487 /* TrajectoryExample.m */,
 			);
 			name = CoreData;
 			sourceTree = "<group>";
@@ -757,9 +762,8 @@
 				C5EB6C0819D9DBD300C528FC /* UserCalendarVC.m in Sources */,
 				C5EB6C0D19D9DBD300C528FC /* RunningMapVC.m in Sources */,
 				FF15972919C0D96E00D9236F /* CustomIOS7AlertView.m in Sources */,
-				FFAC194519E31D5600B17487 /* TrajectoryExample.m in Sources */,
+				FF13E9DA19E5BE330005BA49 /* FinishedRoute.m in Sources */,
 				C53A352B19D33B9A00AC1383 /* RWBlurPopover.m in Sources */,
-				FFAC18FC19DB1BF200B17487 /* MapRoutePoints.m in Sources */,
 				FF15972519C0D96E00D9236F /* AMSlideMenuContentSegue.m in Sources */,
 				FF17BD5C19C8C18200B5EF46 /* StartVC.m in Sources */,
 				FF1596F619C0CBC900D9236F /* Stamina.xcdatamodeld in Sources */,
@@ -768,17 +772,18 @@
 				C5CE7D6D19D4A078003E1595 /* InfoFisicasVC.m in Sources */,
 				FF15972A19C0D96E00D9236F /* UIViewController+AMSlideMenu.m in Sources */,
 				FF17BD6519C8C21600B5EF46 /* MainVC.m in Sources */,
+				FF13E9D419E5B9100005BA49 /* TrajectoryFile.m in Sources */,
 				FF159A4C19C21D1B00D9236F /* CoreDataLoading.m in Sources */,
 				C5EB6BF819D9DB6B00C528FC /* CalendarObject.m in Sources */,
 				C52C810819CA1E47006EAFCF /* WebServiceResponse.m in Sources */,
 				FF1597AE19C0DA5A00D9236F /* UserData.m in Sources */,
 				C53A351D19D33B7700AC1383 /* LoginViewController.m in Sources */,
+				FF13E9D119E5B9100005BA49 /* TrajectoryRoute.m in Sources */,
 				C5EB6BFB19D9DB6B00C528FC /* CalendarMath.m in Sources */,
 				FF794D7719CA288F00808144 /* TrainingExercises.m in Sources */,
 				FF15986F19C0E24F00D9236F /* UIColor+CreateMethods.m in Sources */,
 				C5EB6C0919D9DBD300C528FC /* FBLoginVC.m in Sources */,
 				C5EB6C0A19D9DBD300C528FC /* AVCamPreviewView.m in Sources */,
-				FFAC190519DB21E400B17487 /* RunningRoute.m in Sources */,
 				FF15972819C0D96E00D9236F /* AMSlideMenuMainViewController.m in Sources */,
 				C5A2418619CB512700064E54 /* TemporaryVC.m in Sources */,
 				FF1596F319C0CBC900D9236F /* AppDelegate.m in Sources */,
@@ -786,6 +791,7 @@
 				C5EB6BFA19D9DB6B00C528FC /* CalendarPreparer.m in Sources */,
 				C53A353119D3411F00AC1383 /* Reachability.m in Sources */,
 				FF15972719C0D96E00D9236F /* AMSlideMenuLeftTableViewController.m in Sources */,
+				FF13E9DD19E5BF840005BA49 /* SharingResponse.m in Sources */,
 				FF15972619C0D96E00D9236F /* AMSlideMenuLeftMenuSegue.m in Sources */,
 				FF17BD6119C8C1A000B5EF46 /* InstagramShareVC.m in Sources */,
 				C5DFD4EA19DC7B48000EA19C /* Cadastro.m in Sources */,
@@ -793,11 +799,11 @@
 				C5EB6BF919D9DB6B00C528FC /* CalendarMatrixes.m in Sources */,
 				C5EB6BF719D9DB6B00C528FC /* DayObject.m in Sources */,
 				C53A352C19D33B9A00AC1383 /* RWBlurPopoverTransitionController.m in Sources */,
+				FF13E9D719E5BE160005BA49 /* RoutePointsCartesian.m in Sources */,
 				FFAC190B19DC86C400B17487 /* SocialSharingVC.m in Sources */,
 				FF17BDBA19C9F78F00B5EF46 /* TrainingDayObject.m in Sources */,
 				C5E99E5919DB32F200513CDE /* PageContentViewController.m in Sources */,
 				FF1596F019C0CBC900D9236F /* main.m in Sources */,
-				FFAC194819E31E6F00B17487 /* TrajectoryObject.m in Sources */,
 				FFAC193D19E3171C00B17487 /* HomeScreenVC.m in Sources */,
 				FF159A5219C22BD400D9236F /* ExercisesList.m in Sources */,
 			);

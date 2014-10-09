@@ -939,6 +939,31 @@
                                 </subviews>
                                 <color key="backgroundColor" red="1" green="0.9314516129" blue="0.2196078598" alpha="1" colorSpace="deviceRGB"/>
                             </view>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fPm-hw-AyI">
+                                <rect key="frame" x="120" y="96" width="80" height="80"/>
+                                <fontDescription key="fontDescription" name="Avenir-Roman" family="Avenir" pointSize="90"/>
+                                <state key="normal" title="f">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="sharePictureOnFacebook" destination="RfZ-Bh-jM0" eventType="touchUpInside" id="FPE-2q-gIj"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xzc-Ac-JqC">
+                                <rect key="frame" x="120" y="391" width="80" height="80"/>
+                                <fontDescription key="fontDescription" name="Avenir-Roman" family="Avenir" pointSize="90"/>
+                                <state key="normal" title="i">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="sharePictureOnInstagram" destination="RfZ-Bh-jM0" eventType="touchUpInside" id="PAa-8y-vdn"/>
+                                </connections>
+                            </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="icon_compartilhar.png" translatesAutoresizingMaskIntoConstraints="NO" id="Rob-wD-eIJ">
+                                <rect key="frame" x="120" y="244" width="80" height="80"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" red="0.9960784912109375" green="0.84705889225006104" blue="0.19215688109397888" alpha="1" colorSpace="deviceRGB"/>
                     </view>
@@ -946,12 +971,15 @@
                     <connections>
                         <outlet property="cameraButton" destination="PWG-cz-XKy" id="LXU-cj-aBS"/>
                         <outlet property="cameraView" destination="cg0-0p-TwB" id="suG-sa-xBk"/>
+                        <outlet property="facebookButton" destination="fPm-hw-AyI" id="isy-hx-W3d"/>
+                        <outlet property="instagramButton" destination="xzc-Ac-JqC" id="ZVb-tS-PEn"/>
                         <outlet property="pictureButton" destination="lo0-DD-MRc" id="G8e-h1-vab"/>
+                        <outlet property="sharingImageView" destination="Rob-wD-eIJ" id="beP-oI-ARV"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ulX-ns-onx" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1963" y="-1399"/>
+            <point key="canvasLocation" x="1944" y="-1423"/>
         </scene>
         <!--Running MapVC-->
         <scene sceneID="hBC-1x-cGS">
@@ -1415,6 +1443,7 @@
         <image name="caminhada_tela.png" width="754" height="1586"/>
         <image name="fb_sign.png" width="454" height="71"/>
         <image name="icon_calorias.png" width="1354" height="1354"/>
+        <image name="icon_compartilhar.png" width="1354" height="1354"/>
         <image name="icon_corrida.png" width="1354" height="686"/>
         <image name="icon_pontos.png" width="1354" height="1354"/>
         <image name="icon_velocimetro.png" width="1354" height="1354"/>

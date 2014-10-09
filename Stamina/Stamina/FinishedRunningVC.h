@@ -7,12 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "RunningRoute.h"
+#import "FinishedRoute.h"
 #import "SocialSharingVC.h"
 
 @interface FinishedRunningVC : UIViewController
 
-@property RunningRoute* route;
+@property FinishedRoute* route;
 
 @property (weak, nonatomic) IBOutlet UILabel *calLabel;
 @property (weak, nonatomic) IBOutlet UILabel *distanceLabel;
@@ -20,6 +20,6 @@
 @property (weak, nonatomic) IBOutlet UILabel *pointsLabel;
 @property (weak, nonatomic) IBOutlet UIImageView *routeImageView;
 
--(void)receiveRunningRoute: (RunningRoute *)runningRoute;
+-(void)receiveRunningRoute: (FinishedRoute *)runningRoute;
 
 @end

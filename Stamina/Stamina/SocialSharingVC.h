@@ -11,6 +11,7 @@
 #import <AVFoundation/AVFoundation.h>
 #import <Social/Social.h>
 #import "AVCamPreviewView.h"
+#import "SharingResponse.h"
 #import "AppDelegate.h"
 
 @interface SocialSharingVC : UIViewController <UIDocumentInteractionControllerDelegate>
@@ -23,10 +24,10 @@
 @property (weak, nonatomic) IBOutlet UIButton *pictureButton;
 @property (weak, nonatomic) IBOutlet UIButton *cameraButton;
 
-@property UIButton *fbBtn;
-@property UIButton *instaBtn;
-@property UIButton *cancelBtn;
-@property UIImageView *shareLogo;
+@property (weak, nonatomic) IBOutlet UIButton *facebookButton;
+@property (weak, nonatomic) IBOutlet UIButton *instagramButton;
+@property (weak, nonatomic) IBOutlet UIImageView *sharingImageView;
+
 
 @property BOOL isOnShareMenu;
 
