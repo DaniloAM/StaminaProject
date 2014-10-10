@@ -22,6 +22,22 @@
     return self;
 }
 -(void)viewDidAppear:(BOOL)animated{
+    [self checkConnection];
+    [[self viewTotal] addSubview:[self logo]];
+    self.login.backgroundColor = [UIColor colorWithWhite:0 alpha:0.1];
+    self.login.layer.cornerRadius = 7;
+    [self login].backgroundColor  = [UIColor whiteColor];
+    [self.login endEditing:YES];
+    
+    self.login.textColor = [UIColor blackColor]; //optional
+    self.password.backgroundColor = [UIColor colorWithWhite:0 alpha:0.1];
+    [self password].backgroundColor  = [UIColor whiteColor];
+    [self.password endEditing:YES];
+    self.password.layer.cornerRadius = 7;
+    
+    [self signInBTN].layer.cornerRadius = 7 ;
+    self.password.textColor = [UIColor blackColor]; //optional
+    self.password.secureTextEntry = YES;
    [[self logo] setFrame:CGRectMake([self logo].frame.origin.x, 222, [self logo].frame.size.width, [self logo].frame.size.height)];
     UserData *userData = [UserData alloc];
     if([userData email]==nil)
@@ -105,22 +121,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    [self checkConnection];
-    [[self viewTotal] addSubview:[self logo]];
-      self.login.backgroundColor = [UIColor colorWithWhite:0 alpha:0.1];
-    self.login.layer.cornerRadius = 7;
-    [self login].backgroundColor  = [UIColor whiteColor];
-    [self.login endEditing:YES];
-   
-    self.login.textColor = [UIColor blackColor]; //optional
-    self.password.backgroundColor = [UIColor colorWithWhite:0 alpha:0.1];
-    [self password].backgroundColor  = [UIColor whiteColor];
-    [self.password endEditing:YES];
-    self.password.layer.cornerRadius = 7;
-
-    [self signInBTN].layer.cornerRadius = 7 ;
-    self.password.textColor = [UIColor blackColor]; //optional
-    self.password.secureTextEntry = YES;
+    
     
 }
 

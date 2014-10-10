@@ -6,9 +6,9 @@
 //  Copyright (c) 2014 Danilo Augusto Mative. All rights reserved.
 //
 
-#import "ViewController.h"
+#import "HideBBVC.h"
 
-@interface CategoriaVC : ViewController <UITableViewDataSource, UITableViewDelegate>
+@interface CategoriaVC : HideBBVC <UITableViewDataSource, UITableViewDelegate>
 @property NSArray *frontal, *traseiro;
 @property (weak, nonatomic) IBOutlet UITableView *table;
 
