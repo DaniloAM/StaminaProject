@@ -7,11 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		324E23C219E87FC400DA2FDE /* CategoriaVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 324E23C119E87FC400DA2FDE /* CategoriaVC.m */; };
 		325F1FD719E702F400001EB0 /* bg_bar.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 325F1FD619E702F400001EB0 /* bg_bar.jpg */; };
 		325F1FDA19E7091C00001EB0 /* AcademiaVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 325F1FD919E7091C00001EB0 /* AcademiaVC.m */; };
 		325F1FE319E7143C00001EB0 /* MenuVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 325F1FE219E7143C00001EB0 /* MenuVC.m */; };
 		325F1FE919E7229C00001EB0 /* HideBBVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 325F1FE819E7229C00001EB0 /* HideBBVC.m */; };
-		32C6B39019E47EEF00DE13AC /* CategoriaTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 32C6B38F19E47EEF00DE13AC /* CategoriaTVC.m */; };
 		32C6B39219E484CB00DE13AC /* wireframe_categorias.png in Resources */ = {isa = PBXBuildFile; fileRef = 32C6B39119E484CB00DE13AC /* wireframe_categorias.png */; };
 		C527A39519DB1FB300C72B21 /* fb_sign.png in Resources */ = {isa = PBXBuildFile; fileRef = C527A38619DB1FB300C72B21 /* fb_sign.png */; };
 		C527A39619DB1FB300C72B21 /* icon_batimento.png in Resources */ = {isa = PBXBuildFile; fileRef = C527A38719DB1FB300C72B21 /* icon_batimento.png */; };
@@ -119,6 +119,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		324E23C019E87FC400DA2FDE /* CategoriaVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CategoriaVC.h; sourceTree = "<group>"; };
+		324E23C119E87FC400DA2FDE /* CategoriaVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CategoriaVC.m; sourceTree = "<group>"; };
 		325F1FD619E702F400001EB0 /* bg_bar.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = bg_bar.jpg; sourceTree = "<group>"; };
 		325F1FD819E7091C00001EB0 /* AcademiaVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AcademiaVC.h; path = wireframes/AcademiaVC.h; sourceTree = "<group>"; };
 		325F1FD919E7091C00001EB0 /* AcademiaVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AcademiaVC.m; path = wireframes/AcademiaVC.m; sourceTree = "<group>"; };
@@ -126,8 +128,6 @@
 		325F1FE219E7143C00001EB0 /* MenuVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MenuVC.m; path = wireframes/MenuVC.m; sourceTree = "<group>"; };
 		325F1FE719E7229C00001EB0 /* HideBBVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HideBBVC.h; sourceTree = "<group>"; };
 		325F1FE819E7229C00001EB0 /* HideBBVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HideBBVC.m; sourceTree = "<group>"; };
-		32C6B38E19E47EEF00DE13AC /* CategoriaTVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CategoriaTVC.h; sourceTree = "<group>"; };
-		32C6B38F19E47EEF00DE13AC /* CategoriaTVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CategoriaTVC.m; sourceTree = "<group>"; };
 		32C6B39119E484CB00DE13AC /* wireframe_categorias.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = wireframe_categorias.png; sourceTree = "<group>"; };
 		C527A38619DB1FB300C72B21 /* fb_sign.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = fb_sign.png; sourceTree = "<group>"; };
 		C527A38719DB1FB300C72B21 /* icon_batimento.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon_batimento.png; sourceTree = "<group>"; };
@@ -397,8 +397,6 @@
 				C53A352F19D3411F00AC1383 /* Reachability.h */,
 				C53A353019D3411F00AC1383 /* Reachability.m */,
 				C53A352D19D33BA700AC1383 /* Main.storyboard */,
-				32C6B38E19E47EEF00DE13AC /* CategoriaTVC.h */,
-				32C6B38F19E47EEF00DE13AC /* CategoriaTVC.m */,
 				C53A352319D33B8900AC1383 /* ErrorVC.xib */,
 				FF1596FD19C0CBC900D9236F /* Images.xcassets */,
 				FF1596F419C0CBC900D9236F /* Stamina.xcdatamodeld */,
@@ -502,6 +500,8 @@
 				FFAC190A19DC86C400B17487 /* SocialSharingVC.m */,
 				FFAC193B19E3171C00B17487 /* HomeScreenVC.h */,
 				FFAC193C19E3171C00B17487 /* HomeScreenVC.m */,
+				324E23C019E87FC400DA2FDE /* CategoriaVC.h */,
+				324E23C119E87FC400DA2FDE /* CategoriaVC.m */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -817,7 +817,6 @@
 				FF15972619C0D96E00D9236F /* AMSlideMenuLeftMenuSegue.m in Sources */,
 				FF17BD6119C8C1A000B5EF46 /* InstagramShareVC.m in Sources */,
 				C5DFD4EA19DC7B48000EA19C /* Cadastro.m in Sources */,
-				32C6B39019E47EEF00DE13AC /* CategoriaTVC.m in Sources */,
 				C5EB6BF919D9DB6B00C528FC /* CalendarMatrixes.m in Sources */,
 				C5EB6BF719D9DB6B00C528FC /* DayObject.m in Sources */,
 				FF13E9E319E70B9B0005BA49 /* TrajectoryFile.m in Sources */,
@@ -828,6 +827,7 @@
 				C5E99E5919DB32F200513CDE /* PageContentViewController.m in Sources */,
 				FF1596F019C0CBC900D9236F /* main.m in Sources */,
 				FFAC193D19E3171C00B17487 /* HomeScreenVC.m in Sources */,
+				324E23C219E87FC400DA2FDE /* CategoriaVC.m in Sources */,
 				FF159A5219C22BD400D9236F /* ExercisesList.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

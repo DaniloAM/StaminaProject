@@ -56,11 +56,6 @@
 
     NSString *s;
     s = [WebServiceResponse atualizaComEmail:[userData email] peso:[userData weightInKilograms] sexo:[userData sex] altura:[userData heightInCentimeters] idade:[userData age]];
-    while (1) {
-        
-        if(s)
-            break;
-    }
     [self presentViewController:myVC animated:NO completion:nil];
         
     });

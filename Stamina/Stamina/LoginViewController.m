@@ -28,6 +28,7 @@
     [self anima];
     else
         [self checkConnection];
+
     [super viewDidAppear:animated];
 }
 -(void)viewWillAppear:(BOOL)animated{
@@ -54,6 +55,7 @@
 -(void)viewDidDisappear:(BOOL)animated{
     [super viewDidDisappear:animated];
     [[self logo] setFrame:CGRectMake([self logo].frame.origin.x, 222, [self logo].frame.size.width, [self logo].frame.size.height)];
+    
 }
 -(UIImage *)cutImage : (UIImage *)myimage : (CGSize) size{
     CGSize itemSize = size; // give any size you want to give
@@ -83,11 +85,9 @@
                 str = [WebServiceResponse checkStart:[userData email] eSenha:[userData password]];
             while(1){
                 if([str isEqualToString:@"1"]){
-                    if([userData initialWeight]==0){
-                        myVC= (UIViewController *)[storyboard instantiateViewControllerWithIdentifier:@"infoFisicas"];
-                    }else {
+                    
                         myVC= (UIViewController *)[storyboard instantiateViewControllerWithIdentifier:@"mainVC"];
-                    }
+                    
                     [self presentViewController:myVC animated:YES completion:nil];
                     return;
                 }
