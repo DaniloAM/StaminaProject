@@ -26,15 +26,21 @@
     [super viewWillAppear:animated];
     
     if(_route) {
-        
         [self drawTrajectoryDone];
     }
+    
+    
+    self.navigationController.navigationBar.translucent = YES;
+    
 }
+
 
 -(void)viewDidLoad{
     [super viewDidLoad];
-    self.navigationController.navigationBar.translucent = YES;
+    
 }
+
+
 -(void)viewWillDisappear:(BOOL)animated {
     
     [super viewWillDisappear:animated];
@@ -58,8 +64,8 @@
     
         TrajectoryRoute *saveRoute = [NSEntityDescription insertNewObjectForEntityForName:@"TrajectoryRoute" inManagedObjectContext:context];
         
-        [saveRoute setArrayOfPointsInX:[NSKeyedArchiver archivedDataWithRootObject:_route.routePoints.arrayOfPointsX]];
-        [saveRoute setArrayOfPointsInY:[NSKeyedArchiver archivedDataWithRootObject:_route.routePoints.arrayOfPointsY]];
+        [saveRoute setArrayOfPointsInX:[NSKeyedArchiver archivedDataWithRootObject:_route.arrayOfXMapPoints]];
+        [saveRoute setArrayOfPointsInY:[NSKeyedArchiver archivedDataWithRootObject:_route.arrayOfYMapPoints]];
         [saveRoute setTrajectoryName:name];
         [saveRoute setTrajectoryDistance:[NSNumber numberWithDouble:[_route distanceInMeters]]];
         
@@ -74,8 +80,6 @@
 
 
 -(void)drawTrajectoryDone {
-    
-    [self setTrajectoryInfo];
     
     UIImageView *routeView = _route.routePoints.returnDrawedViewWithCurrentRoute;
     

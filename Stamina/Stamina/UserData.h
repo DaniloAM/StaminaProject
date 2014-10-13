@@ -24,6 +24,7 @@
 #import "TrainingExercises.h"
 #import "AppDelegate.h"
 #import "UserTraining.h"
+#import "TrajectoryRoute.h"
 
 @interface UserData : NSObject
 

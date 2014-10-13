@@ -13,8 +13,9 @@
 #import "AVCamPreviewView.h"
 #import "SharingResponse.h"
 #import "AppDelegate.h"
+#import "MenuVC.h"
 
-@interface SocialSharingVC : UIViewController <UIDocumentInteractionControllerDelegate>
+@interface SocialSharingVC : MenuVC  <UIDocumentInteractionControllerDelegate>
 
 
 @property (weak, nonatomic) IBOutlet AVCamPreviewView *cameraView;

@@ -169,7 +169,7 @@
 
 -(IBAction)finishButton {
     
-    UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Parar" message:@"Deseja parar a corrida?" delegate:self cancelButtonTitle:@"Não!" otherButtonTitles:@"Sim", nil];
+    UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Parar" message:@"Deseja parar a corrida?" delegate:self cancelButtonTitle:@"Não" otherButtonTitles:@"Sim", nil];
     
     
     [alertView show];
@@ -189,10 +189,17 @@
 
 -(void)finishRunning {
     
-    [[self pointsForRoute] prepareForCartesian];
+    //Stops the timer
     [_timer invalidate];
     
+
     FinishedRoute *route = [[FinishedRoute alloc] init];
+    
+    [route setArrayOfXMapPoints:[[self pointsForRoute] arrayOfPointsX]];
+    [route setArrayOfYMapPoints:[[self pointsForRoute] arrayOfPointsY]];
+    
+    //Prepare the cartesian system for the map points
+    [[self pointsForRoute] prepareForCartesian];
     
     [route setTimeInSeconds:_seconds];
     [route setTimeInMinutes:_minutes];
@@ -200,12 +207,10 @@
     [route setRoutePoints:[self pointsForRoute]];
     
     UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
-    
     FinishedRunningVC *myVC = (FinishedRunningVC *)[storyboard instantiateViewControllerWithIdentifier:@"finishedRunning"];
-    
-    [myVC receiveRunningRoute:route];
 
-    
+    //Receive the route to draw it
+    [myVC receiveRunningRoute:route];
     [self.navigationController pushViewController:myVC animated:YES];
     
 }

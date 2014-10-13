@@ -12,11 +12,11 @@
 @interface RoutePointsCartesian : NSObject
 
 
-@property NSMutableArray *arrayOfPointsX, *arrayOfPointsY, *arrayOfPoints;
+@property NSMutableArray *arrayOfPointsX, *arrayOfPointsY;
 @property double xMaxValue, xMinValue, yMaxValue, yMinValue;
 @property CGRect frameForView, smallRouteFrame;
 
-
+-(UIImageView *)returnDrawedViewWithXArray:(NSMutableArray *)arrayOfX yArray: (NSMutableArray *)arrayOfY InSize: (CGSize)size;
 -(void)addPointToRouteInX: (double)pointX andY: (double)pointY;
 -(UIImageView *)returnDrawedViewWithCurrentRoute;
 -(void)prepareForCartesian;
