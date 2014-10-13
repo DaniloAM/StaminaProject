@@ -7,7 +7,8 @@
 //
 
 #import "HideBBVC.h"
-
+#import "ExercicioTVC.h"
+#import "ExercisesList.h"
 @interface CategoriaVC : HideBBVC <UITableViewDataSource, UITableViewDelegate>
 @property NSArray *frontal, *traseiro;
 @property (weak, nonatomic) IBOutlet UITableView *table;

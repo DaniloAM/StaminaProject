@@ -68,7 +68,6 @@
     ExercisesList *list = [ExercisesList alloc];
     
     [list allocArrays];
-    
     NSManagedObjectContext *context = [[self appdel] managedObjectContext];
     NSFetchRequest *request = [NSFetchRequest fetchRequestWithEntityName:@"Exercises"];;
     NSError *error;
@@ -82,25 +81,69 @@
         
         
         //If a new muscle array is created, you need to compare the new muscle name
-        if([str isEqualToString:@"costas"]) {
-            [[list costas] addObject:exercise];
+        if([str isEqualToString:@"fr_abdominal"]) {
+            [[list fr_abdominal] addObject:exercise];
         }
         
-        else if([str isEqualToString:@"abdomem"]) {
-            [[list abdomem] addObject:exercise];
+        else if([str isEqualToString:@"fr_ante-braco"]) {
+            [[list fr_ante_braco] addObject:exercise];
         }
         
-        else if([str isEqualToString:@"triceps"]) {
-            [[list triceps] addObject:exercise];
+        else if([str isEqualToString:@"fr_biceps"]) {
+            [[list fr_biceps] addObject:exercise];
         }
         
-        else if([str isEqualToString:@"biceps"]) {
-            [[list biceps] addObject:exercise];
+        else if([str isEqualToString:@"fr_peitoral"]) {
+            [[list fr_peitoral] addObject:exercise];
         }
         
-        else {
-            [[list outros] addObject:exercise];
+        else if([str isEqualToString:@"fr_quadriceps"]) {
+            [[list fr_quadriceps] addObject:exercise];
         }
+        else if([str isEqualToString:@"fr_ombros"]) {
+            [[list fr_ombros] addObject:exercise];
+        }
+        else if([str isEqualToString:@"fr_trapezio"]) {
+            [[list fr_trapezio] addObject:exercise];
+        }
+        else if([str isEqualToString:@"tr_ante-braco"]) {
+            [[list tr_ante_braco] addObject:exercise];
+        }
+        else if([str isEqualToString:@"tr_biceps"]) {
+            [[list tr_biceps] addObject:exercise];
+        }
+        else if([str isEqualToString:@"tr_dorsal"]) {
+            [[list tr_dorsal] addObject:exercise];
+        }
+        else if([str isEqualToString:@"tr_gluteos"]) {
+            [[list tr_gluteos] addObject:exercise];
+        }
+        else if([str isEqualToString:@"tr_lombar"]) {
+            [[list tr_lombar] addObject:exercise];
+        }
+        else if([str isEqualToString:@"tr_gluteos"]) {
+            [[list tr_gluteos] addObject:exercise];
+        }
+        else if([str isEqualToString:@"tr_ombros"]) {
+            [[list tr_ombros] addObject:exercise];
+        }
+        else if([str isEqualToString:@"tr_panturrilha"]) {
+            [[list tr_panturrilha] addObject:exercise];
+        }
+        else if([str isEqualToString:@"tr_posterior-de-coxa"]) {
+            [[list tr_posterior_de_coxa] addObject:exercise];
+        }
+        else if([str isEqualToString:@"tr_romboides"]) {
+            [[list tr_romboides] addObject:exercise];
+        }
+        else if([str isEqualToString:@"tr_trapezio"]) {
+            [[list tr_trapezio] addObject:exercise];
+        }
+        else if([str isEqualToString:@"tr_triceps"]) {
+            [[list tr_triceps] addObject:exercise];
+        }
+        
+
          
     }
 
@@ -144,19 +187,45 @@
 
 -(void)createExerciseDatabase {
    
-    [self addExerciseOnDatabaseWithName:@"exercicio 1" primMuscle:@"costas" secMuscle:@"" image:@"" andInfo:@""];
+    [self addExerciseOnDatabaseWithName:@"exercicio 1" primMuscle:@"fr_abdominal" secMuscle:@"" image:@"" andInfo:@""];
     
-    [self addExerciseOnDatabaseWithName:@"exercicio 2" primMuscle:@"biceps" secMuscle:@"" image:@"" andInfo:@""];
+    [self addExerciseOnDatabaseWithName:@"exercicio 2" primMuscle:@"fr_ante-braco" secMuscle:@"" image:@"" andInfo:@""];
     
-    [self addExerciseOnDatabaseWithName:@"exercicio 3" primMuscle:@"triceps" secMuscle:@"" image:@"" andInfo:@""];
+    [self addExerciseOnDatabaseWithName:@"exercicio 3" primMuscle:@"fr_biceps" secMuscle:@"" image:@"" andInfo:@""];
     
-    [self addExerciseOnDatabaseWithName:@"exercicio 4" primMuscle:@"costas" secMuscle:@"" image:@"" andInfo:@""];
+    [self addExerciseOnDatabaseWithName:@"exercicio 4" primMuscle:@"fr_peitoral" secMuscle:@"" image:@"" andInfo:@""];
     
-    [self addExerciseOnDatabaseWithName:@"exercicio 5" primMuscle:@"abdomem" secMuscle:@"" image:@"" andInfo:@""];
+    [self addExerciseOnDatabaseWithName:@"exercicio 5" primMuscle:@"fr_quadriceps" secMuscle:@"" image:@"" andInfo:@""];
     
-    [self addExerciseOnDatabaseWithName:@"exercicio 6" primMuscle:@"abdomem" secMuscle:@"" image:@"" andInfo:@""];
+    [self addExerciseOnDatabaseWithName:@"exercicio 6" primMuscle:@"fr_ombros" secMuscle:@"" image:@"" andInfo:@""];
     
-    [self addExerciseOnDatabaseWithName:@"exercicio 7" primMuscle:@"abdomem" secMuscle:@"" image:@"" andInfo:@""];
+    [self addExerciseOnDatabaseWithName:@"exercicio 7" primMuscle:@"fr_trapezio" secMuscle:@"" image:@"" andInfo:@""];
+    
+    [self addExerciseOnDatabaseWithName:@"exercicio 8" primMuscle:@"fr_triceps" secMuscle:@"" image:@"" andInfo:@""];
+    
+    [self addExerciseOnDatabaseWithName:@"exercicio 8" primMuscle:@"tr_ante-braco" secMuscle:@"" image:@"" andInfo:@""];
+    
+    [self addExerciseOnDatabaseWithName:@"exercicio 10" primMuscle:@"tr_biceps" secMuscle:@"" image:@"" andInfo:@""];
+    
+    [self addExerciseOnDatabaseWithName:@"exercicio 11" primMuscle:@"tr_biceps" secMuscle:@"" image:@"" andInfo:@""];
+    
+    [self addExerciseOnDatabaseWithName:@"exercicio 12" primMuscle:@"tr_dorsal" secMuscle:@"" image:@"" andInfo:@""];
+    
+    [self addExerciseOnDatabaseWithName:@"exercicio 13" primMuscle:@"tr_gluteos" secMuscle:@"" image:@"" andInfo:@""];
+    
+    [self addExerciseOnDatabaseWithName:@"exercicio 14" primMuscle:@"tr_lombar" secMuscle:@"" image:@"" andInfo:@""];
+    
+    [self addExerciseOnDatabaseWithName:@"exercicio 15" primMuscle:@"tr_ombros" secMuscle:@"" image:@"" andInfo:@""];
+    
+    [self addExerciseOnDatabaseWithName:@"exercicio 16" primMuscle:@"tr_panturrilha" secMuscle:@"" image:@"" andInfo:@""];
+    
+    [self addExerciseOnDatabaseWithName:@"exercicio 17" primMuscle:@"tr_posterior-de-coxa" secMuscle:@"" image:@"" andInfo:@""];
+    
+    [self addExerciseOnDatabaseWithName:@"exercicio 18" primMuscle:@"tr_romboides" secMuscle:@"" image:@"" andInfo:@""];
+    
+    [self addExerciseOnDatabaseWithName:@"exercicio 19" primMuscle:@"tr_trapezio" secMuscle:@"" image:@"" andInfo:@""];
+    
+    [self addExerciseOnDatabaseWithName:@"exercicio 20" primMuscle:@"tr_triceps" secMuscle:@"" image:@"" andInfo:@""];
     
 }
 
