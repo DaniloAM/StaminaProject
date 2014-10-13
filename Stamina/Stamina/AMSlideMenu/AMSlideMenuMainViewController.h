@@ -27,6 +27,7 @@
 #import <UIKit/UIKit.h>
 #import "AMSlideMenuProtocols.h"
 #import "AMSlideMenuLeftTableViewController.h"
+#import "MenuShouldOpen.h"
 
 typedef enum {
     AMPrimaryMenuLeft,

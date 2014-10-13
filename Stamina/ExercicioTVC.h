@@ -9,7 +9,7 @@
 #import "HideBBVC.h"
 #import "ExercisesList.h"
 #import "Exercises.h"
-@interface ExercicioTVC : HideBBVC <UITableViewDataSource, UITableViewDelegate>
+@interface ExercicioTVC : HideBBVC <UITableViewDataSource, UITableViewDelegate, UIGestureRecognizerDelegate>
 @property NSArray *arrayOfExercises;
 @property UITableView *table;
 @end

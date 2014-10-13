@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-
+#import "MenuShouldOpen.h"
 @interface HideBBVC : UIViewController
 
 @end
