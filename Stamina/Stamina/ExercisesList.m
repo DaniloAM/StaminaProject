@@ -26,13 +26,26 @@
 }
 
 -(void)allocArrays {
-    
-    [self setBiceps:[NSMutableArray array]];
-    [self setAbdomem:[NSMutableArray array]];
-    [self setCostas:[NSMutableArray array]];
-    [self setTriceps:[NSMutableArray array]];
-    [self setOutros:[NSMutableArray array]];
-    
+    [self setTr_ante_braco:[NSMutableArray array]];
+    [self setTr_biceps:[NSMutableArray array]];
+    [self setTr_dorsal:[NSMutableArray array]];
+    [self setTr_gluteos:[NSMutableArray array]];
+    [self setTr_lombar:[NSMutableArray array]];
+    [self setTr_ombros:[NSMutableArray array]];
+    [self setTr_panturrilha:[NSMutableArray array]];
+    [self setTr_posterior_de_coxa:[NSMutableArray array]];
+    [self setTr_romboides:[NSMutableArray array]];
+    [self setTr_trapezio:[NSMutableArray array]];
+    [self setTr_triceps:[NSMutableArray array]];
+    [self setFr_abdominal:[NSMutableArray array]];
+    [self setFr_ante_braco:[NSMutableArray array]];
+    [self setFr_biceps:[NSMutableArray array]];
+    [self setFr_ombros:[NSMutableArray array]];
+    [self setFr_peitoral:[NSMutableArray array]];
+    [self setFr_quadriceps:[NSMutableArray array]];
+    [self setFr_trapezio:[NSMutableArray array]];
+    [self setFr_triceps:[NSMutableArray array]];
+
 }
 
 @end

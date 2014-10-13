@@ -22,12 +22,8 @@
 
 @interface ExercisesList : NSObject
 
-@property  NSMutableArray *biceps;
-@property  NSMutableArray *abdomem;
-@property  NSMutableArray *costas;
-@property  NSMutableArray *triceps;
-@property  NSMutableArray *outros;
-
+@property NSMutableArray *fr_abdominal, *fr_ante_braco, *fr_biceps, *fr_peitoral, *fr_quadriceps, *fr_ombros, *fr_trapezio, *fr_triceps;
+@property NSMutableArray *tr_ante_braco, *tr_biceps, *tr_dorsal, *tr_gluteos, *tr_lombar, *tr_ombros, *tr_panturrilha, *tr_posterior_de_coxa, *tr_romboides, *tr_trapezio, *tr_triceps;
 +(ExercisesList *)sharedStore;
 -(void)allocArrays;
 
