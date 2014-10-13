@@ -978,7 +978,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xAr-sq-W8q" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2453" y="-3451"/>
+            <point key="canvasLocation" x="2486" y="-3451"/>
         </scene>
         <!--Running MapVC-->
         <scene sceneID="hBC-1x-cGS">
@@ -1229,20 +1229,16 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-<<<<<<< HEAD
-                                    <segue destination="PSP-iH-gXQ" kind="push" id="yA5-5a-ahm"/>
-=======
                                     <segue destination="G87-vY-y2C" kind="push" id="d2F-4d-qGR"/>
->>>>>>> FETCH_HEAD
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Lb2-Gf-nBp">
-                                <rect key="frame" x="173" y="303" width="103" height="104"/>
+                                <rect key="frame" x="173" y="303" width="114" height="112"/>
                                 <state key="normal">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="Hoc-Hi-pFE" kind="push" id="xbY-7G-pGU"/>
+                                    <segue destination="PSP-iH-gXQ" kind="push" id="MyG-fN-SGR"/>
                                 </connections>
                             </button>
                         </subviews>
