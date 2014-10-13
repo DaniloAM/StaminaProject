@@ -856,76 +856,52 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lo0-DD-MRc">
-                                <rect key="frame" x="0.0" y="502" width="162" height="66"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="35"/>
-                                <state key="normal" title="Take">
-                                    <color key="titleColor" red="0.1137254902" green="0.1176470588" blue="0.12549019610000001" alpha="1" colorSpace="calibratedRGB"/>
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="snapStillImage:" destination="RfZ-Bh-jM0" eventType="touchUpInside" id="4Sv-Wa-AFX"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PWG-cz-XKy">
-                                <rect key="frame" x="163" y="502" width="157" height="66"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="35"/>
-                                <state key="normal" title="Camera">
-                                    <color key="titleColor" red="0.1137254902" green="0.1176470588" blue="0.12549019610000001" alpha="1" colorSpace="calibratedRGB"/>
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="changeCamera" destination="RfZ-Bh-jM0" eventType="touchUpInside" id="asb-ch-WTI"/>
-                                </connections>
-                            </button>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="cg0-0p-TwB" customClass="AVCamPreviewView">
-                                <rect key="frame" x="0.0" y="79" width="320" height="429"/>
-                                <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QHy-sB-CVd">
-                                        <rect key="frame" x="125" y="180" width="70" height="70"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                </subviews>
+                                <rect key="frame" x="-25.5" y="79" width="370" height="495"/>
                                 <color key="backgroundColor" red="1" green="0.9314516129" blue="0.2196078598" alpha="1" colorSpace="deviceRGB"/>
                             </view>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fPm-hw-AyI">
-                                <rect key="frame" x="120" y="106" width="80" height="80"/>
-                                <fontDescription key="fontDescription" name="Avenir-Roman" family="Avenir" pointSize="90"/>
-                                <state key="normal" title="f">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TKm-u3-4Ez">
+                                <rect key="frame" x="0.0" y="472" width="90" height="90"/>
+                                <state key="normal">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="sharePictureOnFacebook" destination="RfZ-Bh-jM0" eventType="touchUpInside" id="FPE-2q-gIj"/>
+                                    <action selector="changeCamera" destination="RfZ-Bh-jM0" eventType="touchUpInside" id="ama-Nj-b9D"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xzc-Ac-JqC">
-                                <rect key="frame" x="120" y="401" width="80" height="80"/>
-                                <fontDescription key="fontDescription" name="Avenir-Roman" family="Avenir" pointSize="90"/>
-                                <state key="normal" title="i">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QVP-qB-Ntd">
+                                <rect key="frame" x="230" y="472" width="90" height="90"/>
+                                <state key="normal">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="sharePictureOnInstagram" destination="RfZ-Bh-jM0" eventType="touchUpInside" id="PAa-8y-vdn"/>
+                                    <action selector="returnToPreviousView" destination="RfZ-Bh-jM0" eventType="touchUpInside" id="ohB-PL-GjX"/>
                                 </connections>
                             </button>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="icon_compartilhar.png" translatesAutoresizingMaskIntoConstraints="NO" id="Rob-wD-eIJ">
-                                <rect key="frame" x="120" y="254" width="80" height="80"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="icone_camera.png" translatesAutoresizingMaskIntoConstraints="NO" id="HOJ-7l-Iwb">
+                                <rect key="frame" x="129" y="485" width="63" height="63"/>
                             </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="icone_voltar.png" translatesAutoresizingMaskIntoConstraints="NO" id="3VG-XC-1M0">
+                                <rect key="frame" x="241" y="485" width="63" height="63"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="icone_camera_rotate.png" translatesAutoresizingMaskIntoConstraints="NO" id="RL9-st-Rs5">
+                                <rect key="frame" x="16" y="485" width="63" height="63"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yim-5L-tS1">
+                                <rect key="frame" x="115" y="470" width="90" height="90"/>
+                                <state key="normal">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="snapStillImage:" destination="RfZ-Bh-jM0" eventType="touchUpInside" id="f9c-Kw-yX0"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.9960784912109375" green="0.84705889225006104" blue="0.19215688109397888" alpha="1" colorSpace="deviceRGB"/>
                     </view>
                     <navigationItem key="navigationItem" id="Ked-XD-yd5"/>
                     <connections>
-                        <outlet property="cameraButton" destination="PWG-cz-XKy" id="LXU-cj-aBS"/>
                         <outlet property="cameraView" destination="cg0-0p-TwB" id="suG-sa-xBk"/>
-                        <outlet property="facebookButton" destination="fPm-hw-AyI" id="isy-hx-W3d"/>
-                        <outlet property="instagramButton" destination="xzc-Ac-JqC" id="ZVb-tS-PEn"/>
-                        <outlet property="pictureButton" destination="lo0-DD-MRc" id="G8e-h1-vab"/>
-                        <outlet property="sharingImageView" destination="Rob-wD-eIJ" id="beP-oI-ARV"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ulX-ns-onx" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1489,7 +1465,9 @@
         <image name="Logo_Stamina.png" width="813" height="688"/>
         <image name="caminhada_tela.png" width="754" height="1586"/>
         <image name="fb_sign.png" width="454" height="71"/>
-        <image name="icon_compartilhar.png" width="1354" height="1354"/>
+        <image name="icone_camera.png" width="394" height="394"/>
+        <image name="icone_camera_rotate.png" width="393" height="394"/>
+        <image name="icone_voltar.png" width="391" height="394"/>
         <image name="ok_icon.png" width="248" height="248"/>
         <image name="wireframe_academia.jpg" width="884" height="1574"/>
         <image name="wireframe_academia_inicio.jpg" width="886" height="1574"/>

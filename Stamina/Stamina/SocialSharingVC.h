@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 #import <FacebookSDK/FacebookSDK.h>
 #import <AVFoundation/AVFoundation.h>
-#import <Social/Social.h>
+#import <QuartzCore/QuartzCore.h>
 #import "AVCamPreviewView.h"
 #import "SharingResponse.h"
 #import "AppDelegate.h"
@@ -17,28 +17,21 @@
 
 @interface SocialSharingVC : MenuVC  <UIDocumentInteractionControllerDelegate>
 
-
 @property (weak, nonatomic) IBOutlet AVCamPreviewView *cameraView;
-@property (nonatomic, retain) UIDocumentInteractionController *dic;
-
 @property (nonatomic) AVCaptureStillImageOutput *stillImageOutput;
+@property AVCaptureSession *session;
+
 @property (weak, nonatomic) IBOutlet UIButton *pictureButton;
 @property (weak, nonatomic) IBOutlet UIButton *cameraButton;
 
-@property (weak, nonatomic) IBOutlet UIButton *facebookButton;
-@property (weak, nonatomic) IBOutlet UIButton *instagramButton;
-@property (weak, nonatomic) IBOutlet UIImageView *sharingImageView;
-
-
-@property BOOL isOnShareMenu;
-
 @property UIImage *userPicture;
-@property UIImageView *darkenView;
-@property UIImageView *imageView;
+//@property UIImageView *darkenView;
+@property UIView *shareView;
 
 @property BOOL hasPicture;
+@property BOOL isOnShareMenu;
 @property BOOL usingFrontCamera;
 
-@property AVCaptureSession *session;
+
 
 @end

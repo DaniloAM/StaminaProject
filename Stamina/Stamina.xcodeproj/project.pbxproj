@@ -70,6 +70,11 @@
 		C5EB6C0F19D9DC5B00C528FC /* caminhada_tela.png in Resources */ = {isa = PBXBuildFile; fileRef = C5EB6C0E19D9DC5B00C528FC /* caminhada_tela.png */; };
 		C5EB6C1119D9DD5D00C528FC /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C5EB6C1019D9DD5D00C528FC /* MapKit.framework */; };
 		FF12F16919E878E3007524EF /* StartRunningVC.m in Sources */ = {isa = PBXBuildFile; fileRef = FF12F16819E878E3007524EF /* StartRunningVC.m */; };
+		FF12F16C19EC7240007524EF /* icone_facebook.png in Resources */ = {isa = PBXBuildFile; fileRef = FF12F16A19EC7240007524EF /* icone_facebook.png */; };
+		FF12F16D19EC7240007524EF /* icone_instagram.png in Resources */ = {isa = PBXBuildFile; fileRef = FF12F16B19EC7240007524EF /* icone_instagram.png */; };
+		FF12F17119EC725E007524EF /* icone_camera_rotate.png in Resources */ = {isa = PBXBuildFile; fileRef = FF12F16E19EC725E007524EF /* icone_camera_rotate.png */; };
+		FF12F17219EC725E007524EF /* icone_camera.png in Resources */ = {isa = PBXBuildFile; fileRef = FF12F16F19EC725E007524EF /* icone_camera.png */; };
+		FF12F17319EC725E007524EF /* icone_voltar.png in Resources */ = {isa = PBXBuildFile; fileRef = FF12F17019EC725E007524EF /* icone_voltar.png */; };
 		FF13E9D719E5BE160005BA49 /* RoutePointsCartesian.m in Sources */ = {isa = PBXBuildFile; fileRef = FF13E9D619E5BE160005BA49 /* RoutePointsCartesian.m */; };
 		FF13E9DA19E5BE330005BA49 /* FinishedRoute.m in Sources */ = {isa = PBXBuildFile; fileRef = FF13E9D919E5BE330005BA49 /* FinishedRoute.m */; };
 		FF13E9DD19E5BF840005BA49 /* SharingResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = FF13E9DC19E5BF840005BA49 /* SharingResponse.m */; };
@@ -94,7 +99,6 @@
 		FF159A4C19C21D1B00D9236F /* CoreDataLoading.m in Sources */ = {isa = PBXBuildFile; fileRef = FF159A4B19C21D1B00D9236F /* CoreDataLoading.m */; };
 		FF159A5219C22BD400D9236F /* ExercisesList.m in Sources */ = {isa = PBXBuildFile; fileRef = FF159A5119C22BD400D9236F /* ExercisesList.m */; };
 		FF17BD5C19C8C18200B5EF46 /* StartVC.m in Sources */ = {isa = PBXBuildFile; fileRef = FF17BD5B19C8C18200B5EF46 /* StartVC.m */; };
-		FF17BD6119C8C1A000B5EF46 /* InstagramShareVC.m in Sources */ = {isa = PBXBuildFile; fileRef = FF17BD5E19C8C1A000B5EF46 /* InstagramShareVC.m */; };
 		FF17BD6519C8C21600B5EF46 /* MainVC.m in Sources */ = {isa = PBXBuildFile; fileRef = FF17BD6419C8C21600B5EF46 /* MainVC.m */; };
 		FF17BDB719C9F78E00B5EF46 /* Exercises.m in Sources */ = {isa = PBXBuildFile; fileRef = FF17BDB619C9F78E00B5EF46 /* Exercises.m */; };
 		FF17BDBA19C9F78F00B5EF46 /* TrainingDayObject.m in Sources */ = {isa = PBXBuildFile; fileRef = FF17BDB919C9F78F00B5EF46 /* TrainingDayObject.m */; };
@@ -210,6 +214,11 @@
 		C5EB6C1019D9DD5D00C528FC /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		FF12F16719E878E3007524EF /* StartRunningVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StartRunningVC.h; sourceTree = "<group>"; };
 		FF12F16819E878E3007524EF /* StartRunningVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StartRunningVC.m; sourceTree = "<group>"; };
+		FF12F16A19EC7240007524EF /* icone_facebook.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icone_facebook.png; sourceTree = "<group>"; };
+		FF12F16B19EC7240007524EF /* icone_instagram.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icone_instagram.png; sourceTree = "<group>"; };
+		FF12F16E19EC725E007524EF /* icone_camera_rotate.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icone_camera_rotate.png; sourceTree = "<group>"; };
+		FF12F16F19EC725E007524EF /* icone_camera.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icone_camera.png; sourceTree = "<group>"; };
+		FF12F17019EC725E007524EF /* icone_voltar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icone_voltar.png; sourceTree = "<group>"; };
 		FF13E9D519E5BE160005BA49 /* RoutePointsCartesian.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RoutePointsCartesian.h; sourceTree = "<group>"; };
 		FF13E9D619E5BE160005BA49 /* RoutePointsCartesian.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RoutePointsCartesian.m; sourceTree = "<group>"; };
 		FF13E9D819E5BE330005BA49 /* FinishedRoute.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FinishedRoute.h; sourceTree = "<group>"; };
@@ -257,8 +266,6 @@
 		FF159A5119C22BD400D9236F /* ExercisesList.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ExercisesList.m; sourceTree = "<group>"; };
 		FF17BD5A19C8C18200B5EF46 /* StartVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StartVC.h; sourceTree = "<group>"; };
 		FF17BD5B19C8C18200B5EF46 /* StartVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StartVC.m; sourceTree = "<group>"; };
-		FF17BD5D19C8C1A000B5EF46 /* InstagramShareVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InstagramShareVC.h; sourceTree = "<group>"; };
-		FF17BD5E19C8C1A000B5EF46 /* InstagramShareVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InstagramShareVC.m; sourceTree = "<group>"; };
 		FF17BD6319C8C21600B5EF46 /* MainVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainVC.h; sourceTree = "<group>"; };
 		FF17BD6419C8C21600B5EF46 /* MainVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainVC.m; sourceTree = "<group>"; };
 		FF17BDB519C9F78E00B5EF46 /* Exercises.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Exercises.h; sourceTree = "<group>"; };
@@ -306,6 +313,11 @@
 		C527A38519DB1FB300C72B21 /* icones */ = {
 			isa = PBXGroup;
 			children = (
+				FF12F16E19EC725E007524EF /* icone_camera_rotate.png */,
+				FF12F16F19EC725E007524EF /* icone_camera.png */,
+				FF12F17019EC725E007524EF /* icone_voltar.png */,
+				FF12F16A19EC7240007524EF /* icone_facebook.png */,
+				FF12F16B19EC7240007524EF /* icone_instagram.png */,
 				C527A38619DB1FB300C72B21 /* fb_sign.png */,
 				C527A38719DB1FB300C72B21 /* icon_batimento.png */,
 				C527A38919DB1FB300C72B21 /* icon_calendario.png */,
@@ -490,8 +502,6 @@
 				FF13E9EA19E71FFA0005BA49 /* PushedViewController.m */,
 				C5CE7D6B19D4A078003E1595 /* InfoFisicasVC.h */,
 				C5CE7D6C19D4A078003E1595 /* InfoFisicasVC.m */,
-				FF17BD5D19C8C1A000B5EF46 /* InstagramShareVC.h */,
-				FF17BD5E19C8C1A000B5EF46 /* InstagramShareVC.m */,
 				FF17BD6319C8C21600B5EF46 /* MainVC.h */,
 				FF17BD6419C8C21600B5EF46 /* MainVC.m */,
 				325F1FE119E7143C00001EB0 /* MenuVC.h */,
@@ -735,10 +745,12 @@
 				C527A39D19DB1FB300C72B21 /* icon_menu.png in Resources */,
 				C527A3AA19DB266B00C72B21 /* icon_cadeado.png in Resources */,
 				C56108E919DD81990090CE5D /* wireframe_home.png in Resources */,
+				FF12F17319EC725E007524EF /* icone_voltar.png in Resources */,
 				C527A39F19DB1FB300C72B21 /* icon_tempo.png in Resources */,
 				C59934F919D36739006337E0 /* App-Stamina.png in Resources */,
 				FF15986C19C0E05E00D9236F /* alarm.mp3 in Resources */,
 				FFAC194A19E3355000B17487 /* icon_compartilhar.png in Resources */,
+				FF12F17119EC725E007524EF /* icone_camera_rotate.png in Resources */,
 				C5CE7D6F19D4A162003E1595 /* Wireframe InfoFisicas.jpg in Resources */,
 				FF1596FE19C0CBC900D9236F /* Images.xcassets in Resources */,
 				C53A352519D33B8900AC1383 /* ErrorVC.xib in Resources */,
@@ -758,15 +770,18 @@
 				C5E99E6F19DB3AA200513CDE /* wireframe_caminhada.jpg in Resources */,
 				C527A3A319DB1FB300C72B21 /* stamina_logo.png in Resources */,
 				C5E99E7719DB3AA200513CDE /* wireframe_login.png in Resources */,
+				FF12F16C19EC7240007524EF /* icone_facebook.png in Resources */,
 				C5EB6C0F19D9DC5B00C528FC /* caminhada_tela.png in Resources */,
 				C527A3A119DB1FB300C72B21 /* menu_icon.png in Resources */,
 				C5E99E7519DB3AA200513CDE /* wireframe_informacaoes.jpg in Resources */,
 				C5E99E6C19DB3AA200513CDE /* wireframe_academia_inicio.jpg in Resources */,
 				C527A3AE19DB27B000C72B21 /* icon_email.png in Resources */,
 				C59934FB19D36756006337E0 /* Logo_Stamina.png in Resources */,
+				FF12F17219EC725E007524EF /* icone_camera.png in Resources */,
 				C527A3A019DB1FB300C72B21 /* icon_velocimetro.png in Resources */,
 				C5CE7D7719D4BA10003E1595 /* menu_icon.png in Resources */,
 				C5E99E6E19DB3AA200513CDE /* wireframe_calendario.png in Resources */,
+				FF12F16D19EC7240007524EF /* icone_instagram.png in Resources */,
 				C527A39E19DB1FB300C72B21 /* icon_pontos.png in Resources */,
 				32C6B39219E484CB00DE13AC /* wireframe_categorias.png in Resources */,
 			);
@@ -826,7 +841,6 @@
 				FF15972719C0D96E00D9236F /* AMSlideMenuLeftTableViewController.m in Sources */,
 				FF13E9DD19E5BF840005BA49 /* SharingResponse.m in Sources */,
 				FF15972619C0D96E00D9236F /* AMSlideMenuLeftMenuSegue.m in Sources */,
-				FF17BD6119C8C1A000B5EF46 /* InstagramShareVC.m in Sources */,
 				C5DFD4EA19DC7B48000EA19C /* Cadastro.m in Sources */,
 				C5EB6BF919D9DB6B00C528FC /* CalendarMatrixes.m in Sources */,
 				C5EB6BF719D9DB6B00C528FC /* DayObject.m in Sources */,

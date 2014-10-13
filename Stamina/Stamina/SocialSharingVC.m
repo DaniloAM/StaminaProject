@@ -14,23 +14,12 @@
 
 @implementation SocialSharingVC
 
-
+#pragma mark - View and Camera Preview
 
 - (void)viewDidLoad  {
     
     [super viewDidLoad];
     
-    [self setDarkenView:[[UIImageView alloc]init]];
-    [self setImageView:[[UIImageView alloc]init]];
-    [[self darkenView] setFrame:self.view.frame];
-    [[self imageView] setFrame:_cameraView.frame];
-    [[self darkenView] setHidden:true];
-    [[self imageView] setHidden:true];
-    [[self facebookButton] setHidden:true];
-    [[self instagramButton] setHidden:true];
-    [[self sharingImageView] setHidden:true];
-    
-    [self.view addSubview:[self darkenView]];
 
     AVCaptureStillImageOutput *stillImageOutput = [[AVCaptureStillImageOutput alloc] init];
     [stillImageOutput setOutputSettings:@{AVVideoCodecKey : AVVideoCodecJPEG}];
@@ -82,9 +71,11 @@
     [_session addInput:input];
     [_session startRunning];
     
-    [self.view addSubview:[self imageView]];
+    //[self.view addSubview:[self imageView]];
     
 }
+
+#pragma mark - Changing Camera
 
 -(IBAction)changeCamera {
     
@@ -126,7 +117,7 @@
     return nil;
 }
 
-
+#pragma mark - Take Picture
 
 - (IBAction)snapStillImage:(id)sender  {
 
@@ -134,48 +125,18 @@
         return;
     }
     
-    if(![[self imageView] isHidden]) {
+    //Present share view
+    if(_hasPicture) {
         [self presentShareMenu];
         return;
     }
     
+    
     //Perfom these selectors with delays to remove any noises from still images
     [self performSelector:@selector(takePicture) withObject:nil afterDelay:0.2];
     [self performSelector:@selector(takePicture) withObject:nil afterDelay:0.3];
-    [self performSelector:@selector(changeImageView) withObject:nil afterDelay:0.4];
-    
-}
-
-
--(void)returnToCamera {
-    
-    [[self facebookButton] setHidden:true];
-    [[self instagramButton] setHidden:true];
-    [[self sharingImageView] setHidden:true];
-    
-    _isOnShareMenu = false;
-    
-    [[self imageView] setHidden:true];
-    [[self darkenView] setHidden:true];
-    
-    [[self pictureButton] setTitle:@"Take" forState:UIControlStateNormal];
-    
-}
-
-
--(void)changeImageView {
-    
-    [[self imageView] setImage:_userPicture];
-    [[self imageView] setHidden:false];
     
     [[self pictureButton] setTitle:@"Share" forState:UIControlStateNormal];
-
-}
-
-
--(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
-    
-    [self returnToCamera];
     
 }
 
@@ -193,83 +154,71 @@
             
             if(_usingFrontCamera) {
                 _userPicture = [UIImage imageWithCGImage:_userPicture.CGImage
-                                               scale:_userPicture.scale orientation: UIImageOrientationLeftMirrored];
+                                                   scale:_userPicture.scale orientation: UIImageOrientationLeftMirrored];
             }
             
         }
     }];
     
+    _hasPicture = true;
+    
 }
+
+
+#pragma mark - Share View
 
 
 -(void)presentShareMenu {
     
     _isOnShareMenu = true;
     
-    [self.view bringSubviewToFront:[self darkenView]];
-    [self.view bringSubviewToFront:[self facebookButton]];
-    [self.view bringSubviewToFront:[self instagramButton]];
-    [self.view bringSubviewToFront:[self sharingImageView]];
+    //**************************************
+    // Positions maths based on wireframe  *
+    //**************************************
+    
+    _shareView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, self.view.bounds.size.width / 1.179, self.view.bounds.size.width / 4.15)];
+    _shareView.backgroundColor = [UIColor colorWithRed:1.0 green:1.0 blue:1.0 alpha:0.9];
+    _shareView.layer.cornerRadius = 14;
+    _shareView.layer.masksToBounds = true;
+    _shareView.center = self.view.center;
+    
+    UIButton *facebookBtn, *instagramBtn;
+    UIImageView *facebookIcon, *instagramIcon;
+    
 
+    facebookBtn = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, _shareView.frame.size.width / 5, _shareView.frame.size.height / 2.5)];
+    instagramBtn = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, _shareView.frame.size.width / 5, _shareView.frame.size.height / 2.5)];
     
-    [[self darkenView] setHidden:false];
-    [[self darkenView] setImage:[self darkenImageOfScreen]];
+    facebookBtn.center = CGPointMake(_shareView.frame.size.width / 2 / 2, _shareView.frame.size.height / 2);
+    instagramBtn.center = CGPointMake((_shareView.frame.size.width / 2) + facebookBtn.center.x, _shareView.frame.size.height / 2);
     
-    [[self facebookButton] setHidden:false];
-    [[self instagramButton] setHidden:false];
-    [[self sharingImageView] setHidden:false];
+    
+    facebookIcon = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"icone_facebook.png"]];
+    instagramIcon = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"icone_instagram.png"]];
+    
+    facebookIcon.frame = facebookBtn.frame;
+    facebookIcon.center = facebookBtn.center;
+    
+    instagramIcon.frame = instagramBtn.frame;
+    instagramIcon.center = instagramBtn.center;
+    
+    [facebookBtn addTarget:self action:@selector(sharePictureOnFacebook) forControlEvents:UIControlEventTouchUpInside];
+    [instagramBtn addTarget:self action:@selector(sharePictureOnInstagram) forControlEvents:UIControlEventTouchUpInside];
+    
+    
+    //Add on view
+    [_shareView addSubview:facebookIcon];
+    [_shareView addSubview:facebookBtn];
+    [_shareView addSubview:instagramIcon];
+    [_shareView addSubview:instagramBtn];
+    
+    //Add view
+    [self.view addSubview:[self shareView]];
     
 }
 
 
-- (UIImage *)screenSnapshot {
-    UIGraphicsBeginImageContextWithOptions(self.view.bounds.size, NO, [UIScreen mainScreen].scale);
-    
-    [self.view drawViewHierarchyInRect:self.view.bounds afterScreenUpdates:NO];
-    
-    UIImage *image = UIGraphicsGetImageFromCurrentImageContext();
-    UIGraphicsEndImageContext();
-    
-    return image;
-}
-
-
-
-- (UIImage *)darkenImageOfScreen {
-    
-    UIImage *image = [self screenSnapshot];
-    UIColor *color = [UIColor colorWithRed:0.4 green:0.4 blue:0.4 alpha:1.0];
-    
-    UIGraphicsBeginImageContext(image.size);
-    
-    CGContextRef context = UIGraphicsGetCurrentContext();
-    CGRect area = CGRectMake(0, 0, image.size.width, image.size.height);
-    
-    CGContextScaleCTM(context, 1, -1);
-    CGContextTranslateCTM(context, 0, -area.size.height);
-    
-    CGContextSaveGState(context);
-    CGContextClipToMask(context, area, image.CGImage);
-    
-    [color set];
-    CGContextFillRect(context, area);
-    
-    CGContextRestoreGState(context);
-    
-    CGContextSetBlendMode(context, kCGBlendModeMultiply);
-    
-    CGContextDrawImage(context, area, image.CGImage);
-    
-    UIImage *darkenImage = UIGraphicsGetImageFromCurrentImageContext();
-    
-    UIGraphicsEndImageContext();
-    
-    return darkenImage;
-}
-
-
-
--(IBAction)sharePictureOnFacebook {
+-(void)sharePictureOnFacebook {
     
     [SharingResponse sharePictureOnFacebook:_userPicture];
     
@@ -277,13 +226,108 @@
     
 }
 
--(IBAction)sharePictureOnInstagram {
+-(void)sharePictureOnInstagram {
     
-    [SharingResponse sharePictureOnInstagram:_userPicture];
+    SharingResponse *response = [[SharingResponse alloc] init];
+    [response sharePictureOnInstagram:_userPicture];
     
     [self returnToCamera];
     
 }
+
+
+-(void)returnToCamera {
+    
+    _isOnShareMenu = false;
+    _hasPicture = false;
+
+    [[self pictureButton] setTitle:@"Take" forState:UIControlStateNormal];
+    
+    [[self shareView] removeFromSuperview];
+}
+
+
+
+-(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
+    
+    [self returnToCamera];
+    
+}
+
+-(IBAction)returnToPreviousView {
+    
+    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+    UIViewController *myVC = (UIViewController *)[storyboard instantiateViewControllerWithIdentifier:@"homeScreen"];
+    
+    [self.navigationController pushViewController:myVC animated:YES];
+    
+}
+
+
+//-(void)presentShareMenu {
+//
+//    _isOnShareMenu = true;
+//
+//    [self.view bringSubviewToFront:[self darkenView]];
+//    [self.view bringSubviewToFront:[self facebookButton]];
+//    [self.view bringSubviewToFront:[self instagramButton]];
+//    [self.view bringSubviewToFront:[self sharingImageView]];
+//
+//
+//    [[self darkenView] setHidden:false];
+//    [[self darkenView] setImage:[self darkenImageOfScreen]];
+//
+//    [[self facebookButton] setHidden:false];
+//    [[self instagramButton] setHidden:false];
+//    [[self sharingImageView] setHidden:false];
+//
+//}
+
+
+//- (UIImage *)screenSnapshot {
+//    UIGraphicsBeginImageContextWithOptions(self.view.bounds.size, NO, [UIScreen mainScreen].scale);
+//
+//    [self.view drawViewHierarchyInRect:self.view.bounds afterScreenUpdates:NO];
+//
+//    UIImage *image = UIGraphicsGetImageFromCurrentImageContext();
+//    UIGraphicsEndImageContext();
+//
+//    return image;
+//}
+//
+//
+//
+//- (UIImage *)darkenImageOfScreen {
+//
+//    UIImage *image = [self screenSnapshot];
+//    UIColor *color = [UIColor colorWithRed:0.4 green:0.4 blue:0.4 alpha:1.0];
+//
+//    UIGraphicsBeginImageContext(image.size);
+//
+//    CGContextRef context = UIGraphicsGetCurrentContext();
+//    CGRect area = CGRectMake(0, 0, image.size.width, image.size.height);
+//
+//    CGContextScaleCTM(context, 1, -1);
+//    CGContextTranslateCTM(context, 0, -area.size.height);
+//
+//    CGContextSaveGState(context);
+//    CGContextClipToMask(context, area, image.CGImage);
+//
+//    [color set];
+//    CGContextFillRect(context, area);
+//
+//    CGContextRestoreGState(context);
+//
+//    CGContextSetBlendMode(context, kCGBlendModeMultiply);
+//
+//    CGContextDrawImage(context, area, image.CGImage);
+//
+//    UIImage *darkenImage = UIGraphicsGetImageFromCurrentImageContext();
+//
+//    UIGraphicsEndImageContext();
+//
+//    return darkenImage;
+//}
 
 
 

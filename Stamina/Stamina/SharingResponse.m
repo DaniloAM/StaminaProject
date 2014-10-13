@@ -40,7 +40,7 @@
     
 }
 
-+(void)sharePictureOnInstagram : (UIImage *)image {
+-(void)sharePictureOnInstagram : (UIImage *)image {
     
 //    NSString *savePath = [NSHomeDirectory() stringByAppendingPathComponent:@"Documents/Test.ig"];
 //    [UIImagePNGRepresentation(image) writeToFile:savePath atomically:YES];
@@ -61,16 +61,16 @@
 //    {
 //        NSLog(@"No Instagram Found");
 //    }
-    
+//    
     
 }
 
-//- (UIDocumentInteractionController *) setupControllerWithURL: (NSURL*) fileURL usingDelegate: (id <UIDocumentInteractionControllerDelegate>) interactionDelegate {
-//    
-//    UIDocumentInteractionController *interactionController = [UIDocumentInteractionController interactionControllerWithURL: fileURL];
-//    interactionController.delegate = interactionDelegate;
-//    return interactionController;
-//    
-//}
+-(UIDocumentInteractionController *) setupControllerWithURL: (NSURL*) fileURL usingDelegate: (id <UIDocumentInteractionControllerDelegate>) interactionDelegate {
+    
+    UIDocumentInteractionController *interactionController = [UIDocumentInteractionController interactionControllerWithURL: fileURL];
+    interactionController.delegate = interactionDelegate;
+    return interactionController;
+    
+}
 
 @end
