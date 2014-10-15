@@ -22,7 +22,24 @@
     return self;
 }
 -(void)viewDidAppear:(BOOL)animated{
-    [self checkConnection];
+    [super viewDidAppear:animated];
+    [[self logo] setFrame:CGRectMake([self logo].frame.origin.x, 222, [self logo].frame.size.width, [self logo].frame.size.height)];
+
+       UserData *userData = [UserData alloc];
+    if([userData email]==nil)
+        [self anima];
+    else
+        [self checkConnection];
+
+}
+-(void)preCarregamento{
+    [self activity].hidden=YES;
+    [self viewBlock].hidden = YES;
+    [self password].hidden = YES;
+    [self fbBTN].hidden = YES;
+    [self cadastreSeBTN].hidden = YES;
+    [self signInBTN].hidden = YES;
+    [self login].delegate =self;
     [[self viewTotal] addSubview:[self logo]];
     self.login.backgroundColor = [UIColor colorWithWhite:0 alpha:0.1];
     self.login.layer.cornerRadius = 7;
@@ -38,41 +55,32 @@
     [self signInBTN].layer.cornerRadius = 7 ;
     self.password.textColor = [UIColor blackColor]; //optional
     self.password.secureTextEntry = YES;
-   [[self logo] setFrame:CGRectMake([self logo].frame.origin.x, 222, [self logo].frame.size.width, [self logo].frame.size.height)];
-    UserData *userData = [UserData alloc];
-    if([userData email]==nil)
-    [self anima];
-    else
-        [self checkConnection];
 
-    [super viewDidAppear:animated];
-}
--(void)viewWillAppear:(BOOL)animated{
-    [super viewWillAppear:animated];
-    
-        [self activity].hidden=YES;
-    [self viewBlock].hidden = YES;
-    [self password].hidden = YES;
-    [self fbBTN].hidden = YES;
-    [self cadastreSeBTN].hidden = YES;
-    [self signInBTN].hidden = YES;
-    [self login].delegate =self;
     [_login setLeftViewMode:UITextFieldViewModeAlways];
     UIImage *temp = [self cutImage:[UIImage imageNamed:@"icon_email.png"] :CGSizeMake(31.2, 15.6)];
     _login.leftView= [[UIImageView alloc] initWithImage:temp];
     [_password setLeftViewMode:UITextFieldViewModeAlways];
     temp = [self cutImage:[UIImage imageNamed:@"icon_cadeado.png"] :CGSizeMake(31.2, 24)];
     _password.leftView= [[UIImageView alloc] initWithImage:temp];
-
+    
     [self login].hidden = YES;
     [self password].delegate =self;
     [self password].secureTextEntry = YES;
 }
--(void)viewDidDisappear:(BOOL)animated{
-    [super viewDidDisappear:animated];
+-(void)viewWillAppear:(BOOL)animated{
     [[self logo] setFrame:CGRectMake([self logo].frame.origin.x, 222, [self logo].frame.size.width, [self logo].frame.size.height)];
-    
+
+    [super viewWillAppear:animated];
+
+    [self preCarregamento];
+
 }
+-(void)viewWillDisappear:(BOOL)animated{
+    [super viewWillDisappear:animated];
+    [[self logo] setFrame:CGRectMake([self logo].frame.origin.x, 222, [self logo].frame.size.width, [self logo].frame.size.height)];
+
+}
+
 -(UIImage *)cutImage : (UIImage *)myimage : (CGSize) size{
     CGSize itemSize = size; // give any size you want to give
     
@@ -101,7 +109,8 @@
                 str = [WebServiceResponse checkStart:[userData email] eSenha:[userData password]];
             while(1){
                 if([str isEqualToString:@"1"]){
-                    
+                    [self dismissViewControllerAnimated:NO completion:Nil];
+
                         myVC= (UIViewController *)[storyboard instantiateViewControllerWithIdentifier:@"mainVC"];
                     
                     [self presentViewController:myVC animated:YES completion:nil];
@@ -151,8 +160,6 @@
     [super didReceiveMemoryWarning];
 }
 -(BOOL)hasJson: (NSString *)str{
-    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
-     UIViewController *myVC = (UIViewController *)[storyboard instantiateViewControllerWithIdentifier:@"infoFisicas"];
     NSData* data = [str dataUsingEncoding:NSUTF8StringEncoding];
     NSError *error = nil;
     NSMutableDictionary *json = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableContainers error:&error];
@@ -176,25 +183,8 @@
     [userData setEmail:[email objectAtIndex:0]];
     [userData setNickName:[nick objectAtIndex:0]];
     [userData setSex:[[sexo objectAtIndex:0] boolValue]];
-    if([userData initialWeight]==0)
-        [self presentViewController:myVC animated:YES completion:nil];
     return 1;
-//    
-//    if([rep count]==0)
-//        return 0;
-//    NSArray *ser = [json valueForKeyPath:@"peso_atual"];
-//    NSArray *idExer = [json valueForKeyPath:@"idade"];
-//    NSArray *trName =[json valueForKeyPath:@"nome"];
-//    UserData *userData = [UserData alloc];
-//    for(int x = 0 ; x < [ser count];x++){
-//        int repa = [[rep objectAtIndex:x] intValue];
-//        int se = [[ser objectAtIndex:x] intValue];
-//        int idE = [[idExer objectAtIndex:x] intValue];
-//        NSString *tr = [trName objectAtIndex:x];
-//        
-//        [userData addExerciseWithTrainingName:tr exerciseID:[NSNumber numberWithInt:idE] repetitionsValue:[NSNumber numberWithInt:repa] seriesValue:[NSNumber numberWithInt:se]];
-//    }
-//
+
 }
 
 -(IBAction)loginUser{
@@ -239,6 +229,7 @@
 }
 -(void)buscaJson{
   NSString *str =  [WebServiceResponse loginComEmailOuNickName:[[self login] text] eSenha:[[self password] text]];
+    
    if(![self hasJson:str])
     if(str){
         [self presentError:0 :str];
@@ -248,6 +239,8 @@
     [userData setPassword:[[self password] text]];
     UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
     UIViewController *myVC = (UIViewController *)[storyboard instantiateViewControllerWithIdentifier:@"mainVC"];
+    [self dismissViewControllerAnimated:NO completion:Nil];
+
     [self presentViewController:myVC animated:YES completion:nil];
 }
 

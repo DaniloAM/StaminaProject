@@ -10,8 +10,8 @@
             <objects>
                 <viewController storyboardIdentifier="mainVC" id="egZ-Br-g0s" customClass="MainVC" sceneMemberID="viewController">
                     <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="qun-mu-FSi"/>
-                        <viewControllerLayoutGuide type="bottom" id="EsB-pM-GXX"/>
+                        <viewControllerLayoutGuide type="top" id="YIX-At-JTo"/>
+                        <viewControllerLayoutGuide type="bottom" id="nQc-6r-KP8"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="jDu-kb-X7I">
                         <rect key="frame" x="0.0" y="64" width="320" height="568"/>
@@ -181,121 +181,13 @@
             </objects>
             <point key="canvasLocation" x="1527" y="-2057"/>
         </scene>
-        <!--Info FisicasVC-->
-        <scene sceneID="Pc9-wq-0zx">
-            <objects>
-                <viewController storyboardIdentifier="infoFisicas" id="ujb-ZO-H2M" customClass="InfoFisicasVC" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="c7l-ba-7XG"/>
-                        <viewControllerLayoutGuide type="bottom" id="TIr-TE-KIX"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="SfJ-se-YM1">
-                        <rect key="frame" x="0.0" y="64" width="320" height="568"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Sexo" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8Do-aV-e0i">
-                                <rect key="frame" x="51" y="361" width="92" height="31"/>
-                                <fontDescription key="fontDescription" name="Avenir-Roman" family="Avenir" pointSize="22"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Peso" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mqc-nt-jm0">
-                                <rect key="frame" x="51" y="209" width="89" height="21"/>
-                                <fontDescription key="fontDescription" name="Avenir-Roman" family="Avenir" pointSize="22"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Informações Físicas" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qC0-fO-GyE">
-                                <rect key="frame" x="16" y="125" width="288" height="31"/>
-                                <fontDescription key="fontDescription" name="Avenir-Heavy" family="Avenir" pointSize="24"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Altura" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aPL-d6-Zgc">
-                                <rect key="frame" x="51" y="257" width="92" height="31"/>
-                                <fontDescription key="fontDescription" name="Avenir-Roman" family="Avenir" pointSize="22"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Idade" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IqZ-Ws-lUH">
-                                <rect key="frame" x="49" y="309" width="92" height="31"/>
-                                <fontDescription key="fontDescription" name="Avenir-Roman" family="Avenir" pointSize="22"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QDk-l9-fHF">
-                                <rect key="frame" x="118" y="423" width="93" height="93"/>
-                                <state key="normal" backgroundImage="ok_icon.png">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="salvar" destination="ujb-ZO-H2M" eventType="touchUpInside" id="9os-l3-rvg"/>
-                                </connections>
-                            </button>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Kg" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="eLH-jT-M4e">
-                                <rect key="frame" x="169" y="202" width="99" height="36"/>
-                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                <fontDescription key="fontDescription" name="Avenir-Roman" family="Avenir" pointSize="22"/>
-                                <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
-                            </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Cm" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="6tp-Wd-RYR">
-                                <rect key="frame" x="169" y="255" width="99" height="36"/>
-                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                <fontDescription key="fontDescription" name="Avenir-Roman" family="Avenir" pointSize="22"/>
-                                <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
-                            </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Anos" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ARU-0w-Y9g">
-                                <rect key="frame" x="169" y="307" width="99" height="36"/>
-                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                <fontDescription key="fontDescription" name="Avenir-Roman" family="Avenir" pointSize="22"/>
-                                <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
-                            </textField>
-                            <segmentedControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="fd4-Wr-vRT">
-                                <rect key="frame" x="156" y="361" width="128" height="29"/>
-                                <segments>
-                                    <segment title="H"/>
-                                    <segment title="M"/>
-                                </segments>
-                            </segmentedControl>
-                        </subviews>
-                        <color key="backgroundColor" red="0.97254901959999995" green="0.84705882349999995" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                    </view>
-                    <navigationItem key="navigationItem" id="afq-aa-mcl"/>
-                    <connections>
-                        <outlet property="alturaTxt" destination="6tp-Wd-RYR" id="dEd-8P-Lal"/>
-                        <outlet property="idadeTxt" destination="ARU-0w-Y9g" id="7aY-Jr-LPr"/>
-                        <outlet property="pesoTxt" destination="eLH-jT-M4e" id="tvL-bt-vJS"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="LWx-jT-sAD" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-252" y="-1677"/>
-        </scene>
-        <!--CadastroPVC-->
-        <scene sceneID="mlk-rL-LGI">
-            <objects>
-                <viewController id="whS-bg-6YK" customClass="CadastroPVC" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="eOP-Q3-ZUP"/>
-                        <viewControllerLayoutGuide type="bottom" id="O1N-aH-hdS"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="iey-Af-4x3">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="DYf-K1-aJE" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="422" y="-1556"/>
-        </scene>
         <!--Login View Controller-->
         <scene sceneID="IZ7-N9-5oB">
             <objects>
                 <viewController id="h6A-wv-HXR" customClass="LoginViewController" sceneMemberID="viewController">
                     <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="E5C-mz-do9"/>
-                        <viewControllerLayoutGuide type="bottom" id="Ybm-Uk-c2X"/>
+                        <viewControllerLayoutGuide type="top" id="bNm-5m-tyq"/>
+                        <viewControllerLayoutGuide type="bottom" id="Cdx-r2-IBf"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="0GZ-hz-m6x">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
@@ -416,8 +308,8 @@
             <objects>
                 <viewController id="rw1-bJ-CYc" customClass="UserCalendarVC" sceneMemberID="viewController">
                     <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="rUg-2H-FoR"/>
-                        <viewControllerLayoutGuide type="bottom" id="Cgy-pI-GyM"/>
+                        <viewControllerLayoutGuide type="top" id="FaB-qr-neO"/>
+                        <viewControllerLayoutGuide type="bottom" id="7Sc-KU-944"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="B9J-t3-fne">
                         <rect key="frame" x="0.0" y="64" width="320" height="568"/>
@@ -849,8 +741,8 @@
             <objects>
                 <viewController storyboardIdentifier="shareScreen" id="RfZ-Bh-jM0" customClass="SocialSharingVC" sceneMemberID="viewController">
                     <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="N7N-ul-iG5"/>
-                        <viewControllerLayoutGuide type="bottom" id="XVc-9M-wML"/>
+                        <viewControllerLayoutGuide type="top" id="G1Q-g0-LDX"/>
+                        <viewControllerLayoutGuide type="bottom" id="CL3-Ph-9dz"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="vAB-WH-iWv">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
@@ -937,8 +829,8 @@
             <objects>
                 <viewController id="PSP-iH-gXQ" customClass="StartRunningVC" sceneMemberID="viewController">
                     <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="E3T-Sl-f3O"/>
-                        <viewControllerLayoutGuide type="bottom" id="rCI-Fg-4KF"/>
+                        <viewControllerLayoutGuide type="top" id="nCd-9Z-uiM"/>
+                        <viewControllerLayoutGuide type="bottom" id="Vak-wf-XQe"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="MzT-au-8vE">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="504"/>
@@ -985,8 +877,8 @@
             <objects>
                 <viewController id="Hoc-Hi-pFE" customClass="RunningMapVC" sceneMemberID="viewController">
                     <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="LRs-nn-zf7"/>
-                        <viewControllerLayoutGuide type="bottom" id="Ywr-Q3-dlF"/>
+                        <viewControllerLayoutGuide type="top" id="HPQ-up-Z2K"/>
+                        <viewControllerLayoutGuide type="bottom" id="beX-6B-fUc"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="Cne-Ta-Qcz">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="504"/>
@@ -1051,8 +943,8 @@
             <objects>
                 <viewController id="G87-vY-y2C" customClass="AcademiaVC" sceneMemberID="viewController">
                     <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="kdY-6q-aOX"/>
-                        <viewControllerLayoutGuide type="bottom" id="v69-69-NBe"/>
+                        <viewControllerLayoutGuide type="top" id="Ueo-Xs-6CF"/>
+                        <viewControllerLayoutGuide type="bottom" id="p1b-Wg-3At"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="JXv-S0-xQO">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="504"/>
@@ -1084,15 +976,15 @@
             <objects>
                 <viewController id="qFt-UD-ad8" customClass="CategoriaVC" sceneMemberID="viewController">
                     <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="Ayw-NY-io4"/>
-                        <viewControllerLayoutGuide type="bottom" id="FRl-pn-NUt"/>
+                        <viewControllerLayoutGuide type="top" id="ypw-UW-m7t"/>
+                        <viewControllerLayoutGuide type="bottom" id="hXA-eG-vkQ"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="50f-RY-Eba">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="504"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="biZ-JN-b7S">
-                                <rect key="frame" x="0.0" y="19" width="320" height="489"/>
+                                <rect key="frame" x="0.0" y="20" width="320" height="489"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </tableView>
                         </subviews>
@@ -1112,8 +1004,8 @@
             <objects>
                 <viewController storyboardIdentifier="finishedRunning" id="evo-Rb-OIp" customClass="FinishedRunningVC" sceneMemberID="viewController">
                     <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="RRd-Bt-RjM"/>
-                        <viewControllerLayoutGuide type="bottom" id="trZ-FE-MMh"/>
+                        <viewControllerLayoutGuide type="top" id="uUK-hf-A8c"/>
+                        <viewControllerLayoutGuide type="bottom" id="Yu4-hD-oD8"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="lM2-LB-8Du">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
@@ -1192,6 +1084,14 @@
             </objects>
             <point key="canvasLocation" x="3214" y="-3451"/>
         </scene>
+        <!--Page View Controller-->
+        <scene sceneID="7CW-Zh-q7t">
+            <objects>
+                <pageViewController storyboardIdentifier="TipsPageViewController" autoresizesArchivedViewToFullSize="NO" transitionStyle="scroll" navigationOrientation="horizontal" spineLocation="none" id="HFg-s1-JIf" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="pl8-YO-2MB" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3555" y="-3429"/>
+        </scene>
         <!--Navigation Controller-->
         <scene sceneID="cWU-sk-JE1">
             <objects>
@@ -1213,8 +1113,8 @@
             <objects>
                 <viewController storyboardIdentifier="homeScreen" id="x3h-sg-EoT" customClass="HomeScreenVC" sceneMemberID="viewController">
                     <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="2nA-wn-5Tz"/>
-                        <viewControllerLayoutGuide type="bottom" id="i38-uy-qnk"/>
+                        <viewControllerLayoutGuide type="top" id="CSs-Uu-jKJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="tnu-db-aaR"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="Qdg-QK-njK">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="504"/>
@@ -1250,13 +1150,13 @@
             </objects>
             <point key="canvasLocation" x="1963" y="-3088"/>
         </scene>
-        <!--View Controller-->
+        <!--CadastroVC-->
         <scene sceneID="i2S-yT-GgI">
             <objects>
-                <viewController id="TXz-Pj-H87" customClass="ViewController" sceneMemberID="viewController">
+                <viewController id="TXz-Pj-H87" customClass="CadastroVC" sceneMemberID="viewController">
                     <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="gpj-3q-W3T"/>
-                        <viewControllerLayoutGuide type="bottom" id="eMO-R8-xuE"/>
+                        <viewControllerLayoutGuide type="top" id="qa7-kY-hZR"/>
+                        <viewControllerLayoutGuide type="bottom" id="IJJ-A7-Lvw"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="R4z-fU-Cch">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
@@ -1265,102 +1165,63 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="wireframe_cadastro.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="w5z-AG-wr9">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="joh-Rd-dmA">
-                                <rect key="frame" x="124" y="397" width="73" height="73"/>
-                                <state key="normal" image="ok_icon.png">
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QEj-xY-d41">
+                                <rect key="frame" x="137" y="530" width="46" height="30"/>
+                                <state key="normal" title="Button">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="avanca" destination="TXz-Pj-H87" eventType="touchUpInside" id="Nub-CD-6ea"/>
+                                    <action selector="voltar" destination="TXz-Pj-H87" eventType="touchUpInside" id="csd-va-UAi"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8ki-71-Ht9">
-                                <rect key="frame" x="124" y="530" width="73" height="33"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <state key="normal" title="Voltar">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="login" destination="TXz-Pj-H87" eventType="touchUpInside" id="4SM-KN-gLa"/>
-                                </connections>
-                            </button>
-                            <pageControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="7" translatesAutoresizingMaskIntoConstraints="NO" id="JGZ-po-upx">
-                                <rect key="frame" x="16" y="485" width="288" height="37"/>
-                            </pageControl>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
-                    <connections>
-                        <outlet property="bar" destination="JGZ-po-upx" id="W3o-Zo-h8h"/>
-                        <outlet property="button" destination="joh-Rd-dmA" id="JQ3-Tl-9rZ"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="l1u-0F-I1W" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-73" y="-2271"/>
         </scene>
-        <!--Page Content View Controller-->
+        <!--CadastroPVC-->
         <scene sceneID="OKJ-tq-SVg">
             <objects>
-                <viewController storyboardIdentifier="PageContentViewController" id="Brn-8X-wua" customClass="PageContentViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="PageContentViewController" id="Brn-8X-wua" customClass="CadastroPVC" sceneMemberID="viewController">
                     <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="rLo-eE-lvO"/>
-                        <viewControllerLayoutGuide type="bottom" id="evQ-zK-Vrx"/>
+                        <viewControllerLayoutGuide type="top" id="a70-lG-gpl"/>
+                        <viewControllerLayoutGuide type="bottom" id="bdX-Rd-YeA"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="pFa-sG-MXB">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Nome" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="rTX-PX-Phc">
-                                <rect key="frame" x="33" y="261" width="258" height="36"/>
-                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" autocorrectionType="no"/>
-                            </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Nome" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="yKI-va-RmE">
-                                <rect key="frame" x="117" y="316" width="91" height="36"/>
-                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" autocorrectionType="no" keyboardType="numberPad"/>
-                            </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Nickname" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Pzj-kP-bRd">
-                                <rect key="frame" x="33" y="316" width="258" height="36"/>
-                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" autocorrectionType="no"/>
-                            </textField>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kis-xW-AQt">
-                                <rect key="frame" x="2" y="268" width="320" height="21"/>
-                                <fontDescription key="fontDescription" name="Avenir-Roman" family="Avenir" pointSize="23"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Nome" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aLZ-6W-bYI">
+                                <rect key="frame" x="139" y="221" width="46" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <segmentedControl opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="rNM-OO-Dvc">
-                                <rect key="frame" x="92" y="319" width="136" height="29"/>
-                                <color key="backgroundColor" red="0.97254901959999995" green="0.84705882349999995" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <segments>
-                                    <segment title="F"/>
-                                    <segment title="M"/>
-                                </segments>
-                                <color key="tintColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <connections>
-                                    <action selector="segmentedChartButtonChanged:" destination="Brn-8X-wua" eventType="valueChanged" id="i49-Wh-mO1"/>
-                                </connections>
-                            </segmentedControl>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Nickname" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="3Rb-eh-W1D">
+                                <rect key="frame" x="16" y="316" width="288" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Nome" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="cC4-Fu-Ya1">
+                                <rect key="frame" x="16" y="269" width="288" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
                         </subviews>
-                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
                     </view>
                     <connections>
-                        <outlet property="lblAux" destination="kis-xW-AQt" id="69N-r3-UrQ"/>
-                        <outlet property="sexSegmented" destination="rNM-OO-Dvc" id="7Uh-yn-FAO"/>
-                        <outlet property="txt1" destination="rTX-PX-Phc" id="NiI-Ep-WS2"/>
-                        <outlet property="txt2" destination="Pzj-kP-bRd" id="ldN-mr-YW2"/>
-                        <outlet property="txt3" destination="yKI-va-RmE" id="TRh-LB-SJu"/>
+                        <outlet property="label" destination="aLZ-6W-bYI" id="KbO-FN-yqx"/>
+                        <outlet property="txtField1" destination="cC4-Fu-Ya1" id="bfV-FP-Awu"/>
+                        <outlet property="txtField2" destination="3Rb-eh-W1D" id="NgY-Gn-1lA"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kp4-HQ-v0a" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="83" y="-1556"/>
+            <point key="canvasLocation" x="123" y="-1613"/>
         </scene>
         <!--Page View Controller-->
         <scene sceneID="gGv-gl-yc4">
@@ -1368,7 +1229,7 @@
                 <pageViewController storyboardIdentifier="PageViewController" autoresizesArchivedViewToFullSize="NO" transitionStyle="scroll" navigationOrientation="horizontal" spineLocation="none" id="56V-cr-TeH" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bgJ-1E-9vk" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-588" y="-1556"/>
+            <point key="canvasLocation" x="-636" y="-1613"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="cR4-Kx-5UD">
@@ -1388,8 +1249,8 @@
             <objects>
                 <viewController id="Lbz-Da-c1y" sceneMemberID="viewController">
                     <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="wKV-9U-Crx"/>
-                        <viewControllerLayoutGuide type="bottom" id="brB-eH-ar2"/>
+                        <viewControllerLayoutGuide type="top" id="lEO-Qj-Oz0"/>
+                        <viewControllerLayoutGuide type="bottom" id="c1A-yM-l9B"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="vdj-ud-XKh">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
@@ -1424,8 +1285,8 @@
             <objects>
                 <viewController storyboardIdentifier="ExercicioTVC" id="yRg-20-8Vr" customClass="ExercicioTVC" sceneMemberID="viewController">
                     <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="Elt-Et-Yrm"/>
-                        <viewControllerLayoutGuide type="bottom" id="tnP-WZ-qUS"/>
+                        <viewControllerLayoutGuide type="top" id="CNS-as-I5A"/>
+                        <viewControllerLayoutGuide type="bottom" id="Sc1-9S-CRy"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="Ank-wt-id0">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
@@ -1437,22 +1298,81 @@
             </objects>
             <point key="canvasLocation" x="3173" y="-2762"/>
         </scene>
+        <!--TipsPVC-->
+        <scene sceneID="kIp-lq-vG2">
+            <objects>
+                <viewController storyboardIdentifier="TipsPVC" id="qhY-aD-zlj" customClass="TipsPVC" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="jb8-hL-mfp"/>
+                        <viewControllerLayoutGuide type="bottom" id="htZ-TI-ajt"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="n0s-IM-AoG">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="wireframe_academia.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="2mn-lK-A7h">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="573"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="67m-q2-Tkz">
+                                <rect key="frame" x="46" y="516" width="228" height="38"/>
+                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="22"/>
+                                <state key="normal" title="Voltar">
+                                    <color key="titleColor" red="0.97647058819999999" green="0.84705882349999995" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="back" destination="qhY-aD-zlj" eventType="touchUpInside" id="LG9-sy-epl"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <connections>
+                        <outlet property="btn" destination="67m-q2-Tkz" id="v3p-KG-n9S"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="9p5-iY-z32" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2901" y="-2077"/>
+        </scene>
+        <!--TipsVC-->
+        <scene sceneID="X2U-V5-Qpz">
+            <objects>
+                <viewController storyboardIdentifier="Tips" id="TEq-8p-CYY" customClass="TipsVC" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="gbF-us-5wH"/>
+                        <viewControllerLayoutGuide type="bottom" id="3ET-Bh-zYK"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="YnL-s1-lUk">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Lorem ipsum dolor sit amet." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gpJ-TW-4SX">
+                                <rect key="frame" x="0.0" y="251" width="320" height="152"/>
+                                <fontDescription key="fontDescription" name="Avenir-Roman" family="Avenir" pointSize="21"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="UMC-fh-pp0" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3363" y="-2068"/>
+        </scene>
         <!--View Controller-->
         <scene sceneID="tFG-Ja-tPL">
             <objects>
                 <viewController id="tgc-aM-mFR" sceneMemberID="viewController">
                     <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="dmp-mY-uoh"/>
-                        <viewControllerLayoutGuide type="bottom" id="uIf-wS-jpv"/>
+                        <viewControllerLayoutGuide type="top" id="f0W-UI-hgA"/>
+                        <viewControllerLayoutGuide type="bottom" id="oUw-ho-Cat"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="quK-Zg-EMK">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="wireframe_academia.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="2mn-lK-A7h">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                            </imageView>
-                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                 </viewController>
@@ -1465,8 +1385,8 @@
             <objects>
                 <viewController id="aDy-FM-95g" sceneMemberID="viewController">
                     <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="I68-bX-B95"/>
-                        <viewControllerLayoutGuide type="bottom" id="NrS-1z-KVL"/>
+                        <viewControllerLayoutGuide type="top" id="DeD-fI-FD3"/>
+                        <viewControllerLayoutGuide type="bottom" id="ia6-EM-9Kc"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="C2e-hs-A0W">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
@@ -1490,7 +1410,6 @@
         <image name="caminhada_tela.png" width="754" height="1586"/>
         <image name="fb_sign.png" width="454" height="71"/>
         <image name="icon_compartilhar.png" width="1354" height="1354"/>
-        <image name="ok_icon.png" width="248" height="248"/>
         <image name="wireframe_academia.jpg" width="884" height="1574"/>
         <image name="wireframe_academia_inicio.jpg" width="886" height="1574"/>
         <image name="wireframe_cadastro.jpg" width="876" height="1567"/>

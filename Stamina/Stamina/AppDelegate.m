@@ -21,8 +21,8 @@
     [FBLoginView class];
     
     UIPageControl *pageControl = [UIPageControl appearance];
-    pageControl.pageIndicatorTintColor = [UIColor clearColor];
-    pageControl.currentPageIndicatorTintColor = [UIColor clearColor];
+    pageControl.pageIndicatorTintColor = [UIColor blackColor];
+    pageControl.currentPageIndicatorTintColor = [UIColor yellowColor];
     pageControl.backgroundColor = [UIColor clearColor];
     
     if (FBSession.activeSession.state == FBSessionStateCreatedTokenLoaded) {
