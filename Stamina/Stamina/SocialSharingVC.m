@@ -176,7 +176,7 @@
     // Positions maths based on wireframe  *
     //**************************************
     
-    _shareView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, self.view.bounds.size.width / 1.179, self.view.bounds.size.width / 4.15)];
+    _shareView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, self.view.bounds.size.width / 1.179, self.view.bounds.size.height / 4.15)];
     _shareView.backgroundColor = [UIColor colorWithRed:1.0 green:1.0 blue:1.0 alpha:0.9];
     _shareView.layer.cornerRadius = 14;
     _shareView.layer.masksToBounds = true;

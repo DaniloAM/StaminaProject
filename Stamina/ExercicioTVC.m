@@ -20,8 +20,9 @@
     self.table.delegate = self;
     self.table.dataSource=self;
     [self.table setSeparatorStyle:UITableViewCellSeparatorStyleNone];
-    [self.table setBackgroundColor:[UIColor greenColor]];
+    [self.table setBackgroundColor:[UIColor clearColor]];
     [self.view addSubview:self.table];
+
 }
 
 - (void)didReceiveMemoryWarning {
@@ -67,7 +68,9 @@
     cell.textLabel.backgroundColor = [UIColor clearColor];
     cell.detailTextLabel.backgroundColor = [UIColor clearColor];
 }
-
+-(void)tableView:(UITableView *)tableView didDeselectRowAtIndexPath:(NSIndexPath *)indexPath{
+    
+}
 
 /*
  #pragma mark - Navigation

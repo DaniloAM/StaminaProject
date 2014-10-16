@@ -16,7 +16,8 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-
+    MenuShouldOpen *temp = [MenuShouldOpen alloc];
+    [temp setOpen:YES];
 }
 
 

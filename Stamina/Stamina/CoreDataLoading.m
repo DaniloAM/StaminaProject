@@ -106,6 +106,9 @@
         else if([str isEqualToString:@"fr_trapezio"]) {
             [[list fr_trapezio] addObject:exercise];
         }
+        else if([str isEqualToString:@"fr_triceps"]) {
+            [[list fr_triceps] addObject:exercise];
+        }
         else if([str isEqualToString:@"tr_ante-braco"]) {
             [[list tr_ante_braco] addObject:exercise];
         }

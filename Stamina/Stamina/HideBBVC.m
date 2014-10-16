@@ -17,8 +17,21 @@
 -(void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
     [self.navigationItem setHidesBackButton:YES];
+    MenuShouldOpen *menu = [MenuShouldOpen alloc];
+    [menu setOpen:NO];
+    UISwipeGestureRecognizer *gesture = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(voltaView)];
+    [gesture setDirection:UISwipeGestureRecognizerDirectionRight];
+    [self.view addGestureRecognizer:gesture];
 }
-
+-(void)voltaView{
+    [self.navigationController popViewControllerAnimated:YES];
+    
+}
+-(void)viewWillDisappear:(BOOL)animated{
+    [super viewWillDisappear:YES];
+    MenuShouldOpen *menu = [MenuShouldOpen alloc];
+    [menu setOpen:YES];
+}
 /*
 #pragma mark - Navigation
 

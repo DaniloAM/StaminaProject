@@ -867,7 +867,9 @@ static NSMutableArray *allInstances;
 }
 
 - (void)handlePanGesture:(UIPanGestureRecognizer *)gesture
-{
+{   MenuShouldOpen *temp = [MenuShouldOpen alloc];
+    if(![temp open])
+        return;
     static CGPoint panStartPosition = (CGPoint){0,0};
     
     if (self.leftPanDisabled && self.rightPanDisabled)

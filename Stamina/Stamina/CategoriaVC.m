@@ -16,7 +16,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    [self setFrontal:[NSArray arrayWithObjects:@"Abdominal",@"Ante-Braço",@"Bíceps",@"Peitoral",@"Quadríceps",@"Ombros",@"Trapézio",@"Tríceps", nil]];
+    [self setFrontal:[NSArray arrayWithObjects:@"Abdominal",@"Ante-Braço",@"Bíceps",@"Ombros",@"Peitoral",@"Quadríceps",@"Trapézio",@"Tríceps", nil]];
     [self setTraseiro:[NSArray arrayWithObjects:@"Ante-Braço",@"Bíceps",@"Dorsal",@"Glúteos",@"Lombar",@"Ombros",@"Panturrilha",@"Posterior de Coxa", @"Rombóides",@"Trapézio",@"Tríceps",nil]];
     self.table.delegate = self;
     self.table.dataSource=self;
