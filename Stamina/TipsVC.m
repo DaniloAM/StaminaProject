@@ -22,19 +22,29 @@
     }
     return self;
 }
--(void)viewDidAppear:(BOOL)animated{
-    [super viewDidAppear:animated];
+-(void)awakeFromNib{
+    [super awakeFromNib];
     MenuShouldOpen *menu = [MenuShouldOpen alloc];
-    
+    [menu setOpen:NO];
+}
+
+-(void)viewWillAppear:(BOOL)animated{
+    [super viewWillAppear:animated];
+    MenuShouldOpen *menu = [MenuShouldOpen alloc];
+    [self.navigationItem setHidesBackButton:YES];
+
     [menu setOpen:NO];
 
 }
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    MenuShouldOpen *menu = [MenuShouldOpen alloc];
+    [menu setOpen:NO];
 
 }
-
+-(void)viewWillDisappear:(BOOL)animated{
+}
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];

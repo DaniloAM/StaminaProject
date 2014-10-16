@@ -113,6 +113,8 @@
 
                         myVC= (UIViewController *)[storyboard instantiateViewControllerWithIdentifier:@"mainVC"];
                     
+                    [self dismissViewControllerAnimated:NO completion:Nil];
+                    
                     [self presentViewController:myVC animated:YES completion:nil];
                     return;
                 }

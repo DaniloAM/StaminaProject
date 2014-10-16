@@ -9,5 +9,7 @@
 #import "HideBBVC.h"
 
 @interface AcademiaVC : HideBBVC 
-
+@property UIView *tabBar;
+@property CGPoint point;
+@property CGPoint startPointBar;
 @end

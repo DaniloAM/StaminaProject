@@ -25,6 +25,10 @@
     [super viewWillDisappear:animated];    self.navigationController.navigationBar.translucent = NO;
 
 }
+-(void)awakeFromNib{
+    [super awakeFromNib];    MenuShouldOpen *menu = [MenuShouldOpen alloc];
+    [menu setOpen:NO];
+}
 - (void)viewDidLoad
 {
     [super viewDidLoad];

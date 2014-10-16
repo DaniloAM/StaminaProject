@@ -9,7 +9,7 @@
 #import "HideBBVC.h"
 #import "TipsVC.h"
 
-@interface TipsPVC : HideBBVC <UIPageViewControllerDataSource>
+@interface TipsPVC : UIViewController <UIPageViewControllerDataSource>
 
 @property (strong, nonatomic) UIPageViewController *pageViewController;
 @property (strong, nonatomic) NSArray *pageTitles;

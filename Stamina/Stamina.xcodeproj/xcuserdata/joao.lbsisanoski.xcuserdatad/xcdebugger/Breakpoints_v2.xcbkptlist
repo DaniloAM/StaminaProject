@@ -9,13 +9,13 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Stamina/LoginViewController.m"
-            timestampString = "435091296.766282"
+            filePath = "Stamina/HideBBVC.m"
+            timestampString = "435186386.315121"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "243"
-            endingLineNumber = "243"
-            landmarkName = "-buscaJson"
+            startingLineNumber = "99"
+            endingLineNumber = "99"
+            landmarkName = "-mecheu:"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>

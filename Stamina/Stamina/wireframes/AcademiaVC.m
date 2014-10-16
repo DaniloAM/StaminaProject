@@ -17,14 +17,22 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
 
+    NSArray *array =  [super criaBarButtonComBotoes:4];
+    UIButton *btn = [array objectAtIndex:0];
+    [btn addTarget:self action:@selector(function1) forControlEvents:UIControlEventTouchUpInside];
 }
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
- // Dispose of any resources that can be recreated.
+-(void)function1{
+    [self.navigationController popToRootViewControllerAnimated:YES];
+}
+-(void)function2{
+    NSLog(@"btn2");
+}
+-(void)function3{
+    NSLog(@"Criar um treino");
+
 }
 -(void)viewWillAppear:(BOOL)animated{
-    [super viewWillAppear:animated];
+    [super viewWillAppear:animated withGesture:0];
 }
-
 
 @end

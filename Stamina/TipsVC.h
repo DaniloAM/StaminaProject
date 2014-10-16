@@ -6,9 +6,9 @@
 //  Copyright (c) 2013 Appcoda. All rights reserved.
 //
 
-#import "HideBBVC.h"
-
-@interface TipsVC : HideBBVC
+#import <UIKit/UIKit.h>
+#import "MenuShouldOpen.h"
+@interface TipsVC : UIViewController
 @property NSUInteger pageIndex;
 @property NSString *titleText;
 @property NSString *imageFile;
