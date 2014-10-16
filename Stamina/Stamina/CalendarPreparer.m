@@ -15,7 +15,7 @@
     
     if(self) {
         
-        [self setMatrixes:[[CalendarMatrixes alloc] initWithCalendarPositionsX:18 Y:149 Xsize:38 Ysize:38 spacement:3 fontSize:12.0f fontColor:[UIColor blackColor]]];
+        [self setMatrixes:[[CalendarMatrixes alloc] initWithCalendarPositionsX:25 Y:182 Xsize:30 Ysize:30 spacement:0 fontSize:12.0f fontColor:[UIColor blackColor]]];
         
         _trainingColor = [UIColor redColor];
         

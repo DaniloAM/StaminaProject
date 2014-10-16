@@ -28,8 +28,7 @@
     if(_route) {
         [self drawTrajectoryDone];
     }
-    
-    
+
     self.navigationController.navigationBar.translucent = YES;
     
 }
@@ -37,7 +36,6 @@
 
 -(void)viewDidLoad{
     [super viewDidLoad];
-    
 }
 
 
@@ -138,10 +136,7 @@
 
 -(IBAction)goHome {
     
-    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
-    UIViewController *myVC = (UIViewController *)[storyboard instantiateViewControllerWithIdentifier:@"homeScreen"];
-    
-    [self.navigationController pushViewController:myVC animated:YES];
+       [self.navigationController popToRootViewControllerAnimated:true];
     
 }
 
@@ -152,11 +147,6 @@
     [self goHome];
     
 }
-
-
-
-
-
 
 
 

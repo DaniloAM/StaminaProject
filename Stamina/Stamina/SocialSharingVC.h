@@ -17,15 +17,19 @@
 
 @interface SocialSharingVC : MenuVC  <UIDocumentInteractionControllerDelegate>
 
+@property (nonatomic, retain) UIDocumentInteractionController *dic;
 @property (weak, nonatomic) IBOutlet AVCamPreviewView *cameraView;
 @property (nonatomic) AVCaptureStillImageOutput *stillImageOutput;
 @property AVCaptureSession *session;
 
 @property (weak, nonatomic) IBOutlet UIButton *pictureButton;
 @property (weak, nonatomic) IBOutlet UIButton *cameraButton;
+@property (weak, nonatomic) IBOutlet UIImageView *cameraIcon;
+@property (weak, nonatomic) IBOutlet UIImageView *returnIcon;
+@property (weak, nonatomic) IBOutlet UIImageView *pictureIcon;
 
 @property UIImage *userPicture;
-//@property UIImageView *darkenView;
+@property UIImageView *userPictureView;
 @property UIView *shareView;
 
 @property BOOL hasPicture;

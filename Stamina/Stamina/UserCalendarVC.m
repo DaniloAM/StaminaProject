@@ -14,6 +14,104 @@
 
 @implementation UserCalendarVC
 
+
+// X , Y
+//
+//Object at index X addObject:
+//
+// if
+//
+//        X   (0)   (1)   (2)   (3)   (4)   (5)   (6)
+//             V     V     V     V     V     V     V
+//             V     V     V     V     V     V     V
+////////////////////////////////////////////////////////
+//    Y    //     |     |     |     |     |     |     //
+// (0) > > // 0,0 | 1,0 | 2,0 | 3,0 | 4,0 | 5,0 | 6,0 //
+//         //-----|-----|-----|-----|-----|-----|-----//
+// (1) > > // 0,1 | 1,1 | 2,1 | 3,1 | 4,1 | 5,1 | 6,1 //
+//         //-----|-----|-----|-----|-----|-----|-----//
+// (2) > > // 0,2 | 1,2 | 2,2 | 3,2 | 4,2 | 5,2 | 6,2 //
+//         //-----|-----|-----|-----|-----|-----|-----//
+// (3) > > // 0,3 | 1,3 | 2,3 | 3,3 | 4,3 | 5,3 | 6,3 //
+//         //-----|-----|-----|-----|-----|-----|-----//
+// (4) > > // 0,4 | 1,4 | 2,4 | 3,4 | 4,4 | 5,4 | 6,4 //
+//         //-----|-----|-----|-----|-----|-----|-----//
+// (5) > > // 0,5 | 1,5 | 2,5 | 3,5 | 4,5 | 5,5 | 6,5 //
+//         //     |     |     |     |     |     |     //
+////////////////////////////////////////////////////////
+
+// 205 HEIGHT X3 = 615 px
+//
+// 270 WIDTH  X3 = 810 px
+
+-(void)calendarSetup {
+    
+    CGSize calendarScrollSize = CGSizeMake(270, 205 * 3);
+    CGSize calendarDayLabelSize = CGSizeMake(30, 30);
+    
+    [self setCalendarScrollView:[[UIScrollView alloc] initWithFrame:CGRectMake(0, 0, calendarScrollSize.width, calendarScrollSize.height / 3)]];
+    
+    [[self calendarScrollView] setContentSize:calendarScrollSize];
+    [[self calendarScrollView] setCenter:self.view.center];
+    
+    //Set to start on the center of the content
+    [[self calendarScrollView] setContentOffset:CGPointMake(0, 205)];
+    
+    int spacementDayLabelInX = 10;
+    int spacementDayLabelInY = 5;
+    
+    int xPos = 0, yPos = 0;
+    
+    for(int z = 0; z < 3; z++) {
+        
+        NSString *text = @"M1";
+        
+        if(z == 1) {
+           text = @"M2";
+        }
+        if(z == 2) {
+            text = @"M3";
+        }
+        
+        for(int y = 0; y < 6; y++) {
+            
+            for(int x = 0; x < 7; x++) {
+                
+                CGRect frame = CGRectMake(xPos, yPos, calendarDayLabelSize.width , calendarDayLabelSize.height);
+                
+                UILabel *label = [[UILabel alloc] initWithFrame:frame];
+                UIButton *button = [[UIButton alloc]initWithFrame:frame];
+                
+                [label setFont:[UIFont fontWithName:@"Avenir" size:18.0]];
+                [label setTextAlignment:NSTextAlignmentCenter];
+                [label setTextColor:[UIColor blackColor]];
+                [label setText:text];
+                
+                
+                [[[self labelMatrix] objectAtIndex:y] addObject:label];
+                [[[self buttonMatrix] objectAtIndex:y] addObject:button];
+                
+                [self.calendarScrollView addSubview:label];
+                [self.calendarScrollView addSubview:button];
+                
+                
+                xPos = xPos + calendarDayLabelSize.width + spacementDayLabelInX;
+                
+                
+            }
+            
+            yPos = yPos + calendarDayLabelSize.height + spacementDayLabelInY;
+            xPos = 0;
+            
+        }
+        
+        
+    }
+    
+    
+    [self.view addSubview:[self calendarScrollView]];
+}
+
 -(void)viewDidLoad {
     
     [super viewDidLoad];
@@ -29,9 +127,33 @@
 }
 
 -(void)viewWillAppear:(BOOL)animated {
-    
+    [self calendarSetup];
     [super viewWillAppear:animated];
-    [self reloadCalendarInformation];
+    //[self reloadCalendarInformation];
+}
+
+
+
+
+
+-(void)loadCalendarGraphicsAndActions {
+    
+    for(int y = 0; y < 6; y++) {
+        for(int x = 0; x < 7; x++) {
+            
+            CGRect frame = CGRectMake(0, 0, 0, 0);
+            UILabel *label = [[UILabel alloc] initWithFrame:frame];
+            UIButton *button = [[UIButton alloc]initWithFrame:frame];
+            
+            [label setFont:[UIFont fontWithName:@"Avenir" size:18.0]];
+            
+            [[[self labelMatrix] objectAtIndex:y] addObject:label];
+            [[[self buttonMatrix] objectAtIndex:y] addObject:button];
+            
+            [self.view addSubview:label];
+            [self.view addSubview:button];
+        }
+    }
 }
 
 

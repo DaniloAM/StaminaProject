@@ -20,7 +20,13 @@
     
     [super viewDidLoad];
     
-
+    [self setUserPictureView:[[UIImageView alloc] initWithFrame:_cameraView.frame]];
+    [self.view addSubview:[self userPictureView]];
+    
+    [self.view bringSubviewToFront:[self returnIcon]];
+    [self.view bringSubviewToFront:[self cameraIcon]];
+    [self.view bringSubviewToFront:[self pictureIcon]];
+    
     AVCaptureStillImageOutput *stillImageOutput = [[AVCaptureStillImageOutput alloc] init];
     [stillImageOutput setOutputSettings:@{AVVideoCodecKey : AVVideoCodecJPEG}];
     [self setStillImageOutput:stillImageOutput];
@@ -35,6 +41,7 @@
 - (void)viewDidAppear:(BOOL)animated {
     
     [super viewDidAppear:animated];
+    [[self userPictureView] setHidden:true];
     
     //----- SHOW LIVE CAMERA PREVIEW -----
     _usingFrontCamera = true;
@@ -136,8 +143,6 @@
     [self performSelector:@selector(takePicture) withObject:nil afterDelay:0.2];
     [self performSelector:@selector(takePicture) withObject:nil afterDelay:0.3];
     
-    [[self pictureButton] setTitle:@"Share" forState:UIControlStateNormal];
-    
 }
 
 
@@ -156,6 +161,9 @@
                 _userPicture = [UIImage imageWithCGImage:_userPicture.CGImage
                                                    scale:_userPicture.scale orientation: UIImageOrientationLeftMirrored];
             }
+            
+            [[self userPictureView] setImage:[self userPicture]];
+            [[self userPictureView] setHidden:false];
             
         }
     }];
@@ -226,22 +234,12 @@
     
 }
 
--(void)sharePictureOnInstagram {
-    
-    SharingResponse *response = [[SharingResponse alloc] init];
-    [response sharePictureOnInstagram:_userPicture];
-    
-    [self returnToCamera];
-    
-}
-
 
 -(void)returnToCamera {
     
     _isOnShareMenu = false;
     _hasPicture = false;
-
-    [[self pictureButton] setTitle:@"Take" forState:UIControlStateNormal];
+    [[self userPictureView] setHidden:true];
     
     [[self shareView] removeFromSuperview];
 }
@@ -259,29 +257,42 @@
     UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
     UIViewController *myVC = (UIViewController *)[storyboard instantiateViewControllerWithIdentifier:@"homeScreen"];
     
-    [self.navigationController pushViewController:myVC animated:YES];
+    [self.navigationController popToRootViewControllerAnimated:true];
     
 }
 
+-(void)sharePictureOnInstagram {
+    
+    NSString *savePath = [NSHomeDirectory() stringByAppendingPathComponent:@"Documents/Test.ig"];
+    [UIImagePNGRepresentation(_userPicture) writeToFile:savePath atomically:YES];
+    
+    CGRect rect = CGRectMake(0 ,0 , 0, 0);
+    NSString  *jpgPath = [NSHomeDirectory()     stringByAppendingPathComponent:@"Documents/Test.ig"];
+    NSURL *igImageHookFile = [[NSURL alloc] initWithString:[[NSString alloc] initWithFormat:@"file://%@", jpgPath]];
+    self.dic.UTI = @"com.instagram.photo";
+    self.dic = [self setupControllerWithURL:igImageHookFile usingDelegate:self];
+    self.dic=[UIDocumentInteractionController interactionControllerWithURL:igImageHookFile];
+    [self.dic presentOpenInMenuFromRect: rect    inView: self.view animated: YES ];
+    NSURL *instagramURL = [NSURL URLWithString:@"instagram://media?id=MEDIA_ID"];
+    if ([[UIApplication sharedApplication] canOpenURL:instagramURL])
+    {
+        [self.dic presentOpenInMenuFromRect: rect    inView: self.view animated: YES ];
+    }
+    else
+    {
+        NSLog(@"No Instagram Found");
+    }
+    
+    
+}
 
-//-(void)presentShareMenu {
-//
-//    _isOnShareMenu = true;
-//
-//    [self.view bringSubviewToFront:[self darkenView]];
-//    [self.view bringSubviewToFront:[self facebookButton]];
-//    [self.view bringSubviewToFront:[self instagramButton]];
-//    [self.view bringSubviewToFront:[self sharingImageView]];
-//
-//
-//    [[self darkenView] setHidden:false];
-//    [[self darkenView] setImage:[self darkenImageOfScreen]];
-//
-//    [[self facebookButton] setHidden:false];
-//    [[self instagramButton] setHidden:false];
-//    [[self sharingImageView] setHidden:false];
-//
-//}
+-(UIDocumentInteractionController *) setupControllerWithURL: (NSURL*) fileURL usingDelegate: (id <UIDocumentInteractionControllerDelegate>) interactionDelegate {
+    
+    UIDocumentInteractionController *interactionController = [UIDocumentInteractionController interactionControllerWithURL: fileURL];
+    interactionController.delegate = interactionDelegate;
+    return interactionController;
+    
+}
 
 
 //- (UIImage *)screenSnapshot {

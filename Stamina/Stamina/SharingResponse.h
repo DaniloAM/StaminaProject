@@ -11,9 +11,7 @@
 
 @interface SharingResponse : NSObject <UIDocumentInteractionControllerDelegate>
 
-@property (nonatomic, retain) UIDocumentInteractionController *dic;
-
--(void)sharePictureOnInstagram : (UIImage *)image;
+//-(void)sharePictureOnInstagram : (UIImage *)image;
 +(void)sharePictureOnFacebook: (UIImage *)image;
 
 @end
