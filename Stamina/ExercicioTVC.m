@@ -58,7 +58,6 @@
         cell.textLabel.text = [temp name];
    
     cell.accessoryType = UITableViewCellAccessoryNone;
-    
     return cell;
 }
 
@@ -68,10 +67,24 @@
     cell.textLabel.backgroundColor = [UIColor clearColor];
     cell.detailTextLabel.backgroundColor = [UIColor clearColor];
 }
--(void)tableView:(UITableView *)tableView didDeselectRowAtIndexPath:(NSIndexPath *)indexPath{
-    
-}
 
+- (NSIndexPath *)tableView:(UITableView *)tableView willSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    UITableViewCell *cell = [tableView cellForRowAtIndexPath:indexPath];
+    NSString *str = cell.textLabel.text;
+    for (int x = 0; x < [[self arrayOfExercises] count]; x++) {
+        Exercises *temp =[[self arrayOfExercises] objectAtIndex:x];
+        if([[temp name] isEqualToString:str])
+            NSLog(@"achei vc amigao");
+            UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+            UIViewController *myVC;
+                myVC= (UIViewController *)[storyboard instantiateViewControllerWithIdentifier:@"TipsPVC"];
+                
+                [self.navigationController pushViewController:myVC animated:YES];
+            
+    }
+
+    return nil;
+}
 /*
  #pragma mark - Navigation
  

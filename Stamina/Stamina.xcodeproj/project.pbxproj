@@ -7,6 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3207B55019EEE9BC002052BF /* CadastroPVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 3207B54D19EEE9BC002052BF /* CadastroPVC.m */; };
+		3207B55119EEE9BC002052BF /* CadastroVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 3207B54F19EEE9BC002052BF /* CadastroVC.m */; };
+		3207B55619EEEA4F002052BF /* page1.png in Resources */ = {isa = PBXBuildFile; fileRef = 3207B55219EEEA4F002052BF /* page1.png */; };
+		3207B55719EEEA4F002052BF /* page2.png in Resources */ = {isa = PBXBuildFile; fileRef = 3207B55319EEEA4F002052BF /* page2.png */; };
+		3207B55819EEEA4F002052BF /* page3.png in Resources */ = {isa = PBXBuildFile; fileRef = 3207B55419EEEA4F002052BF /* page3.png */; };
+		3207B55919EEEA4F002052BF /* page4.png in Resources */ = {isa = PBXBuildFile; fileRef = 3207B55519EEEA4F002052BF /* page4.png */; };
+		3207B56419EEFECA002052BF /* TipsVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 3207B56119EEFECA002052BF /* TipsVC.m */; };
+		3207B56519EEFECA002052BF /* TipsPVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 3207B56319EEFECA002052BF /* TipsPVC.m */; };
 		324E23C219E87FC400DA2FDE /* CategoriaVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 324E23C119E87FC400DA2FDE /* CategoriaVC.m */; };
 		325F1FD719E702F400001EB0 /* bg_bar.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 325F1FD619E702F400001EB0 /* bg_bar.jpg */; };
 		325F1FDA19E7091C00001EB0 /* AcademiaVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 325F1FD919E7091C00001EB0 /* AcademiaVC.m */; };
@@ -48,8 +56,6 @@
 		C5CE7D7619D4BA10003E1595 /* fb_sign.png in Resources */ = {isa = PBXBuildFile; fileRef = C5CE7D7119D4BA10003E1595 /* fb_sign.png */; };
 		C5CE7D7719D4BA10003E1595 /* menu_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = C5CE7D7219D4BA10003E1595 /* menu_icon.png */; };
 		C5DFD4EA19DC7B48000EA19C /* Cadastro.m in Sources */ = {isa = PBXBuildFile; fileRef = C5DFD4E919DC7B48000EA19C /* Cadastro.m */; };
-		C5E99E5919DB32F200513CDE /* PageContentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C5E99E5819DB32F200513CDE /* PageContentViewController.m */; };
-		C5E99E5C19DB330100513CDE /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C5E99E5B19DB330100513CDE /* ViewController.m */; };
 		C5E99E6B19DB3AA200513CDE /* wireframe_academia.jpg in Resources */ = {isa = PBXBuildFile; fileRef = C5E99E5E19DB3AA200513CDE /* wireframe_academia.jpg */; };
 		C5E99E6C19DB3AA200513CDE /* wireframe_academia_inicio.jpg in Resources */ = {isa = PBXBuildFile; fileRef = C5E99E5F19DB3AA200513CDE /* wireframe_academia_inicio.jpg */; };
 		C5E99E6E19DB3AA200513CDE /* wireframe_calendario.png in Resources */ = {isa = PBXBuildFile; fileRef = C5E99E6119DB3AA200513CDE /* wireframe_calendario.png */; };
@@ -127,6 +133,18 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		3207B54C19EEE9BC002052BF /* CadastroPVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CadastroPVC.h; sourceTree = "<group>"; };
+		3207B54D19EEE9BC002052BF /* CadastroPVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CadastroPVC.m; sourceTree = "<group>"; };
+		3207B54E19EEE9BC002052BF /* CadastroVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CadastroVC.h; sourceTree = "<group>"; };
+		3207B54F19EEE9BC002052BF /* CadastroVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CadastroVC.m; sourceTree = "<group>"; };
+		3207B55219EEEA4F002052BF /* page1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = page1.png; sourceTree = "<group>"; };
+		3207B55319EEEA4F002052BF /* page2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = page2.png; sourceTree = "<group>"; };
+		3207B55419EEEA4F002052BF /* page3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = page3.png; sourceTree = "<group>"; };
+		3207B55519EEEA4F002052BF /* page4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = page4.png; sourceTree = "<group>"; };
+		3207B56019EEFECA002052BF /* TipsVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TipsVC.h; sourceTree = "<group>"; };
+		3207B56119EEFECA002052BF /* TipsVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TipsVC.m; sourceTree = "<group>"; };
+		3207B56219EEFECA002052BF /* TipsPVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TipsPVC.h; sourceTree = "<group>"; };
+		3207B56319EEFECA002052BF /* TipsPVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TipsPVC.m; sourceTree = "<group>"; };
 		324E23C019E87FC400DA2FDE /* CategoriaVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CategoriaVC.h; sourceTree = "<group>"; };
 		324E23C119E87FC400DA2FDE /* CategoriaVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CategoriaVC.m; sourceTree = "<group>"; };
 		325F1FD619E702F400001EB0 /* bg_bar.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = bg_bar.jpg; sourceTree = "<group>"; };
@@ -184,10 +202,6 @@
 		C5CE7D7219D4BA10003E1595 /* menu_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = menu_icon.png; sourceTree = "<group>"; };
 		C5DFD4E819DC7B48000EA19C /* Cadastro.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Cadastro.h; sourceTree = "<group>"; };
 		C5DFD4E919DC7B48000EA19C /* Cadastro.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Cadastro.m; sourceTree = "<group>"; };
-		C5E99E5719DB32F200513CDE /* PageContentViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PageContentViewController.h; sourceTree = "<group>"; };
-		C5E99E5819DB32F200513CDE /* PageContentViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PageContentViewController.m; sourceTree = "<group>"; };
-		C5E99E5A19DB330100513CDE /* ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		C5E99E5B19DB330100513CDE /* ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		C5E99E5E19DB3AA200513CDE /* wireframe_academia.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = wireframe_academia.jpg; sourceTree = "<group>"; };
 		C5E99E5F19DB3AA200513CDE /* wireframe_academia_inicio.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = wireframe_academia_inicio.jpg; sourceTree = "<group>"; };
 		C5E99E6119DB3AA200513CDE /* wireframe_calendario.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = wireframe_calendario.png; sourceTree = "<group>"; };
@@ -397,6 +411,10 @@
 			children = (
 				32F57C7019EC6838001BF6B2 /* MenuShouldOpen.h */,
 				32F57C7119EC6838001BF6B2 /* MenuShouldOpen.m */,
+				3207B56019EEFECA002052BF /* TipsVC.h */,
+				3207B56119EEFECA002052BF /* TipsVC.m */,
+				3207B56219EEFECA002052BF /* TipsPVC.h */,
+				3207B56319EEFECA002052BF /* TipsPVC.m */,
 				FF1596EC19C0CBC900D9236F /* Stamina */,
 				FF15970619C0CBC900D9236F /* StaminaTests */,
 				FF1596EB19C0CBC900D9236F /* Products */,
@@ -428,6 +446,10 @@
 				C53A352319D33B8900AC1383 /* ErrorVC.xib */,
 				FF1596FD19C0CBC900D9236F /* Images.xcassets */,
 				FF1596F419C0CBC900D9236F /* Stamina.xcdatamodeld */,
+				3207B55219EEEA4F002052BF /* page1.png */,
+				3207B55319EEEA4F002052BF /* page2.png */,
+				3207B55419EEEA4F002052BF /* page3.png */,
+				3207B55519EEEA4F002052BF /* page4.png */,
 				FF1597B119C0DFF600D9236F /* Images */,
 				FF1597B219C0E00700D9236F /* Sounds */,
 				FF1596ED19C0CBC900D9236F /* Supporting Files */,
@@ -655,12 +677,12 @@
 			children = (
 				C5A2418419CB512700064E54 /* TemporaryVC.h */,
 				C5A2418519CB512700064E54 /* TemporaryVC.m */,
-				C5E99E5A19DB330100513CDE /* ViewController.h */,
-				C5E99E5B19DB330100513CDE /* ViewController.m */,
 				C53A351B19D33B7700AC1383 /* LoginViewController.h */,
 				C53A351C19D33B7700AC1383 /* LoginViewController.m */,
-				C5E99E5719DB32F200513CDE /* PageContentViewController.h */,
-				C5E99E5819DB32F200513CDE /* PageContentViewController.m */,
+				3207B54C19EEE9BC002052BF /* CadastroPVC.h */,
+				3207B54D19EEE9BC002052BF /* CadastroPVC.m */,
+				3207B54E19EEE9BC002052BF /* CadastroVC.h */,
+				3207B54F19EEE9BC002052BF /* CadastroVC.m */,
 			);
 			name = Cadastro;
 			sourceTree = "<group>";
@@ -782,9 +804,12 @@
 				C5E99E7719DB3AA200513CDE /* wireframe_login.png in Resources */,
 				FF12F16C19EC7240007524EF /* icone_facebook.png in Resources */,
 				C5EB6C0F19D9DC5B00C528FC /* caminhada_tela.png in Resources */,
+				3207B55819EEEA4F002052BF /* page3.png in Resources */,
 				C527A3A119DB1FB300C72B21 /* menu_icon.png in Resources */,
 				C5E99E7519DB3AA200513CDE /* wireframe_informacaoes.jpg in Resources */,
 				C5E99E6C19DB3AA200513CDE /* wireframe_academia_inicio.jpg in Resources */,
+				3207B55719EEEA4F002052BF /* page2.png in Resources */,
+				3207B55919EEEA4F002052BF /* page4.png in Resources */,
 				C527A3AE19DB27B000C72B21 /* icon_email.png in Resources */,
 				C59934FB19D36756006337E0 /* Logo_Stamina.png in Resources */,
 				FF12F17219EC725E007524EF /* icone_camera.png in Resources */,
@@ -793,6 +818,7 @@
 				C5E99E6E19DB3AA200513CDE /* wireframe_calendario.png in Resources */,
 				FF12F16D19EC7240007524EF /* icone_instagram.png in Resources */,
 				C527A39E19DB1FB300C72B21 /* icon_pontos.png in Resources */,
+				3207B55619EEEA4F002052BF /* page1.png in Resources */,
 				32C6B39219E484CB00DE13AC /* wireframe_categorias.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -811,7 +837,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C5E99E5C19DB330100513CDE /* ViewController.m in Sources */,
 				FF17BDC019CA2E5600B5EF46 /* UserTraining.m in Sources */,
 				FF13E9E019E70B9B0005BA49 /* TrajectoryRoute.m in Sources */,
 				C5EB6C0819D9DBD300C528FC /* UserCalendarVC.m in Sources */,
@@ -837,8 +862,10 @@
 				FF1597AE19C0DA5A00D9236F /* UserData.m in Sources */,
 				C53A351D19D33B7700AC1383 /* LoginViewController.m in Sources */,
 				C5EB6BFB19D9DB6B00C528FC /* CalendarMath.m in Sources */,
+				3207B56419EEFECA002052BF /* TipsVC.m in Sources */,
 				325F1FE919E7229C00001EB0 /* HideBBVC.m in Sources */,
 				FF794D7719CA288F00808144 /* TrainingExercises.m in Sources */,
+				3207B55119EEE9BC002052BF /* CadastroVC.m in Sources */,
 				FF15986F19C0E24F00D9236F /* UIColor+CreateMethods.m in Sources */,
 				C5EB6C0919D9DBD300C528FC /* FBLoginVC.m in Sources */,
 				C5EB6C0A19D9DBD300C528FC /* AVCamPreviewView.m in Sources */,
@@ -849,12 +876,14 @@
 				FFAC18FF19DB200E00B17487 /* FinishedRunningVC.m in Sources */,
 				C5EB6BFA19D9DB6B00C528FC /* CalendarPreparer.m in Sources */,
 				C53A353119D3411F00AC1383 /* Reachability.m in Sources */,
+				3207B55019EEE9BC002052BF /* CadastroPVC.m in Sources */,
 				FF15972719C0D96E00D9236F /* AMSlideMenuLeftTableViewController.m in Sources */,
 				FF13E9DD19E5BF840005BA49 /* SharingResponse.m in Sources */,
 				FF15972619C0D96E00D9236F /* AMSlideMenuLeftMenuSegue.m in Sources */,
 				32F57C7519EC6F62001BF6B2 /* ExercicioExplainVC.m in Sources */,
 				C5DFD4EA19DC7B48000EA19C /* Cadastro.m in Sources */,
 				C5EB6BF919D9DB6B00C528FC /* CalendarMatrixes.m in Sources */,
+				3207B56519EEFECA002052BF /* TipsPVC.m in Sources */,
 				C5EB6BF719D9DB6B00C528FC /* DayObject.m in Sources */,
 				FF13E9E319E70B9B0005BA49 /* TrajectoryFile.m in Sources */,
 				C53A352C19D33B9A00AC1383 /* RWBlurPopoverTransitionController.m in Sources */,
@@ -862,7 +891,6 @@
 				FF12F16919E878E3007524EF /* StartRunningVC.m in Sources */,
 				FFAC190B19DC86C400B17487 /* SocialSharingVC.m in Sources */,
 				FF17BDBA19C9F78F00B5EF46 /* TrainingDayObject.m in Sources */,
-				C5E99E5919DB32F200513CDE /* PageContentViewController.m in Sources */,
 				FF1596F019C0CBC900D9236F /* main.m in Sources */,
 				FFAC193D19E3171C00B17487 /* HomeScreenVC.m in Sources */,
 				324E23C219E87FC400DA2FDE /* CategoriaVC.m in Sources */,

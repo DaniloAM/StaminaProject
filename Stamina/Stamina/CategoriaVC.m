@@ -96,7 +96,11 @@
     return 40;
 }
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
-{   NSArray *array;
+{UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+    ExercicioTVC *myVC;
+    
+    myVC= (ExercicioTVC *)[storyboard instantiateViewControllerWithIdentifier:@"ExercicioTVC"];
+    NSArray *array;
     ExercisesList *temp = [ExercisesList alloc];
     if(indexPath.section==0){
         switch (indexPath.row) {
@@ -175,11 +179,8 @@
                 
         }
     }
-    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
-    ExercicioTVC *myVC;
-    
-    myVC= (ExercicioTVC *)[storyboard instantiateViewControllerWithIdentifier:@"ExercicioTVC"];
     [myVC setArrayOfExercises:array];
+
     [self.navigationController pushViewController:myVC animated:YES];
 }
 -(void)tableView:(UITableView *)tableView willDisplayHeaderView:(UIView *)view forSection:(NSInteger)section {
