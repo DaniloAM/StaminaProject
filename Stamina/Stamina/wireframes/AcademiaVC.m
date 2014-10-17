@@ -17,7 +17,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
 
-    NSArray *array =  [super criaBarButtonComBotoes:4];
+    NSArray *array =  [super criaBarButtonComBotoes:10];
     UIButton *btn = [array objectAtIndex:0];
     [btn addTarget:self action:@selector(function1) forControlEvents:UIControlEventTouchUpInside];
 }
@@ -32,7 +32,8 @@
 
 }
 -(void)viewWillAppear:(BOOL)animated{
-    [super viewWillAppear:animated withGesture:0];
+    [super viewWillAppear:animated withGesture:1];
+    [super viewWillDisappear:animated];
 }
 
 @end

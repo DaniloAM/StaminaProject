@@ -20,7 +20,9 @@
     CGFloat height = [[UIScreen mainScreen] bounds].size.height;
     height = height*167.67/1137.11;
     //
-    
+    float red = 249.0/255.0;
+    float green = 216.0/255.0;
+    float blue = 0.0/255.0;
     CGFloat navBarHeight = height;
     CGFloat width = [[UIScreen mainScreen] bounds].size.width;
     
@@ -28,11 +30,10 @@
     
     CGRect frame = CGRectMake(0.0f, 0.0f, width, navBarHeight);
     [self.navigationController.navigationBar setFrame:frame];
-    [self.navigationController.navigationBar setBackgroundColor:[UIColor blackColor]];
-    UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(0, navBarHeight /4, width, navBarHeight /4)];
+    [self.navigationController.navigationBar setBackgroundColor:[UIColor colorWithRed:red green:green blue:blue alpha:1]];
+    UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(0, -35+navBarHeight /4, width, navBarHeight /4+40)];
     [label setTextAlignment:NSTextAlignmentCenter]; //to center text in the UILabel
     
-    [label  setText:@"stamina.com"];
     [label setFont: [UIFont fontWithName:@"Helvetica" size:12]];
     UIView *view = [[UIView alloc] initWithFrame:CGRectMake(0, 0, label.frame.size.width, label.frame.size.height)];
     CAGradientLayer *gradient = [CAGradientLayer layer];
@@ -47,9 +48,10 @@
     imageView.image =[UIImage imageNamed:@"icon_menu.png"];
     [btn addSubview:imageView];
     [btn addTarget:mainVC action:@selector(openLeftMenu) forControlEvents:UIControlEventTouchUpInside];
-    UIImageView *imageViewLabelTwo = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, labelTwo.frame.size.width, labelTwo.frame.size.height)];
-    imageViewLabelTwo.image =[UIImage imageNamed:@"bg_bar.jpg"];
-    [labelTwo addSubview:imageViewLabelTwo];
+    [label setBackgroundColor:[UIColor colorWithRed:red green:green blue:blue alpha:1]];
+    [labelTwo setBackgroundColor:[UIColor colorWithRed:red green:green blue:blue alpha:1]];
+    [btn setBackgroundColor:[UIColor colorWithRed:red green:green blue:blue alpha:1]];
+
     [self.navigationController.navigationBar addSubview:label];
     [self.navigationController.navigationBar addSubview:labelTwo];
     [self.navigationController.navigationBar addSubview:btn];

@@ -254,8 +254,6 @@
 
 -(IBAction)returnToPreviousView {
     
-    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
-    UIViewController *myVC = (UIViewController *)[storyboard instantiateViewControllerWithIdentifier:@"homeScreen"];
     
     [self.navigationController popToRootViewControllerAnimated:true];
     

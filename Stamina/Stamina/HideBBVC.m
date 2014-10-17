@@ -36,6 +36,7 @@
         UIPanGestureRecognizer *pangesture = [[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(mecheu:)];
         [self setGesture:pangesture];
         [self.view addGestureRecognizer:pangesture];
+        [super viewWillDisappear:animated];
     }
 }
 
@@ -43,6 +44,8 @@
     [super viewWillDisappear:YES];
     MenuShouldOpen *menu = [MenuShouldOpen alloc];
     [menu setOpen:YES];
+    [super viewWillDisappear:animated];
+
     
 }
 /*

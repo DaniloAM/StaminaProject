@@ -46,7 +46,6 @@
 		C59934F919D36739006337E0 /* App-Stamina.png in Resources */ = {isa = PBXBuildFile; fileRef = C59934F819D36739006337E0 /* App-Stamina.png */; };
 		C59934FB19D36756006337E0 /* Logo_Stamina.png in Resources */ = {isa = PBXBuildFile; fileRef = C59934FA19D36756006337E0 /* Logo_Stamina.png */; };
 		C5A2418619CB512700064E54 /* TemporaryVC.m in Sources */ = {isa = PBXBuildFile; fileRef = C5A2418519CB512700064E54 /* TemporaryVC.m */; };
-		C5CE7D6D19D4A078003E1595 /* InfoFisicasVC.m in Sources */ = {isa = PBXBuildFile; fileRef = C5CE7D6C19D4A078003E1595 /* InfoFisicasVC.m */; };
 		C5CE7D6F19D4A162003E1595 /* Wireframe InfoFisicas.jpg in Resources */ = {isa = PBXBuildFile; fileRef = C5CE7D6E19D4A162003E1595 /* Wireframe InfoFisicas.jpg */; };
 		C5CE7D7519D4BA10003E1595 /* calendar_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = C5CE7D7019D4BA10003E1595 /* calendar_icon.png */; };
 		C5CE7D7619D4BA10003E1595 /* fb_sign.png in Resources */ = {isa = PBXBuildFile; fileRef = C5CE7D7119D4BA10003E1595 /* fb_sign.png */; };
@@ -187,8 +186,6 @@
 		C59934FA19D36756006337E0 /* Logo_Stamina.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Logo_Stamina.png; sourceTree = "<group>"; };
 		C5A2418419CB512700064E54 /* TemporaryVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TemporaryVC.h; sourceTree = "<group>"; };
 		C5A2418519CB512700064E54 /* TemporaryVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TemporaryVC.m; sourceTree = "<group>"; };
-		C5CE7D6B19D4A078003E1595 /* InfoFisicasVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InfoFisicasVC.h; sourceTree = "<group>"; };
-		C5CE7D6C19D4A078003E1595 /* InfoFisicasVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InfoFisicasVC.m; sourceTree = "<group>"; };
 		C5CE7D6E19D4A162003E1595 /* Wireframe InfoFisicas.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Wireframe InfoFisicas.jpg"; sourceTree = "<group>"; };
 		C5CE7D7019D4BA10003E1595 /* calendar_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = calendar_icon.png; sourceTree = "<group>"; };
 		C5CE7D7119D4BA10003E1595 /* fb_sign.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = fb_sign.png; sourceTree = "<group>"; };
@@ -523,8 +520,6 @@
 				C5EB6BFF19D9DBD300C528FC /* FBLoginVC.m */,
 				FF13E9E919E71FFA0005BA49 /* PushedViewController.h */,
 				FF13E9EA19E71FFA0005BA49 /* PushedViewController.m */,
-				C5CE7D6B19D4A078003E1595 /* InfoFisicasVC.h */,
-				C5CE7D6C19D4A078003E1595 /* InfoFisicasVC.m */,
 				FF17BD6319C8C21600B5EF46 /* MainVC.h */,
 				FF17BD6419C8C21600B5EF46 /* MainVC.m */,
 				325F1FE119E7143C00001EB0 /* MenuVC.h */,
@@ -727,6 +722,7 @@
 				TargetAttributes = {
 					FF1596E919C0CBC900D9236F = {
 						CreatedOnToolsVersion = 6.0;
+						DevelopmentTeam = FEMX6BFS4F;
 					};
 					FF15970219C0CBC900D9236F = {
 						CreatedOnToolsVersion = 6.0;
@@ -841,7 +837,6 @@
 				FF1596F619C0CBC900D9236F /* Stamina.xcdatamodeld in Sources */,
 				FF17BDB719C9F78E00B5EF46 /* Exercises.m in Sources */,
 				C53A352419D33B8900AC1383 /* ErrorVC.m in Sources */,
-				C5CE7D6D19D4A078003E1595 /* InfoFisicasVC.m in Sources */,
 				FF15972A19C0D96E00D9236F /* UIViewController+AMSlideMenu.m in Sources */,
 				FF17BD6519C8C21600B5EF46 /* MainVC.m in Sources */,
 				FF159A4C19C21D1B00D9236F /* CoreDataLoading.m in Sources */,
