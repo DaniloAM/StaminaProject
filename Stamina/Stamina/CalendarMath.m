@@ -9,6 +9,7 @@
 #import "CalendarMath.h"
 
 @implementation CalendarMath
+
 -(id)init {
     self = [super init];
     
@@ -23,8 +24,8 @@
 }
 
 
--(int)getFirstWeekdayFromDaysNeeded: (int)daysNeeded {
-    int weekDay = (daysNeeded + _firstDayFromYearAvailable) % 7;
++(int)getFirstWeekdayFromDaysNeeded: (int)daysNeeded {
+    int weekDay = (daysNeeded + 7) % 7;
     if(weekDay == 0) {
         weekDay = 7;
     }
@@ -33,9 +34,9 @@
 }
 
 
--(int)getWeekdayFromDay: (int)day month:(int)month andYear: (int)year {
-    int daysNeeded = [self daysNeededForYear:year andMonth:month];
-    int firstDayWeekday = [self getFirstWeekdayFromDaysNeeded:daysNeeded];
++(int)getWeekdayFromDay: (int)day month:(int)month andYear: (int)year {
+    int daysNeeded = [CalendarMath daysNeededForYear:year andMonth:month];
+    int firstDayWeekday = [CalendarMath getFirstWeekdayFromDaysNeeded:daysNeeded];
     
     int weekDay = (firstDayWeekday + (day - 1)) % 7;
     if(weekDay == 0) {
@@ -47,15 +48,15 @@
 }
 
 
--(int)getFirstWeekdayFromMonth: (int)month andYear: (int)year {
-    int days = [self daysNeededForYear:year andMonth:month];
-    return [self getFirstWeekdayFromDaysNeeded:days];
++(int)getFirstWeekdayFromMonth: (int)month andYear: (int)year {
+    int days = [CalendarMath daysNeededForYear:year andMonth:month];
+    return [CalendarMath getFirstWeekdayFromDaysNeeded:days];
 }
 
 
--(int)daysNeededForYear: (int)year andMonth: (int)month {
++(int)daysNeededForYear: (int)year andMonth: (int)month {
     int advanceDays = 0;
-    int advanceYears = year - _firstYearAvailable;
+    int advanceYears = year - 2000;
     
     int teste = 0;
     
@@ -64,23 +65,23 @@
     
     
     for(int x=1; x < month; x++) {
-        advanceDays += [self getDaysFromMonth:x inYear:year];
-        teste += [self getDaysFromMonth:x inYear:year];
+        advanceDays += [CalendarMath getDaysFromMonth:x inYear:year];
+        teste += [CalendarMath getDaysFromMonth:x inYear:year];
     }
     
-    if(((year - _firstYearAvailable) % 4) == 0) {
+    if(((year - 2000) % 4) == 0) {
         advanceDays--;
     }
     
     return advanceDays;
 }
 
--(int)getDaysFromMonth: (int)x inYear:(int)year {
++(int)getDaysFromMonth: (int)x inYear:(int)year {
     if(x==1||x==3||x==5||x==7||x==8||x==10||x==12) {
         return 31;
     }
     else if(x==2) {
-        if(((year - _firstYearAvailable) % 4) == 0) {
+        if(((year - 2000) % 4) == 0) {
             //Its a leap year
             return 29;
         }
@@ -137,8 +138,8 @@
     }
 }
 
--(void)checkValidYear: (int)year {
-    if(year < _firstYearAvailable) {
++(void)checkValidYear: (int)year {
+    if(year < 2000) {
         
         
         exit(EXIT_FAILURE);

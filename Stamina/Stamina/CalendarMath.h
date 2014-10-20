@@ -39,9 +39,9 @@
 @property int firstYearAvailable;
 @property int firstDayFromYearAvailable;
 
--(int)getWeekdayFromDay: (int)day month:(int)month andYear: (int)year;
--(int)getFirstWeekdayFromMonth: (int)month andYear: (int)year;
--(int)getDaysFromMonth: (int)x inYear:(int)year;
++(int)getWeekdayFromDay: (int)day month:(int)month andYear: (int)year;
++(int)getFirstWeekdayFromMonth: (int)month andYear: (int)year;
++(int)getDaysFromMonth: (int)x inYear:(int)year;
 +(NSString *) returnMonthName: (int)month;
 
 

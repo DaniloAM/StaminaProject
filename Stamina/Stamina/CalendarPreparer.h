@@ -29,9 +29,10 @@
 
 @interface CalendarPreparer : NSObject
 
-@property CalendarMatrixes *matrixes;
-@property UIColor *trainingColor;
-
--(NSArray *)getCalendarMatrixesForMonth: (int)month andYear: (int)year;
+//@property CalendarMatrixes *matrixes;
+//@property UIColor *trainingColor;
+//
+//-(NSArray *)getCalendarMatrixesForMonth: (int)month andYear: (int)year;
++(NSArray *)getCalendarScrollViewWithLabelsButtons;
 
 @end

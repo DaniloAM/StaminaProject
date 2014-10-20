@@ -33,18 +33,19 @@
 
 @interface CalendarMatrixes : NSObject
 
-@property int startXPos;
-@property int startYPos;
-@property int XSize;
-@property int YSize;
-@property float fontSize;
-@property int spacement;
-@property UIColor *fontColor;
+//@property int startXPos;
+//@property int startYPos;
+//@property int XSize;
+//@property int YSize;
+//@property float fontSize;
+//@property int spacement;
+//@property UIColor *fontColor;
 
--(id)initWithCalendarPositionsX: (int)xPos Y: (int)yPos Xsize: (int)xSize Ysize: (int)ySize  spacement: (int)spc fontSize: (float)fontSize fontColor: (UIColor *)color;
-
--(NSMutableArray *)getLabelMatrixForCalendar;
--(NSMutableArray *)getButtonMatrixForCalendar;
--(NSMutableArray *)getDayObjectMatrixCalendarForMonth: (int)month andYear: (int)year;
+//-(id)initWithCalendarPositionsX: (int)xPos Y: (int)yPos Xsize: (int)xSize Ysize: (int)ySize  spacement: (int)spc fontSize: (float)fontSize fontColor: (UIColor *)color;
+//
+//-(NSMutableArray *)getLabelMatrixForCalendar;
+//-(NSMutableArray *)getButtonMatrixForCalendar;
+//-(NSMutableArray *)getDayObjectMatrixCalendarForMonth: (int)month andYear: (int)year;
++(NSArray *)getMatrixCalendarScrollInMonth: (int)month andYear : (int)year;
 
 @end

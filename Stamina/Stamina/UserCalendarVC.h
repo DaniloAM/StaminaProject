@@ -9,9 +9,15 @@
 
 // X , Y
 //
-//Object at index X addObject:
+//Object at index Y addObject:
 //
-// if
+
+//
+//   for(y = 0; y < 6; y++)
+//
+//       for(x = 0; x < 7; x++)
+//
+//
 //
 //        X   (0)   (1)   (2)   (3)   (4)   (5)   (6)
 //             V     V     V     V     V     V     V
@@ -37,10 +43,6 @@
 // 270 WIDTH  X3 = 810 px
 
 
-
-
-
-
 #import <UIKit/UIKit.h>
 #import "CalendarPreparer.h"
 #import "UserData.h"
@@ -59,6 +61,7 @@
 
 @property int calendarMonth;
 @property int calendarYear;
+@property int locationNextMonth;
 
 @end
 
