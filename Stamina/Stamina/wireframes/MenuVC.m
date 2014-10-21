@@ -16,6 +16,9 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+  }
+-(void)viewDidAppear:(BOOL)animated{
+    [super viewDidAppear:NO];
     AMSlideMenuMainViewController *mainVC = [AMSlideMenuMainViewController getInstanceForVC:self];
     CGFloat height = [[UIScreen mainScreen] bounds].size.height;
     height = height*167.67/1137.11;
@@ -51,14 +54,19 @@
     [label setBackgroundColor:[UIColor colorWithRed:red green:green blue:blue alpha:1]];
     [labelTwo setBackgroundColor:[UIColor colorWithRed:red green:green blue:blue alpha:1]];
     [btn setBackgroundColor:[UIColor colorWithRed:red green:green blue:blue alpha:1]];
-
+    NSLog(@"%f, %f", self.navigationController.navigationBar.frame.origin.x , self.navigationController.navigationBar.frame.origin.y);
+    NSLog(@"%f, %f", self.navigationController.navigationBar.frame.size.width , self.navigationController.navigationBar.frame.size.height);
     [self.navigationController.navigationBar addSubview:label];
     [self.navigationController.navigationBar addSubview:labelTwo];
     [self.navigationController.navigationBar addSubview:btn];
     self.navigationItem.leftBarButtonItem = nil;
     self.navigationItem.hidesBackButton = YES;
-}
 
+}
+-(void)viewWillAppear:(BOOL)animated{
+    [super viewWillAppear:animated];
+    
+}
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.

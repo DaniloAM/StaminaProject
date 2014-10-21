@@ -16,9 +16,12 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+ 
+}
+
+-(void)viewDidAppear:(BOOL)animated{
+    [super viewDidAppear:animated];
     MenuShouldOpen *temp = [MenuShouldOpen alloc];
     [temp setOpen:YES];
 }
-
-
 @end

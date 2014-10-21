@@ -80,7 +80,29 @@
     
     return array;
 }
-
+-(NSArray *)criaBarButtonComBotoesTranslucent: (int)n{
+    CGSize screenSize = [[UIScreen mainScreen] bounds].size;
+    screenSize.height = screenSize.height + 20
+    ;
+    NSMutableArray *array = [NSMutableArray array];
+    [self setTabBar:[[UIView alloc] initWithFrame:CGRectMake(0, screenSize.height-screenSize.height*200/1571 , screenSize.width, screenSize.height*200/1571 )]];
+    [[self tabBar] setBackgroundColor:[UIColor blackColor]];
+    [self.view addSubview:self.tabBar];
+    [self setStartPointBar:self.tabBar.frame.origin];
+    for(int x = 0 ; x < n; x++){
+        UIButton *btn1 = [[UIButton alloc] initWithFrame:CGRectMake(x*self.tabBar.frame.size.width/n, 0, self.tabBar.frame.size.width/n, self.tabBar.frame.size.height)];
+        [self.tabBar addSubview:btn1];
+        CGFloat hue = ( arc4random() % 256 / 256.0 );  //  0.0 to 1.0
+        CGFloat saturation = ( arc4random() % 128 / 256.0 ) + 0.5;  //  0.5 to 1.0, away from white
+        CGFloat brightness = ( arc4random() % 128 / 256.0 ) + 0.5;  //  0.5 to 1.0, away from black
+        UIColor *color = [UIColor colorWithHue:hue saturation:saturation brightness:brightness alpha:1];
+        [btn1 setBackgroundColor:color];
+        [array addObject:btn1];
+    }
+    
+    
+    return array;
+}
 -(void)mecheu :(UIPanGestureRecognizer *)sender{
     CGPoint velocity = [sender velocityInView:self.view];
     CGPoint stopLocation = [sender locationInView:self.view];

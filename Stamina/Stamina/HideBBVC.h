@@ -17,5 +17,6 @@
 @property UIPanGestureRecognizer *gesture;
 @property int lastDirection;
 -(void)viewWillAppear:(BOOL)animated withGesture: (BOOL)gesture;
+-(NSArray *)criaBarButtonComBotoesTranslucent: (int)n;
 
 @end

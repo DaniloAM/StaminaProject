@@ -16,10 +16,19 @@
 		325F1FDA19E7091C00001EB0 /* AcademiaVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 325F1FD919E7091C00001EB0 /* AcademiaVC.m */; };
 		325F1FE319E7143C00001EB0 /* MenuVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 325F1FE219E7143C00001EB0 /* MenuVC.m */; };
 		325F1FE919E7229C00001EB0 /* HideBBVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 325F1FE819E7229C00001EB0 /* HideBBVC.m */; };
+		3276F1C119F6C9A500B2F93D /* icone_calendario.png in Resources */ = {isa = PBXBuildFile; fileRef = 3276F1B919F6C9A500B2F93D /* icone_calendario.png */; };
+		3276F1C219F6C9A500B2F93D /* icone_compartilhar.png in Resources */ = {isa = PBXBuildFile; fileRef = 3276F1BA19F6C9A500B2F93D /* icone_compartilhar.png */; };
+		3276F1C319F6C9A500B2F93D /* icone_duvida.png in Resources */ = {isa = PBXBuildFile; fileRef = 3276F1BB19F6C9A500B2F93D /* icone_duvida.png */; };
+		3276F1C419F6C9A500B2F93D /* icone_ok.png in Resources */ = {isa = PBXBuildFile; fileRef = 3276F1BC19F6C9A500B2F93D /* icone_ok.png */; };
+		3276F1C519F6C9A500B2F93D /* icone_pontuacao.png in Resources */ = {isa = PBXBuildFile; fileRef = 3276F1BD19F6C9A500B2F93D /* icone_pontuacao.png */; };
+		3276F1C619F6C9A500B2F93D /* icone_salvar.png in Resources */ = {isa = PBXBuildFile; fileRef = 3276F1BE19F6C9A500B2F93D /* icone_salvar.png */; };
+		3276F1C719F6C9A500B2F93D /* wireframe_exercicio_serie.png in Resources */ = {isa = PBXBuildFile; fileRef = 3276F1BF19F6C9A500B2F93D /* wireframe_exercicio_serie.png */; };
+		3276F1C819F6C9A500B2F93D /* wireframe_exercicio.png in Resources */ = {isa = PBXBuildFile; fileRef = 3276F1C019F6C9A500B2F93D /* wireframe_exercicio.png */; };
+		3276F1CA19F6CB1400B2F93D /* icone_add.png in Resources */ = {isa = PBXBuildFile; fileRef = 3276F1C919F6CB1400B2F93D /* icone_add.png */; };
+		3276F1CD19F6CE2D00B2F93D /* CriaTreinoVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 3276F1CC19F6CE2D00B2F93D /* CriaTreinoVC.m */; };
 		32C6B39219E484CB00DE13AC /* wireframe_categorias.png in Resources */ = {isa = PBXBuildFile; fileRef = 32C6B39119E484CB00DE13AC /* wireframe_categorias.png */; };
 		32F57C6F19EC4D16001BF6B2 /* ExercicioTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 32F57C6E19EC4D16001BF6B2 /* ExercicioTVC.m */; };
 		32F57C7219EC6838001BF6B2 /* MenuShouldOpen.m in Sources */ = {isa = PBXBuildFile; fileRef = 32F57C7119EC6838001BF6B2 /* MenuShouldOpen.m */; };
-		32F57C7519EC6F62001BF6B2 /* ExercicioExplainVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 32F57C7419EC6F62001BF6B2 /* ExercicioExplainVC.m */; };
 		C527A39519DB1FB300C72B21 /* fb_sign.png in Resources */ = {isa = PBXBuildFile; fileRef = C527A38619DB1FB300C72B21 /* fb_sign.png */; };
 		C527A39619DB1FB300C72B21 /* icon_batimento.png in Resources */ = {isa = PBXBuildFile; fileRef = C527A38719DB1FB300C72B21 /* icon_batimento.png */; };
 		C527A39819DB1FB300C72B21 /* icon_calendario.png in Resources */ = {isa = PBXBuildFile; fileRef = C527A38919DB1FB300C72B21 /* icon_calendario.png */; };
@@ -146,13 +155,22 @@
 		325F1FE219E7143C00001EB0 /* MenuVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MenuVC.m; path = wireframes/MenuVC.m; sourceTree = "<group>"; };
 		325F1FE719E7229C00001EB0 /* HideBBVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HideBBVC.h; sourceTree = "<group>"; };
 		325F1FE819E7229C00001EB0 /* HideBBVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HideBBVC.m; sourceTree = "<group>"; };
+		3276F1B919F6C9A500B2F93D /* icone_calendario.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icone_calendario.png; sourceTree = "<group>"; };
+		3276F1BA19F6C9A500B2F93D /* icone_compartilhar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icone_compartilhar.png; sourceTree = "<group>"; };
+		3276F1BB19F6C9A500B2F93D /* icone_duvida.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icone_duvida.png; sourceTree = "<group>"; };
+		3276F1BC19F6C9A500B2F93D /* icone_ok.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icone_ok.png; sourceTree = "<group>"; };
+		3276F1BD19F6C9A500B2F93D /* icone_pontuacao.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icone_pontuacao.png; sourceTree = "<group>"; };
+		3276F1BE19F6C9A500B2F93D /* icone_salvar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icone_salvar.png; sourceTree = "<group>"; };
+		3276F1BF19F6C9A500B2F93D /* wireframe_exercicio_serie.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = wireframe_exercicio_serie.png; sourceTree = "<group>"; };
+		3276F1C019F6C9A500B2F93D /* wireframe_exercicio.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = wireframe_exercicio.png; sourceTree = "<group>"; };
+		3276F1C919F6CB1400B2F93D /* icone_add.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icone_add.png; sourceTree = "<group>"; };
+		3276F1CB19F6CE2D00B2F93D /* CriaTreinoVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CriaTreinoVC.h; sourceTree = "<group>"; };
+		3276F1CC19F6CE2D00B2F93D /* CriaTreinoVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CriaTreinoVC.m; sourceTree = "<group>"; };
 		32C6B39119E484CB00DE13AC /* wireframe_categorias.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = wireframe_categorias.png; sourceTree = "<group>"; };
 		32F57C6D19EC4D16001BF6B2 /* ExercicioTVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ExercicioTVC.h; path = ../ExercicioTVC.h; sourceTree = "<group>"; };
 		32F57C6E19EC4D16001BF6B2 /* ExercicioTVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ExercicioTVC.m; path = ../ExercicioTVC.m; sourceTree = "<group>"; };
 		32F57C7019EC6838001BF6B2 /* MenuShouldOpen.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MenuShouldOpen.h; sourceTree = "<group>"; };
 		32F57C7119EC6838001BF6B2 /* MenuShouldOpen.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MenuShouldOpen.m; sourceTree = "<group>"; };
-		32F57C7319EC6F62001BF6B2 /* ExercicioExplainVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ExercicioExplainVC.h; sourceTree = "<group>"; };
-		32F57C7419EC6F62001BF6B2 /* ExercicioExplainVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ExercicioExplainVC.m; sourceTree = "<group>"; };
 		C527A38619DB1FB300C72B21 /* fb_sign.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = fb_sign.png; sourceTree = "<group>"; };
 		C527A38719DB1FB300C72B21 /* icon_batimento.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon_batimento.png; sourceTree = "<group>"; };
 		C527A38919DB1FB300C72B21 /* icon_calendario.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon_calendario.png; sourceTree = "<group>"; };
@@ -321,6 +339,22 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3276F1B819F6C99900B2F93D /* WhatDoWeNeed */ = {
+			isa = PBXGroup;
+			children = (
+				3276F1B919F6C9A500B2F93D /* icone_calendario.png */,
+				3276F1BA19F6C9A500B2F93D /* icone_compartilhar.png */,
+				3276F1BB19F6C9A500B2F93D /* icone_duvida.png */,
+				3276F1BC19F6C9A500B2F93D /* icone_ok.png */,
+				3276F1C919F6CB1400B2F93D /* icone_add.png */,
+				3276F1BD19F6C9A500B2F93D /* icone_pontuacao.png */,
+				3276F1BE19F6C9A500B2F93D /* icone_salvar.png */,
+				3276F1BF19F6C9A500B2F93D /* wireframe_exercicio_serie.png */,
+				3276F1C019F6C9A500B2F93D /* wireframe_exercicio.png */,
+			);
+			name = WhatDoWeNeed;
+			sourceTree = "<group>";
+		};
 		C527A38519DB1FB300C72B21 /* icones */ = {
 			isa = PBXGroup;
 			children = (
@@ -433,8 +467,8 @@
 				C53A352F19D3411F00AC1383 /* Reachability.h */,
 				C53A353019D3411F00AC1383 /* Reachability.m */,
 				C53A352D19D33BA700AC1383 /* Main.storyboard */,
-				32F57C7319EC6F62001BF6B2 /* ExercicioExplainVC.h */,
-				32F57C7419EC6F62001BF6B2 /* ExercicioExplainVC.m */,
+				3276F1CB19F6CE2D00B2F93D /* CriaTreinoVC.h */,
+				3276F1CC19F6CE2D00B2F93D /* CriaTreinoVC.m */,
 				C53A352319D33B8900AC1383 /* ErrorVC.xib */,
 				FF1596FD19C0CBC900D9236F /* Images.xcassets */,
 				FF1596F419C0CBC900D9236F /* Stamina.xcdatamodeld */,
@@ -569,6 +603,7 @@
 		FF1597B119C0DFF600D9236F /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				3276F1B819F6C99900B2F93D /* WhatDoWeNeed */,
 				C5E99E5D19DB3AA200513CDE /* wireframes */,
 				C527A38519DB1FB300C72B21 /* icones */,
 				C5EB6C0E19D9DC5B00C528FC /* caminhada_tela.png */,
@@ -762,10 +797,13 @@
 				C5E99E7219DB3AA200513CDE /* wireframe_guardar_trajeto.jpg in Resources */,
 				FFAC190D19DC9C7C00B17487 /* stamina_logo.png in Resources */,
 				C527A39D19DB1FB300C72B21 /* icon_menu.png in Resources */,
+				3276F1C819F6C9A500B2F93D /* wireframe_exercicio.png in Resources */,
 				C527A3AA19DB266B00C72B21 /* icon_cadeado.png in Resources */,
+				3276F1CA19F6CB1400B2F93D /* icone_add.png in Resources */,
 				C56108E919DD81990090CE5D /* wireframe_home.png in Resources */,
 				FF12F17319EC725E007524EF /* icone_voltar.png in Resources */,
 				C527A39F19DB1FB300C72B21 /* icon_tempo.png in Resources */,
+				3276F1C719F6C9A500B2F93D /* wireframe_exercicio_serie.png in Resources */,
 				C59934F919D36739006337E0 /* App-Stamina.png in Resources */,
 				FF15986C19C0E05E00D9236F /* alarm.mp3 in Resources */,
 				FFAC194A19E3355000B17487 /* icon_compartilhar.png in Resources */,
@@ -774,6 +812,8 @@
 				FF1596FE19C0CBC900D9236F /* Images.xcassets in Resources */,
 				C53A352519D33B8900AC1383 /* ErrorVC.xib in Resources */,
 				C5E99E6B19DB3AA200513CDE /* wireframe_academia.jpg in Resources */,
+				3276F1C419F6C9A500B2F93D /* icone_ok.png in Resources */,
+				3276F1C219F6C9A500B2F93D /* icone_compartilhar.png in Resources */,
 				FF12F17619F03D79007524EF /* wireframe_calendario_dia_menu.png in Resources */,
 				C5CE7D7519D4BA10003E1595 /* calendar_icon.png in Resources */,
 				C527A39619DB1FB300C72B21 /* icon_batimento.png in Resources */,
@@ -787,12 +827,15 @@
 				FFAC193A19E3105B00B17487 /* wireframe_termina_caminhada.jpg in Resources */,
 				C527A39919DB1FB300C72B21 /* icon_calorias.png in Resources */,
 				FF12F17719F03D79007524EF /* wireframe_calendario.png in Resources */,
+				3276F1C319F6C9A500B2F93D /* icone_duvida.png in Resources */,
 				C527A3A219DB1FB300C72B21 /* ok_icon.png in Resources */,
 				C5E99E6F19DB3AA200513CDE /* wireframe_caminhada.jpg in Resources */,
+				3276F1C519F6C9A500B2F93D /* icone_pontuacao.png in Resources */,
 				C527A3A319DB1FB300C72B21 /* stamina_logo.png in Resources */,
 				C5E99E7719DB3AA200513CDE /* wireframe_login.png in Resources */,
 				FF12F16C19EC7240007524EF /* icone_facebook.png in Resources */,
 				C5EB6C0F19D9DC5B00C528FC /* caminhada_tela.png in Resources */,
+				3276F1C619F6C9A500B2F93D /* icone_salvar.png in Resources */,
 				C527A3A119DB1FB300C72B21 /* menu_icon.png in Resources */,
 				C5E99E7519DB3AA200513CDE /* wireframe_informacaoes.jpg in Resources */,
 				C5E99E6C19DB3AA200513CDE /* wireframe_academia_inicio.jpg in Resources */,
@@ -800,6 +843,7 @@
 				C59934FB19D36756006337E0 /* Logo_Stamina.png in Resources */,
 				FF12F17219EC725E007524EF /* icone_camera.png in Resources */,
 				C527A3A019DB1FB300C72B21 /* icon_velocimetro.png in Resources */,
+				3276F1C119F6C9A500B2F93D /* icone_calendario.png in Resources */,
 				C5CE7D7719D4BA10003E1595 /* menu_icon.png in Resources */,
 				FF12F16D19EC7240007524EF /* icone_instagram.png in Resources */,
 				C527A39E19DB1FB300C72B21 /* icon_pontos.png in Resources */,
@@ -853,6 +897,7 @@
 				C5EB6C0919D9DBD300C528FC /* FBLoginVC.m in Sources */,
 				C5EB6C0A19D9DBD300C528FC /* AVCamPreviewView.m in Sources */,
 				325F1FDA19E7091C00001EB0 /* AcademiaVC.m in Sources */,
+				3276F1CD19F6CE2D00B2F93D /* CriaTreinoVC.m in Sources */,
 				FF15972819C0D96E00D9236F /* AMSlideMenuMainViewController.m in Sources */,
 				C5A2418619CB512700064E54 /* TemporaryVC.m in Sources */,
 				FF1596F319C0CBC900D9236F /* AppDelegate.m in Sources */,
@@ -863,7 +908,6 @@
 				FF15972719C0D96E00D9236F /* AMSlideMenuLeftTableViewController.m in Sources */,
 				FF13E9DD19E5BF840005BA49 /* SharingResponse.m in Sources */,
 				FF15972619C0D96E00D9236F /* AMSlideMenuLeftMenuSegue.m in Sources */,
-				32F57C7519EC6F62001BF6B2 /* ExercicioExplainVC.m in Sources */,
 				C5DFD4EA19DC7B48000EA19C /* Cadastro.m in Sources */,
 				C5EB6BF919D9DB6B00C528FC /* CalendarMatrixes.m in Sources */,
 				3207B56519EEFECA002052BF /* TipsPVC.m in Sources */,
