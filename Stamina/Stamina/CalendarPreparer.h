@@ -23,16 +23,12 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "CalendarMatrixes.h"
 #import "CalendarObject.h"
 #import "CalendarMath.h"
 
 @interface CalendarPreparer : NSObject
 
-//@property CalendarMatrixes *matrixes;
-//@property UIColor *trainingColor;
-//
-//-(NSArray *)getCalendarMatrixesForMonth: (int)month andYear: (int)year;
++(NSArray *)getMatrixCalendarScrollInMonth: (int)month andYear : (int)year;
 +(NSArray *)getCalendarScrollViewWithLabelsButtons;
 
 @end

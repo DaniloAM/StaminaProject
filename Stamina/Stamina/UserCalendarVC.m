@@ -48,7 +48,7 @@
     
     _locationNextMonth = -1;
     
-    NSArray *calendarMatrix = [CalendarMatrixes getMatrixCalendarScrollInMonth:_calendarMonth andYear:_calendarYear];
+    NSArray *calendarMatrix = [CalendarPreparer getMatrixCalendarScrollInMonth:_calendarMonth andYear:_calendarYear];
     
     CGSize calendarScrollSize = CGSizeMake(270, ([calendarMatrix count] - 1) * 35);
     [[self calendarScrollView] setContentSize:calendarScrollSize];
@@ -89,6 +89,7 @@
     }
     
 }
+
 
 -(void)loadCalendarScrollView {
     
@@ -144,89 +145,6 @@
 
 
 
-
-
-//-(void)loadCalendarGraphicsAndActions {
-//    
-//    for(int y = 0; y < 6; y++) {
-//        for(int x = 0; x < 7; x++) {
-//            
-//            CGRect frame = CGRectMake(0, 0, 0, 0);
-//            UILabel *label = [[UILabel alloc] initWithFrame:frame];
-//            UIButton *button = [[UIButton alloc]initWithFrame:frame];
-//            
-//            [label setFont:[UIFont fontWithName:@"Avenir" size:18.0]];
-//            
-//            [[[self labelMatrix] objectAtIndex:y] addObject:label];
-//            [[[self buttonMatrix] objectAtIndex:y] addObject:button];
-//            
-//            [self.view addSubview:label];
-//            [self.view addSubview:button];
-//        }
-//    }
-//}
-//
-//
-//-(void)loadCalendarInteractionWithLabels: (NSMutableArray *)arrayLabels andButtons: (NSMutableArray *)arrayButtons {
-// 
-//    for(int x=0;x<7;x++) {
-//        for(int y=0;y<6;y++) {
-//            
-//            [self.view addSubview:[[arrayLabels objectAtIndex:x] objectAtIndex:y]];
-//            [self.view addSubview:[[arrayButtons objectAtIndex:x] objectAtIndex:y]];
-//        }
-//    }
-//}
-//
-//
-//-(void)reloadCalendarInformation {
-//    
-//    [[self yearLabel] setText:[NSString stringWithFormat:@"%d", _calendarYear]];
-//    
-//    [[self monthLabel] setText:[CalendarMath returnMonthName:_calendarMonth]];
-//    
-//    NSArray *arrayOfMatrixes = [[self preparer] getCalendarMatrixesForMonth:_calendarMonth andYear:_calendarYear];
-//    
-//    if([self labelMatrix] && [self buttonMatrix]) {
-//        
-//        for(int x=0;x<6;x++) {
-//            
-//            for(int y=0;y<7;y++) {
-//                
-//                [[[[self labelMatrix] objectAtIndex:y] objectAtIndex:x] removeFromSuperview];
-//                [[[[self buttonMatrix] objectAtIndex:y] objectAtIndex:x] removeFromSuperview];
-//            }
-//        }
-//        
-//    }
-//    
-//    [self setDayMatrix:[NSMutableArray arrayWithArray:[arrayOfMatrixes objectAtIndex:0]]];
-//    [self setLabelMatrix:[NSMutableArray arrayWithArray:[arrayOfMatrixes objectAtIndex:1]]];
-//    [self setButtonMatrix:[NSMutableArray arrayWithArray:[arrayOfMatrixes objectAtIndex:2]]];
-//    
-//    
-//    for(int x=0;x<6;x++) {
-//        
-//        for(int y=0;y<7;y++) {
-//            
-//            UILabel *label = [[[self labelMatrix] objectAtIndex:y] objectAtIndex:x];
-//            UIButton *button = [[[self buttonMatrix] objectAtIndex:y] objectAtIndex:x];
-//            
-//            if([[[[[self dayMatrix] objectAtIndex:y] objectAtIndex:x] hasTraining] boolValue]) {
-//                
-//                [button addTarget:self action:@selector(buttonAction:) forControlEvents:UIControlEventTouchUpInside];
-//                
-//            }
-//            
-//            [self.view addSubview:label];
-//            [self.view addSubview:button];
-//                
-//        }
-//            
-//    }
-//    
-//}
-
 -(void)nextMonth {
     
     _calendarMonth++;
@@ -238,13 +156,14 @@
         
     }
     
-    [UIView animateWithDuration:0.5 animations:^{
+    [UIView animateWithDuration:0.2 animations:^{
         [[self calendarScrollView] setContentOffset:CGPointMake(0, _locationNextMonth * 35)];
     }];
     
     [self calendarWillChangeMonth];
     
 }
+
 
 -(void)previousMonth {
     
@@ -268,7 +187,7 @@
         
     }
     
-    [UIView animateWithDuration:0.5 animations:^{
+    [UIView animateWithDuration:0.2 animations:^{
         [[self calendarScrollView] setContentOffset:CGPointMake(0, 0)];
     }];
     
@@ -278,7 +197,7 @@
 
 -(void)calendarWillChangeMonth {
     
-    [self performSelector:@selector(prepareCalendarScrollViewWithCurrentMonth) withObject:nil afterDelay:0.5];
+    [self performSelector:@selector(prepareCalendarScrollViewWithCurrentMonth) withObject:nil afterDelay:0.2];
     [[self yearLabel] setText:[NSString stringWithFormat:@"%d", _calendarYear]];
     [[self monthLabel] setText:[CalendarMath returnMonthName:_calendarMonth]];
     

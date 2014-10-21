@@ -62,7 +62,6 @@
 		C5E99E7B19DB48BA00513CDE /* wireframe_cadastro.jpg in Resources */ = {isa = PBXBuildFile; fileRef = C5E99E7A19DB48BA00513CDE /* wireframe_cadastro.jpg */; };
 		C5EB6BF719D9DB6B00C528FC /* DayObject.m in Sources */ = {isa = PBXBuildFile; fileRef = C5EB6BED19D9DB6B00C528FC /* DayObject.m */; };
 		C5EB6BF819D9DB6B00C528FC /* CalendarObject.m in Sources */ = {isa = PBXBuildFile; fileRef = C5EB6BF019D9DB6B00C528FC /* CalendarObject.m */; };
-		C5EB6BF919D9DB6B00C528FC /* CalendarMatrixes.m in Sources */ = {isa = PBXBuildFile; fileRef = C5EB6BF219D9DB6B00C528FC /* CalendarMatrixes.m */; };
 		C5EB6BFA19D9DB6B00C528FC /* CalendarPreparer.m in Sources */ = {isa = PBXBuildFile; fileRef = C5EB6BF419D9DB6B00C528FC /* CalendarPreparer.m */; };
 		C5EB6BFB19D9DB6B00C528FC /* CalendarMath.m in Sources */ = {isa = PBXBuildFile; fileRef = C5EB6BF619D9DB6B00C528FC /* CalendarMath.m */; };
 		C5EB6C0819D9DBD300C528FC /* UserCalendarVC.m in Sources */ = {isa = PBXBuildFile; fileRef = C5EB6BFD19D9DBD300C528FC /* UserCalendarVC.m */; };
@@ -205,8 +204,6 @@
 		C5EB6BEE19D9DB6B00C528FC /* DayObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DayObject.h; sourceTree = "<group>"; };
 		C5EB6BEF19D9DB6B00C528FC /* CalendarObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CalendarObject.h; sourceTree = "<group>"; };
 		C5EB6BF019D9DB6B00C528FC /* CalendarObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CalendarObject.m; sourceTree = "<group>"; };
-		C5EB6BF119D9DB6B00C528FC /* CalendarMatrixes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CalendarMatrixes.h; sourceTree = "<group>"; };
-		C5EB6BF219D9DB6B00C528FC /* CalendarMatrixes.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CalendarMatrixes.m; sourceTree = "<group>"; };
 		C5EB6BF319D9DB6B00C528FC /* CalendarPreparer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CalendarPreparer.h; sourceTree = "<group>"; };
 		C5EB6BF419D9DB6B00C528FC /* CalendarPreparer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CalendarPreparer.m; sourceTree = "<group>"; };
 		C5EB6BF519D9DB6B00C528FC /* CalendarMath.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CalendarMath.h; sourceTree = "<group>"; };
@@ -388,8 +385,6 @@
 				C5EB6BEE19D9DB6B00C528FC /* DayObject.h */,
 				C5EB6BEF19D9DB6B00C528FC /* CalendarObject.h */,
 				C5EB6BF019D9DB6B00C528FC /* CalendarObject.m */,
-				C5EB6BF119D9DB6B00C528FC /* CalendarMatrixes.h */,
-				C5EB6BF219D9DB6B00C528FC /* CalendarMatrixes.m */,
 				C5EB6BF319D9DB6B00C528FC /* CalendarPreparer.h */,
 				C5EB6BF419D9DB6B00C528FC /* CalendarPreparer.m */,
 				C5EB6BF519D9DB6B00C528FC /* CalendarMath.h */,
@@ -722,7 +717,7 @@
 				TargetAttributes = {
 					FF1596E919C0CBC900D9236F = {
 						CreatedOnToolsVersion = 6.0;
-						DevelopmentTeam = FEMX6BFS4F;
+						DevelopmentTeam = H7TBMF35F6;
 					};
 					FF15970219C0CBC900D9236F = {
 						CreatedOnToolsVersion = 6.0;
@@ -865,7 +860,6 @@
 				FF15972619C0D96E00D9236F /* AMSlideMenuLeftMenuSegue.m in Sources */,
 				32F57C7519EC6F62001BF6B2 /* ExercicioExplainVC.m in Sources */,
 				C5DFD4EA19DC7B48000EA19C /* Cadastro.m in Sources */,
-				C5EB6BF919D9DB6B00C528FC /* CalendarMatrixes.m in Sources */,
 				3207B56519EEFECA002052BF /* TipsPVC.m in Sources */,
 				C5EB6BF719D9DB6B00C528FC /* DayObject.m in Sources */,
 				FF13E9E319E70B9B0005BA49 /* TrajectoryFile.m in Sources */,
