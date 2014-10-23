@@ -607,7 +607,7 @@
         <!--CategoriaVC-->
         <scene sceneID="RvQ-Bz-S7d">
             <objects>
-                <viewController id="qFt-UD-ad8" customClass="CategoriaVC" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="CategoriaTVC" id="qFt-UD-ad8" customClass="CategoriaVC" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="ypw-UW-m7t"/>
                         <viewControllerLayoutGuide type="bottom" id="hXA-eG-vkQ"/>
@@ -946,6 +946,9 @@
                                 <state key="normal">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="mostraListaExercicios" destination="FzG-Sm-bLQ" eventType="touchUpInside" id="ap9-QK-JZ1"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="84i-k2-UO4">
                                 <rect key="frame" x="175" y="436" width="109" height="38"/>

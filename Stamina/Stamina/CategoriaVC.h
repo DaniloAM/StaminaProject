@@ -12,5 +12,8 @@
 @interface CategoriaVC : HideBBVC <UITableViewDataSource, UITableViewDelegate>
 @property NSArray *frontal, *traseiro;
 @property (weak, nonatomic) IBOutlet UITableView *table;
-
+@property CGPoint lastOffset;
+@property  NSTimeInterval lastOffsetCapture;
+@property  BOOL isScrollingFast;
+@property float lastContentOffset;
 @end

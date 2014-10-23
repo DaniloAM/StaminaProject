@@ -12,4 +12,5 @@
 @interface ExercicioTVC : HideBBVC <UITableViewDataSource, UITableViewDelegate, UIGestureRecognizerDelegate>
 @property NSArray *arrayOfExercises;
 @property UITableView *table;
+@property float lastContentOffset;
 @end

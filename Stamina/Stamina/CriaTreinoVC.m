@@ -32,6 +32,8 @@
     [[self trainoNomeTxt] setPlaceholder:@"     Qual o nome do treino ?"];
     _datepicker = [[UIDatePicker alloc] initWithFrame:CGRectMake(0, 0, 250, 200)];
     _datepicker.datePickerMode = UIDatePickerModeTime;
+    self.navigationController.navigationBar.translucent = YES;
+    
 
 
 }
@@ -176,5 +178,13 @@
         
     }
     }
+}
+
+-(IBAction)mostraListaExercicios{
+    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+    UIViewController *myVC;
+    myVC= (UIViewController *)[storyboard instantiateViewControllerWithIdentifier:@"CategoriaTVC"];
+    
+    [self.navigationController pushViewController:myVC animated:YES];
 }
 @end

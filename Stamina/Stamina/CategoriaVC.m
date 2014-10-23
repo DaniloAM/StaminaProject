@@ -17,13 +17,14 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self setFrontal:[NSArray arrayWithObjects:@"Abdominal",@"Ante-Braço",@"Bíceps",@"Ombros",@"Peitoral",@"Quadríceps",@"Trapézio",@"Tríceps", nil]];
-    [self setTraseiro:[NSArray arrayWithObjects:@"Ante-Braço",@"Bíceps",@"Dorsal",@"Glúteos",@"Lombar",@"Ombros",@"Panturrilha",@"Posterior de Coxa", @"Rombóides",@"Trapézio",@"Tríceps",nil]];
+    [self setTraseiro:[NSArray arrayWithObjects:@"Ante-Braço",@"Bíceps",@"Dorsal",@"Glúteos",@"Lombar",@"Ombros",@"Panturrilha",@"Posterior de Coxa", @"Rombóides",@"Trapézio",@"Tríceps",@"",@"",nil]];
     self.table.delegate = self;
     self.table.dataSource=self;
     [self.table setSeparatorStyle:UITableViewCellSeparatorStyleNone];
     [self.table setBackgroundColor:[UIColor clearColor]];
-    
 }
+
+
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
@@ -33,6 +34,8 @@
     [super viewWillAppear:animated];
     CGSize size = [[UIScreen mainScreen] bounds].size;
     [self.table setFrame:CGRectMake(0, self.navigationController.navigationBar.frame.size.height, size.width, size.height- self.navigationController.navigationBar.frame.size.height)];
+    
+
 }
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
     return 2;
@@ -45,7 +48,14 @@
     
     return [[self traseiro] count];
 }
-
+- (BOOL)gestureRecognizer:(UIGestureRecognizer *)gestureRecognizer shouldRecognizeSimultaneouslyWithGestureRecognizer:(UIGestureRecognizer *)otherGestureRecognizer {
+    
+    if ([gestureRecognizer.view isKindOfClass:[UITableView class]]) {
+        
+    } else {
+    }
+    return YES;
+}
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {

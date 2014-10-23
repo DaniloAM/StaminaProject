@@ -18,5 +18,6 @@
 @property int lastDirection;
 -(void)viewWillAppear:(BOOL)animated withGesture: (BOOL)gesture;
 -(NSArray *)criaBarButtonComBotoesTranslucent: (int)n;
-
+-(void)showBar;
+-(void)hideBar;
 @end

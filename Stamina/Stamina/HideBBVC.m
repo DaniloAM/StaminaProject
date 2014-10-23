@@ -32,6 +32,7 @@
     MenuShouldOpen *menu = [MenuShouldOpen alloc];
     [menu setOpen:NO];
         _lastDirection = -1;
+    
     if(gesture){
         UIPanGestureRecognizer *pangesture = [[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(mecheu:)];
         [self setGesture:pangesture];
@@ -66,6 +67,9 @@
     [[self tabBar] setBackgroundColor:[UIColor blackColor]];
     [self.view addSubview:self.tabBar];
     [self setStartPointBar:self.tabBar.frame.origin];
+    UISwipeGestureRecognizer *gest = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(panRecognized:)];
+    [gest setDirection:UISwipeGestureRecognizerDirectionDown];
+    [self.tabBar addGestureRecognizer:gest];
     for(int x = 0 ; x < n; x++){
         UIButton *btn1 = [[UIButton alloc] initWithFrame:CGRectMake(x*self.tabBar.frame.size.width/n, 0, self.tabBar.frame.size.width/n, self.tabBar.frame.size.height)];
         [self.tabBar addSubview:btn1];
@@ -100,7 +104,6 @@
         [array addObject:btn1];
     }
     
-    
     return array;
 }
 -(void)mecheu :(UIPanGestureRecognizer *)sender{
@@ -110,7 +113,6 @@
     if (sender.state == UIGestureRecognizerStateBegan) {
         if(fabs(velocity.x) > fabs(velocity.y)){
             if(velocity.x>0){
-                NSLog(@"gesture went right");
                 [self setLastDirection:0];
             }
             else {
@@ -173,16 +175,11 @@
     if (sender.state == UIGestureRecognizerStateEnded) {
         if (self.tabBar.frame.origin.y <screenSize.height + self.tabBar.frame.size.height && self.tabBar.frame.origin.y > self.startPointBar.y) {
             if(self.tabBar.frame.origin.y>self.startPointBar.y+self.tabBar.frame.size.height/2){
-                [UIView animateWithDuration:0.45 animations:^{
-                    [self.tabBar setFrame:CGRectMake(0, self.startPointBar.y+self.tabBar.frame.size.height, self.tabBar.frame.size.width, self.tabBar.frame.size.height)];
-                }];
+                [self hideBar];
                 
             }
             else {
-                [UIView animateWithDuration:0.45 animations:^{
-                    [self.tabBar setFrame:CGRectMake(0, self.startPointBar.y, self.tabBar.frame.size.width, self.tabBar.frame.size.height)];
-                }];
-                
+                [self showBar];
             }
         }
     }
@@ -191,5 +188,27 @@
     }
     }
 }
+-(void)hideBar{
+    [UIView animateWithDuration:0.45 animations:^{
+        [self.tabBar setFrame:CGRectMake(0, self.startPointBar.y+self.tabBar.frame.size.height, self.tabBar.frame.size.width, self.tabBar.frame.size.height)];
+    }];
 
+}
+-(void)showBar{
+    [UIView animateWithDuration:0.45 animations:^{
+        [self.tabBar setFrame:CGRectMake(0, self.startPointBar.y, self.tabBar.frame.size.width, self.tabBar.frame.size.height)];
+    }];
+}
+- (void)panRecognized:(UIPanGestureRecognizer *)rec
+{
+    CGPoint vel = [rec velocityInView:self.view];
+    if (vel.y > 0)
+    {
+        [self hideBar];
+    }
+    else
+    {
+       
+    }
+}
 @end
