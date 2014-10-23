@@ -11,5 +11,21 @@
 @implementation DayObject
 
 
+-(id)init {
+    self = [super init];
+    
+    if(self) {
+        
+        _date = nil;
+        _dateDone = nil;
+        _doneState = [NSNumber numberWithInt:0];
+        _hasTraining = [NSNumber numberWithBool:false];
+        _trainingName = @"";
+
+    }
+    
+    return self;
+}
+
 
 @end

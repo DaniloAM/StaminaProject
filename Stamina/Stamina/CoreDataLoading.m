@@ -44,13 +44,10 @@
         DayObject *new = [[DayObject alloc] init];
         
         [new setDate:day.date];
-        [new setWasDone:day.wasDone];
-        [new setValidDay:day.validDay];
         [new setDateDone:day.dateDone];
         [new setDoneState:day.doneState];
         [new setHasTraining:day.hasTraining];
         [new setTrainingName:day.trainingName];
-        [new setWeekdayNumber:day.weekdayNumber];
         
         [dayObjectsArray addObject:new];
         

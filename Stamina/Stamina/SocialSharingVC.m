@@ -163,6 +163,7 @@
             }
             
             [[self userPictureView] setImage:[self userPicture]];
+            [[self pictureIcon] setImage:[UIImage imageNamed:@"icone_ok_photo.png"]];
             [[self userPictureView] setHidden:false];
             
         }
@@ -248,6 +249,7 @@
 
 -(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
     
+    [[self pictureIcon] setImage:[UIImage imageNamed:@"icone_camera.png"]];
     [self returnToCamera];
     
 }

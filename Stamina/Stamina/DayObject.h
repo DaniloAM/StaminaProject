@@ -21,8 +21,5 @@
 @property NSNumber *doneState;
 @property NSNumber *hasTraining;
 @property NSString *trainingName;
-@property NSNumber *validDay;
-@property NSNumber *wasDone;
-@property NSNumber *weekdayNumber;
 
 @end

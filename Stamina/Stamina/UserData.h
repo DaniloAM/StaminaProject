@@ -25,6 +25,7 @@
 #import "AppDelegate.h"
 #import "UserTraining.h"
 #import "TrajectoryRoute.h"
+#import "CalendarObject.h"
 
 @interface UserData : NSObject
 

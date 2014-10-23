@@ -87,6 +87,7 @@
 		FF12F17319EC725E007524EF /* icone_voltar.png in Resources */ = {isa = PBXBuildFile; fileRef = FF12F17019EC725E007524EF /* icone_voltar.png */; };
 		FF12F17619F03D79007524EF /* wireframe_calendario_dia_menu.png in Resources */ = {isa = PBXBuildFile; fileRef = FF12F17419F03D79007524EF /* wireframe_calendario_dia_menu.png */; };
 		FF12F17719F03D79007524EF /* wireframe_calendario.png in Resources */ = {isa = PBXBuildFile; fileRef = FF12F17519F03D79007524EF /* wireframe_calendario.png */; };
+		FF12F17919F6CACE007524EF /* icone_ok_photo.png in Resources */ = {isa = PBXBuildFile; fileRef = FF12F17819F6CACE007524EF /* icone_ok_photo.png */; };
 		FF13E9D719E5BE160005BA49 /* RoutePointsCartesian.m in Sources */ = {isa = PBXBuildFile; fileRef = FF13E9D619E5BE160005BA49 /* RoutePointsCartesian.m */; };
 		FF13E9DA19E5BE330005BA49 /* FinishedRoute.m in Sources */ = {isa = PBXBuildFile; fileRef = FF13E9D919E5BE330005BA49 /* FinishedRoute.m */; };
 		FF13E9DD19E5BF840005BA49 /* SharingResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = FF13E9DC19E5BF840005BA49 /* SharingResponse.m */; };
@@ -245,6 +246,7 @@
 		FF12F17019EC725E007524EF /* icone_voltar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icone_voltar.png; sourceTree = "<group>"; };
 		FF12F17419F03D79007524EF /* wireframe_calendario_dia_menu.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = wireframe_calendario_dia_menu.png; sourceTree = "<group>"; };
 		FF12F17519F03D79007524EF /* wireframe_calendario.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = wireframe_calendario.png; sourceTree = "<group>"; };
+		FF12F17819F6CACE007524EF /* icone_ok_photo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icone_ok_photo.png; sourceTree = "<group>"; };
 		FF13E9D519E5BE160005BA49 /* RoutePointsCartesian.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RoutePointsCartesian.h; sourceTree = "<group>"; };
 		FF13E9D619E5BE160005BA49 /* RoutePointsCartesian.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RoutePointsCartesian.m; sourceTree = "<group>"; };
 		FF13E9D819E5BE330005BA49 /* FinishedRoute.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FinishedRoute.h; sourceTree = "<group>"; };
@@ -355,6 +357,7 @@
 		C527A38519DB1FB300C72B21 /* icones */ = {
 			isa = PBXGroup;
 			children = (
+				FF12F17819F6CACE007524EF /* icone_ok_photo.png */,
 				FF12F16E19EC725E007524EF /* icone_camera_rotate.png */,
 				FF12F16F19EC725E007524EF /* icone_camera.png */,
 				FF12F17019EC725E007524EF /* icone_voltar.png */,
@@ -415,14 +418,16 @@
 		C5EB6BEC19D9DB5600C528FC /* Calendar */ = {
 			isa = PBXGroup;
 			children = (
-				C5EB6BED19D9DB6B00C528FC /* DayObject.m */,
 				C5EB6BEE19D9DB6B00C528FC /* DayObject.h */,
+				C5EB6BED19D9DB6B00C528FC /* DayObject.m */,
 				C5EB6BEF19D9DB6B00C528FC /* CalendarObject.h */,
 				C5EB6BF019D9DB6B00C528FC /* CalendarObject.m */,
 				C5EB6BF319D9DB6B00C528FC /* CalendarPreparer.h */,
 				C5EB6BF419D9DB6B00C528FC /* CalendarPreparer.m */,
 				C5EB6BF519D9DB6B00C528FC /* CalendarMath.h */,
 				C5EB6BF619D9DB6B00C528FC /* CalendarMath.m */,
+				C5EB6BFC19D9DBD300C528FC /* UserCalendarVC.h */,
+				C5EB6BFD19D9DBD300C528FC /* UserCalendarVC.m */,
 			);
 			name = Calendar;
 			sourceTree = "<group>";
@@ -557,8 +562,6 @@
 				325F1FE819E7229C00001EB0 /* HideBBVC.m */,
 				FF17BD5A19C8C18200B5EF46 /* StartVC.h */,
 				FF17BD5B19C8C18200B5EF46 /* StartVC.m */,
-				C5EB6BFC19D9DBD300C528FC /* UserCalendarVC.h */,
-				C5EB6BFD19D9DBD300C528FC /* UserCalendarVC.m */,
 				FFAC190919DC86C400B17487 /* SocialSharingVC.h */,
 				FFAC190A19DC86C400B17487 /* SocialSharingVC.m */,
 				FFAC193B19E3171C00B17487 /* HomeScreenVC.h */,
@@ -836,6 +839,7 @@
 				C5E99E6C19DB3AA200513CDE /* wireframe_academia_inicio.jpg in Resources */,
 				C527A3AE19DB27B000C72B21 /* icon_email.png in Resources */,
 				C59934FB19D36756006337E0 /* Logo_Stamina.png in Resources */,
+				FF12F17919F6CACE007524EF /* icone_ok_photo.png in Resources */,
 				FF12F17219EC725E007524EF /* icone_camera.png in Resources */,
 				C527A3A019DB1FB300C72B21 /* icon_velocimetro.png in Resources */,
 				3276F1C119F6C9A500B2F93D /* icone_calendario.png in Resources */,

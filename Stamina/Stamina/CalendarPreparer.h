@@ -30,5 +30,7 @@
 
 +(NSArray *)getMatrixCalendarScrollInMonth: (int)month andYear : (int)year;
 +(NSArray *)getCalendarScrollViewWithLabelsButtons;
++(int)sizeInY;
++(int)sizeInX;
 
 @end

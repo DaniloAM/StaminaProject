@@ -28,7 +28,7 @@
 //repetitions index 1
 //series index 2
 
--(void)addExerciseWithTrainingName: (NSString *)name exerciseID:(NSNumber *)exerciseID repetitionsValue: (NSNumber *)repetitionsValue seriesValue: (NSNumber *)seriesValue{
+-(void)addExerciseWithTrainingName: (NSString *)name exerciseID:(NSNumber *)exerciseID repetitionsValue: (NSNumber *)repetitionsValue seriesValue: (NSNumber *)seriesValue {
 
     AppDelegate *app = [[UIApplication sharedApplication] delegate];
     NSManagedObjectContext *context = [app managedObjectContext];
@@ -37,27 +37,33 @@
 
     NSFetchRequest *request = [NSFetchRequest fetchRequestWithEntityName:@"TrainingExercises"];
     NSArray *array = [context executeFetchRequest:request error:&error];
+    
     for (int x = 0 ; x < [array count]; x++){
-        TrainingExercises* ex = [array objectAtIndex:x];
-
-        NSLog(@"id exercise no meio do for %@", [ex id_exercise]);
         
-        if([[ex training_name] isEqualToString:name] && [[ex id_exercise] integerValue]==[exerciseID integerValue] && [[ex series] integerValue]==[seriesValue integerValue] && [[ex repetitions] integerValue]==[repetitionsValue integerValue]) {
+        TrainingExercises* ex = [array objectAtIndex:x];
+        
+        
+        if([[ex training_name] isEqualToString:name] && [[ex id_exercise] integerValue]==[exerciseID integerValue]) {
             return;
         }
     }
-        TrainingExercises *exercise = [NSEntityDescription insertNewObjectForEntityForName:@"TrainingExercises" inManagedObjectContext:context];
-        
-        
-        [exercise setTraining_name:name];
-        NSLog(@"esta no fim do metodo %@", exerciseID);
-        [exercise setId_exercise:exerciseID];
-        [exercise setRepetitions:repetitionsValue];
-        [exercise setSeries:seriesValue];
-        
     
-        [context save:&error];
+    TrainingExercises *exercise = [NSEntityDescription insertNewObjectForEntityForName:@"TrainingExercises" inManagedObjectContext:context];
+    
+    
+    [exercise setTraining_name:name];
+    [exercise setId_exercise:exerciseID];
+    [exercise setRepetitions:repetitionsValue];
+    [exercise setSeries:seriesValue];
+    
+    
+    [context save:&error];
+    
 }
+
+
+
+
 -(void)clearTrainingFromCoreData{
     AppDelegate *app = [[UIApplication sharedApplication] delegate];
     NSManagedObjectContext *myContext = [app managedObjectContext];
@@ -74,13 +80,32 @@
     NSError *saveError = nil;
     [myContext save:&saveError];
 }
+
+
+
 -(NSArray *)returnTrainingWithName : (NSString *)trainingName{
+    NSMutableArray *exercisesArray = [NSMutableArray array];
+    
     AppDelegate *app = [[UIApplication sharedApplication] delegate];
     NSManagedObjectContext *context = [app managedObjectContext];
-    NSFetchRequest *request = [NSFetchRequest fetchRequestWithEntityName:trainingName];
+    NSFetchRequest *request = [NSFetchRequest fetchRequestWithEntityName:@"TrainingExercises"];
     NSError *error = nil;
-    return [context executeFetchRequest:request error:&error];
+    
+    NSArray *coreArray = [context executeFetchRequest:request error:&error];
+    
+    for(TrainingExercises *ex in coreArray) {
+        
+        if([ex.training_name isEqualToString:trainingName]) {
+            [exercisesArray addObject:ex];
+        }
+        
+    }
+    
+    return exercisesArray;
 }
+
+
+
 -(void)removeTraning: (NSString *)trainingName {
     
     BOOL success = false;

@@ -28,7 +28,7 @@
 }
 
 
--(void)addDayObjects: (NSMutableArray *)array {
+-(void)addDayObjects: (NSArray *)array {
     
     if(!monthlyTrainingsArray) {
         [self allocArrays];
@@ -45,18 +45,17 @@
         
         DayObject *day = [array objectAtIndex:x];
         
-        if(![self dayObjectExistWithDate:day.date]) {
+        
+        //If this day already has a training, it does nothing
+        if(![self returnTrainingFromDate:day.date]) {
             
             TrainingDayObject *new = [NSEntityDescription insertNewObjectForEntityForName:@"TrainingDayObject" inManagedObjectContext:context];
             
             [new setDate:day.date];
-            [new setWasDone:day.wasDone];
-            [new setValidDay:day.validDay];
             [new setDateDone:day.dateDone];
             [new setDoneState:day.doneState];
             [new setHasTraining:day.hasTraining];
             [new setTrainingName:day.trainingName];
-            [new setWeekdayNumber:day.weekdayNumber];
             
             [context save:&error];
             [self insertInArray:day];
@@ -240,7 +239,7 @@
 }
 
 
--(BOOL)dayObjectExistWithDate: (NSDate *)dayDate {
+-(DayObject *)returnTrainingFromDate: (NSDate *)dayDate {
 
     if(!monthlyTrainingsArray) {
         return false;
@@ -254,7 +253,7 @@
     NSArray *array = [monthlyTrainingsArray objectAtIndex:comp1.month - 1];
     
     if([array count] < 1) {
-        return false;
+        return nil;
     }
     
     int i = 0, fin = (int) [array count] - 1, str = 0;
@@ -271,7 +270,7 @@
             
             
             if(comp.day == day) {
-                return true;
+                return [array objectAtIndex:i];
             }
             
             
@@ -297,7 +296,7 @@
         }
         
         if(fin < str) {
-            return false;
+            return nil;
         }
 
     }
@@ -307,6 +306,18 @@
 -(NSArray *)getMonthArrays {
     
     return monthlyTrainingsArray;
+    
+}
+
+-(void)scheduleTrainingNamed: (NSString *)name inDate: (NSDate *)date {
+    
+    DayObject *obj = [[DayObject alloc] init];
+    
+    [obj setDate:date];
+    [obj setHasTraining:[NSNumber numberWithBool:true]];
+    [obj setTrainingName:name];
+    
+    [self addDayObjects:[NSArray arrayWithObject:obj]];
     
 }
 

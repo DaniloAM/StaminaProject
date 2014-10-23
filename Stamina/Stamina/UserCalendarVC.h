@@ -44,20 +44,24 @@
 
 
 #import <UIKit/UIKit.h>
+#import <QuartzCore/QuartzCore.h>
 #import "CalendarPreparer.h"
 #import "UserData.h"
-@interface UserCalendarVC : UIViewController
+@interface UserCalendarVC : UIViewController <UITableViewDataSource, UITableViewDelegate>
 
 @property (weak, nonatomic) IBOutlet UILabel *yearLabel;
 @property (weak, nonatomic) IBOutlet UILabel *monthLabel;
-@property (weak, nonatomic) IBOutlet UILabel *trainingNameLabel;
 
 @property CalendarPreparer *preparer;
 @property UIScrollView *calendarScrollView;
+@property UIButton *pressedButton;
+@property UITableView *infoTableView;
 
 @property NSMutableArray *dayMatrix;
 @property NSMutableArray *labelMatrix;
 @property NSMutableArray *buttonMatrix;
+@property NSArray *calendarMatrix;
+@property NSMutableArray *exercisesArray;
 
 @property int calendarMonth;
 @property int calendarYear;

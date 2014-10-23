@@ -44,52 +44,6 @@
 //
 // 270 WIDTH  X3 = 810 px
 
--(void)prepareCalendarScrollViewWithCurrentMonth {
-    
-    _locationNextMonth = -1;
-    
-    NSArray *calendarMatrix = [CalendarPreparer getMatrixCalendarScrollInMonth:_calendarMonth andYear:_calendarYear];
-    
-    CGSize calendarScrollSize = CGSizeMake(270, ([calendarMatrix count] - 1) * 35);
-    [[self calendarScrollView] setContentSize:calendarScrollSize];
-    
-    //Set to start on the center of the content
-    [[self calendarScrollView] setContentOffset:CGPointMake(0, [[calendarMatrix lastObject] intValue] * 35)];
-    
-    
-    for(int y = 0; ([calendarMatrix count] - 1) > y; y++) {
-        
-        for(int x = 0; x < 7; x++) {
-            
-            UILabel *label = [[[self labelMatrix] objectAtIndex:y] objectAtIndex:x];
-            UIButton *button = [[[self buttonMatrix] objectAtIndex:y] objectAtIndex:x];
-            NSDate *date = [[[calendarMatrix objectAtIndex:y] objectAtIndex:x] date];
-            
-            if(date) {
-                NSDateComponents *comp = [[NSCalendar currentCalendar] components: NSCalendarUnitDay | NSCalendarUnitMonth | NSCalendarUnitYear fromDate:date];
-                [label setText:[NSString stringWithFormat:@"%d", (int) comp.day]];
-                
-                if(comp.month != _calendarMonth) {
-                    [label setAlpha:0.3];
-                    
-                    if(_locationNextMonth == 0) {
-                        _locationNextMonth = y;
-                    }
-    
-                }
-                
-                else {
-                    _locationNextMonth = 0;
-                    [label setAlpha:1.0];
-                }
-            }
-            
-        }
-        
-    }
-    
-}
-
 
 -(void)loadCalendarScrollView {
     
@@ -101,7 +55,7 @@
     [self setButtonMatrix:[array objectAtIndex:2]];
     
     [self.view addSubview:[self calendarScrollView]];
-    [[self calendarScrollView] setUserInteractionEnabled:false];
+    [[self calendarScrollView] setScrollEnabled:false];
     
     UISwipeGestureRecognizer *gestureUp = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(nextMonth)];
     [gestureUp setDirection:UISwipeGestureRecognizerDirectionUp];
@@ -113,12 +67,20 @@
     [self.view addGestureRecognizer:gestureDown];
     
     
+    //[[self infoTableView] setFrame:CGRectMake(_calendarScrollView.frame.origin.x , _calendarScrollView.frame.origin.y + _calendarScrollView.frame.size.height + 50, _calendarScrollView.frame.size.width, 300)];
     
 }
+
+
 
 -(void)viewDidLoad {
     
     [super viewDidLoad];
+    
+    [self setInfoTableView: [[UITableView alloc] initWithFrame:CGRectMake(33, 392, 271, 148)]];
+    
+    [[self infoTableView] setDelegate:self];
+    [[self infoTableView] setDataSource:self];
     
     [self setPreparer:[[CalendarPreparer alloc] init]];
     [self setCalendarScrollView:[[UIScrollView alloc]init]];
@@ -132,6 +94,8 @@
     
 }
 
+
+
 -(void)viewWillAppear:(BOOL)animated {
     
     [super viewWillAppear:animated];
@@ -140,6 +104,163 @@
     [self prepareCalendarScrollViewWithCurrentMonth];
     [[self yearLabel] setText:[NSString stringWithFormat:@"%d", _calendarYear]];
     [[self monthLabel] setText:[CalendarMath returnMonthName:_calendarMonth]];
+    
+}
+
+
+
+-(void)prepareCalendarScrollViewWithCurrentMonth {
+    
+    _locationNextMonth = -1;
+    
+    [self setCalendarMatrix:[NSArray arrayWithArray:[CalendarPreparer getMatrixCalendarScrollInMonth:_calendarMonth andYear:_calendarYear]]];
+    
+    CGSize calendarScrollSize = CGSizeMake(7 * [CalendarPreparer sizeInX], ([[self calendarMatrix] count] - 1) * [CalendarPreparer sizeInY]);
+    [[self calendarScrollView] setContentSize:calendarScrollSize];
+    
+    //Set to start on the center of the content
+    [[self calendarScrollView] setContentOffset:CGPointMake(0, [[[self calendarMatrix] lastObject] intValue] * [CalendarPreparer sizeInY])];
+    
+    
+    for(int y = 0; ([[self calendarMatrix] count] - 1) > y; y++) {
+        
+        for(int x = 0; x < 7; x++) {
+            
+            UILabel *label = [[[self labelMatrix] objectAtIndex:y] objectAtIndex:x];
+            UIButton *button = [[[self buttonMatrix] objectAtIndex:y] objectAtIndex:x];
+            NSDate *date = [[[[self calendarMatrix] objectAtIndex:y] objectAtIndex:x] date];
+            
+            //remove actions of the button.
+            [button removeTarget:nil action:NULL forControlEvents:UIControlEventAllEvents];
+            [label setFont:[UIFont fontWithName:@"Avenir" size:18.0]];
+            
+            
+            if(date) {
+                NSDateComponents *comp = [[NSCalendar currentCalendar] components: NSCalendarUnitDay | NSCalendarUnitMonth | NSCalendarUnitYear fromDate:date];
+                [label setText:[NSString stringWithFormat:@"%d", (int) comp.day]];
+                
+                if(comp.month != _calendarMonth) {
+                    [label setAlpha:0.3];
+                    [label setTextColor:[UIColor blackColor]];
+                    
+                    
+                    //Next or previous month button action
+                    if(comp.month < _calendarMonth && comp.year == _calendarYear) {
+                        [button addTarget:self action:@selector(previousMonth) forControlEvents:UIControlEventTouchUpInside];
+                    }
+                    
+                    else if(comp.month > _calendarMonth && comp.year == _calendarYear) {
+                        [button addTarget:self action:@selector(nextMonth) forControlEvents:UIControlEventTouchUpInside];
+                    }
+                    
+                    else if(comp.year < _calendarYear) {
+                        [button addTarget:self action:@selector(previousMonth) forControlEvents:UIControlEventTouchUpInside];
+                    }
+                    
+                    else {
+                        [button addTarget:self action:@selector(nextMonth) forControlEvents:UIControlEventTouchUpInside];
+                    }
+                    
+                    
+                    
+                    if(_locationNextMonth == 0) {
+                        _locationNextMonth = y;
+                    }
+                    
+                }
+                
+                else {
+                    _locationNextMonth = 0;
+                    [label setAlpha:1.0];
+                    
+                    [button addTarget:self action:@selector(selectButton:) forControlEvents:UIControlEventTouchUpInside];
+                    [button setTag:(y * 10) + x];
+                    
+                    //Check if this day has training.
+                    if([[[[[self calendarMatrix] objectAtIndex:y] objectAtIndex:x] hasTraining] boolValue]) {
+                        
+                        //This tag represents the Y and X position to get the correct training based on the DayObjects
+                        //[label setTextColor:[UIColor redColor]];
+                        [label setFont:[UIFont fontWithName:@"Avenir" size:23.0]];
+                        
+                        
+                    }
+                    
+                    else {
+                        //[label setTextColor:[UIColor blackColor]];
+                    }
+                    
+                }
+            }
+            
+        }
+        
+    }
+    
+}
+
+
+
+-(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
+    [self deselectButtons];
+}
+
+
+
+-(void)selectButton : (UIButton *)sender {
+    
+    //Second tap on same button
+    if([sender isEqual:_pressedButton]) {
+        
+    }
+    
+    
+    
+    [self deselectButtons];
+    
+    UserData *user = [UserData alloc];
+    
+    int y = (int) sender.tag / 10;
+    int x = (int) sender.tag - (y * 10);
+    
+    UILabel *label = [[[self labelMatrix] objectAtIndex:y] objectAtIndex:x];
+    
+    label.textColor = [UIColor colorWithRed:249.0/255.0 green:216.0/255.0 blue:0.0 alpha:1.0];
+    label.backgroundColor = [UIColor blackColor];
+    label.layer.cornerRadius = label.frame.size.height / 2;
+    label.layer.masksToBounds = true;
+    
+    if([[[[[self calendarMatrix] objectAtIndex:y] objectAtIndex:x] hasTraining] boolValue]) {
+        
+        NSString *trainingName = [[[[self calendarMatrix] objectAtIndex:y] objectAtIndex:x] trainingName];
+        NSArray *trainingArray = [user returnTrainingWithName:trainingName];
+        
+        [self showTrainingInfoWithArray:trainingArray];
+        
+    }
+    
+    _pressedButton = sender;
+    
+}
+
+
+
+-(void)deselectButtons {
+    
+    if(_pressedButton) {
+        
+        int y = (int) _pressedButton.tag / 10;
+        int x = (int) _pressedButton.tag - (y * 10);
+        
+        UILabel *label = [[[self labelMatrix] objectAtIndex:y] objectAtIndex:x];
+        
+        label.textColor = [UIColor blackColor];
+        label.backgroundColor = [UIColor clearColor];
+        label.layer.masksToBounds = false;
+        
+        _pressedButton = nil;
+        
+    }
     
 }
 
@@ -157,7 +278,7 @@
     }
     
     [UIView animateWithDuration:0.2 animations:^{
-        [[self calendarScrollView] setContentOffset:CGPointMake(0, _locationNextMonth * 35)];
+        [[self calendarScrollView] setContentOffset:CGPointMake(0, _locationNextMonth * [CalendarPreparer sizeInY])];
     }];
     
     [self calendarWillChangeMonth];
@@ -200,137 +321,79 @@
     [self performSelector:@selector(prepareCalendarScrollViewWithCurrentMonth) withObject:nil afterDelay:0.2];
     [[self yearLabel] setText:[NSString stringWithFormat:@"%d", _calendarYear]];
     [[self monthLabel] setText:[CalendarMath returnMonthName:_calendarMonth]];
+    [self deselectButtons];
     
 }
 
 
--(void)buttonAction: (UIButton *)sender {
+-(void)showTrainingInfoWithArray: (NSArray *)array {
     
-    int y = (int)sender.tag / 10;
-    int x = (int)sender.tag - (y * 10);
-    
-    DayObject *day = [[[self dayMatrix] objectAtIndex:y] objectAtIndex:x];
-    
-    [[self trainingNameLabel] setText:day.trainingName];
-    
-}
-
--(void)showTrainingInfo {
-    
-    //UserData *data = [UserData alloc];
-    //UserTraining *training = [data returnTrainingNamed:[[self trainingNameLabel] text]];
-    
-    
-    //Perform change to View passing the parameter
+    [self setExercisesArray:[NSMutableArray arrayWithArray:array]];
+    [[self infoTableView] reloadData];
     
 }
 
 
-//////////////////////////////////////
-//////  TEST-ONLY METHODS BELLOW  ////
-//////  TEST-ONLY METHODS BELLOW  ////
-//////  TEST-ONLY METHODS BELLOW  ////
-//////////////////////////////////////
-//
-//-(IBAction)sep {
-//    
-//    NSMutableArray *array = [NSMutableArray array];
-//    
-//    
-//    
-//    NSDateFormatter *dformat = [[NSDateFormatter alloc]init];
-//    [dformat setDateFormat:@"yyyy/MM/dd - HH:mm"];
-//    
-//    
-//    for(int day = 15; day < 30; day += 2) {
-//        DayObject *obj = [[DayObject alloc] init];
-//        
-//        NSString *str = [NSString stringWithFormat:@"%04d/%02d/%02d - 12:00", 2014, 9, day];
-//        NSDate *date = [dformat dateFromString:str];
-//        [obj setDate:date];
-//        //[obj setHasTraining:[NSNumber numberWithBool:true]];
-//        
-//        [array addObject:obj];
-//    }
-//
-//    CalendarObject *calendar = [CalendarObject alloc];
-//    
-//    [calendar addDayObjects:array];
-//}
-//
-//-(IBAction)nov {
-//    
-//    NSMutableArray *array = [NSMutableArray array];
-//    
-//    NSDateFormatter *dformat = [[NSDateFormatter alloc]init];
-//    [dformat setDateFormat:@"yyyy/MM/dd - HH:mm"];
-//    
-//    
-//    for(int day = 15; day < 30; day += 2) {
-//        DayObject *obj = [[DayObject alloc] init];
-//        
-//        NSString *str = [NSString stringWithFormat:@"%04d/%02d/%02d - 12:00", 2014, 11, day];
-//        NSDate *date = [dformat dateFromString:str];
-//        [obj setDate:date];
-//        
-//        [array addObject:obj];
-//    }
-//    
-//    CalendarObject *calendar = [CalendarObject alloc];
-//    
-//    [calendar addDayObjects:array];
-//}
-//
-//-(IBAction)dec {
-//    
-//    NSMutableArray *array = [NSMutableArray array];
-//    
-//    NSDateFormatter *dformat = [[NSDateFormatter alloc]init];
-//    [dformat setDateFormat:@"yyyy/MM/dd - HH:mm"];
-//    
-//    
-//    for(int day = 15; day < 30; day += 2) {
-//        DayObject *obj = [[DayObject alloc] init];
-//        
-//        NSString *str = [NSString stringWithFormat:@"%04d/%02d/%02d - 12:00", 2014, 12, day];
-//        NSDate *date = [dformat dateFromString:str];
-//        [obj setDate:date];
-//        
-//        [array addObject:obj];
-//    }
-//    
-//    CalendarObject *calendar = [CalendarObject alloc];
-//    
-//    [calendar addDayObjects:array];
-//}
-//
-//-(IBAction)dozmirekimze {
-//    
-//    NSMutableArray *array = [NSMutableArray array];
-//    
-//    NSDateFormatter *dformat = [[NSDateFormatter alloc]init];
-//    [dformat setDateFormat:@"yyyy/MM/dd - HH:mm"];
-//    
-//    
-//    for(int mon = 1; mon < 11; mon++) {
-//        
-//        for(int day = 1; day < 28; day += 3) {
-//            
-//            DayObject *obj = [[DayObject alloc] init];
-//            
-//            NSString *str = [NSString stringWithFormat:@"%04d/%02d/%02d - 12:00", 2015, mon, day];
-//            NSDate *date = [dformat dateFromString:str];
-//            [obj setDate:date];
-//            
-//            [array addObject:obj];
-//        }
-//    }
-//    
-//    CalendarObject *calendar = [CalendarObject alloc];
-//    
-//    [calendar addDayObjects:array];
-//}
 
+-(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
+    
+    return 1;
+    
+}
+
+
+-(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    
+    return [[self exercisesArray] count];
+    
+}
+
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    static NSString *simpleTableIdentifier;
+    
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:simpleTableIdentifier];
+    
+    if (cell == nil) {
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:simpleTableIdentifier];
+    }
+    
+    cell.textLabel.text = [[[self exercisesArray] objectAtIndex:indexPath.row] training_name];
+    cell.textLabel.font = [UIFont fontWithName:@"Avenir" size:25.0];
+    cell.textLabel.textColor = [UIColor blackColor];
+    cell.backgroundColor = [UIColor clearColor];
+    
+    return cell;
+}
+
+
+
+//**************************************
+// Example of how to add a new training
+//**************************************
+
+-(void)addTrainingToListExample {
+    
+    UserData *data = [UserData alloc];
+    CalendarObject *calendar = [CalendarObject alloc];
+    
+    NSDateFormatter *dformat = [[NSDateFormatter alloc]init];
+    [dformat setDateFormat:@"yyyy/MM/dd - HH:mm"];
+    
+    
+    NSString *str = [NSString stringWithFormat:@"%04d/%02d/%02d - 12:00", 2014, 12, 15];
+    NSDate *date = [dformat dateFromString:str];
+    
+    
+    //Make a loop and add all trainings needed
+    [data addExerciseWithTrainingName:@"Treino Chavão" exerciseID:[NSNumber numberWithInt:1] repetitionsValue:[NSNumber numberWithInt:3] seriesValue:[NSNumber numberWithInt:3]];
+    
+    
+    //Then a second loop of schedules in dates
+    [calendar scheduleTrainingNamed:@"Treino Chavão" inDate:date];
+    
+}
 
 
 

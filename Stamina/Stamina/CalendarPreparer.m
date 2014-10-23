@@ -8,7 +8,25 @@
 
 #import "CalendarPreparer.h"
 
+#define spacementDayLabelInX 5
+#define spacementDayLabelInY 5
+#define dayLabelSizeX 35
+#define dayLabelSizeY 35
+#define maxLines 17
+
+
 @implementation CalendarPreparer
+
+
++(int)sizeInY {
+
+    return (dayLabelSizeY + spacementDayLabelInY);
+}
+
++(int)sizeInX {
+    
+    return (dayLabelSizeX + spacementDayLabelInX);
+}
 
 
 +(NSArray *)getCalendarScrollViewWithLabelsButtons {
@@ -19,13 +37,12 @@
     NSMutableArray *labelMatrix = [NSMutableArray array];
     NSMutableArray *buttonMatrix = [NSMutableArray array];
     
-    int height = 205;
-    int maxLines = 16;
-    int spacementDayLabelInX = 10;
-    int spacementDayLabelInY = 5;
     
-    CGSize calendarScrollSize = CGSizeMake(270, maxLines * 35);
-    CGSize calendarDayLabelSize = CGSizeMake(30, 30);
+    CGSize calendarDayLabelSize = CGSizeMake(dayLabelSizeX, dayLabelSizeY);
+    CGSize calendarScrollSize = CGSizeMake((calendarDayLabelSize.width * 7) + (spacementDayLabelInX * 6), maxLines * (calendarDayLabelSize.height + spacementDayLabelInY));
+    
+    int height = (calendarDayLabelSize.height * 6) + (spacementDayLabelInY * 5);
+    
     
     [calendarView setFrame:CGRectMake(0, 0, calendarScrollSize.width, height)];
     [calendarView setContentSize:calendarScrollSize];
@@ -34,7 +51,7 @@
     
     int xPos = 0, yPos = 0, arrayIndexY = 0;
     
-    for(int y = 0; y < 16; y++) {
+    for(int y = 0; y < maxLines; y++) {
         
         [labelMatrix addObject:[NSMutableArray array]];
         [buttonMatrix addObject:[NSMutableArray array]];
@@ -66,7 +83,8 @@
     }
     
     
-    //return 3 arrays, the first with the view, the second with the labels matrix and the last with the buttons matrix
+    /* return 3 arrays, the first with the view, the second with the labels 
+     matrix and the last one with the buttons matrix  */
     return [NSArray arrayWithObjects:[NSArray arrayWithObject:calendarView], labelMatrix, buttonMatrix, nil];
     
 }
@@ -94,18 +112,23 @@
         prevYear = year;
     }
     
+    
     //Descobre o ultimo dia do mes passado, em que dia da semana comeca o mes
     //atual e o ultimo dia do mes.
     int previousMonthDay = [CalendarMath getDaysFromMonth:prevMonth inYear:prevYear];
-    
     int startWeekday = [CalendarMath getFirstWeekdayFromMonth:month andYear:year] - 1;
-    
     int lastDay = [CalendarMath getDaysFromMonth:month inYear:year];
     
     previousMonthDay -= startWeekday;
     previousMonthDay++;
     
-    NSMutableArray *array = [NSMutableArray array];
+    
+    
+    CalendarObject *calendarObj = [CalendarObject alloc];
+    
+    NSMutableArray *calendar = [NSMutableArray array];
+    NSMutableArray *trainings = [NSMutableArray arrayWithArray:[calendarObj getTrainingsInMonth:month andYear:year]];
+    
     
     //Prepara o formato de data para salvar cada dia
     NSDateFormatter *dformat = [[NSDateFormatter alloc]init];
@@ -113,14 +136,21 @@
     NSString *str = @"";
     
     
+    
     //Inicia a criacao dos DayObjects para cada dia dos meses
     //line é equivalente ao Y e guarda quantas linhas tem o calendario
-    for(line = 0; ; line++) {
+    for(line = 0 ; ; line++) {
         
-        [array addObject:[NSMutableArray array]];
+        
+        //Necessary for the matrix creation
+        [calendar addObject:[NSMutableArray array]];
+        
+        
         
         for(int x = 0; x < 7; x++) {
             
+            /* Check if the you got to the next month.
+               If so, sets the new lastDay and the trainings array of that month. */
             if(day > lastDay) {
                 monthsInCalendar++;
                 
@@ -137,40 +167,76 @@
                 }
                 
                 lastDay = [CalendarMath getDaysFromMonth:month inYear:year];
+                trainings = [NSMutableArray arrayWithArray:[calendarObj getTrainingsInMonth:month andYear:year]];
                 
             }
+        
             
-            DayObject *object = [[DayObject alloc] init];
             
-            if(line == 0 && x < startWeekday) {
+            
+            DayObject *dayObj;
+            
+            //Checks if that day has training. If it has, the DayObject will be the one on the array;
+            if([trainings count] > 0) {
+                NSDate *trainingDate = [[trainings firstObject] date];
+                NSDateComponents *comp = [[NSCalendar currentCalendar] components: NSCalendarUnitDay | NSCalendarUnitMonth | NSCalendarUnitYear fromDate:trainingDate];
                 
-                str = [NSString stringWithFormat:@"%04d/%02d/%02d - 12:00", prevYear, prevMonth, previousMonthDay];
                 
-                previousMonthDay++;
-                
+                if((int) comp.day == day) {
+                    dayObj = [trainings firstObject];
+                    [trainings removeObjectAtIndex:0];
+                    day++;
+                }
+
             }
             
-            else {
+
+            
+            if(!dayObj) {
+                //If the dayObj is null, then it has no trainings, so it must be created a new DayObject.
                 
-                str = [NSString stringWithFormat:@"%04d/%02d/%02d - 12:00", year, month, day];
+                dayObj = [[DayObject alloc] init];
                 
-                day++;
+                
+                if(line == 0 && x < startWeekday) {
+                    //The last days of the month before the previous
+                   
+                    str = [NSString stringWithFormat:@"%04d/%02d/%02d - 12:00", prevYear, prevMonth, previousMonthDay];
+                    previousMonthDay++;
+                    
+                }
+                
+                
+                else {
+                    //The other months
+                    
+                    str = [NSString stringWithFormat:@"%04d/%02d/%02d - 12:00", year, month, day];
+                    day++;
+                    
+                }
+            
+                
+                //Needed data of the new DayObject.
+                
+                NSDate *date = [dformat dateFromString:str];
+                
+                if (date)
+                    [dayObj setDate:date];
                 
             }
-            
-            NSDate *date = [dformat dateFromString:str];
-            
-            if (date)
-                [object setDate:date];
-            
-            [[array objectAtIndex:line] addObject:object];
+    
+            //Add the DayObject on the array regardless if it has training or not.
+            [[calendar objectAtIndex:line] addObject:dayObj];
             
         }
         
+        //If all the three months and the last line has been inserted, it will end the loop.
         if(monthsInCalendar >= 3 && lastLine == 1) {
             break;
         }
         
+        
+        //Get ready for the last line
         else if(monthsInCalendar >= 3) {
             lastLine = 1;
         }
@@ -178,11 +244,12 @@
     }
     
     //The line position of the first day of the month
-    [array addObject:[NSNumber numberWithInt:position]];
+    [calendar addObject:[NSNumber numberWithInt:position]];
     
-    return array;
+    return calendar;
     
 }
+
 
 
 
