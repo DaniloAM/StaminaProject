@@ -27,6 +27,7 @@
 		3276F1CA19F6CB1400B2F93D /* icone_add.png in Resources */ = {isa = PBXBuildFile; fileRef = 3276F1C919F6CB1400B2F93D /* icone_add.png */; };
 		3276F1CD19F6CE2D00B2F93D /* CriaTreinoVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 3276F1CC19F6CE2D00B2F93D /* CriaTreinoVC.m */; };
 		32C6B39219E484CB00DE13AC /* wireframe_categorias.png in Resources */ = {isa = PBXBuildFile; fileRef = 32C6B39119E484CB00DE13AC /* wireframe_categorias.png */; };
+		32F15DF319F986D200310713 /* check.png in Resources */ = {isa = PBXBuildFile; fileRef = 32F15DF219F986D200310713 /* check.png */; };
 		32F57C6F19EC4D16001BF6B2 /* ExercicioTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 32F57C6E19EC4D16001BF6B2 /* ExercicioTVC.m */; };
 		32F57C7219EC6838001BF6B2 /* MenuShouldOpen.m in Sources */ = {isa = PBXBuildFile; fileRef = 32F57C7119EC6838001BF6B2 /* MenuShouldOpen.m */; };
 		C527A39519DB1FB300C72B21 /* fb_sign.png in Resources */ = {isa = PBXBuildFile; fileRef = C527A38619DB1FB300C72B21 /* fb_sign.png */; };
@@ -167,6 +168,7 @@
 		3276F1CB19F6CE2D00B2F93D /* CriaTreinoVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CriaTreinoVC.h; sourceTree = "<group>"; };
 		3276F1CC19F6CE2D00B2F93D /* CriaTreinoVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CriaTreinoVC.m; sourceTree = "<group>"; };
 		32C6B39119E484CB00DE13AC /* wireframe_categorias.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = wireframe_categorias.png; sourceTree = "<group>"; };
+		32F15DF219F986D200310713 /* check.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = check.png; sourceTree = "<group>"; };
 		32F57C6D19EC4D16001BF6B2 /* ExercicioTVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ExercicioTVC.h; path = ../ExercicioTVC.h; sourceTree = "<group>"; };
 		32F57C6E19EC4D16001BF6B2 /* ExercicioTVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ExercicioTVC.m; path = ../ExercicioTVC.m; sourceTree = "<group>"; };
 		32F57C7019EC6838001BF6B2 /* MenuShouldOpen.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MenuShouldOpen.h; sourceTree = "<group>"; };
@@ -570,6 +572,7 @@
 				324E23C119E87FC400DA2FDE /* CategoriaVC.m */,
 				32F57C6D19EC4D16001BF6B2 /* ExercicioTVC.h */,
 				32F57C6E19EC4D16001BF6B2 /* ExercicioTVC.m */,
+				32F15DF219F986D200310713 /* check.png */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -847,6 +850,7 @@
 				FF12F16D19EC7240007524EF /* icone_instagram.png in Resources */,
 				C527A39E19DB1FB300C72B21 /* icon_pontos.png in Resources */,
 				32C6B39219E484CB00DE13AC /* wireframe_categorias.png in Resources */,
+				32F15DF319F986D200310713 /* check.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

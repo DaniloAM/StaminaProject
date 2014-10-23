@@ -186,7 +186,7 @@
 #pragma mark - Create Exercise Database
 
 -(void)createExerciseDatabase {
-   
+    for(int x = 0; x < 10 ; x++){
     [self addExerciseOnDatabaseWithName:@"exercicio 1" primMuscle:@"fr_abdominal" secMuscle:@"" image:@"" andInfo:@""];
     
     [self addExerciseOnDatabaseWithName:@"exercicio 2" primMuscle:@"fr_ante-braco" secMuscle:@"" image:@"" andInfo:@""];
@@ -226,7 +226,7 @@
     [self addExerciseOnDatabaseWithName:@"exercicio 19" primMuscle:@"tr_trapezio" secMuscle:@"" image:@"" andInfo:@""];
     
     [self addExerciseOnDatabaseWithName:@"exercicio 20" primMuscle:@"tr_triceps" secMuscle:@"" image:@"" andInfo:@""];
-    
+    }
 }
 
 -(void)addExerciseOnDatabaseWithName:(NSString *)name primMuscle: (NSString *)muscle1 secMuscle:

@@ -23,6 +23,7 @@
     [self.table setBackgroundColor:[UIColor clearColor]];
     [self.view addSubview:self.table];
     [super criaBarButtonComBotoes:3];
+    [super hideBar];
     UILongPressGestureRecognizer *lpgr = [[UILongPressGestureRecognizer alloc]
                                           initWithTarget:self action:@selector(handleLongPress:)];
     lpgr.minimumPressDuration = 1.0; //seconds
@@ -40,7 +41,20 @@
         NSLog(@"long press on table view but not on a row");
     } else if (gestureRecognizer.state == UIGestureRecognizerStateBegan) {
         [super showBar];
-    } else {
+        
+        UITableViewCell *cell = [self.table cellForRowAtIndexPath:indexPath];
+        if(cell.accessoryType == UITableViewCellAccessoryCheckmark){
+            cell.accessoryType = UITableViewCellAccessoryNone;
+            UIButton *btn = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, 20, 20)];
+            [btn setBackgroundImage:[UIImage imageNamed:@"check.png"] forState:UIControlStateNormal];
+            [btn setBackgroundColor:[UIColor blackColor ]];
+            [cell addSubview:btn];
+        }
+        else {
+            cell.accessoryType = UITableViewCellAccessoryCheckmark;     
+            
+        }
+    }else {
     }
 }
 
@@ -58,7 +72,7 @@
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return [[self arrayOfExercises] count];
+    return [[self arrayOfExercises] count]+2;
 }
 
 
@@ -72,7 +86,11 @@
     
     if (cell == nil) {
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:simpleTableIdentifier];
+   
+        [cell setSelectionStyle:UITableViewCellSelectionStyleNone];
     }
+    if(indexPath.row >=[[self arrayOfExercises] count])
+        return cell;
     Exercises *temp =[[self arrayOfExercises] objectAtIndex:indexPath.row];
         cell.textLabel.text = [temp name];
    
@@ -91,105 +109,107 @@
     UITableViewCell *cell = [tableView cellForRowAtIndexPath:indexPath];
     NSString *str = cell.textLabel.text;
     for (int x = 0; x < [[self arrayOfExercises] count]; x++) {
+        
         Exercises *temp =[[self arrayOfExercises] objectAtIndex:x];
-        if([[temp name] isEqualToString:str])
+        if([[temp name] isEqualToString:str]){
             NSLog(@"achei vc amigao");
             UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
             UIViewController *myVC;
                 myVC= (UIViewController *)[storyboard instantiateViewControllerWithIdentifier:@"TipsPVC"];
                 
                 [self.navigationController pushViewController:myVC animated:YES];
-            
+          return nil;
+        }
     }
-
     return nil;
+ 
 }
-- (void)scrollViewWillBeginDragging:(UIScrollView *)scrollView {
-    _lastContentOffset = scrollView.contentOffset.y;
-}
+//- (void)scrollViewWillBeginDragging:(UIScrollView *)scrollView {
+//    _lastContentOffset = scrollView.contentOffset.y;
+//}
 
 
 
--(void)scrollViewDidScroll:(UIScrollView *)scrollView{
-
-    if (_lastContentOffset < (int)scrollView.contentOffset.y) {
-        
-    }
-    else if (_lastContentOffset > (int)scrollView.contentOffset.y) {
-    }
-    NSLog(@"%f", _lastContentOffset-scrollView.contentOffset.y);
-    float dy =_lastContentOffset -scrollView.contentOffset.y;
-    [self.tabBar setFrame:CGRectMake(0, self.tabBar.frame.origin.y-dy, self.tabBar.frame.size.width, self.tabBar.frame.size.height)];
-    _lastContentOffset = scrollView.contentOffset.y;
-    if(self.tabBar.frame.origin.y<self.startPointBar.y){
-        [self.tabBar setFrame:CGRectMake(0, self.startPointBar.y, self.tabBar.frame.size.width, self.tabBar.frame.size.height)];
-    }
-    else if(self.tabBar.frame.origin.y>self.startPointBar.y+self.tabBar.frame.size.height){
-        [self.tabBar setFrame:CGRectMake(0, self.startPointBar.y+self.tabBar.frame.size.height, self.tabBar.frame.size.width, self.tabBar.frame.size.height)];
-        
-    }
-    
-}
--(void)scrollViewDidEndScrollingAnimation:(UIScrollView *)scrollView{
-    float scrollViewHeight = scrollView.frame.size.height;
-    float scrollContentSizeHeight = scrollView.contentSize.height;
-    float scrollOffset = scrollView.contentOffset.y;
-    
-    if (scrollOffset == 0)
-    {
-        NSLog(@"up");
-        [super hideBar];
-    }
-    else if (scrollOffset + scrollViewHeight == scrollContentSizeHeight)
-    {
-        NSLog(@"up");
-        
-        [super showBar];
-    }
-
-    CGSize screenSize = [[UIScreen mainScreen] bounds].size;
-    screenSize.height = screenSize.height -self.navigationController.navigationBar.frame.size.height + 20
-    ;
-    
-    if(self.tabBar.frame.origin.y>self.startPointBar.y+self.tabBar.frame.size.height/2){
-        [UIView animateWithDuration:0.45 animations:^{
-            [self.tabBar setFrame:CGRectMake(0, self.startPointBar.y+self.tabBar.frame.size.height, self.tabBar.frame.size.width, self.tabBar.frame.size.height)];
-        }];
-        
-    }
-    else {
-        [UIView animateWithDuration:0.45 animations:^{
-            
-            
-            [self.tabBar setFrame:CGRectMake(0, self.startPointBar.y, self.tabBar.frame.size.width, self.tabBar.frame.size.height)];
-        }];
-        
-    }
-    
-    
-}
--(void)scrollViewDidEndDragging:(UIScrollView *)scrollView willDecelerate:(BOOL)decelerate{
-    CGSize screenSize = [[UIScreen mainScreen] bounds].size;
-    screenSize.height = screenSize.height -self.navigationController.navigationBar.frame.size.height + 20
-    ;
-    
-    if(self.tabBar.frame.origin.y>self.startPointBar.y+self.tabBar.frame.size.height/2){
-        [UIView animateWithDuration:0.45 animations:^{
-            [self.tabBar setFrame:CGRectMake(0, self.startPointBar.y+self.tabBar.frame.size.height, self.tabBar.frame.size.width, self.tabBar.frame.size.height)];
-        }];
-        
-    }
-    else {
-        [UIView animateWithDuration:0.45 animations:^{
-            
-            
-            [self.tabBar setFrame:CGRectMake(0, self.startPointBar.y, self.tabBar.frame.size.width, self.tabBar.frame.size.height)];
-        }];
-        
-    }
-    
-    
-}
+//-(void)scrollViewDidScroll:(UIScrollView *)scrollView{
+//
+//    if (_lastContentOffset < (int)scrollView.contentOffset.y) {
+//        
+//    }
+//    else if (_lastContentOffset > (int)scrollView.contentOffset.y) {
+//    }
+//    NSLog(@"%f", _lastContentOffset-scrollView.contentOffset.y);
+//    float dy =_lastContentOffset -scrollView.contentOffset.y;
+//    [self.tabBar setFrame:CGRectMake(0, self.tabBar.frame.origin.y-dy, self.tabBar.frame.size.width, self.tabBar.frame.size.height)];
+//    _lastContentOffset = scrollView.contentOffset.y;
+//    if(self.tabBar.frame.origin.y<self.startPointBar.y){
+//        [self.tabBar setFrame:CGRectMake(0, self.startPointBar.y, self.tabBar.frame.size.width, self.tabBar.frame.size.height)];
+//    }
+//    else if(self.tabBar.frame.origin.y>self.startPointBar.y+self.tabBar.frame.size.height){
+//        [self.tabBar setFrame:CGRectMake(0, self.startPointBar.y+self.tabBar.frame.size.height, self.tabBar.frame.size.width, self.tabBar.frame.size.height)];
+//        
+//    }
+//    
+//}
+//-(void)scrollViewDidEndScrollingAnimation:(UIScrollView *)scrollView{
+//    float scrollViewHeight = scrollView.frame.size.height;
+//    float scrollContentSizeHeight = scrollView.contentSize.height;
+//    float scrollOffset = scrollView.contentOffset.y;
+//    
+//    if (scrollOffset == 0)
+//    {
+//        NSLog(@"up");
+//        [super hideBar];
+//    }
+//    else if (scrollOffset + scrollViewHeight == scrollContentSizeHeight)
+//    {
+//        NSLog(@"up");
+//        
+//        [super showBar];
+//    }
+//
+//    CGSize screenSize = [[UIScreen mainScreen] bounds].size;
+//    screenSize.height = screenSize.height -self.navigationController.navigationBar.frame.size.height + 20
+//    ;
+//    
+//    if(self.tabBar.frame.origin.y>self.startPointBar.y+self.tabBar.frame.size.height/2){
+//        [UIView animateWithDuration:0.45 animations:^{
+//            [self.tabBar setFrame:CGRectMake(0, self.startPointBar.y+self.tabBar.frame.size.height, self.tabBar.frame.size.width, self.tabBar.frame.size.height)];
+//        }];
+//        
+//    }
+//    else {
+//        [UIView animateWithDuration:0.45 animations:^{
+//            
+//            
+//            [self.tabBar setFrame:CGRectMake(0, self.startPointBar.y, self.tabBar.frame.size.width, self.tabBar.frame.size.height)];
+//        }];
+//        
+//    }
+//    
+//    
+//}
+//-(void)scrollViewDidEndDragging:(UIScrollView *)scrollView willDecelerate:(BOOL)decelerate{
+//    CGSize screenSize = [[UIScreen mainScreen] bounds].size;
+//    screenSize.height = screenSize.height -self.navigationController.navigationBar.frame.size.height + 20
+//    ;
+//    
+//    if(self.tabBar.frame.origin.y>self.startPointBar.y+self.tabBar.frame.size.height/2){
+//        [UIView animateWithDuration:0.45 animations:^{
+//            [self.tabBar setFrame:CGRectMake(0, self.startPointBar.y+self.tabBar.frame.size.height, self.tabBar.frame.size.width, self.tabBar.frame.size.height)];
+//        }];
+//        
+//    }
+//    else {
+//        [UIView animateWithDuration:0.45 animations:^{
+//            
+//            
+//            [self.tabBar setFrame:CGRectMake(0, self.startPointBar.y, self.tabBar.frame.size.width, self.tabBar.frame.size.height)];
+//        }];
+//        
+//    }
+//    
+//    
+//}
 /*
  #pragma mark - Navigation
  
