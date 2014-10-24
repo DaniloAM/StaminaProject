@@ -8,7 +8,6 @@
 
 #import "ExercisesList.h"
 
-#define exercisesCategoryCount 19
 
 @implementation ExercisesList
 
@@ -109,6 +108,24 @@
     }
     
     else return nil;
+}
+
+
+-(Exercises *)returnExerciseWithIdentifier: (int)identifier {
+    
+    int index = (identifier / 1000) - 100;
+    
+    for(Exercises *ex in [[self exercisesMatrix] objectAtIndex:index]) {
+        
+        if(ex.exerciseID.intValue == identifier) {
+            
+            return ex;
+            
+        }
+        
+    }
+    
+    return nil;
 }
 
 

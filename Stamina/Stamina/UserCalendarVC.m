@@ -78,6 +78,7 @@
     [super viewDidLoad];
     
     [self setInfoTableView: [[UITableView alloc] initWithFrame:CGRectMake(33, 392, 271, 148)]];
+    [[self infoTableView] setRowHeight:15.0];
     
     [[self infoTableView] setDelegate:self];
     [[self infoTableView] setDataSource:self];
@@ -94,6 +95,8 @@
     _locationNextMonth = -1;
     
     [self.view addSubview:[self infoTableView]];
+    
+    [self addTrainingToListExample];
     
 }
 
@@ -333,30 +336,23 @@
     
     [self setExercisesArray:[NSMutableArray array]];
     
-    AppDelegate *app = [[UIApplication sharedApplication] delegate];
-    NSManagedObjectContext *context = [app managedObjectContext];
-    NSFetchRequest *request = [NSFetchRequest fetchRequestWithEntityName:@"Exercises"];
-    NSError *error;
+    ExercisesList *list = [ExercisesList alloc];
+    
+//    AppDelegate *app = [[UIApplication sharedApplication] delegate];
+//    NSManagedObjectContext *context = [app managedObjectContext];
+//    NSFetchRequest *request = [NSFetchRequest fetchRequestWithEntityName:@"Exercises"];
+//    NSError *error;
     
     int identifier = 0;
-    NSArray *objectArray = [context executeFetchRequest:request error:&error];
+    //NSArray *objectArray = [context executeFetchRequest:request error:&error];
         
     
     for(int x = 0; x < [array count]; x++) {
         
-        //NSString *name;
         identifier = [[[array objectAtIndex:x] id_exercise] intValue];
+        Exercises *ex = [list returnExerciseWithIdentifier:identifier];
         
-        for(Exercises *ex in objectArray) {
-            
-            if([ex.exerciseID intValue] == identifier) {
-                
-                //name = [ex name];
-                [[self exercisesArray] addObject:ex];
-                break;
-            }
-            
-        }
+        [[self exercisesArray] addObject:ex];
         
     }
     
@@ -418,7 +414,9 @@
     
     
     //Make a loop and add all trainings needed
-    [data addExerciseWithTrainingName:@"Treino Chavão" exerciseID:[NSNumber numberWithInt:1] repetitionsValue:[NSNumber numberWithInt:3] seriesValue:[NSNumber numberWithInt:3]];
+    [data addExerciseWithTrainingName:@"Treino Chavão" exerciseID:[NSNumber numberWithInt:101002] repetitionsValue:[NSNumber numberWithInt:3] seriesValue:[NSNumber numberWithInt:3]];
+    [data addExerciseWithTrainingName:@"Treino Chavão" exerciseID:[NSNumber numberWithInt:101003] repetitionsValue:[NSNumber numberWithInt:3] seriesValue:[NSNumber numberWithInt:3]];
+    [data addExerciseWithTrainingName:@"Treino Chavão" exerciseID:[NSNumber numberWithInt:105001] repetitionsValue:[NSNumber numberWithInt:3] seriesValue:[NSNumber numberWithInt:3]];
     
     
     //Then a second loop of schedules in dates

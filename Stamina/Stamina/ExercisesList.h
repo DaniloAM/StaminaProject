@@ -17,28 +17,31 @@
 //
 //---------------------------------------------------------------------//
 //
-// frontal abdominal - 001
-// frontal ante braco - 002
-// frontal biceps - 003
-// frontal peitoral - 004
-// frontal quadriceps - 005
-// frontal ombros - 006
-// frontal trapezio - 007
-// frontal triceps - 008
-// trazeiro ante braco - 009
-// trazeiro biceps - 010
-// trazeiro dorsal - 011
-// trazeiro gluteos - 012
-// trazeiro lombar - 013
-// trazeiro ombros - 014
-// trazeiro panturrilha - 015
-// trazeiro posterior oxa - 016
-// trazeiro romboides - 017
-// trazeiro trapezio - 018
-// trazeiro triceps - 019
+// frontal abdominal - 101
+// frontal ante braco - 102
+// frontal biceps - 103
+// frontal peitoral - 104
+// frontal quadriceps - 105
+// frontal ombros - 106
+// frontal trapezio - 107
+// frontal triceps - 108
+// trazeiro ante braco - 109
+// trazeiro biceps - 110
+// trazeiro dorsal - 111
+// trazeiro gluteos - 112
+// trazeiro lombar - 113
+// trazeiro ombros - 114
+// trazeiro panturrilha - 115
+// trazeiro posterior coxa - 116
+// trazeiro romboides - 117
+// trazeiro trapezio - 118
+// trazeiro triceps - 119
 
 #import <Foundation/Foundation.h>
 #import "Exercises.h"
+
+#define exercisesCategoryCount 19
+#define frontalCategoryCount 8
 
 @interface ExercisesList : NSObject
 
@@ -46,6 +49,7 @@
 
 -(void)addExercise: (Exercises *)exercise inCategory: (NSString*)string;
 -(NSMutableArray *)getArrayForCategory: (NSString *)string;
+-(Exercises *)returnExerciseWithIdentifier: (int)identifier;
 +(ExercisesList *)sharedStore;
 -(void)allocArrays;
 

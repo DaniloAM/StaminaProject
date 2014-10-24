@@ -46,6 +46,7 @@
 #import <UIKit/UIKit.h>
 #import <QuartzCore/QuartzCore.h>
 #import "CalendarPreparer.h"
+#import "ExercisesList.h"
 #import "UserData.h"
 #import "Exercises.h"
 

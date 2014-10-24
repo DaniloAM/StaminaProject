@@ -110,7 +110,7 @@
         
     }
     else{
-        array = [[temp exercisesMatrix] objectAtIndex:indexPath.row + 9];
+        array = [[temp exercisesMatrix] objectAtIndex:indexPath.row + frontalCategoryCount + 1];
         
     }
     [myVC setArrayOfExercises:array];

@@ -120,50 +120,57 @@
 
 -(void)createExerciseDatabase {
     for(int x = 0; x < 10 ; x++){
-    [self addExerciseOnDatabaseWithName:@"exercicio 1" primMuscle:@"fr_abdominal" secMuscle:@"" image:@"" andInfo:@""];
-    
-    [self addExerciseOnDatabaseWithName:@"exercicio 2" primMuscle:@"fr_ante-braco" secMuscle:@"" image:@"" andInfo:@""];
-    
-    [self addExerciseOnDatabaseWithName:@"exercicio 3" primMuscle:@"fr_biceps" secMuscle:@"" image:@"" andInfo:@""];
-    
-    [self addExerciseOnDatabaseWithName:@"exercicio 4" primMuscle:@"fr_peitoral" secMuscle:@"" image:@"" andInfo:@""];
-    
-    [self addExerciseOnDatabaseWithName:@"exercicio 5" primMuscle:@"fr_quadriceps" secMuscle:@"" image:@"" andInfo:@""];
-    
-    [self addExerciseOnDatabaseWithName:@"exercicio 6" primMuscle:@"fr_ombros" secMuscle:@"" image:@"" andInfo:@""];
-    
-    [self addExerciseOnDatabaseWithName:@"exercicio 7" primMuscle:@"fr_trapezio" secMuscle:@"" image:@"" andInfo:@""];
-    
-    [self addExerciseOnDatabaseWithName:@"exercicio 8" primMuscle:@"fr_triceps" secMuscle:@"" image:@"" andInfo:@""];
-    
-    [self addExerciseOnDatabaseWithName:@"exercicio 8" primMuscle:@"tr_ante-braco" secMuscle:@"" image:@"" andInfo:@""];
-    
-    [self addExerciseOnDatabaseWithName:@"exercicio 10" primMuscle:@"tr_biceps" secMuscle:@"" image:@"" andInfo:@""];
-    
-    [self addExerciseOnDatabaseWithName:@"exercicio 11" primMuscle:@"tr_biceps" secMuscle:@"" image:@"" andInfo:@""];
-    
-    [self addExerciseOnDatabaseWithName:@"exercicio 12" primMuscle:@"tr_dorsal" secMuscle:@"" image:@"" andInfo:@""];
-    
-    [self addExerciseOnDatabaseWithName:@"exercicio 13" primMuscle:@"tr_gluteos" secMuscle:@"" image:@"" andInfo:@""];
-    
-    [self addExerciseOnDatabaseWithName:@"exercicio 14" primMuscle:@"tr_lombar" secMuscle:@"" image:@"" andInfo:@""];
-    
-    [self addExerciseOnDatabaseWithName:@"exercicio 15" primMuscle:@"tr_ombros" secMuscle:@"" image:@"" andInfo:@""];
-    
-    [self addExerciseOnDatabaseWithName:@"exercicio 16" primMuscle:@"tr_panturrilha" secMuscle:@"" image:@"" andInfo:@""];
-    
-    [self addExerciseOnDatabaseWithName:@"exercicio 17" primMuscle:@"tr_posterior-de-coxa" secMuscle:@"" image:@"" andInfo:@""];
-    
-    [self addExerciseOnDatabaseWithName:@"exercicio 18" primMuscle:@"tr_romboides" secMuscle:@"" image:@"" andInfo:@""];
-    
-    [self addExerciseOnDatabaseWithName:@"exercicio 19" primMuscle:@"tr_trapezio" secMuscle:@"" image:@"" andInfo:@""];
-    
-    [self addExerciseOnDatabaseWithName:@"exercicio 20" primMuscle:@"tr_triceps" secMuscle:@"" image:@"" andInfo:@""];
+        
+        
+        NSString *str = [CalendarMath returnMonthName:x+1];
+        
+        
+        [NSString stringWithFormat:@"exercicio %@", str];
+        
+        [self addExerciseOnDatabaseWithName:[NSString stringWithFormat:@"exercicio %@ %d", str, x] primMuscle:@"fr_abdominal" secMuscle:@"" image:@"" info:@"" andID:101000 + (x + 1)];
+        
+        [self addExerciseOnDatabaseWithName:[NSString stringWithFormat:@"exercicio %@ %d", str, x] primMuscle:@"fr_ante-braco" secMuscle:@"" image:@"" info:@"" andID:102000 + (x + 1)];
+        
+        [self addExerciseOnDatabaseWithName:[NSString stringWithFormat:@"exercicio %@ %d", str, x] primMuscle:@"fr_biceps" secMuscle:@"" image:@"" info:@"" andID:103000 + (x + 1)];
+        
+        [self addExerciseOnDatabaseWithName:[NSString stringWithFormat:@"exercicio %@ %d", str, x] primMuscle:@"fr_peitoral" secMuscle:@"" image:@"" info:@"" andID:104000 + (x + 1)];
+        
+        [self addExerciseOnDatabaseWithName:[NSString stringWithFormat:@"exercicio %@ %d", str, x] primMuscle:@"fr_quadriceps" secMuscle:@"" image:@"" info:@"" andID:105000 + (x + 1)];
+        
+        [self addExerciseOnDatabaseWithName:[NSString stringWithFormat:@"exercicio %@ %d", str, x] primMuscle:@"fr_ombros" secMuscle:@"" image:@"" info:@"" andID:106000 + (x + 1)];
+        
+        [self addExerciseOnDatabaseWithName:[NSString stringWithFormat:@"exercicio %@ %d", str, x] primMuscle:@"fr_trapezio" secMuscle:@"" image:@"" info:@"" andID:107000 + (x + 1)];
+        
+        [self addExerciseOnDatabaseWithName:[NSString stringWithFormat:@"exercicio %@ %d", str, x] primMuscle:@"fr_triceps" secMuscle:@"" image:@"" info:@"" andID:108000 + (x + 1)];
+        
+        [self addExerciseOnDatabaseWithName:[NSString stringWithFormat:@"exercicio %@ %d", str, x] primMuscle:@"tr_ante-braco" secMuscle:@"" image:@"" info:@"" andID:109000 + (x + 1)];
+        
+        [self addExerciseOnDatabaseWithName:[NSString stringWithFormat:@"exercicio %@ %d", str, x] primMuscle:@"tr_biceps" secMuscle:@"" image:@"" info:@"" andID:110000 + (x + 2)];
+        
+        [self addExerciseOnDatabaseWithName:[NSString stringWithFormat:@"exercicio %@ %d", str, x] primMuscle:@"tr_biceps" secMuscle:@"" image:@"" info:@"" andID:110000 + (x + 1)];
+        
+        [self addExerciseOnDatabaseWithName:[NSString stringWithFormat:@"exercicio %@ %d", str, x] primMuscle:@"tr_dorsal" secMuscle:@"" image:@"" info:@"" andID:111000 + (x + 1)];
+        
+        [self addExerciseOnDatabaseWithName:[NSString stringWithFormat:@"exercicio %@ %d", str, x] primMuscle:@"tr_gluteos" secMuscle:@"" image:@"" info:@"" andID:112000 + (x + 1)];
+        
+        [self addExerciseOnDatabaseWithName:[NSString stringWithFormat:@"exercicio %@ %d", str, x] primMuscle:@"tr_lombar" secMuscle:@"" image:@"" info:@"" andID:113000 + (x + 1)];
+        
+        [self addExerciseOnDatabaseWithName:[NSString stringWithFormat:@"exercicio %@ %d", str, x] primMuscle:@"tr_ombros" secMuscle:@"" image:@"" info:@"" andID:114000 + (x + 1)];
+        
+        [self addExerciseOnDatabaseWithName:[NSString stringWithFormat:@"exercicio %@ %d", str, x] primMuscle:@"tr_panturrilha" secMuscle:@"" image:@"" info:@"" andID:115000 + (x + 1)];
+        
+        [self addExerciseOnDatabaseWithName:[NSString stringWithFormat:@"exercicio %@ %d", str, x] primMuscle:@"tr_posterior-de-coxa" secMuscle:@"" image:@"" info:@"" andID:116000 + (x + 1)];
+        
+        [self addExerciseOnDatabaseWithName:[NSString stringWithFormat:@"exercicio %@ %d", str, x] primMuscle:@"tr_romboides" secMuscle:@"" image:@"" info:@"" andID:117000 + (x + 1)];
+        
+        [self addExerciseOnDatabaseWithName:[NSString stringWithFormat:@"exercicio %@ %d", str, x] primMuscle:@"tr_trapezio" secMuscle:@"" image:@"" info:@"" andID:118000 + (x + 1)];
+        
+        [self addExerciseOnDatabaseWithName:[NSString stringWithFormat:@"exercicio %@ %d", str, x] primMuscle:@"tr_triceps" secMuscle:@"" image:@"" info:@"" andID:119000 + (x + 1)];
     }
 }
 
 -(void)addExerciseOnDatabaseWithName:(NSString *)name primMuscle: (NSString *)muscle1 secMuscle:
-    (NSString *)muscle2 image: (NSString *)image andInfo: (NSString *)info  {
+(NSString *)muscle2 image: (NSString *)image info: (NSString *)info andID: (int)identifier {
     
 
     NSManagedObjectContext *context = [[self appdel] managedObjectContext];
@@ -175,6 +182,7 @@
     [exercise setSecondaryMuscle:muscle2];
     [exercise setImageName:image];
     [exercise setExerciseInfo:info];
+    [exercise setExerciseID:[NSNumber numberWithInt:identifier]];
     
     NSError *error;
     

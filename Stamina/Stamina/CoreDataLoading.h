@@ -19,6 +19,7 @@
 #import <Foundation/Foundation.h>
 #import "Exercises.h"
 #import "TrainingDayObject.h"
+#import "CalendarMath.h"
 #import "TrainingExercises.h"
 #import "TrajectoryRoute.h"
 #import "AppDelegate.h"
