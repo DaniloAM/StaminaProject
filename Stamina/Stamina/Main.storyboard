@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6245" systemVersion="13F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="egZ-Br-g0s">
     <dependencies>
-        <deployment defaultVersion="1808" identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6238"/>
     </dependencies>
     <scenes>
@@ -1074,10 +1073,10 @@
             </objects>
             <point key="canvasLocation" x="3363" y="-2068"/>
         </scene>
-        <!--View Controller-->
+        <!--Add Exercise-->
         <scene sceneID="Ctl-md-2LT">
             <objects>
-                <viewController id="lGt-ep-Pew" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="AddExercise" id="lGt-ep-Pew" customClass="AddExercise" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="uIp-dz-FBi"/>
                         <viewControllerLayoutGuide type="bottom" id="E1u-8h-Dkv"/>
@@ -1085,30 +1084,45 @@
                     <view key="view" contentMode="scaleToFill" id="CAf-W9-2yI">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="wireframe_exercicio_serie.png" translatesAutoresizingMaskIntoConstraints="NO" id="VcY-Ks-woC">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                            </imageView>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="4bL-VO-yoW">
+                                <rect key="frame" x="39" y="385" width="104" height="83"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="MWU-kV-Z5c">
+                                <rect key="frame" x="179" y="385" width="104" height="83"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Exercicio 1" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yKa-ut-4AY">
+                                <rect key="frame" x="37" y="299" width="265" height="29"/>
+                                <fontDescription key="fontDescription" name="Avenir-Heavy" family="Avenir" pointSize="19"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Categoria" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3Uh-Jo-sib">
+                                <rect key="frame" x="37" y="328" width="265" height="29"/>
+                                <fontDescription key="fontDescription" name="Avenir-Roman" family="Avenir" pointSize="19"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
+                    <connections>
+                        <outlet property="categoriaName" destination="3Uh-Jo-sib" id="aSl-bl-u5C"/>
+                        <outlet property="exerciseName" destination="yKa-ut-4AY" id="3xV-gY-bUv"/>
+                        <outlet property="txtRep" destination="MWU-kV-Z5c" id="KFh-Nb-h08"/>
+                        <outlet property="txtSeries" destination="4bL-VO-yoW" id="FAR-8W-b6G"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="m9l-XB-Cif" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3178" y="-1497"/>
-        </scene>
-        <!--View Controller-->
-        <scene sceneID="tFG-Ja-tPL">
-            <objects>
-                <viewController id="tgc-aM-mFR" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="f0W-UI-hgA"/>
-                        <viewControllerLayoutGuide type="bottom" id="oUw-ho-Cat"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="quK-Zg-EMK">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="dXu-R4-Oh0" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="3533" y="-2762"/>
+            <point key="canvasLocation" x="3615" y="-2742"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="NMJ-Pw-R4N">
@@ -1170,6 +1184,7 @@
         <image name="wireframe_calendario.png" width="1283" height="2487"/>
         <image name="wireframe_categorias.png" width="886" height="1576"/>
         <image name="wireframe_exercicio.png" width="888" height="1571"/>
+        <image name="wireframe_exercicio_serie.png" width="894" height="1582"/>
         <image name="wireframe_home.png" width="418" height="633"/>
         <image name="wireframe_termina_caminhada.jpg" width="636" height="1134"/>
     </resources>
