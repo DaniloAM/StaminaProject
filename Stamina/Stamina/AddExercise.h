@@ -9,6 +9,8 @@
 #import "HideBBVC.h"
 #import "CreateTrainTemp.h"
 #import "Exercises.h"
+#import "ExercisesList.h"
+
 @interface AddExercise : HideBBVC
 @property (weak, nonatomic) IBOutlet UITextField *txtSeries;
 @property (weak, nonatomic) IBOutlet UITextField *txtRep;

@@ -46,14 +46,15 @@
 }
 -(void)function3{
     [self showTheRightExercise:_currentIndex];
+    _currentIndex++;
 }
 -(void)showTheRightExercise : (int )x{
     CreateTrainTemp *temp = [CreateTrainTemp alloc];
-    if(x > [[temp arrayOfExercises] count])
+    if(x >= [[temp arrayOfExercises] count])
         return;
     Exercises *exe = [[temp arrayOfExercises] objectAtIndex:x];
     [[self exerciseName] setText:exe.name];
-    [[self categoriaName] setText:exe.name];
+    [[self categoriaName] setText:[ExercisesList returnCategoryNameWithId:(int)exe.exerciseID]];
     
 }
 

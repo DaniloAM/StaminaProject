@@ -41,7 +41,72 @@
     [[self getArrayForCategory:string] addObject:exercise];
     
 }
-
++(NSString *)returnCategoryNameWithId :(int )identifier{
+    int index = (identifier / 1000);
+    switch (index) {
+        case 101:
+            return @"Frontal - Abdominal";
+            break;
+        case 102:
+            return @"Frontal - Ante-Braço";
+            break;
+        case 103:
+            return @"Frontal - Biceps";
+            break;
+        case 104:
+            return @"Frontal - Peitoral";
+            break;
+        case 105:
+            return @"Frontal - Quadríceps";
+            break;
+        case 106:
+            return @"Frontal - Ombros";
+            break;
+        case 107:
+            return @"Frontal - Trapezio";
+            break;
+        case 108:
+            return @"Frontal - Triceps";
+            break;
+        case 109:
+            return @"Traseiro - Ante-Braço";
+            break;
+        case 110:
+            return @"Traseiro - Biceps";
+            break;
+        case 111:
+            return @"Traseiro - Dorsal";
+            break;
+        case 112:
+            return @"Traseiro - Glúteos";
+            break;
+        case 113:
+            return @"Traseiro - Lombar";
+            break;
+        case 114:
+            return @"Traseiro - Ombros";
+            break;
+        case 115:
+            return @"Traseiro - Panturrilha";
+            break;
+        case 116:
+            return @"Traseiro - Posterior de Coxa";
+            break;
+        case 117:
+            return @"Traseiro - Rombóides";
+            break;
+        case 118:
+            return @"Traseiro - Trapézio";
+            break;
+        case 119:
+            return @"Traseiro - Triceps";
+            break;
+            
+        default:
+            break;
+    }
+    return nil;
+}
 
 -(NSMutableArray *)getArrayForCategory: (NSString *)string {
     
