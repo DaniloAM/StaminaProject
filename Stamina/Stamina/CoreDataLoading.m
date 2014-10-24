@@ -60,13 +60,14 @@
 
 #pragma mark - Load Exercises
 
+
 -(void)loadExercisesList {
     
     ExercisesList *list = [ExercisesList alloc];
     
     [list allocArrays];
     NSManagedObjectContext *context = [[self appdel] managedObjectContext];
-    NSFetchRequest *request = [NSFetchRequest fetchRequestWithEntityName:@"Exercises"];;
+    NSFetchRequest *request = [NSFetchRequest fetchRequestWithEntityName:@"Exercises"];
     NSError *error;
     
     NSArray *objectArray = [context executeFetchRequest:request error:&error];
@@ -74,76 +75,8 @@
     for(int x = 0; x < [objectArray count]; x++) {
         
         Exercises *exercise = [objectArray objectAtIndex:x];
-        NSString *str = [exercise primaryMuscle];
         
-        
-        //If a new muscle array is created, you need to compare the new muscle name
-        if([str isEqualToString:@"fr_abdominal"]) {
-            [[list fr_abdominal] addObject:exercise];
-        }
-        
-        else if([str isEqualToString:@"fr_ante-braco"]) {
-            [[list fr_ante_braco] addObject:exercise];
-        }
-        
-        else if([str isEqualToString:@"fr_biceps"]) {
-            [[list fr_biceps] addObject:exercise];
-        }
-        
-        else if([str isEqualToString:@"fr_peitoral"]) {
-            [[list fr_peitoral] addObject:exercise];
-        }
-        
-        else if([str isEqualToString:@"fr_quadriceps"]) {
-            [[list fr_quadriceps] addObject:exercise];
-        }
-        else if([str isEqualToString:@"fr_ombros"]) {
-            [[list fr_ombros] addObject:exercise];
-        }
-        else if([str isEqualToString:@"fr_trapezio"]) {
-            [[list fr_trapezio] addObject:exercise];
-        }
-        else if([str isEqualToString:@"fr_triceps"]) {
-            [[list fr_triceps] addObject:exercise];
-        }
-        else if([str isEqualToString:@"tr_ante-braco"]) {
-            [[list tr_ante_braco] addObject:exercise];
-        }
-        else if([str isEqualToString:@"tr_biceps"]) {
-            [[list tr_biceps] addObject:exercise];
-        }
-        else if([str isEqualToString:@"tr_dorsal"]) {
-            [[list tr_dorsal] addObject:exercise];
-        }
-        else if([str isEqualToString:@"tr_gluteos"]) {
-            [[list tr_gluteos] addObject:exercise];
-        }
-        else if([str isEqualToString:@"tr_lombar"]) {
-            [[list tr_lombar] addObject:exercise];
-        }
-        else if([str isEqualToString:@"tr_gluteos"]) {
-            [[list tr_gluteos] addObject:exercise];
-        }
-        else if([str isEqualToString:@"tr_ombros"]) {
-            [[list tr_ombros] addObject:exercise];
-        }
-        else if([str isEqualToString:@"tr_panturrilha"]) {
-            [[list tr_panturrilha] addObject:exercise];
-        }
-        else if([str isEqualToString:@"tr_posterior-de-coxa"]) {
-            [[list tr_posterior_de_coxa] addObject:exercise];
-        }
-        else if([str isEqualToString:@"tr_romboides"]) {
-            [[list tr_romboides] addObject:exercise];
-        }
-        else if([str isEqualToString:@"tr_trapezio"]) {
-            [[list tr_trapezio] addObject:exercise];
-        }
-        else if([str isEqualToString:@"tr_triceps"]) {
-            [[list tr_triceps] addObject:exercise];
-        }
-        
-
+        [list addExercise:exercise inCategory:exercise.primaryMuscle];
          
     }
 

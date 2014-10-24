@@ -8,6 +8,8 @@
 
 #import "ExercisesList.h"
 
+#define exercisesCategoryCount 19
+
 @implementation ExercisesList
 
 +(ExercisesList *)sharedStore{
@@ -26,26 +28,89 @@
 }
 
 -(void)allocArrays {
-    [self setTr_ante_braco:[NSMutableArray array]];
-    [self setTr_biceps:[NSMutableArray array]];
-    [self setTr_dorsal:[NSMutableArray array]];
-    [self setTr_gluteos:[NSMutableArray array]];
-    [self setTr_lombar:[NSMutableArray array]];
-    [self setTr_ombros:[NSMutableArray array]];
-    [self setTr_panturrilha:[NSMutableArray array]];
-    [self setTr_posterior_de_coxa:[NSMutableArray array]];
-    [self setTr_romboides:[NSMutableArray array]];
-    [self setTr_trapezio:[NSMutableArray array]];
-    [self setTr_triceps:[NSMutableArray array]];
-    [self setFr_abdominal:[NSMutableArray array]];
-    [self setFr_ante_braco:[NSMutableArray array]];
-    [self setFr_biceps:[NSMutableArray array]];
-    [self setFr_ombros:[NSMutableArray array]];
-    [self setFr_peitoral:[NSMutableArray array]];
-    [self setFr_quadriceps:[NSMutableArray array]];
-    [self setFr_trapezio:[NSMutableArray array]];
-    [self setFr_triceps:[NSMutableArray array]];
-
+    
+    [self setExercisesMatrix:[NSMutableArray array]];
+    
+    for(int x = 0; x < exercisesCategoryCount; x++) {
+        [[self exercisesMatrix] addObject:[NSMutableArray array]];
+    }
 }
+
+
+-(void)addExercise: (Exercises *)exercise inCategory: (NSString*)string {
+    
+    [[self getArrayForCategory:string] addObject:exercise];
+    
+}
+
+
+-(NSMutableArray *)getArrayForCategory: (NSString *)string {
+    
+    if([string isEqualToString:@"fr_abdominal"]) {
+        return [[self exercisesMatrix] objectAtIndex:1];
+    }
+    
+    else if([string isEqualToString:@"fr_ante-braco"]) {
+        return [[self exercisesMatrix] objectAtIndex:2];
+    }
+    
+    else if([string isEqualToString:@"fr_biceps"]) {
+        return [[self exercisesMatrix] objectAtIndex:3];
+    }
+    
+    else if([string isEqualToString:@"fr_peitoral"]) {
+        return [[self exercisesMatrix] objectAtIndex:4];
+    }
+    
+    else if([string isEqualToString:@"fr_quadriceps"]) {
+        return [[self exercisesMatrix] objectAtIndex:5];
+    }
+    else if([string isEqualToString:@"fr_ombros"]) {
+        return [[self exercisesMatrix] objectAtIndex:6];
+    }
+    else if([string isEqualToString:@"fr_trapezio"]) {
+        return [[self exercisesMatrix] objectAtIndex:7];
+    }
+    else if([string isEqualToString:@"fr_triceps"]) {
+        return [[self exercisesMatrix] objectAtIndex:8];
+    }
+    else if([string isEqualToString:@"tr_ante-braco"]) {
+        return [[self exercisesMatrix] objectAtIndex:9];
+    }
+    else if([string isEqualToString:@"tr_biceps"]) {
+        return [[self exercisesMatrix] objectAtIndex:10];
+    }
+    else if([string isEqualToString:@"tr_dorsal"]) {
+        return [[self exercisesMatrix] objectAtIndex:11];
+    }
+    else if([string isEqualToString:@"tr_gluteos"]) {
+        return [[self exercisesMatrix] objectAtIndex:12];
+    }
+    else if([string isEqualToString:@"tr_lombar"]) {
+        return [[self exercisesMatrix] objectAtIndex:13];
+    }
+    else if([string isEqualToString:@"tr_ombros"]) {
+        return [[self exercisesMatrix] objectAtIndex:14];
+    }
+    else if([string isEqualToString:@"tr_panturrilha"]) {
+        return [[self exercisesMatrix] objectAtIndex:15];
+    }
+    else if([string isEqualToString:@"tr_posterior-de-coxa"]) {
+        return [[self exercisesMatrix] objectAtIndex:16];
+    }
+    else if([string isEqualToString:@"tr_romboides"]) {
+        return [[self exercisesMatrix] objectAtIndex:17];
+    }
+    else if([string isEqualToString:@"tr_trapezio"]) {
+        return [[self exercisesMatrix] objectAtIndex:18];
+    }
+    else if([string isEqualToString:@"tr_triceps"]) {
+        return [[self exercisesMatrix] objectAtIndex:19];
+    }
+    
+    else return nil;
+}
+
+
 
 @end

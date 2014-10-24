@@ -17,13 +17,35 @@
 //
 //---------------------------------------------------------------------//
 //
+// frontal abdominal - 001
+// frontal ante braco - 002
+// frontal biceps - 003
+// frontal peitoral - 004
+// frontal quadriceps - 005
+// frontal ombros - 006
+// frontal trapezio - 007
+// frontal triceps - 008
+// trazeiro ante braco - 009
+// trazeiro biceps - 010
+// trazeiro dorsal - 011
+// trazeiro gluteos - 012
+// trazeiro lombar - 013
+// trazeiro ombros - 014
+// trazeiro panturrilha - 015
+// trazeiro posterior oxa - 016
+// trazeiro romboides - 017
+// trazeiro trapezio - 018
+// trazeiro triceps - 019
 
 #import <Foundation/Foundation.h>
+#import "Exercises.h"
 
 @interface ExercisesList : NSObject
 
-@property NSMutableArray *fr_abdominal, *fr_ante_braco, *fr_biceps, *fr_peitoral, *fr_quadriceps, *fr_ombros, *fr_trapezio, *fr_triceps;
-@property NSMutableArray *tr_ante_braco, *tr_biceps, *tr_dorsal, *tr_gluteos, *tr_lombar, *tr_ombros, *tr_panturrilha, *tr_posterior_de_coxa, *tr_romboides, *tr_trapezio, *tr_triceps;
+@property NSMutableArray *exercisesMatrix;
+
+-(void)addExercise: (Exercises *)exercise inCategory: (NSString*)string;
+-(NSMutableArray *)getArrayForCategory: (NSString *)string;
 +(ExercisesList *)sharedStore;
 -(void)allocArrays;
 

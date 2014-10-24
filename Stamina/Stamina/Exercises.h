@@ -2,14 +2,8 @@
 //  Exercises.h
 //  Stamina
 //
-//  Created by Danilo Augusto Mative on 17/09/14.
+//  Created by Danilo Augusto Mative on 23/10/14.
 //  Copyright (c) 2014 Danilo Augusto Mative. All rights reserved.
-//
-//---------------------------------------------------------------------//
-//
-//  Exercises class for entity in CoreData.
-//
-//---------------------------------------------------------------------//
 //
 
 #import <Foundation/Foundation.h>
@@ -18,6 +12,7 @@
 
 @interface Exercises : NSManagedObject
 
+@property (nonatomic, retain) NSNumber * exerciseID;
 @property (nonatomic, retain) NSString * exerciseInfo;
 @property (nonatomic, retain) NSString * imageName;
 @property (nonatomic, retain) NSString * name;

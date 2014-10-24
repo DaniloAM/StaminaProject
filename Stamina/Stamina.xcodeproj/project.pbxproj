@@ -115,9 +115,9 @@
 		FF159A5219C22BD400D9236F /* ExercisesList.m in Sources */ = {isa = PBXBuildFile; fileRef = FF159A5119C22BD400D9236F /* ExercisesList.m */; };
 		FF17BD5C19C8C18200B5EF46 /* StartVC.m in Sources */ = {isa = PBXBuildFile; fileRef = FF17BD5B19C8C18200B5EF46 /* StartVC.m */; };
 		FF17BD6519C8C21600B5EF46 /* MainVC.m in Sources */ = {isa = PBXBuildFile; fileRef = FF17BD6419C8C21600B5EF46 /* MainVC.m */; };
-		FF17BDB719C9F78E00B5EF46 /* Exercises.m in Sources */ = {isa = PBXBuildFile; fileRef = FF17BDB619C9F78E00B5EF46 /* Exercises.m */; };
 		FF17BDBA19C9F78F00B5EF46 /* TrainingDayObject.m in Sources */ = {isa = PBXBuildFile; fileRef = FF17BDB919C9F78F00B5EF46 /* TrainingDayObject.m */; };
 		FF17BDC019CA2E5600B5EF46 /* UserTraining.m in Sources */ = {isa = PBXBuildFile; fileRef = FF17BDBF19CA2E5600B5EF46 /* UserTraining.m */; };
+		FF1C5C3719F97DA700032DC9 /* Exercises.m in Sources */ = {isa = PBXBuildFile; fileRef = FF1C5C3619F97DA700032DC9 /* Exercises.m */; };
 		FF794D7719CA288F00808144 /* TrainingExercises.m in Sources */ = {isa = PBXBuildFile; fileRef = FF794D7619CA288F00808144 /* TrainingExercises.m */; };
 		FFAC18FF19DB200E00B17487 /* FinishedRunningVC.m in Sources */ = {isa = PBXBuildFile; fileRef = FFAC18FE19DB200E00B17487 /* FinishedRunningVC.m */; };
 		FFAC190B19DC86C400B17487 /* SocialSharingVC.m in Sources */ = {isa = PBXBuildFile; fileRef = FFAC190A19DC86C400B17487 /* SocialSharingVC.m */; };
@@ -301,12 +301,12 @@
 		FF17BD5B19C8C18200B5EF46 /* StartVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StartVC.m; sourceTree = "<group>"; };
 		FF17BD6319C8C21600B5EF46 /* MainVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainVC.h; sourceTree = "<group>"; };
 		FF17BD6419C8C21600B5EF46 /* MainVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainVC.m; sourceTree = "<group>"; };
-		FF17BDB519C9F78E00B5EF46 /* Exercises.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Exercises.h; sourceTree = "<group>"; };
-		FF17BDB619C9F78E00B5EF46 /* Exercises.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Exercises.m; sourceTree = "<group>"; };
 		FF17BDB819C9F78F00B5EF46 /* TrainingDayObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TrainingDayObject.h; sourceTree = "<group>"; };
 		FF17BDB919C9F78F00B5EF46 /* TrainingDayObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TrainingDayObject.m; sourceTree = "<group>"; };
 		FF17BDBE19CA2E5600B5EF46 /* UserTraining.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserTraining.h; sourceTree = "<group>"; };
 		FF17BDBF19CA2E5600B5EF46 /* UserTraining.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserTraining.m; sourceTree = "<group>"; };
+		FF1C5C3519F97DA700032DC9 /* Exercises.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Exercises.h; sourceTree = "<group>"; };
+		FF1C5C3619F97DA700032DC9 /* Exercises.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Exercises.m; sourceTree = "<group>"; };
 		FF794D7519CA288F00808144 /* TrainingExercises.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TrainingExercises.h; sourceTree = "<group>"; };
 		FF794D7619CA288F00808144 /* TrainingExercises.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TrainingExercises.m; sourceTree = "<group>"; };
 		FFAC18FD19DB200E00B17487 /* FinishedRunningVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FinishedRunningVC.h; sourceTree = "<group>"; };
@@ -431,8 +431,6 @@
 				C5EB6BF419D9DB6B00C528FC /* CalendarPreparer.m */,
 				C5EB6BF519D9DB6B00C528FC /* CalendarMath.h */,
 				C5EB6BF619D9DB6B00C528FC /* CalendarMath.m */,
-				C5EB6BFC19D9DBD300C528FC /* UserCalendarVC.h */,
-				C5EB6BFD19D9DBD300C528FC /* UserCalendarVC.m */,
 			);
 			name = Calendar;
 			sourceTree = "<group>";
@@ -549,6 +547,8 @@
 			children = (
 				FFAC194119E319F300B17487 /* Cadastro */,
 				FFAC193E19E3172300B17487 /* Exercitar */,
+				C5EB6BFC19D9DBD300C528FC /* UserCalendarVC.h */,
+				C5EB6BFD19D9DBD300C528FC /* UserCalendarVC.m */,
 				325F1FD819E7091C00001EB0 /* AcademiaVC.h */,
 				325F1FD919E7091C00001EB0 /* AcademiaVC.m */,
 				C5EB6C0019D9DBD300C528FC /* AVCamPreviewView.h */,
@@ -654,6 +654,8 @@
 		FF794D7819CA28BA00808144 /* CoreData */ = {
 			isa = PBXGroup;
 			children = (
+				FF1C5C3519F97DA700032DC9 /* Exercises.h */,
+				FF1C5C3619F97DA700032DC9 /* Exercises.m */,
 				FF13E9E119E70B9B0005BA49 /* TrajectoryFile.h */,
 				FF13E9E219E70B9B0005BA49 /* TrajectoryFile.m */,
 				FF13E9DE19E70B9B0005BA49 /* TrajectoryRoute.h */,
@@ -664,8 +666,6 @@
 				FF794D7619CA288F00808144 /* TrainingExercises.m */,
 				FF17BDB819C9F78F00B5EF46 /* TrainingDayObject.h */,
 				FF17BDB919C9F78F00B5EF46 /* TrainingDayObject.m */,
-				FF17BDB519C9F78E00B5EF46 /* Exercises.h */,
-				FF17BDB619C9F78E00B5EF46 /* Exercises.m */,
 			);
 			name = CoreData;
 			sourceTree = "<group>";
@@ -874,6 +874,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				FF17BDC019CA2E5600B5EF46 /* UserTraining.m in Sources */,
+				FF1C5C3719F97DA700032DC9 /* Exercises.m in Sources */,
 				FF13E9E019E70B9B0005BA49 /* TrajectoryRoute.m in Sources */,
 				C5EB6C0819D9DBD300C528FC /* UserCalendarVC.m in Sources */,
 				C5EB6C0D19D9DBD300C528FC /* RunningMapVC.m in Sources */,
@@ -887,7 +888,6 @@
 				FF17BD5C19C8C18200B5EF46 /* StartVC.m in Sources */,
 				325F1FE319E7143C00001EB0 /* MenuVC.m in Sources */,
 				FF1596F619C0CBC900D9236F /* Stamina.xcdatamodeld in Sources */,
-				FF17BDB719C9F78E00B5EF46 /* Exercises.m in Sources */,
 				C53A352419D33B8900AC1383 /* ErrorVC.m in Sources */,
 				FF15972A19C0D96E00D9236F /* UIViewController+AMSlideMenu.m in Sources */,
 				FF17BD6519C8C21600B5EF46 /* MainVC.m in Sources */,

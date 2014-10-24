@@ -81,6 +81,7 @@
     
     [[self infoTableView] setDelegate:self];
     [[self infoTableView] setDataSource:self];
+    [[self infoTableView]setBackgroundColor:[UIColor clearColor]];
     
     [self setPreparer:[[CalendarPreparer alloc] init]];
     [self setCalendarScrollView:[[UIScrollView alloc]init]];
@@ -91,6 +92,8 @@
     _calendarMonth = (int) comp.month;
     _calendarYear = (int) comp.year;
     _locationNextMonth = -1;
+    
+    [self.view addSubview:[self infoTableView]];
     
 }
 
@@ -328,7 +331,35 @@
 
 -(void)showTrainingInfoWithArray: (NSArray *)array {
     
-    [self setExercisesArray:[NSMutableArray arrayWithArray:array]];
+    [self setExercisesArray:[NSMutableArray array]];
+    
+    AppDelegate *app = [[UIApplication sharedApplication] delegate];
+    NSManagedObjectContext *context = [app managedObjectContext];
+    NSFetchRequest *request = [NSFetchRequest fetchRequestWithEntityName:@"Exercises"];
+    NSError *error;
+    
+    int identifier = 0;
+    NSArray *objectArray = [context executeFetchRequest:request error:&error];
+        
+    
+    for(int x = 0; x < [array count]; x++) {
+        
+        //NSString *name;
+        identifier = [[[array objectAtIndex:x] id_exercise] intValue];
+        
+        for(Exercises *ex in objectArray) {
+            
+            if([ex.exerciseID intValue] == identifier) {
+                
+                //name = [ex name];
+                [[self exercisesArray] addObject:ex];
+                break;
+            }
+            
+        }
+        
+    }
+    
     [[self infoTableView] reloadData];
     
 }
@@ -359,8 +390,8 @@
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:simpleTableIdentifier];
     }
     
-    cell.textLabel.text = [[[self exercisesArray] objectAtIndex:indexPath.row] training_name];
-    cell.textLabel.font = [UIFont fontWithName:@"Avenir" size:25.0];
+    cell.textLabel.text = [[[self exercisesArray] objectAtIndex:indexPath.row] name];
+    cell.textLabel.font = [UIFont fontWithName:@"Avenir" size:20.0];
     cell.textLabel.textColor = [UIColor blackColor];
     cell.backgroundColor = [UIColor clearColor];
     

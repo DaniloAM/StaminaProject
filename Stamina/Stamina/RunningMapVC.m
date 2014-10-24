@@ -95,6 +95,11 @@
         return;
     }
     
+    if([_firstLocation isEqual:_oldLocation]) {
+        _oldLocation = [locations lastObject];
+        return;
+    }
+    
     CLLocation *newLocation;
     
     for(int i = 0; i < [locations count]; i++) {
@@ -119,6 +124,7 @@
 }
 
 
+
 -(void)drawRouteLayerWithPointOne: (CLLocation *)locationOne andTwo: (CLLocation *)locationTwo  {
     
     if (!locationOne || !locationTwo)
@@ -138,6 +144,7 @@
     [[self mapRunningView] addOverlay:_routeLine];
     
 }
+
 
 -(void)updateTextInDistanceLabel {
     
