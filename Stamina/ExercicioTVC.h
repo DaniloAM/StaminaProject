@@ -9,8 +9,10 @@
 #import "HideBBVC.h"
 #import "ExercisesList.h"
 #import "Exercises.h"
+#import "CreateTrainTemp.h"
 @interface ExercicioTVC : HideBBVC <UITableViewDataSource, UITableViewDelegate, UIGestureRecognizerDelegate>
 @property NSArray *arrayOfExercises;
 @property UITableView *table;
 @property float lastContentOffset;
+
 @end

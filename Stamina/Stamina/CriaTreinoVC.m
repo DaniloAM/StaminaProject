@@ -18,7 +18,13 @@
     [super viewDidLoad];
     [self setInicio:nil];
     [self setFim:nil];
-    [super criaBarButtonComBotoesTranslucent:3];
+    NSArray *array = [super criaBarButtonComBotoesTranslucent:3];
+    UIButton *btn = [array firstObject];
+    UIImageView *image = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, btn.frame.size.height, btn.frame.size.height)];
+    [image  setImage:[UIImage imageNamed:@"icone_ok.png"]];
+    [btn addSubview:image];
+    [image setCenter:CGPointMake(btn.frame.size.width/2, btn.frame.size.height/2)];
+
     self.navigationController.navigationBar.translucent = YES;
     
 }

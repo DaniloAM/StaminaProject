@@ -30,6 +30,7 @@
 		32F15DF319F986D200310713 /* check.png in Resources */ = {isa = PBXBuildFile; fileRef = 32F15DF219F986D200310713 /* check.png */; };
 		32F57C6F19EC4D16001BF6B2 /* ExercicioTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 32F57C6E19EC4D16001BF6B2 /* ExercicioTVC.m */; };
 		32F57C7219EC6838001BF6B2 /* MenuShouldOpen.m in Sources */ = {isa = PBXBuildFile; fileRef = 32F57C7119EC6838001BF6B2 /* MenuShouldOpen.m */; };
+		32F7237E19FABCD6006170CD /* CreateTrainTemp.m in Sources */ = {isa = PBXBuildFile; fileRef = 32F7237D19FABCD6006170CD /* CreateTrainTemp.m */; };
 		C527A39519DB1FB300C72B21 /* fb_sign.png in Resources */ = {isa = PBXBuildFile; fileRef = C527A38619DB1FB300C72B21 /* fb_sign.png */; };
 		C527A39619DB1FB300C72B21 /* icon_batimento.png in Resources */ = {isa = PBXBuildFile; fileRef = C527A38719DB1FB300C72B21 /* icon_batimento.png */; };
 		C527A39819DB1FB300C72B21 /* icon_calendario.png in Resources */ = {isa = PBXBuildFile; fileRef = C527A38919DB1FB300C72B21 /* icon_calendario.png */; };
@@ -173,6 +174,8 @@
 		32F57C6E19EC4D16001BF6B2 /* ExercicioTVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ExercicioTVC.m; path = ../ExercicioTVC.m; sourceTree = "<group>"; };
 		32F57C7019EC6838001BF6B2 /* MenuShouldOpen.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MenuShouldOpen.h; sourceTree = "<group>"; };
 		32F57C7119EC6838001BF6B2 /* MenuShouldOpen.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MenuShouldOpen.m; sourceTree = "<group>"; };
+		32F7237C19FABCD6006170CD /* CreateTrainTemp.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CreateTrainTemp.h; sourceTree = "<group>"; };
+		32F7237D19FABCD6006170CD /* CreateTrainTemp.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CreateTrainTemp.m; sourceTree = "<group>"; };
 		C527A38619DB1FB300C72B21 /* fb_sign.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = fb_sign.png; sourceTree = "<group>"; };
 		C527A38719DB1FB300C72B21 /* icon_batimento.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon_batimento.png; sourceTree = "<group>"; };
 		C527A38919DB1FB300C72B21 /* icon_calendario.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon_calendario.png; sourceTree = "<group>"; };
@@ -572,6 +575,8 @@
 				324E23C119E87FC400DA2FDE /* CategoriaVC.m */,
 				32F57C6D19EC4D16001BF6B2 /* ExercicioTVC.h */,
 				32F57C6E19EC4D16001BF6B2 /* ExercicioTVC.m */,
+				32F7237C19FABCD6006170CD /* CreateTrainTemp.h */,
+				32F7237D19FABCD6006170CD /* CreateTrainTemp.m */,
 				32F15DF219F986D200310713 /* check.png */,
 			);
 			name = ViewControllers;
@@ -916,6 +921,7 @@
 				C5EB6BF719D9DB6B00C528FC /* DayObject.m in Sources */,
 				FF13E9E319E70B9B0005BA49 /* TrajectoryFile.m in Sources */,
 				C53A352C19D33B9A00AC1383 /* RWBlurPopoverTransitionController.m in Sources */,
+				32F7237E19FABCD6006170CD /* CreateTrainTemp.m in Sources */,
 				FF13E9D719E5BE160005BA49 /* RoutePointsCartesian.m in Sources */,
 				FF12F16919E878E3007524EF /* StartRunningVC.m in Sources */,
 				FFAC190B19DC86C400B17487 /* SocialSharingVC.m in Sources */,

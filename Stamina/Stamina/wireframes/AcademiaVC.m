@@ -27,7 +27,7 @@
     btn = [array objectAtIndex:2];
     [btn addTarget:self action:@selector(criaTreino) forControlEvents:UIControlEventTouchUpInside];
     [btn setBackgroundColor:[UIColor    blackColor]];
-    UIImageView *image = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, btn.frame.size.height, btn.frame.size.height)];
+    UIImageView *image = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, btn.frame.size.height*0.75, btn.frame.size.height*0.75)];
     [image  setImage:[UIImage imageNamed:@"icone_ok.png"]];
     [btn addSubview:image];
     [image setCenter:CGPointMake(btn.frame.size.width/2, btn.frame.size.height/2)];

@@ -48,14 +48,6 @@
     
     return [[self traseiro] count];
 }
-- (BOOL)gestureRecognizer:(UIGestureRecognizer *)gestureRecognizer shouldRecognizeSimultaneouslyWithGestureRecognizer:(UIGestureRecognizer *)otherGestureRecognizer {
-    
-    if ([gestureRecognizer.view isKindOfClass:[UITableView class]]) {
-        
-    } else {
-    }
-    return YES;
-}
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
