@@ -105,81 +105,13 @@
     NSArray *array;
     ExercisesList *temp = [ExercisesList alloc];
     if(indexPath.section==0){
-        switch (indexPath.row) {
-            case 0:
-                array = [temp fr_abdominal];
-                break;
-            case 1:
-                array = [temp fr_ante_braco];
-                break;
-            case 2:
-                array = [temp fr_biceps];
-                break;
-            case 3:
-                array = [temp fr_ombros];
-                break;
-            case 4:
-                array = [temp fr_peitoral];
-                break;
-            case 5:
-                array = [temp fr_quadriceps];
-                break;
-            case 6:
-                array = [temp fr_trapezio];
-                break;
-            case 7:
-                array = [temp fr_triceps];
-                break;
-        }
+        
+        array = [[temp exercisesMatrix] objectAtIndex:indexPath.row + 1];
+        
     }
     else{
-        switch (indexPath.row) {
-            case 0:
-                array = [temp tr_ante_braco];
-                break;
-            case 1:
-                array = [temp tr_biceps];
-                
-                break;
-            case 2:
-                array = [temp tr_dorsal];
-                
-                break;
-            case 3:
-                array = [temp tr_gluteos];
-                
-                break;
-            case 4:
-                array = [temp tr_lombar];
-                
-                break;
-            case 5:
-                array = [temp tr_ombros];
-                
-                break;
-            case 6:
-                array = [temp tr_panturrilha];
-                
-                break;
-            case 7:
-                array = [temp tr_posterior_de_coxa];
-                
-                break;
-            case 8:
-                array = [temp tr_romboides];
-                
-                break;
-            case 9:
-                array = [temp tr_trapezio];
-                
-                break;
-            case 10:
-                array = [temp tr_triceps];
-                
-                break;
-
-                
-        }
+        array = [[temp exercisesMatrix] objectAtIndex:indexPath.row + 9];
+        
     }
     [myVC setArrayOfExercises:array];
 

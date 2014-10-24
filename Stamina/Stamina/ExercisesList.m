@@ -31,7 +31,7 @@
     
     [self setExercisesMatrix:[NSMutableArray array]];
     
-    for(int x = 0; x < exercisesCategoryCount; x++) {
+    for(int x = 0; x <= exercisesCategoryCount; x++) {
         [[self exercisesMatrix] addObject:[NSMutableArray array]];
     }
 }
