@@ -14,22 +14,15 @@
 
 @implementation CalendarInformationVC
 
-- (void)viewDidLoad {
-    [super viewDidLoad];
-    // Do any additional setup after loading the view.
+
+-(void)receiveExercises: (NSArray *)exercises andDate: (NSDate *)date {
+    
+    _date = date;
+    _exercisesList = exercises;
+    
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
 
--(void)initWithExercises: (NSArray *)exercises andDate: (NSDate *)date {
-    
-    
-    
-    
-}
 
 
 @end

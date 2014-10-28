@@ -8,7 +8,11 @@
 
 #import <UIKit/UIKit.h>
 #import "Exercises.h"
+#import "HideBBVC.h"
 
-@interface CalendarInformationVC : UIViewController
+@interface CalendarInformationVC : HideBBVC
+
+@property NSArray *exercisesList;
+@property NSDate *date;
 
 @end

@@ -886,11 +886,8 @@
 				FF17BDC019CA2E5600B5EF46 /* UserTraining.m in Sources */,
 				FF1C5C3719F97DA700032DC9 /* Exercises.m in Sources */,
 				FF13E9E019E70B9B0005BA49 /* TrajectoryRoute.m in Sources */,
-<<<<<<< HEAD
 				FF1C5C3A19FADD3D00032DC9 /* CalendarInformationVC.m in Sources */,
-=======
 				32F7238119FADB4B006170CD /* AddExercise.m in Sources */,
->>>>>>> FETCH_HEAD
 				C5EB6C0819D9DBD300C528FC /* UserCalendarVC.m in Sources */,
 				C5EB6C0D19D9DBD300C528FC /* RunningMapVC.m in Sources */,
 				FF15972919C0D96E00D9236F /* CustomIOS7AlertView.m in Sources */,
