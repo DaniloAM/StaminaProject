@@ -66,9 +66,6 @@
     [self.view addGestureRecognizer:gestureUp];
     [self.view addGestureRecognizer:gestureDown];
     
-    
-    //[[self infoTableView] setFrame:CGRectMake(_calendarScrollView.frame.origin.x , _calendarScrollView.frame.origin.y + _calendarScrollView.frame.size.height + 50, _calendarScrollView.frame.size.width, 300)];
-    
 }
 
 
@@ -77,12 +74,13 @@
     
     [super viewDidLoad];
     
-    [self setInfoTableView: [[UITableView alloc] initWithFrame:CGRectMake(33, 392, 271, 148)]];
-    [[self infoTableView] setRowHeight:15.0];
+    [self setInfoTableView: [[UITableView alloc] initWithFrame:CGRectMake(20, 420, 271, 148)]];
+    [[self infoTableView] setRowHeight:35.0];
     
     [[self infoTableView] setDelegate:self];
     [[self infoTableView] setDataSource:self];
     [[self infoTableView]setBackgroundColor:[UIColor clearColor]];
+    [[self infoTableView] setSeparatorColor:[UIColor blackColor]];
     
     [self setPreparer:[[CalendarPreparer alloc] init]];
     [self setCalendarScrollView:[[UIScrollView alloc]init]];
@@ -215,14 +213,11 @@
 
 -(void)selectButton : (UIButton *)sender {
     
-    //Second tap on same button
-    if([sender isEqual:_pressedButton]) {
-        
+    BOOL secondTap = [sender isEqual:_pressedButton];
+    
+    if(!secondTap) {
+        [self deselectButtons];
     }
-    
-    
-    
-    [self deselectButtons];
     
     UserData *user = [UserData alloc];
     
@@ -240,6 +235,13 @@
         
         NSString *trainingName = [[[[self calendarMatrix] objectAtIndex:y] objectAtIndex:x] trainingName];
         NSArray *trainingArray = [user returnTrainingWithName:trainingName];
+        
+        
+        if(secondTap) {
+            [self goToCalendarInformationWithExercises:trainingArray];
+            
+            return;
+        }
         
         [self showTrainingInfoWithArray:trainingArray];
         
@@ -338,14 +340,7 @@
     
     ExercisesList *list = [ExercisesList alloc];
     
-//    AppDelegate *app = [[UIApplication sharedApplication] delegate];
-//    NSManagedObjectContext *context = [app managedObjectContext];
-//    NSFetchRequest *request = [NSFetchRequest fetchRequestWithEntityName:@"Exercises"];
-//    NSError *error;
-    
     int identifier = 0;
-    //NSArray *objectArray = [context executeFetchRequest:request error:&error];
-        
     
     for(int x = 0; x < [array count]; x++) {
         
@@ -360,6 +355,12 @@
     
 }
 
+
+-(void)goToCalendarInformationWithExercises: (NSArray *)array {
+    
+    
+    
+}
 
 
 -(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
@@ -386,7 +387,9 @@
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:simpleTableIdentifier];
     }
     
-    cell.textLabel.text = [[[self exercisesArray] objectAtIndex:indexPath.row] name];
+    NSString *text = [NSString stringWithFormat:@"%d. %@", (int)indexPath.row + 1, [[[self exercisesArray] objectAtIndex:indexPath.row] name]];
+    
+    cell.textLabel.text = text;
     cell.textLabel.font = [UIFont fontWithName:@"Avenir" size:20.0];
     cell.textLabel.textColor = [UIColor blackColor];
     cell.backgroundColor = [UIColor clearColor];

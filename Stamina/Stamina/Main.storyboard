@@ -1122,7 +1122,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="wireframe_calendario.png" translatesAutoresizingMaskIntoConstraints="NO" id="1pD-Jo-7An">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="wireframe_calendario_dia_menu.png" translatesAutoresizingMaskIntoConstraints="NO" id="1pD-Jo-7An">
                                 <rect key="frame" x="-79" y="-159" width="460" height="900"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="4" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iYI-a9-xsA">
@@ -1143,10 +1143,6 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="55l-Xg-MDE">
-                                <rect key="frame" x="33" y="392" width="271" height="148"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                            </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
@@ -1154,7 +1150,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="LDp-YQ-B2J" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2566" y="-2109"/>
+            <point key="canvasLocation" x="2562" y="-2109"/>
         </scene>
     </scenes>
     <resources>
@@ -1167,7 +1163,7 @@
         <image name="wireframe_academia.jpg" width="884" height="1574"/>
         <image name="wireframe_academia_inicio.jpg" width="886" height="1574"/>
         <image name="wireframe_cadastro.jpg" width="876" height="1567"/>
-        <image name="wireframe_calendario.png" width="1283" height="2487"/>
+        <image name="wireframe_calendario_dia_menu.png" width="1283" height="2487"/>
         <image name="wireframe_categorias.png" width="886" height="1576"/>
         <image name="wireframe_exercicio.png" width="888" height="1571"/>
         <image name="wireframe_home.png" width="418" height="633"/>
