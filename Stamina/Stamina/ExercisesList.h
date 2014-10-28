@@ -52,5 +52,6 @@
 -(Exercises *)returnExerciseWithIdentifier: (int)identifier;
 +(ExercisesList *)sharedStore;
 -(void)allocArrays;
++(NSString *)returnCategoryNameWithId :(int )identifier;
 
 @end

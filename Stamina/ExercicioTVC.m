@@ -71,7 +71,11 @@
     }
 }
 -(void)adicionaTreino{
-    
+    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+    UIViewController *myVC;
+    myVC= (UIViewController *)[storyboard instantiateViewControllerWithIdentifier:@"AddExercise"];
+    [self.navigationController pushViewController:myVC animated:YES];
+
 }
 -(void)function1{
     
