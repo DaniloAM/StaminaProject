@@ -238,12 +238,13 @@
         
         
         if(secondTap) {
-            [self goToCalendarInformationWithExercises:trainingArray];
+            [self goToCalendarInformationWithExercises:trainingArray inDate:[[[[self calendarMatrix] objectAtIndex:y] objectAtIndex:x] date]];
             
             return;
         }
         
-        [self showTrainingInfoWithArray:trainingArray];
+        [self setExercisesArray:[self getExerciseInfoWithTrainingExercises:trainingArray]];
+        [[self infoTableView] reloadData];
         
     }
     
@@ -269,6 +270,9 @@
         _pressedButton = nil;
         
     }
+    
+    [[self exercisesArray] removeAllObjects];
+    [[self infoTableView] reloadData];
     
 }
 
@@ -334,9 +338,9 @@
 }
 
 
--(void)showTrainingInfoWithArray: (NSArray *)array {
+-(NSMutableArray *)getExerciseInfoWithTrainingExercises: (NSArray *)array {
     
-    [self setExercisesArray:[NSMutableArray array]];
+    NSMutableArray *newArray = [NSMutableArray array];
     
     ExercisesList *list = [ExercisesList alloc];
     
@@ -347,18 +351,23 @@
         identifier = [[[array objectAtIndex:x] id_exercise] intValue];
         Exercises *ex = [list returnExerciseWithIdentifier:identifier];
         
-        [[self exercisesArray] addObject:ex];
+        [newArray addObject:ex];
         
     }
     
-    [[self infoTableView] reloadData];
+    return newArray;
     
 }
 
 
--(void)goToCalendarInformationWithExercises: (NSArray *)array {
+-(void)goToCalendarInformationWithExercises: (NSArray *)array inDate: (NSDate *)date {
     
+    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+    CalendarInformationVC *view = (CalendarInformationVC *)[storyboard instantiateViewControllerWithIdentifier:@"calendarInfo"];
     
+    //Receive the route to draw it
+    [view receiveExercises:[self getExerciseInfoWithTrainingExercises:array] andDate:date];
+    [self.navigationController pushViewController:view animated:YES];
     
 }
 
@@ -398,7 +407,6 @@
 }
 
 
-
 //**************************************
 // Example of how to add a new training
 //**************************************
@@ -416,7 +424,7 @@
     NSDate *date = [dformat dateFromString:str];
     
     
-    //Make a loop and add all trainings needed
+    //Make a loop and add all exercises from training needed
     [data addExerciseWithTrainingName:@"Treino Chavão" exerciseID:[NSNumber numberWithInt:101002] repetitionsValue:[NSNumber numberWithInt:3] seriesValue:[NSNumber numberWithInt:3]];
     [data addExerciseWithTrainingName:@"Treino Chavão" exerciseID:[NSNumber numberWithInt:101003] repetitionsValue:[NSNumber numberWithInt:3] seriesValue:[NSNumber numberWithInt:3]];
     [data addExerciseWithTrainingName:@"Treino Chavão" exerciseID:[NSNumber numberWithInt:105001] repetitionsValue:[NSNumber numberWithInt:3] seriesValue:[NSNumber numberWithInt:3]];

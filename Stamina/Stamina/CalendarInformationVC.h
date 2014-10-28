@@ -8,11 +8,20 @@
 
 #import <UIKit/UIKit.h>
 #import "Exercises.h"
+#import "CalendarMath.h"
+#import "ExercisesList.h"
+#import "UserData.h"
 #import "HideBBVC.h"
 
-@interface CalendarInformationVC : HideBBVC
+@interface CalendarInformationVC : HideBBVC <UITableViewDataSource , UITableViewDelegate>
 
+@property (weak, nonatomic) IBOutlet UILabel *dayLabel;
+@property (weak, nonatomic) IBOutlet UILabel *yearLabel;
+@property (weak, nonatomic) IBOutlet UILabel *monthLabel;
+@property (weak, nonatomic) IBOutlet UITableView *exercisesTableView;
 @property NSArray *exercisesList;
 @property NSDate *date;
+
+-(void)receiveExercises: (NSArray *)exercises andDate: (NSDate *)date;
 
 @end
