@@ -54,8 +54,6 @@
     [label setBackgroundColor:[UIColor colorWithRed:red green:green blue:blue alpha:1]];
     [labelTwo setBackgroundColor:[UIColor colorWithRed:red green:green blue:blue alpha:1]];
     [btn setBackgroundColor:[UIColor colorWithRed:red green:green blue:blue alpha:1]];
-    NSLog(@"%f, %f", self.navigationController.navigationBar.frame.origin.x , self.navigationController.navigationBar.frame.origin.y);
-    NSLog(@"%f, %f", self.navigationController.navigationBar.frame.size.width , self.navigationController.navigationBar.frame.size.height);
     [self.navigationController.navigationBar addSubview:label];
     [self.navigationController.navigationBar addSubview:labelTwo];
     [self.navigationController.navigationBar addSubview:btn];
@@ -64,22 +62,160 @@
 
 }
 -(void)viewWillAppear:(BOOL)animated{
+    [self viewWillAppear:animated withGesture:1];
+}
+-(void)viewWillAppear:(BOOL)animated withGesture: (BOOL)gesture{
     [super viewWillAppear:animated];
+    _lastDirection =-1;
+
+    [self cleanAllBtn];
+    if(gesture){
+        UIPanGestureRecognizer *pangesture = [[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(mecheu:)];
+        [self.navigationController.view addGestureRecognizer:pangesture];
+        _gesture = pangesture;
+    }
+}
+-(void)viewTouched{
     
+}
+-(void)cleanAllBtn{
+    if(![self tab])
+        [self criaBarButton];
+    else {
+        for (int x = 0 ; x < [[self arrayOfButtons] count];x++){
+            UIButton *btn = [[self arrayOfButtons] objectAtIndex:x];
+            [btn removeTarget:nil
+                       action:NULL
+             forControlEvents:UIControlEventAllEvents];
+            [btn.subviews makeObjectsPerformSelector: @selector(removeFromSuperview)];
+            
+        }
+    }
+
 }
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+-(void)hideBar{
+    NSLog(@"barra barra barra barra");
+    [UIView animateWithDuration:0.45 animations:^{
+        [self.tab setFrame:CGRectMake(0, self.startPointBar.y+self.tab.frame.size.height, self.tab.frame.size.width, self.tab.frame.size.height)];
+    }];
+    
 }
-*/
+-(NSArray *)criaBarButton{
+    CGSize screenSize = [[UIScreen mainScreen] bounds].size;
+    NSMutableArray *array = [NSMutableArray array];
+    [self setTab:[[UIView alloc] initWithFrame:CGRectMake(0, screenSize.height-screenSize.height*120/1332 , screenSize.width, screenSize.height*120/1332 )]];
+    [[self tab] setBackgroundColor:[UIColor blackColor]];
+    [self.navigationController.view addSubview:self.tab];
+    [self setStartPointBar:self.tab.frame.origin];
+    UISwipeGestureRecognizer *gest = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(hideBar)];
+
+    [gest setDirection:UISwipeGestureRecognizerDirectionDown];
+    [self.tab addGestureRecognizer:gest];
+    for(int x = 0 ; x < 3; x++){
+        UIButton *btn1 = [[UIButton alloc] initWithFrame:CGRectMake(x*self.tab.frame.size.width/3, 0, self.tab.frame.size.width/3, self.tab.frame.size.height)];
+        [self.tab addSubview:btn1];
+        CGFloat hue = ( arc4random() % 256 / 256.0 );  //  0.0 to 1.0
+        CGFloat saturation = ( arc4random() % 128 / 256.0 ) + 0.5;  //  0.5 to 1.0, away from white
+        CGFloat brightness = ( arc4random() % 128 / 256.0 ) + 0.5;  //  0.5 to 1.0, away from black
+        UIColor *color = [UIColor colorWithHue:hue saturation:saturation brightness:brightness alpha:1];
+        [btn1 setBackgroundColor:color];
+        [array addObject:btn1];
+    }
+    _arrayOfButtons = array;
+    return array;
+}
+-(void)showBar{
+    [UIView animateWithDuration:0.45 animations:^{
+        [self.tab setFrame:CGRectMake(0, self.startPointBar.y, self.tab.frame.size.width, self.tab.frame.size.height)];
+    }];
+}
+-(void)mecheu :(UIPanGestureRecognizer *)sender{
+    CGPoint velocity = [sender velocityInView:self.view];
+    CGPoint stopLocation = [sender locationInView:self.view];
+
+    if (sender.state == UIGestureRecognizerStateBegan) {
+        if(fabs(velocity.x) > fabs(velocity.y)){
+            if(velocity.x>0){
+                [self setLastDirection:0];
+            }
+            else {
+                _lastDirection = -1;
+            }
+
+        }
+        else {
+                _lastDirection = 1;
+            self.point = stopLocation;
+
+        }
+    }
+
+    if (sender.state == UIGestureRecognizerStateBegan) {
+
+    }
+    if(_lastDirection==0){
+        [self.navigationController popViewControllerAnimated:YES];
+        return;
+    }
+    else if(_lastDirection==1&&self.tab!=nil){
+    CGSize screenSize = [[UIScreen mainScreen] bounds].size;
+    screenSize.height = screenSize.height -self.navigationController.navigationBar.frame.size.height + 20
+    ;
+
+    CGFloat dy = stopLocation.y - self.point.y;
+    CGPoint new;
+
+    if (dy<0) {
+        if (self.tab.frame.origin.y < self.startPointBar.y) {
+
+        }
+        else {
+            new = self.tab.frame.origin;
+            new.y = new.y +dy;
+            [self.tab setFrame:CGRectMake(0, new.y, self.tab.frame.size.width, self.tab.frame.size.height)];
+
+        }
+
+    }
+    else {
+        if (self.tab.frame.origin.y >screenSize.height + self.tab.frame.size.height ) {
+
+        }
+        else {
+            new = self.tab.frame.origin;
+            new.y = new.y +dy;
+            [self.tab setFrame:CGRectMake(0, new.y, self.tab.frame.size.width, self.tab.frame.size.height)];
+
+        }
+
+    }
+    self.point = stopLocation;
+
+
+
+
+
+    if (sender.state == UIGestureRecognizerStateEnded) {
+        if (self.tab.frame.origin.y <screenSize.height + self.tab.frame.size.height && self.tab.frame.origin.y > self.startPointBar.y) {
+            if(self.tab.frame.origin.y>self.startPointBar.y+self.tab.frame.size.height/2){
+                [self hideBar];
+
+            }
+            else {
+                [self showBar];
+            }
+        }
+        _lastDirection = -1;
+    }
+    if (self.tab.frame.origin.y < self.startPointBar.y) {
+        [self.tab setFrame:CGRectMake(0, self.startPointBar.y, self.tab.frame.size.width, self.tab.frame.size.height)];
+    }
+    }
+}
+
 
 @end

@@ -51,7 +51,6 @@
     [session addOutput:[self stillImageOutput]];
     
 	CALayer *viewLayer = self.cameraView.layer;
-	NSLog(@"viewLayer = %@", viewLayer);
 	
 	AVCaptureVideoPreviewLayer *captureVideoPreviewLayer = [[AVCaptureVideoPreviewLayer alloc] initWithSession:session];
 	
@@ -64,7 +63,6 @@
 	AVCaptureDeviceInput *input = [AVCaptureDeviceInput deviceInputWithDevice:device error:&error];
 	if (!input) {
 		// Handle the error appropriately.
-		NSLog(@"ERROR: trying to open camera: %@", error);
 	}
 	[session addInput:input];
 	

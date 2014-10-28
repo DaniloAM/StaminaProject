@@ -18,7 +18,7 @@
     [super viewDidLoad];
     [self setInicio:nil];
     [self setFim:nil];
-    NSArray *array = [super criaBarButtonComBotoesTranslucent:3];
+    NSArray *array = [super criaBarButton];
     UIButton *btn = [array firstObject];
     UIImageView *image = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, btn.frame.size.height, btn.frame.size.height)];
     [image  setImage:[UIImage imageNamed:@"icone_ok.png"]];

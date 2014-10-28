@@ -16,7 +16,7 @@
 
 -(void)viewDidAppear:(BOOL)animated{
     [super viewDidAppear:animated];
-    NSArray *array =  [super criaBarButtonComBotoes:3];
+    NSArray *array =  [super criaBarButton];
     
     UIButton *btn = [array objectAtIndex:0];
     [btn addTarget:self action:@selector(function1) forControlEvents:UIControlEventTouchUpInside];
@@ -42,7 +42,6 @@
     [self.navigationController popToRootViewControllerAnimated:YES];
 }
 -(void)function2{
-    NSLog(@"btn2");
 }
 -(void)function3{
     [self showTheRightExercise:_currentIndex];
