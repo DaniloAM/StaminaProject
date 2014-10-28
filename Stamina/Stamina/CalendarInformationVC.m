@@ -61,7 +61,7 @@
     [super viewDidAppear:animated];
     
     [super criaBarButton];
-    [super showBar];
+    [super showBarWithAnimation:YES];
 }
 
 

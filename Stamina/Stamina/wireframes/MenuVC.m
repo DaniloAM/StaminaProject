@@ -93,15 +93,43 @@
     }
 
 }
+-(void)hideBarWithAnimation:(BOOL)animation{
+    if(animation){
+        [self hideBar];
+    }
+    else {
+        [self moveView:[self tab] withPoint:CGPointMake(0, self.startPointBar.y+self.tab.frame.size.height) withDuration:0];
+
+    }
+}
+-(void)showBarWithAnimation: (BOOL)animation{
+    if(animation){
+        [self showBar];
+    }
+    else {
+        [self moveView:[self tab] withPoint:CGPointMake(0, self.startPointBar.y) withDuration:0];
+        
+    }
+}
+-(void)moveView: (UIView *)bigView withPoint: (CGPoint )point withDuration: (float)duration{
+    [UIView beginAnimations:@"MoveView" context:nil];
+    [UIView setAnimationCurve:UIViewAnimationCurveEaseIn];
+    [UIView setAnimationDuration:duration];
+    bigView.frame = CGRectMake(point.x, point.y, bigView.frame.size.width, bigView.frame.size.height);
+    [UIView commitAnimations];
+}
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
 -(void)hideBar{
-    NSLog(@"barra barra barra barra");
-    [UIView animateWithDuration:0.45 animations:^{
-        [self.tab setFrame:CGRectMake(0, self.startPointBar.y+self.tab.frame.size.height, self.tab.frame.size.width, self.tab.frame.size.height)];
-    }];
+    [self moveView:[self tab] withPoint:CGPointMake(0, self.startPointBar.y+self.tab.frame.size.height) withDuration:0.45];
+    
+}
+-(void)removeGestureFromMenuVC{
+    MenuVC *temp = [self.navigationController.viewControllers objectAtIndex:0];
+    
+    [self.navigationController.view removeGestureRecognizer:[temp gesture]];
     
 }
 -(NSArray *)criaBarButton{
@@ -129,9 +157,8 @@
     return array;
 }
 -(void)showBar{
-    [UIView animateWithDuration:0.45 animations:^{
-        [self.tab setFrame:CGRectMake(0, self.startPointBar.y, self.tab.frame.size.width, self.tab.frame.size.height)];
-    }];
+    [self moveView:[self tab] withPoint:CGPointMake(0, self.startPointBar.y) withDuration:0.45];
+
 }
 -(void)mecheu :(UIPanGestureRecognizer *)sender{
     CGPoint velocity = [sender velocityInView:self.view];

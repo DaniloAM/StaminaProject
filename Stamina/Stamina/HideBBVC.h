@@ -15,6 +15,6 @@
 @property int lastDirection;
 -(void)viewWillAppear:(BOOL)animated withGesture: (BOOL)gesture;
 -(NSArray *)criaBarButton;
--(void)showBar;
--(void)hideBar;
+-(void)showBarWithAnimation: (BOOL)animation;
+-(void)hideBarWithAnimation: (BOOL)animation;
 @end

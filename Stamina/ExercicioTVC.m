@@ -38,13 +38,14 @@
     UIImageView *image = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, btn.frame.size.height*0.85, btn.frame.size.height*0.85)];
     [image  setImage:[UIImage imageNamed:@"icone_ok.png"]];
     [btn addSubview:image];
-    [image setCenter:CGPointMake(btn.frame.size.width/2, btn.frame.size.height/2)];    [super hideBar];
+    [image setCenter:CGPointMake(btn.frame.size.width/2, btn.frame.size.height/2)];
+    [super hideBarWithAnimation:1];
     UILongPressGestureRecognizer *lpgr = [[UILongPressGestureRecognizer alloc]
                                           initWithTarget:self action:@selector(handleLongPress:)];
     lpgr.minimumPressDuration = 1.0; //seconds
     lpgr.delegate = self;
     [self.table addGestureRecognizer:lpgr];
-    [self showBar];
+    [self showBarWithAnimation:YES];
 
 
 }
@@ -55,7 +56,7 @@
     NSIndexPath *indexPath = [self.table indexPathForRowAtPoint:p];
     if (indexPath == nil) {
     } else if (gestureRecognizer.state == UIGestureRecognizerStateBegan) {
-        [super showBar];
+        [super showBarWithAnimation:YES];
         UITableViewCell *cell = [self.table cellForRowAtIndexPath:indexPath];
         Exercises *exe = [self retornaExercicioComNome:cell.textLabel.text];
         
@@ -164,11 +165,11 @@
 
 -(void)scrollViewDidScroll:(UIScrollView *)scrollView{
 
-    [self hideBar];
+    [self hideBarWithAnimation:1];
 }
 
 -(void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView{
-    [self showBar];
+    [self showBarWithAnimation:YES];
 }
 
 //-(void)scrollViewDidEndScrollingAnimation:(UIScrollView *)scrollView{

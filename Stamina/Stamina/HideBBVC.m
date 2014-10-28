@@ -51,12 +51,12 @@
 
 -(void)hideBar{
     MenuVC *temp = [self.navigationController.viewControllers objectAtIndex:0];
-    [temp hideBar];
+    [temp hideBarWithAnimation:YES];
 
 }
--(void)showBar{
+-(void)showBarWithAnimation: (BOOL)animation{
     MenuVC *temp = [self.navigationController.viewControllers objectAtIndex:0];
-    [temp showBar];
+    [temp showBarWithAnimation:YES];
 }
 
 @end

@@ -18,9 +18,10 @@
 @property UIPanGestureRecognizer *gesture;
 
 -(void)cleanAllBtn;
--(void)showBar;
--(void)hideBar;
-@property int lastDirection;
+-(void)showBarWithAnimation: (BOOL)animation;
+-(void)hideBarWithAnimation:(BOOL)animation;
 
+@property int lastDirection;
+-(void)removeGestureFromMenuVC;
 -(void)viewWillAppear:(BOOL)animated withGesture: (BOOL)gesture;
 @end

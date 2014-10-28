@@ -110,11 +110,8 @@
     
     [self calendarWillChangeMonth];
     
-    MenuVC *temp = [self.navigationController.viewControllers objectAtIndex:0];
-    
-    [self.navigationController.view removeGestureRecognizer:[temp gesture]];
-    
-    [super hideBar];
+    [self removeGestureFromMenuVC];
+    [super hideBarWithAnimation:NO];
 }
 
 
