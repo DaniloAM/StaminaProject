@@ -315,12 +315,6 @@
                         <rect key="frame" x="0.0" y="64" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="dom" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0gN-Nq-HIi">
-                                <rect key="frame" x="18" y="142" width="45" height="26"/>
-                                <fontDescription key="fontDescription" name="Avenir-Roman" family="Avenir" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="seg" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CUM-cJ-jFE">
                                 <rect key="frame" x="58" y="142" width="45" height="26"/>
                                 <fontDescription key="fontDescription" name="Avenir-Roman" family="Avenir" pointSize="17"/>
@@ -359,19 +353,25 @@
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Novembro" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="x6B-Gn-4YY">
                                 <rect key="frame" x="27" y="113" width="101" height="21"/>
-                                <fontDescription key="fontDescription" name="Avenir-Roman" family="Avenir" pointSize="20"/>
+                                <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="20"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="2014" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ex2-fj-gMX">
                                 <rect key="frame" x="27" y="92" width="70" height="21"/>
-                                <fontDescription key="fontDescription" name="Avenir-Roman" family="Avenir" pointSize="20"/>
+                                <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="20"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="20 °C" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5bW-ZP-N8f">
                                 <rect key="frame" x="232" y="102" width="70" height="21"/>
-                                <fontDescription key="fontDescription" name="Avenir-Roman" family="Avenir" pointSize="24"/>
+                                <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="24"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="dom" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0gN-Nq-HIi">
+                                <rect key="frame" x="16" y="142" width="45" height="26"/>
+                                <fontDescription key="fontDescription" name="Avenir-Roman" family="Avenir" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -386,7 +386,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="r8A-zo-Rxf" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2237" y="-2109"/>
+            <point key="canvasLocation" x="2037" y="-2109"/>
         </scene>
         <!--Social SharingVC-->
         <scene sceneID="Bnm-gd-CrQ">
@@ -470,7 +470,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="7Xh-AC-ILT">
-                                <rect key="frame" x="13" y="222" width="288" height="204"/>
+                                <rect key="frame" x="210" y="427" width="110" height="78"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </tableView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9G0-fA-AvR">
@@ -480,7 +480,7 @@
                                 </state>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EAX-FF-wR4">
-                                <rect key="frame" x="72" y="447" width="170" height="37"/>
+                                <rect key="frame" x="160" y="382" width="170" height="37"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                 <state key="normal" title="Button">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -490,8 +490,32 @@
                                 </connections>
                             </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="iQu-Ao-BA2">
-                                <rect key="frame" x="18" y="20" width="285" height="180"/>
+                                <rect key="frame" x="217" y="291" width="96" height="61"/>
                             </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="wireframe_correr_menu.png" translatesAutoresizingMaskIntoConstraints="NO" id="FEp-xT-QDs">
+                                <rect key="frame" x="0.0" y="-66" width="320" height="570"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="20 °C" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rXf-If-RHb">
+                                <rect key="frame" x="142" y="38" width="73" height="33"/>
+                                <fontDescription key="fontDescription" name="Avenir-Roman" family="Avenir" pointSize="23"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qIO-RO-Sjs">
+                                <rect key="frame" x="32" y="266" width="256" height="36"/>
+                                <state key="normal" backgroundImage="button_iniciar.png">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="icone_calendario_01.png" translatesAutoresizingMaskIntoConstraints="NO" id="cxV-Vu-DFh">
+                                <rect key="frame" x="106" y="105" width="108" height="116"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mac-Rp-8jk">
+                                <rect key="frame" x="32" y="338" width="256" height="36"/>
+                                <state key="normal" backgroundImage="button_iniciar.png">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.98668676614761353" green="0.91419041231418685" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
@@ -569,7 +593,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mY3-As-W9s" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2867" y="-3451"/>
+            <point key="canvasLocation" x="3093" y="-3841"/>
         </scene>
         <!--AcademiaVC-->
         <scene sceneID="syk-1u-5DQ">
@@ -715,7 +739,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="k16-nq-SvA" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3214" y="-3451"/>
+            <point key="canvasLocation" x="3440" y="-3841"/>
         </scene>
         <!--Page View Controller-->
         <scene sceneID="7CW-Zh-q7t">
@@ -723,7 +747,7 @@
                 <pageViewController storyboardIdentifier="TipsPageViewController" autoresizesArchivedViewToFullSize="NO" transitionStyle="scroll" navigationOrientation="horizontal" spineLocation="none" id="HFg-s1-JIf" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pl8-YO-2MB" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3555" y="-3429"/>
+            <point key="canvasLocation" x="3781" y="-3819"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="cWU-sk-JE1">
@@ -1137,9 +1161,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="wireframe_calendario_dia_menu.png" translatesAutoresizingMaskIntoConstraints="NO" id="1pD-Jo-7An">
-                                <rect key="frame" x="-79" y="-159" width="460" height="900"/>
-                            </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="4" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iYI-a9-xsA">
                                 <rect key="frame" x="-69" y="-149" width="30" height="30"/>
                                 <fontDescription key="fontDescription" name="Avenir-Roman" family="Avenir" pointSize="18"/>
@@ -1159,57 +1180,73 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="14" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nv2-5t-aLc">
-                                <rect key="frame" x="67" y="115" width="86" height="78"/>
+                                <rect key="frame" x="66" y="101" width="86" height="78"/>
                                 <fontDescription key="fontDescription" name="Avenir-Roman" family="Avenir" pointSize="70"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="2014" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="f3i-l8-JAh">
-                                <rect key="frame" x="165" y="145" width="86" height="39"/>
+                                <rect key="frame" x="165" y="132" width="86" height="39"/>
                                 <fontDescription key="fontDescription" name="Avenir-Roman" family="Avenir" pointSize="37"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Treino A" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kPU-75-bqy">
+                                <rect key="frame" x="32" y="227" width="256" height="39"/>
+                                <fontDescription key="fontDescription" name="Avenir-Heavy" family="Avenir" pointSize="20"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Novembro" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nKa-vU-aVW">
-                                <rect key="frame" x="51" y="179" width="217" height="39"/>
+                                <rect key="frame" x="51" y="166" width="217" height="39"/>
                                 <fontDescription key="fontDescription" name="Avenir-Roman" family="Avenir" pointSize="37"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="gjQ-xM-M2x">
-                                <rect key="frame" x="32" y="244" width="256" height="183"/>
+                                <rect key="frame" x="32" y="266" width="256" height="151"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <color key="separatorColor" red="0.1137254902" green="0.1176470588" blue="0.12549019610000001" alpha="1" colorSpace="calibratedRGB"/>
                                 <color key="sectionIndexBackgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                             </tableView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zGi-Fx-0SQ">
+                                <rect key="frame" x="32" y="443" width="256" height="35"/>
+                                <state key="normal" backgroundImage="button_iniciar.png">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.97647058819999999" green="0.84705882349999995" blue="0.0" alpha="1" colorSpace="deviceRGB"/>
                     </view>
                     <navigationItem key="navigationItem" id="Wtb-bF-tKr"/>
                     <connections>
                         <outlet property="dayLabel" destination="nv2-5t-aLc" id="ga5-Rb-bva"/>
                         <outlet property="exercisesTableView" destination="gjQ-xM-M2x" id="xfu-gb-FNH"/>
                         <outlet property="monthLabel" destination="nKa-vU-aVW" id="ATU-tb-dGx"/>
+                        <outlet property="restartTrainingButton" destination="zGi-Fx-0SQ" id="uVK-21-A3j"/>
+                        <outlet property="trainingNameLabel" destination="kPU-75-bqy" id="bjt-wc-k88"/>
                         <outlet property="yearLabel" destination="f3i-l8-JAh" id="Iyt-Mv-LYv"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="LDp-YQ-B2J" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2562" y="-2109"/>
+            <point key="canvasLocation" x="2404" y="-2109"/>
         </scene>
     </scenes>
     <resources>
         <image name="Logo_Stamina.png" width="813" height="688"/>
+        <image name="button_iniciar.png" width="512" height="73"/>
         <image name="caminhada_tela.png" width="754" height="1586"/>
         <image name="fb_sign.png" width="454" height="71"/>
+        <image name="icone_calendario_01.png" width="301" height="322"/>
         <image name="icone_camera.png" width="394" height="394"/>
         <image name="icone_camera_rotate.png" width="393" height="394"/>
         <image name="icone_voltar.png" width="391" height="394"/>
         <image name="wireframe_academia.jpg" width="884" height="1574"/>
         <image name="wireframe_academia_inicio.jpg" width="886" height="1574"/>
         <image name="wireframe_cadastro.jpg" width="876" height="1567"/>
-        <image name="wireframe_calendario_dia_menu.png" width="1283" height="2487"/>
         <image name="wireframe_categorias.png" width="886" height="1576"/>
+        <image name="wireframe_correr_menu.png" width="900" height="1598"/>
         <image name="wireframe_exercicio.png" width="888" height="1571"/>
         <image name="wireframe_exercicio_serie.png" width="894" height="1582"/>
         <image name="wireframe_home.png" width="418" height="633"/>

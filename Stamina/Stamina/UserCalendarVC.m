@@ -94,6 +94,10 @@
     
     [self.view addSubview:[self infoTableView]];
     
+    [self loadCalendarScrollView];
+    
+    
+    //TEST-ONLY
     [self addTrainingToListExample];
     
 }
@@ -104,13 +108,9 @@
     
     [super viewWillAppear:animated];
     
-    [self loadCalendarScrollView];
-    [self prepareCalendarScrollViewWithCurrentMonth];
-    [[self yearLabel] setText:[NSString stringWithFormat:@"%d", _calendarYear]];
-    [[self monthLabel] setText:[CalendarMath returnMonthName:_calendarMonth]];
-    
-}
+    [self calendarWillChangeMonth];
 
+}
 
 
 -(void)prepareCalendarScrollViewWithCurrentMonth {
@@ -233,12 +233,13 @@
     
     if([[[[[self calendarMatrix] objectAtIndex:y] objectAtIndex:x] hasTraining] boolValue]) {
         
+        
         NSString *trainingName = [[[[self calendarMatrix] objectAtIndex:y] objectAtIndex:x] trainingName];
         NSArray *trainingArray = [user returnTrainingWithName:trainingName];
         
         
         if(secondTap) {
-            [self goToCalendarInformationWithExercises:trainingArray inDate:[[[[self calendarMatrix] objectAtIndex:y] objectAtIndex:x] date]];
+            [self goToCalendarInformationinDate:[[[[self calendarMatrix] objectAtIndex:y] objectAtIndex:x] date]];
             
             return;
         }
@@ -360,13 +361,15 @@
 }
 
 
--(void)goToCalendarInformationWithExercises: (NSArray *)array inDate: (NSDate *)date {
+-(void)goToCalendarInformationinDate: (NSDate *)date {
+    
+    [self deselectButtons];
     
     UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
     CalendarInformationVC *view = (CalendarInformationVC *)[storyboard instantiateViewControllerWithIdentifier:@"calendarInfo"];
     
     //Receive the route to draw it
-    [view receiveExercises:[self getExerciseInfoWithTrainingExercises:array] andDate:date];
+    [view receiveInitialDate:date];
     [self.navigationController pushViewController:view animated:YES];
     
 }
@@ -420,7 +423,7 @@
     [dformat setDateFormat:@"yyyy/MM/dd - HH:mm"];
     
     
-    NSString *str = [NSString stringWithFormat:@"%04d/%02d/%02d - 12:00", 2014, 12, 15];
+    NSString *str = [NSString stringWithFormat:@"%04d/%02d/%02d - 12:00", 2014, 10, 15];
     NSDate *date = [dformat dateFromString:str];
     
     

@@ -47,12 +47,12 @@
 #import <QuartzCore/QuartzCore.h>
 #import "CalendarPreparer.h"
 #import "CalendarInformationVC.h"
-#import "HideBBVC.h"
 #import "ExercisesList.h"
 #import "UserData.h"
 #import "Exercises.h"
+#import "MenuVC.h"
 
-@interface UserCalendarVC : UIViewController <UITableViewDataSource, UITableViewDelegate>
+@interface UserCalendarVC : MenuVC <UITableViewDataSource, UITableViewDelegate>
 
 @property (weak, nonatomic) IBOutlet UILabel *yearLabel;
 @property (weak, nonatomic) IBOutlet UILabel *monthLabel;

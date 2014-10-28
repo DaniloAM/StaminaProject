@@ -142,6 +142,40 @@
 
 
 
+-(DayObject *)getDayObjectForDate: (NSDate *)date {
+    
+    NSDateComponents *compDate = [[NSCalendar currentCalendar] components: NSCalendarUnitDay | NSCalendarUnitMonth | NSCalendarUnitYear fromDate:date];
+    
+    NSDateComponents *compObj;
+    
+    NSMutableArray *monthArray = [monthlyTrainingsArray objectAtIndex:compDate.month - 1];
+    
+    int index = [self binarySearchForYear:(int)compDate.year inArray:monthArray];
+    
+    if(index < 0) {
+        //Nao ha treinos neste mes e ano
+        return nil;
+    }
+    
+    for(DayObject *obj in monthArray) {
+        
+        compObj = [[NSCalendar currentCalendar] components: NSCalendarUnitDay | NSCalendarUnitMonth | NSCalendarUnitYear fromDate:obj.date];
+        
+        if(compObj.year != compDate.year) {
+            return nil;
+        }
+        
+        if(compObj.day == compDate.day && compObj) {
+            return obj;
+        }
+        
+    }
+    
+    return nil;
+    
+}
+
+
 -(NSMutableArray *)getTrainingsInMonth: (int)month andYear: (int)year {
     
     NSMutableArray *trainings = [NSMutableArray array];

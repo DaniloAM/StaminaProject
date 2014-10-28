@@ -32,6 +32,7 @@
 +(CalendarObject *)sharedStore;
 -(void)addDayObjects: (NSArray *)array;
 -(void)removeDayObjects : (NSMutableArray *)array;
+-(DayObject *)getDayObjectForDate: (NSDate *)date;
 -(NSMutableArray *)getTrainingsInMonth: (int)month andYear: (int)year;
 -(void)scheduleTrainingNamed: (NSString *)name inDate: (NSDate *)date;
 -(NSArray *)getMonthArrays;
