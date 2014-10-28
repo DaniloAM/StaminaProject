@@ -16,11 +16,11 @@
 @property CGPoint startPointBar;
 @property NSArray *arrayOfButtons;
 @property UIPanGestureRecognizer *gesture;
-
+@property UISwipeGestureRecognizer *right;
 -(void)cleanAllBtn;
 -(void)showBarWithAnimation: (BOOL)animation;
 -(void)hideBarWithAnimation:(BOOL)animation;
-
+-(void)addGestureFromMenuVC;
 @property int lastDirection;
 -(void)removeGestureFromMenuVC;
 -(void)viewWillAppear:(BOOL)animated withGesture: (BOOL)gesture;

@@ -157,10 +157,6 @@
     return nil;
  
 }
-//- (void)scrollViewWillBeginDragging:(UIScrollView *)scrollView {
-//    _lastContentOffset = scrollView.contentOffset.y;
-//}
-
 
 
 -(void)scrollViewDidScroll:(UIScrollView *)scrollView{
@@ -172,74 +168,6 @@
     [self showBarWithAnimation:YES];
 }
 
-//-(void)scrollViewDidEndScrollingAnimation:(UIScrollView *)scrollView{
-//    float scrollViewHeight = scrollView.frame.size.height;
-//    float scrollContentSizeHeight = scrollView.contentSize.height;
-//    float scrollOffset = scrollView.contentOffset.y;
-//    
-//    if (scrollOffset == 0)
-//    {
-//        NSLog(@"up");
-//        [super hideBar];
-//    }
-//    else if (scrollOffset + scrollViewHeight == scrollContentSizeHeight)
-//    {
-//        NSLog(@"up");
-//        
-//        [super showBar];
-//    }
-//
-//    CGSize screenSize = [[UIScreen mainScreen] bounds].size;
-//    screenSize.height = screenSize.height -self.navigationController.navigationBar.frame.size.height + 20
-//    ;
-//    
-//    if(self.tabBar.frame.origin.y>self.startPointBar.y+self.tabBar.frame.size.height/2){
-//        [UIView animateWithDuration:0.45 animations:^{
-//            [self.tabBar setFrame:CGRectMake(0, self.startPointBar.y+self.tabBar.frame.size.height, self.tabBar.frame.size.width, self.tabBar.frame.size.height)];
-//        }];
-//        
-//    }
-//    else {
-//        [UIView animateWithDuration:0.45 animations:^{
-//            
-//            
-//            [self.tabBar setFrame:CGRectMake(0, self.startPointBar.y, self.tabBar.frame.size.width, self.tabBar.frame.size.height)];
-//        }];
-//        
-//    }
-//    
-//    
-//}
-//-(void)scrollViewDidEndDragging:(UIScrollView *)scrollView willDecelerate:(BOOL)decelerate{
-//    CGSize screenSize = [[UIScreen mainScreen] bounds].size;
-//    screenSize.height = screenSize.height -self.navigationController.navigationBar.frame.size.height + 20
-//    ;
-//    
-//    if(self.tabBar.frame.origin.y>self.startPointBar.y+self.tabBar.frame.size.height/2){
-//        [UIView animateWithDuration:0.45 animations:^{
-//            [self.tabBar setFrame:CGRectMake(0, self.startPointBar.y+self.tabBar.frame.size.height, self.tabBar.frame.size.width, self.tabBar.frame.size.height)];
-//        }];
-//        
-//    }
-//    else {
-//        [UIView animateWithDuration:0.45 animations:^{
-//            
-//            
-//            [self.tabBar setFrame:CGRectMake(0, self.startPointBar.y, self.tabBar.frame.size.width, self.tabBar.frame.size.height)];
-//        }];
-//        
-//    }
-//    
-//    
-//}
-/*
- #pragma mark - Navigation
- 
- // In a storyboard-based application, you will often want to do a little preparation before navigation
- - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
- // Get the new view controller using [segue destinationViewController].
- // Pass the selected object to the new view controller.
- }
- */
+
 
 @end

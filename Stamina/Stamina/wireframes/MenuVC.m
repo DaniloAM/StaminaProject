@@ -74,6 +74,11 @@
         [self.navigationController.view addGestureRecognizer:pangesture];
         _gesture = pangesture;
     }
+    else {
+        UISwipeGestureRecognizer *right = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(pop)];
+        [self.navigationController.view addGestureRecognizer:right];
+        _right = right;
+    }
 }
 -(void)viewTouched{
     
@@ -130,6 +135,14 @@
     MenuVC *temp = [self.navigationController.viewControllers objectAtIndex:0];
     
     [self.navigationController.view removeGestureRecognizer:[temp gesture]];
+    [self.navigationController.view addGestureRecognizer:[temp right]];
+    
+}
+-(void)addGestureFromMenuVC{
+    MenuVC *temp = [self.navigationController.viewControllers objectAtIndex:0];
+    
+    [self.navigationController.view removeGestureRecognizer:[temp right]];
+    [self.navigationController.view addGestureRecognizer:[temp gesture]];
     
 }
 -(NSArray *)criaBarButton{
@@ -158,6 +171,10 @@
 }
 -(void)showBar{
     [self moveView:[self tab] withPoint:CGPointMake(0, self.startPointBar.y) withDuration:0.45];
+
+}
+-(void)pop{
+    [self.navigationController popViewControllerAnimated:YES];
 
 }
 -(void)mecheu :(UIPanGestureRecognizer *)sender{
@@ -190,8 +207,6 @@
     }
     else if(_lastDirection==1&&self.tab!=nil){
     CGSize screenSize = [[UIScreen mainScreen] bounds].size;
-    screenSize.height = screenSize.height -self.navigationController.navigationBar.frame.size.height + 20
-    ;
 
     CGFloat dy = stopLocation.y - self.point.y;
     CGPoint new;
@@ -227,7 +242,7 @@
 
 
     if (sender.state == UIGestureRecognizerStateEnded) {
-        if (self.tab.frame.origin.y <screenSize.height + self.tab.frame.size.height && self.tab.frame.origin.y > self.startPointBar.y) {
+        if (self.tab.frame.origin.y < screenSize.height + self.tab.frame.size.height && self.tab.frame.origin.y > self.startPointBar.y) {
             if(self.tab.frame.origin.y>self.startPointBar.y+self.tab.frame.size.height/2){
                 [self hideBar];
 
