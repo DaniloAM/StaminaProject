@@ -35,6 +35,7 @@
     CGSize size = [[UIScreen mainScreen] bounds].size;
     [self.table setFrame:CGRectMake(0, self.navigationController.navigationBar.frame.size.height, size.width, size.height- self.navigationController.navigationBar.frame.size.height)];
     
+    [self removeGestureFromMenuVC];
 
 }
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
@@ -127,11 +128,11 @@
 }
 -(void)scrollViewDidScroll:(UIScrollView *)scrollView{
     
-    [self hideBarWithAnimation:1];
+    [super hideBarWithAnimation:YES];
 }
 
 -(void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView{
-    [self showBarWithAnimation:1];
+    [super showBarWithAnimation:YES];
 }
 
 @end

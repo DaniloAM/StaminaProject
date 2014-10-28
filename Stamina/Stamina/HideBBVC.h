@@ -17,4 +17,6 @@
 -(NSArray *)criaBarButton;
 -(void)showBarWithAnimation: (BOOL)animation;
 -(void)hideBarWithAnimation: (BOOL)animation;
+-(void) removeGestureFromMenuVC;
+
 @end

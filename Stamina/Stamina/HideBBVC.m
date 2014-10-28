@@ -58,5 +58,14 @@
     MenuVC *temp = [self.navigationController.viewControllers objectAtIndex:0];
     [temp showBarWithAnimation:YES];
 }
+-(void)hideBarWithAnimation: (BOOL)animation{
+    MenuVC *temp = [self.navigationController.viewControllers objectAtIndex:0];
+    [temp hideBarWithAnimation:YES];
+}
 
+-(void) removeGestureFromMenuVC{
+    MenuVC *temp = [self.navigationController.viewControllers objectAtIndex:0];
+    [temp removeGestureFromMenuVC];
+    
+}
 @end

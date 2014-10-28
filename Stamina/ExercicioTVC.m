@@ -165,7 +165,7 @@
 
 -(void)scrollViewDidScroll:(UIScrollView *)scrollView{
 
-    [self hideBarWithAnimation:1];
+    [self hideBarWithAnimation:YES];
 }
 
 -(void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView{
