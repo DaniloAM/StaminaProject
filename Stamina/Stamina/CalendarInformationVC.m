@@ -60,7 +60,8 @@
     
     [super viewDidAppear:animated];
     
-    [super criaBarButtonComBotoesTranslucent:3];
+    [super criaBarButton];
+    [super showBar];
 }
 
 

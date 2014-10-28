@@ -940,12 +940,9 @@
 				FF1C5CAB1A001C0900032DC9 /* icone_calendario_20.png in Resources */,
 				FF1C5C991A001C0900032DC9 /* icone_calendario_02.png in Resources */,
 				FF1596FE19C0CBC900D9236F /* Images.xcassets in Resources */,
-<<<<<<< HEAD
 				FF1C5CA91A001C0900032DC9 /* icone_calendario_18.png in Resources */,
 				FF1C5C9D1A001C0900032DC9 /* icone_calendario_06.png in Resources */,
 				C53A352519D33B8900AC1383 /* ErrorVC.xib in Resources */,
-=======
->>>>>>> FETCH_HEAD
 				C5E99E6B19DB3AA200513CDE /* wireframe_academia.jpg in Resources */,
 				3276F1C419F6C9A500B2F93D /* icone_ok.png in Resources */,
 				3276F1C219F6C9A500B2F93D /* icone_compartilhar.png in Resources */,
@@ -968,11 +965,8 @@
 				3276F1C319F6C9A500B2F93D /* icone_duvida.png in Resources */,
 				C5E99E6F19DB3AA200513CDE /* wireframe_caminhada.jpg in Resources */,
 				3276F1C519F6C9A500B2F93D /* icone_pontuacao.png in Resources */,
-<<<<<<< HEAD
 				FF1C5CAC1A001C0900032DC9 /* icone_calendario_21.png in Resources */,
 				C527A3A319DB1FB300C72B21 /* stamina_logo.png in Resources */,
-=======
->>>>>>> FETCH_HEAD
 				C5E99E7719DB3AA200513CDE /* wireframe_login.png in Resources */,
 				FF1C5CB61A001C0900032DC9 /* icone_calendario_31.png in Resources */,
 				FF1C5CA41A001C0900032DC9 /* icone_calendario_13.png in Resources */,
