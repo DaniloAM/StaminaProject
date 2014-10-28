@@ -10,5 +10,17 @@
 #import "AMSlideMenuMainViewController.h"
 
 @interface MenuVC : UIViewController
+-(NSArray *)criaBarButton;
+@property UIView *tab;
+@property CGPoint point;
+@property CGPoint startPointBar;
+@property NSArray *arrayOfButtons;
+@property UIPanGestureRecognizer *gesture;
 
+-(void)cleanAllBtn;
+-(void)showBar;
+-(void)hideBar;
+@property int lastDirection;
+
+-(void)viewWillAppear:(BOOL)animated withGesture: (BOOL)gesture;
 @end

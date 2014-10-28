@@ -82,14 +82,13 @@
 
     switch (index) {
         case 0:
-            NSLog(@"%@ log", [[cadastro txtField1] text]);
-            NSLog(@"%@ log", [[cadastro txtField2] text]);
+
             if([[[cadastro txtField1] text] isEqualToString:@""]||[[cadastro txtField1] text].length<=0){
-                return nil;
+                return 0;
                 
             }
             if([[[cadastro txtField2] text] isEqualToString:@""]||[[cadastro txtField2] text].length<=0){
-                return nil;
+                return 0;
             }
             
             
@@ -101,10 +100,10 @@
             break;
         case 1:
             if([[[cadastro txtField1] text] isEqualToString:@""]||[[cadastro txtField1] text].length<=0){
-                return nil;
+                return 0;
             }
             if([[[cadastro txtField2] text] isEqualToString:@""]||[[cadastro txtField2] text].length<=0){
-                return nil;
+                return 0;
             }
             break;
         case 2:

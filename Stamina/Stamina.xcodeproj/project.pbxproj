@@ -42,14 +42,10 @@
 		C527A39F19DB1FB300C72B21 /* icon_tempo.png in Resources */ = {isa = PBXBuildFile; fileRef = C527A39019DB1FB300C72B21 /* icon_tempo.png */; };
 		C527A3A019DB1FB300C72B21 /* icon_velocimetro.png in Resources */ = {isa = PBXBuildFile; fileRef = C527A39119DB1FB300C72B21 /* icon_velocimetro.png */; };
 		C527A3A119DB1FB300C72B21 /* menu_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = C527A39219DB1FB300C72B21 /* menu_icon.png */; };
-		C527A3A219DB1FB300C72B21 /* ok_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = C527A39319DB1FB300C72B21 /* ok_icon.png */; };
-		C527A3A319DB1FB300C72B21 /* stamina_logo.png in Resources */ = {isa = PBXBuildFile; fileRef = C527A39419DB1FB300C72B21 /* stamina_logo.png */; };
 		C527A3AA19DB266B00C72B21 /* icon_cadeado.png in Resources */ = {isa = PBXBuildFile; fileRef = C527A3A919DB266B00C72B21 /* icon_cadeado.png */; };
 		C527A3AE19DB27B000C72B21 /* icon_email.png in Resources */ = {isa = PBXBuildFile; fileRef = C527A3AD19DB27B000C72B21 /* icon_email.png */; };
 		C52C810819CA1E47006EAFCF /* WebServiceResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = C52C810719CA1E47006EAFCF /* WebServiceResponse.m */; };
 		C53A351D19D33B7700AC1383 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C53A351C19D33B7700AC1383 /* LoginViewController.m */; };
-		C53A352419D33B8900AC1383 /* ErrorVC.m in Sources */ = {isa = PBXBuildFile; fileRef = C53A352219D33B8900AC1383 /* ErrorVC.m */; };
-		C53A352519D33B8900AC1383 /* ErrorVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = C53A352319D33B8900AC1383 /* ErrorVC.xib */; };
 		C53A352B19D33B9A00AC1383 /* RWBlurPopover.m in Sources */ = {isa = PBXBuildFile; fileRef = C53A352819D33B9A00AC1383 /* RWBlurPopover.m */; };
 		C53A352C19D33B9A00AC1383 /* RWBlurPopoverTransitionController.m in Sources */ = {isa = PBXBuildFile; fileRef = C53A352A19D33B9A00AC1383 /* RWBlurPopoverTransitionController.m */; };
 		C53A352E19D33BA700AC1383 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C53A352D19D33BA700AC1383 /* Main.storyboard */; };
@@ -232,9 +228,6 @@
 		C52C810719CA1E47006EAFCF /* WebServiceResponse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WebServiceResponse.m; sourceTree = "<group>"; };
 		C53A351B19D33B7700AC1383 /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
 		C53A351C19D33B7700AC1383 /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
-		C53A352119D33B8900AC1383 /* ErrorVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ErrorVC.h; sourceTree = "<group>"; };
-		C53A352219D33B8900AC1383 /* ErrorVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ErrorVC.m; sourceTree = "<group>"; };
-		C53A352319D33B8900AC1383 /* ErrorVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ErrorVC.xib; sourceTree = "<group>"; };
 		C53A352719D33B9A00AC1383 /* RWBlurPopover.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RWBlurPopover.h; sourceTree = "<group>"; };
 		C53A352819D33B9A00AC1383 /* RWBlurPopover.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RWBlurPopover.m; sourceTree = "<group>"; };
 		C53A352919D33B9A00AC1383 /* RWBlurPopoverTransitionController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RWBlurPopoverTransitionController.h; sourceTree = "<group>"; };
@@ -552,7 +545,6 @@
 				32F7238019FADB4B006170CD /* AddExercise.m */,
 				3276F1CB19F6CE2D00B2F93D /* CriaTreinoVC.h */,
 				3276F1CC19F6CE2D00B2F93D /* CriaTreinoVC.m */,
-				C53A352319D33B8900AC1383 /* ErrorVC.xib */,
 				FF1596FD19C0CBC900D9236F /* Images.xcassets */,
 				FF1596F419C0CBC900D9236F /* Stamina.xcdatamodeld */,
 				FF1597B119C0DFF600D9236F /* Images */,
@@ -635,8 +627,6 @@
 				325F1FD919E7091C00001EB0 /* AcademiaVC.m */,
 				C5EB6C0019D9DBD300C528FC /* AVCamPreviewView.h */,
 				C5EB6C0119D9DBD300C528FC /* AVCamPreviewView.m */,
-				C53A352119D33B8900AC1383 /* ErrorVC.h */,
-				C53A352219D33B8900AC1383 /* ErrorVC.m */,
 				C5EB6BFE19D9DBD300C528FC /* FBLoginVC.h */,
 				C5EB6BFF19D9DBD300C528FC /* FBLoginVC.m */,
 				FF13E9E919E71FFA0005BA49 /* PushedViewController.h */,
@@ -880,12 +870,12 @@
 		FF1596E219C0CBC900D9236F /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0600;
+				LastUpgradeCheck = 0610;
 				ORGANIZATIONNAME = "Danilo Augusto Mative";
 				TargetAttributes = {
 					FF1596E919C0CBC900D9236F = {
 						CreatedOnToolsVersion = 6.0;
-						DevelopmentTeam = H7TBMF35F6;
+						DevelopmentTeam = FEMX6BFS4F;
 					};
 					FF15970219C0CBC900D9236F = {
 						CreatedOnToolsVersion = 6.0;
@@ -950,9 +940,12 @@
 				FF1C5CAB1A001C0900032DC9 /* icone_calendario_20.png in Resources */,
 				FF1C5C991A001C0900032DC9 /* icone_calendario_02.png in Resources */,
 				FF1596FE19C0CBC900D9236F /* Images.xcassets in Resources */,
+<<<<<<< HEAD
 				FF1C5CA91A001C0900032DC9 /* icone_calendario_18.png in Resources */,
 				FF1C5C9D1A001C0900032DC9 /* icone_calendario_06.png in Resources */,
 				C53A352519D33B8900AC1383 /* ErrorVC.xib in Resources */,
+=======
+>>>>>>> FETCH_HEAD
 				C5E99E6B19DB3AA200513CDE /* wireframe_academia.jpg in Resources */,
 				3276F1C419F6C9A500B2F93D /* icone_ok.png in Resources */,
 				3276F1C219F6C9A500B2F93D /* icone_compartilhar.png in Resources */,
@@ -973,11 +966,13 @@
 				C527A39919DB1FB300C72B21 /* icon_calorias.png in Resources */,
 				FF12F17719F03D79007524EF /* wireframe_calendario.png in Resources */,
 				3276F1C319F6C9A500B2F93D /* icone_duvida.png in Resources */,
-				C527A3A219DB1FB300C72B21 /* ok_icon.png in Resources */,
 				C5E99E6F19DB3AA200513CDE /* wireframe_caminhada.jpg in Resources */,
 				3276F1C519F6C9A500B2F93D /* icone_pontuacao.png in Resources */,
+<<<<<<< HEAD
 				FF1C5CAC1A001C0900032DC9 /* icone_calendario_21.png in Resources */,
 				C527A3A319DB1FB300C72B21 /* stamina_logo.png in Resources */,
+=======
+>>>>>>> FETCH_HEAD
 				C5E99E7719DB3AA200513CDE /* wireframe_login.png in Resources */,
 				FF1C5CB61A001C0900032DC9 /* icone_calendario_31.png in Resources */,
 				FF1C5CA41A001C0900032DC9 /* icone_calendario_13.png in Resources */,
@@ -1045,7 +1040,6 @@
 				FF17BD5C19C8C18200B5EF46 /* StartVC.m in Sources */,
 				325F1FE319E7143C00001EB0 /* MenuVC.m in Sources */,
 				FF1596F619C0CBC900D9236F /* Stamina.xcdatamodeld in Sources */,
-				C53A352419D33B8900AC1383 /* ErrorVC.m in Sources */,
 				FF15972A19C0D96E00D9236F /* UIViewController+AMSlideMenu.m in Sources */,
 				FF17BD6519C8C21600B5EF46 /* MainVC.m in Sources */,
 				FF159A4C19C21D1B00D9236F /* CoreDataLoading.m in Sources */,

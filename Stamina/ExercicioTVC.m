@@ -22,7 +22,7 @@
     [self.table setSeparatorStyle:UITableViewCellSeparatorStyleNone];
     [self.table setBackgroundColor:[UIColor clearColor]];
     [self.view addSubview:self.table];
-    NSArray *array =  [super criaBarButtonComBotoes:3];
+    NSArray *array =  [super criaBarButton];
     CreateTrainTemp *exe = [CreateTrainTemp alloc];
     if(![exe arrayOfExercises]){
         [exe setArrayOfExercises:[NSMutableArray array]];
@@ -44,6 +44,7 @@
     lpgr.minimumPressDuration = 1.0; //seconds
     lpgr.delegate = self;
     [self.table addGestureRecognizer:lpgr];
+    [self showBar];
 
 
 }
@@ -53,7 +54,6 @@
     CreateTrainTemp *temp = [CreateTrainTemp alloc];
     NSIndexPath *indexPath = [self.table indexPathForRowAtPoint:p];
     if (indexPath == nil) {
-        NSLog(@"long press on table view but not on a row");
     } else if (gestureRecognizer.state == UIGestureRecognizerStateBegan) {
         [super showBar];
         UITableViewCell *cell = [self.table cellForRowAtIndexPath:indexPath];
@@ -162,26 +162,15 @@
 
 
 
-//-(void)scrollViewDidScroll:(UIScrollView *)scrollView{
-//
-//    if (_lastContentOffset < (int)scrollView.contentOffset.y) {
-//        
-//    }
-//    else if (_lastContentOffset > (int)scrollView.contentOffset.y) {
-//    }
-//    NSLog(@"%f", _lastContentOffset-scrollView.contentOffset.y);
-//    float dy =_lastContentOffset -scrollView.contentOffset.y;
-//    [self.tabBar setFrame:CGRectMake(0, self.tabBar.frame.origin.y-dy, self.tabBar.frame.size.width, self.tabBar.frame.size.height)];
-//    _lastContentOffset = scrollView.contentOffset.y;
-//    if(self.tabBar.frame.origin.y<self.startPointBar.y){
-//        [self.tabBar setFrame:CGRectMake(0, self.startPointBar.y, self.tabBar.frame.size.width, self.tabBar.frame.size.height)];
-//    }
-//    else if(self.tabBar.frame.origin.y>self.startPointBar.y+self.tabBar.frame.size.height){
-//        [self.tabBar setFrame:CGRectMake(0, self.startPointBar.y+self.tabBar.frame.size.height, self.tabBar.frame.size.width, self.tabBar.frame.size.height)];
-//        
-//    }
-//    
-//}
+-(void)scrollViewDidScroll:(UIScrollView *)scrollView{
+
+    [self hideBar];
+}
+
+-(void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView{
+    [self showBar];
+}
+
 //-(void)scrollViewDidEndScrollingAnimation:(UIScrollView *)scrollView{
 //    float scrollViewHeight = scrollView.frame.size.height;
 //    float scrollContentSizeHeight = scrollView.contentSize.height;
