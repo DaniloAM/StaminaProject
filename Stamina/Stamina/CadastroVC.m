@@ -82,8 +82,6 @@
 
     switch (index) {
         case 0:
-            NSLog(@"%@ log", [[cadastro txtField1] text]);
-            NSLog(@"%@ log", [[cadastro txtField2] text]);
             if([[[cadastro txtField1] text] isEqualToString:@""]||[[cadastro txtField1] text].length<=0){
                 return nil;
                 

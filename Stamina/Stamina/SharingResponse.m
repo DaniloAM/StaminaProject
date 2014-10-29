@@ -14,7 +14,6 @@
     
     if([FBDialogs canPresentShareDialogWithPhotos]) {
         
-        NSLog(@"canPresent");
         
         
         FBPhotoParams *params = [[FBPhotoParams alloc] init];

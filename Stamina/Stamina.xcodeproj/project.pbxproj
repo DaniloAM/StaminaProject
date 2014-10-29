@@ -42,8 +42,6 @@
 		C527A39F19DB1FB300C72B21 /* icon_tempo.png in Resources */ = {isa = PBXBuildFile; fileRef = C527A39019DB1FB300C72B21 /* icon_tempo.png */; };
 		C527A3A019DB1FB300C72B21 /* icon_velocimetro.png in Resources */ = {isa = PBXBuildFile; fileRef = C527A39119DB1FB300C72B21 /* icon_velocimetro.png */; };
 		C527A3A119DB1FB300C72B21 /* menu_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = C527A39219DB1FB300C72B21 /* menu_icon.png */; };
-		C527A3A219DB1FB300C72B21 /* ok_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = C527A39319DB1FB300C72B21 /* ok_icon.png */; };
-		C527A3A319DB1FB300C72B21 /* stamina_logo.png in Resources */ = {isa = PBXBuildFile; fileRef = C527A39419DB1FB300C72B21 /* stamina_logo.png */; };
 		C527A3AA19DB266B00C72B21 /* icon_cadeado.png in Resources */ = {isa = PBXBuildFile; fileRef = C527A3A919DB266B00C72B21 /* icon_cadeado.png */; };
 		C527A3AE19DB27B000C72B21 /* icon_email.png in Resources */ = {isa = PBXBuildFile; fileRef = C527A3AD19DB27B000C72B21 /* icon_email.png */; };
 		C52C810819CA1E47006EAFCF /* WebServiceResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = C52C810719CA1E47006EAFCF /* WebServiceResponse.m */; };
@@ -145,10 +143,10 @@
 		3207B54D19EEE9BC002052BF /* CadastroPVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CadastroPVC.m; sourceTree = "<group>"; };
 		3207B54E19EEE9BC002052BF /* CadastroVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CadastroVC.h; sourceTree = "<group>"; };
 		3207B54F19EEE9BC002052BF /* CadastroVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CadastroVC.m; sourceTree = "<group>"; };
-		3207B56019EEFECA002052BF /* TipsVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TipsVC.h; sourceTree = "<group>"; };
-		3207B56119EEFECA002052BF /* TipsVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TipsVC.m; sourceTree = "<group>"; };
-		3207B56219EEFECA002052BF /* TipsPVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TipsPVC.h; sourceTree = "<group>"; };
-		3207B56319EEFECA002052BF /* TipsPVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TipsPVC.m; sourceTree = "<group>"; };
+		3207B56019EEFECA002052BF /* TipsVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TipsVC.h; path = ../TipsVC.h; sourceTree = "<group>"; };
+		3207B56119EEFECA002052BF /* TipsVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TipsVC.m; path = ../TipsVC.m; sourceTree = "<group>"; };
+		3207B56219EEFECA002052BF /* TipsPVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TipsPVC.h; path = ../TipsPVC.h; sourceTree = "<group>"; };
+		3207B56319EEFECA002052BF /* TipsPVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TipsPVC.m; path = ../TipsPVC.m; sourceTree = "<group>"; };
 		324E23C019E87FC400DA2FDE /* CategoriaVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CategoriaVC.h; sourceTree = "<group>"; };
 		324E23C119E87FC400DA2FDE /* CategoriaVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CategoriaVC.m; sourceTree = "<group>"; };
 		325F1FD619E702F400001EB0 /* bg_bar.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = bg_bar.jpg; sourceTree = "<group>"; };
@@ -173,8 +171,8 @@
 		32F15DF219F986D200310713 /* check.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = check.png; sourceTree = "<group>"; };
 		32F57C6D19EC4D16001BF6B2 /* ExercicioTVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ExercicioTVC.h; path = ../ExercicioTVC.h; sourceTree = "<group>"; };
 		32F57C6E19EC4D16001BF6B2 /* ExercicioTVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ExercicioTVC.m; path = ../ExercicioTVC.m; sourceTree = "<group>"; };
-		32F57C7019EC6838001BF6B2 /* MenuShouldOpen.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MenuShouldOpen.h; sourceTree = "<group>"; };
-		32F57C7119EC6838001BF6B2 /* MenuShouldOpen.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MenuShouldOpen.m; sourceTree = "<group>"; };
+		32F57C7019EC6838001BF6B2 /* MenuShouldOpen.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MenuShouldOpen.h; path = ../MenuShouldOpen.h; sourceTree = "<group>"; };
+		32F57C7119EC6838001BF6B2 /* MenuShouldOpen.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MenuShouldOpen.m; path = ../MenuShouldOpen.m; sourceTree = "<group>"; };
 		32F7237C19FABCD6006170CD /* CreateTrainTemp.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CreateTrainTemp.h; sourceTree = "<group>"; };
 		32F7237D19FABCD6006170CD /* CreateTrainTemp.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CreateTrainTemp.m; sourceTree = "<group>"; };
 		32F7237F19FADB4B006170CD /* AddExercise.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddExercise.h; sourceTree = "<group>"; };
@@ -401,6 +399,19 @@
 			path = RWBlurPopover;
 			sourceTree = "<group>";
 		};
+		C55E5C8A19FBC6E90019CD0F /* CriarTreino */ = {
+			isa = PBXGroup;
+			children = (
+				32F7237C19FABCD6006170CD /* CreateTrainTemp.h */,
+				32F7237D19FABCD6006170CD /* CreateTrainTemp.m */,
+				32F7237F19FADB4B006170CD /* AddExercise.h */,
+				32F7238019FADB4B006170CD /* AddExercise.m */,
+				3276F1CB19F6CE2D00B2F93D /* CriaTreinoVC.h */,
+				3276F1CC19F6CE2D00B2F93D /* CriaTreinoVC.m */,
+			);
+			name = CriarTreino;
+			sourceTree = "<group>";
+		};
 		C5E99E5D19DB3AA200513CDE /* wireframes */ = {
 			isa = PBXGroup;
 			children = (
@@ -441,12 +452,6 @@
 		FF1596E119C0CBC900D9236F = {
 			isa = PBXGroup;
 			children = (
-				32F57C7019EC6838001BF6B2 /* MenuShouldOpen.h */,
-				32F57C7119EC6838001BF6B2 /* MenuShouldOpen.m */,
-				3207B56019EEFECA002052BF /* TipsVC.h */,
-				3207B56119EEFECA002052BF /* TipsVC.m */,
-				3207B56219EEFECA002052BF /* TipsPVC.h */,
-				3207B56319EEFECA002052BF /* TipsPVC.m */,
 				FF1596EC19C0CBC900D9236F /* Stamina */,
 				FF15970619C0CBC900D9236F /* StaminaTests */,
 				FF1596EB19C0CBC900D9236F /* Products */,
@@ -473,10 +478,6 @@
 				C53A352F19D3411F00AC1383 /* Reachability.h */,
 				C53A353019D3411F00AC1383 /* Reachability.m */,
 				C53A352D19D33BA700AC1383 /* Main.storyboard */,
-				32F7237F19FADB4B006170CD /* AddExercise.h */,
-				32F7238019FADB4B006170CD /* AddExercise.m */,
-				3276F1CB19F6CE2D00B2F93D /* CriaTreinoVC.h */,
-				3276F1CC19F6CE2D00B2F93D /* CriaTreinoVC.m */,
 				C53A352319D33B8900AC1383 /* ErrorVC.xib */,
 				FF1596FD19C0CBC900D9236F /* Images.xcassets */,
 				FF1596F419C0CBC900D9236F /* Stamina.xcdatamodeld */,
@@ -550,6 +551,11 @@
 		FF15972C19C0D9FF00D9236F /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				3207B56019EEFECA002052BF /* TipsVC.h */,
+				3207B56119EEFECA002052BF /* TipsVC.m */,
+				3207B56219EEFECA002052BF /* TipsPVC.h */,
+				3207B56319EEFECA002052BF /* TipsPVC.m */,
+				C55E5C8A19FBC6E90019CD0F /* CriarTreino */,
 				FFAC194119E319F300B17487 /* Cadastro */,
 				FFAC193E19E3172300B17487 /* Exercitar */,
 				C5EB6BFC19D9DBD300C528FC /* UserCalendarVC.h */,
@@ -580,8 +586,6 @@
 				324E23C119E87FC400DA2FDE /* CategoriaVC.m */,
 				32F57C6D19EC4D16001BF6B2 /* ExercicioTVC.h */,
 				32F57C6E19EC4D16001BF6B2 /* ExercicioTVC.m */,
-				32F7237C19FABCD6006170CD /* CreateTrainTemp.h */,
-				32F7237D19FABCD6006170CD /* CreateTrainTemp.m */,
 				32F15DF219F986D200310713 /* check.png */,
 			);
 			name = ViewControllers;
@@ -590,6 +594,8 @@
 		FF15977719C0DA3B00D9236F /* NSObjects */ = {
 			isa = PBXGroup;
 			children = (
+				32F57C7019EC6838001BF6B2 /* MenuShouldOpen.h */,
+				32F57C7119EC6838001BF6B2 /* MenuShouldOpen.m */,
 				C5EB6BEC19D9DB5600C528FC /* Calendar */,
 				C5DFD4E819DC7B48000EA19C /* Cadastro.h */,
 				C5DFD4E919DC7B48000EA19C /* Cadastro.m */,
@@ -763,7 +769,7 @@
 		FF1596E219C0CBC900D9236F /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0600;
+				LastUpgradeCheck = 0610;
 				ORGANIZATIONNAME = "Danilo Augusto Mative";
 				TargetAttributes = {
 					FF1596E919C0CBC900D9236F = {
@@ -839,10 +845,8 @@
 				C527A39919DB1FB300C72B21 /* icon_calorias.png in Resources */,
 				FF12F17719F03D79007524EF /* wireframe_calendario.png in Resources */,
 				3276F1C319F6C9A500B2F93D /* icone_duvida.png in Resources */,
-				C527A3A219DB1FB300C72B21 /* ok_icon.png in Resources */,
 				C5E99E6F19DB3AA200513CDE /* wireframe_caminhada.jpg in Resources */,
 				3276F1C519F6C9A500B2F93D /* icone_pontuacao.png in Resources */,
-				C527A3A319DB1FB300C72B21 /* stamina_logo.png in Resources */,
 				C5E99E7719DB3AA200513CDE /* wireframe_login.png in Resources */,
 				FF12F16C19EC7240007524EF /* icone_facebook.png in Resources */,
 				C5EB6C0F19D9DC5B00C528FC /* caminhada_tela.png in Resources */,

@@ -64,7 +64,6 @@
     AVCaptureDeviceInput *input = [AVCaptureDeviceInput deviceInputWithDevice:device error:&error];
     if (!input) {
         // Handle the error appropriately.
-        NSLog(@"ERROR: trying to open camera: %@", error);
         
     }
     
@@ -280,7 +279,6 @@
     }
     else
     {
-        NSLog(@"No Instagram Found");
     }
     
     

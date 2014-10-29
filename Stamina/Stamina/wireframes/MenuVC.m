@@ -54,8 +54,6 @@
     [label setBackgroundColor:[UIColor colorWithRed:red green:green blue:blue alpha:1]];
     [labelTwo setBackgroundColor:[UIColor colorWithRed:red green:green blue:blue alpha:1]];
     [btn setBackgroundColor:[UIColor colorWithRed:red green:green blue:blue alpha:1]];
-    NSLog(@"%f, %f", self.navigationController.navigationBar.frame.origin.x , self.navigationController.navigationBar.frame.origin.y);
-    NSLog(@"%f, %f", self.navigationController.navigationBar.frame.size.width , self.navigationController.navigationBar.frame.size.height);
     [self.navigationController.navigationBar addSubview:label];
     [self.navigationController.navigationBar addSubview:labelTwo];
     [self.navigationController.navigationBar addSubview:btn];

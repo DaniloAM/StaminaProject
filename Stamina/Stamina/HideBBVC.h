@@ -20,4 +20,6 @@
 -(NSArray *)criaBarButtonComBotoesTranslucent: (int)n;
 -(void)showBar;
 -(void)hideBar;
+-(void)adicionaImagem : (UIImage *)image paraOBotao : (UIButton *)btn;
+
 @end

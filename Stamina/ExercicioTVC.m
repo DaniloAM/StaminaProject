@@ -53,7 +53,6 @@
     CreateTrainTemp *temp = [CreateTrainTemp alloc];
     NSIndexPath *indexPath = [self.table indexPathForRowAtPoint:p];
     if (indexPath == nil) {
-        NSLog(@"long press on table view but not on a row");
     } else if (gestureRecognizer.state == UIGestureRecognizerStateBegan) {
         [super showBar];
         UITableViewCell *cell = [self.table cellForRowAtIndexPath:indexPath];

@@ -131,7 +131,6 @@
     }
     
     if(!success) {
-        NSLog(@"Erro. Treino não encontrado.");
     }
     
 }

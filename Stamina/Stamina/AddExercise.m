@@ -14,10 +14,12 @@
 
 @implementation AddExercise
 
--(void)viewDidAppear:(BOOL)animated{
-    [super viewDidAppear:animated];
-    NSArray *array =  [super criaBarButtonComBotoes:3];
-    
+
+-(void)viewWillAppear:(BOOL)animated{
+    [super viewWillAppear:animated];
+    self.navigationController.navigationBar.translucent = YES;
+    NSArray *array =  [super criaBarButtonComBotoesTranslucent:3];
+    CreateTrainTemp *create = [CreateTrainTemp alloc];
     UIButton *btn = [array objectAtIndex:0];
     [btn addTarget:self action:@selector(function1) forControlEvents:UIControlEventTouchUpInside];
     
@@ -26,18 +28,24 @@
     
     btn = [array objectAtIndex:2];
     [btn addTarget:self action:@selector(function3) forControlEvents:UIControlEventTouchUpInside];
-    [self adicionaImagem:[UIImage imageNamed:@"icone_ok.png"] paraOBotao:btn];
-    _currentIndex = 0;
-    [self showTheRightExercise:0];
-}
--(void)adicionaImagem : (UIImage *)image paraOBotao : (UIButton *)btn{
-    UIImageView *image2 = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, btn.frame.size.height*0.75, btn.frame.size.height*0.75)];
-    [image2  setImage:image];
-    [btn setBackgroundColor:[UIColor    blackColor]];
-    [btn addSubview:image2];
-    [image2 setCenter:CGPointMake(btn.frame.size.width/2, btn.frame.size.height/2)];
+    [super adicionaImagem:[UIImage imageNamed:@"icone_ok.png"] paraOBotao:btn];
+    _currentIndex = 1;
+    Exercises *first = [[create arrayOfExercises] firstObject];
+    [[self exerciseName] setText:first.name];
+    [[self categoriaName] setText:[ExercisesList returnCategoryNameWithId:[first.exerciseID intValue]]];
 
+    
 }
+-(void)viewWillDisappear:(BOOL)animated{
+    [super viewWillDisappear:animated];
+    self.navigationController.navigationBar.translucent = NO;
+    
+}
+-(void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event{
+    [self.txtRep resignFirstResponder];
+    [self.txtSeries resignFirstResponder];
+}
+
 -(void)function1{
     [self.navigationController popToRootViewControllerAnimated:YES];
 }
@@ -45,19 +53,50 @@
     NSLog(@"btn2");
 }
 -(void)function3{
-    [self showTheRightExercise:_currentIndex];
-    _currentIndex++;
-}
--(void)showTheRightExercise : (int )x{
-    CreateTrainTemp *temp = [CreateTrainTemp alloc];
-    if(x >= [[temp arrayOfExercises] count])
-        return;
-    Exercises *exe = [[temp arrayOfExercises] objectAtIndex:x];
-    [[self exerciseName] setText:exe.name];
-    [[self categoriaName] setText:[ExercisesList returnCategoryNameWithId:(int)exe.exerciseID]];
-    
+    [self showTheRightExercise];
 }
 
+-(void)showTheRightExercise{
+    CreateTrainTemp *temp = [CreateTrainTemp alloc];
+    int rep = [[self.txtRep text] intValue];
+    int ser = [[self.txtSeries text] intValue];
+    if(!rep||!ser){
+        return;
+    }
+    if([[temp arrayOfExercises] count]==1){
+        Exercises *exe = [[temp arrayOfExercises] firstObject];
+        [[temp rep] addObject:[self.txtRep text]];
+        [[temp ser] addObject:[self.txtSeries text]];
+        [[temp identification] addObject:exe.exerciseID];
+        [[temp arrayOfExercises] removeObject:exe];
+        [[temp name] addObject:exe.name];
+
+        [self returnView];
+        return;
+    }
+    
+    
+    Exercises *exe = [[temp arrayOfExercises] firstObject];
+
+    [[temp rep] addObject:[self.txtRep text]];
+    [[temp ser] addObject:[self.txtSeries text]];
+    [[temp identification] addObject:exe.exerciseID];
+    [[temp name] addObject:exe.name];
+    [[temp arrayOfExercises] removeObject:exe];
+    exe = [[temp arrayOfExercises] firstObject];
+    [[self exerciseName] setText:exe.name];
+    [[self categoriaName] setText:[ExercisesList returnCategoryNameWithId:[exe.exerciseID intValue]]];
+    [[self txtSeries] setText:@""];
+    [[self txtRep] setText:@""];
+}
+
+-(void)returnView{
+    
+    UIViewController *View = [self.navigationController.viewControllers objectAtIndex:self.navigationController.viewControllers.count-4];
+    self.navigationController.navigationBar.translucent = NO;
+    [self.navigationController popToViewController:View animated:YES];
+    
+}
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
@@ -65,13 +104,13 @@
 }
 
 /*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
+ #pragma mark - Navigation
+ 
+ // In a storyboard-based application, you will often want to do a little preparation before navigation
+ - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+ // Get the new view controller using [segue destinationViewController].
+ // Pass the selected object to the new view controller.
+ }
+ */
 
 @end
