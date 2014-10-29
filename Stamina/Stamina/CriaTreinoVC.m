@@ -17,15 +17,10 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self setInicio:nil];
-<<<<<<< HEAD
-    NSArray *array = [super criaBarButtonComBotoesTranslucent:3];
-=======
-    [self setFim:nil];
+
     NSArray *array = [super criaBarButton];
->>>>>>> FETCH_HEAD
     UIButton *btn = [array firstObject];
     [btn addTarget:self action:@selector(function1) forControlEvents:UIControlEventTouchUpInside];
-    [super adicionaImagem:[UIImage imageNamed:@"icone_ok.png"] paraOBotao:btn];
     CreateTrainTemp *create = [CreateTrainTemp alloc];
     [create setName:[NSMutableArray array]];
     [create setIdentification:[NSMutableArray array]];

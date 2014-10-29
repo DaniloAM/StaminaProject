@@ -47,20 +47,6 @@
     MenuVC *temp = [self.navigationController.viewControllers objectAtIndex:0];
     return [temp arrayOfButtons];
 }
-<<<<<<< HEAD
--(void)adicionaImagem : (UIImage *)image paraOBotao : (UIButton *)btn{
-    UIImageView *image2 = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, btn.frame.size.height*0.85, btn.frame.size.height*0.85)];
-    [image2  setImage:image];
-    [btn setBackgroundColor:[UIColor    blackColor]];
-    [btn addSubview:image2];
-    [image2 setCenter:CGPointMake(btn.frame.size.width/2, btn.frame.size.height/2)];
-    
-}
--(void)mecheu :(UIPanGestureRecognizer *)sender{
-    CGPoint velocity = [sender velocityInView:self.view];
-    CGPoint stopLocation = [sender locationInView:self.view];
-=======
->>>>>>> FETCH_HEAD
 
 
 -(void)hideBar{

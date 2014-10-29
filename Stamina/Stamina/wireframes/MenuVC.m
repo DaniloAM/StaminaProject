@@ -135,8 +135,14 @@
     MenuVC *temp = [self.navigationController.viewControllers objectAtIndex:0];
     
     [self.navigationController.view removeGestureRecognizer:[temp gesture]];
+    if([temp gesture])
     [self.navigationController.view addGestureRecognizer:[temp right]];
-    
+    else {
+        UISwipeGestureRecognizer *right = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(pop)];
+        [self.navigationController.view addGestureRecognizer:right];
+        _right = right;
+    }
+//    
 }
 -(void)addGestureFromMenuVC{
     MenuVC *temp = [self.navigationController.viewControllers objectAtIndex:0];

@@ -548,14 +548,10 @@
 				C53A352F19D3411F00AC1383 /* Reachability.h */,
 				C53A353019D3411F00AC1383 /* Reachability.m */,
 				C53A352D19D33BA700AC1383 /* Main.storyboard */,
-<<<<<<< HEAD
-				C53A352319D33B8900AC1383 /* ErrorVC.xib */,
-=======
 				32F7237F19FADB4B006170CD /* AddExercise.h */,
 				32F7238019FADB4B006170CD /* AddExercise.m */,
 				3276F1CB19F6CE2D00B2F93D /* CriaTreinoVC.h */,
 				3276F1CC19F6CE2D00B2F93D /* CriaTreinoVC.m */,
->>>>>>> FETCH_HEAD
 				FF1596FD19C0CBC900D9236F /* Images.xcassets */,
 				FF1596F419C0CBC900D9236F /* Stamina.xcdatamodeld */,
 				FF1597B119C0DFF600D9236F /* Images */,
@@ -981,11 +977,8 @@
 				3276F1C319F6C9A500B2F93D /* icone_duvida.png in Resources */,
 				C5E99E6F19DB3AA200513CDE /* wireframe_caminhada.jpg in Resources */,
 				3276F1C519F6C9A500B2F93D /* icone_pontuacao.png in Resources */,
-<<<<<<< HEAD
-=======
 				FF1C5CAC1A001C0900032DC9 /* icone_calendario_21.png in Resources */,
 				C527A3A319DB1FB300C72B21 /* stamina_logo.png in Resources */,
->>>>>>> FETCH_HEAD
 				C5E99E7719DB3AA200513CDE /* wireframe_login.png in Resources */,
 				FF1C5CB61A001C0900032DC9 /* icone_calendario_31.png in Resources */,
 				FF1C5CA41A001C0900032DC9 /* icone_calendario_13.png in Resources */,

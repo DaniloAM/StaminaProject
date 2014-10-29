@@ -14,20 +14,13 @@
 
 @implementation AddExercise
 
-<<<<<<< HEAD
 
 -(void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
-    self.navigationController.navigationBar.translucent = YES;
-    NSArray *array =  [super criaBarButtonComBotoesTranslucent:3];
     CreateTrainTemp *create = [CreateTrainTemp alloc];
-=======
--(void)viewDidAppear:(BOOL)animated{
     [super viewDidAppear:animated];
     NSArray *array =  [super criaBarButton];
-    
->>>>>>> FETCH_HEAD
-    UIButton *btn = [array objectAtIndex:0];
+        UIButton *btn = [array objectAtIndex:0];
     [btn addTarget:self action:@selector(function1) forControlEvents:UIControlEventTouchUpInside];
     
     btn = [array objectAtIndex:1];
@@ -35,7 +28,7 @@
     
     btn = [array objectAtIndex:2];
     [btn addTarget:self action:@selector(function3) forControlEvents:UIControlEventTouchUpInside];
-    [super adicionaImagem:[UIImage imageNamed:@"icone_ok.png"] paraOBotao:btn];
+
     _currentIndex = 1;
     Exercises *first = [[create arrayOfExercises] firstObject];
     [[self exerciseName] setText:first.name];

@@ -82,10 +82,7 @@
 
     switch (index) {
         case 0:
-<<<<<<< HEAD
-=======
 
->>>>>>> FETCH_HEAD
             if([[[cadastro txtField1] text] isEqualToString:@""]||[[cadastro txtField1] text].length<=0){
                 return 0;
                 

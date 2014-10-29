@@ -49,13 +49,7 @@
 	session.sessionPreset = AVCaptureSessionPresetMedium;
 	
     [session addOutput:[self stillImageOutput]];
-<<<<<<< HEAD
-    
-	CALayer *viewLayer = self.cameraView.layer;
-	
-=======
 
->>>>>>> FETCH_HEAD
 	AVCaptureVideoPreviewLayer *captureVideoPreviewLayer = [[AVCaptureVideoPreviewLayer alloc] initWithSession:session];
 	
 	captureVideoPreviewLayer.frame = self.cameraView.bounds;
