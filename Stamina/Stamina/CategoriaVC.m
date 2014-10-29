@@ -35,6 +35,7 @@
     CGSize size = [[UIScreen mainScreen] bounds].size;
     [self.table setFrame:CGRectMake(0, self.navigationController.navigationBar.frame.size.height, size.width, size.height- self.navigationController.navigationBar.frame.size.height)];
     
+    [self removeGestureFromMenuVC];
 
 }
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
@@ -125,14 +126,13 @@
     UITableViewHeaderFooterView *header = (UITableViewHeaderFooterView *)view;
     [header.textLabel setTextColor:[UIColor colorWithRed:250 green:217 blue:0 alpha:1]];
 }
-/*
- #pragma mark - Navigation
- 
- // In a storyboard-based application, you will often want to do a little preparation before navigation
- - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
- // Get the new view controller using [segue destinationViewController].
- // Pass the selected object to the new view controller.
- }
- */
+-(void)scrollViewDidScroll:(UIScrollView *)scrollView{
+    
+    [super hideBarWithAnimation:YES];
+}
+
+-(void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView{
+    [super showBarWithAnimation:YES];
+}
 
 @end

@@ -66,9 +66,6 @@
     [self.view addGestureRecognizer:gestureUp];
     [self.view addGestureRecognizer:gestureDown];
     
-    
-    //[[self infoTableView] setFrame:CGRectMake(_calendarScrollView.frame.origin.x , _calendarScrollView.frame.origin.y + _calendarScrollView.frame.size.height + 50, _calendarScrollView.frame.size.width, 300)];
-    
 }
 
 
@@ -77,12 +74,13 @@
     
     [super viewDidLoad];
     
-    [self setInfoTableView: [[UITableView alloc] initWithFrame:CGRectMake(33, 392, 271, 148)]];
-    [[self infoTableView] setRowHeight:15.0];
+    [self setInfoTableView: [[UITableView alloc] initWithFrame:CGRectMake(20, 420, 271, 148)]];
+    [[self infoTableView] setRowHeight:35.0];
     
     [[self infoTableView] setDelegate:self];
     [[self infoTableView] setDataSource:self];
     [[self infoTableView]setBackgroundColor:[UIColor clearColor]];
+    [[self infoTableView] setSeparatorColor:[UIColor blackColor]];
     
     [self setPreparer:[[CalendarPreparer alloc] init]];
     [self setCalendarScrollView:[[UIScrollView alloc]init]];
@@ -96,6 +94,10 @@
     
     [self.view addSubview:[self infoTableView]];
     
+    [self loadCalendarScrollView];
+    
+    
+    //TEST-ONLY
     [self addTrainingToListExample];
     
 }
@@ -106,13 +108,11 @@
     
     [super viewWillAppear:animated];
     
-    [self loadCalendarScrollView];
-    [self prepareCalendarScrollViewWithCurrentMonth];
-    [[self yearLabel] setText:[NSString stringWithFormat:@"%d", _calendarYear]];
-    [[self monthLabel] setText:[CalendarMath returnMonthName:_calendarMonth]];
+    [self calendarWillChangeMonth];
     
+    [self removeGestureFromMenuVC];
+    [super hideBarWithAnimation:NO];
 }
-
 
 
 -(void)prepareCalendarScrollViewWithCurrentMonth {
@@ -215,14 +215,11 @@
 
 -(void)selectButton : (UIButton *)sender {
     
-    //Second tap on same button
-    if([sender isEqual:_pressedButton]) {
-        
+    BOOL secondTap = [sender isEqual:_pressedButton];
+    
+    if(!secondTap) {
+        [self deselectButtons];
     }
-    
-    
-    
-    [self deselectButtons];
     
     UserData *user = [UserData alloc];
     
@@ -238,10 +235,19 @@
     
     if([[[[[self calendarMatrix] objectAtIndex:y] objectAtIndex:x] hasTraining] boolValue]) {
         
+        
         NSString *trainingName = [[[[self calendarMatrix] objectAtIndex:y] objectAtIndex:x] trainingName];
         NSArray *trainingArray = [user returnTrainingWithName:trainingName];
         
-        [self showTrainingInfoWithArray:trainingArray];
+        
+        if(secondTap) {
+            [self goToCalendarInformationinDate:[[[[self calendarMatrix] objectAtIndex:y] objectAtIndex:x] date]];
+            
+            return;
+        }
+        
+        [self setExercisesArray:[self getExerciseInfoWithTrainingExercises:trainingArray]];
+        [[self infoTableView] reloadData];
         
     }
     
@@ -267,6 +273,9 @@
         _pressedButton = nil;
         
     }
+    
+    [[self exercisesArray] removeAllObjects];
+    [[self infoTableView] reloadData];
     
 }
 
@@ -332,34 +341,40 @@
 }
 
 
--(void)showTrainingInfoWithArray: (NSArray *)array {
+-(NSMutableArray *)getExerciseInfoWithTrainingExercises: (NSArray *)array {
     
-    [self setExercisesArray:[NSMutableArray array]];
+    NSMutableArray *newArray = [NSMutableArray array];
     
     ExercisesList *list = [ExercisesList alloc];
     
-//    AppDelegate *app = [[UIApplication sharedApplication] delegate];
-//    NSManagedObjectContext *context = [app managedObjectContext];
-//    NSFetchRequest *request = [NSFetchRequest fetchRequestWithEntityName:@"Exercises"];
-//    NSError *error;
-    
     int identifier = 0;
-    //NSArray *objectArray = [context executeFetchRequest:request error:&error];
-        
     
     for(int x = 0; x < [array count]; x++) {
         
         identifier = [[[array objectAtIndex:x] id_exercise] intValue];
         Exercises *ex = [list returnExerciseWithIdentifier:identifier];
         
-        [[self exercisesArray] addObject:ex];
+        [newArray addObject:ex];
         
     }
     
-    [[self infoTableView] reloadData];
+    return newArray;
     
 }
 
+
+-(void)goToCalendarInformationinDate: (NSDate *)date {
+    
+    [self deselectButtons];
+    
+    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+    CalendarInformationVC *view = (CalendarInformationVC *)[storyboard instantiateViewControllerWithIdentifier:@"calendarInfo"];
+    
+    //Receive the route to draw it
+    [view receiveInitialDate:date];
+    [self.navigationController pushViewController:view animated:YES];
+    
+}
 
 
 -(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
@@ -386,14 +401,15 @@
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:simpleTableIdentifier];
     }
     
-    cell.textLabel.text = [[[self exercisesArray] objectAtIndex:indexPath.row] name];
+    NSString *text = [NSString stringWithFormat:@"%d. %@", (int)indexPath.row + 1, [[[self exercisesArray] objectAtIndex:indexPath.row] name]];
+    
+    cell.textLabel.text = text;
     cell.textLabel.font = [UIFont fontWithName:@"Avenir" size:20.0];
     cell.textLabel.textColor = [UIColor blackColor];
     cell.backgroundColor = [UIColor clearColor];
     
     return cell;
 }
-
 
 
 //**************************************
@@ -409,11 +425,11 @@
     [dformat setDateFormat:@"yyyy/MM/dd - HH:mm"];
     
     
-    NSString *str = [NSString stringWithFormat:@"%04d/%02d/%02d - 12:00", 2014, 12, 15];
+    NSString *str = [NSString stringWithFormat:@"%04d/%02d/%02d - 12:00", 2014, 10, 15];
     NSDate *date = [dformat dateFromString:str];
     
     
-    //Make a loop and add all trainings needed
+    //Make a loop and add all exercises from training needed
     [data addExerciseWithTrainingName:@"Treino Chavão" exerciseID:[NSNumber numberWithInt:101002] repetitionsValue:[NSNumber numberWithInt:3] seriesValue:[NSNumber numberWithInt:3]];
     [data addExerciseWithTrainingName:@"Treino Chavão" exerciseID:[NSNumber numberWithInt:101003] repetitionsValue:[NSNumber numberWithInt:3] seriesValue:[NSNumber numberWithInt:3]];
     [data addExerciseWithTrainingName:@"Treino Chavão" exerciseID:[NSNumber numberWithInt:105001] repetitionsValue:[NSNumber numberWithInt:3] seriesValue:[NSNumber numberWithInt:3]];

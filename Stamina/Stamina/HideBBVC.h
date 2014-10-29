@@ -8,18 +8,22 @@
 
 #import <UIKit/UIKit.h>
 #import "MenuShouldOpen.h"
-
+#import "MenuVC.h"
 @interface HideBBVC : UIViewController
-@property UIView *tabBar;
-@property CGPoint point;
-@property CGPoint startPointBar;
--(NSArray *)criaBarButtonComBotoes: (int)n;
+
 @property UIPanGestureRecognizer *gesture;
 @property int lastDirection;
 -(void)viewWillAppear:(BOOL)animated withGesture: (BOOL)gesture;
+<<<<<<< HEAD
 -(NSArray *)criaBarButtonComBotoesTranslucent: (int)n;
 -(void)showBar;
 -(void)hideBar;
 -(void)adicionaImagem : (UIImage *)image paraOBotao : (UIButton *)btn;
+=======
+-(NSArray *)criaBarButton;
+-(void)showBarWithAnimation: (BOOL)animation;
+-(void)hideBarWithAnimation: (BOOL)animation;
+-(void) removeGestureFromMenuVC;
+>>>>>>> FETCH_HEAD
 
 @end

@@ -9,7 +9,6 @@
 #import <UIKit/UIKit.h>
 #import "WebServiceResponse.h"
 #import "UserData.h"
-#import "ErrorVC.h"
 #import "RWBlurPopover.h"
 #import "Reachability.h"
 #import <SystemConfiguration/SystemConfiguration.h>
@@ -25,5 +24,6 @@
 @property (strong, nonatomic) IBOutlet UIView *viewTotal;
 @property BOOL down;
 @property (weak, nonatomic) IBOutlet UIButton *fbBTN;
+@property (weak, nonatomic) IBOutlet UILabel *errorLbl;
 
 @end

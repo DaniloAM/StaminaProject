@@ -23,7 +23,7 @@
 }
 -(void)viewDidAppear:(BOOL)animated{
     [super viewDidAppear:animated];
-    [[self logo] setFrame:CGRectMake([self logo].frame.origin.x, 222, [self logo].frame.size.width, [self logo].frame.size.height)];
+    [self moveView:[self logo] withPoint:CGPointMake([self logo].frame.origin.x, 222) withDuration:0];
 
        UserData *userData = [UserData alloc];
     if([userData email]==nil)
@@ -31,6 +31,13 @@
     else
         [self checkConnection];
 
+}
+-(void)moveView: (UIView *)bigView withPoint: (CGPoint )point withDuration: (float)duration{
+    [UIView beginAnimations:@"MoveView" context:nil];
+    [UIView setAnimationCurve:UIViewAnimationCurveEaseIn];
+    [UIView setAnimationDuration:duration];
+    bigView.frame = CGRectMake(point.x, point.y, bigView.frame.size.width, bigView.frame.size.height);
+    [UIView commitAnimations];
 }
 -(void)preCarregamento{
     [self activity].hidden=YES;
@@ -40,12 +47,11 @@
     [self cadastreSeBTN].hidden = YES;
     [self signInBTN].hidden = YES;
     [self login].delegate =self;
-    [[self viewTotal] addSubview:[self logo]];
     self.login.backgroundColor = [UIColor colorWithWhite:0 alpha:0.1];
     self.login.layer.cornerRadius = 7;
     [self login].backgroundColor  = [UIColor whiteColor];
     [self.login endEditing:YES];
-    
+    [self errorLbl].hidden=YES;
     self.login.textColor = [UIColor blackColor]; //optional
     self.password.backgroundColor = [UIColor colorWithWhite:0 alpha:0.1];
     [self password].backgroundColor  = [UIColor whiteColor];
@@ -68,21 +74,22 @@
     [self password].secureTextEntry = YES;
 }
 -(void)viewWillAppear:(BOOL)animated{
-    [[self logo] setFrame:CGRectMake([self logo].frame.origin.x, 222, [self logo].frame.size.width, [self logo].frame.size.height)];
-
     [super viewWillAppear:animated];
+    [self moveView:[self logo] withPoint:CGPointMake([self logo].frame.origin.x, 222) withDuration:0];
+    
 
     [self preCarregamento];
 
 }
--(void)viewWillDisappear:(BOOL)animated{
-    [super viewWillDisappear:animated];
-    [[self logo] setFrame:CGRectMake([self logo].frame.origin.x, 222, [self logo].frame.size.width, [self logo].frame.size.height)];
+-(void)viewDidDisappear:(BOOL)animated{
+    [super viewDidDisappear:animated];
+    [self moveView:[self logo] withPoint:CGPointMake([self logo].frame.origin.x, 222) withDuration:0];
 
+   
 }
 
 -(UIImage *)cutImage : (UIImage *)myimage : (CGSize) size{
-    CGSize itemSize = size; // give any size you want to give
+    CGSize itemSize = size;
     
     UIGraphicsBeginImageContext(itemSize);
     
@@ -139,14 +146,10 @@
 -(void)anima{
     [self activity].hidden=YES;
     [[self activity] stopAnimating];
-        [UIView animateWithDuration:0.45 animations:^{
-            CGRect size = [self logo].frame;
-            CGPoint point = CGPointMake(size.origin.x, 85);
-            size.origin = point;
-            [[self logo] setFrame:size];
-            
-        }];
-        [self performSelector:@selector(mostra) withObject:nil afterDelay:0.5];
+    CGRect size = [self logo].frame;
+
+    [self moveView:[self logo] withPoint:CGPointMake(size.origin.x, 85) withDuration:0.45];
+    [self performSelector:@selector(mostra) withObject:nil afterDelay:0.5];
 
 }
 -(void)mostra{
@@ -190,13 +193,11 @@
 }
 
 -(IBAction)loginUser{
-    [UIView animateWithDuration:0.2 animations:^{
-        CGRect size = [self viewTotal].frame;
-        CGPoint point = CGPointMake(size.origin.x,0);
-        size.origin = point;
-        [[self viewTotal] setFrame:size];
-        
-    }];
+            self.errorLbl.hidden=   YES;
+    CGRect size = [self logo].frame;
+    
+    [self moveView:[self logo] withPoint:CGPointMake(size.origin.x,85) withDuration:0.2];
+
     [self setDown:NO];
     
     [[self view] endEditing:YES];
@@ -226,6 +227,7 @@
             [self presentError:0 :@"Verifique seu email e/ou senha"];
             return;
         }
+
     });
     
 }
@@ -242,46 +244,47 @@
     UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
     UIViewController *myVC = (UIViewController *)[storyboard instantiateViewControllerWithIdentifier:@"mainVC"];
     [self dismissViewControllerAnimated:NO completion:Nil];
-
     [self presentViewController:myVC animated:YES completion:nil];
 }
 
 -(void)presentError: (int) error : (NSString *)strError{
     [[self activity] stopAnimating];
     [self  activity].hidden=YES;
-    ErrorVC *vc = [[ErrorVC alloc] initWithNibName:nil bundle:nil];
-    RWBlurPopover *popover = [[RWBlurPopover alloc] initWithContentViewController:vc];
-    [vc setError:error];
-    [vc setStringError:strError];
-    [self presentViewController:popover animated:YES completion:nil];
+    [self viewBlock].hidden = YES;
+    [self errorLbl].hidden=NO;
+    [self errorLbl].text=strError;
+    [self shakeView:[self errorLbl]];
     
 }
 - (BOOL)textFieldShouldBeginEditing:(UITextField *)textField {
-            [UIView animateWithDuration:0.25 animations:^{
-            CGRect size = [self viewTotal].frame;
-            CGPoint point = CGPointMake(size.origin.x, -216);
-            size.origin = point;
-            [[self viewTotal] setFrame:size];
-            
-        }];
+    CGRect size = [self viewTotal].frame;
+    [self moveView:[self viewTotal] withPoint:CGPointMake(size.origin.x, -216) withDuration:0.25];
     [self setDown:YES];
     return YES;
 }
 
-
+-(void)shakeView : (UIView *)lockImage{
+    
+    CABasicAnimation *shake = [CABasicAnimation animationWithKeyPath:@"position"];
+    [shake setDuration:0.1];
+    [shake setRepeatCount:2];
+    [shake setAutoreverses:YES];
+    [shake setFromValue:[NSValue valueWithCGPoint:
+                         CGPointMake(lockImage.center.x - 5,lockImage.center.y)]];
+    [shake setToValue:[NSValue valueWithCGPoint:
+                       CGPointMake(lockImage.center.x + 5, lockImage.center.y)]];
+    [lockImage.layer addAnimation:shake forKey:@"position"];
+}
 -(void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event{
         [self setDown:NO];
 }
 -(BOOL)textFieldShouldEndEditing:(UITextField *)textField{
-    if(![self down])
-    [UIView animateWithDuration:0.2 animations:^{
-            CGRect size = [self viewTotal].frame;
-            CGPoint point = CGPointMake(size.origin.x,0);
-            size.origin = point;
-            [[self viewTotal] setFrame:size];
-            
-        }];
-    
+    if(![self down]){
+        CGRect size = [self viewTotal].frame;
+
+        [self moveView:[self viewTotal] withPoint: CGPointMake(size.origin.x,0) withDuration:0.2];
+    }
+
     return YES;
 }
 - (void) touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event

@@ -14,12 +14,19 @@
 
 @implementation AddExercise
 
+<<<<<<< HEAD
 
 -(void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
     self.navigationController.navigationBar.translucent = YES;
     NSArray *array =  [super criaBarButtonComBotoesTranslucent:3];
     CreateTrainTemp *create = [CreateTrainTemp alloc];
+=======
+-(void)viewDidAppear:(BOOL)animated{
+    [super viewDidAppear:animated];
+    NSArray *array =  [super criaBarButton];
+    
+>>>>>>> FETCH_HEAD
     UIButton *btn = [array objectAtIndex:0];
     [btn addTarget:self action:@selector(function1) forControlEvents:UIControlEventTouchUpInside];
     
@@ -50,7 +57,6 @@
     [self.navigationController popToRootViewControllerAnimated:YES];
 }
 -(void)function2{
-    NSLog(@"btn2");
 }
 -(void)function3{
     [self showTheRightExercise];

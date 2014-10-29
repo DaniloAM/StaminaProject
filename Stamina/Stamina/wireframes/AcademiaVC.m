@@ -14,10 +14,9 @@
 
 @implementation AcademiaVC
 
-- (void)viewDidLoad {
-    [super viewDidLoad];
-
-    NSArray *array =  [super criaBarButtonComBotoes:3];
+-(void)viewWillAppear:(BOOL)animated{
+    [super viewWillAppear:YES withGesture:1];
+    NSArray *array =  [super criaBarButton];
     
     UIButton *btn = [array objectAtIndex:0];
     
@@ -31,19 +30,15 @@
     [image  setImage:[UIImage imageNamed:@"icone_ok.png"]];
     [btn addSubview:image];
     [image setCenter:CGPointMake(btn.frame.size.width/2, btn.frame.size.height/2)];
-    
 }
 -(void)function1{
     [self.navigationController popToRootViewControllerAnimated:YES];
 }
 -(void)function2{
-    NSLog(@"btn2");
 }
 -(void)function3{
 }
--(void)viewWillAppear:(BOOL)animated{
-    [super viewWillAppear:animated withGesture:1];
-}
+
 -(void)criaTreino{
     UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
     UIViewController *myVC;
