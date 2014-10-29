@@ -57,7 +57,7 @@
 +(UserData *)sharedStore;
 -(NSArray *)returnTrainingWithName : (NSString *)trainingName;
 -(void)removeTraning: (NSString *)trainingName;
--(void)addExerciseWithTrainingName: (NSString *)name exerciseID:(NSNumber *)exerciseID repetitionsValue: (NSNumber *)repetitionsValue seriesValue: (NSNumber *)seriesValue;
+-(void)addExerciseWithTrainingExercise: (TrainingExercises *)newExercise;
 -(void)allocArray;
 
 -(void)loadFromUserDefaults;

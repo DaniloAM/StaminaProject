@@ -11,7 +11,7 @@
 #import "FinishedRoute.h"
 #import "FinishedRunningVC.h"
 
-@interface RunningMapVC : UIViewController <MKMapViewDelegate , CLLocationManagerDelegate, UIAlertViewDelegate>
+@interface RunningMapVC : HideBBVC <MKMapViewDelegate , CLLocationManagerDelegate, UIAlertViewDelegate>
 
 @property (weak , nonatomic) IBOutlet MKMapView *mapRunningView;
 @property MKPolyline *routeLine;

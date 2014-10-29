@@ -103,7 +103,6 @@
 }
 
 
-
 -(void)viewWillAppear:(BOOL)animated {
     
     [super viewWillAppear:animated];
@@ -429,17 +428,16 @@
     NSDate *date = [dformat dateFromString:str];
     
     
+    //TrainingExercises *ex;
+    
     //Make a loop and add all exercises from training needed
-    [data addExerciseWithTrainingName:@"Treino Chavão" exerciseID:[NSNumber numberWithInt:101002] repetitionsValue:[NSNumber numberWithInt:3] seriesValue:[NSNumber numberWithInt:3]];
-    [data addExerciseWithTrainingName:@"Treino Chavão" exerciseID:[NSNumber numberWithInt:101003] repetitionsValue:[NSNumber numberWithInt:3] seriesValue:[NSNumber numberWithInt:3]];
-    [data addExerciseWithTrainingName:@"Treino Chavão" exerciseID:[NSNumber numberWithInt:105001] repetitionsValue:[NSNumber numberWithInt:3] seriesValue:[NSNumber numberWithInt:3]];
+    //[data addExerciseWithTrainingExercise:ex];
     
     
     //Then a second loop of schedules in dates
     [calendar scheduleTrainingNamed:@"Treino Chavão" inDate:date];
     
 }
-
 
 
 @end

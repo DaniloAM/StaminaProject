@@ -32,7 +32,7 @@
     
     [[self mapRunningView] setShowsUserLocation:true];
     [[self locationManager] setDesiredAccuracy:kCLLocationAccuracyBest];
-    self.navigationItem.hidesBackButton = YES;
+
 
 }
 
@@ -45,6 +45,8 @@
     [self zoomToUserRegion];
     
     _timer = [NSTimer scheduledTimerWithTimeInterval:1.0 target:self selector:@selector(startReloadingUserPosition) userInfo:nil repeats:true];
+    
+    [super hideBarWithAnimation:true];
 }
 
 -(void)viewWillDisappear:(BOOL)animated {
@@ -212,6 +214,7 @@
     [route setTimeInMinutes:_minutes];
     [route setDistanceInMeters:_distanceInMeters];
     [route setRoutePoints:[self pointsForRoute]];
+    
     
     UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
     FinishedRunningVC *myVC = (FinishedRunningVC *)[storyboard instantiateViewControllerWithIdentifier:@"finishedRunning"];

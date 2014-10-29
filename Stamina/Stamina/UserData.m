@@ -28,7 +28,7 @@
 //repetitions index 1
 //series index 2
 
--(void)addExerciseWithTrainingName: (NSString *)name exerciseID:(NSNumber *)exerciseID repetitionsValue: (NSNumber *)repetitionsValue seriesValue: (NSNumber *)seriesValue {
+-(void)addExerciseWithTrainingExercise: (TrainingExercises *)newExercise {
 
     AppDelegate *app = [[UIApplication sharedApplication] delegate];
     NSManagedObjectContext *context = [app managedObjectContext];
@@ -43,7 +43,7 @@
         TrainingExercises* ex = [array objectAtIndex:x];
         
         
-        if([[ex training_name] isEqualToString:name] && [[ex id_exercise] integerValue]==[exerciseID integerValue]) {
+        if([[ex training_name] isEqualToString:newExercise.training_name] && [[ex id_exercise] integerValue]==[newExercise.id_exercise integerValue]) {
             return;
         }
     }
@@ -51,10 +51,10 @@
     TrainingExercises *exercise = [NSEntityDescription insertNewObjectForEntityForName:@"TrainingExercises" inManagedObjectContext:context];
     
     
-    [exercise setTraining_name:name];
-    [exercise setId_exercise:exerciseID];
-    [exercise setRepetitions:repetitionsValue];
-    [exercise setSeries:seriesValue];
+    [exercise setTraining_name:newExercise.training_name];
+    [exercise setId_exercise:newExercise.id_exercise];
+    [exercise setRepetitions:newExercise.repetitions];
+    [exercise setSeries:newExercise.series];
     
     
     [context save:&error];

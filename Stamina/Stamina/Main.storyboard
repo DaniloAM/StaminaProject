@@ -463,10 +463,10 @@
             </objects>
             <point key="canvasLocation" x="1963.5" y="-1372"/>
         </scene>
-        <!--Start RunningVC-->
+        <!--Menu RunningVC-->
         <scene sceneID="qGL-og-Det">
             <objects>
-                <viewController id="PSP-iH-gXQ" customClass="StartRunningVC" sceneMemberID="viewController">
+                <viewController id="PSP-iH-gXQ" customClass="MenuRunningVC" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="nCd-9Z-uiM"/>
                         <viewControllerLayoutGuide type="bottom" id="Vak-wf-XQe"/>
@@ -475,32 +475,12 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="504"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="7Xh-AC-ILT">
-                                <rect key="frame" x="210" y="427" width="110" height="78"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                            </tableView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9G0-fA-AvR">
                                 <rect key="frame" x="86" y="478" width="142" height="70"/>
                                 <state key="normal" title="Button">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EAX-FF-wR4">
-                                <rect key="frame" x="160" y="382" width="170" height="37"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
-                                <state key="normal" title="Button">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <segue destination="Hoc-Hi-pFE" kind="push" id="yae-C4-GbH"/>
-                                </connections>
-                            </button>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="iQu-Ao-BA2">
-                                <rect key="frame" x="217" y="291" width="96" height="61"/>
-                            </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="wireframe_correr_menu.png" translatesAutoresizingMaskIntoConstraints="NO" id="FEp-xT-QDs">
-                                <rect key="frame" x="0.0" y="-66" width="320" height="570"/>
-                            </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="20 °C" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rXf-If-RHb">
                                 <rect key="frame" x="142" y="38" width="73" height="33"/>
                                 <fontDescription key="fontDescription" name="Avenir-Roman" family="Avenir" pointSize="23"/>
@@ -512,28 +492,67 @@
                                 <state key="normal" backgroundImage="button_iniciar.png">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <segue destination="Hoc-Hi-pFE" kind="push" id="pHS-mL-7YM"/>
+                                </connections>
                             </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="icone_calendario_01.png" translatesAutoresizingMaskIntoConstraints="NO" id="cxV-Vu-DFh">
                                 <rect key="frame" x="106" y="105" width="108" height="116"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mac-Rp-8jk">
                                 <rect key="frame" x="32" y="338" width="256" height="36"/>
-                                <state key="normal" backgroundImage="button_iniciar.png">
+                                <state key="normal" backgroundImage="button_trajetos.png">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <segue destination="iZq-pg-Mof" kind="push" id="Qxk-09-Orv"/>
+                                </connections>
                             </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="icon_sol.png" translatesAutoresizingMaskIntoConstraints="NO" id="DVM-9O-FO6">
+                                <rect key="frame" x="108" y="39" width="30" height="30"/>
+                            </imageView>
                         </subviews>
-                        <color key="backgroundColor" red="0.98668676614761353" green="0.91419041231418685" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" red="0.97647058823529409" green="0.84705882352941175" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
                     <navigationItem key="navigationItem" id="rKg-2n-dgf"/>
                     <connections>
-                        <outlet property="routeView" destination="iQu-Ao-BA2" id="Ect-R1-d5R"/>
-                        <outlet property="routesTableView" destination="7Xh-AC-ILT" id="mge-A2-Re7"/>
+                        <outlet property="calendarIcon" destination="cxV-Vu-DFh" id="z2M-Hx-AgY"/>
+                        <outlet property="temperatureLabel" destination="rXf-If-RHb" id="8eq-Le-Epz"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xAr-sq-W8q" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2497" y="-3451"/>
+        </scene>
+        <!--Trajectory SelectionVC-->
+        <scene sceneID="rAh-ab-3FC">
+            <objects>
+                <viewController storyboardIdentifier="test" id="iZq-pg-Mof" customClass="TrajectorySelectionVC" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="cCI-YR-if1"/>
+                        <viewControllerLayoutGuide type="bottom" id="Ppx-hx-MJm"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="7sg-N2-eFd">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="504"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="lGf-y1-9mw">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="504"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <color key="separatorColor" red="0.1137254902" green="0.1176470588" blue="0.12549019610000001" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="sectionIndexBackgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="T2n-lV-VST"/>
+                    <connections>
+                        <outlet property="routeTableView" destination="lGf-y1-9mw" id="Mf2-7k-gUh"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ebv-Xk-GzI" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2935" y="-3407"/>
         </scene>
         <!--Running MapVC-->
         <scene sceneID="hBC-1x-cGS">
@@ -599,7 +618,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mY3-As-W9s" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3093" y="-3841"/>
+            <point key="canvasLocation" x="2884" y="-4023"/>
         </scene>
         <!--AcademiaVC-->
         <scene sceneID="syk-1u-5DQ">
@@ -745,7 +764,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="k16-nq-SvA" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3440" y="-3841"/>
+            <point key="canvasLocation" x="3240" y="-4023"/>
         </scene>
         <!--Page View Controller-->
         <scene sceneID="7CW-Zh-q7t">
@@ -1237,8 +1256,10 @@
     <resources>
         <image name="Logo_Stamina.png" width="813" height="688"/>
         <image name="button_iniciar.png" width="512" height="73"/>
+        <image name="button_trajetos.png" width="510" height="71"/>
         <image name="caminhada_tela.png" width="754" height="1586"/>
         <image name="fb_sign.png" width="454" height="71"/>
+        <image name="icon_sol.png" width="56" height="56"/>
         <image name="icone_calendario_01.png" width="301" height="322"/>
         <image name="icone_camera.png" width="394" height="394"/>
         <image name="icone_camera_rotate.png" width="393" height="394"/>
@@ -1247,7 +1268,6 @@
         <image name="wireframe_academia_inicio.jpg" width="886" height="1574"/>
         <image name="wireframe_cadastro.jpg" width="876" height="1567"/>
         <image name="wireframe_categorias.png" width="886" height="1576"/>
-        <image name="wireframe_correr_menu.png" width="900" height="1598"/>
         <image name="wireframe_exercicio.png" width="888" height="1571"/>
         <image name="wireframe_exercicio_serie.png" width="894" height="1582"/>
         <image name="wireframe_home.png" width="418" height="633"/>

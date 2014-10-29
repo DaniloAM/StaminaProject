@@ -7,7 +7,13 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "HideBBVC.h"
+#import "TrajectorySelectionVC.h"
 
-@interface MenuRunningVC : UIViewController
+@interface MenuRunningVC : HideBBVC
+
+@property (weak, nonatomic) IBOutlet UILabel *temperatureLabel;
+@property (weak, nonatomic) IBOutlet UIImageView *calendarIcon;
+
 
 @end

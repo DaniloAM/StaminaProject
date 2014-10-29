@@ -29,6 +29,7 @@
         [self drawTrajectoryDone];
     }
 
+    [super showBarWithAnimation:true];
     self.navigationController.navigationBar.translucent = YES;
     
 }
@@ -42,7 +43,6 @@
 -(void)viewWillDisappear:(BOOL)animated {
     
     [super viewWillDisappear:animated];
-    self.navigationController.navigationBar.translucent = NO;
     
     NSString *name = @"Name";
     
@@ -129,6 +129,7 @@
     UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
     UIViewController *myVC = (UIViewController *)[storyboard instantiateViewControllerWithIdentifier:@"shareScreen"];
     
+     self.navigationController.navigationBar.translucent = NO;
     [self.navigationController pushViewController:myVC animated:YES];
     
 }
@@ -136,7 +137,8 @@
 
 -(IBAction)goHome {
     
-       [self.navigationController popToRootViewControllerAnimated:true];
+     self.navigationController.navigationBar.translucent = NO;
+    [self.navigationController popToRootViewControllerAnimated:true];
     
 }
 
