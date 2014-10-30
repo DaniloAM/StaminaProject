@@ -10,9 +10,11 @@
 #import "MenuShouldOpen.h"
 #import "MenuVC.h"
 @interface HideBBVC : UIViewController
+@property UIView *tabBar;
 
 @property int lastDirection;
 -(void)viewWillAppear:(BOOL)animated withGesture: (BOOL)gesture;
+-(NSArray *)buttons;
 -(NSArray *)criaBarButton;
 -(void)showBarWithAnimation: (BOOL)animation;
 -(void)hideBarWithAnimation: (BOOL)animation;

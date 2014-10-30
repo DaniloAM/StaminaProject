@@ -16,6 +16,8 @@
 
 -(void)viewWillAppear:(BOOL)animated{
     [self viewWillAppear:animated withGesture:1];
+    MenuVC *temp = [self.navigationController.viewControllers objectAtIndex:0];
+    [self setTabBar:[temp tab]];
 }
 -(void)voltaView{
     [self.navigationController popViewControllerAnimated:YES];
@@ -68,4 +70,9 @@
     [temp removeGestureFromMenuVC];
     
 }
+-(NSArray *)buttons{
+     MenuVC *temp = [self.navigationController.viewControllers objectAtIndex:0];
+    return [temp arrayOfButtons];
+}
+
 @end
