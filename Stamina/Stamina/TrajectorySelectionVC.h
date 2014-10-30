@@ -13,7 +13,7 @@
 @interface TrajectorySelectionVC : HideBBVC <UITableViewDataSource , UITableViewDelegate>
 
 @property UserData *user;
-@property (weak, nonatomic) IBOutlet UITableView *routeTableView;
+@property UITableView *routeTableView;
 
 @property int expandedRow;
 @property NSIndexPath *expandedIndexPath;

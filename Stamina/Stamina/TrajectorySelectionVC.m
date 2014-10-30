@@ -19,7 +19,26 @@
 
 - (void)viewDidLoad {
     
+    [super viewDidLoad];
+    
+    [self setRouteTableView:[[UITableView alloc] initWithFrame:
+        CGRectMake(
+                                                                           
+            // origin X
+            0,
+                   
+            //origin Y
+            0,
+                   
+            //size width
+            [[UIScreen mainScreen] bounds].size.width,
+                   
+            //size height
+            [[UIScreen mainScreen] bounds].size.height - self.navigationController.navigationBar.frame.size.height - [self tabBar].frame.size.height)]];
+    
     _expandedRow = -1;
+    
+    CGRect rect = [self routeTableView].frame;
     
     [self setUser:[UserData alloc]];
     
@@ -30,23 +49,15 @@
     [[self routeTableView] setRowHeight:tableViewRowHeight];
     [[self routeTableView] reloadData];
     
-    [super viewDidLoad];
+    [self.view addSubview:[self routeTableView]];
     
 }
 
-
--(void)viewWillAppear:(BOOL)animated {
-    [super viewWillAppear:animated];
-    
-    [self.routeTableView reloadData];
-}
 
 -(void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
-    [[self routeTableView] setDelegate:self];
-    [[self routeTableView] setDataSource:self];
     
-    [self.routeTableView reloadData];
+
 }
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
@@ -57,7 +68,7 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     
-    return _user.routesArray.count + rowsVisibleInScreen;
+    return _user.routesArray.count;
 }
 
 
@@ -72,9 +83,8 @@
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:simpleTableIdentifier];
     }
     
-
     
-    if(indexPath.row < [[[self user] routesArray] count]) {
+    if(indexPath.row < [[[self user] routesArray] count] && indexPath.row != _expandedRow) {
     
         cell.textLabel.text = [[[[self user] routesArray] objectAtIndex:indexPath.row] trajectoryName];
         cell.textLabel.font = [UIFont fontWithName:@"Avenir" size:20.0];
@@ -94,7 +104,7 @@
     
     if(indexPath.row == _expandedRow) {
         
-        return [[UIScreen mainScreen] bounds].size.height - self.navigationController.navigationBar.frame.size.height;
+        return [[UIScreen mainScreen] bounds].size.height - self.navigationController.navigationBar.frame.size.height- [self tabBar].frame.size.height;
         
     }
     
