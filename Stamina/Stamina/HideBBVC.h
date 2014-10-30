@@ -20,5 +20,8 @@
 -(void)hideBarWithAnimation: (BOOL)animation;
 -(void) removeGestureFromMenuVC;
 -(CGSize)navigationSize;
+-(CGSize)navigationIncreased;
+-(CGSize)navigationStartSize;
+
 
 @end

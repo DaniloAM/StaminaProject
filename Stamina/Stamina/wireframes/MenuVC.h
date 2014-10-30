@@ -25,4 +25,7 @@
 -(void)removeGestureFromMenuVC;
 -(void)viewWillAppear:(BOOL)animated withGesture: (BOOL)gesture;
 @property CGSize navigationSize;
+@property CGSize navigationStartSize;
+@property CGSize navigationIncreased;
+
 @end

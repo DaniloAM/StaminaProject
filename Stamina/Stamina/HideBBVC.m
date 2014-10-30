@@ -78,4 +78,13 @@
     MenuVC *temp = [self.navigationController.viewControllers objectAtIndex:0];
     return [temp navigationSize];
 }
+-(CGSize)navigationIncreased{
+    MenuVC *temp = [self.navigationController.viewControllers objectAtIndex:0];
+    return [temp navigationIncreased];
+}
+-(CGSize)navigationStartSize{
+    MenuVC *temp = [self.navigationController.viewControllers objectAtIndex:0];
+    return [temp navigationStartSize];
+}
+
 @end

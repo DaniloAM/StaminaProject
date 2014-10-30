@@ -21,6 +21,8 @@
     [super viewDidAppear:NO];
     AMSlideMenuMainViewController *mainVC = [AMSlideMenuMainViewController getInstanceForVC:self];
     CGFloat height = [[UIScreen mainScreen] bounds].size.height;
+    _navigationStartSize =self.navigationController.navigationBar.frame.size;
+    
     height = height*167.67/1137.11;
     //
     float red = 249.0/255.0;
@@ -60,6 +62,8 @@
     self.navigationItem.leftBarButtonItem = nil;
     self.navigationItem.hidesBackButton = YES;
     _navigationSize = self.navigationController.navigationBar.frame.size;
+    _navigationIncreased.height = _navigationSize.height- _navigationStartSize.height;
+    _navigationIncreased.width = _navigationSize.width- _navigationStartSize.width;
 }
 -(void)viewWillAppear:(BOOL)animated{
     [self viewWillAppear:animated withGesture:1];
