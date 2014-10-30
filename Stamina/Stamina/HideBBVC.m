@@ -74,5 +74,8 @@
      MenuVC *temp = [self.navigationController.viewControllers objectAtIndex:0];
     return [temp arrayOfButtons];
 }
-
+-(CGSize)navigationSize{
+    MenuVC *temp = [self.navigationController.viewControllers objectAtIndex:0];
+    return [temp navigationSize];
+}
 @end

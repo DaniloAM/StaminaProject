@@ -24,4 +24,5 @@
 @property int lastDirection;
 -(void)removeGestureFromMenuVC;
 -(void)viewWillAppear:(BOOL)animated withGesture: (BOOL)gesture;
+@property CGSize navigationSize;
 @end
