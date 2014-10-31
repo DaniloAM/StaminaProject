@@ -10,7 +10,9 @@
 #import "HideBBVC.h"
 #import "UserData.h"
 #import "UIStaminaColor.h"
+#import "UIStaminaLabel.h"
 #import "RoutePointsCartesian.h"
+#import "TrajectoryFile.h"
 
 @interface TrajectorySelectionVC : HideBBVC <UITableViewDataSource , UITableViewDelegate>
 
