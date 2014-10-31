@@ -91,22 +91,35 @@
     return [self doTheRequest:post andUrl:url];
     
 }
-+(NSString *)previsaoDoTempoNaLatitude : (float)lat eLongitude:(float)lon{
-    NSString *url = [NSString stringWithFormat:@"http://api.openweathermap.org/data/2.5/forecast?lat=%f&lon=%f",lat, lon ];
++(WeatherCondition *)previsaoDoTempoNaLatitude : (float)lat eLongitude:(float)lon{
+    NSString *url = [NSString stringWithFormat:@"http://api.openweathermap.org/data/2.5/weather?lat=%f&lon=%f",lat, lon ];
     NSData *jsonDados = [[NSData alloc] initWithContentsOfURL:
                   [NSURL URLWithString:url]];
     NSError *error;
-    
     NSMutableDictionary *jsonDadosUsuario = [NSJSONSerialization
                                              JSONObjectWithData:jsonDados
                                              options:NSJSONReadingMutableContainers
                                              error:&error];
-    NSString *s = @"list";
-    NSMutableArray *array = [[NSMutableArray alloc] init];
-   
-        NSArray *items = [jsonDadosUsuario objectForKey:s];
-        [array addObject:items];
-    return [self doTheRequest:url andUrl:nil];
+    NSDictionary *main = [[NSDictionary  alloc] initWithDictionary:[jsonDadosUsuario objectForKey:@"main"]];
+    NSArray *array = [jsonDadosUsuario objectForKey:@"weather"];
+    
+    NSNumber *tempMin = [main objectForKey:@"temp_min"];
+    NSNumber *humidity = [main objectForKey:@"temp_min"];
+    NSNumber *tempMax = [main objectForKey:@"temp_max"];
+    NSNumber *tempAtual = [main objectForKey:@"temp"];
+    float temp_min = [tempMin floatValue];
+    float temp_max = [tempMax floatValue];
+    float temp = [tempAtual floatValue];
+    float humidade = [humidity floatValue];
+    WeatherCondition *novo = [[WeatherCondition alloc] init];
+    [novo setTempAtual:temp];
+    [novo setTempMin:temp_min];
+    [novo setTempMax:temp_max];
+    [novo setHumidade:humidade];
+    NSDictionary *weatherCondition = [array firstObject];
+    NSString *str = [weatherCondition objectForKey:@"description"];
+    [novo setDescricao:str];
+    return novo;
 
 }
 

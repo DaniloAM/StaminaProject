@@ -11,6 +11,7 @@
 #import "TrainingExercises.h"
 #import "AppDelegate.h"
 #import "UserData.h"
+#import "WeatherCondition.h"
 @interface WebServiceResponse : NSObject
 +(NSString*)cadastrarComNome: (NSString *)nome eSenha: (NSString *)password email: (NSString *)email sexo:(BOOL) sexo nickName: (NSString *)nickName;
 +(NSString*)loginComEmailOuNickName: (NSString *)anything eSenha: (NSString *)password;
@@ -21,6 +22,6 @@
 +(NSString*)atualizaComEmail: (NSString *)email peso: (float )peso_atual sexo: (BOOL )sexo altura: (int )altura idade: (int )idade;
 +(NSString*)criaComEmail: (NSString *)email peso: (float )peso_atual sexo: (BOOL )sexo altura: (int )altura idade: (int )idade;
 
-+(NSString *)previsaoDoTempoNaLatitude : (float)lat eLongitude:(float)lon;
++(WeatherCondition *)previsaoDoTempoNaLatitude : (float)lat eLongitude:(float)lon;
 
 @end

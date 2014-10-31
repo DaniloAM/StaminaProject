@@ -51,6 +51,7 @@
 		C53A352E19D33BA700AC1383 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C53A352D19D33BA700AC1383 /* Main.storyboard */; };
 		C53A353119D3411F00AC1383 /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = C53A353019D3411F00AC1383 /* Reachability.m */; };
 		C56108E919DD81990090CE5D /* wireframe_home.png in Resources */ = {isa = PBXBuildFile; fileRef = C56108E819DD81990090CE5D /* wireframe_home.png */; };
+		C56632561A03F3110006309D /* WeatherCondition.m in Sources */ = {isa = PBXBuildFile; fileRef = C56632551A03F3110006309D /* WeatherCondition.m */; };
 		C59934F919D36739006337E0 /* App-Stamina.png in Resources */ = {isa = PBXBuildFile; fileRef = C59934F819D36739006337E0 /* App-Stamina.png */; };
 		C59934FB19D36756006337E0 /* Logo_Stamina.png in Resources */ = {isa = PBXBuildFile; fileRef = C59934FA19D36756006337E0 /* Logo_Stamina.png */; };
 		C5A2418619CB512700064E54 /* TemporaryVC.m in Sources */ = {isa = PBXBuildFile; fileRef = C5A2418519CB512700064E54 /* TemporaryVC.m */; };
@@ -245,6 +246,8 @@
 		C53A352F19D3411F00AC1383 /* Reachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Reachability.h; sourceTree = "<group>"; };
 		C53A353019D3411F00AC1383 /* Reachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Reachability.m; sourceTree = "<group>"; };
 		C56108E819DD81990090CE5D /* wireframe_home.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = wireframe_home.png; sourceTree = "<group>"; };
+		C56632541A03F3110006309D /* WeatherCondition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WeatherCondition.h; sourceTree = "<group>"; };
+		C56632551A03F3110006309D /* WeatherCondition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WeatherCondition.m; sourceTree = "<group>"; };
 		C59934F819D36739006337E0 /* App-Stamina.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "App-Stamina.png"; sourceTree = "<group>"; };
 		C59934FA19D36756006337E0 /* Logo_Stamina.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Logo_Stamina.png; sourceTree = "<group>"; };
 		C5A2418419CB512700064E54 /* TemporaryVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TemporaryVC.h; sourceTree = "<group>"; };
@@ -541,6 +544,8 @@
 		FF1596E119C0CBC900D9236F = {
 			isa = PBXGroup;
 			children = (
+				C56632541A03F3110006309D /* WeatherCondition.h */,
+				C56632551A03F3110006309D /* WeatherCondition.m */,
 				FF1596EC19C0CBC900D9236F /* Stamina */,
 				FF15970619C0CBC900D9236F /* StaminaTests */,
 				FF1596EB19C0CBC900D9236F /* Products */,
@@ -1080,6 +1085,7 @@
 				FF15972919C0D96E00D9236F /* CustomIOS7AlertView.m in Sources */,
 				FF13E9DA19E5BE330005BA49 /* FinishedRoute.m in Sources */,
 				32F57C6F19EC4D16001BF6B2 /* ExercicioTVC.m in Sources */,
+				C56632561A03F3110006309D /* WeatherCondition.m in Sources */,
 				C53A352B19D33B9A00AC1383 /* RWBlurPopover.m in Sources */,
 				32F57C7219EC6838001BF6B2 /* MenuShouldOpen.m in Sources */,
 				FF15972519C0D96E00D9236F /* AMSlideMenuContentSegue.m in Sources */,
