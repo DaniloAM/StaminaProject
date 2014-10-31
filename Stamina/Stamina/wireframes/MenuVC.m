@@ -71,17 +71,19 @@
 -(void)viewWillAppear:(BOOL)animated withGesture: (BOOL)gesture{
     [super viewWillAppear:animated];
     _lastDirection =-1;
+    UISwipeGestureRecognizer *right = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(pop)];
+    [right setDirection:UISwipeGestureRecognizerDirectionRight];
+    _right = right;
+    UIPanGestureRecognizer *pangesture = [[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(mecheu:)];
+    _gesture = pangesture;
 
     [self cleanAllBtn];
     if(gesture){
-        UIPanGestureRecognizer *pangesture = [[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(mecheu:)];
         [self.navigationController.view addGestureRecognizer:pangesture];
-        _gesture = pangesture;
     }
     else {
-        UISwipeGestureRecognizer *right = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(pop)];
+       
         [self.navigationController.view addGestureRecognizer:right];
-        _right = right;
     }
 }
 -(void)viewTouched{
@@ -139,8 +141,8 @@
     MenuVC *temp = [self.navigationController.viewControllers objectAtIndex:0];
     
     [self.navigationController.view removeGestureRecognizer:[temp gesture]];
-
-//    
+    [self.navigationController.view addGestureRecognizer:_right];
+    
 }
 -(void)addGestureFromMenuVC{
     MenuVC *temp = [self.navigationController.viewControllers objectAtIndex:0];
