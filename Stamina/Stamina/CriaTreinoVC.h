@@ -21,5 +21,6 @@
 @property NSDate *inicio;
 @property int sender;
 @property UIAlertView *alert;
+@property (weak, nonatomic) IBOutlet UILabel *labelVazio;
 @property (weak, nonatomic) IBOutlet UIButton *btn;
 @end

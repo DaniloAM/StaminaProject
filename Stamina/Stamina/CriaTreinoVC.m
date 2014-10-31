@@ -26,10 +26,14 @@
     [create setIdentification:[NSMutableArray array]];
     [create setSer:[NSMutableArray array]];
     [create setRep:[NSMutableArray array]];
+    _trainoNomeTxt.delegate = self;
     _tableExercicios.rowHeight = 30;
     _tableExercicios.delegate = self;
     _tableExercicios.dataSource = self;
+    _tableExercicios.backgroundColor = [UIColor clearColor];
     _tableExercicios.contentSize = CGSizeMake(_tableExercicios.frame.size.width, [[create ser] count]*31);
+    [self labelVazio].hidden = YES;
+
 }
 -(void)function1{
     CreateTrainTemp *create = [CreateTrainTemp alloc];
@@ -65,6 +69,19 @@
         
         [context save:&error];
     }
+    [[create ser] removeAllObjects];
+        [[create rep] removeAllObjects];
+        [[create identification] removeAllObjects];
+    [create setTrainingName:nil];
+    
+}
+-(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event{
+    [self.trainoNomeTxt resignFirstResponder];
+}
+- (BOOL)textFieldShouldReturn:(UITextField*)aTextField
+{
+    [aTextField resignFirstResponder];
+    return YES;
 }
 - (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
     // Return YES if you want the specified item to be editable.
@@ -72,6 +89,14 @@
 }
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
     CreateTrainTemp *tem = [CreateTrainTemp alloc];
+    if([[tem ser] count]==0){
+        [self labelVazio].hidden = NO;
+        [self tableExercicios].hidden=YES;
+    }
+    else {
+        [self labelVazio].hidden = YES;
+        [self tableExercicios].hidden=NO;
+    }
     return [[tem ser] count];
 }
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
@@ -95,7 +120,7 @@
     NSString *str = [NSString stringWithFormat:@"%@ - %@x%@",[[temp name] objectAtIndex:indexPath.row],[[temp ser] objectAtIndex:indexPath.row],[[temp rep] objectAtIndex:indexPath.row]];
     cell.textLabel.text = str;
     cell.accessoryType = UITableViewCellAccessoryNone;
-    
+    cell.backgroundColor = [UIColor clearColor];
     return cell;
 
 }
