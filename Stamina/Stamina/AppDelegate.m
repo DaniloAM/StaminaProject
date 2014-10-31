@@ -133,6 +133,7 @@
         NSLog(@"Unresolved error %@, %@", error, [error userInfo]);
         abort();
     }
+    NSString *str = [WebServiceResponse previsaoDoTempoNaLatitude:35 eLongitude:39];
     
     return _persistentStoreCoordinator;
 }

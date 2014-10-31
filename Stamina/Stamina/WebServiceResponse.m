@@ -91,6 +91,25 @@
     return [self doTheRequest:post andUrl:url];
     
 }
++(NSString *)previsaoDoTempoNaLatitude : (float)lat eLongitude:(float)lon{
+    NSString *url = [NSString stringWithFormat:@"http://api.openweathermap.org/data/2.5/forecast?lat=%f&lon=%f",lat, lon ];
+    NSData *jsonDados = [[NSData alloc] initWithContentsOfURL:
+                  [NSURL URLWithString:url]];
+    NSError *error;
+    
+    NSMutableDictionary *jsonDadosUsuario = [NSJSONSerialization
+                                             JSONObjectWithData:jsonDados
+                                             options:NSJSONReadingMutableContainers
+                                             error:&error];
+    NSString *s = @"list";
+    NSMutableArray *array = [[NSMutableArray alloc] init];
+   
+        NSArray *items = [jsonDadosUsuario objectForKey:s];
+        [array addObject:items];
+    return [self doTheRequest:url andUrl:nil];
+
+}
+
 //$email = $_REQUEST["nome"];
 //$sexo = $_REQUEST["sexo"];
 //$peso_atual = $_REQUEST["peso_atual"];

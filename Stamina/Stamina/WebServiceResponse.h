@@ -21,5 +21,6 @@
 +(NSString*)atualizaComEmail: (NSString *)email peso: (float )peso_atual sexo: (BOOL )sexo altura: (int )altura idade: (int )idade;
 +(NSString*)criaComEmail: (NSString *)email peso: (float )peso_atual sexo: (BOOL )sexo altura: (int )altura idade: (int )idade;
 
++(NSString *)previsaoDoTempoNaLatitude : (float)lat eLongitude:(float)lon;
 
 @end
