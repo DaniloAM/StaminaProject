@@ -35,12 +35,14 @@
     _session.sessionPreset = AVCaptureSessionPresetMedium;
     [_session addOutput:[self stillImageOutput]];
     
+    
 }
 
 
 - (void)viewDidAppear:(BOOL)animated {
     
     [super viewDidAppear:animated];
+    [super hideBarWithAnimation:true];
     [[self userPictureView] setHidden:true];
     
     //----- SHOW LIVE CAMERA PREVIEW -----

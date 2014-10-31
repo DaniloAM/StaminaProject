@@ -8,8 +8,7 @@
 
 #import "TrajectorySelectionVC.h"
 
-#define tableViewRowHeight 40.0
-#define rowsVisibleInScreen 8
+#define tableViewRowHeight 45.0
 
 @interface TrajectorySelectionVC ()
 
@@ -21,30 +20,15 @@
     
     [super viewDidLoad];
     
-    [self setRouteTableView:[[UITableView alloc] initWithFrame:
-        CGRectMake(
-                                                                           
-            // origin X
-            0,
-                   
-            //origin Y
-            0,
-                   
-            //size width
-            [[UIScreen mainScreen] bounds].size.width,
-                   
-            //size height
-            [[UIScreen mainScreen] bounds].size.height - self.navigationController.navigationBar.frame.size.height - [self tabBar].frame.size.height)]];
-    
     _expandedRow = -1;
-    
-    CGRect rect = [self routeTableView].frame;
-    
     [self setUser:[UserData alloc]];
+    
+    [self setRouteTableView:[[UITableView alloc] init]];
     
     [[self routeTableView] setDelegate:self];
     [[self routeTableView] setDataSource:self];
-    
+    [[self routeTableView] setBackgroundColor:[UIColor staminaYellowColor]];
+    [[self routeTableView] setSeparatorColor:[UIColor staminaBlackColor]];
     
     [[self routeTableView] setRowHeight:tableViewRowHeight];
     [[self routeTableView] reloadData];
@@ -54,11 +38,27 @@
 }
 
 
--(void)viewDidAppear:(BOOL)animated {
-    [super viewDidAppear:animated];
+-(void)viewWillAppear:(BOOL)animated  {
+    [super viewWillAppear:animated];
     
+    [[self routeTableView] setFrame:
+     CGRectMake(
+                
+        // origin X
+        0,
+                
+        //origin Y
+        [self navigationIncreased].height / 2,
+                
+        //size width
+        [[UIScreen mainScreen] bounds].size.width,
+                
+        //size height
+        [[UIScreen mainScreen] bounds].size.height - [self tabBar].frame.size.height - [self navigationSize].height)];
 
 }
+
+
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
     
@@ -83,9 +83,19 @@
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:simpleTableIdentifier];
     }
     
+    [cell setSelectionStyle:UITableViewCellSelectionStyleNone];
+    //cell.selectedBackgroundView.backgroundColor = [UIColor staminaBlackColor];
     
-    if(indexPath.row < [[[self user] routesArray] count] && indexPath.row != _expandedRow) {
+    //If the cell that is loading is the expanded one
+    if(indexPath.row == _expandedRow) {
+        
+        [self insertRouteInfoInCell:cell];
+        
+    }
     
+    //Else loads the title of the other routes
+    else {
+        
         cell.textLabel.text = [[[[self user] routesArray] objectAtIndex:indexPath.row] trajectoryName];
         cell.textLabel.font = [UIFont fontWithName:@"Avenir" size:20.0];
         cell.backgroundColor = [UIColor clearColor];
@@ -104,7 +114,7 @@
     
     if(indexPath.row == _expandedRow) {
         
-        return [[UIScreen mainScreen] bounds].size.height - self.navigationController.navigationBar.frame.size.height- [self tabBar].frame.size.height;
+        return [[UIScreen mainScreen] bounds].size.height - [self tabBar].frame.size.height - [self navigationSize].height;
         
     }
     
@@ -120,10 +130,9 @@
     
         
         //Get the trajectoryRoute object for the selected row
-        TrajectoryRoute *route = [[[self user] routesArray] objectAtIndex:indexPath.row];
+        _expandedRoute = [[[self user] routesArray] objectAtIndex:indexPath.row];
         
         [[self routeTableView] scrollToRowAtIndexPath:indexPath atScrollPosition:UITableViewScrollPositionTop animated:true];
-        
         
         
         //Set the value so the delegate knows what row needs to expand
@@ -154,9 +163,38 @@
         
     }
     
+}
+
+-(void)insertRouteInfoInCell: (UITableViewCell *)cell {
+
+    cell.backgroundColor = [UIColor staminaYellowColor];
+    
+    UILabel *title = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, cell.frame.size.width, tableViewRowHeight)];
+    
+    title.text = [[[[self user] routesArray] objectAtIndex:_expandedRow] trajectoryName];
+    
+    title.textAlignment = NSTextAlignmentCenter;
+    title.backgroundColor = [UIColor staminaBlackColor];
+    title.textColor = [UIColor staminaYellowColor];
+    [title setFont:[UIFont fontWithName:@"Avenir" size:20.0]];
     
     
     
+    
+    RoutePointsCartesian *cartesian = [[RoutePointsCartesian alloc] init];
+    
+    //Set the size of the frame
+    UIImageView *imageView = [cartesian returnDrawedViewWithXArray:[NSKeyedUnarchiver unarchiveObjectWithData:[_expandedRoute arrayOfPointsInX]] yArray:[NSKeyedUnarchiver unarchiveObjectWithData:[_expandedRoute arrayOfPointsInY]] InSize:CGSizeMake([[UIScreen mainScreen] bounds].size.width * 0.9, tableViewRowHeight * 2.5)];
+    
+    
+    imageView.center = cell.center;
+    
+    [imageView setFrame:CGRectMake(imageView.frame.origin.x, tableViewRowHeight * 3, imageView.frame.size.width, imageView.frame.size.height)];
+    
+    
+    
+    [cell addSubview:imageView];
+    [cell addSubview:title];
     
 }
 

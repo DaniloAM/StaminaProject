@@ -9,6 +9,8 @@
 #import <UIKit/UIKit.h>
 #import "HideBBVC.h"
 #import "UserData.h"
+#import "UIStaminaColor.h"
+#import "RoutePointsCartesian.h"
 
 @interface TrajectorySelectionVC : HideBBVC <UITableViewDataSource , UITableViewDelegate>
 
@@ -17,5 +19,6 @@
 
 @property int expandedRow;
 @property NSIndexPath *expandedIndexPath;
+@property TrajectoryRoute *expandedRoute;
 
 @end

@@ -158,6 +158,7 @@
 		FF1C5CC61A002C3500032DC9 /* stamina_80x80px.png in Resources */ = {isa = PBXBuildFile; fileRef = FF1C5CC21A002C3500032DC9 /* stamina_80x80px.png */; };
 		FF1C5CCC1A01501D00032DC9 /* AMExpandTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = FF1C5CCB1A01501D00032DC9 /* AMExpandTableView.m */; };
 		FF1C5CCF1A01506600032DC9 /* TrajectorySelectionVC.m in Sources */ = {isa = PBXBuildFile; fileRef = FF1C5CCE1A01506600032DC9 /* TrajectorySelectionVC.m */; };
+		FF1C5D071A02B22B00032DC9 /* UIStaminaColor.m in Sources */ = {isa = PBXBuildFile; fileRef = FF1C5D061A02B22B00032DC9 /* UIStaminaColor.m */; };
 		FF794D7719CA288F00808144 /* TrainingExercises.m in Sources */ = {isa = PBXBuildFile; fileRef = FF794D7619CA288F00808144 /* TrainingExercises.m */; };
 		FFAC18FF19DB200E00B17487 /* FinishedRunningVC.m in Sources */ = {isa = PBXBuildFile; fileRef = FFAC18FE19DB200E00B17487 /* FinishedRunningVC.m */; };
 		FFAC190B19DC86C400B17487 /* SocialSharingVC.m in Sources */ = {isa = PBXBuildFile; fileRef = FFAC190A19DC86C400B17487 /* SocialSharingVC.m */; };
@@ -393,6 +394,8 @@
 		FF1C5CCB1A01501D00032DC9 /* AMExpandTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AMExpandTableView.m; sourceTree = "<group>"; };
 		FF1C5CCD1A01506600032DC9 /* TrajectorySelectionVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TrajectorySelectionVC.h; sourceTree = "<group>"; };
 		FF1C5CCE1A01506600032DC9 /* TrajectorySelectionVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TrajectorySelectionVC.m; sourceTree = "<group>"; };
+		FF1C5D051A02B22B00032DC9 /* UIStaminaColor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIStaminaColor.h; sourceTree = "<group>"; };
+		FF1C5D061A02B22B00032DC9 /* UIStaminaColor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UIStaminaColor.m; sourceTree = "<group>"; };
 		FF794D7519CA288F00808144 /* TrainingExercises.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TrainingExercises.h; sourceTree = "<group>"; };
 		FF794D7619CA288F00808144 /* TrainingExercises.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TrainingExercises.m; sourceTree = "<group>"; };
 		FFAC18FD19DB200E00B17487 /* FinishedRunningVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FinishedRunningVC.h; sourceTree = "<group>"; };
@@ -493,10 +496,6 @@
 			children = (
 				32F7237C19FABCD6006170CD /* CreateTrainTemp.h */,
 				32F7237D19FABCD6006170CD /* CreateTrainTemp.m */,
-				32F7237F19FADB4B006170CD /* AddExercise.h */,
-				32F7238019FADB4B006170CD /* AddExercise.m */,
-				3276F1CB19F6CE2D00B2F93D /* CriaTreinoVC.h */,
-				3276F1CC19F6CE2D00B2F93D /* CriaTreinoVC.m */,
 			);
 			name = CriarTreino;
 			sourceTree = "<group>";
@@ -706,6 +705,8 @@
 				FF13E9D919E5BE330005BA49 /* FinishedRoute.m */,
 				FF13E9DB19E5BF840005BA49 /* SharingResponse.h */,
 				FF13E9DC19E5BF840005BA49 /* SharingResponse.m */,
+				FF1C5D051A02B22B00032DC9 /* UIStaminaColor.h */,
+				FF1C5D061A02B22B00032DC9 /* UIStaminaColor.m */,
 			);
 			name = NSObjects;
 			sourceTree = "<group>";
@@ -1108,6 +1109,7 @@
 				C5A2418619CB512700064E54 /* TemporaryVC.m in Sources */,
 				FF1596F319C0CBC900D9236F /* AppDelegate.m in Sources */,
 				FFAC18FF19DB200E00B17487 /* FinishedRunningVC.m in Sources */,
+				FF1C5D071A02B22B00032DC9 /* UIStaminaColor.m in Sources */,
 				FF1C5CCC1A01501D00032DC9 /* AMExpandTableView.m in Sources */,
 				C5EB6BFA19D9DB6B00C528FC /* CalendarPreparer.m in Sources */,
 				C53A353119D3411F00AC1383 /* Reachability.m in Sources */,
