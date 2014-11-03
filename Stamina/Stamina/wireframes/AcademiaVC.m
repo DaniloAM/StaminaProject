@@ -22,9 +22,9 @@
     
     [btn addTarget:self action:@selector(function1) forControlEvents:UIControlEventTouchUpInside];
     btn = [array objectAtIndex:1];
-    [btn addTarget:self action:@selector(acessaRanking) forControlEvents:UIControlEventTouchUpInside];
+    [btn addTarget:self action:@selector(function2) forControlEvents:UIControlEventTouchUpInside];
     btn = [array objectAtIndex:2];
-    [btn addTarget:self action:@selector(criaTreino) forControlEvents:UIControlEventTouchUpInside];
+    [btn addTarget:self action:@selector(function3) forControlEvents:UIControlEventTouchUpInside];
     [btn setBackgroundColor:[UIColor    blackColor]];
     UIImageView *image = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, btn.frame.size.height*0.75, btn.frame.size.height*0.75)];
     [image  setImage:[UIImage imageNamed:@"icone_ok.png"]];
@@ -35,18 +35,13 @@
     [self.navigationController popToRootViewControllerAnimated:YES];
 }
 -(void)function2{
+    
 }
 -(void)function3{
-}
-
--(void)criaTreino{
     UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
     UIViewController *myVC;
     myVC= (UIViewController *)[storyboard instantiateViewControllerWithIdentifier:@"CriaTreino"];
     
     [self.navigationController pushViewController:myVC animated:YES];
-}
--(void)acessaRanking{
-    
 }
 @end

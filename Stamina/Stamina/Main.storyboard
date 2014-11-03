@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6245" systemVersion="13F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="h6A-wv-HXR">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6250" systemVersion="13F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="h6A-wv-HXR">
     <dependencies>
-        <deployment defaultVersion="1808" identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6238"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6244"/>
     </dependencies>
     <scenes>
         <!--MainVC-->
@@ -212,7 +212,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aD0-KS-qMk">
-                                <rect key="frame" x="122" y="523" width="84" height="30"/>
+                                <rect key="frame" x="118" y="523" width="84" height="30"/>
                                 <state key="normal" title="Cadastre-se">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -251,7 +251,7 @@
                                 <rect key="frame" x="86" y="85" width="148" height="125"/>
                             </imageView>
                             <view alpha="0.59999999999999964" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="pc1-NZ-ySM">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <rect key="frame" x="0.0" y="1" width="320" height="568"/>
                                 <subviews>
                                     <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" style="white" translatesAutoresizingMaskIntoConstraints="NO" id="cx9-nj-BAz">
                                         <rect key="frame" x="150" y="274" width="20" height="20"/>
@@ -265,7 +265,6 @@
                     </view>
                     <connections>
                         <outlet property="activity" destination="cx9-nj-BAz" id="JXN-qY-HUP"/>
-                        <outlet property="cadastreSeBTN" destination="aD0-KS-qMk" id="kVK-e8-DK8"/>
                         <outlet property="errorLbl" destination="4E6-Z4-YhK" id="r6k-pw-6AU"/>
                         <outlet property="fbBTN" destination="1aI-4O-OyG" id="fyz-z5-4Fu"/>
                         <outlet property="login" destination="nyG-T4-AVz" id="aFn-p2-xIW"/>
@@ -439,7 +438,7 @@
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yim-5L-tS1">
                                 <rect key="frame" x="115" y="472" width="90" height="90"/>
-                                <state key="normal">
+                                <state key="normal" backgroundImage="icone_camera_pressed.png">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
@@ -555,9 +554,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="504"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="caminhada_tela.png" translatesAutoresizingMaskIntoConstraints="NO" id="OmI-An-THx">
-                                <rect key="frame" x="-32" y="-181" width="379" height="798"/>
-                            </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="00 Km" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="75I-Sc-yuV">
                                 <rect key="frame" x="0.0" y="241" width="320" height="67"/>
                                 <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="60"/>
@@ -594,6 +590,9 @@
                                     <action selector="finishButton" destination="Hoc-Hi-pFE" eventType="touchUpInside" id="Pi0-6g-due"/>
                                 </connections>
                             </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="caminhada_tela.png" translatesAutoresizingMaskIntoConstraints="NO" id="OmI-An-THx">
+                                <rect key="frame" x="-29" y="-181" width="379" height="798"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
@@ -851,56 +850,25 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="l1u-0F-I1W" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-73" y="-2271"/>
+            <point key="canvasLocation" x="-73" y="-2215"/>
         </scene>
-        <!--CadastroPVC-->
-        <scene sceneID="OKJ-tq-SVg">
+        <!--CadastroVC-->
+        <scene sceneID="dHe-4n-nDk">
             <objects>
-                <viewController storyboardIdentifier="PageContentViewController" id="Brn-8X-wua" customClass="CadastroPVC" sceneMemberID="viewController">
+                <viewController id="H4l-De-sO5" customClass="CadastroVC" sceneMemberID="viewController">
                     <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="a70-lG-gpl"/>
-                        <viewControllerLayoutGuide type="bottom" id="bdX-Rd-YeA"/>
+                        <viewControllerLayoutGuide type="top" id="9Oo-tq-jsW"/>
+                        <viewControllerLayoutGuide type="bottom" id="1U8-N4-63M"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="pFa-sG-MXB">
+                    <view key="view" contentMode="scaleToFill" id="dWD-xH-ryQ">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Nome" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aLZ-6W-bYI">
-                                <rect key="frame" x="139" y="221" width="46" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Nickname" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="3Rb-eh-W1D">
-                                <rect key="frame" x="16" y="316" width="288" height="30"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Nome" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="cC4-Fu-Ya1">
-                                <rect key="frame" x="16" y="269" width="288" height="30"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
-                        </subviews>
-                        <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <connections>
-                        <outlet property="label" destination="aLZ-6W-bYI" id="KbO-FN-yqx"/>
-                        <outlet property="txtField1" destination="cC4-Fu-Ya1" id="bfV-FP-Awu"/>
-                        <outlet property="txtField2" destination="3Rb-eh-W1D" id="NgY-Gn-1lA"/>
-                    </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="kp4-HQ-v0a" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="wKB-h8-V5D" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="123" y="-1613"/>
-        </scene>
-        <!--Page View Controller-->
-        <scene sceneID="gGv-gl-yc4">
-            <objects>
-                <pageViewController storyboardIdentifier="PageViewController" autoresizesArchivedViewToFullSize="NO" transitionStyle="scroll" navigationOrientation="horizontal" spineLocation="none" id="56V-cr-TeH" sceneMemberID="viewController"/>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="bgJ-1E-9vk" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-636" y="-1613"/>
+            <point key="canvasLocation" x="-365" y="-1637"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="cR4-Kx-5UD">
@@ -914,29 +882,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="883-Wk-C6u" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1580" y="-624"/>
-        </scene>
-        <!--View Controller-->
-        <scene sceneID="Zuj-Mi-dde">
-            <objects>
-                <viewController id="Lbz-Da-c1y" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="lEO-Qj-Oz0"/>
-                        <viewControllerLayoutGuide type="bottom" id="c1A-yM-l9B"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="vdj-ud-XKh">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="wireframe_categorias.png" translatesAutoresizingMaskIntoConstraints="NO" id="uEE-sz-cgA">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                            </imageView>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="tFm-bL-4kP" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1170" y="350"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="5NL-yJ-TXv">
@@ -988,9 +933,6 @@
                                     <action selector="mostraListaExercicios" destination="FzG-Sm-bLQ" eventType="touchUpInside" id="ap9-QK-JZ1"/>
                                 </connections>
                             </button>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="VE5-Ax-NHF">
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                            </tableView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Epr-Km-3Rg">
                                 <rect key="frame" x="36" y="435" width="112" height="38"/>
                                 <fontDescription key="fontDescription" name="Avenir-Roman" family="Avenir" pointSize="22"/>
@@ -1014,6 +956,10 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="BJy-sd-F4U">
+                                <rect key="frame" x="36" y="276" width="248" height="159"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
@@ -1023,7 +969,7 @@
                         <outlet property="btnExercicio" destination="fJg-y0-v3E" id="N3f-jd-JOz"/>
                         <outlet property="inicioHoraTxt" destination="Epr-Km-3Rg" id="ZB8-7W-mJF"/>
                         <outlet property="labelVazio" destination="WeL-7d-w6f" id="7EL-aF-g1r"/>
-                        <outlet property="tableExercicios" destination="VE5-Ax-NHF" id="2eh-7A-1QV"/>
+                        <outlet property="tableExercicios" destination="BJy-sd-F4U" id="VVW-Hr-CcU"/>
                         <outlet property="trainoNomeTxt" destination="sZC-Zy-N1g" id="1k2-bq-5jR"/>
                     </connections>
                 </viewController>
@@ -1257,12 +1203,12 @@
         <image name="icon_sol.png" width="56" height="56"/>
         <image name="icone_calendario_01.png" width="301" height="322"/>
         <image name="icone_camera.png" width="394" height="394"/>
+        <image name="icone_camera_pressed.png" width="393" height="394"/>
         <image name="icone_camera_rotate.png" width="393" height="394"/>
         <image name="icone_voltar.png" width="391" height="394"/>
         <image name="wireframe_academia.jpg" width="884" height="1574"/>
         <image name="wireframe_academia_inicio.jpg" width="886" height="1574"/>
         <image name="wireframe_cadastro.jpg" width="876" height="1567"/>
-        <image name="wireframe_categorias.png" width="886" height="1576"/>
         <image name="wireframe_exercicio.png" width="888" height="1571"/>
         <image name="wireframe_exercicio_serie.png" width="894" height="1582"/>
         <image name="wireframe_home.png" width="418" height="633"/>

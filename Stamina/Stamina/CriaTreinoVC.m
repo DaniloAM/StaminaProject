@@ -18,10 +18,7 @@
     [super viewDidLoad];
     [self setInicio:nil];
 
-    NSArray *array = [super criaBarButton];
-    UIButton *btn = [array firstObject];
-    [btn addTarget:self action:@selector(function1) forControlEvents:UIControlEventTouchUpInside];
-    CreateTrainTemp *create = [CreateTrainTemp alloc];
+       CreateTrainTemp *create = [CreateTrainTemp alloc];
     [create setName:[NSMutableArray array]];
     [create setIdentification:[NSMutableArray array]];
     [create setSer:[NSMutableArray array]];
@@ -33,6 +30,13 @@
     _tableExercicios.backgroundColor = [UIColor clearColor];
     _tableExercicios.contentSize = CGSizeMake(_tableExercicios.frame.size.width, [[create ser] count]*31);
     [self labelVazio].hidden = YES;
+
+}
+-(void)viewDidAppear:(BOOL)animated{
+    [super viewDidAppear:animated];
+    NSArray *array = [super criaBarButton];
+    UIButton *btn = [array lastObject];
+    [btn addTarget:self action:@selector(function1) forControlEvents:UIControlEventTouchUpInside];
 
 }
 -(void)function1{
@@ -103,7 +107,7 @@
     [UIView animateWithDuration:0.45 animations:^{
         self.btn.transform =CGAffineTransformMakeRotation(-3.14/2);
 
-                }];
+    }];
 
 }
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
@@ -121,6 +125,7 @@
     cell.textLabel.text = str;
     cell.accessoryType = UITableViewCellAccessoryNone;
     cell.backgroundColor = [UIColor clearColor];
+    [cell.textLabel setTextColor:[UIColor blackColor]];
     return cell;
 
 }

@@ -22,17 +22,15 @@
     
     UIPageControl *pageControl = [UIPageControl appearance];
     pageControl.pageIndicatorTintColor = [UIColor blackColor];
-    pageControl.currentPageIndicatorTintColor = [UIColor yellowColor];
+    pageControl.currentPageIndicatorTintColor = [UIColor whiteColor];
     pageControl.backgroundColor = [UIColor clearColor];
-    
+
     if (FBSession.activeSession.state == FBSessionStateCreatedTokenLoaded) {
         [FBSession openActiveSessionWithReadPermissions:@[@"public_profile"] allowLoginUI:false completionHandler:^(FBSession *session, FBSessionState status, NSError *error) {
             [self sessionStateChanged:session state:status error:error];
         }];
     }
-
-    
-    CoreDataLoading *core = [[CoreDataLoading alloc] init];
+       CoreDataLoading *core = [[CoreDataLoading alloc] init];
     [core initCoreData];
     UserData *user = [UserData alloc];
     [user loadFromUserDefaults];

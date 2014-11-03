@@ -235,7 +235,7 @@
   NSString *str =  [WebServiceResponse loginComEmailOuNickName:[[self login] text] eSenha:[[self password] text]];
     
    if(![self hasJson:str])
-    if(str){
+    if(![str isEqualToString:@""]){
         [self presentError:0 :str];
         return;
     }

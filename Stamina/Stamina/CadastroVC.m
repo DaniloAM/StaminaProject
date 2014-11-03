@@ -1,9 +1,9 @@
 //
-//  ViewController.m
-//  PageViewDemo
+//  CadastroVC.m
+//  Stamina
 //
-//  Created by Simon on 24/11/13.
-//  Copyright (c) 2013 Appcoda. All rights reserved.
+//  Created by João Lucas Sisanoski on 03/11/14.
+//  Copyright (c) 2014 Danilo Augusto Mative. All rights reserved.
 //
 
 #import "CadastroVC.h"
@@ -14,147 +14,230 @@
 
 @implementation CadastroVC
 
-- (void)viewDidLoad
-{
+- (void)viewDidLoad {
     [super viewDidLoad];
-	// Create the data model
-    _pageTitles = @[@"Over 200 Tips and Tricks", @"Discover Hidden Features", @"Bookmark Favorite Tip", @"Free Regular Update"];
-    _pageImages = @[@"page1.png", @"page2.png", @"page3.png", @"page4.png"];
-    
-    // Create page view controller
-    self.pageViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"PageViewController"];
-    self.pageViewController.dataSource = self;
-    
-    CadastroPVC *startingViewController = [self viewControllerAtIndex:0];
-    NSArray *viewControllers = @[startingViewController];
-    [self.pageViewController setViewControllers:viewControllers direction:UIPageViewControllerNavigationDirectionForward animated:NO completion:nil];
-    
-    // Change the size of page view controller
-    self.pageViewController.view.frame = CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height - 30);
-    
-    [self addChildViewController:_pageViewController];
-    [self.view addSubview:_pageViewController.view];
-    [self.pageViewController didMoveToParentViewController:self];
 
-}
--(IBAction)voltar{
-    [self dismissViewControllerAnimated:YES completion:nil];
-}
-- (void)didReceiveMemoryWarning
-{
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+    _numberOfViews = 7;
+    [self setPage:[[UIPageControl alloc] initWithFrame:CGRectMake(0, 0, 100, 200)]];
+    [[self page] setNumberOfPages:_numberOfViews];
+    CGSize size = [[UIScreen mainScreen] bounds].size;
+    [self setScroll:[[UIScrollView alloc] initWithFrame:CGRectMake(0, 0, size.width, size.height)]];
+    [[self scroll] setContentSize:CGSizeMake(_numberOfViews*size.width, 0)];
+    _scroll.delegate = self;
+    [self.view addSubview:[self scroll]];
+    _currentIndex = 0;
+    [self createBackgroundColor];
+    _scroll.showsVerticalScrollIndicator = NO;
+    _scroll.showsHorizontalScrollIndicator =NO;
+    [self.view addSubview:_page];
+    _scroll.delegate = self;
+     [self loadTxt];
+    [self createBackgroundColor];
+    [self registerForKeyboardNotifications];
 }
 
-- (CadastroPVC *)viewControllerAtIndex:(NSUInteger)index
-{
-    if (([self.pageTitles count] == 0) || (index >= [self.pageTitles count])) {
-        return nil;
+-(void)loadTxt{
+    CGSize size = [[UIScreen mainScreen] bounds].size;
+
+    [self setTxtName:[[UITextField alloc] initWithFrame:CGRectMake(65*size.width/640, 605*size.height/1136, 510*size.width/640, 73*size.height/1136)]];
+    [self setTxtEmail:[[UITextField alloc] initWithFrame:CGRectMake(65*size.width/640, 605*size.height/1136, 510*size.width/640, 73*size.height/1136)]];
+    [self setTxtPassword:[[UITextField alloc] initWithFrame:CGRectMake(65*size.width/640, 605*size.height/1136, 510*size.width/640, 73*size.height/1136)]];
+    [self setTxtNick:[[UITextField alloc] initWithFrame:CGRectMake(65*size.width/640, 719*size.height/1136, 510*size.width/640, 73*size.height/1136)]];
+    [self setTxtConfPass:[[UITextField alloc] initWithFrame:CGRectMake(65*size.width/640, 719*size.height/1136, 510*size.width/640, 73*size.height/1136)]];
+    [self setTxtConfEmail:[[UITextField alloc] initWithFrame:CGRectMake(65*size.width/640, 719*size.height/1136, 510*size.width/640, 73*size.height/1136)]];
+    [self setTxtKg:[[UITextField alloc] initWithFrame:CGRectMake(250*size.width/640, 719*size.height/1136, 141*size.width/640, 73*size.height/1136)]];
+    [self setTxtCm:[[UITextField alloc] initWithFrame:CGRectMake(250*size.width/640, 719*size.height/1136, 141*size.width/640, 73*size.height/1136)]];
+    [self setTxtAge:[[UITextField alloc] initWithFrame:CGRectMake(250*size.width/640, 719*size.height/1136, 141*size.width/640, 73*size.height/1136)]];
+    _arrayOfViews = [NSMutableArray arrayWithObjects:_txtAge,_txtCm,_txtConfEmail,_txtConfPass,_txtEmail,_txtKg,_txtName,_txtNick,_txtPassword, nil];
+    for(int x = 0 ; x < [[self arrayOfViews] count];x++){
+        UITextField *view = [[self arrayOfViews] objectAtIndex:x];
+        [view setBackgroundColor:[UIColor whiteColor]];
+        view.layer.cornerRadius = 7;
+        view.textAlignment = NSTextAlignmentCenter;
+        [view setFont:[UIFont fontWithName:@"Avenir" size:18]];
+        view.delegate = self;
     }
+
     
-    // Create a new view controller and pass suitable data.
-    CadastroPVC *pageContentViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"PageContentViewController"];
-    pageContentViewController.imageFile = self.pageImages[index];
-    pageContentViewController.titleText = self.pageTitles[index];
-    pageContentViewController.pageIndex = index;
     
-    return pageContentViewController;
 }
+-(void)scrollViewWillBeginDragging:(UIScrollView *)scrollView{
+    _lastContentOffset = scrollView.contentOffset.x;
+    [self.view endEditing:YES];
 
-#pragma mark - Page View Controller Data Source
-
-- (UIViewController *)pageViewController:(UIPageViewController *)pageViewController viewControllerBeforeViewController:(UIViewController *)viewController
-{
-    CadastroPVC *cadastro = ((CadastroPVC*) viewController);
-
-    NSUInteger index = cadastro.pageIndex;
-    if ((index == 0) || (index == NSNotFound)) {
-        return nil;
+}
+-(void)scrollViewWillBeginDecelerating:(UIScrollView *)scrollView{
+    [self checkWhichPosition:scrollView.contentOffset.x];
+}
+-(void)left{
+    NSLog(@"left");
+    _currentIndex++;
+    [self callNextPageIndex:_currentIndex];
+}
+-(void)right{
+    NSLog(@"right");
+    
+    _currentIndex--;
+    [self callNextPageIndex:_currentIndex];
+}
+-(void)checkWhichPosition:(float)x{
+    if(x>_lastContentOffset)
+        [self left];
+    else
+        [self right];
+}
+-(void)scrollViewDidEndDragging:(UIScrollView *)scrollView willDecelerate:(BOOL)decelerate{
+    if(!decelerate){
+        [self checkWhichPosition:scrollView.contentOffset.x];
     }
-    
-    index--;
-    return [self viewControllerAtIndex:index];
-    
 }
--(BOOL )check : (CadastroPVC *)cadastro{
-    Cadastro *cada = [Cadastro alloc];
-    NSUInteger index =  cadastro.pageIndex;
+-(void)createBackgroundColor{
+    CGSize size = [[UIScreen mainScreen] bounds].size;
 
-    switch (index) {
-        case 0:
-
-            if([[[cadastro txtField1] text] isEqualToString:@""]||[[cadastro txtField1] text].length<=0){
-                return 0;
+    
+    for(int x = 0 ; x < _numberOfViews;x++){
+        UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(65*size.width/640, 605*size.height/1136, 510*size.width/640, 73*size.height/1136)];
+        [label setTextAlignment:NSTextAlignmentCenter];
+        [label setFont:[UIFont fontWithName:@"Avenir" size:22]];
+        UIView *view = [[UIView alloc] initWithFrame:CGRectMake(x*size.width, 0, size.width, size.height)];
+        [self.scroll addSubview:view];
+        switch (x) {
+            case 1:
+                [view addSubview:[self txtEmail]];
+                [[self txtEmail] setPlaceholder:@"Email"];
+                [view addSubview:[self txtConfEmail]];
+                [[self txtConfEmail] setPlaceholder:@"Confirme o email"];
                 
-            }
-            if([[[cadastro txtField2] text] isEqualToString:@""]||[[cadastro txtField2] text].length<=0){
-                return 0;
-            }
-            
-            
-            
-            
-            [cada setNome:[[cadastro txtField1] text]];
-            [cada setNick:[[cadastro txtField2] text]];
-            
-            break;
-        case 1:
-            if([[[cadastro txtField1] text] isEqualToString:@""]||[[cadastro txtField1] text].length<=0){
-                return 0;
-            }
-            if([[[cadastro txtField2] text] isEqualToString:@""]||[[cadastro txtField2] text].length<=0){
-                return 0;
-            }
-            break;
-        case 2:
-            
-            break;
-        case 3:
-            
-            break;
-        case 4:
-            
-            break;
-        case 5:
-            
-            break;
-        case 6:
-            
-            break;
-            
-        default:
-            break;
+                break;
+            case 2:
+                [view addSubview:[self txtPassword]];
+                [[self txtPassword] setPlaceholder:@"Senha"];
+
+                [view addSubview:[self txtConfPass]];
+                [[self txtConfPass] setPlaceholder:@"Confirme a senha"];
+
+                
+                break;
+            case 3:
+                [label setText:@"Peso:"];
+                [view addSubview:label];
+                [view addSubview:[self txtKg]];
+                [[self txtKg] setPlaceholder:@"Kg"];
+
+                
+                break;
+            case 4:
+                [label setText:@"Altura:"];
+                [view addSubview:label];
+                [view addSubview:[self txtCm]];
+                [[self txtCm] setPlaceholder:@"Cm"];
+
+                
+                break;
+            case 5:
+                [label setText:@"Idade:"];
+                [view addSubview:label];
+                [view addSubview:[self txtAge]];
+                [[self txtAge] setPlaceholder:@"Cm"];
+
+                
+                break;
+            case 6:
+                
+                break;
+            case 0:
+                [view addSubview:[self txtName]];
+                [[self txtName] setPlaceholder:@"Nome"];
+
+                [view addSubview:[self txtNick]];
+                [[self txtNick] setPlaceholder:@"Nickname"];
+
+                
+
+                break;
+                
+            default:
+                break;
+        }
+        
     }
-    return 1;
-}
-- (UIViewController *)pageViewController:(UIPageViewController *)pageViewController viewControllerAfterViewController:(UIViewController *)viewController
-{
-    CadastroPVC *cadastro = ((CadastroPVC*) viewController);
-    NSUInteger index = cadastro.pageIndex;
-    if (index == NSNotFound) {
-        return nil;
-    }
-    
-    index++;
-    if (index == [self.pageTitles count]) {
-        NSLog(@"deveria checar aqui");
-        return nil;
-    }
-    return [self viewControllerAtIndex:index];
- 
+        
 }
 
-- (NSInteger)presentationCountForPageViewController:(UIPageViewController *)pageViewController
-{
-    return [self.pageTitles count];
+-(void)callNextPageIndex : (int )x{
+    if(x == _numberOfViews)
+        _currentIndex--;
+    if(x <0)
+        _currentIndex = 0;
+    if(x == _numberOfViews|| x < 0)
+        return;
+    NSLog(@"%d",x);
+    
+    [UIView animateWithDuration:0.4
+                     animations:^{
+                        _page.currentPage = x;
+                     }];
+    CGPoint p = CGPointMake(x*_scroll.frame.size.width, 0);
+    [_scroll setContentOffset:p animated:YES];
 }
 
-- (NSInteger)presentationIndexForPageViewController:(UIPageViewController *)pageViewController
+- (void)registerForKeyboardNotifications
 {
-    return 0;
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(keyboardWasShown:)
+                                                 name:UIKeyboardWillShowNotification object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(keyboardWillBeHidden:)
+                                                 name:UIKeyboardWillHideNotification object:nil];
 }
--(void)viewWillDisappear:(BOOL)animated{
-    [super viewWillDisappear:animated];
-    
+-(void)moveView: (UIView *)bigView withPoint: (CGPoint )point withDuration: (float)duration{
+    [UIView beginAnimations:@"MoveView" context:nil];
+    [UIView setAnimationCurve:UIViewAnimationCurveEaseIn];
+    [UIView setAnimationDuration:duration];
+    bigView.frame = CGRectMake(point.x, point.y, bigView.frame.size.width, bigView.frame.size.height);
+    [UIView commitAnimations];
+}
+// Called when the UIKeyboardDidShowNotification is sent.
+- (void)keyboardWasShown:(NSNotification*)aNotification
+{
+    UIInterfaceOrientation orientation = [[UIApplication sharedApplication] statusBarOrientation];
+    CGSize keyboardSize = [[[aNotification userInfo] objectForKey:UIKeyboardFrameBeginUserInfoKey] CGRectValue].size;
+    if (orientation == UIDeviceOrientationLandscapeLeft || orientation == UIDeviceOrientationLandscapeRight ) {
+        CGSize origKeySize = keyboardSize;
+        keyboardSize.height = origKeySize.width;
+        keyboardSize.width = origKeySize.height;
+    }
+    [self moveView:_scroll withPoint:CGPointMake(0,-keyboardSize.height/2) withDuration:[self keyboardAnimationDurationForNotification:aNotification ]];
+}
+
+// Called when the UIKeyboardWillHideNotification is sent
+- (void)keyboardWillBeHidden:(NSNotification*)aNotification
+{
+    UIInterfaceOrientation orientation = [[UIApplication sharedApplication] statusBarOrientation];
+    CGSize keyboardSize = [[[aNotification userInfo] objectForKey:UIKeyboardFrameBeginUserInfoKey] CGRectValue].size;
+    if (orientation == UIDeviceOrientationLandscapeLeft || orientation == UIDeviceOrientationLandscapeRight ) {
+        CGSize origKeySize = keyboardSize;
+        keyboardSize.height = origKeySize.width;
+        keyboardSize.width = origKeySize.height;
+    }
+    [self moveView:_scroll withPoint:CGPointMake(0,0) withDuration:[self keyboardAnimationDurationForNotification:aNotification ]];
+    _keyboardUp = NO;
+
+}
+- (BOOL)textFieldShouldReturn:(UITextField *)textField
+{
+    [textField resignFirstResponder];
+    return YES;
+}
+-(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event{
+    [_scroll endEditing:YES];
+}
+- (NSTimeInterval)keyboardAnimationDurationForNotification:(NSNotification*)notification
+{
+    NSDictionary* info = [notification userInfo];
+    NSValue* value = [info objectForKey:UIKeyboardAnimationDurationUserInfoKey];
+    NSTimeInterval duration = 0;
+    [value getValue:&duration];
+    return duration;
 }
 @end
