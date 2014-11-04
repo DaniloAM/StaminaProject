@@ -16,7 +16,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-
+    _arrayView = [NSMutableArray array];
     _numberOfViews = 7;
     [self setPage:[[UIPageControl alloc] initWithFrame:CGRectMake(0, 0, 100, 200)]];
     [[self page] setNumberOfPages:_numberOfViews];
@@ -26,7 +26,6 @@
     _scroll.delegate = self;
     [self.view addSubview:[self scroll]];
     _currentIndex = 0;
-    [self createBackgroundColor];
     _scroll.showsVerticalScrollIndicator = NO;
     _scroll.showsHorizontalScrollIndicator =NO;
     [self.view addSubview:_page];
@@ -70,17 +69,16 @@
     [self checkWhichPosition:scrollView.contentOffset.x];
 }
 -(void)left{
-    NSLog(@"left");
     _currentIndex++;
     [self callNextPageIndex:_currentIndex];
 }
 -(void)right{
-    NSLog(@"right");
-    
     _currentIndex--;
     [self callNextPageIndex:_currentIndex];
 }
 -(void)checkWhichPosition:(float)x{
+    _scroll.userInteractionEnabled = NO;
+
     if(x>_lastContentOffset)
         [self left];
     else
@@ -90,7 +88,21 @@
     if(!decelerate){
         [self checkWhichPosition:scrollView.contentOffset.x];
     }
+
 }
+-(void)scrollViewDidEndScrollingAnimation:(UIScrollView *)scrollView{
+    scrollView.userInteractionEnabled = YES;
+}
+-(void)blockViews{
+    for(int x = 0 ; x < [[self arrayView] count];x++){
+        UIView *v = [[self arrayView] objectAtIndex:x];
+        if(!(x == _currentIndex))
+            v.userInteractionEnabled = NO;
+        else
+            v.userInteractionEnabled = YES;
+    }
+}
+
 -(void)createBackgroundColor{
     CGSize size = [[UIScreen mainScreen] bounds].size;
 
@@ -100,6 +112,7 @@
         [label setTextAlignment:NSTextAlignmentCenter];
         [label setFont:[UIFont fontWithName:@"Avenir" size:22]];
         UIView *view = [[UIView alloc] initWithFrame:CGRectMake(x*size.width, 0, size.width, size.height)];
+        [_arrayView addObject:view];
         [self.scroll addSubview:view];
         switch (x) {
             case 1:
@@ -165,14 +178,14 @@
 }
 
 -(void)callNextPageIndex : (int )x{
+    
     if(x == _numberOfViews)
         _currentIndex--;
     if(x <0)
         _currentIndex = 0;
     if(x == _numberOfViews|| x < 0)
         return;
-    NSLog(@"%d",x);
-    
+    [self blockViews];
     [UIView animateWithDuration:0.4
                      animations:^{
                         _page.currentPage = x;

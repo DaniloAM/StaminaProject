@@ -17,4 +17,5 @@
 @property NSMutableArray *arrayOfViews;
 @property UIPageControl *page;
 @property BOOL keyboardUp;
+@property NSMutableArray *arrayView;
 @end
