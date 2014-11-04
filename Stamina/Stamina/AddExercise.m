@@ -17,6 +17,8 @@
 
 -(void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
+    self.navigationController.navigationBar.translucent = YES;
+
     CreateTrainTemp *create = [CreateTrainTemp alloc];
     [super viewDidAppear:animated];
     NSArray *array =  [super criaBarButton];
