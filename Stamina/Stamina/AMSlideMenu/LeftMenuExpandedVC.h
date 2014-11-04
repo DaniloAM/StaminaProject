@@ -9,8 +9,26 @@
 #import "StaminaExpandTV.h"
 
 
-@interface LeftMenuExpandedVC : StaminaExpandTV
+@interface LeftMenuExpandedVC : AMSlideMenuLeftTableViewController   <UITableViewDataSource, UITableViewDelegate>
 
-@property UITableView *leftMenuTableView;
+
+@property NSMutableArray *cellContentsArray;
+@property NSMutableArray *titlesArray;
+@property NSIndexPath *openIndexPath;
+@property NSInteger openRowIndex;
+@property NSString *openTitle;
+
+@property UITableView *tableView;
+@property UITableViewCell *openCell;
+@property UIFont *rowFont;
+@property UIColor *rowTextColor;
+@property UIColor *tableViewBackgroundColor;
+
+@property double expandHeight;
+
+-(UITableViewCell *)getOpenCell;
+-(void)closeExpandedRow;
+-(void)reloadTableViewColors;
+
 
 @end
