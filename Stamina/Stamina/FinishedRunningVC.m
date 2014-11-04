@@ -15,11 +15,13 @@
 @implementation FinishedRunningVC
 
 
+
 -(void)receiveRunningRoute: (FinishedRoute *)runningRoute {
     
     _route = runningRoute;
     
 }
+
 
 
 -(void)viewWillAppear:(BOOL)animated {
@@ -35,9 +37,11 @@
 }
 
 
+
 -(void)viewDidLoad{
     [super viewDidLoad];
 }
+
 
 
 -(void)viewWillDisappear:(BOOL)animated {
@@ -62,8 +66,8 @@
     
         TrajectoryRoute *saveRoute = [NSEntityDescription insertNewObjectForEntityForName:@"TrajectoryRoute" inManagedObjectContext:context];
         
-        [saveRoute setArrayOfPointsInX:[NSKeyedArchiver archivedDataWithRootObject:_route.arrayOfXMapPoints]];
-        [saveRoute setArrayOfPointsInY:[NSKeyedArchiver archivedDataWithRootObject:_route.arrayOfYMapPoints]];
+        [saveRoute setArrayOfLocations:[NSKeyedArchiver archivedDataWithRootObject:_route.arrayOfLocations]];
+        
         [saveRoute setTrajectoryName:name];
         [saveRoute setTrajectoryDistance:[NSNumber numberWithDouble:[_route distanceInMeters]]];
         
@@ -75,6 +79,7 @@
     [context save:&error];
     
 }
+
 
 
 -(void)drawTrajectoryDone {

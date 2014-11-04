@@ -5,6 +5,24 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6238"/>
     </dependencies>
     <scenes>
+        <!--Left Menu ExpandedVC-->
+        <scene sceneID="PZb-Si-loK">
+            <objects>
+                <viewController id="gCC-ED-C2X" customClass="LeftMenuExpandedVC" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="nmW-vy-V29"/>
+                        <viewControllerLayoutGuide type="bottom" id="Qt4-PB-TDJ"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="SQc-2S-jgu">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="B4T-Mj-fxX" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="367" y="-3099"/>
+        </scene>
         <!--MainVC-->
         <scene sceneID="SFM-3N-QZi">
             <objects>
@@ -283,7 +301,7 @@
         <!--Navigation Controller-->
         <scene sceneID="UvL-fw-dCo">
             <objects>
-                <navigationController definesPresentationContext="YES" id="zYX-g3-UJR" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="Go" definesPresentationContext="YES" id="zYX-g3-UJR" sceneMemberID="viewController">
                     <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="hgK-Ml-Lwf">
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -312,7 +330,7 @@
         <!--User CalendarVC-->
         <scene sceneID="Mmo-Mq-xjo">
             <objects>
-                <viewController id="rw1-bJ-CYc" customClass="UserCalendarVC" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="Calendario" id="rw1-bJ-CYc" customClass="UserCalendarVC" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="FaB-qr-neO"/>
                         <viewControllerLayoutGuide type="bottom" id="7Sc-KU-944"/>
@@ -466,7 +484,7 @@
         <!--Menu RunningVC-->
         <scene sceneID="qGL-og-Det">
             <objects>
-                <viewController id="PSP-iH-gXQ" customClass="MenuRunningVC" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="Trajetos" id="PSP-iH-gXQ" customClass="MenuRunningVC" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="nCd-9Z-uiM"/>
                         <viewControllerLayoutGuide type="bottom" id="Vak-wf-XQe"/>
@@ -541,7 +559,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ebv-Xk-GzI" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3007" y="-3405"/>
+            <point key="canvasLocation" x="2901" y="-3451"/>
         </scene>
         <!--Running MapVC-->
         <scene sceneID="hBC-1x-cGS">
@@ -607,12 +625,12 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mY3-As-W9s" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2884" y="-4023"/>
+            <point key="canvasLocation" x="2901" y="-4113"/>
         </scene>
         <!--AcademiaVC-->
         <scene sceneID="syk-1u-5DQ">
             <objects>
-                <viewController id="G87-vY-y2C" customClass="AcademiaVC" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="Exercícios" id="G87-vY-y2C" customClass="AcademiaVC" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Ueo-Xs-6CF"/>
                         <viewControllerLayoutGuide type="bottom" id="p1b-Wg-3At"/>
@@ -753,7 +771,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="k16-nq-SvA" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3240" y="-4023"/>
+            <point key="canvasLocation" x="3270" y="-4113"/>
         </scene>
         <!--Page View Controller-->
         <scene sceneID="7CW-Zh-q7t">
@@ -782,7 +800,7 @@
         <!--Home ScreenVC-->
         <scene sceneID="JbV-Ke-MIq">
             <objects>
-                <viewController storyboardIdentifier="homeScreen" id="x3h-sg-EoT" customClass="HomeScreenVC" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="Início" id="x3h-sg-EoT" customClass="HomeScreenVC" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="CSs-Uu-jKJ"/>
                         <viewControllerLayoutGuide type="bottom" id="tnu-db-aaR"/>

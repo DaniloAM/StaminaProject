@@ -7,20 +7,17 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "HideBBVC.h"
+#import "StaminaExpandTV.h"
 #import "UserData.h"
-#import "UIStaminaColor.h"
-#import "UIStaminaLabel.h"
 #import "RoutePointsCartesian.h"
 #import "TrajectoryFile.h"
+#import <MapKit/MapKit.h>
 
-@interface TrajectorySelectionVC : HideBBVC <UITableViewDataSource , UITableViewDelegate>
+@interface TrajectorySelectionVC : StaminaExpandTV 
 
 @property UserData *user;
 @property UITableView *routeTableView;
 
-@property int expandedRow;
-@property NSIndexPath *expandedIndexPath;
-@property TrajectoryRoute *expandedRoute;
+@property TrajectoryRoute *openRoute;
 
 @end

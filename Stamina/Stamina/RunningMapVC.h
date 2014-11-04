@@ -20,13 +20,16 @@
 @property CLLocation *oldLocation;
 @property CLLocation *firstLocation;
 
-@property RoutePointsCartesian *pointsForRoute;
+@property RoutePointsCartesian *pointsForCartesian;
+@property BOOL userRoute;
+@property BOOL userRouteIsDraw;
 
 @property IBOutlet UILabel *timeLabel;
 @property IBOutlet UILabel *speedLabel;
 @property IBOutlet UILabel *distanceLabel;
 
 @property float distanceInMeters;
+@property NSMutableArray *locationsArray;
 @property NSMutableArray *overlayArray;
 @property int seconds, minutes;
 @property NSTimer *timer;
