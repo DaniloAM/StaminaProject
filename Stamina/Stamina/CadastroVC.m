@@ -76,7 +76,8 @@
     seg.selectedSegmentIndex = 0;
     [[UISegmentedControl appearance] setTintColor:[UIColor staminaBlackColor]];
     [[UISegmentedControl appearance] setTitleTextAttributes:@{NSForegroundColorAttributeName:[UIColor staminaBlackColor]} forState:UIControlStateNormal];
-
+    _btn = [[UIButton alloc] initWithFrame:CGRectMake(251*size.width/largura, 684*size.height/altura, 137*size.width/largura, 137*size.width/largura)];
+    [_btn setBackgroundColor:[UIColor staminaBlackColor]];
     _seg     = seg;
     _arrayOfViews = [NSMutableArray arrayWithObjects:_txtAge,_txtCm,_txtConfEmail,_txtConfPass,_txtEmail,_txtKg,_txtName,_txtNick,_txtPassword, nil];
     for(int x = 0 ; x < [[self arrayOfViews] count];x++){
@@ -359,6 +360,11 @@
 
 
                 break;
+            case 7:
+                [view  addSubview:_btn];
+                
+                
+                break;
             case 0:
                 [view addSubview:[self txtName]];
                 [[self txtName] setPlaceholder:@"Nome"];
@@ -410,7 +416,6 @@
     bigView.frame = CGRectMake(point.x, point.y, bigView.frame.size.width, bigView.frame.size.height);
     [UIView commitAnimations];
 }
-// Called when the UIKeyboardDidShowNotification is sent.
 - (void)keyboardWasShown:(NSNotification*)aNotification
 {
     [self.lblError setHidden:YES];
@@ -426,7 +431,6 @@
 
 }
 
-// Called when the UIKeyboardWillHideNotification is sent
 - (void)keyboardWillBeHidden:(NSNotification*)aNotification
 {
     UIInterfaceOrientation orientation = [[UIApplication sharedApplication] statusBarOrientation];

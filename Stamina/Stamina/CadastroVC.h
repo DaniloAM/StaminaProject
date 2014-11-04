@@ -21,4 +21,5 @@
 @property (weak, nonatomic) IBOutlet UILabel *lblError;
 @property UIImageView *logo;
 @property UISegmentedControl *seg;
+@property UIButton *btn;
 @end
