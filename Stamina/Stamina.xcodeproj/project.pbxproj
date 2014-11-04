@@ -30,19 +30,18 @@
 		32F57C7219EC6838001BF6B2 /* MenuShouldOpen.m in Sources */ = {isa = PBXBuildFile; fileRef = 32F57C7119EC6838001BF6B2 /* MenuShouldOpen.m */; };
 		32F7237E19FABCD6006170CD /* CreateTrainTemp.m in Sources */ = {isa = PBXBuildFile; fileRef = 32F7237D19FABCD6006170CD /* CreateTrainTemp.m */; };
 		32F7238119FADB4B006170CD /* AddExercise.m in Sources */ = {isa = PBXBuildFile; fileRef = 32F7238019FADB4B006170CD /* AddExercise.m */; };
+		32FBEE041A096093007D56D6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 32FBEE031A096093007D56D6 /* Main.storyboard */; };
 		C52C27871A07EB690030BEA4 /* CadastroVC.m in Sources */ = {isa = PBXBuildFile; fileRef = C52C27861A07EB690030BEA4 /* CadastroVC.m */; };
 		C52C810819CA1E47006EAFCF /* WebServiceResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = C52C810719CA1E47006EAFCF /* WebServiceResponse.m */; };
 		C53A351D19D33B7700AC1383 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C53A351C19D33B7700AC1383 /* LoginViewController.m */; };
 		C53A352B19D33B9A00AC1383 /* RWBlurPopover.m in Sources */ = {isa = PBXBuildFile; fileRef = C53A352819D33B9A00AC1383 /* RWBlurPopover.m */; };
 		C53A352C19D33B9A00AC1383 /* RWBlurPopoverTransitionController.m in Sources */ = {isa = PBXBuildFile; fileRef = C53A352A19D33B9A00AC1383 /* RWBlurPopoverTransitionController.m */; };
-		C53A352E19D33BA700AC1383 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C53A352D19D33BA700AC1383 /* Main.storyboard */; };
 		C53A353119D3411F00AC1383 /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = C53A353019D3411F00AC1383 /* Reachability.m */; };
 		C56108E919DD81990090CE5D /* wireframe_home.png in Resources */ = {isa = PBXBuildFile; fileRef = C56108E819DD81990090CE5D /* wireframe_home.png */; };
 		C56632561A03F3110006309D /* WeatherCondition.m in Sources */ = {isa = PBXBuildFile; fileRef = C56632551A03F3110006309D /* WeatherCondition.m */; };
 		C59934F919D36739006337E0 /* App-Stamina.png in Resources */ = {isa = PBXBuildFile; fileRef = C59934F819D36739006337E0 /* App-Stamina.png */; };
 		C59934FB19D36756006337E0 /* Logo_Stamina.png in Resources */ = {isa = PBXBuildFile; fileRef = C59934FA19D36756006337E0 /* Logo_Stamina.png */; };
 		C5A2418619CB512700064E54 /* TemporaryVC.m in Sources */ = {isa = PBXBuildFile; fileRef = C5A2418519CB512700064E54 /* TemporaryVC.m */; };
-		C5CE7D6F19D4A162003E1595 /* Wireframe InfoFisicas.jpg in Resources */ = {isa = PBXBuildFile; fileRef = C5CE7D6E19D4A162003E1595 /* Wireframe InfoFisicas.jpg */; };
 		C5CE7D7519D4BA10003E1595 /* calendar_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = C5CE7D7019D4BA10003E1595 /* calendar_icon.png */; };
 		C5CE7D7619D4BA10003E1595 /* fb_sign.png in Resources */ = {isa = PBXBuildFile; fileRef = C5CE7D7119D4BA10003E1595 /* fb_sign.png */; };
 		C5CE7D7719D4BA10003E1595 /* menu_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = C5CE7D7219D4BA10003E1595 /* menu_icon.png */; };
@@ -100,12 +99,10 @@
 		C5F447171A07E042005031C2 /* icon_velocimetro.png in Resources */ = {isa = PBXBuildFile; fileRef = C5F446F61A07E042005031C2 /* icon_velocimetro.png */; };
 		C5F447181A07E042005031C2 /* icon_voltar.png in Resources */ = {isa = PBXBuildFile; fileRef = C5F446F71A07E042005031C2 /* icon_voltar.png */; };
 		C5F447191A07E042005031C2 /* icone_camera_pressed.png in Resources */ = {isa = PBXBuildFile; fileRef = C5F446F81A07E042005031C2 /* icone_camera_pressed.png */; };
-		FF12F16919E878E3007524EF /* StartRunningVC.m in Sources */ = {isa = PBXBuildFile; fileRef = FF12F16819E878E3007524EF /* StartRunningVC.m */; };
 		FF12F17719F03D79007524EF /* wireframe_calendario.png in Resources */ = {isa = PBXBuildFile; fileRef = FF12F17519F03D79007524EF /* wireframe_calendario.png */; };
 		FF13E9D719E5BE160005BA49 /* RoutePointsCartesian.m in Sources */ = {isa = PBXBuildFile; fileRef = FF13E9D619E5BE160005BA49 /* RoutePointsCartesian.m */; };
 		FF13E9DA19E5BE330005BA49 /* FinishedRoute.m in Sources */ = {isa = PBXBuildFile; fileRef = FF13E9D919E5BE330005BA49 /* FinishedRoute.m */; };
 		FF13E9DD19E5BF840005BA49 /* SharingResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = FF13E9DC19E5BF840005BA49 /* SharingResponse.m */; };
-		FF13E9E019E70B9B0005BA49 /* TrajectoryRoute.m in Sources */ = {isa = PBXBuildFile; fileRef = FF13E9DF19E70B9B0005BA49 /* TrajectoryRoute.m */; };
 		FF13E9E319E70B9B0005BA49 /* TrajectoryFile.m in Sources */ = {isa = PBXBuildFile; fileRef = FF13E9E219E70B9B0005BA49 /* TrajectoryFile.m */; };
 		FF13E9EB19E71FFA0005BA49 /* PushedViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FF13E9EA19E71FFA0005BA49 /* PushedViewController.m */; };
 		FF1596F019C0CBC900D9236F /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = FF1596EF19C0CBC900D9236F /* main.m */; };
@@ -169,15 +166,17 @@
 		FF1C5CC41A002C3500032DC9 /* stamina_180x180px.png in Resources */ = {isa = PBXBuildFile; fileRef = FF1C5CC01A002C3500032DC9 /* stamina_180x180px.png */; };
 		FF1C5CC51A002C3500032DC9 /* stamina_58x58px.png in Resources */ = {isa = PBXBuildFile; fileRef = FF1C5CC11A002C3500032DC9 /* stamina_58x58px.png */; };
 		FF1C5CC61A002C3500032DC9 /* stamina_80x80px.png in Resources */ = {isa = PBXBuildFile; fileRef = FF1C5CC21A002C3500032DC9 /* stamina_80x80px.png */; };
-		FF1C5CCC1A01501D00032DC9 /* AMExpandTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = FF1C5CCB1A01501D00032DC9 /* AMExpandTableView.m */; };
 		FF1C5CCF1A01506600032DC9 /* TrajectorySelectionVC.m in Sources */ = {isa = PBXBuildFile; fileRef = FF1C5CCE1A01506600032DC9 /* TrajectorySelectionVC.m */; };
 		FF1C5D071A02B22B00032DC9 /* UIStaminaColor.m in Sources */ = {isa = PBXBuildFile; fileRef = FF1C5D061A02B22B00032DC9 /* UIStaminaColor.m */; };
 		FF1C5D0A1A03F6E600032DC9 /* UIStaminaLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = FF1C5D091A03F6E600032DC9 /* UIStaminaLabel.m */; };
+		FF1C5D181A07EE6F00032DC9 /* StaminaExpandTV.m in Sources */ = {isa = PBXBuildFile; fileRef = FF1C5D171A07EE6F00032DC9 /* StaminaExpandTV.m */; };
+		FF1C5D1E1A08095C00032DC9 /* LeftMenuExpandedVC.m in Sources */ = {isa = PBXBuildFile; fileRef = FF1C5D1D1A08095C00032DC9 /* LeftMenuExpandedVC.m */; };
 		FF794D7719CA288F00808144 /* TrainingExercises.m in Sources */ = {isa = PBXBuildFile; fileRef = FF794D7619CA288F00808144 /* TrainingExercises.m */; };
 		FFAC18FF19DB200E00B17487 /* FinishedRunningVC.m in Sources */ = {isa = PBXBuildFile; fileRef = FFAC18FE19DB200E00B17487 /* FinishedRunningVC.m */; };
 		FFAC190B19DC86C400B17487 /* SocialSharingVC.m in Sources */ = {isa = PBXBuildFile; fileRef = FFAC190A19DC86C400B17487 /* SocialSharingVC.m */; };
 		FFAC193A19E3105B00B17487 /* wireframe_termina_caminhada.jpg in Resources */ = {isa = PBXBuildFile; fileRef = FFAC193919E3105B00B17487 /* wireframe_termina_caminhada.jpg */; };
 		FFAC193D19E3171C00B17487 /* HomeScreenVC.m in Sources */ = {isa = PBXBuildFile; fileRef = FFAC193C19E3171C00B17487 /* HomeScreenVC.m */; };
+		FFB8BCC21A093C5D00F9D8A7 /* TrajectoryRoute.m in Sources */ = {isa = PBXBuildFile; fileRef = FFB8BCC11A093C5D00F9D8A7 /* TrajectoryRoute.m */; };
 		FFF51A5219E48066000BED6B /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FFF51A5119E48066000BED6B /* Social.framework */; };
 /* End PBXBuildFile section */
 
@@ -226,6 +225,7 @@
 		32F7237D19FABCD6006170CD /* CreateTrainTemp.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CreateTrainTemp.m; sourceTree = "<group>"; };
 		32F7237F19FADB4B006170CD /* AddExercise.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddExercise.h; sourceTree = "<group>"; };
 		32F7238019FADB4B006170CD /* AddExercise.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddExercise.m; sourceTree = "<group>"; };
+		32FBEE031A096093007D56D6 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		C52C27851A07EB690030BEA4 /* CadastroVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CadastroVC.h; sourceTree = "<group>"; };
 		C52C27861A07EB690030BEA4 /* CadastroVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CadastroVC.m; sourceTree = "<group>"; };
 		C52C810619CA1E47006EAFCF /* WebServiceResponse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WebServiceResponse.h; sourceTree = "<group>"; };
@@ -236,7 +236,6 @@
 		C53A352819D33B9A00AC1383 /* RWBlurPopover.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RWBlurPopover.m; sourceTree = "<group>"; };
 		C53A352919D33B9A00AC1383 /* RWBlurPopoverTransitionController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RWBlurPopoverTransitionController.h; sourceTree = "<group>"; };
 		C53A352A19D33B9A00AC1383 /* RWBlurPopoverTransitionController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RWBlurPopoverTransitionController.m; sourceTree = "<group>"; };
-		C53A352D19D33BA700AC1383 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		C53A352F19D3411F00AC1383 /* Reachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Reachability.h; sourceTree = "<group>"; };
 		C53A353019D3411F00AC1383 /* Reachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Reachability.m; sourceTree = "<group>"; };
 		C56108E819DD81990090CE5D /* wireframe_home.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = wireframe_home.png; sourceTree = "<group>"; };
@@ -246,7 +245,6 @@
 		C59934FA19D36756006337E0 /* Logo_Stamina.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Logo_Stamina.png; sourceTree = "<group>"; };
 		C5A2418419CB512700064E54 /* TemporaryVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TemporaryVC.h; sourceTree = "<group>"; };
 		C5A2418519CB512700064E54 /* TemporaryVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TemporaryVC.m; sourceTree = "<group>"; };
-		C5CE7D6E19D4A162003E1595 /* Wireframe InfoFisicas.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Wireframe InfoFisicas.jpg"; sourceTree = "<group>"; };
 		C5CE7D7019D4BA10003E1595 /* calendar_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = calendar_icon.png; sourceTree = "<group>"; };
 		C5CE7D7119D4BA10003E1595 /* fb_sign.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = fb_sign.png; sourceTree = "<group>"; };
 		C5CE7D7219D4BA10003E1595 /* menu_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = menu_icon.png; sourceTree = "<group>"; };
@@ -313,8 +311,6 @@
 		C5F446F61A07E042005031C2 /* icon_velocimetro.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon_velocimetro.png; sourceTree = "<group>"; };
 		C5F446F71A07E042005031C2 /* icon_voltar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon_voltar.png; sourceTree = "<group>"; };
 		C5F446F81A07E042005031C2 /* icone_camera_pressed.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icone_camera_pressed.png; sourceTree = "<group>"; };
-		FF12F16719E878E3007524EF /* StartRunningVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StartRunningVC.h; sourceTree = "<group>"; };
-		FF12F16819E878E3007524EF /* StartRunningVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StartRunningVC.m; sourceTree = "<group>"; };
 		FF12F17519F03D79007524EF /* wireframe_calendario.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = wireframe_calendario.png; sourceTree = "<group>"; };
 		FF13E9D519E5BE160005BA49 /* RoutePointsCartesian.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RoutePointsCartesian.h; sourceTree = "<group>"; };
 		FF13E9D619E5BE160005BA49 /* RoutePointsCartesian.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RoutePointsCartesian.m; sourceTree = "<group>"; };
@@ -322,8 +318,6 @@
 		FF13E9D919E5BE330005BA49 /* FinishedRoute.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FinishedRoute.m; sourceTree = "<group>"; };
 		FF13E9DB19E5BF840005BA49 /* SharingResponse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SharingResponse.h; sourceTree = "<group>"; };
 		FF13E9DC19E5BF840005BA49 /* SharingResponse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SharingResponse.m; sourceTree = "<group>"; };
-		FF13E9DE19E70B9B0005BA49 /* TrajectoryRoute.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TrajectoryRoute.h; sourceTree = "<group>"; };
-		FF13E9DF19E70B9B0005BA49 /* TrajectoryRoute.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TrajectoryRoute.m; sourceTree = "<group>"; };
 		FF13E9E119E70B9B0005BA49 /* TrajectoryFile.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TrajectoryFile.h; sourceTree = "<group>"; };
 		FF13E9E219E70B9B0005BA49 /* TrajectoryFile.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TrajectoryFile.m; sourceTree = "<group>"; };
 		FF13E9E919E71FFA0005BA49 /* PushedViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PushedViewController.h; sourceTree = "<group>"; };
@@ -412,14 +406,16 @@
 		FF1C5CC01A002C3500032DC9 /* stamina_180x180px.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = stamina_180x180px.png; sourceTree = "<group>"; };
 		FF1C5CC11A002C3500032DC9 /* stamina_58x58px.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = stamina_58x58px.png; sourceTree = "<group>"; };
 		FF1C5CC21A002C3500032DC9 /* stamina_80x80px.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = stamina_80x80px.png; sourceTree = "<group>"; };
-		FF1C5CCA1A01501D00032DC9 /* AMExpandTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AMExpandTableView.h; sourceTree = "<group>"; };
-		FF1C5CCB1A01501D00032DC9 /* AMExpandTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AMExpandTableView.m; sourceTree = "<group>"; };
 		FF1C5CCD1A01506600032DC9 /* TrajectorySelectionVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TrajectorySelectionVC.h; sourceTree = "<group>"; };
 		FF1C5CCE1A01506600032DC9 /* TrajectorySelectionVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TrajectorySelectionVC.m; sourceTree = "<group>"; };
 		FF1C5D051A02B22B00032DC9 /* UIStaminaColor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIStaminaColor.h; sourceTree = "<group>"; };
 		FF1C5D061A02B22B00032DC9 /* UIStaminaColor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UIStaminaColor.m; sourceTree = "<group>"; };
 		FF1C5D081A03F6E600032DC9 /* UIStaminaLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIStaminaLabel.h; sourceTree = "<group>"; };
 		FF1C5D091A03F6E600032DC9 /* UIStaminaLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UIStaminaLabel.m; sourceTree = "<group>"; };
+		FF1C5D161A07EE6F00032DC9 /* StaminaExpandTV.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StaminaExpandTV.h; sourceTree = "<group>"; };
+		FF1C5D171A07EE6F00032DC9 /* StaminaExpandTV.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StaminaExpandTV.m; sourceTree = "<group>"; };
+		FF1C5D1C1A08095C00032DC9 /* LeftMenuExpandedVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LeftMenuExpandedVC.h; sourceTree = "<group>"; };
+		FF1C5D1D1A08095C00032DC9 /* LeftMenuExpandedVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LeftMenuExpandedVC.m; sourceTree = "<group>"; };
 		FF794D7519CA288F00808144 /* TrainingExercises.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TrainingExercises.h; sourceTree = "<group>"; };
 		FF794D7619CA288F00808144 /* TrainingExercises.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TrainingExercises.m; sourceTree = "<group>"; };
 		FFAC18FD19DB200E00B17487 /* FinishedRunningVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FinishedRunningVC.h; sourceTree = "<group>"; };
@@ -429,6 +425,8 @@
 		FFAC193919E3105B00B17487 /* wireframe_termina_caminhada.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = wireframe_termina_caminhada.jpg; sourceTree = "<group>"; };
 		FFAC193B19E3171C00B17487 /* HomeScreenVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeScreenVC.h; sourceTree = "<group>"; };
 		FFAC193C19E3171C00B17487 /* HomeScreenVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeScreenVC.m; sourceTree = "<group>"; };
+		FFB8BCC01A093C5D00F9D8A7 /* TrajectoryRoute.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TrajectoryRoute.h; sourceTree = "<group>"; };
+		FFB8BCC11A093C5D00F9D8A7 /* TrajectoryRoute.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TrajectoryRoute.m; sourceTree = "<group>"; };
 		FFF51A5119E48066000BED6B /* Social.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Social.framework; path = System/Library/Frameworks/Social.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
@@ -502,22 +500,22 @@
 		C5E99E5D19DB3AA200513CDE /* wireframes */ = {
 			isa = PBXGroup;
 			children = (
-				FF1C5C761A0019F200032DC9 /* wireframe_correr_menu.png */,
+				325F1FD619E702F400001EB0 /* bg_bar.jpg */,
+				C5E99E5F19DB3AA200513CDE /* wireframe_academia_inicio.jpg */,
+				C5E99E5E19DB3AA200513CDE /* wireframe_academia.jpg */,
+				C5E99E7A19DB48BA00513CDE /* wireframe_cadastro.jpg */,
 				FF1C5C7019FFFCAB00032DC9 /* wireframe_calendario_dia_menu.png */,
 				FF12F17519F03D79007524EF /* wireframe_calendario.png */,
-				325F1FD619E702F400001EB0 /* bg_bar.jpg */,
-				FFAC193919E3105B00B17487 /* wireframe_termina_caminhada.jpg */,
-				C56108E819DD81990090CE5D /* wireframe_home.png */,
-				C5E99E5E19DB3AA200513CDE /* wireframe_academia.jpg */,
-				C5E99E5F19DB3AA200513CDE /* wireframe_academia_inicio.jpg */,
-				C5E99E6219DB3AA200513CDE /* wireframe_caminhada.jpg */,
-				C5E99E7A19DB48BA00513CDE /* wireframe_cadastro.jpg */,
 				C5E99E6319DB3AA200513CDE /* wireframe_caminhada_inicio.jpg */,
+				C5E99E6219DB3AA200513CDE /* wireframe_caminhada.jpg */,
+				32C6B39119E484CB00DE13AC /* wireframe_categorias.png */,
+				FF1C5C761A0019F200032DC9 /* wireframe_correr_menu.png */,
 				C5E99E6519DB3AA200513CDE /* wireframe_guardar_trajeto.jpg */,
+				C56108E819DD81990090CE5D /* wireframe_home.png */,
 				C5E99E6819DB3AA200513CDE /* wireframe_informacaoes.jpg */,
 				C5E99E6919DB3AA200513CDE /* wireframe_informacoes.jpg */,
 				C5E99E6A19DB3AA200513CDE /* wireframe_login.png */,
-				32C6B39119E484CB00DE13AC /* wireframe_categorias.png */,
+				FFAC193919E3105B00B17487 /* wireframe_termina_caminhada.jpg */,
 			);
 			path = wireframes;
 			sourceTree = "<group>";
@@ -608,12 +606,12 @@
 				C53A353019D3411F00AC1383 /* Reachability.m */,
 				C52C27851A07EB690030BEA4 /* CadastroVC.h */,
 				C52C27861A07EB690030BEA4 /* CadastroVC.m */,
-				C53A352D19D33BA700AC1383 /* Main.storyboard */,
-				32F7237F19FADB4B006170CD /* AddExercise.h */,
+				32FBEE031A096093007D56D6 /* Main.storyboard */,
 				32F7238019FADB4B006170CD /* AddExercise.m */,
 				3276F1CB19F6CE2D00B2F93D /* CriaTreinoVC.h */,
 				3276F1CC19F6CE2D00B2F93D /* CriaTreinoVC.m */,
 				FF1596FD19C0CBC900D9236F /* Images.xcassets */,
+				32F7237F19FADB4B006170CD /* AddExercise.h */,
 				FF1596F419C0CBC900D9236F /* Stamina.xcdatamodeld */,
 				FF1597B119C0DFF600D9236F /* Images */,
 				FF1597B219C0E00700D9236F /* Sounds */,
@@ -660,6 +658,8 @@
 				FF15971B19C0D96E00D9236F /* AMSlideMenuLeftMenuSegue.m */,
 				FF15971C19C0D96E00D9236F /* AMSlideMenuLeftTableViewController.h */,
 				FF15971D19C0D96E00D9236F /* AMSlideMenuLeftTableViewController.m */,
+				FF1C5D1C1A08095C00032DC9 /* LeftMenuExpandedVC.h */,
+				FF1C5D1D1A08095C00032DC9 /* LeftMenuExpandedVC.m */,
 				FF15971E19C0D96E00D9236F /* AMSlideMenuMainViewController.h */,
 				FF15971F19C0D96E00D9236F /* AMSlideMenuMainViewController.m */,
 				FF15972019C0D96E00D9236F /* AMSlideMenuProtocols.h */,
@@ -685,42 +685,42 @@
 		FF15972C19C0D9FF00D9236F /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				3207B56019EEFECA002052BF /* TipsVC.h */,
-				3207B56119EEFECA002052BF /* TipsVC.m */,
-				3207B56219EEFECA002052BF /* TipsPVC.h */,
-				3207B56319EEFECA002052BF /* TipsPVC.m */,
-				C55E5C8A19FBC6E90019CD0F /* CriarTreino */,
 				FFAC194119E319F300B17487 /* Cadastro */,
+				C55E5C8A19FBC6E90019CD0F /* CriarTreino */,
 				FFAC193E19E3172300B17487 /* Exercitar */,
-				C5EB6BFC19D9DBD300C528FC /* UserCalendarVC.h */,
-				C5EB6BFD19D9DBD300C528FC /* UserCalendarVC.m */,
-				FF1C5C3819FADD3D00032DC9 /* CalendarInformationVC.h */,
-				FF1C5C3919FADD3D00032DC9 /* CalendarInformationVC.m */,
 				325F1FD819E7091C00001EB0 /* AcademiaVC.h */,
 				325F1FD919E7091C00001EB0 /* AcademiaVC.m */,
 				C5EB6C0019D9DBD300C528FC /* AVCamPreviewView.h */,
 				C5EB6C0119D9DBD300C528FC /* AVCamPreviewView.m */,
+				FF1C5C3819FADD3D00032DC9 /* CalendarInformationVC.h */,
+				FF1C5C3919FADD3D00032DC9 /* CalendarInformationVC.m */,
+				324E23C019E87FC400DA2FDE /* CategoriaVC.h */,
+				324E23C119E87FC400DA2FDE /* CategoriaVC.m */,
+				32F15DF219F986D200310713 /* check.png */,
+				32F57C6D19EC4D16001BF6B2 /* ExercicioTVC.h */,
+				32F57C6E19EC4D16001BF6B2 /* ExercicioTVC.m */,
 				C5EB6BFE19D9DBD300C528FC /* FBLoginVC.h */,
 				C5EB6BFF19D9DBD300C528FC /* FBLoginVC.m */,
-				FF13E9E919E71FFA0005BA49 /* PushedViewController.h */,
-				FF13E9EA19E71FFA0005BA49 /* PushedViewController.m */,
+				325F1FE719E7229C00001EB0 /* HideBBVC.h */,
+				325F1FE819E7229C00001EB0 /* HideBBVC.m */,
+				FFAC193B19E3171C00B17487 /* HomeScreenVC.h */,
+				FFAC193C19E3171C00B17487 /* HomeScreenVC.m */,
 				FF17BD6319C8C21600B5EF46 /* MainVC.h */,
 				FF17BD6419C8C21600B5EF46 /* MainVC.m */,
 				325F1FE119E7143C00001EB0 /* MenuVC.h */,
 				325F1FE219E7143C00001EB0 /* MenuVC.m */,
-				325F1FE719E7229C00001EB0 /* HideBBVC.h */,
-				325F1FE819E7229C00001EB0 /* HideBBVC.m */,
-				FF17BD5A19C8C18200B5EF46 /* StartVC.h */,
-				FF17BD5B19C8C18200B5EF46 /* StartVC.m */,
+				FF13E9E919E71FFA0005BA49 /* PushedViewController.h */,
+				FF13E9EA19E71FFA0005BA49 /* PushedViewController.m */,
 				FFAC190919DC86C400B17487 /* SocialSharingVC.h */,
 				FFAC190A19DC86C400B17487 /* SocialSharingVC.m */,
-				FFAC193B19E3171C00B17487 /* HomeScreenVC.h */,
-				FFAC193C19E3171C00B17487 /* HomeScreenVC.m */,
-				324E23C019E87FC400DA2FDE /* CategoriaVC.h */,
-				324E23C119E87FC400DA2FDE /* CategoriaVC.m */,
-				32F57C6D19EC4D16001BF6B2 /* ExercicioTVC.h */,
-				32F57C6E19EC4D16001BF6B2 /* ExercicioTVC.m */,
-				32F15DF219F986D200310713 /* check.png */,
+				FF17BD5A19C8C18200B5EF46 /* StartVC.h */,
+				FF17BD5B19C8C18200B5EF46 /* StartVC.m */,
+				3207B56219EEFECA002052BF /* TipsPVC.h */,
+				3207B56319EEFECA002052BF /* TipsPVC.m */,
+				3207B56019EEFECA002052BF /* TipsVC.h */,
+				3207B56119EEFECA002052BF /* TipsVC.m */,
+				C5EB6BFC19D9DBD300C528FC /* UserCalendarVC.h */,
+				C5EB6BFD19D9DBD300C528FC /* UserCalendarVC.m */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -728,11 +728,11 @@
 		FF15977719C0DA3B00D9236F /* NSObjects */ = {
 			isa = PBXGroup;
 			children = (
+				C5EB6BEC19D9DB5600C528FC /* Calendar */,
 				C56632541A03F3110006309D /* WeatherCondition.h */,
 				C56632551A03F3110006309D /* WeatherCondition.m */,
 				32F57C7019EC6838001BF6B2 /* MenuShouldOpen.h */,
 				32F57C7119EC6838001BF6B2 /* MenuShouldOpen.m */,
-				C5EB6BEC19D9DB5600C528FC /* Calendar */,
 				C5DFD4E819DC7B48000EA19C /* Cadastro.h */,
 				C5DFD4E919DC7B48000EA19C /* Cadastro.m */,
 				FF17BDBE19CA2E5600B5EF46 /* UserTraining.h */,
@@ -768,7 +768,6 @@
 				C5CE7D7019D4BA10003E1595 /* calendar_icon.png */,
 				C5CE7D7119D4BA10003E1595 /* fb_sign.png */,
 				C5CE7D7219D4BA10003E1595 /* menu_icon.png */,
-				C5CE7D6E19D4A162003E1595 /* Wireframe InfoFisicas.jpg */,
 				C59934FA19D36756006337E0 /* Logo_Stamina.png */,
 				C59934F819D36739006337E0 /* App-Stamina.png */,
 			);
@@ -858,12 +857,12 @@
 				FF1C5C3619F97DA700032DC9 /* Exercises.m */,
 				FF13E9E119E70B9B0005BA49 /* TrajectoryFile.h */,
 				FF13E9E219E70B9B0005BA49 /* TrajectoryFile.m */,
-				FF13E9DE19E70B9B0005BA49 /* TrajectoryRoute.h */,
-				FF13E9DF19E70B9B0005BA49 /* TrajectoryRoute.m */,
-				FF159A4A19C21D1B00D9236F /* CoreDataLoading.h */,
-				FF159A4B19C21D1B00D9236F /* CoreDataLoading.m */,
+				FFB8BCC01A093C5D00F9D8A7 /* TrajectoryRoute.h */,
+				FFB8BCC11A093C5D00F9D8A7 /* TrajectoryRoute.m */,
 				FF794D7519CA288F00808144 /* TrainingExercises.h */,
 				FF794D7619CA288F00808144 /* TrainingExercises.m */,
+				FF159A4A19C21D1B00D9236F /* CoreDataLoading.h */,
+				FF159A4B19C21D1B00D9236F /* CoreDataLoading.m */,
 				FF17BDB819C9F78F00B5EF46 /* TrainingDayObject.h */,
 				FF17BDB919C9F78F00B5EF46 /* TrainingDayObject.m */,
 			);
@@ -886,14 +885,12 @@
 				FF1C5CB81A001CD800032DC9 /* MenuRunningVC.m */,
 				FF1C5CCD1A01506600032DC9 /* TrajectorySelectionVC.h */,
 				FF1C5CCE1A01506600032DC9 /* TrajectorySelectionVC.m */,
-				FF12F16719E878E3007524EF /* StartRunningVC.h */,
-				FF12F16819E878E3007524EF /* StartRunningVC.m */,
 				C5EB6C0619D9DBD300C528FC /* RunningMapVC.h */,
 				C5EB6C0719D9DBD300C528FC /* RunningMapVC.m */,
 				FFAC18FD19DB200E00B17487 /* FinishedRunningVC.h */,
 				FFAC18FE19DB200E00B17487 /* FinishedRunningVC.m */,
-				FF1C5CCA1A01501D00032DC9 /* AMExpandTableView.h */,
-				FF1C5CCB1A01501D00032DC9 /* AMExpandTableView.m */,
+				FF1C5D161A07EE6F00032DC9 /* StaminaExpandTV.h */,
+				FF1C5D171A07EE6F00032DC9 /* StaminaExpandTV.m */,
 			);
 			name = Corrida;
 			sourceTree = "<group>";
@@ -965,7 +962,7 @@
 				TargetAttributes = {
 					FF1596E919C0CBC900D9236F = {
 						CreatedOnToolsVersion = 6.0;
-						DevelopmentTeam = H7TBMF35F6;
+						DevelopmentTeam = FEMX6BFS4F;
 					};
 					FF15970219C0CBC900D9236F = {
 						CreatedOnToolsVersion = 6.0;
@@ -1022,7 +1019,6 @@
 				C5F447051A07E042005031C2 /* icon_compartilha_unable.png in Resources */,
 				FF1C5CA31A001C0900032DC9 /* icone_calendario_12.png in Resources */,
 				FF1C5CB41A001C0900032DC9 /* icone_calendario_29.png in Resources */,
-				C5CE7D6F19D4A162003E1595 /* Wireframe InfoFisicas.jpg in Resources */,
 				FF1C5C771A0019F200032DC9 /* wireframe_correr_menu.png in Resources */,
 				C5F4470B1A07E042005031C2 /* icon_excluir.png in Resources */,
 				FF1C5CAB1A001C0900032DC9 /* icone_calendario_20.png in Resources */,
@@ -1050,7 +1046,6 @@
 				325F1FD719E702F400001EB0 /* bg_bar.jpg in Resources */,
 				C5E99E7B19DB48BA00513CDE /* wireframe_cadastro.jpg in Resources */,
 				C5E99E7619DB3AA200513CDE /* wireframe_informacoes.jpg in Resources */,
-				C53A352E19D33BA700AC1383 /* Main.storyboard in Resources */,
 				FF1C5CC31A002C3500032DC9 /* stamina_120x120px.png in Resources */,
 				C5F447021A07E042005031C2 /* icon_camera_enable.png in Resources */,
 				FFAC193A19E3105B00B17487 /* wireframe_termina_caminhada.jpg in Resources */,
@@ -1084,6 +1079,7 @@
 				C5E99E6C19DB3AA200513CDE /* wireframe_academia_inicio.jpg in Resources */,
 				C5F447141A07E042005031C2 /* icon_trajeto_enable.png in Resources */,
 				C5F447041A07E042005031C2 /* icon_check.png in Resources */,
+				32FBEE041A096093007D56D6 /* Main.storyboard in Resources */,
 				FF1C5CA01A001C0900032DC9 /* icone_calendario_09.png in Resources */,
 				C59934FB19D36756006337E0 /* Logo_Stamina.png in Resources */,
 				C5F447121A07E042005031C2 /* icon_pontuacao.png in Resources */,
@@ -1122,7 +1118,6 @@
 			files = (
 				FF17BDC019CA2E5600B5EF46 /* UserTraining.m in Sources */,
 				FF1C5C3719F97DA700032DC9 /* Exercises.m in Sources */,
-				FF13E9E019E70B9B0005BA49 /* TrajectoryRoute.m in Sources */,
 				FF1C5C3A19FADD3D00032DC9 /* CalendarInformationVC.m in Sources */,
 				32F7238119FADB4B006170CD /* AddExercise.m in Sources */,
 				C5EB6C0819D9DBD300C528FC /* UserCalendarVC.m in Sources */,
@@ -1148,11 +1143,14 @@
 				C53A351D19D33B7700AC1383 /* LoginViewController.m in Sources */,
 				FF1C5CB91A001CD800032DC9 /* MenuRunningVC.m in Sources */,
 				C5EB6BFB19D9DB6B00C528FC /* CalendarMath.m in Sources */,
+				FF1C5D1E1A08095C00032DC9 /* LeftMenuExpandedVC.m in Sources */,
 				3207B56419EEFECA002052BF /* TipsVC.m in Sources */,
 				325F1FE919E7229C00001EB0 /* HideBBVC.m in Sources */,
 				FF794D7719CA288F00808144 /* TrainingExercises.m in Sources */,
 				FF15986F19C0E24F00D9236F /* UIColor+CreateMethods.m in Sources */,
 				C5EB6C0919D9DBD300C528FC /* FBLoginVC.m in Sources */,
+				FF1C5D181A07EE6F00032DC9 /* StaminaExpandTV.m in Sources */,
+				FFB8BCC21A093C5D00F9D8A7 /* TrajectoryRoute.m in Sources */,
 				C5EB6C0A19D9DBD300C528FC /* AVCamPreviewView.m in Sources */,
 				325F1FDA19E7091C00001EB0 /* AcademiaVC.m in Sources */,
 				3276F1CD19F6CE2D00B2F93D /* CriaTreinoVC.m in Sources */,
@@ -1162,7 +1160,6 @@
 				FFAC18FF19DB200E00B17487 /* FinishedRunningVC.m in Sources */,
 				FF1C5D071A02B22B00032DC9 /* UIStaminaColor.m in Sources */,
 				FF1C5D0A1A03F6E600032DC9 /* UIStaminaLabel.m in Sources */,
-				FF1C5CCC1A01501D00032DC9 /* AMExpandTableView.m in Sources */,
 				C5EB6BFA19D9DB6B00C528FC /* CalendarPreparer.m in Sources */,
 				C53A353119D3411F00AC1383 /* Reachability.m in Sources */,
 				FF15972719C0D96E00D9236F /* AMSlideMenuLeftTableViewController.m in Sources */,
@@ -1175,7 +1172,6 @@
 				C53A352C19D33B9A00AC1383 /* RWBlurPopoverTransitionController.m in Sources */,
 				32F7237E19FABCD6006170CD /* CreateTrainTemp.m in Sources */,
 				FF13E9D719E5BE160005BA49 /* RoutePointsCartesian.m in Sources */,
-				FF12F16919E878E3007524EF /* StartRunningVC.m in Sources */,
 				FFAC190B19DC86C400B17487 /* SocialSharingVC.m in Sources */,
 				FF17BDBA19C9F78F00B5EF46 /* TrainingDayObject.m in Sources */,
 				FF1596F019C0CBC900D9236F /* main.m in Sources */,

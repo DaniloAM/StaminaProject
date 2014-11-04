@@ -15,11 +15,13 @@
 @implementation FinishedRunningVC
 
 
+
 -(void)receiveRunningRoute: (FinishedRoute *)runningRoute {
     
     _route = runningRoute;
     
 }
+
 
 
 -(void)viewWillAppear:(BOOL)animated {
@@ -30,14 +32,16 @@
     }
 
     [super showBarWithAnimation:true];
-    self.navigationController.navigationBar.translucent = YES;
+    //self.navigationController.navigationBar.translucent = YES;
     
 }
+
 
 
 -(void)viewDidLoad{
     [super viewDidLoad];
 }
+
 
 
 -(void)viewWillDisappear:(BOOL)animated {
@@ -62,8 +66,8 @@
     
         TrajectoryRoute *saveRoute = [NSEntityDescription insertNewObjectForEntityForName:@"TrajectoryRoute" inManagedObjectContext:context];
         
-        [saveRoute setArrayOfPointsInX:[NSKeyedArchiver archivedDataWithRootObject:_route.arrayOfXMapPoints]];
-        [saveRoute setArrayOfPointsInY:[NSKeyedArchiver archivedDataWithRootObject:_route.arrayOfYMapPoints]];
+        [saveRoute setArrayOfLocations:[NSKeyedArchiver archivedDataWithRootObject:_route.arrayOfLocations]];
+        
         [saveRoute setTrajectoryName:name];
         [saveRoute setTrajectoryDistance:[NSNumber numberWithDouble:[_route distanceInMeters]]];
         
@@ -75,6 +79,7 @@
     [context save:&error];
     
 }
+
 
 
 -(void)drawTrajectoryDone {
@@ -129,7 +134,7 @@
     UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
     UIViewController *myVC = (UIViewController *)[storyboard instantiateViewControllerWithIdentifier:@"shareScreen"];
     
-     self.navigationController.navigationBar.translucent = NO;
+     //self.navigationController.navigationBar.translucent = NO;
     [self.navigationController pushViewController:myVC animated:YES];
     
 }
@@ -137,7 +142,7 @@
 
 -(IBAction)goHome {
     
-     self.navigationController.navigationBar.translucent = NO;
+     //self.navigationController.navigationBar.translucent = NO;
     [self.navigationController popToRootViewControllerAnimated:true];
     
 }

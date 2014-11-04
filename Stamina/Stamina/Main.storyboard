@@ -1,10 +1,36 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6250" systemVersion="13F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="h6A-wv-HXR">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6250" systemVersion="13F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="14p-aT-IGt">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6244"/>
     </dependencies>
     <scenes>
+        <!--Left Menu ExpandedVC-->
+        <scene sceneID="V35-eR-sGV">
+            <objects>
+                <tableViewController id="14p-aT-IGt" customClass="LeftMenuExpandedVC" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="cpI-1b-5f5">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="lHj-dO-KqG">
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="lHj-dO-KqG" id="sVz-gV-onY">
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="14p-aT-IGt" id="4rX-Aj-8FS"/>
+                            <outlet property="delegate" destination="14p-aT-IGt" id="3Eq-Z6-4qa"/>
+                        </connections>
+                    </tableView>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="HdB-Qi-f8s" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="592" y="-3289"/>
+        </scene>
         <!--MainVC-->
         <scene sceneID="SFM-3N-QZi">
             <objects>
@@ -251,7 +277,7 @@
                                 <rect key="frame" x="86" y="85" width="148" height="125"/>
                             </imageView>
                             <view alpha="0.59999999999999964" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="pc1-NZ-ySM">
-                                <rect key="frame" x="0.0" y="1" width="320" height="568"/>
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                                 <subviews>
                                     <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" style="white" translatesAutoresizingMaskIntoConstraints="NO" id="cx9-nj-BAz">
                                         <rect key="frame" x="150" y="274" width="20" height="20"/>
@@ -282,7 +308,7 @@
         <!--Navigation Controller-->
         <scene sceneID="UvL-fw-dCo">
             <objects>
-                <navigationController definesPresentationContext="YES" id="zYX-g3-UJR" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="Go" definesPresentationContext="YES" id="zYX-g3-UJR" sceneMemberID="viewController">
                     <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="hgK-Ml-Lwf">
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -311,7 +337,7 @@
         <!--User CalendarVC-->
         <scene sceneID="Mmo-Mq-xjo">
             <objects>
-                <viewController id="rw1-bJ-CYc" customClass="UserCalendarVC" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="Calendario" id="rw1-bJ-CYc" customClass="UserCalendarVC" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="FaB-qr-neO"/>
                         <viewControllerLayoutGuide type="bottom" id="7Sc-KU-944"/>
@@ -465,7 +491,7 @@
         <!--Menu RunningVC-->
         <scene sceneID="qGL-og-Det">
             <objects>
-                <viewController id="PSP-iH-gXQ" customClass="MenuRunningVC" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="Trajetos" id="PSP-iH-gXQ" customClass="MenuRunningVC" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="nCd-9Z-uiM"/>
                         <viewControllerLayoutGuide type="bottom" id="Vak-wf-XQe"/>
@@ -540,7 +566,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ebv-Xk-GzI" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3007" y="-3405"/>
+            <point key="canvasLocation" x="2901" y="-3451"/>
         </scene>
         <!--Running MapVC-->
         <scene sceneID="hBC-1x-cGS">
@@ -606,12 +632,12 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mY3-As-W9s" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2884" y="-4023"/>
+            <point key="canvasLocation" x="2901" y="-4113"/>
         </scene>
         <!--AcademiaVC-->
         <scene sceneID="syk-1u-5DQ">
             <objects>
-                <viewController id="G87-vY-y2C" customClass="AcademiaVC" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="Exercícios" id="G87-vY-y2C" customClass="AcademiaVC" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Ueo-Xs-6CF"/>
                         <viewControllerLayoutGuide type="bottom" id="p1b-Wg-3At"/>
@@ -752,7 +778,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="k16-nq-SvA" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3240" y="-4023"/>
+            <point key="canvasLocation" x="3270" y="-4113"/>
         </scene>
         <!--Page View Controller-->
         <scene sceneID="7CW-Zh-q7t">
@@ -781,7 +807,7 @@
         <!--Home ScreenVC-->
         <scene sceneID="JbV-Ke-MIq">
             <objects>
-                <viewController storyboardIdentifier="homeScreen" id="x3h-sg-EoT" customClass="HomeScreenVC" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="Início" id="x3h-sg-EoT" customClass="HomeScreenVC" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="CSs-Uu-jKJ"/>
                         <viewControllerLayoutGuide type="bottom" id="tnu-db-aaR"/>
@@ -844,13 +870,22 @@
                                     <action selector="voltar" destination="TXz-Pj-H87" eventType="touchUpInside" id="csd-va-UAi"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BIH-ek-VfL">
+                                <rect key="frame" x="47" y="221" width="227" height="37"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="13"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
+                    <connections>
+                        <outlet property="lblError" destination="BIH-ek-VfL" id="5gf-hO-N0v"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="l1u-0F-I1W" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-73" y="-2215"/>
+            <point key="canvasLocation" x="-67" y="-2271"/>
         </scene>
         <!--CadastroVC-->
         <scene sceneID="dHe-4n-nDk">

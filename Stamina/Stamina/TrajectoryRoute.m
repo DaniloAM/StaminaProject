@@ -2,7 +2,7 @@
 //  TrajectoryRoute.m
 //  Stamina
 //
-//  Created by Danilo Augusto Mative on 09/10/14.
+//  Created by Danilo Augusto Mative on 04/11/14.
 //  Copyright (c) 2014 Danilo Augusto Mative. All rights reserved.
 //
 
@@ -11,9 +11,8 @@
 
 @implementation TrajectoryRoute
 
-@dynamic arrayOfPointsInX;
+@dynamic arrayOfLocations;
 @dynamic trajectoryDistance;
 @dynamic trajectoryName;
-@dynamic arrayOfPointsInY;
 
 @end
