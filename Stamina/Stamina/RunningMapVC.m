@@ -14,13 +14,39 @@
 
 @implementation RunningMapVC
 
+
+-(void)receiveTrajectorySelected: (TrajectoryRoute *)route {
+    
+    if(route) {
+        
+        _userRoute = true;
+        
+        NSArray *locations = [NSKeyedUnarchiver unarchiveObjectWithData:[route arrayOfLocations]];
+        
+        CLLocationCoordinate2D coordinates[[locations count]];
+        
+        [[self mapRunningView] addOverlay:_routeLine];
+        
+        for(int x = 0; x < [locations count]; x++) {
+            
+            coordinates[x] = [[locations objectAtIndex:x] coordinate];
+            
+        }
+        
+        _routeLine = [MKPolyline polylineWithCoordinates:coordinates count:[locations count]];
+        
+    }
+    
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     
     [[UIApplication sharedApplication] setIdleTimerDisabled:true];
     
     [self setOverlayArray:[NSMutableArray array]];
-    [self setPointsForRoute:[[RoutePointsCartesian alloc] init]];
+    [self setLocationsArray:[NSMutableArray array]];
+    [self setPointsForCartesian:[[RoutePointsCartesian alloc] init]];
     
     [[self mapRunningView] setDelegate:self];
     [self setLocationManager:[[CLLocationManager alloc] init]];
@@ -32,7 +58,13 @@
     
     [[self mapRunningView] setShowsUserLocation:true];
     [[self locationManager] setDesiredAccuracy:kCLLocationAccuracyBest];
-
+    
+    
+    if([self userRoute] && [self routeLine]) {
+        
+        _userRouteIsDraw = true;
+        [[self mapRunningView] addOverlay:_routeLine];
+    }
 
 }
 
@@ -113,7 +145,9 @@
         
         [self drawRouteLayerWithPointOne:_oldLocation andTwo:newLocation];
         MKMapPoint point = MKMapPointForCoordinate(newLocation.coordinate);
-        [[self pointsForRoute] addPointToRouteInX:point.x andY:point.y];
+        [[self pointsForCartesian] addPointToRouteInX:point.x andY:point.y];
+        
+        [[self locationsArray] addObject:newLocation];
         
         _oldLocation = newLocation;
     }
@@ -165,8 +199,21 @@
 {
     MKOverlayView* overlayView = nil;
     self.routeLineView = [[MKPolylineView alloc] initWithPolyline:[self routeLine]];
-    [[self routeLineView] setFillColor:[UIColor colorWithRed:167/255.0f green:210/255.0f blue:244/255.0f alpha:1.0]];
-    [[self routeLineView] setStrokeColor:[UIColor colorWithRed:106/255.0f green:151/255.0f blue:232/255.0f alpha:1.0]];
+    
+    if(_userRouteIsDraw) {
+        
+        [[self routeLineView] setFillColor:[UIColor colorWithRed:100/255.0f green:250/255.0f blue:100/255.0f alpha:1.0]];
+        
+        [[self routeLineView] setStrokeColor:[UIColor colorWithRed:100/255.0f green:250/255.0f blue:100/255.0f alpha:1.0]];
+    }
+    
+    else {
+        
+        [[self routeLineView] setFillColor:[UIColor colorWithRed:167/255.0f green:210/255.0f blue:244/255.0f alpha:1.0]];
+        
+        [[self routeLineView] setStrokeColor:[UIColor colorWithRed:106/255.0f green:151/255.0f blue:232/255.0f alpha:1.0]];
+    }
+    
     [[self routeLineView] setLineWidth:15.0];
     [[self routeLineView] setLineCap:kCGLineCapRound];
     overlayView = [self routeLineView];
@@ -204,16 +251,15 @@
 
     FinishedRoute *route = [[FinishedRoute alloc] init];
     
-    [route setArrayOfXMapPoints:[[self pointsForRoute] arrayOfPointsX]];
-    [route setArrayOfYMapPoints:[[self pointsForRoute] arrayOfPointsY]];
+    [route setArrayOfLocations:[self locationsArray]];
     
     //Prepare the cartesian system for the map points
-    [[self pointsForRoute] prepareForCartesian];
+    [[self pointsForCartesian] prepareForCartesian];
     
     [route setTimeInSeconds:_seconds];
     [route setTimeInMinutes:_minutes];
     [route setDistanceInMeters:_distanceInMeters];
-    [route setRoutePoints:[self pointsForRoute]];
+    [route setRoutePoints:[self pointsForCartesian]];
     
     
     UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];

@@ -65,6 +65,11 @@
 		C5EB6C0D19D9DBD300C528FC /* RunningMapVC.m in Sources */ = {isa = PBXBuildFile; fileRef = C5EB6C0719D9DBD300C528FC /* RunningMapVC.m */; };
 		C5EB6C0F19D9DC5B00C528FC /* caminhada_tela.png in Resources */ = {isa = PBXBuildFile; fileRef = C5EB6C0E19D9DC5B00C528FC /* caminhada_tela.png */; };
 		C5EB6C1119D9DD5D00C528FC /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C5EB6C1019D9DD5D00C528FC /* MapKit.framework */; };
+		FF12F16C19EC7240007524EF /* icone_facebook.png in Resources */ = {isa = PBXBuildFile; fileRef = FF12F16A19EC7240007524EF /* icone_facebook.png */; };
+		FF12F16D19EC7240007524EF /* icone_instagram.png in Resources */ = {isa = PBXBuildFile; fileRef = FF12F16B19EC7240007524EF /* icone_instagram.png */; };
+		FF12F17119EC725E007524EF /* icone_camera_rotate.png in Resources */ = {isa = PBXBuildFile; fileRef = FF12F16E19EC725E007524EF /* icone_camera_rotate.png */; };
+		FF12F17219EC725E007524EF /* icone_camera.png in Resources */ = {isa = PBXBuildFile; fileRef = FF12F16F19EC725E007524EF /* icone_camera.png */; };
+		FF12F17319EC725E007524EF /* icone_voltar.png in Resources */ = {isa = PBXBuildFile; fileRef = FF12F17019EC725E007524EF /* icone_voltar.png */; };
 		C5F446D61A07DEA5005031C2 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C5F446D51A07DEA5005031C2 /* SystemConfiguration.framework */; };
 		C5F446F91A07E042005031C2 /* app_correr_enable.png in Resources */ = {isa = PBXBuildFile; fileRef = C5F446D81A07E042005031C2 /* app_correr_enable.png */; };
 		C5F446FA1A07E042005031C2 /* app_correr_unable.png in Resources */ = {isa = PBXBuildFile; fileRef = C5F446D91A07E042005031C2 /* app_correr_unable.png */; };
@@ -99,12 +104,10 @@
 		C5F447171A07E042005031C2 /* icon_velocimetro.png in Resources */ = {isa = PBXBuildFile; fileRef = C5F446F61A07E042005031C2 /* icon_velocimetro.png */; };
 		C5F447181A07E042005031C2 /* icon_voltar.png in Resources */ = {isa = PBXBuildFile; fileRef = C5F446F71A07E042005031C2 /* icon_voltar.png */; };
 		C5F447191A07E042005031C2 /* icone_camera_pressed.png in Resources */ = {isa = PBXBuildFile; fileRef = C5F446F81A07E042005031C2 /* icone_camera_pressed.png */; };
-		FF12F16919E878E3007524EF /* StartRunningVC.m in Sources */ = {isa = PBXBuildFile; fileRef = FF12F16819E878E3007524EF /* StartRunningVC.m */; };
 		FF12F17719F03D79007524EF /* wireframe_calendario.png in Resources */ = {isa = PBXBuildFile; fileRef = FF12F17519F03D79007524EF /* wireframe_calendario.png */; };
 		FF13E9D719E5BE160005BA49 /* RoutePointsCartesian.m in Sources */ = {isa = PBXBuildFile; fileRef = FF13E9D619E5BE160005BA49 /* RoutePointsCartesian.m */; };
 		FF13E9DA19E5BE330005BA49 /* FinishedRoute.m in Sources */ = {isa = PBXBuildFile; fileRef = FF13E9D919E5BE330005BA49 /* FinishedRoute.m */; };
 		FF13E9DD19E5BF840005BA49 /* SharingResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = FF13E9DC19E5BF840005BA49 /* SharingResponse.m */; };
-		FF13E9E019E70B9B0005BA49 /* TrajectoryRoute.m in Sources */ = {isa = PBXBuildFile; fileRef = FF13E9DF19E70B9B0005BA49 /* TrajectoryRoute.m */; };
 		FF13E9E319E70B9B0005BA49 /* TrajectoryFile.m in Sources */ = {isa = PBXBuildFile; fileRef = FF13E9E219E70B9B0005BA49 /* TrajectoryFile.m */; };
 		FF13E9EB19E71FFA0005BA49 /* PushedViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FF13E9EA19E71FFA0005BA49 /* PushedViewController.m */; };
 		FF1596F019C0CBC900D9236F /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = FF1596EF19C0CBC900D9236F /* main.m */; };
@@ -168,15 +171,22 @@
 		FF1C5CC41A002C3500032DC9 /* stamina_180x180px.png in Resources */ = {isa = PBXBuildFile; fileRef = FF1C5CC01A002C3500032DC9 /* stamina_180x180px.png */; };
 		FF1C5CC51A002C3500032DC9 /* stamina_58x58px.png in Resources */ = {isa = PBXBuildFile; fileRef = FF1C5CC11A002C3500032DC9 /* stamina_58x58px.png */; };
 		FF1C5CC61A002C3500032DC9 /* stamina_80x80px.png in Resources */ = {isa = PBXBuildFile; fileRef = FF1C5CC21A002C3500032DC9 /* stamina_80x80px.png */; };
-		FF1C5CCC1A01501D00032DC9 /* AMExpandTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = FF1C5CCB1A01501D00032DC9 /* AMExpandTableView.m */; };
 		FF1C5CCF1A01506600032DC9 /* TrajectorySelectionVC.m in Sources */ = {isa = PBXBuildFile; fileRef = FF1C5CCE1A01506600032DC9 /* TrajectorySelectionVC.m */; };
 		FF1C5D071A02B22B00032DC9 /* UIStaminaColor.m in Sources */ = {isa = PBXBuildFile; fileRef = FF1C5D061A02B22B00032DC9 /* UIStaminaColor.m */; };
 		FF1C5D0A1A03F6E600032DC9 /* UIStaminaLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = FF1C5D091A03F6E600032DC9 /* UIStaminaLabel.m */; };
+		FF1C5D0C1A04026B00032DC9 /* icon_km.png in Resources */ = {isa = PBXBuildFile; fileRef = FF1C5D0B1A04026B00032DC9 /* icon_km.png */; };
+		FF1C5D0E1A0402B200032DC9 /* icon_pontos.png in Resources */ = {isa = PBXBuildFile; fileRef = FF1C5D0D1A0402B200032DC9 /* icon_pontos.png */; };
+		FF1C5D101A0402CE00032DC9 /* icon_calorias.png in Resources */ = {isa = PBXBuildFile; fileRef = FF1C5D0F1A0402CE00032DC9 /* icon_calorias.png */; };
+		FF1C5D121A0402FA00032DC9 /* icon_cronometro.png in Resources */ = {isa = PBXBuildFile; fileRef = FF1C5D111A0402FA00032DC9 /* icon_cronometro.png */; };
+		FF1C5D181A07EE6F00032DC9 /* StaminaExpandTV.m in Sources */ = {isa = PBXBuildFile; fileRef = FF1C5D171A07EE6F00032DC9 /* StaminaExpandTV.m */; };
+		FF1C5D1E1A08095C00032DC9 /* LeftMenuExpandedVC.m in Sources */ = {isa = PBXBuildFile; fileRef = FF1C5D1D1A08095C00032DC9 /* LeftMenuExpandedVC.m */; };
 		FF794D7719CA288F00808144 /* TrainingExercises.m in Sources */ = {isa = PBXBuildFile; fileRef = FF794D7619CA288F00808144 /* TrainingExercises.m */; };
 		FFAC18FF19DB200E00B17487 /* FinishedRunningVC.m in Sources */ = {isa = PBXBuildFile; fileRef = FFAC18FE19DB200E00B17487 /* FinishedRunningVC.m */; };
 		FFAC190B19DC86C400B17487 /* SocialSharingVC.m in Sources */ = {isa = PBXBuildFile; fileRef = FFAC190A19DC86C400B17487 /* SocialSharingVC.m */; };
 		FFAC193A19E3105B00B17487 /* wireframe_termina_caminhada.jpg in Resources */ = {isa = PBXBuildFile; fileRef = FFAC193919E3105B00B17487 /* wireframe_termina_caminhada.jpg */; };
 		FFAC193D19E3171C00B17487 /* HomeScreenVC.m in Sources */ = {isa = PBXBuildFile; fileRef = FFAC193C19E3171C00B17487 /* HomeScreenVC.m */; };
+		FFAC194A19E3355000B17487 /* icon_compartilhar.png in Resources */ = {isa = PBXBuildFile; fileRef = FFAC194919E3355000B17487 /* icon_compartilhar.png */; };
+		FFB8BCC21A093C5D00F9D8A7 /* TrajectoryRoute.m in Sources */ = {isa = PBXBuildFile; fileRef = FFB8BCC11A093C5D00F9D8A7 /* TrajectoryRoute.m */; };
 		FFF51A5219E48066000BED6B /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FFF51A5119E48066000BED6B /* Social.framework */; };
 /* End PBXBuildFile section */
 
@@ -277,6 +287,11 @@
 		C5EB6C0719D9DBD300C528FC /* RunningMapVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RunningMapVC.m; sourceTree = "<group>"; };
 		C5EB6C0E19D9DC5B00C528FC /* caminhada_tela.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = caminhada_tela.png; sourceTree = "<group>"; };
 		C5EB6C1019D9DD5D00C528FC /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		FF12F16A19EC7240007524EF /* icone_facebook.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icone_facebook.png; sourceTree = "<group>"; };
+		FF12F16B19EC7240007524EF /* icone_instagram.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icone_instagram.png; sourceTree = "<group>"; };
+		FF12F16E19EC725E007524EF /* icone_camera_rotate.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icone_camera_rotate.png; sourceTree = "<group>"; };
+		FF12F16F19EC725E007524EF /* icone_camera.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icone_camera.png; sourceTree = "<group>"; };
+		FF12F17019EC725E007524EF /* icone_voltar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icone_voltar.png; sourceTree = "<group>"; };
 		C5F446D51A07DEA5005031C2 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		C5F446D81A07E042005031C2 /* app_correr_enable.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = app_correr_enable.png; sourceTree = "<group>"; };
 		C5F446D91A07E042005031C2 /* app_correr_unable.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = app_correr_unable.png; sourceTree = "<group>"; };
@@ -320,8 +335,6 @@
 		FF13E9D919E5BE330005BA49 /* FinishedRoute.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FinishedRoute.m; sourceTree = "<group>"; };
 		FF13E9DB19E5BF840005BA49 /* SharingResponse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SharingResponse.h; sourceTree = "<group>"; };
 		FF13E9DC19E5BF840005BA49 /* SharingResponse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SharingResponse.m; sourceTree = "<group>"; };
-		FF13E9DE19E70B9B0005BA49 /* TrajectoryRoute.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TrajectoryRoute.h; sourceTree = "<group>"; };
-		FF13E9DF19E70B9B0005BA49 /* TrajectoryRoute.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TrajectoryRoute.m; sourceTree = "<group>"; };
 		FF13E9E119E70B9B0005BA49 /* TrajectoryFile.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TrajectoryFile.h; sourceTree = "<group>"; };
 		FF13E9E219E70B9B0005BA49 /* TrajectoryFile.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TrajectoryFile.m; sourceTree = "<group>"; };
 		FF13E9E919E71FFA0005BA49 /* PushedViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PushedViewController.h; sourceTree = "<group>"; };
@@ -410,14 +423,20 @@
 		FF1C5CC01A002C3500032DC9 /* stamina_180x180px.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = stamina_180x180px.png; sourceTree = "<group>"; };
 		FF1C5CC11A002C3500032DC9 /* stamina_58x58px.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = stamina_58x58px.png; sourceTree = "<group>"; };
 		FF1C5CC21A002C3500032DC9 /* stamina_80x80px.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = stamina_80x80px.png; sourceTree = "<group>"; };
-		FF1C5CCA1A01501D00032DC9 /* AMExpandTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AMExpandTableView.h; sourceTree = "<group>"; };
-		FF1C5CCB1A01501D00032DC9 /* AMExpandTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AMExpandTableView.m; sourceTree = "<group>"; };
 		FF1C5CCD1A01506600032DC9 /* TrajectorySelectionVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TrajectorySelectionVC.h; sourceTree = "<group>"; };
 		FF1C5CCE1A01506600032DC9 /* TrajectorySelectionVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TrajectorySelectionVC.m; sourceTree = "<group>"; };
 		FF1C5D051A02B22B00032DC9 /* UIStaminaColor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIStaminaColor.h; sourceTree = "<group>"; };
 		FF1C5D061A02B22B00032DC9 /* UIStaminaColor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UIStaminaColor.m; sourceTree = "<group>"; };
 		FF1C5D081A03F6E600032DC9 /* UIStaminaLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIStaminaLabel.h; sourceTree = "<group>"; };
 		FF1C5D091A03F6E600032DC9 /* UIStaminaLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UIStaminaLabel.m; sourceTree = "<group>"; };
+		FF1C5D0B1A04026B00032DC9 /* icon_km.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon_km.png; sourceTree = "<group>"; };
+		FF1C5D0D1A0402B200032DC9 /* icon_pontos.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon_pontos.png; sourceTree = "<group>"; };
+		FF1C5D0F1A0402CE00032DC9 /* icon_calorias.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon_calorias.png; sourceTree = "<group>"; };
+		FF1C5D111A0402FA00032DC9 /* icon_cronometro.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon_cronometro.png; sourceTree = "<group>"; };
+		FF1C5D161A07EE6F00032DC9 /* StaminaExpandTV.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StaminaExpandTV.h; sourceTree = "<group>"; };
+		FF1C5D171A07EE6F00032DC9 /* StaminaExpandTV.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StaminaExpandTV.m; sourceTree = "<group>"; };
+		FF1C5D1C1A08095C00032DC9 /* LeftMenuExpandedVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LeftMenuExpandedVC.h; sourceTree = "<group>"; };
+		FF1C5D1D1A08095C00032DC9 /* LeftMenuExpandedVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LeftMenuExpandedVC.m; sourceTree = "<group>"; };
 		FF794D7519CA288F00808144 /* TrainingExercises.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TrainingExercises.h; sourceTree = "<group>"; };
 		FF794D7619CA288F00808144 /* TrainingExercises.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TrainingExercises.m; sourceTree = "<group>"; };
 		FFAC18FD19DB200E00B17487 /* FinishedRunningVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FinishedRunningVC.h; sourceTree = "<group>"; };
@@ -427,6 +446,9 @@
 		FFAC193919E3105B00B17487 /* wireframe_termina_caminhada.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = wireframe_termina_caminhada.jpg; sourceTree = "<group>"; };
 		FFAC193B19E3171C00B17487 /* HomeScreenVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeScreenVC.h; sourceTree = "<group>"; };
 		FFAC193C19E3171C00B17487 /* HomeScreenVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeScreenVC.m; sourceTree = "<group>"; };
+		FFAC194919E3355000B17487 /* icon_compartilhar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon_compartilhar.png; sourceTree = "<group>"; };
+		FFB8BCC01A093C5D00F9D8A7 /* TrajectoryRoute.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TrajectoryRoute.h; sourceTree = "<group>"; };
+		FFB8BCC11A093C5D00F9D8A7 /* TrajectoryRoute.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TrajectoryRoute.m; sourceTree = "<group>"; };
 		FFF51A5119E48066000BED6B /* Social.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Social.framework; path = System/Library/Frameworks/Social.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
@@ -658,6 +680,8 @@
 				FF15971B19C0D96E00D9236F /* AMSlideMenuLeftMenuSegue.m */,
 				FF15971C19C0D96E00D9236F /* AMSlideMenuLeftTableViewController.h */,
 				FF15971D19C0D96E00D9236F /* AMSlideMenuLeftTableViewController.m */,
+				FF1C5D1C1A08095C00032DC9 /* LeftMenuExpandedVC.h */,
+				FF1C5D1D1A08095C00032DC9 /* LeftMenuExpandedVC.m */,
 				FF15971E19C0D96E00D9236F /* AMSlideMenuMainViewController.h */,
 				FF15971F19C0D96E00D9236F /* AMSlideMenuMainViewController.m */,
 				FF15972019C0D96E00D9236F /* AMSlideMenuProtocols.h */,
@@ -726,11 +750,11 @@
 		FF15977719C0DA3B00D9236F /* NSObjects */ = {
 			isa = PBXGroup;
 			children = (
+				C5EB6BEC19D9DB5600C528FC /* Calendar */,
 				C56632541A03F3110006309D /* WeatherCondition.h */,
 				C56632551A03F3110006309D /* WeatherCondition.m */,
 				32F57C7019EC6838001BF6B2 /* MenuShouldOpen.h */,
 				32F57C7119EC6838001BF6B2 /* MenuShouldOpen.m */,
-				C5EB6BEC19D9DB5600C528FC /* Calendar */,
 				C5DFD4E819DC7B48000EA19C /* Cadastro.h */,
 				C5DFD4E919DC7B48000EA19C /* Cadastro.m */,
 				FF17BDBE19CA2E5600B5EF46 /* UserTraining.h */,
@@ -855,12 +879,12 @@
 				FF1C5C3619F97DA700032DC9 /* Exercises.m */,
 				FF13E9E119E70B9B0005BA49 /* TrajectoryFile.h */,
 				FF13E9E219E70B9B0005BA49 /* TrajectoryFile.m */,
-				FF13E9DE19E70B9B0005BA49 /* TrajectoryRoute.h */,
-				FF13E9DF19E70B9B0005BA49 /* TrajectoryRoute.m */,
-				FF159A4A19C21D1B00D9236F /* CoreDataLoading.h */,
-				FF159A4B19C21D1B00D9236F /* CoreDataLoading.m */,
+				FFB8BCC01A093C5D00F9D8A7 /* TrajectoryRoute.h */,
+				FFB8BCC11A093C5D00F9D8A7 /* TrajectoryRoute.m */,
 				FF794D7519CA288F00808144 /* TrainingExercises.h */,
 				FF794D7619CA288F00808144 /* TrainingExercises.m */,
+				FF159A4A19C21D1B00D9236F /* CoreDataLoading.h */,
+				FF159A4B19C21D1B00D9236F /* CoreDataLoading.m */,
 				FF17BDB819C9F78F00B5EF46 /* TrainingDayObject.h */,
 				FF17BDB919C9F78F00B5EF46 /* TrainingDayObject.m */,
 			);
@@ -883,14 +907,12 @@
 				FF1C5CB81A001CD800032DC9 /* MenuRunningVC.m */,
 				FF1C5CCD1A01506600032DC9 /* TrajectorySelectionVC.h */,
 				FF1C5CCE1A01506600032DC9 /* TrajectorySelectionVC.m */,
-				FF12F16719E878E3007524EF /* StartRunningVC.h */,
-				FF12F16819E878E3007524EF /* StartRunningVC.m */,
 				C5EB6C0619D9DBD300C528FC /* RunningMapVC.h */,
 				C5EB6C0719D9DBD300C528FC /* RunningMapVC.m */,
 				FFAC18FD19DB200E00B17487 /* FinishedRunningVC.h */,
 				FFAC18FE19DB200E00B17487 /* FinishedRunningVC.m */,
-				FF1C5CCA1A01501D00032DC9 /* AMExpandTableView.h */,
-				FF1C5CCB1A01501D00032DC9 /* AMExpandTableView.m */,
+				FF1C5D161A07EE6F00032DC9 /* StaminaExpandTV.h */,
+				FF1C5D171A07EE6F00032DC9 /* StaminaExpandTV.m */,
 			);
 			name = Corrida;
 			sourceTree = "<group>";
@@ -1118,7 +1140,6 @@
 			files = (
 				FF17BDC019CA2E5600B5EF46 /* UserTraining.m in Sources */,
 				FF1C5C3719F97DA700032DC9 /* Exercises.m in Sources */,
-				FF13E9E019E70B9B0005BA49 /* TrajectoryRoute.m in Sources */,
 				FF1C5C3A19FADD3D00032DC9 /* CalendarInformationVC.m in Sources */,
 				32F7238119FADB4B006170CD /* AddExercise.m in Sources */,
 				C5EB6C0819D9DBD300C528FC /* UserCalendarVC.m in Sources */,
@@ -1144,11 +1165,14 @@
 				C53A351D19D33B7700AC1383 /* LoginViewController.m in Sources */,
 				FF1C5CB91A001CD800032DC9 /* MenuRunningVC.m in Sources */,
 				C5EB6BFB19D9DB6B00C528FC /* CalendarMath.m in Sources */,
+				FF1C5D1E1A08095C00032DC9 /* LeftMenuExpandedVC.m in Sources */,
 				3207B56419EEFECA002052BF /* TipsVC.m in Sources */,
 				325F1FE919E7229C00001EB0 /* HideBBVC.m in Sources */,
 				FF794D7719CA288F00808144 /* TrainingExercises.m in Sources */,
 				FF15986F19C0E24F00D9236F /* UIColor+CreateMethods.m in Sources */,
 				C5EB6C0919D9DBD300C528FC /* FBLoginVC.m in Sources */,
+				FF1C5D181A07EE6F00032DC9 /* StaminaExpandTV.m in Sources */,
+				FFB8BCC21A093C5D00F9D8A7 /* TrajectoryRoute.m in Sources */,
 				C5EB6C0A19D9DBD300C528FC /* AVCamPreviewView.m in Sources */,
 				325F1FDA19E7091C00001EB0 /* AcademiaVC.m in Sources */,
 				3276F1CD19F6CE2D00B2F93D /* CriaTreinoVC.m in Sources */,
@@ -1158,7 +1182,6 @@
 				FFAC18FF19DB200E00B17487 /* FinishedRunningVC.m in Sources */,
 				FF1C5D071A02B22B00032DC9 /* UIStaminaColor.m in Sources */,
 				FF1C5D0A1A03F6E600032DC9 /* UIStaminaLabel.m in Sources */,
-				FF1C5CCC1A01501D00032DC9 /* AMExpandTableView.m in Sources */,
 				C5EB6BFA19D9DB6B00C528FC /* CalendarPreparer.m in Sources */,
 				C53A353119D3411F00AC1383 /* Reachability.m in Sources */,
 				FF15972719C0D96E00D9236F /* AMSlideMenuLeftTableViewController.m in Sources */,
@@ -1171,7 +1194,6 @@
 				C53A352C19D33B9A00AC1383 /* RWBlurPopoverTransitionController.m in Sources */,
 				32F7237E19FABCD6006170CD /* CreateTrainTemp.m in Sources */,
 				FF13E9D719E5BE160005BA49 /* RoutePointsCartesian.m in Sources */,
-				FF12F16919E878E3007524EF /* StartRunningVC.m in Sources */,
 				FFAC190B19DC86C400B17487 /* SocialSharingVC.m in Sources */,
 				FF17BDBA19C9F78F00B5EF46 /* TrainingDayObject.m in Sources */,
 				FF1596F019C0CBC900D9236F /* main.m in Sources */,
