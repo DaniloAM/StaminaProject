@@ -108,6 +108,10 @@
     
     [imageView setFrame:CGRectMake(imageView.frame.origin.x, tableViewRowHeight * 3, imageView.frame.size.width, imageView.frame.size.height)];
     
+    UIButton *goToRoute = [[UIButton alloc] initWithFrame:imageView.frame];
+    
+    [goToRoute addTarget:self action:@selector(performSelectedRoute:) forControlEvents:UIControlEventTouchUpInside];
+    
     
     
     NSArray *array = [self getHistoryOfThisRoute];
@@ -182,6 +186,7 @@
     
 
     [[super cellContentsArray] addObject:imageView];
+    [[super cellContentsArray] addObject:goToRoute];
     
     [[self routeTableView] reloadData];
     
@@ -223,6 +228,18 @@
     
     //Return an array with calories, distance, time and points
     return @[[NSNumber numberWithInt:calories],[[self openRoute] trajectoryDistance],[NSNumber numberWithInt:timeInSeconds],[NSNumber numberWithInt:points]];
+    
+}
+
+
+-(void)performSelectedRoute: (UIButton *)sender {
+    
+    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+    RunningMapVC *myVC = (RunningMapVC *)[storyboard instantiateViewControllerWithIdentifier:@"runningMap"];
+    
+    //Receive the route to draw it
+    [myVC receiveTrajectorySelected:[self openRoute]];
+    [self.navigationController pushViewController:myVC animated:YES];
     
 }
 

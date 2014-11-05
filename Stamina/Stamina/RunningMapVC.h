@@ -34,5 +34,6 @@
 @property int seconds, minutes;
 @property NSTimer *timer;
 
+-(void)receiveTrajectorySelected: (TrajectoryRoute *)route;
 
 @end

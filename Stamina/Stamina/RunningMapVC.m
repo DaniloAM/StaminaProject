@@ -102,7 +102,9 @@
 
 -(void)startReloadingUserPosition {
     
-    [self zoomToUserRegion];
+    if(_seconds % 10 == 0) {
+        [self zoomToUserRegion];
+    }
     [self updateTextInTimeLabel];
     _seconds++;
     
@@ -205,6 +207,8 @@
         [[self routeLineView] setFillColor:[UIColor colorWithRed:100/255.0f green:250/255.0f blue:100/255.0f alpha:1.0]];
         
         [[self routeLineView] setStrokeColor:[UIColor colorWithRed:100/255.0f green:250/255.0f blue:100/255.0f alpha:1.0]];
+        
+        _userRouteIsDraw = false;
     }
     
     else {

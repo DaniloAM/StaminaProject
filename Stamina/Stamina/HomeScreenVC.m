@@ -24,4 +24,6 @@
     MenuShouldOpen *temp = [MenuShouldOpen alloc];
     [temp setOpen:YES];
 }
+
+
 @end

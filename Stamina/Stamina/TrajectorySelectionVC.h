@@ -11,6 +11,7 @@
 #import "UserData.h"
 #import "RoutePointsCartesian.h"
 #import "TrajectoryFile.h"
+#import "RunningMapVC.h"
 #import <MapKit/MapKit.h>
 
 @interface TrajectorySelectionVC : StaminaExpandTV 

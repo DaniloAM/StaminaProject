@@ -571,7 +571,7 @@
         <!--Running MapVC-->
         <scene sceneID="hBC-1x-cGS">
             <objects>
-                <viewController id="Hoc-Hi-pFE" customClass="RunningMapVC" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="runningMap" id="Hoc-Hi-pFE" customClass="RunningMapVC" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="HPQ-up-Z2K"/>
                         <viewControllerLayoutGuide type="bottom" id="beX-6B-fUc"/>

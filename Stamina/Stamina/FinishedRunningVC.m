@@ -32,7 +32,8 @@
     }
 
     [super showBarWithAnimation:true];
-    //self.navigationController.navigationBar.translucent = YES;
+    
+    self.navigationController.navigationBar.translucent = YES;
     
 }
 
@@ -134,7 +135,8 @@
     UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
     UIViewController *myVC = (UIViewController *)[storyboard instantiateViewControllerWithIdentifier:@"shareScreen"];
     
-     //self.navigationController.navigationBar.translucent = NO;
+     self.navigationController.navigationBar.translucent = NO;
+    
     [self.navigationController pushViewController:myVC animated:YES];
     
 }
@@ -142,7 +144,8 @@
 
 -(IBAction)goHome {
     
-     //self.navigationController.navigationBar.translucent = NO;
+     self.navigationController.navigationBar.translucent = NO;
+    
     [self.navigationController popToRootViewControllerAnimated:true];
     
 }
