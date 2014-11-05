@@ -17,7 +17,6 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    //[WebServiceResponse getJsonComNickName:<#(NSString *)#> eSenha:<#(NSString *)#>]
 }
 -(NSString *)segueIdentifierForIndexPathInLeftMenu:(NSIndexPath *)indexPath{
     NSString *identifier;

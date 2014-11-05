@@ -18,15 +18,11 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-<<<<<<< HEAD
     _arrayView = [NSMutableArray array];
     _numberOfViews = 7;
     [self setPage:[[UIPageControl alloc] initWithFrame:CGRectMake(0, 0, 100, 200)]];
     [[self page] setNumberOfPages:_numberOfViews];
-=======
-
     _numberOfViews = 8;
->>>>>>> FETCH_HEAD
     CGSize size = [[UIScreen mainScreen] bounds].size;
     UIImageView *image = [[UIImageView alloc] initWithFrame:CGRectMake(179*size.width/largura, 212*size.height/altura, 284*size.width/largura, 240*size.height/altura)];
     [image setImage:[UIImage imageNamed:@"Logo_Stamina.png"]];
@@ -107,9 +103,6 @@
     [self checkWhichPosition:scrollView.contentOffset.x];
 }
 -(void)left{
-<<<<<<< HEAD
-    _currentIndex++;
-=======
     [self lblError].hidden = YES;
     int x = [self check];
     if (x) {
@@ -119,17 +112,11 @@
         _currentIndex++;
         
     }
->>>>>>> FETCH_HEAD
     [self callNextPageIndex:_currentIndex];
 
 }
-<<<<<<< HEAD
--(void)right{
-    _currentIndex--;
-=======
 -(int)check{
     int error = 0;
-    return error;
     switch (_currentIndex) {
         case 0:
             if([self txtName].text.length==0){
@@ -302,7 +289,6 @@
     else {
         _currentIndex--;
     }
->>>>>>> FETCH_HEAD
     [self callNextPageIndex:_currentIndex];
 
 }
@@ -424,11 +410,7 @@
         _currentIndex = 0;
     if(x == _numberOfViews|| x < 0)
         return;
-<<<<<<< HEAD
     [self blockViews];
-=======
-    
->>>>>>> FETCH_HEAD
     [UIView animateWithDuration:0.4
                      animations:^{
                         _page.currentPage = x;
@@ -464,7 +446,7 @@
         keyboardSize.width = origKeySize.height;
     }
     [self moveView:_scroll withPoint:CGPointMake(0,-keyboardSize.height/2) withDuration:0.2];
-    [self moveView:_logo withPoint:CGPointMake(_logoStart.x,_logoStart.y-keyboardSize.height/2) withDuration:0.2];
+    [self moveView:_logo withPoint:CGPointMake(_logoStart.x,1.7*_logoStart.y-keyboardSize.height/2) withDuration:0.2];
 
 }
 

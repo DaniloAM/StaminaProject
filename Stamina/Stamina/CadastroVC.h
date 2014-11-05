@@ -17,13 +17,10 @@
 @property NSMutableArray *arrayOfViews;
 @property UIPageControl *page;
 @property BOOL keyboardUp;
-<<<<<<< HEAD
 @property NSMutableArray *arrayView;
-=======
 @property CGPoint logoStart;
 @property (weak, nonatomic) IBOutlet UILabel *lblError;
 @property UIImageView *logo;
 @property UISegmentedControl *seg;
 @property UIButton *btn;
->>>>>>> FETCH_HEAD
 @end
