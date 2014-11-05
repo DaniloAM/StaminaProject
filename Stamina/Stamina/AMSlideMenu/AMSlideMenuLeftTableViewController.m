@@ -61,7 +61,13 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    
+    /*
+     
+     AMSlideMenuMainViewController *mainVC = [self mainVC];
+     NSIndexPath *index = [NSIndexPath indexPathForRow:1 inSection:0];
+     [mainVC openContentViewControllerForMenu:AMSlideMenuLeft atIndexPath:index];
+     
+     */
     return;
     if ([self.mainVC respondsToSelector:@selector(navigationControllerForIndexPathInLeftMenu:)]) {
         UINavigationController *navController = [self.mainVC navigationControllerForIndexPathInLeftMenu:indexPath];
