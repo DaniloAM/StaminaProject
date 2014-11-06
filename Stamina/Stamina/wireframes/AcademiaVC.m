@@ -15,33 +15,24 @@
 @implementation AcademiaVC
 
 -(void)viewWillAppear:(BOOL)animated{
-    [super viewWillAppear:YES withGesture:1];
-    NSArray *array =  [super criaBarButton];
+    [super viewWillAppear:YES];
+
     
-    UIButton *btn = [array objectAtIndex:0];
-    
-    [btn addTarget:self action:@selector(function1) forControlEvents:UIControlEventTouchUpInside];
-    btn = [array objectAtIndex:1];
-    [btn addTarget:self action:@selector(function2) forControlEvents:UIControlEventTouchUpInside];
-    btn = [array objectAtIndex:2];
-    [btn addTarget:self action:@selector(function3) forControlEvents:UIControlEventTouchUpInside];
-    [btn setBackgroundColor:[UIColor    blackColor]];
-    UIImageView *image = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, btn.frame.size.height*0.75, btn.frame.size.height*0.75)];
-    [image  setImage:[UIImage imageNamed:@"icone_ok.png"]];
-    [btn addSubview:image];
-    [image setCenter:CGPointMake(btn.frame.size.width/2, btn.frame.size.height/2)];
-}
+    [self firstButtonMethod:@selector(function1) withImage:[UIImage imageNamed:@"icon_home.png"]];
+    [self secondButtonMethod:@selector(function2) withImage:[UIImage imageNamed:@"icon_adicionar.png"]];
+    [self thirdButtonMethod:@selector(function3) withImage:[UIImage imageNamed:@"icon_editar.png"]];
+    }
 -(void)function1{
     [self.navigationController popToRootViewControllerAnimated:YES];
 }
 -(void)function2{
-    
-}
--(void)function3{
     UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
     UIViewController *myVC;
     myVC= (UIViewController *)[storyboard instantiateViewControllerWithIdentifier:@"CriaTreino"];
     
     [self.navigationController pushViewController:myVC animated:YES];
+}
+-(void)function3{
+
 }
 @end

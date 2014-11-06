@@ -22,23 +22,11 @@
     [self.table setSeparatorStyle:UITableViewCellSeparatorStyleNone];
     [self.table setBackgroundColor:[UIColor clearColor]];
     [self.view addSubview:self.table];
-    NSArray *array =  [super criaBarButton];
     CreateTrainTemp *exe = [CreateTrainTemp alloc];
     if(![exe arrayOfExercises]){
         [exe setArrayOfExercises:[NSMutableArray array]];
     }
-    UIButton *btn = [array objectAtIndex:0];
-    
-    [btn addTarget:self action:@selector(function1) forControlEvents:UIControlEventTouchUpInside];
-    btn = [array objectAtIndex:1];
-  //  [btn addTarget:self action:@selector(adicionaTreino) forControlEvents:UIControlEventTouchUpInside];
-    btn = [array objectAtIndex:2];
-    [btn addTarget:self action:@selector(adicionaTreino) forControlEvents:UIControlEventTouchUpInside];
-    [btn setBackgroundColor:[UIColor    blackColor]];
-    UIImageView *image = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, btn.frame.size.height*0.85, btn.frame.size.height*0.85)];
-    [image  setImage:[UIImage imageNamed:@"icone_ok.png"]];
-    [btn addSubview:image];
-    [image setCenter:CGPointMake(btn.frame.size.width/2, btn.frame.size.height/2)];
+    [self firstButtonMethod:@selector(function1) withImage:nil];
     [super hideBarWithAnimation:1];
     UILongPressGestureRecognizer *lpgr = [[UILongPressGestureRecognizer alloc]
                                           initWithTarget:self action:@selector(handleLongPress:)];

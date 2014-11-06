@@ -61,7 +61,17 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
+<<<<<<< HEAD
     
+=======
+    /*
+     
+     AMSlideMenuMainViewController *mainVC = [self mainVC];
+     NSIndexPath *index = [NSIndexPath indexPathForRow:1 inSection:0];
+     [mainVC openContentViewControllerForMenu:AMSlideMenuLeft atIndexPath:index];
+     
+     */
+>>>>>>> FETCH_HEAD
     if ([self.mainVC respondsToSelector:@selector(navigationControllerForIndexPathInLeftMenu:)]) {
         UINavigationController *navController = [self.mainVC navigationControllerForIndexPathInLeftMenu:indexPath];
         AMSlideMenuContentSegue *segue = [[AMSlideMenuContentSegue alloc] initWithIdentifier:@"ContentSugue" source:self destination:navController];

@@ -21,16 +21,9 @@
 
     CreateTrainTemp *create = [CreateTrainTemp alloc];
     [super viewDidAppear:animated];
-    NSArray *array =  [super criaBarButton];
-        UIButton *btn = [array objectAtIndex:0];
-    [btn addTarget:self action:@selector(function1) forControlEvents:UIControlEventTouchUpInside];
-    
-    btn = [array objectAtIndex:1];
-    [btn addTarget:self action:@selector(function2) forControlEvents:UIControlEventTouchUpInside];
-    
-    btn = [array objectAtIndex:2];
-    [btn addTarget:self action:@selector(function3) forControlEvents:UIControlEventTouchUpInside];
-
+    [self firstButtonMethod:@selector(function1) withImage:nil];
+    [self secondButtonMethod:@selector(function2) withImage:nil];
+    [self thirdButtonMethod:@selector(function3) withImage:nil];
     _currentIndex = 1;
     Exercises *first = [[create arrayOfExercises] firstObject];
     [[self exerciseName] setText:first.name];

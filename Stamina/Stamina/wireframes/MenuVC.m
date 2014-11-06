@@ -68,8 +68,16 @@
 -(void)viewWillAppear:(BOOL)animated{
     [self viewWillAppear:animated withGesture:1];
 }
+-(void)disableRight{
+    _right.enabled = NO;
+}
+-(void)enableRight{
+    _right.enabled = YES;
+}
+
 -(void)viewWillAppear:(BOOL)animated withGesture: (BOOL)gesture{
     [super viewWillAppear:animated];
+    [self cleanAllBtn];
     _lastDirection =-1;
     UISwipeGestureRecognizer *right = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(pop)];
     [right setDirection:UISwipeGestureRecognizerDirectionRight];
@@ -151,10 +159,22 @@
     [self.navigationController.view addGestureRecognizer:[temp gesture]];
     
 }
+-(void)firstButtonMethod: (void *)metodo{
+    UIButton *btn = [[self arrayOfButtons] firstObject];
+    [btn addTarget:self action:metodo forControlEvents:UIControlEventTouchUpInside];
+}
+-(void)secondButtonMethod: (void *)metodo{
+    UIButton *btn = [[self arrayOfButtons] objectAtIndex:1];
+    [btn addTarget:self action:metodo forControlEvents:UIControlEventTouchUpInside];
+}
+-(void)thirdButtonMethod: (void *)metodo{
+    UIButton *btn = [[self arrayOfButtons] lastObject];
+    [btn addTarget:self action:metodo forControlEvents:UIControlEventTouchUpInside];
+}
 -(NSArray *)criaBarButton{
     CGSize screenSize = [[UIScreen mainScreen] bounds].size;
     NSMutableArray *array = [NSMutableArray array];
-    [self setTab:[[UIView alloc] initWithFrame:CGRectMake(0, screenSize.height-screenSize.height*120/1332 , screenSize.width, screenSize.height*120/1332 )]];
+    [self setTab:[[UIView alloc] initWithFrame:CGRectMake(0, screenSize.height-screenSize.height*150/1332 , screenSize.width, screenSize.height*150/1332 )]];
     [[self tab] setBackgroundColor:[UIColor blackColor]];
     [self.navigationController.view addSubview:self.tab];
     [self setStartPointBar:self.tab.frame.origin];
@@ -165,11 +185,7 @@
     for(int x = 0 ; x < 3; x++){
         UIButton *btn1 = [[UIButton alloc] initWithFrame:CGRectMake(x*self.tab.frame.size.width/3, 0, self.tab.frame.size.width/3, self.tab.frame.size.height)];
         [self.tab addSubview:btn1];
-        CGFloat hue = ( arc4random() % 256 / 256.0 );  //  0.0 to 1.0
-        CGFloat saturation = ( arc4random() % 128 / 256.0 ) + 0.5;  //  0.5 to 1.0, away from white
-        CGFloat brightness = ( arc4random() % 128 / 256.0 ) + 0.5;  //  0.5 to 1.0, away from black
-        UIColor *color = [UIColor colorWithHue:hue saturation:saturation brightness:brightness alpha:1];
-        [btn1 setBackgroundColor:color];
+               [btn1 setBackgroundColor:[UIColor staminaBlackColor]];
         [array addObject:btn1];
     }
     _arrayOfButtons = array;
@@ -265,5 +281,37 @@
     }
 }
 
+-(void)firstButtonMethod: (void *)metodo withImage: (UIImage *)image{
+    MenuVC *temp = [self.navigationController.viewControllers objectAtIndex:0];
+    UIButton *btn = [[temp arrayOfButtons] firstObject];
+    if(!(metodo ==nil))
+    [btn addTarget:self action:metodo forControlEvents:UIControlEventTouchUpInside];
+    UIImageView *imgView = [[UIImageView alloc] initWithFrame:CGRectMake(btn.frame.size.width - btn.frame.size.height*88/122-btn.frame.size.width*33/213, btn.frame.size.height*16/122, btn.frame.size.height*88/122,btn.frame.size.height*88/122)];
+    [imgView  setImage:image];
+    [btn addSubview:imgView];
+}
+-(void)addImage :(UIImage *)image to:(UIButton *)btn{
+    UIImageView *imgView = [[UIImageView alloc] initWithFrame:CGRectMake(0,  btn.frame.size.height*16/122, btn.frame.size.height*88/122,btn.frame.size.height*88/122)];
+    [imgView  setImage:image];
+    [imgView setFrame:CGRectMake(btn.frame.size.width/2- btn.frame.size.height*88/244,  btn.frame.size.height*16/122, btn.frame.size.height*88/122,btn.frame.size.height*88/122)];
+    [btn addSubview:imgView];
 
+}
+-(void)secondButtonMethod: (void *)metodo  withImage: (UIImage *)image{
+    MenuVC *temp = [self.navigationController.viewControllers objectAtIndex:0];
+    UIButton *btn = [[temp arrayOfButtons] objectAtIndex:1];
+    if(!(metodo ==nil))
+    [btn addTarget:self action:metodo forControlEvents:UIControlEventTouchUpInside];
+    [self addImage:image to:btn];
+}
+-(void)thirdButtonMethod: (void *)metodo  withImage: (UIImage *)image{
+    MenuVC *temp = [self.navigationController.viewControllers objectAtIndex:0];
+    UIButton *btn = [[temp arrayOfButtons] lastObject];
+    if(!(metodo ==nil))
+    [btn addTarget:self action:metodo forControlEvents:UIControlEventTouchUpInside];
+    UIImageView *imgView = [[UIImageView alloc] initWithFrame:CGRectMake(btn.frame.size.width*33/213, btn.frame.size.height*16/122, btn.frame.size.height*88/122,btn.frame.size.height*88/122)];
+    [imgView  setImage:image];
+    [btn addSubview:imgView];
+
+}
 @end

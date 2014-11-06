@@ -21,6 +21,13 @@
 @property NSDate *inicio;
 @property int sender;
 @property UIAlertView *alert;
-@property (weak, nonatomic) IBOutlet UILabel *labelVazio;
 @property (weak, nonatomic) IBOutlet UIButton *btn;
+@property BOOL selected;
+@property (weak, nonatomic) IBOutlet UIView *viewDays;
+@property NSMutableArray *arrayOfDays;
+@property (weak, nonatomic) IBOutlet UIView *viewAux;
+@property (weak, nonatomic) IBOutlet UIView *viewAux2;
+@property (weak, nonatomic) IBOutlet UIView *viewAux3;
+@property (weak, nonatomic) IBOutlet UIView *viewAux4;
+@property (weak, nonatomic) IBOutlet UIView *viewAux5;
 @end
