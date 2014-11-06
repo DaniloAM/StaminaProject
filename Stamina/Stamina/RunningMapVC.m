@@ -90,11 +90,6 @@
     [[self locationManager] startUpdatingLocation];
     [[self mapRunningView] setShowsUserLocation:true];
     
-    
-    if(![self timer]) {
-        _timer = [NSTimer scheduledTimerWithTimeInterval:1.0 target:self selector:@selector(startReloadingUserPosition) userInfo:nil repeats:true];
-    }
-    
     [super hideBarWithAnimation:true];
     
     if([self isWaitingForPicture]) {
@@ -103,8 +98,9 @@
         if([[self pictureViewController] userPicture]) {
             [self savePictureOfRoutePlace:[[self pictureViewController] userPicture]];
         }
-            
     }
+    
+    [self zoomToUserRegion];
 }
 
 
@@ -141,7 +137,9 @@
         newLocation = [locations objectAtIndex:i];
         
         CLLocationDistance distance = [_oldLocation distanceFromLocation:newLocation];
-        _distanceInMeters += distance;
+        
+        if([self isRunning])
+            _distanceInMeters += distance;
         
         [self drawRouteLayerWithPointOne:_oldLocation andTwo:newLocation];
         
@@ -287,11 +285,11 @@
 
 
 
--(IBAction)finishButton {
+-(IBAction)finishButton: (UIButton *)sender {
     
     if(![self isRunning]) {
         
-        [[self buttonImage] setImage:[UIImage imageNamed:@""]];
+        [sender setBackgroundImage:[UIImage imageNamed:@""] forState:UIControlStateNormal];
         
         _timer = [NSTimer scheduledTimerWithTimeInterval:1.0 target:self selector:@selector(startReloadingUserPosition) userInfo:nil repeats:true];
         
@@ -322,10 +320,6 @@
 
 
 -(void)finishRunning {
-    
-    //Stops the timer
-    [_timer invalidate];
-    [self setIsRunning:false];
     
     FinishedRoute *route = [[FinishedRoute alloc] init];
     

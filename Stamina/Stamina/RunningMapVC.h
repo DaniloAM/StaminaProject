@@ -14,7 +14,6 @@
 
 @interface RunningMapVC : HideBBVC <MKMapViewDelegate , CLLocationManagerDelegate, UIAlertViewDelegate>
 
-@property (weak, nonatomic) IBOutlet UIImageView *buttonImage;
 @property (weak , nonatomic) IBOutlet MKMapView *mapRunningView;
 @property MKPolyline *routeLine;
 @property MKPolylineView *routeLineView;

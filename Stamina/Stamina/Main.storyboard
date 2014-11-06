@@ -433,6 +433,20 @@
                         <subviews>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="cg0-0p-TwB" customClass="AVCamPreviewView">
                                 <rect key="frame" x="-26" y="79" width="370" height="495"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="icone_camera_pressed.png" translatesAutoresizingMaskIntoConstraints="NO" id="HOJ-7l-Iwb">
+                                        <rect key="frame" x="154" y="406" width="63" height="63"/>
+                                    </imageView>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yim-5L-tS1">
+                                        <rect key="frame" x="154" y="406" width="63" height="63"/>
+                                        <state key="normal" backgroundImage="icone_camera_pressed.png">
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="snapStillImage:" destination="RfZ-Bh-jM0" eventType="touchUpInside" id="f9c-Kw-yX0"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
                                 <color key="backgroundColor" red="1" green="0.9314516129" blue="0.2196078598" alpha="1" colorSpace="deviceRGB"/>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TKm-u3-4Ez">
@@ -453,24 +467,12 @@
                                     <action selector="returnToPreviousView" destination="RfZ-Bh-jM0" eventType="touchUpInside" id="ohB-PL-GjX"/>
                                 </connections>
                             </button>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="icone_camera.png" translatesAutoresizingMaskIntoConstraints="NO" id="HOJ-7l-Iwb">
-                                <rect key="frame" x="129" y="485" width="63" height="63"/>
-                            </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="icone_voltar.png" translatesAutoresizingMaskIntoConstraints="NO" id="3VG-XC-1M0">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="icon_voltar.png" translatesAutoresizingMaskIntoConstraints="NO" id="3VG-XC-1M0">
                                 <rect key="frame" x="241" y="485" width="63" height="63"/>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="icone_camera_rotate.png" translatesAutoresizingMaskIntoConstraints="NO" id="RL9-st-Rs5">
                                 <rect key="frame" x="16" y="485" width="63" height="63"/>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yim-5L-tS1">
-                                <rect key="frame" x="115" y="472" width="90" height="90"/>
-                                <state key="normal" backgroundImage="icone_camera_pressed.png">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="snapStillImage:" destination="RfZ-Bh-jM0" eventType="touchUpInside" id="f9c-Kw-yX0"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.9960784912109375" green="0.84705889225006104" blue="0.19215688109397888" alpha="1" colorSpace="deviceRGB"/>
                     </view>
@@ -581,55 +583,55 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="00 Km" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Hav-fn-fTY">
-                                <rect key="frame" x="0.0" y="226" width="320" height="67"/>
+                                <rect key="frame" x="0.0" y="246" width="320" height="67"/>
                                 <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="60"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="00 km/h" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MEh-hp-QhS">
-                                <rect key="frame" x="16" y="351" width="105" height="34"/>
+                                <rect key="frame" x="16" y="371" width="105" height="34"/>
                                 <fontDescription key="fontDescription" name="Avenir-Roman" family="Avenir" pointSize="19"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="0:00:00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9We-XX-REb">
-                                <rect key="frame" x="116" y="351" width="88" height="34"/>
+                                <rect key="frame" x="116" y="371" width="88" height="34"/>
                                 <fontDescription key="fontDescription" name="Avenir-Roman" family="Avenir" pointSize="20"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="000 bps" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="v94-tR-wk8">
-                                <rect key="frame" x="212" y="351" width="88" height="34"/>
+                                <rect key="frame" x="212" y="371" width="88" height="34"/>
                                 <fontDescription key="fontDescription" name="Avenir-Roman" family="Avenir" pointSize="20"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="Hxh-iD-IrK">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="212"/>
+                                <rect key="frame" x="0.0" y="20" width="320" height="212"/>
                             </mapView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Lmf-ti-4rb">
-                                <rect key="frame" x="16" y="401" width="288" height="68"/>
-                                <state key="normal">
+                                <rect key="frame" x="32" y="437" width="256" height="36"/>
+                                <state key="normal" backgroundImage="button_iniciar.png">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="finishButton:" destination="Hoc-Hi-pFE" eventType="touchUpInside" id="M6e-UD-v3x"/>
+                                </connections>
                             </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="icon_cronometro.png" translatesAutoresizingMaskIntoConstraints="NO" id="4b3-dO-nCv">
-                                <rect key="frame" x="141" y="313" width="37" height="37"/>
+                                <rect key="frame" x="141" y="333" width="37" height="37"/>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="icon_velocimetro.png" translatesAutoresizingMaskIntoConstraints="NO" id="cQc-fg-kvG">
-                                <rect key="frame" x="47" y="314" width="37" height="37"/>
+                                <rect key="frame" x="47" y="334" width="37" height="37"/>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="icon_bps.png" translatesAutoresizingMaskIntoConstraints="NO" id="EaF-7O-9e1">
-                                <rect key="frame" x="236" y="314" width="37" height="37"/>
-                            </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="button_iniciar.png" translatesAutoresizingMaskIntoConstraints="NO" id="8UQ-5B-hQN">
-                                <rect key="frame" x="32" y="417" width="256" height="36"/>
+                                <rect key="frame" x="236" y="334" width="37" height="37"/>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="icon_camera_unable.png" translatesAutoresizingMaskIntoConstraints="NO" id="iwk-vh-SaD">
-                                <rect key="frame" x="265" y="10" width="46" height="46"/>
+                                <rect key="frame" x="265" y="29" width="46" height="46"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PgM-CF-G5b">
-                                <rect key="frame" x="261" y="5" width="55" height="55"/>
+                                <rect key="frame" x="261" y="25" width="55" height="55"/>
                                 <state key="normal">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -639,7 +641,6 @@
                     </view>
                     <navigationItem key="navigationItem" id="daA-3B-bMg"/>
                     <connections>
-                        <outlet property="buttonImage" destination="8UQ-5B-hQN" id="MmW-G6-Hjb"/>
                         <outlet property="distanceLabel" destination="Hav-fn-fTY" id="Fea-Bo-gj1"/>
                         <outlet property="mapRunningView" destination="Hxh-iD-IrK" id="XOi-Fs-kf2"/>
                         <outlet property="speedLabel" destination="MEh-hp-QhS" id="blH-5E-wM7"/>
@@ -648,7 +649,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mY3-As-W9s" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2922" y="-4113"/>
+            <point key="canvasLocation" x="2894" y="-4119"/>
         </scene>
         <!--AcademiaVC-->
         <scene sceneID="syk-1u-5DQ">
@@ -1354,7 +1355,7 @@
     </scenes>
     <resources>
         <image name="Logo_Stamina.png" width="813" height="688"/>
-        <image name="button_iniciar.png" width="512" height="73"/>
+        <image name="button_iniciar.png" width="510" height="71"/>
         <image name="button_trajetos.png" width="510" height="71"/>
         <image name="fb_sign.png" width="454" height="71"/>
         <image name="icon_add_unable.png" width="289" height="289"/>
@@ -1367,11 +1368,10 @@
         <image name="icon_pontos.png" width="289" height="289"/>
         <image name="icon_sol.png" width="56" height="56"/>
         <image name="icon_velocimetro.png" width="289" height="289"/>
+        <image name="icon_voltar.png" width="289" height="289"/>
         <image name="icone_calendario_01.png" width="301" height="322"/>
-        <image name="icone_camera.png" width="394" height="394"/>
         <image name="icone_camera_pressed.png" width="393" height="394"/>
         <image name="icone_camera_rotate.png" width="393" height="394"/>
-        <image name="icone_voltar.png" width="391" height="394"/>
         <image name="wireframe_academia.jpg" width="884" height="1574"/>
         <image name="wireframe_academia_inicio.jpg" width="886" height="1574"/>
         <image name="wireframe_cadastro.jpg" width="876" height="1567"/>

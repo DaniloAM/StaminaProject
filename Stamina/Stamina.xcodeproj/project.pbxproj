@@ -178,6 +178,8 @@
 		FFAC193D19E3171C00B17487 /* HomeScreenVC.m in Sources */ = {isa = PBXBuildFile; fileRef = FFAC193C19E3171C00B17487 /* HomeScreenVC.m */; };
 		FFB8BCC51A0AA17C00F9D8A7 /* RoutePicture.m in Sources */ = {isa = PBXBuildFile; fileRef = FFB8BCC41A0AA17C00F9D8A7 /* RoutePicture.m */; };
 		FFB8BCC81A0AA3DC00F9D8A7 /* TrajectoryRoute.m in Sources */ = {isa = PBXBuildFile; fileRef = FFB8BCC71A0AA3DC00F9D8A7 /* TrajectoryRoute.m */; };
+		FFB8BCCB1A0BFF3400F9D8A7 /* button_iniciar.png in Resources */ = {isa = PBXBuildFile; fileRef = FFB8BCC91A0BFF3400F9D8A7 /* button_iniciar.png */; };
+		FFB8BCCC1A0BFF3400F9D8A7 /* button_trajetos.png in Resources */ = {isa = PBXBuildFile; fileRef = FFB8BCCA1A0BFF3400F9D8A7 /* button_trajetos.png */; };
 		FFF51A5219E48066000BED6B /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FFF51A5119E48066000BED6B /* Social.framework */; };
 /* End PBXBuildFile section */
 
@@ -430,6 +432,8 @@
 		FFB8BCC41A0AA17C00F9D8A7 /* RoutePicture.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RoutePicture.m; sourceTree = "<group>"; };
 		FFB8BCC61A0AA3DC00F9D8A7 /* TrajectoryRoute.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TrajectoryRoute.h; sourceTree = "<group>"; };
 		FFB8BCC71A0AA3DC00F9D8A7 /* TrajectoryRoute.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TrajectoryRoute.m; sourceTree = "<group>"; };
+		FFB8BCC91A0BFF3400F9D8A7 /* button_iniciar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = button_iniciar.png; sourceTree = "<group>"; };
+		FFB8BCCA1A0BFF3400F9D8A7 /* button_trajetos.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = button_trajetos.png; sourceTree = "<group>"; };
 		FFF51A5119E48066000BED6B /* Social.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Social.framework; path = System/Library/Frameworks/Social.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
@@ -768,6 +772,8 @@
 				C5E99E5D19DB3AA200513CDE /* wireframes */,
 				C527A38519DB1FB300C72B21 /* icones */,
 				C5EB6C0E19D9DC5B00C528FC /* caminhada_tela.png */,
+				FFB8BCC91A0BFF3400F9D8A7 /* button_iniciar.png */,
+				FFB8BCCA1A0BFF3400F9D8A7 /* button_trajetos.png */,
 				C5CE7D7019D4BA10003E1595 /* calendar_icon.png */,
 				C5CE7D7119D4BA10003E1595 /* fb_sign.png */,
 				C5CE7D7219D4BA10003E1595 /* menu_icon.png */,
@@ -1048,6 +1054,7 @@
 				FF1C5CB31A001C0900032DC9 /* icone_calendario_28.png in Resources */,
 				C5CE7D7619D4BA10003E1595 /* fb_sign.png in Resources */,
 				C5F447111A07E042005031C2 /* icon_pontos.png in Resources */,
+				FFB8BCCB1A0BFF3400F9D8A7 /* button_iniciar.png in Resources */,
 				325F1FD719E702F400001EB0 /* bg_bar.jpg in Resources */,
 				C5E99E7B19DB48BA00513CDE /* wireframe_cadastro.jpg in Resources */,
 				C5E99E7619DB3AA200513CDE /* wireframe_informacoes.jpg in Resources */,
@@ -1079,6 +1086,7 @@
 				FF1C5C9F1A001C0900032DC9 /* icone_calendario_08.png in Resources */,
 				C5F447191A07E042005031C2 /* icone_camera_pressed.png in Resources */,
 				C5F447091A07E042005031C2 /* icon_dica.png in Resources */,
+				FFB8BCCC1A0BFF3400F9D8A7 /* button_trajetos.png in Resources */,
 				C5E99E7519DB3AA200513CDE /* wireframe_informacaoes.jpg in Resources */,
 				FF1C5CA71A001C0900032DC9 /* icone_calendario_16.png in Resources */,
 				C5E99E6C19DB3AA200513CDE /* wireframe_academia_inicio.jpg in Resources */,
