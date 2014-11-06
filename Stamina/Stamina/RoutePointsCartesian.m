@@ -8,6 +8,8 @@
 
 #import "RoutePointsCartesian.h"
 
+#define cartesianBorderIncrease 3
+
 @implementation RoutePointsCartesian
 
 -(void)addPointToRouteInX: (double)pointX andY: (double)pointY {
@@ -149,8 +151,8 @@
     /*  Increase the frame by the size of the line,
         so the line doesnt cross the frame limit.    */
     
-    _smallRouteFrame.size.width += lineSize * 2;
-    _smallRouteFrame.size.height += lineSize * 2;
+    _smallRouteFrame.size.width += lineSize * cartesianBorderIncrease * 2;
+    _smallRouteFrame.size.height += lineSize * cartesianBorderIncrease * 2;
     
     UIImageView *routeView = [[UIImageView alloc] initWithFrame:_smallRouteFrame];
     
@@ -162,9 +164,9 @@
     //Draw the lines from point (A) to point (B)
     for(int x = 1; x < [[self arrayOfPointsX] count]; x++) {
         
-        CGContextMoveToPoint(UIGraphicsGetCurrentContext(), [[[self arrayOfPointsX] objectAtIndex:x-1] doubleValue] + lineSize, [[[self arrayOfPointsY] objectAtIndex:x-1] doubleValue] + lineSize);
+        CGContextMoveToPoint(UIGraphicsGetCurrentContext(), [[[self arrayOfPointsX] objectAtIndex:x-1] doubleValue] + lineSize * cartesianBorderIncrease, [[[self arrayOfPointsY] objectAtIndex:x-1] doubleValue] + lineSize * cartesianBorderIncrease);
         
-        CGContextAddLineToPoint(UIGraphicsGetCurrentContext(), [[[self arrayOfPointsX] objectAtIndex:x] doubleValue] + lineSize, [[[self arrayOfPointsY] objectAtIndex:x] doubleValue] + lineSize);
+        CGContextAddLineToPoint(UIGraphicsGetCurrentContext(), [[[self arrayOfPointsX] objectAtIndex:x] doubleValue] + lineSize * cartesianBorderIncrease, [[[self arrayOfPointsY] objectAtIndex:x] doubleValue] + lineSize * cartesianBorderIncrease);
         
         CGContextSetLineCap(UIGraphicsGetCurrentContext(), kCGLineCapRound);
         CGContextSetLineWidth(UIGraphicsGetCurrentContext(), lineSize);
@@ -173,12 +175,25 @@
         
     }
     
+    //Draw the initial point
+    
+    double radius = lineSize * 3;
+    
+    CGContextSetLineWidth(UIGraphicsGetCurrentContext(), lineSize * 2);
+    
+    CGContextSetRGBFillColor(UIGraphicsGetCurrentContext(), 249.0 / 255.0, 216.0 / 255.0, 0.0, 1.0);
+    
+    CGContextStrokeEllipseInRect(UIGraphicsGetCurrentContext(), CGRectMake([[[self arrayOfPointsX] firstObject] doubleValue] + (lineSize) , [[[self arrayOfPointsY] firstObject] doubleValue] + (lineSize), radius, radius));
+    
+    CGContextFillEllipseInRect (UIGraphicsGetCurrentContext(), CGRectMake([[[self arrayOfPointsX] firstObject] doubleValue] + (lineSize) , [[[self arrayOfPointsY] firstObject] doubleValue]  + (lineSize), radius, radius));
+    
+    
     //Set the image of the view
     [routeView setImage:UIGraphicsGetImageFromCurrentImageContext()];
     
     //Restore old size of frame
-    _smallRouteFrame.size.width -= lineSize * 2;
-    _smallRouteFrame.size.height -= lineSize * 2;
+    _smallRouteFrame.size.width -= lineSize * 6;
+    _smallRouteFrame.size.height -= lineSize * 6;
     
     return routeView;
 }

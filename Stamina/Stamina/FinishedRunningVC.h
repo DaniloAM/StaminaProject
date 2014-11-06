@@ -11,11 +11,17 @@
 #import "SocialSharingVC.h"
 #import "TrajectoryRoute.h"
 #import "TrajectoryFile.h"
+#import "UIStaminaColor.h"
 #import "UserData.h"
 
 @interface FinishedRunningVC : HideBBVC
 
 @property FinishedRoute* route;
+
+@property (weak, nonatomic) IBOutlet UITextField *routeNameTextField;
+@property (weak, nonatomic) IBOutlet UIButton *leftButton;
+@property (weak, nonatomic) IBOutlet UIButton *rightButton;
+
 
 @property (weak, nonatomic) IBOutlet UILabel *calLabel;
 @property (weak, nonatomic) IBOutlet UILabel *distanceLabel;

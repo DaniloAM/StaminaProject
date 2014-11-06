@@ -15,6 +15,9 @@
 @implementation RunningMapVC
 
 
+
+#pragma mark - Receiver
+
 -(void)receiveTrajectorySelected: (TrajectoryRoute *)route {
     
     if(route) {
@@ -39,14 +42,20 @@
     
 }
 
+
+
+#pragma mark - ViewController methods
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    [self setPictureViewController:[[SocialSharingVC alloc] init]];
+    [self.view setBackgroundColor:[UIColor staminaYellowColor]];
     [[UIApplication sharedApplication] setIdleTimerDisabled:true];
     
     [self setOverlayArray:[NSMutableArray array]];
     [self setLocationsArray:[NSMutableArray array]];
-    [self setPointsForCartesian:[[RoutePointsCartesian alloc] init]];
+    [self setPicturesArray:[NSMutableArray array]];
     
     [[self mapRunningView] setDelegate:self];
     [self setLocationManager:[[CLLocationManager alloc] init]];
@@ -65,21 +74,40 @@
         _userRouteIsDraw = true;
         [[self mapRunningView] addOverlay:_routeLine];
     }
-
+    
 }
+
+
+-(void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    
+}
+
 
 -(void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
     
     [[self locationManager] startUpdatingLocation];
     [[self mapRunningView] setShowsUserLocation:true];
-
-    [self zoomToUserRegion];
     
-    _timer = [NSTimer scheduledTimerWithTimeInterval:1.0 target:self selector:@selector(startReloadingUserPosition) userInfo:nil repeats:true];
+    
+    if(![self timer]) {
+        _timer = [NSTimer scheduledTimerWithTimeInterval:1.0 target:self selector:@selector(startReloadingUserPosition) userInfo:nil repeats:true];
+    }
     
     [super hideBarWithAnimation:true];
+    
+    if([self isWaitingForPicture]) {
+        [self setIsWaitingForPicture:false];
+        
+        if([[self pictureViewController] userPicture]) {
+            [self savePictureOfRoutePlace:[[self pictureViewController] userPicture]];
+        }
+            
+    }
 }
+
+
 
 -(void)viewWillDisappear:(BOOL)animated {
     [super viewWillDisappear:animated];
@@ -88,39 +116,9 @@
     
 }
 
--(void)zoomToUserRegion {
-    
-    MKCoordinateRegion region;
-    region.center.latitude = self.mapRunningView.userLocation.coordinate.latitude;
-    region.center.longitude = self.mapRunningView.userLocation.coordinate.longitude;
-    region.span.latitudeDelta = 0.002;
-    region.span.longitudeDelta = 0.002;
-    
-    [self.mapRunningView setRegion:region animated:true];
-    
-}
-
--(void)startReloadingUserPosition {
-    
-    if(_seconds % 10 == 0) {
-        [self zoomToUserRegion];
-    }
-    [self updateTextInTimeLabel];
-    _seconds++;
-    
-    if(_seconds >= 60) {
-        _minutes++;
-        _seconds = 0;
-    }
-    
-}
 
 
--(void)updateTextInTimeLabel {
-    
-    [[self timeLabel] setText:[NSString stringWithFormat:@"%d:%02d:%02d", (_minutes / 60), (_minutes % 60), _seconds]];
-    
-}
+#pragma mark - Map Delegates
 
 
 -(void)locationManager:(CLLocationManager *)manager didUpdateLocations:(NSArray *)locations {
@@ -146,8 +144,6 @@
         _distanceInMeters += distance;
         
         [self drawRouteLayerWithPointOne:_oldLocation andTwo:newLocation];
-        MKMapPoint point = MKMapPointForCoordinate(newLocation.coordinate);
-        [[self pointsForCartesian] addPointToRouteInX:point.x andY:point.y];
         
         [[self locationsArray] addObject:newLocation];
         
@@ -158,41 +154,6 @@
         [[self speedLabel] setText:[NSString stringWithFormat:@"%.01f Km/h", ([newLocation speed] * 3.6)]];
     
     [self updateTextInDistanceLabel];
-
-}
-
-
-
--(void)drawRouteLayerWithPointOne: (CLLocation *)locationOne andTwo: (CLLocation *)locationTwo  {
-    
-    if (!locationOne || !locationTwo)
-    {
-        return;
-    }
-    
-    
-    CLLocationCoordinate2D coordinates[2];
-    
-    coordinates[0] = locationOne.coordinate;
-    coordinates[1] = locationTwo.coordinate;
-    
-    
-    _routeLine = [MKPolyline polylineWithCoordinates:coordinates count:2];
-    
-    [[self mapRunningView] addOverlay:_routeLine];
-    
-}
-
-
--(void)updateTextInDistanceLabel {
-    
-    if(_distanceInMeters >= 1000.0f) {
-        [[self distanceLabel] setText:[NSString stringWithFormat:@"%.01f Km", _distanceInMeters / 1000]];
-    }
-    
-    else {
-        [[self distanceLabel] setText:[NSString stringWithFormat:@"%d m", (int) _distanceInMeters]];
-    }
     
 }
 
@@ -227,12 +188,124 @@
 }
 
 
+#pragma mark - Map drawing
+
+
+-(void)drawRouteLayerWithPointOne: (CLLocation *)locationOne andTwo: (CLLocation *)locationTwo  {
+    
+    if (!locationOne || !locationTwo)
+    {
+        return;
+    }
+    
+    
+    CLLocationCoordinate2D coordinates[2];
+    
+    coordinates[0] = locationOne.coordinate;
+    coordinates[1] = locationTwo.coordinate;
+    
+    
+    _routeLine = [MKPolyline polylineWithCoordinates:coordinates count:2];
+    
+    [[self mapRunningView] addOverlay:_routeLine];
+    
+}
+
+
+
+#pragma mark - Reloads Timer
+
+
+-(void)startReloadingUserPosition {
+    
+    if(_seconds % 8 == 1) {
+        [self zoomToUserRegion];
+    }
+    [self updateTextInTimeLabel];
+    _seconds++;
+    
+    if(_seconds >= 60) {
+        _minutes++;
+        _seconds = 0;
+    }
+    
+}
+
+
+-(void)zoomToUserRegion {
+    
+    MKCoordinateRegion region;
+    region.center.latitude = self.mapRunningView.userLocation.coordinate.latitude;
+    region.center.longitude = self.mapRunningView.userLocation.coordinate.longitude;
+    region.span.latitudeDelta = 0.002;
+    region.span.longitudeDelta = 0.002;
+    
+    [self.mapRunningView setRegion:region animated:true];
+    
+}
+
+
+
+-(void)updateTextInTimeLabel {
+    
+    [[self timeLabel] setText:[NSString stringWithFormat:@"%d:%02d:%02d", (_minutes / 60), (_minutes % 60), _seconds]];
+    
+}
+
+
+-(void)updateTextInDistanceLabel {
+    
+    if(_distanceInMeters >= 1000.0f) {
+        [[self distanceLabel] setText:[NSString stringWithFormat:@"%.01f Km", _distanceInMeters / 1000]];
+    }
+    
+    else {
+        [[self distanceLabel] setText:[NSString stringWithFormat:@"%d m", (int) _distanceInMeters]];
+    }
+    
+}
+
+
+#pragma mark - Buttons methods
+
+
+-(IBAction)takePlacePicture {
+    
+    [self.navigationController pushViewController:[self pictureViewController] animated:true];
+    [self setIsWaitingForPicture:YES];
+
+}
+
+
+-(void)savePictureOfRoutePlace: (UIImage *)pic {
+    
+    [pic setValue:[NSNumber numberWithInteger:[[self locationsArray] count] - 1] forKey:@"array_position"];
+    [[self picturesArray] addObject:pic];
+    
+    [self setPictureViewController:[[SocialSharingVC alloc] init]];
+}
+
+
+
 -(IBAction)finishButton {
     
-    UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Parar" message:@"Deseja parar a corrida?" delegate:self cancelButtonTitle:@"Não" otherButtonTitles:@"Sim", nil];
+    if(![self isRunning]) {
+        
+        [[self buttonImage] setImage:[UIImage imageNamed:@""]];
+        
+        _timer = [NSTimer scheduledTimerWithTimeInterval:1.0 target:self selector:@selector(startReloadingUserPosition) userInfo:nil repeats:true];
+        
+        [self setIsRunning:true];
+    }
     
     
-    [alertView show];
+    else {
+        
+        UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Parar" message:@"Deseja parar a corrida?" delegate:self cancelButtonTitle:@"Não" otherButtonTitles:@"Sim", nil];
+        
+        [alertView show];
+        
+    }
     
 }
 
@@ -247,23 +320,38 @@
     }
 }
 
+
 -(void)finishRunning {
     
     //Stops the timer
     [_timer invalidate];
+    [self setIsRunning:false];
     
-
     FinishedRoute *route = [[FinishedRoute alloc] init];
     
     [route setArrayOfLocations:[self locationsArray]];
     
+    
+    //Create a new RoutePointsCartesian
+    
+    RoutePointsCartesian *cartesian =[[RoutePointsCartesian alloc] init];
+    
+    //Add the location points to cartesian
+    for(int x = 0; x < [[self locationsArray] count]; x++) {
+        
+        MKMapPoint point = MKMapPointForCoordinate([[[self locationsArray] objectAtIndex:x] coordinate]);
+        
+        [cartesian addPointToRouteInX:point.x andY:point.y];
+    }
+    
+    
     //Prepare the cartesian system for the map points
-    [[self pointsForCartesian] prepareForCartesian];
+    [cartesian prepareForCartesian];
     
     [route setTimeInSeconds:_seconds];
     [route setTimeInMinutes:_minutes];
     [route setDistanceInMeters:_distanceInMeters];
-    [route setRoutePoints:[self pointsForCartesian]];
+    [route setRoutePoints:cartesian];
     
     
     UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
@@ -271,6 +359,7 @@
 
     //Receive the route to draw it
     [myVC receiveRunningRoute:route];
+    
     [self.navigationController pushViewController:myVC animated:YES];
     
 }

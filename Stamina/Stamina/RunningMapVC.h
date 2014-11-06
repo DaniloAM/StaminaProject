@@ -9,10 +9,12 @@
 #import <UIKit/UIKit.h>
 #import <MapKit/MapKit.h>
 #import "FinishedRoute.h"
+#import "UIStaminaColor.h"
 #import "FinishedRunningVC.h"
 
 @interface RunningMapVC : HideBBVC <MKMapViewDelegate , CLLocationManagerDelegate, UIAlertViewDelegate>
 
+@property (weak, nonatomic) IBOutlet UIImageView *buttonImage;
 @property (weak , nonatomic) IBOutlet MKMapView *mapRunningView;
 @property MKPolyline *routeLine;
 @property MKPolylineView *routeLineView;
@@ -20,15 +22,19 @@
 @property CLLocation *oldLocation;
 @property CLLocation *firstLocation;
 
-@property RoutePointsCartesian *pointsForCartesian;
 @property BOOL userRoute;
+@property BOOL isRunning;
 @property BOOL userRouteIsDraw;
+@property BOOL isWaitingForPicture;
+
+@property SocialSharingVC *pictureViewController;
 
 @property IBOutlet UILabel *timeLabel;
 @property IBOutlet UILabel *speedLabel;
 @property IBOutlet UILabel *distanceLabel;
 
 @property float distanceInMeters;
+@property NSMutableArray *picturesArray;
 @property NSMutableArray *locationsArray;
 @property NSMutableArray *overlayArray;
 @property int seconds, minutes;

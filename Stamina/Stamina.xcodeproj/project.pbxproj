@@ -176,7 +176,8 @@
 		FFAC190B19DC86C400B17487 /* SocialSharingVC.m in Sources */ = {isa = PBXBuildFile; fileRef = FFAC190A19DC86C400B17487 /* SocialSharingVC.m */; };
 		FFAC193A19E3105B00B17487 /* wireframe_termina_caminhada.jpg in Resources */ = {isa = PBXBuildFile; fileRef = FFAC193919E3105B00B17487 /* wireframe_termina_caminhada.jpg */; };
 		FFAC193D19E3171C00B17487 /* HomeScreenVC.m in Sources */ = {isa = PBXBuildFile; fileRef = FFAC193C19E3171C00B17487 /* HomeScreenVC.m */; };
-		FFB8BCC21A093C5D00F9D8A7 /* TrajectoryRoute.m in Sources */ = {isa = PBXBuildFile; fileRef = FFB8BCC11A093C5D00F9D8A7 /* TrajectoryRoute.m */; };
+		FFB8BCC51A0AA17C00F9D8A7 /* RoutePicture.m in Sources */ = {isa = PBXBuildFile; fileRef = FFB8BCC41A0AA17C00F9D8A7 /* RoutePicture.m */; };
+		FFB8BCC81A0AA3DC00F9D8A7 /* TrajectoryRoute.m in Sources */ = {isa = PBXBuildFile; fileRef = FFB8BCC71A0AA3DC00F9D8A7 /* TrajectoryRoute.m */; };
 		FFF51A5219E48066000BED6B /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FFF51A5119E48066000BED6B /* Social.framework */; };
 /* End PBXBuildFile section */
 
@@ -425,8 +426,10 @@
 		FFAC193919E3105B00B17487 /* wireframe_termina_caminhada.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = wireframe_termina_caminhada.jpg; sourceTree = "<group>"; };
 		FFAC193B19E3171C00B17487 /* HomeScreenVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeScreenVC.h; sourceTree = "<group>"; };
 		FFAC193C19E3171C00B17487 /* HomeScreenVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeScreenVC.m; sourceTree = "<group>"; };
-		FFB8BCC01A093C5D00F9D8A7 /* TrajectoryRoute.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TrajectoryRoute.h; sourceTree = "<group>"; };
-		FFB8BCC11A093C5D00F9D8A7 /* TrajectoryRoute.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TrajectoryRoute.m; sourceTree = "<group>"; };
+		FFB8BCC31A0AA17C00F9D8A7 /* RoutePicture.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RoutePicture.h; sourceTree = "<group>"; };
+		FFB8BCC41A0AA17C00F9D8A7 /* RoutePicture.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RoutePicture.m; sourceTree = "<group>"; };
+		FFB8BCC61A0AA3DC00F9D8A7 /* TrajectoryRoute.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TrajectoryRoute.h; sourceTree = "<group>"; };
+		FFB8BCC71A0AA3DC00F9D8A7 /* TrajectoryRoute.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TrajectoryRoute.m; sourceTree = "<group>"; };
 		FFF51A5119E48066000BED6B /* Social.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Social.framework; path = System/Library/Frameworks/Social.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
@@ -857,8 +860,8 @@
 				FF1C5C3619F97DA700032DC9 /* Exercises.m */,
 				FF13E9E119E70B9B0005BA49 /* TrajectoryFile.h */,
 				FF13E9E219E70B9B0005BA49 /* TrajectoryFile.m */,
-				FFB8BCC01A093C5D00F9D8A7 /* TrajectoryRoute.h */,
-				FFB8BCC11A093C5D00F9D8A7 /* TrajectoryRoute.m */,
+				FFB8BCC61A0AA3DC00F9D8A7 /* TrajectoryRoute.h */,
+				FFB8BCC71A0AA3DC00F9D8A7 /* TrajectoryRoute.m */,
 				FF794D7519CA288F00808144 /* TrainingExercises.h */,
 				FF794D7619CA288F00808144 /* TrainingExercises.m */,
 				FF159A4A19C21D1B00D9236F /* CoreDataLoading.h */,
@@ -891,6 +894,8 @@
 				FFAC18FE19DB200E00B17487 /* FinishedRunningVC.m */,
 				FF1C5D161A07EE6F00032DC9 /* StaminaExpandTV.h */,
 				FF1C5D171A07EE6F00032DC9 /* StaminaExpandTV.m */,
+				FFB8BCC31A0AA17C00F9D8A7 /* RoutePicture.h */,
+				FFB8BCC41A0AA17C00F9D8A7 /* RoutePicture.m */,
 			);
 			name = Corrida;
 			sourceTree = "<group>";
@@ -1136,6 +1141,7 @@
 				FF15972A19C0D96E00D9236F /* UIViewController+AMSlideMenu.m in Sources */,
 				FF17BD6519C8C21600B5EF46 /* MainVC.m in Sources */,
 				C52C27871A07EB690030BEA4 /* CadastroVC.m in Sources */,
+				FFB8BCC51A0AA17C00F9D8A7 /* RoutePicture.m in Sources */,
 				FF159A4C19C21D1B00D9236F /* CoreDataLoading.m in Sources */,
 				C5EB6BF819D9DB6B00C528FC /* CalendarObject.m in Sources */,
 				C52C810819CA1E47006EAFCF /* WebServiceResponse.m in Sources */,
@@ -1149,8 +1155,8 @@
 				FF794D7719CA288F00808144 /* TrainingExercises.m in Sources */,
 				FF15986F19C0E24F00D9236F /* UIColor+CreateMethods.m in Sources */,
 				C5EB6C0919D9DBD300C528FC /* FBLoginVC.m in Sources */,
+				FFB8BCC81A0AA3DC00F9D8A7 /* TrajectoryRoute.m in Sources */,
 				FF1C5D181A07EE6F00032DC9 /* StaminaExpandTV.m in Sources */,
-				FFB8BCC21A093C5D00F9D8A7 /* TrajectoryRoute.m in Sources */,
 				C5EB6C0A19D9DBD300C528FC /* AVCamPreviewView.m in Sources */,
 				325F1FDA19E7091C00001EB0 /* AcademiaVC.m in Sources */,
 				3276F1CD19F6CE2D00B2F93D /* CriaTreinoVC.m in Sources */,

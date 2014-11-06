@@ -14,7 +14,7 @@
 
 @implementation FinishedRunningVC
 
-
+#pragma mark - Receiver
 
 -(void)receiveRunningRoute: (FinishedRoute *)runningRoute {
     
@@ -22,10 +22,10 @@
     
 }
 
-
+#pragma mark - ViewController methods
 
 -(void)viewWillAppear:(BOOL)animated {
-    [super viewWillAppear:animated];
+    [super viewWillAppear:animated withGesture:false];
     
     if(_route) {
         [self drawTrajectoryDone];
@@ -33,7 +33,12 @@
 
     [super showBarWithAnimation:true];
     
-    self.navigationController.navigationBar.translucent = YES;
+    
+    [self.view setBackgroundColor:[UIColor staminaYellowColor]];
+    
+    [self setButtonImageNameLeft:@"icon_add_unable.png" andRight:@"icon_compartilha_unable.png"];
+    
+    [self setButtonActionLeft:@selector(enableRouteNameTextField) andRight:@selector(selectSharingOption)];
     
 }
 
@@ -41,6 +46,8 @@
 
 -(void)viewDidLoad{
     [super viewDidLoad];
+    
+    
 }
 
 
@@ -67,6 +74,7 @@
     
         TrajectoryRoute *saveRoute = [NSEntityDescription insertNewObjectForEntityForName:@"TrajectoryRoute" inManagedObjectContext:context];
         
+        [saveRoute setPicturesArray:[NSKeyedArchiver archivedDataWithRootObject:_route.arrayOfPictures]];
         [saveRoute setArrayOfLocations:[NSKeyedArchiver archivedDataWithRootObject:_route.arrayOfLocations]];
         
         [saveRoute setTrajectoryName:name];
@@ -82,10 +90,12 @@
 }
 
 
+#pragma mark - Load Trajectory methods
 
 -(void)drawTrajectoryDone {
     
     UIImageView *routeView = _route.routePoints.returnDrawedViewWithCurrentRoute;
+    
     
     if(routeView == nil) {
         return;
@@ -111,7 +121,7 @@
     
     
     [self setTrajectoryInfo];
-
+    
 }
 
 
@@ -130,28 +140,103 @@
 }
 
 
--(IBAction)sharePicture {
+#pragma mark - Buttons actions
+
+
+-(void)setButtonActionLeft: (void *)left andRight: (void *)right {
+    
+    if([[self leftButton] allTargets] != nil) {
+    
+    [[self leftButton] removeTarget:nil action:NULL forControlEvents:UIControlEventAllEvents];
+    
+    [[self rightButton] removeTarget:nil action:NULL forControlEvents:UIControlEventAllEvents];
+
+    }
+        
+    [[self leftButton] addTarget:self action:left forControlEvents:UIControlEventTouchUpInside];
+    
+    [[self rightButton] addTarget:self action:right forControlEvents:UIControlEventTouchUpInside];
+    
+}
+
+
+-(void)setButtonImageNameLeft: (NSString *)left andRight: (NSString *)right {
+    
+    [[self leftButton] setBackgroundImage:[UIImage imageNamed:left] forState:UIControlStateNormal];
+    [[self rightButton] setBackgroundImage:[UIImage imageNamed:right] forState:UIControlStateNormal];
+    
+}
+
+
+-(void)enableRouteNameTextField {
+    
+    _saveRoute = true;
+    
+    [[self routeNameTextField] setHidden:false];
+    
+    [[self leftButton] setHidden:true];
+    [[self rightButton] setHidden:true];
+    
+    
+}
+
+
+-(void)confirmRouteName {
+    
+    
+    [[self routeNameTextField] setHidden:true];
+    
+    [[self leftButton] setHidden:true];
+    [[self rightButton] setHidden:true];
+    
+}
+
+
+-(void)selectSharingOption {
+    
+    [self setButtonImageNameLeft:@"icon_trajeto_unable.png" andRight:@"icon_camera_unable.png"];
+    [self setButtonActionLeft:nil andRight:@selector(sharePicture)];
+    
+}
+
+
+-(void)rightSlideAction {
+    
+    int state;
+    
+    if(state == 0) {
+        [self.navigationController popViewControllerAnimated:true];
+    }
+    
+    if(state == 1) {
+        _saveRoute = false;
+    }
+    
+    if(state == 1 || state == 2) {
+        
+    }
+    
+}
+
+
+-(void)sharePicture {
     
     UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
     UIViewController *myVC = (UIViewController *)[storyboard instantiateViewControllerWithIdentifier:@"shareScreen"];
-    
-     self.navigationController.navigationBar.translucent = NO;
     
     [self.navigationController pushViewController:myVC animated:YES];
     
 }
 
 
--(IBAction)goHome {
-    
-     self.navigationController.navigationBar.translucent = NO;
+-(void)goHome {
     
     [self.navigationController popToRootViewControllerAnimated:true];
     
 }
 
 
--(IBAction)saveTrajectory {
+-(void)saveTrajectory {
     
     _saveRoute = true;
     [self goHome];

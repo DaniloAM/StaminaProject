@@ -14,6 +14,6 @@
 @property float distanceInMeters;
 @property int timeInSeconds, timeInMinutes;
 @property RoutePointsCartesian *routePoints;
-@property NSMutableArray *arrayOfSpeeds, *arrayOfLocations;
+@property NSMutableArray *arrayOfSpeeds, *arrayOfLocations, *arrayOfPictures;
 
 @end

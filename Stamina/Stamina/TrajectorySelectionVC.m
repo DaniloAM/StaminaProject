@@ -16,6 +16,8 @@
 
 @implementation TrajectorySelectionVC
 
+
+
 -(void)viewDidLoad {
     [super viewDidLoad];
     
@@ -30,6 +32,8 @@
     
     [[self routeTableView] reloadData];
 }
+
+
 
 -(void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
@@ -195,7 +199,7 @@
 
 -(NSArray *)getHistoryOfThisRoute {
     
-    int timeInSeconds = 0, calories = 0, points = 0, timesDone;
+    int timeInSeconds = 0, calories = 0, points = 0, timesDone = 0;
     
     AppDelegate *app = [[UIApplication sharedApplication] delegate];
     NSManagedObjectContext *context = [app managedObjectContext];
