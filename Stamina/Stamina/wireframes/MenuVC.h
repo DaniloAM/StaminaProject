@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "AMSlideMenuMainViewController.h"
-
+#import "UIStaminaColor.h"
 @interface MenuVC : UIViewController
 -(NSArray *)criaBarButton;
 @property UIView *tab;
@@ -27,5 +27,8 @@
 @property CGSize navigationSize;
 @property CGSize navigationStartSize;
 @property CGSize navigationIncreased;
+-(void)firstButtonMethod: (void *)metodo  withImage: (UIImage *)image;
+-(void)secondButtonMethod: (void *)metodo  withImage: (UIImage *)image;
+-(void)thirdButtonMethod: (void *)metodo  withImage: (UIImage *)image;
 
 @end

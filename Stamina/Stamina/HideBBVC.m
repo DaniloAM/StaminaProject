@@ -86,5 +86,24 @@
     MenuVC *temp = [self.navigationController.viewControllers objectAtIndex:0];
     return [temp navigationStartSize];
 }
+-(void)firstButtonMethod: (void *)metodo withImage: (UIImage *)image{
+    MenuVC *temp = [self.navigationController.viewControllers objectAtIndex:0];
+    UIButton *btn = [[temp arrayOfButtons] firstObject];
+    [temp firstButtonMethod:nil withImage:image];
+    [btn addTarget:self action:metodo forControlEvents:UIControlEventTouchUpInside];
+
+}
+-(void)secondButtonMethod: (void *)metodo  withImage: (UIImage *)image{
+    MenuVC *temp = [self.navigationController.viewControllers objectAtIndex:0];
+    UIButton *btn = [[temp arrayOfButtons] objectAtIndex:1];
+    [temp secondButtonMethod:nil withImage:image];
+    [btn addTarget:self action:metodo forControlEvents:UIControlEventTouchUpInside];
+}
+-(void)thirdButtonMethod: (void *)metodo  withImage: (UIImage *)image{
+    MenuVC *temp = [self.navigationController.viewControllers objectAtIndex:0];
+    UIButton *btn = [[temp arrayOfButtons] lastObject];
+    [temp thirdButtonMethod:nil withImage:image];
+    [btn addTarget:self action:metodo forControlEvents:UIControlEventTouchUpInside];
+}
 
 @end

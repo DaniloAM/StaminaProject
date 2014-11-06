@@ -30,7 +30,7 @@
             [self sessionStateChanged:session state:status error:error];
         }];
     }
-       CoreDataLoading *core = [[CoreDataLoading alloc] init];
+    CoreDataLoading *core = [[CoreDataLoading alloc] init];
     [core initCoreData];
     UserData *user = [UserData alloc];
     [user loadFromUserDefaults];
@@ -131,7 +131,6 @@
         NSLog(@"Unresolved error %@, %@", error, [error userInfo]);
         abort();
     }
-   // NSString *str = [WebServiceResponse previsaoDoTempoNaLatitude:35 eLongitude:39];
     
     return _persistentStoreCoordinator;
 }

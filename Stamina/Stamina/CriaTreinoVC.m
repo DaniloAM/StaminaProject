@@ -34,9 +34,7 @@
 }
 -(void)viewDidAppear:(BOOL)animated{
     [super viewDidAppear:animated];
-    NSArray *array = [super criaBarButton];
-    UIButton *btn = [array lastObject];
-    [btn addTarget:self action:@selector(function1) forControlEvents:UIControlEventTouchUpInside];
+    [self firstButtonMethod:@selector(function1) withImage:nil];
 
 }
 -(void)function1{
