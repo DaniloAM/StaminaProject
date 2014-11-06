@@ -38,37 +38,6 @@
 		C53A352C19D33B9A00AC1383 /* RWBlurPopoverTransitionController.m in Sources */ = {isa = PBXBuildFile; fileRef = C53A352A19D33B9A00AC1383 /* RWBlurPopoverTransitionController.m */; };
 		C53A353119D3411F00AC1383 /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = C53A353019D3411F00AC1383 /* Reachability.m */; };
 		C56108E919DD81990090CE5D /* wireframe_home.png in Resources */ = {isa = PBXBuildFile; fileRef = C56108E819DD81990090CE5D /* wireframe_home.png */; };
-		C56279211A0AA54700FA406D /* icone_calendario_01.png in Resources */ = {isa = PBXBuildFile; fileRef = C56279021A0AA54700FA406D /* icone_calendario_01.png */; };
-		C56279221A0AA54700FA406D /* icone_calendario_02.png in Resources */ = {isa = PBXBuildFile; fileRef = C56279031A0AA54700FA406D /* icone_calendario_02.png */; };
-		C56279231A0AA54700FA406D /* icone_calendario_03.png in Resources */ = {isa = PBXBuildFile; fileRef = C56279041A0AA54700FA406D /* icone_calendario_03.png */; };
-		C56279241A0AA54700FA406D /* icone_calendario_04.png in Resources */ = {isa = PBXBuildFile; fileRef = C56279051A0AA54700FA406D /* icone_calendario_04.png */; };
-		C56279251A0AA54700FA406D /* icone_calendario_05.png in Resources */ = {isa = PBXBuildFile; fileRef = C56279061A0AA54700FA406D /* icone_calendario_05.png */; };
-		C56279261A0AA54700FA406D /* icone_calendario_06.png in Resources */ = {isa = PBXBuildFile; fileRef = C56279071A0AA54700FA406D /* icone_calendario_06.png */; };
-		C56279271A0AA54700FA406D /* icone_calendario_07.png in Resources */ = {isa = PBXBuildFile; fileRef = C56279081A0AA54700FA406D /* icone_calendario_07.png */; };
-		C56279281A0AA54700FA406D /* icone_calendario_08.png in Resources */ = {isa = PBXBuildFile; fileRef = C56279091A0AA54700FA406D /* icone_calendario_08.png */; };
-		C56279291A0AA54700FA406D /* icone_calendario_09.png in Resources */ = {isa = PBXBuildFile; fileRef = C562790A1A0AA54700FA406D /* icone_calendario_09.png */; };
-		C562792A1A0AA54700FA406D /* icone_calendario_10.png in Resources */ = {isa = PBXBuildFile; fileRef = C562790B1A0AA54700FA406D /* icone_calendario_10.png */; };
-		C562792B1A0AA54700FA406D /* icone_calendario_11.png in Resources */ = {isa = PBXBuildFile; fileRef = C562790C1A0AA54700FA406D /* icone_calendario_11.png */; };
-		C562792C1A0AA54700FA406D /* icone_calendario_12.png in Resources */ = {isa = PBXBuildFile; fileRef = C562790D1A0AA54700FA406D /* icone_calendario_12.png */; };
-		C562792D1A0AA54700FA406D /* icone_calendario_13.png in Resources */ = {isa = PBXBuildFile; fileRef = C562790E1A0AA54700FA406D /* icone_calendario_13.png */; };
-		C562792E1A0AA54700FA406D /* icone_calendario_14.png in Resources */ = {isa = PBXBuildFile; fileRef = C562790F1A0AA54700FA406D /* icone_calendario_14.png */; };
-		C562792F1A0AA54700FA406D /* icone_calendario_15.png in Resources */ = {isa = PBXBuildFile; fileRef = C56279101A0AA54700FA406D /* icone_calendario_15.png */; };
-		C56279301A0AA54700FA406D /* icone_calendario_16.png in Resources */ = {isa = PBXBuildFile; fileRef = C56279111A0AA54700FA406D /* icone_calendario_16.png */; };
-		C56279311A0AA54700FA406D /* icone_calendario_17.png in Resources */ = {isa = PBXBuildFile; fileRef = C56279121A0AA54700FA406D /* icone_calendario_17.png */; };
-		C56279321A0AA54700FA406D /* icone_calendario_18.png in Resources */ = {isa = PBXBuildFile; fileRef = C56279131A0AA54700FA406D /* icone_calendario_18.png */; };
-		C56279331A0AA54700FA406D /* icone_calendario_19.png in Resources */ = {isa = PBXBuildFile; fileRef = C56279141A0AA54700FA406D /* icone_calendario_19.png */; };
-		C56279341A0AA54700FA406D /* icone_calendario_20.png in Resources */ = {isa = PBXBuildFile; fileRef = C56279151A0AA54700FA406D /* icone_calendario_20.png */; };
-		C56279351A0AA54700FA406D /* icone_calendario_21.png in Resources */ = {isa = PBXBuildFile; fileRef = C56279161A0AA54700FA406D /* icone_calendario_21.png */; };
-		C56279361A0AA54700FA406D /* icone_calendario_22.png in Resources */ = {isa = PBXBuildFile; fileRef = C56279171A0AA54700FA406D /* icone_calendario_22.png */; };
-		C56279371A0AA54700FA406D /* icone_calendario_23.png in Resources */ = {isa = PBXBuildFile; fileRef = C56279181A0AA54700FA406D /* icone_calendario_23.png */; };
-		C56279381A0AA54700FA406D /* icone_calendario_24.png in Resources */ = {isa = PBXBuildFile; fileRef = C56279191A0AA54700FA406D /* icone_calendario_24.png */; };
-		C56279391A0AA54700FA406D /* icone_calendario_25.png in Resources */ = {isa = PBXBuildFile; fileRef = C562791A1A0AA54700FA406D /* icone_calendario_25.png */; };
-		C562793A1A0AA54700FA406D /* icone_calendario_26.png in Resources */ = {isa = PBXBuildFile; fileRef = C562791B1A0AA54700FA406D /* icone_calendario_26.png */; };
-		C562793B1A0AA54700FA406D /* icone_calendario_27.png in Resources */ = {isa = PBXBuildFile; fileRef = C562791C1A0AA54700FA406D /* icone_calendario_27.png */; };
-		C562793C1A0AA54700FA406D /* icone_calendario_28.png in Resources */ = {isa = PBXBuildFile; fileRef = C562791D1A0AA54700FA406D /* icone_calendario_28.png */; };
-		C562793D1A0AA54700FA406D /* icone_calendario_29.png in Resources */ = {isa = PBXBuildFile; fileRef = C562791E1A0AA54700FA406D /* icone_calendario_29.png */; };
-		C562793E1A0AA54700FA406D /* icone_calendario_30.png in Resources */ = {isa = PBXBuildFile; fileRef = C562791F1A0AA54700FA406D /* icone_calendario_30.png */; };
-		C562793F1A0AA54700FA406D /* icone_calendario_31.png in Resources */ = {isa = PBXBuildFile; fileRef = C56279201A0AA54700FA406D /* icone_calendario_31.png */; };
 		C56632561A03F3110006309D /* WeatherCondition.m in Sources */ = {isa = PBXBuildFile; fileRef = C56632551A03F3110006309D /* WeatherCondition.m */; };
 		C59934F919D36739006337E0 /* App-Stamina.png in Resources */ = {isa = PBXBuildFile; fileRef = C59934F819D36739006337E0 /* App-Stamina.png */; };
 		C59934FB19D36756006337E0 /* Logo_Stamina.png in Resources */ = {isa = PBXBuildFile; fileRef = C59934FA19D36756006337E0 /* Logo_Stamina.png */; };
@@ -271,37 +240,6 @@
 		C53A352F19D3411F00AC1383 /* Reachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Reachability.h; sourceTree = "<group>"; };
 		C53A353019D3411F00AC1383 /* Reachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Reachability.m; sourceTree = "<group>"; };
 		C56108E819DD81990090CE5D /* wireframe_home.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = wireframe_home.png; sourceTree = "<group>"; };
-		C56279021A0AA54700FA406D /* icone_calendario_01.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icone_calendario_01.png; sourceTree = "<group>"; };
-		C56279031A0AA54700FA406D /* icone_calendario_02.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icone_calendario_02.png; sourceTree = "<group>"; };
-		C56279041A0AA54700FA406D /* icone_calendario_03.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icone_calendario_03.png; sourceTree = "<group>"; };
-		C56279051A0AA54700FA406D /* icone_calendario_04.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icone_calendario_04.png; sourceTree = "<group>"; };
-		C56279061A0AA54700FA406D /* icone_calendario_05.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icone_calendario_05.png; sourceTree = "<group>"; };
-		C56279071A0AA54700FA406D /* icone_calendario_06.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icone_calendario_06.png; sourceTree = "<group>"; };
-		C56279081A0AA54700FA406D /* icone_calendario_07.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icone_calendario_07.png; sourceTree = "<group>"; };
-		C56279091A0AA54700FA406D /* icone_calendario_08.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icone_calendario_08.png; sourceTree = "<group>"; };
-		C562790A1A0AA54700FA406D /* icone_calendario_09.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icone_calendario_09.png; sourceTree = "<group>"; };
-		C562790B1A0AA54700FA406D /* icone_calendario_10.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icone_calendario_10.png; sourceTree = "<group>"; };
-		C562790C1A0AA54700FA406D /* icone_calendario_11.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icone_calendario_11.png; sourceTree = "<group>"; };
-		C562790D1A0AA54700FA406D /* icone_calendario_12.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icone_calendario_12.png; sourceTree = "<group>"; };
-		C562790E1A0AA54700FA406D /* icone_calendario_13.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icone_calendario_13.png; sourceTree = "<group>"; };
-		C562790F1A0AA54700FA406D /* icone_calendario_14.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icone_calendario_14.png; sourceTree = "<group>"; };
-		C56279101A0AA54700FA406D /* icone_calendario_15.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icone_calendario_15.png; sourceTree = "<group>"; };
-		C56279111A0AA54700FA406D /* icone_calendario_16.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icone_calendario_16.png; sourceTree = "<group>"; };
-		C56279121A0AA54700FA406D /* icone_calendario_17.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icone_calendario_17.png; sourceTree = "<group>"; };
-		C56279131A0AA54700FA406D /* icone_calendario_18.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icone_calendario_18.png; sourceTree = "<group>"; };
-		C56279141A0AA54700FA406D /* icone_calendario_19.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icone_calendario_19.png; sourceTree = "<group>"; };
-		C56279151A0AA54700FA406D /* icone_calendario_20.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icone_calendario_20.png; sourceTree = "<group>"; };
-		C56279161A0AA54700FA406D /* icone_calendario_21.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icone_calendario_21.png; sourceTree = "<group>"; };
-		C56279171A0AA54700FA406D /* icone_calendario_22.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icone_calendario_22.png; sourceTree = "<group>"; };
-		C56279181A0AA54700FA406D /* icone_calendario_23.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icone_calendario_23.png; sourceTree = "<group>"; };
-		C56279191A0AA54700FA406D /* icone_calendario_24.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icone_calendario_24.png; sourceTree = "<group>"; };
-		C562791A1A0AA54700FA406D /* icone_calendario_25.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icone_calendario_25.png; sourceTree = "<group>"; };
-		C562791B1A0AA54700FA406D /* icone_calendario_26.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icone_calendario_26.png; sourceTree = "<group>"; };
-		C562791C1A0AA54700FA406D /* icone_calendario_27.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icone_calendario_27.png; sourceTree = "<group>"; };
-		C562791D1A0AA54700FA406D /* icone_calendario_28.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icone_calendario_28.png; sourceTree = "<group>"; };
-		C562791E1A0AA54700FA406D /* icone_calendario_29.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icone_calendario_29.png; sourceTree = "<group>"; };
-		C562791F1A0AA54700FA406D /* icone_calendario_30.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icone_calendario_30.png; sourceTree = "<group>"; };
-		C56279201A0AA54700FA406D /* icone_calendario_31.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icone_calendario_31.png; sourceTree = "<group>"; };
 		C56632541A03F3110006309D /* WeatherCondition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WeatherCondition.h; path = ../WeatherCondition.h; sourceTree = "<group>"; };
 		C56632551A03F3110006309D /* WeatherCondition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WeatherCondition.m; path = ../WeatherCondition.m; sourceTree = "<group>"; };
 		C59934F819D36739006337E0 /* App-Stamina.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "App-Stamina.png"; sourceTree = "<group>"; };
@@ -560,44 +498,6 @@
 				32F7237D19FABCD6006170CD /* CreateTrainTemp.m */,
 			);
 			name = CriarTreino;
-			sourceTree = "<group>";
-		};
-		C56279011A0AA54700FA406D /* Icones Calendario */ = {
-			isa = PBXGroup;
-			children = (
-				C56279021A0AA54700FA406D /* icone_calendario_01.png */,
-				C56279031A0AA54700FA406D /* icone_calendario_02.png */,
-				C56279041A0AA54700FA406D /* icone_calendario_03.png */,
-				C56279051A0AA54700FA406D /* icone_calendario_04.png */,
-				C56279061A0AA54700FA406D /* icone_calendario_05.png */,
-				C56279071A0AA54700FA406D /* icone_calendario_06.png */,
-				C56279081A0AA54700FA406D /* icone_calendario_07.png */,
-				C56279091A0AA54700FA406D /* icone_calendario_08.png */,
-				C562790A1A0AA54700FA406D /* icone_calendario_09.png */,
-				C562790B1A0AA54700FA406D /* icone_calendario_10.png */,
-				C562790C1A0AA54700FA406D /* icone_calendario_11.png */,
-				C562790D1A0AA54700FA406D /* icone_calendario_12.png */,
-				C562790E1A0AA54700FA406D /* icone_calendario_13.png */,
-				C562790F1A0AA54700FA406D /* icone_calendario_14.png */,
-				C56279101A0AA54700FA406D /* icone_calendario_15.png */,
-				C56279111A0AA54700FA406D /* icone_calendario_16.png */,
-				C56279121A0AA54700FA406D /* icone_calendario_17.png */,
-				C56279131A0AA54700FA406D /* icone_calendario_18.png */,
-				C56279141A0AA54700FA406D /* icone_calendario_19.png */,
-				C56279151A0AA54700FA406D /* icone_calendario_20.png */,
-				C56279161A0AA54700FA406D /* icone_calendario_21.png */,
-				C56279171A0AA54700FA406D /* icone_calendario_22.png */,
-				C56279181A0AA54700FA406D /* icone_calendario_23.png */,
-				C56279191A0AA54700FA406D /* icone_calendario_24.png */,
-				C562791A1A0AA54700FA406D /* icone_calendario_25.png */,
-				C562791B1A0AA54700FA406D /* icone_calendario_26.png */,
-				C562791C1A0AA54700FA406D /* icone_calendario_27.png */,
-				C562791D1A0AA54700FA406D /* icone_calendario_28.png */,
-				C562791E1A0AA54700FA406D /* icone_calendario_29.png */,
-				C562791F1A0AA54700FA406D /* icone_calendario_30.png */,
-				C56279201A0AA54700FA406D /* icone_calendario_31.png */,
-			);
-			path = "Icones Calendario";
 			sourceTree = "<group>";
 		};
 		C5E99E5D19DB3AA200513CDE /* wireframes */ = {
@@ -863,7 +763,6 @@
 		FF1597B119C0DFF600D9236F /* Images */ = {
 			isa = PBXGroup;
 			children = (
-				C56279011A0AA54700FA406D /* Icones Calendario */,
 				FF1C5CBE1A002C3500032DC9 /* stamina_icones */,
 				3276F1B819F6C99900B2F93D /* WhatDoWeNeed */,
 				C5E99E5D19DB3AA200513CDE /* wireframes */,
@@ -1103,7 +1002,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				FF1C5CAA1A001C0900032DC9 /* icone_calendario_19.png in Resources */,
-				C56279211A0AA54700FA406D /* icone_calendario_01.png in Resources */,
 				FF1C5CB01A001C0900032DC9 /* icone_calendario_25.png in Resources */,
 				C5F447061A07E042005031C2 /* icon_compartilhar.png in Resources */,
 				C5F4470F1A07E042005031C2 /* icon_menu.png in Resources */,
@@ -1124,33 +1022,21 @@
 				FF15986C19C0E05E00D9236F /* alarm.mp3 in Resources */,
 				FF1C5C9C1A001C0900032DC9 /* icone_calendario_05.png in Resources */,
 				C5F447051A07E042005031C2 /* icon_compartilha_unable.png in Resources */,
-				C56279361A0AA54700FA406D /* icone_calendario_22.png in Resources */,
-				C562792B1A0AA54700FA406D /* icone_calendario_11.png in Resources */,
 				FF1C5CA31A001C0900032DC9 /* icone_calendario_12.png in Resources */,
 				FF1C5CB41A001C0900032DC9 /* icone_calendario_29.png in Resources */,
-				C56279321A0AA54700FA406D /* icone_calendario_18.png in Resources */,
 				FF1C5C771A0019F200032DC9 /* wireframe_correr_menu.png in Resources */,
-				C56279231A0AA54700FA406D /* icone_calendario_03.png in Resources */,
 				C5F4470B1A07E042005031C2 /* icon_excluir.png in Resources */,
-				C56279271A0AA54700FA406D /* icone_calendario_07.png in Resources */,
-				C56279331A0AA54700FA406D /* icone_calendario_19.png in Resources */,
 				FF1C5CAB1A001C0900032DC9 /* icone_calendario_20.png in Resources */,
 				FF1C5C991A001C0900032DC9 /* icone_calendario_02.png in Resources */,
-				C562793C1A0AA54700FA406D /* icone_calendario_28.png in Resources */,
 				FF1596FE19C0CBC900D9236F /* Images.xcassets in Resources */,
 				C5F447151A07E042005031C2 /* icon_trajeto_unable.png in Resources */,
 				FF1C5CA91A001C0900032DC9 /* icone_calendario_18.png in Resources */,
-				C562793B1A0AA54700FA406D /* icone_calendario_27.png in Resources */,
 				FF1C5C9D1A001C0900032DC9 /* icone_calendario_06.png in Resources */,
 				C5F4470C1A07E042005031C2 /* icon_forca_enable.png in Resources */,
-				C562792F1A0AA54700FA406D /* icone_calendario_15.png in Resources */,
 				C5E99E6B19DB3AA200513CDE /* wireframe_academia.jpg in Resources */,
-				C562792E1A0AA54700FA406D /* icone_calendario_14.png in Resources */,
 				C5F447011A07E042005031C2 /* icon_calorias.png in Resources */,
-				C562793A1A0AA54700FA406D /* icone_calendario_26.png in Resources */,
 				3276F1C419F6C9A500B2F93D /* icone_ok.png in Resources */,
 				C5F447031A07E042005031C2 /* icon_camera_unable.png in Resources */,
-				C562792A1A0AA54700FA406D /* icone_calendario_10.png in Resources */,
 				3276F1C219F6C9A500B2F93D /* icone_compartilhar.png in Resources */,
 				C5CE7D7519D4BA10003E1595 /* calendar_icon.png in Resources */,
 				FF1C5CA11A001C0900032DC9 /* icone_calendario_10.png in Resources */,
@@ -1159,45 +1045,32 @@
 				FF1C5CC61A002C3500032DC9 /* stamina_80x80px.png in Resources */,
 				FF1C5CB51A001C0900032DC9 /* icone_calendario_30.png in Resources */,
 				C5E99E7019DB3AA200513CDE /* wireframe_caminhada_inicio.jpg in Resources */,
-				C562792C1A0AA54700FA406D /* icone_calendario_12.png in Resources */,
 				FF1C5CB31A001C0900032DC9 /* icone_calendario_28.png in Resources */,
 				C5CE7D7619D4BA10003E1595 /* fb_sign.png in Resources */,
 				C5F447111A07E042005031C2 /* icon_pontos.png in Resources */,
 				325F1FD719E702F400001EB0 /* bg_bar.jpg in Resources */,
-				C562793E1A0AA54700FA406D /* icone_calendario_30.png in Resources */,
 				C5E99E7B19DB48BA00513CDE /* wireframe_cadastro.jpg in Resources */,
-				C56279351A0AA54700FA406D /* icone_calendario_21.png in Resources */,
 				C5E99E7619DB3AA200513CDE /* wireframe_informacoes.jpg in Resources */,
 				FF1C5CC31A002C3500032DC9 /* stamina_120x120px.png in Resources */,
 				C5F447021A07E042005031C2 /* icon_camera_enable.png in Resources */,
 				FFAC193A19E3105B00B17487 /* wireframe_termina_caminhada.jpg in Resources */,
 				C5F447131A07E042005031C2 /* icon_sol.png in Resources */,
-				C562793F1A0AA54700FA406D /* icone_calendario_31.png in Resources */,
 				C5F447081A07E042005031C2 /* icon_cronometro.png in Resources */,
 				C5F446FE1A07E042005031C2 /* icon_adicionar.png in Resources */,
-				C56279311A0AA54700FA406D /* icone_calendario_17.png in Resources */,
 				FF12F17719F03D79007524EF /* wireframe_calendario.png in Resources */,
 				C5F4470D1A07E042005031C2 /* icon_home.png in Resources */,
 				3276F1C319F6C9A500B2F93D /* icone_duvida.png in Resources */,
 				C5E99E6F19DB3AA200513CDE /* wireframe_caminhada.jpg in Resources */,
 				C5F446FF1A07E042005031C2 /* icon_bps.png in Resources */,
-				C56279221A0AA54700FA406D /* icone_calendario_02.png in Resources */,
 				C5F446FD1A07E042005031C2 /* icon_add_unable.png in Resources */,
-				C56279251A0AA54700FA406D /* icone_calendario_05.png in Resources */,
 				C5F447101A07E042005031C2 /* icon_ok.png in Resources */,
-				C56279301A0AA54700FA406D /* icone_calendario_16.png in Resources */,
-				C56279391A0AA54700FA406D /* icone_calendario_25.png in Resources */,
-				C56279371A0AA54700FA406D /* icone_calendario_23.png in Resources */,
-				C56279281A0AA54700FA406D /* icone_calendario_08.png in Resources */,
 				3276F1C519F6C9A500B2F93D /* icone_pontuacao.png in Resources */,
 				FF1C5CAC1A001C0900032DC9 /* icone_calendario_21.png in Resources */,
 				C5E99E7719DB3AA200513CDE /* wireframe_login.png in Resources */,
 				FF1C5CB61A001C0900032DC9 /* icone_calendario_31.png in Resources */,
-				C562792D1A0AA54700FA406D /* icone_calendario_13.png in Resources */,
 				C5F447161A07E042005031C2 /* icon_usuario.png in Resources */,
 				C5F4470A1A07E042005031C2 /* icon_editar.png in Resources */,
 				C5F447181A07E042005031C2 /* icon_voltar.png in Resources */,
-				C56279261A0AA54700FA406D /* icone_calendario_06.png in Resources */,
 				FF1C5CA41A001C0900032DC9 /* icone_calendario_13.png in Resources */,
 				FF1C5CA51A001C0900032DC9 /* icone_calendario_14.png in Resources */,
 				C5EB6C0F19D9DC5B00C528FC /* caminhada_tela.png in Resources */,
@@ -1208,19 +1081,16 @@
 				C5F447091A07E042005031C2 /* icon_dica.png in Resources */,
 				C5E99E7519DB3AA200513CDE /* wireframe_informacaoes.jpg in Resources */,
 				FF1C5CA71A001C0900032DC9 /* icone_calendario_16.png in Resources */,
-				C56279341A0AA54700FA406D /* icone_calendario_20.png in Resources */,
 				C5E99E6C19DB3AA200513CDE /* wireframe_academia_inicio.jpg in Resources */,
 				C5F447141A07E042005031C2 /* icon_trajeto_enable.png in Resources */,
 				C5F447041A07E042005031C2 /* icon_check.png in Resources */,
 				32FBEE041A096093007D56D6 /* Main.storyboard in Resources */,
 				FF1C5CA01A001C0900032DC9 /* icone_calendario_09.png in Resources */,
-				C56279381A0AA54700FA406D /* icone_calendario_24.png in Resources */,
 				C59934FB19D36756006337E0 /* Logo_Stamina.png in Resources */,
 				C5F447121A07E042005031C2 /* icon_pontuacao.png in Resources */,
 				C5F446F91A07E042005031C2 /* app_correr_enable.png in Resources */,
 				FF1C5CB21A001C0900032DC9 /* icone_calendario_27.png in Resources */,
 				FF1C5CB11A001C0900032DC9 /* icone_calendario_26.png in Resources */,
-				C56279291A0AA54700FA406D /* icone_calendario_09.png in Resources */,
 				3276F1C119F6C9A500B2F93D /* icone_calendario.png in Resources */,
 				FF1C5CC51A002C3500032DC9 /* stamina_58x58px.png in Resources */,
 				C5CE7D7719D4BA10003E1595 /* menu_icon.png in Resources */,
@@ -1228,10 +1098,8 @@
 				FF1C5CAD1A001C0900032DC9 /* icone_calendario_22.png in Resources */,
 				FF1C5CA81A001C0900032DC9 /* icone_calendario_17.png in Resources */,
 				FF1C5C9B1A001C0900032DC9 /* icone_calendario_04.png in Resources */,
-				C56279241A0AA54700FA406D /* icone_calendario_04.png in Resources */,
 				FF1C5C981A001C0900032DC9 /* icone_calendario_01.png in Resources */,
 				32C6B39219E484CB00DE13AC /* wireframe_categorias.png in Resources */,
-				C562793D1A0AA54700FA406D /* icone_calendario_29.png in Resources */,
 				32F15DF319F986D200310713 /* check.png in Resources */,
 				FF1C5C9E1A001C0900032DC9 /* icone_calendario_07.png in Resources */,
 				C5F446FC1A07E042005031C2 /* icon_add_able.png in Resources */,
