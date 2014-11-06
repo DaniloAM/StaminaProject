@@ -25,5 +25,6 @@
 -(void)firstButtonMethod: (void *)metodo  withImage: (UIImage *)image;
 -(void)secondButtonMethod: (void *)metodo  withImage: (UIImage *)image;
 -(void)thirdButtonMethod: (void *)metodo  withImage: (UIImage *)image;
-
+-(void)enableRight;
+-(void)disableRight;
 @end

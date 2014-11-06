@@ -68,6 +68,13 @@
 -(void)viewWillAppear:(BOOL)animated{
     [self viewWillAppear:animated withGesture:1];
 }
+-(void)disableRight{
+    _right.enabled = NO;
+}
+-(void)enableRight{
+    _right.enabled = YES;
+}
+
 -(void)viewWillAppear:(BOOL)animated withGesture: (BOOL)gesture{
     [super viewWillAppear:animated];
     [self cleanAllBtn];

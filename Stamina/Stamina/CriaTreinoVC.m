@@ -15,9 +15,12 @@
 @implementation CriaTreinoVC
 
 - (void)viewDidLoad {
-    [super viewDidLoad];
-    [self setInicio:nil];
 
+
+    [super viewDidLoad];
+    _selected =1;
+    [self setInicio:nil];
+    [self.view setBackgroundColor:[UIColor staminaYellowColor]];
        CreateTrainTemp *create = [CreateTrainTemp alloc];
     [create setName:[NSMutableArray array]];
     [create setIdentification:[NSMutableArray array]];
@@ -29,14 +32,85 @@
     _tableExercicios.dataSource = self;
     _tableExercicios.backgroundColor = [UIColor clearColor];
     _tableExercicios.contentSize = CGSizeMake(_tableExercicios.frame.size.width, [[create ser] count]*31);
-    [self labelVazio].hidden = YES;
+    _arrayOfDays = [NSMutableArray array];
 
+    for(int x = 0 ; x < 7; x++){
+        NSNumber *num = [NSNumber numberWithInt:0];
+        [_arrayOfDays addObject:num];
+    }
+    [_btnDias setBackgroundColor:[UIColor staminaBlackColor]];
+    [_btnExercicio setBackgroundColor:[UIColor staminaBlackColor]];
+    _btnExercicio.layer.cornerRadius = 7;
+    _btnDias.layer.cornerRadius = 7;
+    [[self viewDays] setBackgroundColor:[UIColor staminaBlackColor]];
+    [self viewDays].layer.cornerRadius =7;
+    for(UIView *btn in [[self viewDays] subviews]){
+        if([btn isKindOfClass:[UIButton class]]){
+        [btn layer].cornerRadius = 7;
+        [btn.layer setBorderWidth:1.0f];
+        [btn layer].borderColor = [UIColor staminaYellowColor].CGColor;
+        }
+    }
+    _inicioHoraTxt.layer.cornerRadius =7;
+    _trainoNomeTxt.layer.cornerRadius = 7;
 }
 -(void)viewDidAppear:(BOOL)animated{
     [super viewDidAppear:animated];
     [self firstButtonMethod:@selector(function1) withImage:nil];
 
 }
+-(NSNumber *)checkAndChange: (NSNumber *)number andButton :(UIButton *)btn{
+    int x = [number intValue];
+    if(x ==1){
+        [btn setBackgroundColor:[UIColor staminaBlackColor]];
+        [btn layer].borderColor = [UIColor staminaYellowColor].CGColor;
+        [btn setTitleColor:[UIColor staminaYellowColor] forState:UIControlStateNormal];
+        return [NSNumber numberWithInt:0];
+        
+    }
+    else{
+        [btn setBackgroundColor:[UIColor staminaYellowColor]];
+        [btn layer].borderColor = [UIColor staminaBlackColor].CGColor;
+                [btn setTitleColor:[UIColor staminaBlackColor] forState:UIControlStateNormal];
+        return [NSNumber numberWithInt:1];
+    }
+}
+-(IBAction)seg : (UIButton *)sender{
+    [[self arrayOfDays] replaceObjectAtIndex:1 withObject:[self checkAndChange:[[self arrayOfDays] objectAtIndex:1] andButton:sender]];
+
+    
+}
+-(IBAction)ter: (UIButton *)sender{
+    [[self arrayOfDays] replaceObjectAtIndex:2 withObject:[self checkAndChange:[[self arrayOfDays] objectAtIndex:2] andButton:sender]];
+;
+    
+}
+-(IBAction)qua: (UIButton *)sender{
+    [[self arrayOfDays] replaceObjectAtIndex:3 withObject:[self checkAndChange:[[self arrayOfDays] objectAtIndex:3] andButton:sender]];
+
+    
+}
+-(IBAction)qui: (UIButton *)sender{
+    [[self arrayOfDays] replaceObjectAtIndex:4 withObject:[self checkAndChange:[[self arrayOfDays] objectAtIndex:4] andButton:sender]];
+
+    
+}
+-(IBAction)sex: (UIButton *)sender{
+    [[self arrayOfDays] replaceObjectAtIndex:5 withObject:[self checkAndChange:[[self arrayOfDays] objectAtIndex:5] andButton:sender]];
+
+    
+}
+-(IBAction)sab: (UIButton *)sender{
+    [[self arrayOfDays] replaceObjectAtIndex:6 withObject:[self checkAndChange:[[self arrayOfDays] objectAtIndex:6] andButton:sender]];
+
+    
+}
+-(IBAction)dom: (UIButton *)sender{
+    [[self arrayOfDays] replaceObjectAtIndex:0 withObject:[self checkAndChange:[[self arrayOfDays] objectAtIndex:0] andButton:sender]];
+
+    
+}
+
 -(void)function1{
     CreateTrainTemp *create = [CreateTrainTemp alloc];
     [create setTrainingName:[[self trainoNomeTxt] text]];
@@ -77,6 +151,7 @@
     [create setTrainingName:nil];
     
 }
+
 -(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event{
     [self.trainoNomeTxt resignFirstResponder];
 }
@@ -89,16 +164,17 @@
     // Return YES if you want the specified item to be editable.
     return YES;
 }
+-(IBAction)btn1 : (UIButton *)sender{
+    _selected = 0;
+    [self atualiza];
+}
+-(IBAction)btn2 : (UIButton *)sender{
+    _selected = 1;
+        [self atualiza];
+}
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
     CreateTrainTemp *tem = [CreateTrainTemp alloc];
-    if([[tem ser] count]==0){
-        [self labelVazio].hidden = NO;
-        [self tableExercicios].hidden=YES;
-    }
-    else {
-        [self labelVazio].hidden = YES;
-        [self tableExercicios].hidden=NO;
-    }
+
     return [[tem ser] count];
 }
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
@@ -138,7 +214,7 @@
     _datepicker.datePickerMode = UIDatePickerModeTime;
     self.navigationController.navigationBar.translucent = YES;
     [_tableExercicios reloadData];
-
+    [self atualiza];
 
 }
 -(void)viewWillDisappear:(BOOL)animated{
@@ -149,7 +225,6 @@
 -(IBAction)horaInicial: (id)sender{
     [self launchDialog:sender];
 }
-
 
 - (void)launchDialog:(id)sender
 {
@@ -186,7 +261,29 @@
     [alertView close];
 
 }
+-(void)atualiza{
 
+      
+
+    if(!_selected){
+        [self viewDays].hidden = NO;
+        [self tableExercicios].hidden = YES;
+        [self viewAux2].backgroundColor = [UIColor staminaBlackColor];
+        [self viewAux3].backgroundColor = [UIColor staminaYellowColor];
+        self.viewAux5.hidden = NO;
+        self.viewAux4.hidden = YES;
+    }
+    
+    else {
+        [self viewDays].hidden = YES;
+        [self tableExercicios].hidden = NO;
+        [self viewAux3].backgroundColor = [UIColor staminaBlackColor];
+        [self viewAux2].backgroundColor = [UIColor staminaYellowColor];
+        self.viewAux5.hidden = YES;
+        self.viewAux4.hidden = NO;
+    }
+   
+}
 - (UIView *)createDemoView
 {
     

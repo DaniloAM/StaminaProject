@@ -15,7 +15,7 @@
 @implementation AcademiaVC
 
 -(void)viewWillAppear:(BOOL)animated{
-    [super viewWillAppear:YES withGesture:1];
+    [super viewWillAppear:YES];
 
     
     [self firstButtonMethod:@selector(function1) withImage:[UIImage imageNamed:@"icon_home.png"]];

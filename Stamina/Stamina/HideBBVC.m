@@ -16,8 +16,7 @@
 
 -(void)viewWillAppear:(BOOL)animated{
     [self viewWillAppear:animated withGesture:1];
-    MenuVC *temp = [self.navigationController.viewControllers objectAtIndex:0];
-    [self setTabBar:[temp tab]];
+
 }
 -(void)voltaView{
     [self.navigationController popViewControllerAnimated:YES];
@@ -25,7 +24,7 @@
 }
 -(void)viewDidLoad{
     [super viewDidLoad];
- 
+ [self.view setUserInteractionEnabled:NO];
 }
 -(void)viewWillAppear:(BOOL)animated withGesture: (BOOL)gesture{
     [super viewWillAppear:animated];
@@ -34,6 +33,10 @@
     [menu setOpen:NO];
     MenuVC *temp = [self.navigationController.viewControllers objectAtIndex:0];
     [temp cleanAllBtn];
+    [temp right].enabled = NO;
+    [temp gesture].enabled = NO;
+    [temp tab].userInteractionEnabled = NO;
+    
 }
 
 -(void)viewWillDisappear:(BOOL)animated{
@@ -43,8 +46,17 @@
     [super viewWillDisappear:animated];
     MenuVC *temp = [self.navigationController.viewControllers objectAtIndex:0];
     [temp setLastDirection:-1];
+    [temp right].enabled = NO;
+    [temp gesture].enabled = NO;
 }
-
+-(void)viewDidAppear:(BOOL)animated{
+    [super viewDidAppear:animated];
+        [self.view setUserInteractionEnabled:YES];
+        MenuVC *temp = [self.navigationController.viewControllers objectAtIndex:0];
+        [temp tab].userInteractionEnabled = YES;
+    [temp right].enabled = YES;
+    [temp gesture].enabled = YES;
+}
 -(NSArray *)criaBarButton{
     MenuVC *temp = [self.navigationController.viewControllers objectAtIndex:0];
     return [temp arrayOfButtons];
@@ -105,5 +117,12 @@
     [temp thirdButtonMethod:nil withImage:image];
     [btn addTarget:self action:metodo forControlEvents:UIControlEventTouchUpInside];
 }
-
+-(void)enableRight{
+    MenuVC *temp = [self.navigationController.viewControllers objectAtIndex:0];
+    [temp enableRight];
+}
+-(void)disableRight{
+    MenuVC *temp = [self.navigationController.viewControllers objectAtIndex:0];
+    [temp disableRight];
+}
 @end
