@@ -159,16 +159,24 @@
     [self.navigationController.view addGestureRecognizer:[temp gesture]];
     
 }
+-(void)buttonClean : (UIButton *)btn{
+    [btn removeTarget:nil action:NULL forControlEvents:UIControlEventAllEvents];
+}
 -(void)firstButtonMethod: (void *)metodo{
     UIButton *btn = [[self arrayOfButtons] firstObject];
+    [self buttonClean:btn];
     [btn addTarget:self action:metodo forControlEvents:UIControlEventTouchUpInside];
 }
 -(void)secondButtonMethod: (void *)metodo{
     UIButton *btn = [[self arrayOfButtons] objectAtIndex:1];
+    [self buttonClean:btn];
+
     [btn addTarget:self action:metodo forControlEvents:UIControlEventTouchUpInside];
 }
 -(void)thirdButtonMethod: (void *)metodo{
     UIButton *btn = [[self arrayOfButtons] lastObject];
+    [self buttonClean:btn];
+
     [btn addTarget:self action:metodo forControlEvents:UIControlEventTouchUpInside];
 }
 -(NSArray *)criaBarButton{

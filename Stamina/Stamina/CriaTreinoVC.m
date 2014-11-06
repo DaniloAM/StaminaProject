@@ -40,8 +40,8 @@
     }
     [_btnDias setBackgroundColor:[UIColor staminaBlackColor]];
     [_btnExercicio setBackgroundColor:[UIColor staminaBlackColor]];
-    _btnExercicio.layer.cornerRadius = 7;
-    _btnDias.layer.cornerRadius = 7;
+    _btnExercicio.layer.cornerRadius = 20;
+    _btnDias.layer.cornerRadius = 20;
     [[self viewDays] setBackgroundColor:[UIColor staminaBlackColor]];
     [self viewDays].layer.cornerRadius =7;
     for(UIView *btn in [[self viewDays] subviews]){
@@ -54,6 +54,7 @@
     _inicioHoraTxt.layer.cornerRadius =7;
     _trainoNomeTxt.layer.cornerRadius = 7;
 }
+
 -(void)viewDidAppear:(BOOL)animated{
     [super viewDidAppear:animated];
     [self firstButtonMethod:@selector(function1) withImage:nil];
@@ -166,6 +167,7 @@
 }
 -(IBAction)btn1 : (UIButton *)sender{
     _selected = 0;
+    
     [self atualiza];
 }
 -(IBAction)btn2 : (UIButton *)sender{
@@ -267,6 +269,11 @@
 
     if(!_selected){
         [self viewDays].hidden = NO;
+        [self btnDias].backgroundColor = [UIColor staminaBlackColor];
+        [[self btnDias] setTitleColor:[UIColor staminaYellowColor] forState:UIControlStateNormal];
+        
+        [self btnExercicio].backgroundColor = [UIColor staminaYellowColor];
+        [[self btnExercicio] setTitleColor:[UIColor staminaBlackColor] forState:UIControlStateNormal];
         [self tableExercicios].hidden = YES;
         [self viewAux2].backgroundColor = [UIColor staminaBlackColor];
         [self viewAux3].backgroundColor = [UIColor staminaYellowColor];
@@ -275,6 +282,11 @@
     }
     
     else {
+   
+        [self btnExercicio].backgroundColor = [UIColor staminaBlackColor];
+        [[self btnExercicio] setTitleColor:[UIColor staminaYellowColor] forState:UIControlStateNormal];
+        [self btnDias].backgroundColor = [UIColor staminaYellowColor];
+        [[self btnDias] setTitleColor:[UIColor staminaBlackColor] forState:UIControlStateNormal];
         [self viewDays].hidden = YES;
         [self tableExercicios].hidden = NO;
         [self viewAux3].backgroundColor = [UIColor staminaBlackColor];

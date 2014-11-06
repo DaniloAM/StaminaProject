@@ -22,9 +22,11 @@
     [self.navigationController popViewControllerAnimated:YES];
     
 }
+
 -(void)viewDidLoad{
     [super viewDidLoad];
  [self.view setUserInteractionEnabled:NO];
+    
 }
 -(void)viewWillAppear:(BOOL)animated withGesture: (BOOL)gesture{
     [super viewWillAppear:animated];
@@ -39,6 +41,13 @@
     
 }
 
+-(void)moveView: (UIView *)bigView withPoint: (CGPoint )point withDuration: (float)duration{
+    [UIView beginAnimations:@"MoveView" context:nil];
+    [UIView setAnimationCurve:UIViewAnimationCurveEaseIn];
+    [UIView setAnimationDuration:duration];
+    bigView.frame = CGRectMake(point.x, point.y, bigView.frame.size.width, bigView.frame.size.height);
+    [UIView commitAnimations];
+}
 -(void)viewWillDisappear:(BOOL)animated{
     [super viewWillDisappear:YES];
     MenuShouldOpen *menu = [MenuShouldOpen alloc];
@@ -48,6 +57,13 @@
     [temp setLastDirection:-1];
     [temp right].enabled = NO;
     [temp gesture].enabled = NO;
+    [[NSNotificationCenter defaultCenter] removeObserver:self
+                                                    name:UIKeyboardWillShowNotification
+                                                  object:nil];
+    
+    [[NSNotificationCenter defaultCenter] removeObserver:self
+                                                    name:UIKeyboardWillHideNotification
+                                                  object:nil];
 }
 -(void)viewDidAppear:(BOOL)animated{
     [super viewDidAppear:animated];
@@ -85,6 +101,11 @@
 -(NSArray *)buttons{
      MenuVC *temp = [self.navigationController.viewControllers objectAtIndex:0];
     return [temp arrayOfButtons];
+}
+-(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event{
+    [self.view resignFirstResponder];
+    [self.view endEditing:YES];
+
 }
 -(CGSize)navigationSize{
     MenuVC *temp = [self.navigationController.viewControllers objectAtIndex:0];
