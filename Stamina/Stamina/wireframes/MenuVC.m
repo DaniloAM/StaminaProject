@@ -160,6 +160,10 @@
     
 }
 -(void)buttonClean : (UIButton *)btn{
+    NSArray *viewsToRemove = [btn subviews];
+    for (UIView *v in viewsToRemove) {
+        [v removeFromSuperview];
+    }
     [btn removeTarget:nil action:NULL forControlEvents:UIControlEventAllEvents];
 }
 -(void)firstButtonMethod: (void *)metodo{
