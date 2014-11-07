@@ -57,6 +57,15 @@
     
 }
 
+
+-(void)viewDidAppear:(BOOL)animated {
+    [super viewDidAppear:animated];
+    
+    NSLog(@"bar height: %f", [self tabBar].frame.size.height);
+    
+}
+
+
 -(void)setTableViewTitles {
     
     for(int x = 0; x < [[[self user] routesArray] count]; x++) {

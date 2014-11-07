@@ -30,6 +30,12 @@
 @property (weak, nonatomic) IBOutlet UIImageView *routeImageView;
 
 @property BOOL saveRoute;
+@property BOOL isWaitingPicture;
+
+@property NSInteger state;
+
+//State 0 - the initial state
+//State 1
 
 -(void)receiveRunningRoute: (FinishedRoute *)runningRoute;
 

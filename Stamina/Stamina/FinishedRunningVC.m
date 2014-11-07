@@ -32,15 +32,19 @@
     }
 
     [super showBarWithAnimation:true];
+    [self.view setBackgroundColor:[UIColor staminaYellowColor]];
     
+    
+    //Set bar button actions and images
     [self firstButtonMethod:@selector(goHome) withImage:[UIImage imageNamed:@"icon_home.png"]];
     
     [self secondButtonMethod:nil withImage:[UIImage imageNamed:@"icon_calendario.png"]];
     
+    [self thirdButtonMethod:@selector(goToRankingPoints) withImage:[UIImage imageNamed: @"icone_pontuacao.png"]];
     
+
     
-    [self.view setBackgroundColor:[UIColor staminaYellowColor]];
-    
+    //Set buttons images and actions
     [self setButtonImageNameLeft:@"icon_add_unable.png" andRight:@"icon_compartilha_unable.png"];
     
     [self setButtonActionLeft:@selector(enableRouteNameTextField) andRight:@selector(selectSharingOption)];
@@ -49,48 +53,16 @@
 
 
 
--(void)viewDidLoad{
-    [super viewDidLoad];
-    
-    
-}
-
-
 
 -(void)viewWillDisappear:(BOOL)animated {
     
     [super viewWillDisappear:animated];
     
-    NSString *name = @"Name";
-    
-    AppDelegate *app = [[UIApplication sharedApplication] delegate];
-    NSManagedObjectContext *context = [app managedObjectContext];
-    NSError *error = nil;
-    
-    TrajectoryFile *file = [NSEntityDescription insertNewObjectForEntityForName:@"TrajectoryFile" inManagedObjectContext:context];
-    
-    [file setTrajectoryName:name];
-    [file setDateDone:[NSDate date]];
-    [file setDuration:[NSNumber numberWithInt:([_route timeInSeconds] + [_route timeInMinutes] * 60)]];
-    [file setDistance:[NSNumber numberWithDouble:[_route distanceInMeters]]];
-    
-    
-    if(_saveRoute) {
-    
-        TrajectoryRoute *saveRoute = [NSEntityDescription insertNewObjectForEntityForName:@"TrajectoryRoute" inManagedObjectContext:context];
-        
-        [saveRoute setPicturesArray:[NSKeyedArchiver archivedDataWithRootObject:_route.arrayOfPictures]];
-        [saveRoute setArrayOfLocations:[NSKeyedArchiver archivedDataWithRootObject:_route.arrayOfLocations]];
-        
-        [saveRoute setTrajectoryName:name];
-        [saveRoute setTrajectoryDistance:[NSNumber numberWithDouble:[_route distanceInMeters]]];
-        
-        UserData *userData = [UserData alloc];
-        [[userData routesArray] addObject:saveRoute];
-    
+    if(![self isWaitingPicture]) {
+        [self saveRouteInformations];
     }
     
-    [context save:&error];
+    
     
 }
 
@@ -182,7 +154,7 @@
     [[self leftButton] setHidden:true];
     [[self rightButton] setHidden:true];
     
-    
+    [self thirdButtonMethod:@selector(confirmRouteName) withImage:[UIImage imageNamed: @"icone_ok.png"]];
 }
 
 
@@ -194,13 +166,19 @@
     [[self leftButton] setHidden:true];
     [[self rightButton] setHidden:true];
     
+    if([[[self routeNameTextField] text] isEqualToString:@""]) {
+        [self setSaveRoute:false];
+    }
+    
+    [self thirdButtonMethod:@selector(goToRankingPoints) withImage:[UIImage imageNamed: @"icone_pontuacao.png"]];
+    
 }
 
 
 -(void)selectSharingOption {
     
     [self setButtonImageNameLeft:@"icon_trajeto_unable.png" andRight:@"icon_camera_unable.png"];
-    [self setButtonActionLeft:nil andRight:@selector(sharePicture)];
+    [self setButtonActionLeft:nil andRight:@selector(goSharePicture)];
     
 }
 
@@ -218,13 +196,27 @@
     }
     
     if(state == 1 || state == 2) {
+       
+        [self setButtonImageNameLeft:@"icon_add_unable.png" andRight:@"icon_compartilha_unable.png"];
         
+        [self setButtonActionLeft:@selector(enableRouteNameTextField) andRight:@selector(selectSharingOption)];
     }
+    
+
+}
+
+-(void)goToCalendar {
     
 }
 
+-(void)goToRankingPoints {
 
--(void)sharePicture {
+
+}
+
+-(void)goSharePicture {
+    
+    [self setIsWaitingPicture:true];
     
     UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
     UIViewController *myVC = (UIViewController *)[storyboard instantiateViewControllerWithIdentifier:@"shareScreen"];
@@ -234,6 +226,7 @@
 }
 
 
+
 -(void)goHome {
     
     [self.navigationController popToRootViewControllerAnimated:true];
@@ -241,10 +234,46 @@
 }
 
 
--(void)saveTrajectory {
+
+-(void)saveRouteInformations {
     
-    _saveRoute = true;
-    [self goHome];
+    NSString *routeName = @"";
+    
+    
+    AppDelegate *app = [[UIApplication sharedApplication] delegate];
+    NSManagedObjectContext *context = [app managedObjectContext];
+    NSError *error = nil;
+    
+    
+    if(_saveRoute) {
+        
+        routeName = [[self routeNameTextField] text];
+        
+        TrajectoryRoute *saveRoute = [NSEntityDescription insertNewObjectForEntityForName:@"TrajectoryRoute" inManagedObjectContext:context];
+        
+        [saveRoute setPicturesArray:[NSKeyedArchiver archivedDataWithRootObject:_route.arrayOfPictures]];
+        [saveRoute setArrayOfLocations:[NSKeyedArchiver archivedDataWithRootObject:_route.arrayOfLocations]];
+        
+        [saveRoute setTrajectoryName:[[self routeNameTextField] text]];
+        [saveRoute setTrajectoryDistance:[NSNumber numberWithDouble:[_route distanceInMeters]]];
+        
+        UserData *userData = [UserData alloc];
+        [[userData routesArray] addObject:saveRoute];
+        
+        
+    }
+    
+    
+    TrajectoryFile *file = [NSEntityDescription insertNewObjectForEntityForName:@"TrajectoryFile" inManagedObjectContext:context];
+    
+    
+    [file setTrajectoryName:routeName];
+    [file setDateDone:[NSDate date]];
+    [file setDuration:[NSNumber numberWithInt:([_route timeInSeconds] + [_route timeInMinutes] * 60)]];
+    [file setDistance:[NSNumber numberWithDouble:[_route distanceInMeters]]];
+    
+    
+    [context save:&error];
     
 }
 
