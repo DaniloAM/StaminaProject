@@ -300,6 +300,7 @@
         [self firstButtonMethod:metodo];
         UIImageView *imgView = [[UIImageView alloc] initWithFrame:CGRectMake(btn.frame.size.width - btn.frame.size.height*88/122-btn.frame.size.width*33/213, btn.frame.size.height*16/122, btn.frame.size.height*88/122,btn.frame.size.height*88/122)];
     [imgView  setImage:image];
+    [btn.subviews makeObjectsPerformSelector: @selector(removeFromSuperview)];
     [btn addSubview:imgView];
 }
 -(void)addImage :(UIImage *)image to:(UIButton *)btn{
@@ -314,6 +315,7 @@
     UIButton *btn = [[temp arrayOfButtons] objectAtIndex:1];
     if(!(metodo ==nil))
         [self secondButtonMethod:metodo];
+    [btn.subviews makeObjectsPerformSelector: @selector(removeFromSuperview)];
     [self addImage:image to:btn];
 }
 -(void)thirdButtonMethod: (void *)metodo  withImage: (UIImage *)image{
@@ -323,6 +325,7 @@
         [self thirdButtonMethod:metodo];
     UIImageView *imgView = [[UIImageView alloc] initWithFrame:CGRectMake(btn.frame.size.width*33/213, btn.frame.size.height*16/122, btn.frame.size.height*88/122,btn.frame.size.height*88/122)];
     [imgView  setImage:image];
+    [btn.subviews makeObjectsPerformSelector: @selector(removeFromSuperview)];
     [btn addSubview:imgView];
 
 }
