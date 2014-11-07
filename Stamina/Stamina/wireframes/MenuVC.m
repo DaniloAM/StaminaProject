@@ -297,8 +297,8 @@
     MenuVC *temp = [self.navigationController.viewControllers objectAtIndex:0];
     UIButton *btn = [[temp arrayOfButtons] firstObject];
     if(!(metodo ==nil))
-    [btn addTarget:self action:metodo forControlEvents:UIControlEventTouchUpInside];
-    UIImageView *imgView = [[UIImageView alloc] initWithFrame:CGRectMake(btn.frame.size.width - btn.frame.size.height*88/122-btn.frame.size.width*33/213, btn.frame.size.height*16/122, btn.frame.size.height*88/122,btn.frame.size.height*88/122)];
+        [self firstButtonMethod:metodo];
+        UIImageView *imgView = [[UIImageView alloc] initWithFrame:CGRectMake(btn.frame.size.width - btn.frame.size.height*88/122-btn.frame.size.width*33/213, btn.frame.size.height*16/122, btn.frame.size.height*88/122,btn.frame.size.height*88/122)];
     [imgView  setImage:image];
     [btn addSubview:imgView];
 }
@@ -313,14 +313,14 @@
     MenuVC *temp = [self.navigationController.viewControllers objectAtIndex:0];
     UIButton *btn = [[temp arrayOfButtons] objectAtIndex:1];
     if(!(metodo ==nil))
-    [btn addTarget:self action:metodo forControlEvents:UIControlEventTouchUpInside];
+        [self secondButtonMethod:metodo];
     [self addImage:image to:btn];
 }
 -(void)thirdButtonMethod: (void *)metodo  withImage: (UIImage *)image{
     MenuVC *temp = [self.navigationController.viewControllers objectAtIndex:0];
     UIButton *btn = [[temp arrayOfButtons] lastObject];
     if(!(metodo ==nil))
-    [btn addTarget:self action:metodo forControlEvents:UIControlEventTouchUpInside];
+        [self thirdButtonMethod:metodo];
     UIImageView *imgView = [[UIImageView alloc] initWithFrame:CGRectMake(btn.frame.size.width*33/213, btn.frame.size.height*16/122, btn.frame.size.height*88/122,btn.frame.size.height*88/122)];
     [imgView  setImage:image];
     [btn addSubview:imgView];

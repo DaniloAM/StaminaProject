@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6250" systemVersion="13F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="egZ-Br-g0s">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6250" systemVersion="13F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="lGt-ep-Pew">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6244"/>
@@ -1210,10 +1210,10 @@
             </objects>
             <point key="canvasLocation" x="3363" y="-2068"/>
         </scene>
-        <!--Add Exercise-->
+        <!--Exercise To AddVC-->
         <scene sceneID="Ctl-md-2LT">
             <objects>
-                <viewController storyboardIdentifier="AddExercise" id="lGt-ep-Pew" customClass="AddExercise" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="AddExercise" id="lGt-ep-Pew" customClass="ExerciseToAddVC" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="uIp-dz-FBi"/>
                         <viewControllerLayoutGuide type="bottom" id="E1u-8h-Dkv"/>
@@ -1221,11 +1221,6 @@
                     <view key="view" contentMode="scaleToFill" id="CAf-W9-2yI">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="6uq-G7-t88">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="187"/>
-                            </imageView>
-                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                 </viewController>

@@ -36,6 +36,7 @@
 		C53A352B19D33B9A00AC1383 /* RWBlurPopover.m in Sources */ = {isa = PBXBuildFile; fileRef = C53A352819D33B9A00AC1383 /* RWBlurPopover.m */; };
 		C53A352C19D33B9A00AC1383 /* RWBlurPopoverTransitionController.m in Sources */ = {isa = PBXBuildFile; fileRef = C53A352A19D33B9A00AC1383 /* RWBlurPopoverTransitionController.m */; };
 		C53A353119D3411F00AC1383 /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = C53A353019D3411F00AC1383 /* Reachability.m */; };
+		C53F22D91A0D310F00697FB4 /* ExerciseToAddVC.m in Sources */ = {isa = PBXBuildFile; fileRef = C53F22D81A0D310F00697FB4 /* ExerciseToAddVC.m */; };
 		C56108E919DD81990090CE5D /* wireframe_home.png in Resources */ = {isa = PBXBuildFile; fileRef = C56108E819DD81990090CE5D /* wireframe_home.png */; };
 		C56632561A03F3110006309D /* WeatherCondition.m in Sources */ = {isa = PBXBuildFile; fileRef = C56632551A03F3110006309D /* WeatherCondition.m */; };
 		C59934F919D36739006337E0 /* App-Stamina.png in Resources */ = {isa = PBXBuildFile; fileRef = C59934F819D36739006337E0 /* App-Stamina.png */; };
@@ -238,6 +239,8 @@
 		C53A352A19D33B9A00AC1383 /* RWBlurPopoverTransitionController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RWBlurPopoverTransitionController.m; sourceTree = "<group>"; };
 		C53A352F19D3411F00AC1383 /* Reachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Reachability.h; sourceTree = "<group>"; };
 		C53A353019D3411F00AC1383 /* Reachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Reachability.m; sourceTree = "<group>"; };
+		C53F22D71A0D310F00697FB4 /* ExerciseToAddVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ExerciseToAddVC.h; sourceTree = "<group>"; };
+		C53F22D81A0D310F00697FB4 /* ExerciseToAddVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ExerciseToAddVC.m; sourceTree = "<group>"; };
 		C56108E819DD81990090CE5D /* wireframe_home.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = wireframe_home.png; sourceTree = "<group>"; };
 		C56632541A03F3110006309D /* WeatherCondition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WeatherCondition.h; path = ../WeatherCondition.h; sourceTree = "<group>"; };
 		C56632551A03F3110006309D /* WeatherCondition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WeatherCondition.m; path = ../WeatherCondition.m; sourceTree = "<group>"; };
@@ -711,6 +714,8 @@
 				FF17BD6419C8C21600B5EF46 /* MainVC.m */,
 				325F1FE119E7143C00001EB0 /* MenuVC.h */,
 				325F1FE219E7143C00001EB0 /* MenuVC.m */,
+				C53F22D71A0D310F00697FB4 /* ExerciseToAddVC.h */,
+				C53F22D81A0D310F00697FB4 /* ExerciseToAddVC.m */,
 				FF13E9E919E71FFA0005BA49 /* PushedViewController.h */,
 				FF13E9EA19E71FFA0005BA49 /* PushedViewController.m */,
 				FFAC190919DC86C400B17487 /* SocialSharingVC.h */,
@@ -1133,6 +1138,7 @@
 				FF13E9DA19E5BE330005BA49 /* FinishedRoute.m in Sources */,
 				32F57C6F19EC4D16001BF6B2 /* ExercicioTVC.m in Sources */,
 				C56632561A03F3110006309D /* WeatherCondition.m in Sources */,
+				C53F22D91A0D310F00697FB4 /* ExerciseToAddVC.m in Sources */,
 				C53A352B19D33B9A00AC1383 /* RWBlurPopover.m in Sources */,
 				32F57C7219EC6838001BF6B2 /* MenuShouldOpen.m in Sources */,
 				FF15972519C0D96E00D9236F /* AMSlideMenuContentSegue.m in Sources */,
