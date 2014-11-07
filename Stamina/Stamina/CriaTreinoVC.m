@@ -53,11 +53,20 @@
     }
     _inicioHoraTxt.layer.cornerRadius =7;
     _trainoNomeTxt.layer.cornerRadius = 7;
+    _tableExercicios.backgroundColor = [UIColor staminaBlackColor];
+}
+-(void)function2{
+    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+    UIViewController *myVC;
+    myVC= (UIViewController *)[storyboard instantiateViewControllerWithIdentifier:@"CategoriaTVC"];
+    [self.navigationController pushViewController:myVC animated:YES];
+
+    
+
 }
 
 -(void)viewDidAppear:(BOOL)animated{
     [super viewDidAppear:animated];
-    [self firstButtonMethod:@selector(function1) withImage:nil];
 
 }
 -(NSNumber *)checkAndChange: (NSNumber *)number andButton :(UIButton *)btn{
@@ -216,6 +225,10 @@
     _datepicker.datePickerMode = UIDatePickerModeTime;
     self.navigationController.navigationBar.translucent = YES;
     [_tableExercicios reloadData];
+    
+    [self firstButtonMethod:@selector(function1) withImage:nil];
+    [self secondButtonMethod:@selector(function2) withImage:[UIImage imageNamed:@"icon_add_able.png"]];
+
     [self atualiza];
 
 }
@@ -304,12 +317,5 @@
 }
 
 
--(IBAction)mostraListaExercicios{
-    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
-    UIViewController *myVC;
-    myVC= (UIViewController *)[storyboard instantiateViewControllerWithIdentifier:@"CategoriaTVC"];
-    CreateTrainTemp *temp = [CreateTrainTemp alloc];
-    [temp setTrainingName:[[self trainoNomeTxt] text]];
-    [self.navigationController pushViewController:myVC animated:YES];
-}
+
 @end

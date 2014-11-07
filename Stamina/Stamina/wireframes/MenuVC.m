@@ -183,7 +183,7 @@
     CGSize screenSize = [[UIScreen mainScreen] bounds].size;
     NSMutableArray *array = [NSMutableArray array];
     [self setTab:[[UIView alloc] initWithFrame:CGRectMake(0, screenSize.height-screenSize.height*150/1332 , screenSize.width, screenSize.height*150/1332 )]];
-    [[self tab] setBackgroundColor:[UIColor blackColor]];
+    [[self tab] setBackgroundColor:[UIColor staminaBlackColor]];
     [self.navigationController.view addSubview:self.tab];
     [self setStartPointBar:self.tab.frame.origin];
     UISwipeGestureRecognizer *gest = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(hideBar)];

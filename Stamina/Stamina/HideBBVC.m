@@ -78,7 +78,10 @@
     return [temp arrayOfButtons];
 }
 
-
+-(CGSize )tabBarSize{
+    MenuVC *temp = [self.navigationController.viewControllers objectAtIndex:0];
+    return [temp tab].frame.size;
+}
 -(void)hideBar{
     MenuVC *temp = [self.navigationController.viewControllers objectAtIndex:0];
     [temp hideBarWithAnimation:YES];

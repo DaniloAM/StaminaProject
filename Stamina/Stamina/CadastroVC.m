@@ -50,7 +50,7 @@
     _logoStart = image.frame.origin;
     _logo = image;
     _page.userInteractionEnabled = NO;
-
+    
    
 }
 

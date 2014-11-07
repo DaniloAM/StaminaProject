@@ -799,14 +799,6 @@
             </objects>
             <point key="canvasLocation" x="3267" y="-4113"/>
         </scene>
-        <!--Page View Controller-->
-        <scene sceneID="7CW-Zh-q7t">
-            <objects>
-                <pageViewController storyboardIdentifier="TipsPageViewController" autoresizesArchivedViewToFullSize="NO" transitionStyle="scroll" navigationOrientation="horizontal" spineLocation="none" id="HFg-s1-JIf" sceneMemberID="viewController"/>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="pl8-YO-2MB" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="3781" y="-3819"/>
-        </scene>
         <!--Navigation Controller-->
         <scene sceneID="cWU-sk-JE1">
             <objects>
@@ -1230,44 +1222,16 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="wireframe_exercicio_serie.png" translatesAutoresizingMaskIntoConstraints="NO" id="VcY-Ks-woC">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="6uq-G7-t88">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="187"/>
                             </imageView>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="4bL-VO-yoW">
-                                <rect key="frame" x="39" y="384" width="104" height="86"/>
-                                <fontDescription key="fontDescription" name="Avenir-Roman" family="Avenir" pointSize="27"/>
-                                <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
-                            </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="MWU-kV-Z5c">
-                                <rect key="frame" x="179" y="384" width="104" height="86"/>
-                                <fontDescription key="fontDescription" name="Avenir-Roman" family="Avenir" pointSize="27"/>
-                                <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
-                            </textField>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Exercicio 1" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yKa-ut-4AY">
-                                <rect key="frame" x="37" y="299" width="265" height="29"/>
-                                <fontDescription key="fontDescription" name="Avenir-Heavy" family="Avenir" pointSize="19"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Categoria" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3Uh-Jo-sib">
-                                <rect key="frame" x="37" y="328" width="265" height="29"/>
-                                <fontDescription key="fontDescription" name="Avenir-Roman" family="Avenir" pointSize="19"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <connections>
-                        <outlet property="categoriaName" destination="3Uh-Jo-sib" id="aSl-bl-u5C"/>
-                        <outlet property="exerciseName" destination="yKa-ut-4AY" id="3xV-gY-bUv"/>
-                        <outlet property="txtRep" destination="MWU-kV-Z5c" id="KFh-Nb-h08"/>
-                        <outlet property="txtSeries" destination="4bL-VO-yoW" id="FAR-8W-b6G"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="m9l-XB-Cif" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3615" y="-2742"/>
+            <point key="canvasLocation" x="3603" y="-2756"/>
         </scene>
         <!--Calendar InformationVC-->
         <scene sceneID="NMJ-Pw-R4N">
@@ -1375,7 +1339,6 @@
         <image name="wireframe_academia.jpg" width="884" height="1574"/>
         <image name="wireframe_academia_inicio.jpg" width="886" height="1574"/>
         <image name="wireframe_cadastro.jpg" width="876" height="1567"/>
-        <image name="wireframe_exercicio_serie.png" width="894" height="1582"/>
         <image name="wireframe_home.png" width="418" height="633"/>
     </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
