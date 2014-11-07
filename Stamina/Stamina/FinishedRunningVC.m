@@ -33,6 +33,11 @@
 
     [super showBarWithAnimation:true];
     
+    [self firstButtonMethod:@selector(goHome) withImage:[UIImage imageNamed:@"icon_home.png"]];
+    
+    [self secondButtonMethod:nil withImage:[UIImage imageNamed:@"icon_calendario.png"]];
+    
+    
     
     [self.view setBackgroundColor:[UIColor staminaYellowColor]];
     
