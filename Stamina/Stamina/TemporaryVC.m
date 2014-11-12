@@ -25,15 +25,6 @@
 
 - (void)viewDidLoad
 {
-    
-    AMSlideMenuMainViewController *mainVC = [AMSlideMenuMainViewController getInstanceForVC:self];
-
-    
-    [mainVC configureLeftMenuButton:_leftBtn];
-    [_leftBtn addTarget:mainVC action:@selector(openLeftMenu) forControlEvents:UIControlEventTouchUpInside];
-    
-    
-    
         [super viewDidLoad];
 }
 -(UserTraining *)criaTemporario{

@@ -226,8 +226,8 @@
     self.navigationController.navigationBar.translucent = YES;
     [_tableExercicios reloadData];
     
-    [self firstButtonMethod:@selector(function1) withImage:nil];
-    [self secondButtonMethod:@selector(function2) withImage:[UIImage imageNamed:@"icon_add_able.png"]];
+    [self firstButtonMethod:@selector(function1)  fromClass:self withImage:nil];
+    [self secondButtonMethod:@selector(function2) fromClass:self  withImage:[UIImage imageNamed:@"icon_add_able.png"]];
 
     [self atualiza];
 

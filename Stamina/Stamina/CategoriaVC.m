@@ -35,7 +35,8 @@
     CGSize size = [[UIScreen mainScreen] bounds].size;
     [self.table setFrame:CGRectMake(0, self.navigationController.navigationBar.frame.size.height, size.width, size.height- self.navigationController.navigationBar.frame.size.height)];
     
-    [self removeGestureFromMenuVC];
+#warning ver erro aqui depois
+    //[self removeGestureFromMenuVC];
 
 }
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {

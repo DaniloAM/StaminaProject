@@ -8,7 +8,6 @@
 
 #import <UIKit/UIKit.h>
 #import "WebServiceResponse.h"
-#import "AMSlideMenuMainViewController.h"
 
 @interface TemporaryVC : UIViewController
 

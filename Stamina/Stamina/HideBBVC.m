@@ -16,137 +16,74 @@
 
 -(void)viewWillAppear:(BOOL)animated{
     [self viewWillAppear:animated withGesture:1];
-
-}
--(void)voltaView{
-    [self.navigationController popViewControllerAnimated:YES];
     
 }
 
 -(void)viewDidLoad{
     [super viewDidLoad];
- [self.view setUserInteractionEnabled:NO];
-    
 }
+
 -(void)viewWillAppear:(BOOL)animated withGesture: (BOOL)gesture{
     [super viewWillAppear:animated];
+    JLSlideMenu *temp = [self.navigationController.viewControllers objectAtIndex:0];
+    [temp cleanButtons];
     [self.navigationItem setHidesBackButton:YES];
-    MenuShouldOpen  *menu = [MenuShouldOpen alloc];
-    [menu setOpen:NO];
-    MenuVC *temp = [self.navigationController.viewControllers objectAtIndex:0];
-    [temp cleanAllBtn];
-    [temp right].enabled = NO;
-    [temp gesture].enabled = NO;
-    [temp tab].userInteractionEnabled = NO;
+}
+//-(void)unblock{
+//    JLSlideMenu *temp = [self.navigationController.viewControllers objectAtIndex:0];
+//    [temp setStop:YES];
+//    [temp panLeft].enabled = YES;
+//    [self.navigationController.view setUserInteractionEnabled:YES];
+//    [self.view setUserInteractionEnabled:YES];
+//    [self.navigationController.view addGestureRecognizer:[temp panLeft]];
+//}
+//-(void)block{
+//    JLSlideMenu *temp = [self.navigationController.viewControllers objectAtIndex:0];
+//    [temp setStop:NO];
+//    [temp panLeft].enabled = NO;
+//    [self.navigationController.view removeGestureRecognizer:[temp panLeft]];
+//    [self.navigationController.view setUserInteractionEnabled:NO];
+//    [self.view setUserInteractionEnabled:NO];
+//}
+-(void)viewDidAppear:(BOOL)animated{
+    [super viewDidAppear:YES];
     
 }
 
--(void)moveView: (UIView *)bigView withPoint: (CGPoint )point withDuration: (float)duration{
-    [UIView beginAnimations:@"MoveView" context:nil];
-    [UIView setAnimationCurve:UIViewAnimationCurveEaseIn];
-    [UIView setAnimationDuration:duration];
-    bigView.frame = CGRectMake(point.x, point.y, bigView.frame.size.width, bigView.frame.size.height);
-    [UIView commitAnimations];
-}
--(void)viewWillDisappear:(BOOL)animated{
-    [super viewWillDisappear:YES];
-    MenuShouldOpen *menu = [MenuShouldOpen alloc];
-    [menu setOpen:YES];
-    [super viewWillDisappear:animated];
-    MenuVC *temp = [self.navigationController.viewControllers objectAtIndex:0];
-    [temp setLastDirection:-1];
-    [temp right].enabled = NO;
-    [temp gesture].enabled = NO;
-    [[NSNotificationCenter defaultCenter] removeObserver:self
-                                                    name:UIKeyboardWillShowNotification
-                                                  object:nil];
-    
-    [[NSNotificationCenter defaultCenter] removeObserver:self
-                                                    name:UIKeyboardWillHideNotification
-                                                  object:nil];
-}
--(void)viewDidAppear:(BOOL)animated{
-    [super viewDidAppear:animated];
-        [self.view setUserInteractionEnabled:YES];
-        MenuVC *temp = [self.navigationController.viewControllers objectAtIndex:0];
-        [temp tab].userInteractionEnabled = YES;
-    [temp right].enabled = YES;
-    [temp gesture].enabled = YES;
-}
--(NSArray *)criaBarButton{
-    MenuVC *temp = [self.navigationController.viewControllers objectAtIndex:0];
-    return [temp arrayOfButtons];
-}
 
 -(CGSize )tabBarSize{
-    MenuVC *temp = [self.navigationController.viewControllers objectAtIndex:0];
-    return [temp tab].frame.size;
+    JLSlideMenu *temp = [self.navigationController.viewControllers objectAtIndex:0];
+    return [temp tabBar].frame.size;
 }
--(void)hideBar{
-    MenuVC *temp = [self.navigationController.viewControllers objectAtIndex:0];
-    [temp hideBarWithAnimation:YES];
 
-}
+
 -(void)showBarWithAnimation: (BOOL)animation{
-    MenuVC *temp = [self.navigationController.viewControllers objectAtIndex:0];
-    [temp showBarWithAnimation:YES];
+    JLSlideMenu *temp = [self.navigationController.viewControllers objectAtIndex:0];
+    [temp showBarWithAnimation:animation];
 }
 -(void)hideBarWithAnimation: (BOOL)animation{
-    MenuVC *temp = [self.navigationController.viewControllers objectAtIndex:0];
-    [temp hideBarWithAnimation:YES];
+    JLSlideMenu *temp = [self.navigationController.viewControllers objectAtIndex:0];
+    [temp hideBarWithAnimation:animation];
 }
 
--(void) removeGestureFromMenuVC{
-    MenuVC *temp = [self.navigationController.viewControllers objectAtIndex:0];
-    [temp removeGestureFromMenuVC];
-    
-}
--(NSArray *)buttons{
-     MenuVC *temp = [self.navigationController.viewControllers objectAtIndex:0];
-    return [temp arrayOfButtons];
-}
--(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event{
-    [self.view resignFirstResponder];
-    [self.view endEditing:YES];
 
-}
 -(CGSize)navigationSize{
-    MenuVC *temp = [self.navigationController.viewControllers objectAtIndex:0];
-    return [temp navigationSize];
+    return [self.navigationController navigationBar].frame.size;
 }
--(CGSize)navigationIncreased{
-    MenuVC *temp = [self.navigationController.viewControllers objectAtIndex:0];
-    return [temp navigationIncreased];
+
+-(void)firstButtonMethod: (void *)metodo fromClass:(UIViewController *)view withImage: (UIImage *)image{
+    JLSlideMenu *temp = [self.navigationController.viewControllers objectAtIndex:0];
+    [temp firstButtonMethod:metodo fromClass:view withImage:image];
 }
--(CGSize)navigationStartSize{
-    MenuVC *temp = [self.navigationController.viewControllers objectAtIndex:0];
-    return [temp navigationStartSize];
-}
--(void)firstButtonMethod: (void *)metodo withImage: (UIImage *)image{
-    MenuVC *temp = [self.navigationController.viewControllers objectAtIndex:0];
-    UIButton *btn = [[temp arrayOfButtons] firstObject];
-    [temp firstButtonMethod:nil withImage:image];
-    [btn addTarget:self action:metodo forControlEvents:UIControlEventTouchUpInside];
+-(void)secondButtonMethod: (void *)metodo fromClass:(UIViewController *)view withImage: (UIImage *)image{
+    JLSlideMenu *temp = [self.navigationController.viewControllers objectAtIndex:0];
+    [temp secondButtonMethod:metodo fromClass:view withImage:image];
 
 }
--(void)secondButtonMethod: (void *)metodo  withImage: (UIImage *)image{
-    MenuVC *temp = [self.navigationController.viewControllers objectAtIndex:0];
-    UIButton *btn = [[temp arrayOfButtons] objectAtIndex:1];
-    [temp secondButtonMethod:nil withImage:image];
-    [btn addTarget:self action:metodo forControlEvents:UIControlEventTouchUpInside];
+-(void)thirdButtonMethod: (void *)metodo fromClass:(UIViewController *)view withImage: (UIImage *)image{
+    JLSlideMenu *temp = [self.navigationController.viewControllers objectAtIndex:0];
+    [temp thirdButtonMethod:metodo fromClass:view withImage:image];
+
 }
--(void)thirdButtonMethod: (void *)metodo  withImage: (UIImage *)image{
-    MenuVC *temp = [self.navigationController.viewControllers objectAtIndex:0];
-    UIButton *btn = [[temp arrayOfButtons] lastObject];
-    [temp thirdButtonMethod:nil withImage:image];
-    [btn addTarget:self action:metodo forControlEvents:UIControlEventTouchUpInside];
-}
--(void)enableRight{
-    MenuVC *temp = [self.navigationController.viewControllers objectAtIndex:0];
-    [temp enableRight];
-}
--(void)disableRight{
-    MenuVC *temp = [self.navigationController.viewControllers objectAtIndex:0];
-    [temp disableRight];
-}
+
 @end

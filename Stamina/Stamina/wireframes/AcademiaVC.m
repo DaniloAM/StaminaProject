@@ -17,10 +17,10 @@
 -(void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:YES];
 
-    
-    [self firstButtonMethod:@selector(function1) withImage:[UIImage imageNamed:@"icon_home.png"]];
-    [self secondButtonMethod:@selector(function2) withImage:[UIImage imageNamed:@"icon_adicionar.png"]];
-    [self thirdButtonMethod:@selector(function3) withImage:[UIImage imageNamed:@"icon_editar.png"]];
+    [self firstButtonMethod:@selector(function1) fromClass:self withImage:[UIImage imageNamed:@"icon_home.png"]];
+    [self secondButtonMethod:@selector(function2) fromClass:self  withImage:[UIImage imageNamed:@"icon_adicionar.png"]];
+    [self thirdButtonMethod:@selector(function3) fromClass:self  withImage:[UIImage imageNamed:@"icon_editar.png"]];
+    [self showBarWithAnimation:1];
     }
 -(void)function1{
     [self.navigationController popToRootViewControllerAnimated:YES];

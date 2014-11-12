@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6250" systemVersion="13F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="lGt-ep-Pew">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6250" systemVersion="13F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="8GH-Ax-KlD">
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6244"/>
     </dependencies>
     <scenes>
@@ -78,9 +79,6 @@
                                                 </label>
                                             </subviews>
                                         </tableViewCellContentView>
-                                        <connections>
-                                            <segue destination="zYX-g3-UJR" kind="custom" identifier="firstSegue" trigger="accessoryAction" customClass="AMSlideMenuContentSegue" id="5pc-Xj-SRx"/>
-                                        </connections>
                                     </tableViewCell>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="61" id="m32-kG-Ifr">
                                         <rect key="frame" x="0.0" y="44" width="320" height="44"/>
@@ -303,22 +301,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Uxo-Iy-dTO" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-636" y="-2271"/>
-        </scene>
-        <!--Navigation Controller-->
-        <scene sceneID="UvL-fw-dCo">
-            <objects>
-                <navigationController storyboardIdentifier="Go" definesPresentationContext="YES" id="zYX-g3-UJR" sceneMemberID="viewController">
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="hgK-Ml-Lwf">
-                        <autoresizingMask key="autoresizingMask"/>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                    </navigationBar>
-                    <connections>
-                        <segue destination="x3h-sg-EoT" kind="relationship" relationship="rootViewController" id="QES-D8-dZ4"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="PMH-fN-blQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1527" y="-3088"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Q8T-eB-8Ah">
@@ -569,6 +551,50 @@
             </objects>
             <point key="canvasLocation" x="2901" y="-3451"/>
         </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="lV8-Gp-hWW">
+            <objects>
+                <navigationController id="8GH-Ax-KlD" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="RmX-Jh-pyd">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="barTintColor" red="0.97647058819999999" green="0.84705882349999995" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="x3h-sg-EoT" kind="relationship" relationship="rootViewController" id="fbV-6h-9E3"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="cuT-0c-wJa" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1168" y="-3639"/>
+        </scene>
+        <!--Slide Menu-->
+        <scene sceneID="9vM-51-cRf">
+            <objects>
+                <viewController id="bLY-23-hrx" customClass="JLSlideMenu" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="aaU-nX-QiU"/>
+                        <viewControllerLayoutGuide type="bottom" id="j3o-wu-Fux"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="exO-zm-Uzt">
+                        <rect key="frame" x="0.0" y="64" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Bo3-f7-5Q6">
+                                <rect key="frame" x="94" y="154" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="2Ce-5H-pK3"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="sLp-ME-OEB" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2505" y="-5436"/>
+        </scene>
         <!--Running MapVC-->
         <scene sceneID="hBC-1x-cGS">
             <objects>
@@ -605,9 +631,7 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="Hxh-iD-IrK">
-                                <rect key="frame" x="0.0" y="20" width="320" height="212"/>
-                            </mapView>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="Hxh-iD-IrK"/>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Lmf-ti-4rb">
                                 <rect key="frame" x="32" y="437" width="256" height="36"/>
                                 <state key="normal" backgroundImage="button_iniciar.png">
@@ -696,7 +720,6 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="biZ-JN-b7S">
-                                <rect key="frame" x="0.0" y="20" width="320" height="489"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </tableView>
                         </subviews>
@@ -709,7 +732,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="W7M-pk-Lt3" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2832" y="-2762"/>
+            <point key="canvasLocation" x="2839" y="-2752"/>
         </scene>
         <!--Finished RunningVC-->
         <scene sceneID="SPh-K6-pfa">
@@ -814,10 +837,10 @@
             </objects>
             <point key="canvasLocation" x="1520" y="-1372"/>
         </scene>
-        <!--Home ScreenVC-->
+        <!--Slide Menu-->
         <scene sceneID="JbV-Ke-MIq">
             <objects>
-                <viewController storyboardIdentifier="Início" id="x3h-sg-EoT" customClass="HomeScreenVC" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="Início" id="x3h-sg-EoT" customClass="JLSlideMenu" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="CSs-Uu-jKJ"/>
                         <viewControllerLayoutGuide type="bottom" id="tnu-db-aaR"/>
@@ -826,16 +849,13 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="504"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="wireframe_home.png" translatesAutoresizingMaskIntoConstraints="NO" id="4gh-7A-PuK">
-                                <rect key="frame" x="-5" y="0.0" width="331" height="510"/>
-                            </imageView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8IQ-Vn-83q">
                                 <rect key="frame" x="42" y="303" width="102" height="104"/>
                                 <state key="normal">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="G87-vY-y2C" kind="push" id="d2F-4d-qGR"/>
+                                    <segue destination="G87-vY-y2C" kind="push" id="63V-PP-Oso"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Lb2-Gf-nBp">
@@ -847,6 +867,9 @@
                                     <segue destination="PSP-iH-gXQ" kind="push" id="wOr-5z-Cli"/>
                                 </connections>
                             </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="wireframe_home.png" translatesAutoresizingMaskIntoConstraints="NO" id="4gh-7A-PuK">
+                                <rect key="frame" x="-5" y="0.0" width="331" height="510"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
@@ -854,7 +877,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Om7-7Q-Ry4" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1963" y="-3088"/>
+            <point key="canvasLocation" x="1923" y="-3080"/>
         </scene>
         <!--CadastroVC-->
         <scene sceneID="i2S-yT-GgI">

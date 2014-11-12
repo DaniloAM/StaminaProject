@@ -36,7 +36,7 @@
 -(void)viewWillAppear:(BOOL)animated {
     
     [super viewWillAppear:animated];
-    [self removeGestureFromMenuVC];
+    //[self removeGestureFromMenuVC];
     
 }
 

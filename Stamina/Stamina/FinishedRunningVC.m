@@ -36,11 +36,11 @@
     
     
     //Set bar button actions and images
-    [self firstButtonMethod:@selector(goHome) withImage:[UIImage imageNamed:@"icon_home.png"]];
+    [self firstButtonMethod:@selector(goHome) fromClass:self  withImage:[UIImage imageNamed:@"icon_home.png"]];
     
-    [self secondButtonMethod:nil withImage:[UIImage imageNamed:@"icon_calendario.png"]];
+    [self secondButtonMethod:nil  fromClass:self withImage:[UIImage imageNamed:@"icon_calendario.png"]];
     
-    [self thirdButtonMethod:@selector(goToRankingPoints) withImage:[UIImage imageNamed: @"icone_pontuacao.png"]];
+    [self thirdButtonMethod:@selector(goToRankingPoints)  fromClass:self withImage:[UIImage imageNamed: @"icone_pontuacao.png"]];
     
 
     
@@ -154,7 +154,7 @@
     [[self leftButton] setHidden:true];
     [[self rightButton] setHidden:true];
     
-    [self thirdButtonMethod:@selector(confirmRouteName) withImage:[UIImage imageNamed: @"icone_ok.png"]];
+    [self thirdButtonMethod:@selector(confirmRouteName) fromClass:self  withImage:[UIImage imageNamed: @"icone_ok.png"]];
 }
 
 
@@ -170,7 +170,7 @@
         [self setSaveRoute:false];
     }
     
-    [self thirdButtonMethod:@selector(goToRankingPoints) withImage:[UIImage imageNamed: @"icone_pontuacao.png"]];
+    [self thirdButtonMethod:@selector(goToRankingPoints) fromClass:self  withImage:[UIImage imageNamed: @"icone_pontuacao.png"]];
     
 }
 

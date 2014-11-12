@@ -13,9 +13,9 @@
 #import "AVCamPreviewView.h"
 #import "SharingResponse.h"
 #import "AppDelegate.h"
-#import "MenuVC.h"
+#import "JLSlideMenu.h"
 
-@interface SocialSharingVC : MenuVC  <UIDocumentInteractionControllerDelegate>
+@interface SocialSharingVC : JLSlideMenu  <UIDocumentInteractionControllerDelegate>
 
 @property (nonatomic, retain) UIDocumentInteractionController *dic;
 @property (weak, nonatomic) IBOutlet AVCamPreviewView *cameraView;

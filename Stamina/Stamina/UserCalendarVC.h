@@ -50,9 +50,9 @@
 #import "ExercisesList.h"
 #import "UserData.h"
 #import "Exercises.h"
-#import "MenuVC.h"
+#import "JLSlideMenu.h"
 
-@interface UserCalendarVC : MenuVC <UITableViewDataSource, UITableViewDelegate>
+@interface UserCalendarVC : JLSlideMenu <UITableViewDataSource, UITableViewDelegate>
 
 @property (weak, nonatomic) IBOutlet UILabel *yearLabel;
 @property (weak, nonatomic) IBOutlet UILabel *monthLabel;

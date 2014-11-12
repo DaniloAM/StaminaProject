@@ -109,7 +109,7 @@
     
     [self calendarWillChangeMonth];
     
-    [self removeGestureFromMenuVC];
+    //[self removeGestureFromMenuVC];
     [super hideBarWithAnimation:NO];
 }
 

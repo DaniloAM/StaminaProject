@@ -44,7 +44,8 @@
                               0,
                               
                               //origin Y
-                              [self navigationIncreased].height / 2,
+#warning arrumar aqui depois
+                              [self navigationSize].height / 2,
                               
                               //size width
                               [[UIScreen mainScreen] bounds].size.width,

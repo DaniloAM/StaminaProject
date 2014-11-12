@@ -12,7 +12,6 @@
 		324E23C219E87FC400DA2FDE /* CategoriaVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 324E23C119E87FC400DA2FDE /* CategoriaVC.m */; };
 		325F1FD719E702F400001EB0 /* bg_bar.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 325F1FD619E702F400001EB0 /* bg_bar.jpg */; };
 		325F1FDA19E7091C00001EB0 /* AcademiaVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 325F1FD919E7091C00001EB0 /* AcademiaVC.m */; };
-		325F1FE319E7143C00001EB0 /* MenuVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 325F1FE219E7143C00001EB0 /* MenuVC.m */; };
 		325F1FE919E7229C00001EB0 /* HideBBVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 325F1FE819E7229C00001EB0 /* HideBBVC.m */; };
 		3276F1C119F6C9A500B2F93D /* icone_calendario.png in Resources */ = {isa = PBXBuildFile; fileRef = 3276F1B919F6C9A500B2F93D /* icone_calendario.png */; };
 		3276F1C219F6C9A500B2F93D /* icone_compartilhar.png in Resources */ = {isa = PBXBuildFile; fileRef = 3276F1BA19F6C9A500B2F93D /* icone_compartilhar.png */; };
@@ -37,6 +36,7 @@
 		C53A352C19D33B9A00AC1383 /* RWBlurPopoverTransitionController.m in Sources */ = {isa = PBXBuildFile; fileRef = C53A352A19D33B9A00AC1383 /* RWBlurPopoverTransitionController.m */; };
 		C53A353119D3411F00AC1383 /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = C53A353019D3411F00AC1383 /* Reachability.m */; };
 		C53F22D91A0D310F00697FB4 /* ExerciseToAddVC.m in Sources */ = {isa = PBXBuildFile; fileRef = C53F22D81A0D310F00697FB4 /* ExerciseToAddVC.m */; };
+		C53F23431A0D95BC00697FB4 /* JLSlideMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = C53F23421A0D95BC00697FB4 /* JLSlideMenu.m */; };
 		C56108E919DD81990090CE5D /* wireframe_home.png in Resources */ = {isa = PBXBuildFile; fileRef = C56108E819DD81990090CE5D /* wireframe_home.png */; };
 		C56632561A03F3110006309D /* WeatherCondition.m in Sources */ = {isa = PBXBuildFile; fileRef = C56632551A03F3110006309D /* WeatherCondition.m */; };
 		C59934F919D36739006337E0 /* App-Stamina.png in Resources */ = {isa = PBXBuildFile; fileRef = C59934F819D36739006337E0 /* App-Stamina.png */; };
@@ -110,12 +110,7 @@
 		FF1596F619C0CBC900D9236F /* Stamina.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = FF1596F419C0CBC900D9236F /* Stamina.xcdatamodeld */; };
 		FF1596FE19C0CBC900D9236F /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FF1596FD19C0CBC900D9236F /* Images.xcassets */; };
 		FF15970A19C0CBC900D9236F /* StaminaTests.m in Sources */ = {isa = PBXBuildFile; fileRef = FF15970919C0CBC900D9236F /* StaminaTests.m */; };
-		FF15972519C0D96E00D9236F /* AMSlideMenuContentSegue.m in Sources */ = {isa = PBXBuildFile; fileRef = FF15971919C0D96E00D9236F /* AMSlideMenuContentSegue.m */; };
-		FF15972619C0D96E00D9236F /* AMSlideMenuLeftMenuSegue.m in Sources */ = {isa = PBXBuildFile; fileRef = FF15971B19C0D96E00D9236F /* AMSlideMenuLeftMenuSegue.m */; };
-		FF15972719C0D96E00D9236F /* AMSlideMenuLeftTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FF15971D19C0D96E00D9236F /* AMSlideMenuLeftTableViewController.m */; };
-		FF15972819C0D96E00D9236F /* AMSlideMenuMainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FF15971F19C0D96E00D9236F /* AMSlideMenuMainViewController.m */; };
 		FF15972919C0D96E00D9236F /* CustomIOS7AlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = FF15972219C0D96E00D9236F /* CustomIOS7AlertView.m */; };
-		FF15972A19C0D96E00D9236F /* UIViewController+AMSlideMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = FF15972419C0D96E00D9236F /* UIViewController+AMSlideMenu.m */; };
 		FF1597AE19C0DA5A00D9236F /* UserData.m in Sources */ = {isa = PBXBuildFile; fileRef = FF15979E19C0DA5A00D9236F /* UserData.m */; };
 		FF15986C19C0E05E00D9236F /* alarm.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = FF15986B19C0E05E00D9236F /* alarm.mp3 */; };
 		FF15986F19C0E24F00D9236F /* UIColor+CreateMethods.m in Sources */ = {isa = PBXBuildFile; fileRef = FF15986E19C0E24F00D9236F /* UIColor+CreateMethods.m */; };
@@ -123,7 +118,6 @@
 		FF159A4C19C21D1B00D9236F /* CoreDataLoading.m in Sources */ = {isa = PBXBuildFile; fileRef = FF159A4B19C21D1B00D9236F /* CoreDataLoading.m */; };
 		FF159A5219C22BD400D9236F /* ExercisesList.m in Sources */ = {isa = PBXBuildFile; fileRef = FF159A5119C22BD400D9236F /* ExercisesList.m */; };
 		FF17BD5C19C8C18200B5EF46 /* StartVC.m in Sources */ = {isa = PBXBuildFile; fileRef = FF17BD5B19C8C18200B5EF46 /* StartVC.m */; };
-		FF17BD6519C8C21600B5EF46 /* MainVC.m in Sources */ = {isa = PBXBuildFile; fileRef = FF17BD6419C8C21600B5EF46 /* MainVC.m */; };
 		FF17BDBA19C9F78F00B5EF46 /* TrainingDayObject.m in Sources */ = {isa = PBXBuildFile; fileRef = FF17BDB919C9F78F00B5EF46 /* TrainingDayObject.m */; };
 		FF17BDC019CA2E5600B5EF46 /* UserTraining.m in Sources */ = {isa = PBXBuildFile; fileRef = FF17BDBF19CA2E5600B5EF46 /* UserTraining.m */; };
 		FF1C5C3719F97DA700032DC9 /* Exercises.m in Sources */ = {isa = PBXBuildFile; fileRef = FF1C5C3619F97DA700032DC9 /* Exercises.m */; };
@@ -170,7 +164,6 @@
 		FF1C5D071A02B22B00032DC9 /* UIStaminaColor.m in Sources */ = {isa = PBXBuildFile; fileRef = FF1C5D061A02B22B00032DC9 /* UIStaminaColor.m */; };
 		FF1C5D0A1A03F6E600032DC9 /* UIStaminaLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = FF1C5D091A03F6E600032DC9 /* UIStaminaLabel.m */; };
 		FF1C5D181A07EE6F00032DC9 /* StaminaExpandTV.m in Sources */ = {isa = PBXBuildFile; fileRef = FF1C5D171A07EE6F00032DC9 /* StaminaExpandTV.m */; };
-		FF1C5D1E1A08095C00032DC9 /* LeftMenuExpandedVC.m in Sources */ = {isa = PBXBuildFile; fileRef = FF1C5D1D1A08095C00032DC9 /* LeftMenuExpandedVC.m */; };
 		FF794D7719CA288F00808144 /* TrainingExercises.m in Sources */ = {isa = PBXBuildFile; fileRef = FF794D7619CA288F00808144 /* TrainingExercises.m */; };
 		FFAC18FF19DB200E00B17487 /* FinishedRunningVC.m in Sources */ = {isa = PBXBuildFile; fileRef = FFAC18FE19DB200E00B17487 /* FinishedRunningVC.m */; };
 		FFAC190B19DC86C400B17487 /* SocialSharingVC.m in Sources */ = {isa = PBXBuildFile; fileRef = FFAC190A19DC86C400B17487 /* SocialSharingVC.m */; };
@@ -203,8 +196,6 @@
 		325F1FD619E702F400001EB0 /* bg_bar.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = bg_bar.jpg; sourceTree = "<group>"; };
 		325F1FD819E7091C00001EB0 /* AcademiaVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AcademiaVC.h; path = wireframes/AcademiaVC.h; sourceTree = "<group>"; };
 		325F1FD919E7091C00001EB0 /* AcademiaVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AcademiaVC.m; path = wireframes/AcademiaVC.m; sourceTree = "<group>"; };
-		325F1FE119E7143C00001EB0 /* MenuVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MenuVC.h; path = wireframes/MenuVC.h; sourceTree = "<group>"; };
-		325F1FE219E7143C00001EB0 /* MenuVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MenuVC.m; path = wireframes/MenuVC.m; sourceTree = "<group>"; };
 		325F1FE719E7229C00001EB0 /* HideBBVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HideBBVC.h; sourceTree = "<group>"; };
 		325F1FE819E7229C00001EB0 /* HideBBVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HideBBVC.m; sourceTree = "<group>"; };
 		3276F1B919F6C9A500B2F93D /* icone_calendario.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icone_calendario.png; sourceTree = "<group>"; };
@@ -241,6 +232,8 @@
 		C53A353019D3411F00AC1383 /* Reachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Reachability.m; sourceTree = "<group>"; };
 		C53F22D71A0D310F00697FB4 /* ExerciseToAddVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ExerciseToAddVC.h; sourceTree = "<group>"; };
 		C53F22D81A0D310F00697FB4 /* ExerciseToAddVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ExerciseToAddVC.m; sourceTree = "<group>"; };
+		C53F23411A0D95BC00697FB4 /* JLSlideMenu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JLSlideMenu.h; sourceTree = "<group>"; };
+		C53F23421A0D95BC00697FB4 /* JLSlideMenu.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JLSlideMenu.m; sourceTree = "<group>"; };
 		C56108E819DD81990090CE5D /* wireframe_home.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = wireframe_home.png; sourceTree = "<group>"; };
 		C56632541A03F3110006309D /* WeatherCondition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WeatherCondition.h; path = ../WeatherCondition.h; sourceTree = "<group>"; };
 		C56632551A03F3110006309D /* WeatherCondition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WeatherCondition.m; path = ../WeatherCondition.m; sourceTree = "<group>"; };
@@ -335,19 +328,8 @@
 		FF15970319C0CBC900D9236F /* StaminaTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = StaminaTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		FF15970819C0CBC900D9236F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FF15970919C0CBC900D9236F /* StaminaTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = StaminaTests.m; sourceTree = "<group>"; };
-		FF15971819C0D96E00D9236F /* AMSlideMenuContentSegue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AMSlideMenuContentSegue.h; sourceTree = "<group>"; };
-		FF15971919C0D96E00D9236F /* AMSlideMenuContentSegue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AMSlideMenuContentSegue.m; sourceTree = "<group>"; };
-		FF15971A19C0D96E00D9236F /* AMSlideMenuLeftMenuSegue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AMSlideMenuLeftMenuSegue.h; sourceTree = "<group>"; };
-		FF15971B19C0D96E00D9236F /* AMSlideMenuLeftMenuSegue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AMSlideMenuLeftMenuSegue.m; sourceTree = "<group>"; };
-		FF15971C19C0D96E00D9236F /* AMSlideMenuLeftTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AMSlideMenuLeftTableViewController.h; sourceTree = "<group>"; };
-		FF15971D19C0D96E00D9236F /* AMSlideMenuLeftTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AMSlideMenuLeftTableViewController.m; sourceTree = "<group>"; };
-		FF15971E19C0D96E00D9236F /* AMSlideMenuMainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AMSlideMenuMainViewController.h; sourceTree = "<group>"; };
-		FF15971F19C0D96E00D9236F /* AMSlideMenuMainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AMSlideMenuMainViewController.m; sourceTree = "<group>"; };
-		FF15972019C0D96E00D9236F /* AMSlideMenuProtocols.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AMSlideMenuProtocols.h; sourceTree = "<group>"; };
 		FF15972119C0D96E00D9236F /* CustomIOS7AlertView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomIOS7AlertView.h; sourceTree = "<group>"; };
 		FF15972219C0D96E00D9236F /* CustomIOS7AlertView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomIOS7AlertView.m; sourceTree = "<group>"; };
-		FF15972319C0D96E00D9236F /* UIViewController+AMSlideMenu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+AMSlideMenu.h"; sourceTree = "<group>"; };
-		FF15972419C0D96E00D9236F /* UIViewController+AMSlideMenu.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+AMSlideMenu.m"; sourceTree = "<group>"; };
 		FF15979D19C0DA5A00D9236F /* UserData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserData.h; sourceTree = "<group>"; };
 		FF15979E19C0DA5A00D9236F /* UserData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserData.m; sourceTree = "<group>"; };
 		FF15986B19C0E05E00D9236F /* alarm.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = alarm.mp3; sourceTree = "<group>"; };
@@ -360,8 +342,6 @@
 		FF159A5119C22BD400D9236F /* ExercisesList.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ExercisesList.m; sourceTree = "<group>"; };
 		FF17BD5A19C8C18200B5EF46 /* StartVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StartVC.h; sourceTree = "<group>"; };
 		FF17BD5B19C8C18200B5EF46 /* StartVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StartVC.m; sourceTree = "<group>"; };
-		FF17BD6319C8C21600B5EF46 /* MainVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainVC.h; sourceTree = "<group>"; };
-		FF17BD6419C8C21600B5EF46 /* MainVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainVC.m; sourceTree = "<group>"; };
 		FF17BDB819C9F78F00B5EF46 /* TrainingDayObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TrainingDayObject.h; sourceTree = "<group>"; };
 		FF17BDB919C9F78F00B5EF46 /* TrainingDayObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TrainingDayObject.m; sourceTree = "<group>"; };
 		FF17BDBE19CA2E5600B5EF46 /* UserTraining.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserTraining.h; sourceTree = "<group>"; };
@@ -417,8 +397,6 @@
 		FF1C5D091A03F6E600032DC9 /* UIStaminaLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UIStaminaLabel.m; sourceTree = "<group>"; };
 		FF1C5D161A07EE6F00032DC9 /* StaminaExpandTV.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StaminaExpandTV.h; sourceTree = "<group>"; };
 		FF1C5D171A07EE6F00032DC9 /* StaminaExpandTV.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StaminaExpandTV.m; sourceTree = "<group>"; };
-		FF1C5D1C1A08095C00032DC9 /* LeftMenuExpandedVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LeftMenuExpandedVC.h; sourceTree = "<group>"; };
-		FF1C5D1D1A08095C00032DC9 /* LeftMenuExpandedVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LeftMenuExpandedVC.m; sourceTree = "<group>"; };
 		FF794D7519CA288F00808144 /* TrainingExercises.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TrainingExercises.h; sourceTree = "<group>"; };
 		FF794D7619CA288F00808144 /* TrainingExercises.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TrainingExercises.m; sourceTree = "<group>"; };
 		FFAC18FD19DB200E00B17487 /* FinishedRunningVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FinishedRunningVC.h; sourceTree = "<group>"; };
@@ -657,21 +635,8 @@
 			children = (
 				FF15986D19C0E24F00D9236F /* UIColor+CreateMethods.h */,
 				FF15986E19C0E24F00D9236F /* UIColor+CreateMethods.m */,
-				FF15971819C0D96E00D9236F /* AMSlideMenuContentSegue.h */,
-				FF15971919C0D96E00D9236F /* AMSlideMenuContentSegue.m */,
-				FF15971A19C0D96E00D9236F /* AMSlideMenuLeftMenuSegue.h */,
-				FF15971B19C0D96E00D9236F /* AMSlideMenuLeftMenuSegue.m */,
-				FF15971C19C0D96E00D9236F /* AMSlideMenuLeftTableViewController.h */,
-				FF15971D19C0D96E00D9236F /* AMSlideMenuLeftTableViewController.m */,
-				FF1C5D1C1A08095C00032DC9 /* LeftMenuExpandedVC.h */,
-				FF1C5D1D1A08095C00032DC9 /* LeftMenuExpandedVC.m */,
-				FF15971E19C0D96E00D9236F /* AMSlideMenuMainViewController.h */,
-				FF15971F19C0D96E00D9236F /* AMSlideMenuMainViewController.m */,
-				FF15972019C0D96E00D9236F /* AMSlideMenuProtocols.h */,
 				FF15972119C0D96E00D9236F /* CustomIOS7AlertView.h */,
 				FF15972219C0D96E00D9236F /* CustomIOS7AlertView.m */,
-				FF15972319C0D96E00D9236F /* UIViewController+AMSlideMenu.h */,
-				FF15972419C0D96E00D9236F /* UIViewController+AMSlideMenu.m */,
 			);
 			name = AMSlideMenu;
 			path = Stamina/AMSlideMenu;
@@ -710,12 +675,10 @@
 				325F1FE819E7229C00001EB0 /* HideBBVC.m */,
 				FFAC193B19E3171C00B17487 /* HomeScreenVC.h */,
 				FFAC193C19E3171C00B17487 /* HomeScreenVC.m */,
-				FF17BD6319C8C21600B5EF46 /* MainVC.h */,
-				FF17BD6419C8C21600B5EF46 /* MainVC.m */,
-				325F1FE119E7143C00001EB0 /* MenuVC.h */,
-				325F1FE219E7143C00001EB0 /* MenuVC.m */,
 				C53F22D71A0D310F00697FB4 /* ExerciseToAddVC.h */,
 				C53F22D81A0D310F00697FB4 /* ExerciseToAddVC.m */,
+				C53F23411A0D95BC00697FB4 /* JLSlideMenu.h */,
+				C53F23421A0D95BC00697FB4 /* JLSlideMenu.m */,
 				FF13E9E919E71FFA0005BA49 /* PushedViewController.h */,
 				FF13E9EA19E71FFA0005BA49 /* PushedViewController.m */,
 				FFAC190919DC86C400B17487 /* SocialSharingVC.h */,
@@ -1141,13 +1104,9 @@
 				C53F22D91A0D310F00697FB4 /* ExerciseToAddVC.m in Sources */,
 				C53A352B19D33B9A00AC1383 /* RWBlurPopover.m in Sources */,
 				32F57C7219EC6838001BF6B2 /* MenuShouldOpen.m in Sources */,
-				FF15972519C0D96E00D9236F /* AMSlideMenuContentSegue.m in Sources */,
 				FF13E9EB19E71FFA0005BA49 /* PushedViewController.m in Sources */,
 				FF17BD5C19C8C18200B5EF46 /* StartVC.m in Sources */,
-				325F1FE319E7143C00001EB0 /* MenuVC.m in Sources */,
 				FF1596F619C0CBC900D9236F /* Stamina.xcdatamodeld in Sources */,
-				FF15972A19C0D96E00D9236F /* UIViewController+AMSlideMenu.m in Sources */,
-				FF17BD6519C8C21600B5EF46 /* MainVC.m in Sources */,
 				C52C27871A07EB690030BEA4 /* CadastroVC.m in Sources */,
 				FFB8BCC51A0AA17C00F9D8A7 /* RoutePicture.m in Sources */,
 				FF159A4C19C21D1B00D9236F /* CoreDataLoading.m in Sources */,
@@ -1157,7 +1116,6 @@
 				C53A351D19D33B7700AC1383 /* LoginViewController.m in Sources */,
 				FF1C5CB91A001CD800032DC9 /* MenuRunningVC.m in Sources */,
 				C5EB6BFB19D9DB6B00C528FC /* CalendarMath.m in Sources */,
-				FF1C5D1E1A08095C00032DC9 /* LeftMenuExpandedVC.m in Sources */,
 				3207B56419EEFECA002052BF /* TipsVC.m in Sources */,
 				325F1FE919E7229C00001EB0 /* HideBBVC.m in Sources */,
 				FF794D7719CA288F00808144 /* TrainingExercises.m in Sources */,
@@ -1168,17 +1126,15 @@
 				C5EB6C0A19D9DBD300C528FC /* AVCamPreviewView.m in Sources */,
 				325F1FDA19E7091C00001EB0 /* AcademiaVC.m in Sources */,
 				3276F1CD19F6CE2D00B2F93D /* CriaTreinoVC.m in Sources */,
-				FF15972819C0D96E00D9236F /* AMSlideMenuMainViewController.m in Sources */,
 				C5A2418619CB512700064E54 /* TemporaryVC.m in Sources */,
+				C53F23431A0D95BC00697FB4 /* JLSlideMenu.m in Sources */,
 				FF1596F319C0CBC900D9236F /* AppDelegate.m in Sources */,
 				FFAC18FF19DB200E00B17487 /* FinishedRunningVC.m in Sources */,
 				FF1C5D071A02B22B00032DC9 /* UIStaminaColor.m in Sources */,
 				FF1C5D0A1A03F6E600032DC9 /* UIStaminaLabel.m in Sources */,
 				C5EB6BFA19D9DB6B00C528FC /* CalendarPreparer.m in Sources */,
 				C53A353119D3411F00AC1383 /* Reachability.m in Sources */,
-				FF15972719C0D96E00D9236F /* AMSlideMenuLeftTableViewController.m in Sources */,
 				FF13E9DD19E5BF840005BA49 /* SharingResponse.m in Sources */,
-				FF15972619C0D96E00D9236F /* AMSlideMenuLeftMenuSegue.m in Sources */,
 				C5DFD4EA19DC7B48000EA19C /* Cadastro.m in Sources */,
 				3207B56519EEFECA002052BF /* TipsPVC.m in Sources */,
 				C5EB6BF719D9DB6B00C528FC /* DayObject.m in Sources */,
