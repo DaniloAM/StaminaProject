@@ -114,6 +114,24 @@
     
 }
 
+-(double)returnLargerValueFrom: (double)a and:(double)b {
+    
+    if(a > b)
+        return a;
+    
+    else return b;
+    
+}
+
+-(double)returnSmallerValueFrom: (double)a and:(double)b {
+    
+    if(a < b)
+        return a;
+    
+    else return b;
+    
+}
+
 -(UIImageView *)returnDrawedViewWithXArray:(NSMutableArray *)arrayOfX yArray: (NSMutableArray *)arrayOfY InSize: (CGSize)size {
 
     [self setArrayOfPointsX:arrayOfX];
@@ -123,10 +141,19 @@
     
     UIImageView *routeImage = [self returnDrawedViewWithCurrentRoute];
     
+    NSLog(@"height ACart: %f", routeImage.frame.size.height);
+    NSLog(@"width ACart: %f", routeImage.frame.size.width);
+    
     double fator;
     
+    //The diference between the higher and the lower size
+    double widthDiference = routeImage.frame.size.width - size.width;
+    
+    double heightDiference = routeImage.frame.size.height - size.height;
+    
+    
     //Resize to the desired size passed in the function
-    if(routeImage.frame.size.width > routeImage.frame.size.height) {
+    if(widthDiference > heightDiference) {
         fator = ( size.width / routeImage.frame.size.width );
         
     } else {
@@ -135,6 +162,9 @@
     }
     
     [routeImage setFrame:CGRectMake(0, 0, routeImage.frame.size.width * fator , routeImage.frame.size.height * fator)];
+    
+    NSLog(@"height DEPCART: %f", routeImage.frame.size.height);
+    NSLog(@"width DEPCART: %f", routeImage.frame.size.width);
     
     return routeImage;
     

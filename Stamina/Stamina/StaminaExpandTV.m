@@ -50,7 +50,7 @@
     
     [super viewWillAppear:animated];
     
-    _expandHeight = [[UIScreen mainScreen] bounds].size.height - [self tabBar].frame.size.height - [self navigationSize].height;
+    _expandHeight = [[UIScreen mainScreen] bounds].size.height - [self tabBarSize].height - [self navigationSize].height;
 }
 
 

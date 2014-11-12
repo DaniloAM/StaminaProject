@@ -51,7 +51,7 @@
                               [[UIScreen mainScreen] bounds].size.width,
                               
                               //size height
-                              [[UIScreen mainScreen] bounds].size.height - [self tabBar].frame.size.height - [self navigationSize].height);
+                              [[UIScreen mainScreen] bounds].size.height - [self tabBarSize].height - [self navigationSize].height);
     
     
     [[self routeTableView] setFrame:frame];
@@ -62,7 +62,7 @@
 -(void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
     
-    NSLog(@"bar height: %f", [self tabBar].frame.size.height);
+    NSLog(@"bar height: %f", [self tabBarSize].height);
     
 }
 
@@ -114,13 +114,18 @@
         return;
     }
         
-        
-    UIImageView *imageView = [cartesian returnDrawedViewWithXArray:xPoints yArray:yPoints InSize:CGSizeMake([[UIScreen mainScreen] bounds].size.width * 0.9, tableViewRowHeight * 2.5)];
+    
+    
+    UIImageView *imageView = [cartesian returnDrawedViewWithXArray:xPoints yArray:yPoints InSize:CGSizeMake(cell.frame.size.width * 0.9, tableViewRowHeight * 3.0)];
     
     
     imageView.center = cell.center;
     
-    [imageView setFrame:CGRectMake(imageView.frame.origin.x, tableViewRowHeight * 3, imageView.frame.size.width, imageView.frame.size.height)];
+    [imageView setFrame:CGRectMake(imageView.frame.origin.x, tableViewRowHeight * 2, imageView.frame.size.width, imageView.frame.size.height)];
+
+     NSLog(@"height: %f", imageView.frame.size.height);
+     NSLog(@"width: %f", imageView.frame.size.width);
+    
     
     UIButton *goToRoute = [[UIButton alloc] initWithFrame:imageView.frame];
     
@@ -132,7 +137,7 @@
     
     
     
-    CGRect infoFrame = CGRectMake(cell.frame.size.width / 5, [[UIScreen mainScreen] bounds].size.height - [self tabBar].frame.size.height - [self navigationSize].height - (tableViewRowHeight * 5), cell.frame.size.width / 3, tableViewRowHeight);
+    CGRect infoFrame = CGRectMake(cell.frame.size.width / 5, [[UIScreen mainScreen] bounds].size.height - [self tabBarSize].height - [self navigationSize].height - (tableViewRowHeight * 5), cell.frame.size.width / 3, tableViewRowHeight);
     
     CGRect imageFrame = CGRectMake(0, 0, infoFrame.size.height * 0.75, infoFrame.size.height  * 0.75);
     
