@@ -26,7 +26,7 @@
     if(![exe arrayOfExercises]){
         [exe setArrayOfExercises:[NSMutableArray array]];
     }
-    [self firstButtonMethod:@selector(function1) withImage:nil];
+    [self firstButtonMethod:@selector(function1) fromClass:self withImage:nil];
     [super hideBarWithAnimation:1];
     UILongPressGestureRecognizer *lpgr = [[UILongPressGestureRecognizer alloc]
                                           initWithTarget:self action:@selector(handleLongPress:)];

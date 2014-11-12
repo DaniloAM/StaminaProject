@@ -28,6 +28,9 @@
 
 @implementation JLSlideMenu
 //start will/did appear and something like that
+-(void)viewDidLoad{
+    [super viewDidLoad];
+}
 -(void)viewWillDisappear:(BOOL)animated{
     [super viewWillDisappear:animated];
     [self setShouldRecognizeRight:NO];
@@ -50,7 +53,7 @@
     _open = -1;
     [self.navigationItem setHidesBackButton:YES];
     [self setShouldRecognizeRight:YES];
-    
+
 }
 //end will/did appear and something like that
 //start initializing methods
@@ -79,6 +82,12 @@
     _leftMenu.backgroundColor = [UIColor staminaBlackColor];
     [self.navigationController.view addSubview:_leftMenu];
     _leftWidthSize = _leftMenu.frame.size.width;
+    MenuLViews *views = [MenuLViews alloc];
+    if([views temp]!=nil)
+        return;
+       NSString *CurrentSelectedCViewController = NSStringFromClass(self.class);
+    [views setTemp:CurrentSelectedCViewController];
+   
 }
 -(void)createPanGesture{
     _panLeft = [[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(panRecognized:)];
@@ -198,7 +207,6 @@
     }
 }
 // end gesture recognizers
-
 //start show or hide bar and left menu
 -(void)hideBarWithAnimation : (BOOL)animated{
     CGSize screenSize= [[UIScreen mainScreen] bounds].size;
@@ -598,18 +606,34 @@
     [self setFourthFirstButton:[self alocaAndReturn:4 :M4]];
 }
 -(void)callViewWithName: (NSString *)str{
+    UIViewController *viewController = [self createViewWithName:str];
+    
+    MenuLViews *view = [MenuLViews alloc];
+    if([[view temp]isEqualToString:NSStringFromClass(viewController.class)]){
+        return;
+    }
+    else {
+        //[self.navigationController pushViewController:[[view array] objectAtIndex:x] animated:NO];
+        
+        
+        [_leftMenu removeFromSuperview];
+        [_tabBar removeFromSuperview];
+        _leftMenu = nil;
+        _tabBar = nil;
+        [view setTemp:NSStringFromClass(viewController.class)];
+        [self.navigationController setViewControllers:@[viewController] animated:NO];
+        return;
+    }}
+-(UIViewController *)createViewWithName: (NSString *)str{
     NSMutableArray* navArray = [[NSMutableArray alloc] initWithArray:self.navigationController.viewControllers];
-    _leftMenu.hidden=YES;
+    //_leftMenu.hidden=YES;
     for(int x =1 ; x <[navArray count];x++){
         [navArray removeObjectAtIndex:x];
     }
     [self.navigationController setViewControllers:navArray animated:YES];
     UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
     UIViewController *myVC= (UIViewController *)[storyboard instantiateViewControllerWithIdentifier:str];
-    _presenting = myVC;
-    if([myVC.nibName isEqualToString:_presenting.nibName])
-    [self.navigationController setViewControllers:@[myVC] animated:NO];
-
+    return myVC;
 }
 -(void)addImage :(UIImage *)image to:(UIButton *)btn{
     UIImageView *imgView = [[UIImageView alloc] initWithFrame:CGRectMake(0,  btn.frame.size.height*16/122, btn.frame.size.height*88/122,btn.frame.size.height*88/122)];
@@ -764,7 +788,7 @@
     [self callViewWithName:@"Calendario"];
 }
 -(void)inicioButton{
-    [self callViewWithName:@"Início"];
+    [self callViewWithName:@"Inicio"];
 }
 -(void)trajetosButton{
     

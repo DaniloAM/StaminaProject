@@ -1,15 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<<<<<<< HEAD
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6250" systemVersion="13F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="8GH-Ax-KlD">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6244"/>
-=======
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6245" systemVersion="13F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="egZ-Br-g0s">
-    <dependencies>
-        <deployment defaultVersion="1808" identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6238"/>
->>>>>>> FETCH_HEAD
     </dependencies>
     <scenes>
         <!--Left Menu ExpandedVC-->
@@ -847,7 +840,7 @@
         <!--Slide Menu-->
         <scene sceneID="JbV-Ke-MIq">
             <objects>
-                <viewController storyboardIdentifier="Início" id="x3h-sg-EoT" customClass="JLSlideMenu" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="Inicio" id="x3h-sg-EoT" customClass="JLSlideMenu" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="CSs-Uu-jKJ"/>
                         <viewControllerLayoutGuide type="bottom" id="tnu-db-aaR"/>

@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "UIStaminaColor.h"
+#import "MenuLViews.h"
 @interface JLSlideMenu : UIViewController
 typedef enum gestureRecognizedTypes
 {   LEFT,
@@ -18,6 +19,7 @@ typedef enum gestureRecognizedTypes
     HORIZONTAL,
     UNDEFINED
 } GestureRecognized;
+@property NSArray *arrayOfViewsControllers;
 @property UIView *leftMenu;
 @property UIPanGestureRecognizer *panLeft;
 @property int recognized, direction;
@@ -43,4 +45,5 @@ typedef enum gestureRecognizedTypes
 -(void)thirdButtonMethod: (void *)metodo  fromClass:(UIViewController *)view withImage: (UIImage *)image;
 -(void)hideLeftMenuAnimated: (BOOL)animated;
 -(void)cleanButtons;
+
 @end
