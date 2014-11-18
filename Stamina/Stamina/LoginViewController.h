@@ -9,7 +9,6 @@
 #import <UIKit/UIKit.h>
 #import "WebServiceResponse.h"
 #import "UserData.h"
-#import "RWBlurPopover.h"
 #import "Reachability.h"
 #import <SystemConfiguration/SystemConfiguration.h>
 

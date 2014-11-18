@@ -21,4 +21,8 @@
 -(void)firstButtonMethod: (void *)metodo fromClass:(UIViewController *)view withImage: (UIImage *)image;
 -(void)secondButtonMethod: (void *)metodo fromClass:(UIViewController *)view withImage: (UIImage *)image;
 -(void)thirdButtonMethod: (void *)metodo fromClass:(UIViewController *)view withImage: (UIImage *)image;
+-(void)enableRightToBack;
+-(CGPoint)pointStart;
+-(void)enableRightToOpenMenu;
+-(void)callViewWithName: (NSString *)string;
 @end

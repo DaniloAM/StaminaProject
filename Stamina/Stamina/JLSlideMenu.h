@@ -19,6 +19,7 @@ typedef enum gestureRecognizedTypes
     HORIZONTAL,
     UNDEFINED
 } GestureRecognized;
+@property CGSize startSizeBar;
 @property NSArray *arrayOfViewsControllers;
 @property UIView *leftMenu;
 @property UIPanGestureRecognizer *panLeft;

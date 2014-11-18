@@ -18,6 +18,8 @@
 
 
     [super viewDidLoad];
+    [self.navigationItem setTitle:@"Criar Treino"];
+    
     _selected =1;
     [self setInicio:nil];
     [self.view setBackgroundColor:[UIColor staminaYellowColor]];
@@ -40,8 +42,6 @@
     }
     [_btnDias setBackgroundColor:[UIColor staminaBlackColor]];
     [_btnExercicio setBackgroundColor:[UIColor staminaBlackColor]];
-    _btnExercicio.layer.cornerRadius = 20;
-    _btnDias.layer.cornerRadius = 20;
     [[self viewDays] setBackgroundColor:[UIColor staminaBlackColor]];
     [self viewDays].layer.cornerRadius =7;
     for(UIView *btn in [[self viewDays] subviews]){
@@ -51,8 +51,8 @@
         [btn layer].borderColor = [UIColor staminaYellowColor].CGColor;
         }
     }
-    _inicioHoraTxt.layer.cornerRadius =7;
-    _trainoNomeTxt.layer.cornerRadius = 7;
+//    _inicioHoraTxt.layer.cornerRadius =7;
+//    _trainoNomeTxt.layer.cornerRadius = 7;
     _tableExercicios.backgroundColor = [UIColor staminaBlackColor];
 }
 -(void)function2{
@@ -188,13 +188,7 @@
 
     return [[tem ser] count];
 }
--(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
-    [UIView animateWithDuration:0.45 animations:^{
-        self.btn.transform =CGAffineTransformMakeRotation(-3.14/2);
 
-    }];
-
-}
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     static NSString *simpleTableIdentifier;
     CreateTrainTemp *temp = [CreateTrainTemp  alloc];
@@ -208,29 +202,51 @@
 
     NSString *str = [NSString stringWithFormat:@"%@ - %@x%@",[[temp name] objectAtIndex:indexPath.row],[[temp ser] objectAtIndex:indexPath.row],[[temp rep] objectAtIndex:indexPath.row]];
     cell.textLabel.text = str;
+    [cell.textLabel setFont:[UIFont fontWithName:@"Lato" size:18]];
     cell.accessoryType = UITableViewCellAccessoryNone;
     cell.backgroundColor = [UIColor clearColor];
     [cell.textLabel setTextColor:[UIColor blackColor]];
     return cell;
 
 }
--(void)viewWillAppear:(BOOL)animated{
-    [super viewWillAppear:animated];
+-(UIDatePicker *)criaRetornaPicker{
+    UIDatePicker *temp = [[UIDatePicker alloc] initWithFrame:CGRectMake(0, 0, 250, 200)];
+    return temp;
+}
+-(void)preload{
     [[self trainoNomeTxt] layer].cornerRadius = 7;
     [[self btnDias] layer].cornerRadius =7;
     [[self btnExercicio] layer].cornerRadius =7;
     [[self inicioHoraTxt] layer].cornerRadius =7;
     [[self trainoNomeTxt] setPlaceholder:@"     Qual o nome do treino ?"];
-    _datepicker = [[UIDatePicker alloc] initWithFrame:CGRectMake(0, 0, 250, 200)];
+    _datepicker =[self criaRetornaPicker];
     _datepicker.datePickerMode = UIDatePickerModeTime;
-    self.navigationController.navigationBar.translucent = YES;
+    //self.navigationController.navigationBar.translucent = YES;
+    _startDate = [self criaRetornaPicker];
+    _finalDate = [self criaRetornaPicker];
+    _startDate.datePickerMode = UIDatePickerModeDate;
+    _finalDate.datePickerMode = UIDatePickerModeDate;
+    [[self.buttonFinalDay titleLabel] setFont:[UIFont fontWithName:@"Lato" size:18]];
+    [[self.buttonStartDate titleLabel] setFont:[UIFont fontWithName:@"Lato" size:18]];
+    NSDate *currentDate = [NSDate date];
+    _startDate.minimumDate = currentDate;
+    _finalDate.minimumDate = currentDate;
+    
     [_tableExercicios reloadData];
     
     [self firstButtonMethod:@selector(function1)  fromClass:self withImage:nil];
-    [self secondButtonMethod:@selector(function2) fromClass:self  withImage:[UIImage imageNamed:@"icon_add_able.png"]];
-
+    [self secondButtonMethod:@selector(function2) fromClass:self  withImage:[UIImage imageNamed:@"icon_adicionar.png"]];
+    
     [self atualiza];
 
+}
+-(void)viewWillAppear:(BOOL)animated{
+    [self hideBarWithAnimation:1];
+
+    [super viewWillAppear:animated];
+    self.navigationController.navigationBar.translucent = YES;
+
+    [self preload];
 }
 -(void)viewWillDisappear:(BOOL)animated{
     [super viewWillDisappear:animated];
@@ -240,17 +256,16 @@
 -(IBAction)horaInicial: (id)sender{
     [self launchDialog:sender];
 }
+-(IBAction)diaInicio: (id)sender{
+    [self launchDialog:sender];
+}
+-(IBAction)diaFim: (id)sender{
+    [self launchDialog:sender];
+}
 
 - (void)launchDialog:(id)sender
-{
-
-    
-    
-    // Here we need to pass a full frame
-    CustomIOS7AlertView *alertView = [[CustomIOS7AlertView alloc] init];
-    // Add some custom content to the alert view
-    [alertView setContainerView:[self createDemoView]];
-    
+{   CustomIOS7AlertView *alertView = [[CustomIOS7AlertView alloc] init];
+    [alertView setContainerView:[self createDemoViewWithSender:sender]];
     // Modify the parameters
     [alertView setButtonTitles:[NSMutableArray arrayWithObjects:@"OK",nil]];
     [alertView setDelegate:self];
@@ -267,13 +282,42 @@
 }
 - (void)customIOS7dialogButtonTouchUpInside: (CustomIOS7AlertView *)alertView clickedButtonAtIndex: (NSInteger)buttonIndex
 {
-        NSDate *myDate = _datepicker.date;
-        
-        NSDateFormatter *dateFormat = [[NSDateFormatter alloc] init];
-        [dateFormat setDateFormat:@"HH:mm"];
-        NSString *dateString = [dateFormat stringFromDate:myDate];
-        [[self inicioHoraTxt] setTitle:dateString forState:UIControlStateNormal];
-    [alertView close];
+    NSDate *myDate;
+    NSDateFormatter *dateFormat = [[NSDateFormatter alloc] init];
+    UIButton *btn;
+    switch (_whichView) {
+        case 0:
+            myDate = _datepicker.date;
+            [dateFormat setDateFormat:@"HH:mm"];
+            btn = _inicioHoraTxt;
+            break;
+        case 1:
+            myDate = _finalDate.date;
+            [dateFormat setDateFormat:@"dd/MM/yyyy"];
+            btn = _buttonFinalDay;
+            break;
+        case 2:
+            myDate = _startDate.date;
+            [dateFormat setDateFormat:@"dd/MM/yyyy"];
+            btn = _buttonStartDate;
+
+            break;
+            
+        default:
+            break;
+    }
+    NSString *dateString = [dateFormat stringFromDate:myDate];
+
+    if([_startDate.date compare:_finalDate.date]==NSOrderedDescending){
+        if(_whichView==1){
+            [_buttonStartDate setTitle:dateString forState:UIControlStateNormal];
+        }
+        else {
+            [_buttonFinalDay setTitle:dateString forState:UIControlStateNormal];
+        }
+    }
+        [btn setTitle:dateString forState:UIControlStateNormal];
+        [alertView close];
 
 }
 -(void)atualiza{
@@ -309,9 +353,21 @@
     }
    
 }
-- (UIView *)createDemoView
+- (UIView *)createDemoViewWithSender:(UIButton *)btn
 {
-    
+    if(btn==_inicioHoraTxt){
+        _whichView = 0;
+        return _datepicker;
+    }
+    else if (btn == _buttonFinalDay){
+        _whichView = 1;
+        return _finalDate;
+    }
+    else if (btn == _buttonStartDate){
+        _whichView = 2;
+        return _startDate;
+
+    }
     
     return _datepicker;
 }

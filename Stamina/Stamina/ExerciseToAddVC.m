@@ -66,7 +66,6 @@
     CGSize size = [[UIScreen mainScreen] bounds].size;
     size.height = size.height-[self navigationSize].height;
     _view1 = [[UIView alloc] initWithFrame:CGRectMake(189*size.width/widthAi, 595*size.height/heightAi, 389*size.width/widthAi, 227*size.height/heightAi)];
-    _view1.layer.cornerRadius = 7;
     [self.view addSubview:_view1];
     _cronometerView = [[UIView alloc] initWithFrame:CGRectMake(67*size.width/widthAi, 595*size.height/heightAi, 118*size.width/widthAi, 123*size.width/widthAi)];
     [_cronometerView setBackgroundColor:[UIColor staminaBlackColor] ];
@@ -115,14 +114,12 @@
     [self.view addSubview:_txtSer];
     _txtSer.backgroundColor = [UIColor whiteColor];
     
-    _txtSer.layer.cornerRadius = 7;
 
     
     
     _txtRep = [[UITextField alloc] initWithFrame:CGRectMake(412*size.width/widthAi, 640*size.height/heightAi, 125*size.height/heightAi, 125*size.height/heightAi)];
     [self.view addSubview:_txtRep];
     _txtRep.backgroundColor = [UIColor whiteColor];
-    _txtRep.layer.cornerRadius = 7;
     
     _x = [[UILabel alloc] initWithFrame:CGRectMake(371*size.width/widthAi, 680*size.height/heightAi, 24*size.height/heightAi, 24*size.height/heightAi)];
     [_x setText:@"X"];
@@ -134,7 +131,6 @@
     _txtTime =[[UITextField alloc] initWithFrame:CGRectMake(218*size.width/widthAi, 640*size.height/heightAi, 206*size.height/heightAi, 125*size.height/heightAi)];
     [self.view addSubview:_txtTime];
     _txtTime.backgroundColor = [UIColor whiteColor];
-    _txtTime.layer.cornerRadius = 7;
 
     
     [_cronometer setCenter:_cronometerView.center];
@@ -145,13 +141,11 @@
 }
 -(void)button1{
     _selected=1;
-    NSLog(@"");
     [self atualiza];
 }
 -(void)button2{
     _selected=0;
 
-    NSLog(@"");
     [self atualiza];
 }
 @end

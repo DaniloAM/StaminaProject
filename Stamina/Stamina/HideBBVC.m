@@ -22,10 +22,21 @@
 -(void)viewDidLoad{
     [super viewDidLoad];
 }
-
+-(CGPoint)pointStart{
+    JLSlideMenu *temp = [self.navigationController.viewControllers objectAtIndex:0];
+    
+    return CGPointMake(0, self.navigationController.navigationBar.frame.size.height-temp.startSizeBar.height);
+}
+-(void)callViewWithName: (NSString *)string{
+    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+    UIViewController *myVC= (UIViewController *)[storyboard instantiateViewControllerWithIdentifier:string];
+    [self.navigationController pushViewController:myVC animated:YES];
+}
 -(void)viewWillAppear:(BOOL)animated withGesture: (BOOL)gesture{
     [super viewWillAppear:animated];
     JLSlideMenu *temp = [self.navigationController.viewControllers objectAtIndex:0];
+    if(!gesture)
+        [self.navigationController.view removeGestureRecognizer:[temp panLeft]];
     [temp cleanButtons];
     [self.navigationItem setHidesBackButton:YES];
 }
@@ -47,10 +58,23 @@
 //}
 -(void)viewDidAppear:(BOOL)animated{
     [super viewDidAppear:YES];
-    
+    JLSlideMenu *temp = [self.navigationController.viewControllers objectAtIndex:0];
+    [temp setShouldRecognizeRight:0];
+    [temp panLeft].enabled = YES;
+    [temp setStop:1];
+
+
 }
 
-
+-(void)viewDidLayoutSubviews{
+    [super viewDidLayoutSubviews];
+    for(UIView *view in [self.view subviews]){
+        if([view isKindOfClass:[UIButton class]]||[view isKindOfClass:[UILabel class]]||[view isKindOfClass:[UITextField class]]){
+            view.layer.cornerRadius = 7;
+        }
+            
+    }
+}
 -(CGSize )tabBarSize{
     JLSlideMenu *temp = [self.navigationController.viewControllers objectAtIndex:0];
     return [temp tabBar].frame.size;
@@ -70,7 +94,10 @@
 -(CGSize)navigationSize{
     return [self.navigationController navigationBar].frame.size;
 }
-
+-(void)viewDidDisappear:(BOOL)animated{
+    [super viewDidDisappear:animated];
+   
+}
 -(void)firstButtonMethod: (void *)metodo fromClass:(UIViewController *)view withImage: (UIImage *)image{
     JLSlideMenu *temp = [self.navigationController.viewControllers objectAtIndex:0];
     [temp firstButtonMethod:metodo fromClass:view withImage:image];
@@ -85,5 +112,14 @@
     [temp thirdButtonMethod:metodo fromClass:view withImage:image];
 
 }
-
+-(void)enableRightToBack{
+    JLSlideMenu *temp = [self.navigationController.viewControllers objectAtIndex:0];
+    [temp setStop:1];
+    [temp setShouldRecognizeRight:0];
+}
+-(void)enableRightToOpenMenu{
+    JLSlideMenu *temp = [self.navigationController.viewControllers objectAtIndex:0];
+    [temp setStop:0];
+    [temp setShouldRecognizeRight:1];
+}
 @end

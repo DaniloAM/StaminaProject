@@ -17,11 +17,10 @@
 @property (weak, nonatomic) IBOutlet UIButton *btnExercicio;
 @property (weak, nonatomic) IBOutlet UITableView *tableExercicios;
 @property (weak, nonatomic) IBOutlet UIButton *inicioHoraTxt;
-@property UIDatePicker *datepicker;
+@property UIDatePicker *datepicker, *startDate, *finalDate;
 @property NSDate *inicio;
 @property int sender;
 @property UIAlertView *alert;
-@property (weak, nonatomic) IBOutlet UIButton *btn;
 @property BOOL selected;
 @property (weak, nonatomic) IBOutlet UIView *viewDays;
 @property NSMutableArray *arrayOfDays;
@@ -30,4 +29,7 @@
 @property (weak, nonatomic) IBOutlet UIView *viewAux3;
 @property (weak, nonatomic) IBOutlet UIView *viewAux4;
 @property (weak, nonatomic) IBOutlet UIView *viewAux5;
+@property (weak, nonatomic) IBOutlet UIButton *buttonFinalDay;
+@property (weak, nonatomic) IBOutlet UIButton *buttonStartDate;
+@property int whichView;
 @end

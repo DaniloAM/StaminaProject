@@ -6,9 +6,9 @@
 //  Copyright (c) 2014 Danilo Augusto Mative. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
+#import "HideBBVC.h"
 #import "UIStaminaColor.h"
-@interface CadastroVC : UIViewController <UIScrollViewDelegate, UITextFieldDelegate>
+@interface CadastroVC : HideBBVC <UIScrollViewDelegate, UITextFieldDelegate>
 @property UIScrollView *scroll;
 @property float lastContentOffset;
 @property int currentIndex;

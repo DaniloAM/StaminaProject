@@ -15,7 +15,10 @@
 @end
 
 @implementation CadastroVC
-
+-(void)viewDidAppear:(BOOL)animated{
+    [super viewDidAppear:animated];
+    [self enableRightToBack];
+}
 - (void)viewDidLoad {
     [super viewDidLoad];
     _arrayView = [NSMutableArray array];
@@ -132,7 +135,6 @@
             
             break;
         case 1:
-            NSLog(@"%d", [self validateEmail:[[self txtEmail] text]]);
             if([self txtEmail].text.length==0||![self validateEmail:[[self txtEmail] text]]){
                 error = 3;
                 return error;

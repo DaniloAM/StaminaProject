@@ -20,23 +20,26 @@
     [self setTraseiro:[NSArray arrayWithObjects:@"Ante-Braço",@"Bíceps",@"Dorsal",@"Glúteos",@"Lombar",@"Ombros",@"Panturrilha",@"Posterior de Coxa", @"Rombóides",@"Trapézio",@"Tríceps",@"",@"",nil]];
     self.table.delegate = self;
     self.table.dataSource=self;
-    [self.table setSeparatorStyle:UITableViewCellSeparatorStyleNone];
     [self.table setBackgroundColor:[UIColor clearColor]];
+
 }
 
 
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
+
 -(void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
-    CGSize size = [[UIScreen mainScreen] bounds].size;
-    [self.table setFrame:CGRectMake(0, self.navigationController.navigationBar.frame.size.height, size.width, size.height- self.navigationController.navigationBar.frame.size.height)];
-    
-#warning ver erro aqui depois
+    CGRect rect = [self.table frame];
+    rect.origin = [self pointStart];
+    [self.table setFrame:rect];
     //[self removeGestureFromMenuVC];
+
+}
+-(void)viewDidAppear:(BOOL)animated{
+    [super viewDidAppear:animated];
+    CGRect rect = [self.table frame];
+    rect.origin = [self pointStart];
+    [self.table setFrame:rect];
 
 }
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
@@ -44,10 +47,8 @@
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    if (section==0) {
+    if (section==0)
         return [[self frontal] count];
-    }
-    
     return [[self traseiro] count];
 }
 

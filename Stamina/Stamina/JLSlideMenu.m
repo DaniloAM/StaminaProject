@@ -10,17 +10,15 @@
 #define perOfLeftMenu 80/100
 #define heightLeftMenu 100/100
 #define perYStart 0/100
-#define tabBarHeightPer 13.25/100
+#define tabBarHeightPer 13/100
 #define cellMenuHeight 11.3/100
 #define cellSubMenuHeight 8.3/100
-
 #define navigationBarSize 10.6/100
+
 #define M1 4
 #define M2 3
 #define M3 2
 #define M4 3
-
-
 
 @interface JLSlideMenu ()
 
@@ -30,10 +28,11 @@
 //start will/did appear and something like that
 -(void)viewDidLoad{
     [super viewDidLoad];
+    [self.navigationItem setTitle:@"Início"];
 }
 -(void)viewWillDisappear:(BOOL)animated{
     [super viewWillDisappear:animated];
-    [self setShouldRecognizeRight:NO];
+    [self setShouldRecognizeRight:YES];
     [self hideBarWithAnimation:1];
 }
 -(void)viewWillAppear:(BOOL)animated{
@@ -42,6 +41,7 @@
 }
 -(void)viewDidAppear:(BOOL)animated{
     [super viewDidAppear:NO];
+    [self setStartSizeBar:self.navigationController.navigationBar.frame.size];
     if([self tabBar]==nil){
         [self createBarButton];
         [self createNavigationBar];
@@ -49,6 +49,8 @@
         [self createPanGesture];
         [self createViewsToPresent];
     }
+    [self setStop:0];
+    [self.panLeft setEnabled:1];
     _recognized = UNDEFINED;
     _open = -1;
     [self.navigationItem setHidesBackButton:YES];
@@ -102,7 +104,7 @@
     float btnyStart =-20+self.navigationController.navigationBar.frame.size.height/2+btnWidth/10;
     UIButton *btn = [[UIButton alloc] initWithFrame:CGRectMake(btnXStart,btnyStart, btnWidth, btnWidth)];
     UIImageView *imageView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, btn.frame.size.width, btn.frame.size.height)];
-    imageView.image =[UIImage imageNamed:@"icon_menu.png"];
+    imageView.image =[UIImage imageNamed:@"icone_hamburguer.png"];
     [btn addSubview:imageView];
     [self.navigationController.navigationBar addSubview:btn];
     [btn addTarget:self action:@selector(leftMenuOpen) forControlEvents:UIControlEventTouchUpInside];
@@ -122,23 +124,34 @@
         return;
     [self changePositionView:_tabBar toPoint:CGPointMake(0, newMenuPoint)];
 }
+
 -(void)panRecognized :(UIPanGestureRecognizer *)sender{
     CGPoint velocity = [sender velocityInView:self.view];
     
     if (sender.state == UIGestureRecognizerStateBegan) {
         [self checkWhichMoviment:velocity withGesture:sender];
         _firstTouch = [sender locationInView:self.navigationController.view];
+        [self.navigationController.presentingViewController.view setUserInteractionEnabled:NO];
         return;
     }
     CGPoint currentPoint = [sender locationInView:self.navigationController.view];
     if (sender.state == UIGestureRecognizerStateChanged) {
+
+        if(self.isMovingToParentViewController == YES)
+            return;
         if(_recognized==UP || _recognized ==DOWN){
+            if([self menuOpen])
+                return;
             [self horizontalRecognizedWithStartPoint:_firstTouch withCurrentPoint:currentPoint];
         }
         else if((_recognized == LEFT || _recognized ==RIGHT )&& [self shouldRecognizeRight]){
+           
             [self sideRecognizedWithStartPoint:_firstTouch withCurrentPoint:currentPoint];
+            return;
         }
         else if((_recognized == LEFT || _recognized ==RIGHT )&& ![self shouldRecognizeRight] && [self stop]){
+            if(_recognized  == LEFT)
+                return;
             [self newMethodToRight];
         }
         return;
@@ -149,6 +162,7 @@
             [self checkPositionLeftMenu];
         else if(_direction == HORIZONTAL){
             [self checkPositionTabBar];
+                    [self.navigationController.presentingViewController.view setUserInteractionEnabled:YES];
         }
         
     }
@@ -192,6 +206,9 @@
     
 }
 -(void)newMethodToRight{
+   
+    [self setStop:YES];
+    [self.panLeft setEnabled:NO];
     [self.navigationController popViewControllerAnimated:YES];
 }
 -(void)checkPositionTabBar{
@@ -234,6 +251,9 @@
     else
         [self moveView:_leftMenu withPoint:CGPointMake(0, _leftMenu.frame.origin.y) withDuration:0];
     [self  setMenuOpen:YES];
+    [self hideBarWithAnimation:1];
+    [self.view setUserInteractionEnabled:NO];
+    //[self.navigationController.presentingViewController]
 
 }
 -(void)hideLeftMenuAnimated: (BOOL)animated{
@@ -245,6 +265,8 @@
     else
         [self moveView:_leftMenu withPoint:CGPointMake(-_leftWidthSize, _leftMenu.frame.origin.y) withDuration:0];
     [self setMenuOpen:NO];
+    [self.view setUserInteractionEnabled:YES];
+    
 }
 -(void)leftMenuOpen{
     if(![self menuOpen])
@@ -257,14 +279,14 @@
 -(void)addShadow{
     [_leftMenu.layer setShadowColor:[UIColor blackColor].CGColor];
     [_leftMenu.layer setShadowOpacity:1];
-    [_leftMenu.layer setShadowRadius:3.0];
-    [_leftMenu.layer setShadowOffset:CGSizeMake(2.0, 2.0)];
+    [_leftMenu.layer setShadowRadius:2.0];
+    [_leftMenu.layer setShadowOffset:CGSizeMake(1.0,1.0)];
 }
 -(void)removeShadow{
     [_leftMenu.layer setShadowColor:[UIColor blackColor].CGColor];
     [_leftMenu.layer setShadowOpacity:0];
     [_leftMenu.layer setShadowRadius:0];
-    [_leftMenu.layer setShadowOffset:CGSizeMake(2.0, 2.0)];
+    [_leftMenu.layer setShadowOffset:CGSizeMake(1.0, 1.0)];
 }
 -(void)moveView: (UIView *)bigView withPoint: (CGPoint )point withDuration: (float)duration{
     [UIView beginAnimations:@"MoveView" context:nil];
@@ -474,18 +496,18 @@
 -(NSString *)returnStringFirstArray: (int )x{
     switch (x) {
         case 0:
-            return @"    Início";
+            return @"           Início";
             break;
         case 1:
-            return @"    Calendário";
+            return @"           Calendário";
             
             break;
         case 2:
-            return @"    Trajetos";
+            return @"           Trajetos";
             
             break;
         case 3:
-            return @"    Exercícios";
+            return @"           Exercícios";
             
             break;
             
@@ -498,14 +520,14 @@
 -(NSString *)returnStringSecondArray: (int )x{
     switch (x) {
         case 0:
-            return @"    Resultado";
+            return @"           Resultado";
             break;
         case 1:
-            return @"    Foto agora";
+            return @"           Foto agora";
             
             break;
         case 2:
-            return @"    Foto da galeria";
+            return @"           Foto da galeria";
             
             break;
             
@@ -518,10 +540,10 @@
 -(NSString *)returnStringThirdArray: (int )x{
     switch (x) {
         case 0:
-            return @"    Criar desafio";
+            return @"           Criar desafio";
             break;
         case 1:
-            return @"    Exercício realizado";
+            return @"           Exercício realizado";
             
             break;
         default:
@@ -533,14 +555,14 @@
 -(NSString *)returnStringFourthArray: (int )x{
     switch (x) {
         case 0:
-            return @"    Físicos";
+            return @"           Físicos";
             break;
         case 1:
-            return @"    Pontuações";
+            return @"           Pontuações";
             
             break;
         case 2:
-            return @"    Premiações";
+            return @"           Premiações";
             
             break;
             
@@ -610,20 +632,21 @@
     
     MenuLViews *view = [MenuLViews alloc];
     if([[view temp]isEqualToString:NSStringFromClass(viewController.class)]){
+        [self hideLeftMenuAnimated:0];
         return;
     }
     else {
-        //[self.navigationController pushViewController:[[view array] objectAtIndex:x] animated:NO];
-        
-        
         [_leftMenu removeFromSuperview];
         [_tabBar removeFromSuperview];
+        UIViewController *vc = self.navigationController.presentingViewController;
+        vc = nil;
         _leftMenu = nil;
         _tabBar = nil;
         [view setTemp:NSStringFromClass(viewController.class)];
         [self.navigationController setViewControllers:@[viewController] animated:NO];
         return;
-    }}
+    }
+}
 -(UIViewController *)createViewWithName: (NSString *)str{
     NSMutableArray* navArray = [[NSMutableArray alloc] initWithArray:self.navigationController.viewControllers];
     //_leftMenu.hidden=YES;
@@ -791,7 +814,7 @@
     [self callViewWithName:@"Inicio"];
 }
 -(void)trajetosButton{
-    
+
 }
 -(void)exerciciosButton{
     

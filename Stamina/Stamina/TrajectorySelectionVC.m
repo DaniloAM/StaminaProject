@@ -62,7 +62,6 @@
 -(void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
     
-    NSLog(@"bar height: %f", [self tabBarSize].height);
     
 }
 
