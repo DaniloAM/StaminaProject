@@ -150,13 +150,18 @@
             [self horizontalRecognizedWithStartPoint:_firstTouch withCurrentPoint:currentPoint];
         }
         else if((_recognized == LEFT || _recognized ==RIGHT )){
+            if(_menuOpen){
+                [self sideRecognizedWithStartPoint:_firstTouch withCurrentPoint:currentPoint];
+            }
+            else{
             if([self openMenu])
             [self sideRecognizedWithStartPoint:_firstTouch withCurrentPoint:currentPoint];
-            else if(![self stop]){
+            else if(![self stop] && _recognized == RIGHT){
                 [self.navigationController popViewControllerAnimated:YES];
                 _stop = YES;
             }
                 return;
+            }
         }
       
         return;
@@ -827,7 +832,7 @@
     
 }
 -(void)fotoAgoraButton{
-    
+    [self callViewWithName:@"shareScreen"];
 }
 -(void)galeriaButton{
     

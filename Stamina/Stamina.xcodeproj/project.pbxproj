@@ -108,7 +108,6 @@
 		C5EB6C0D19D9DBD300C528FC /* RunningMapVC.m in Sources */ = {isa = PBXBuildFile; fileRef = C5EB6C0719D9DBD300C528FC /* RunningMapVC.m */; };
 		C5EB6C1119D9DD5D00C528FC /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C5EB6C1019D9DD5D00C528FC /* MapKit.framework */; };
 		C5EBA8041A1D283C0033076C /* TrainingExercises.m in Sources */ = {isa = PBXBuildFile; fileRef = C5EBA8031A1D283C0033076C /* TrainingExercises.m */; };
-		C5EBA8071A1D28A70033076C /* SaveTrainingCD.m in Sources */ = {isa = PBXBuildFile; fileRef = C5EBA8061A1D28A70033076C /* SaveTrainingCD.m */; };
 		C5F446D61A07DEA5005031C2 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C5F446D51A07DEA5005031C2 /* SystemConfiguration.framework */; };
 		FF13E9D719E5BE160005BA49 /* RoutePointsCartesian.m in Sources */ = {isa = PBXBuildFile; fileRef = FF13E9D619E5BE160005BA49 /* RoutePointsCartesian.m */; };
 		FF13E9DA19E5BE330005BA49 /* FinishedRoute.m in Sources */ = {isa = PBXBuildFile; fileRef = FF13E9D919E5BE330005BA49 /* FinishedRoute.m */; };
@@ -174,8 +173,8 @@
 		32F57C7119EC6838001BF6B2 /* MenuShouldOpen.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MenuShouldOpen.m; path = ../MenuShouldOpen.m; sourceTree = "<group>"; };
 		32F7237C19FABCD6006170CD /* CreateTrainTemp.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CreateTrainTemp.h; sourceTree = "<group>"; };
 		32F7237D19FABCD6006170CD /* CreateTrainTemp.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CreateTrainTemp.m; sourceTree = "<group>"; };
-		C52024451A26434300DDF73B /* ConfiguracoesVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ConfiguracoesVC.h; sourceTree = "<group>"; };
-		C52024461A26434300DDF73B /* ConfiguracoesVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ConfiguracoesVC.m; sourceTree = "<group>"; };
+		C52024451A26434300DDF73B /* ConfiguracoesVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ConfiguracoesVC.h; path = ../ConfiguracoesVC.h; sourceTree = "<group>"; };
+		C52024461A26434300DDF73B /* ConfiguracoesVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ConfiguracoesVC.m; path = ../ConfiguracoesVC.m; sourceTree = "<group>"; };
 		C52024481A26690B00DDF73B /* Exercicio.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Exercicio.png; sourceTree = "<group>"; };
 		C52C27851A07EB690030BEA4 /* CadastroVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CadastroVC.h; sourceTree = "<group>"; };
 		C52C27861A07EB690030BEA4 /* CadastroVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CadastroVC.m; sourceTree = "<group>"; };
@@ -291,8 +290,6 @@
 		C5EB6C1019D9DD5D00C528FC /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		C5EBA8021A1D283C0033076C /* TrainingExercises.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TrainingExercises.h; path = ../TrainingExercises.h; sourceTree = "<group>"; };
 		C5EBA8031A1D283C0033076C /* TrainingExercises.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TrainingExercises.m; path = ../TrainingExercises.m; sourceTree = "<group>"; };
-		C5EBA8051A1D28A70033076C /* SaveTrainingCD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SaveTrainingCD.h; sourceTree = "<group>"; };
-		C5EBA8061A1D28A70033076C /* SaveTrainingCD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SaveTrainingCD.m; sourceTree = "<group>"; };
 		C5F446D51A07DEA5005031C2 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		FF13E9D519E5BE160005BA49 /* RoutePointsCartesian.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RoutePointsCartesian.h; sourceTree = "<group>"; };
 		FF13E9D619E5BE160005BA49 /* RoutePointsCartesian.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RoutePointsCartesian.m; sourceTree = "<group>"; };
@@ -522,10 +519,6 @@
 			children = (
 				FF951BE11A28E52F00E581AB /* TrajectoryHistory.h */,
 				FF951BE21A28E52F00E581AB /* TrajectoryHistory.m */,
-				C52024451A26434300DDF73B /* ConfiguracoesVC.h */,
-				C52024461A26434300DDF73B /* ConfiguracoesVC.m */,
-				C5EBA8051A1D28A70033076C /* SaveTrainingCD.h */,
-				C5EBA8061A1D28A70033076C /* SaveTrainingCD.m */,
 				C5B62BF11A14111C00F969D8 /* MenuLViews.h */,
 				C5B62BF21A14111C00F969D8 /* MenuLViews.m */,
 				C5DB392E1A28D7400066E1BC /* icone_hamburguer.png */,
@@ -557,6 +550,8 @@
 				C53A353019D3411F00AC1383 /* Reachability.m */,
 				C52C27851A07EB690030BEA4 /* CadastroVC.h */,
 				C52C27861A07EB690030BEA4 /* CadastroVC.m */,
+				C52024451A26434300DDF73B /* ConfiguracoesVC.h */,
+				C52024461A26434300DDF73B /* ConfiguracoesVC.m */,
 				C5B62BEC1A14056000F969D8 /* Main.storyboard */,
 				FF1596FD19C0CBC900D9236F /* Images.xcassets */,
 				FF1596F419C0CBC900D9236F /* Stamina.xcdatamodeld */,
@@ -1002,7 +997,6 @@
 				FF1C5D0A1A03F6E600032DC9 /* UIStaminaLabel.m in Sources */,
 				C5EB6BFA19D9DB6B00C528FC /* CalendarPreparer.m in Sources */,
 				FF951BDE1A28E52A00E581AB /* GraphicScroller.m in Sources */,
-				C5EBA8071A1D28A70033076C /* SaveTrainingCD.m in Sources */,
 				C5968D981A225EB400092176 /* Traning.m in Sources */,
 				C53A353119D3411F00AC1383 /* Reachability.m in Sources */,
 				FF13E9DD19E5BF840005BA49 /* SharingResponse.m in Sources */,
