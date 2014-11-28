@@ -25,7 +25,9 @@
 #pragma mark - ViewController methods
 
 -(void)viewWillAppear:(BOOL)animated {
-    [super viewWillAppear:animated withGesture:false];
+    [super viewWillAppear:animated withGesture:true];
+    
+    [[self routeNameTextField] setDelegate:self];
     
     if(_route) {
         [self drawTrajectoryDone];
@@ -63,6 +65,22 @@
     }
     
     
+    
+}
+
+
+-(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
+    
+    [[self routeNameTextField] resignFirstResponder];
+    
+}
+
+
+-(BOOL)textFieldShouldReturn:(UITextField *)textField {
+    
+    [textField resignFirstResponder];
+    
+    return YES;
     
 }
 
@@ -163,8 +181,8 @@
     
     [[self routeNameTextField] setHidden:true];
     
-    [[self leftButton] setHidden:true];
-    [[self rightButton] setHidden:true];
+    [[self leftButton] setHidden:false];
+    [[self rightButton] setHidden:false];
     
     if([[[self routeNameTextField] text] isEqualToString:@""]) {
         [self setSaveRoute:false];

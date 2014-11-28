@@ -14,7 +14,7 @@
 #import "UIStaminaColor.h"
 #import "UserData.h"
 
-@interface FinishedRunningVC : HideBBVC
+@interface FinishedRunningVC : HideBBVC <UITextFieldDelegate>
 
 @property FinishedRoute* route;
 

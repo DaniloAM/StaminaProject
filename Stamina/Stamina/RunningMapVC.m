@@ -289,7 +289,7 @@
     
     if(![self isRunning]) {
         
-        [sender setBackgroundImage:[UIImage imageNamed:@""] forState:UIControlStateNormal];
+        [sender setTitle:@"Terminar" forState:UIControlStateNormal];
         
         _timer = [NSTimer scheduledTimerWithTimeInterval:1.0 target:self selector:@selector(startReloadingUserPosition) userInfo:nil repeats:true];
         
@@ -298,6 +298,8 @@
     
     
     else {
+        
+        [sender setTitle:@"Iniciar" forState:UIControlStateNormal];
         
         UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Parar" message:@"Deseja parar a corrida?" delegate:self cancelButtonTitle:@"Não" otherButtonTitles:@"Sim", nil];
         
