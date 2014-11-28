@@ -14,7 +14,8 @@
 #define cellMenuHeight 11.3/100
 #define cellSubMenuHeight 8.3/100
 #define navigationBarSize 10.6/100
-
+#define perMenuOpen 10.0/100.0
+#define perBackView 20.0/100.0
 #define M1 4
 #define M2 3
 #define M3 2
@@ -27,12 +28,12 @@
 @implementation JLSlideMenu
 //start will/did appear and something like that
 -(void)viewDidLoad{
+    [self setStartSizeBar:self.navigationController.navigationBar.frame.size];
     [super viewDidLoad];
     [self.navigationItem setTitle:@"Início"];
 }
 -(void)viewWillDisappear:(BOOL)animated{
     [super viewWillDisappear:animated];
-    [self setShouldRecognizeRight:YES];
     [self hideBarWithAnimation:1];
 }
 -(void)viewWillAppear:(BOOL)animated{
@@ -41,7 +42,7 @@
 }
 -(void)viewDidAppear:(BOOL)animated{
     [super viewDidAppear:NO];
-    [self setStartSizeBar:self.navigationController.navigationBar.frame.size];
+
     if([self tabBar]==nil){
         [self createBarButton];
         [self createNavigationBar];
@@ -49,12 +50,10 @@
         [self createPanGesture];
         [self createViewsToPresent];
     }
-    [self setStop:0];
     [self.panLeft setEnabled:1];
     _recognized = UNDEFINED;
     _open = -1;
     [self.navigationItem setHidesBackButton:YES];
-    [self setShouldRecognizeRight:YES];
 
 }
 //end will/did appear and something like that
@@ -129,9 +128,15 @@
     CGPoint velocity = [sender velocityInView:self.view];
     
     if (sender.state == UIGestureRecognizerStateBegan) {
+        
         [self checkWhichMoviment:velocity withGesture:sender];
         _firstTouch = [sender locationInView:self.navigationController.view];
         [self.navigationController.presentingViewController.view setUserInteractionEnabled:NO];
+        if(_firstTouch.x<self.view.frame.size.height*perMenuOpen)
+            [self setOpenMenu:YES];
+       
+        else if(_firstTouch.x>self.view.frame.size.width*(1.0/2.0-perBackView)&&_firstTouch.x<self.view.frame.size.width*(1.0/2.0+perBackView))
+            [self setBackView:YES];
         return;
     }
     CGPoint currentPoint = [sender locationInView:self.navigationController.view];
@@ -144,19 +149,22 @@
                 return;
             [self horizontalRecognizedWithStartPoint:_firstTouch withCurrentPoint:currentPoint];
         }
-        else if((_recognized == LEFT || _recognized ==RIGHT )&& [self shouldRecognizeRight]){
-           
+        else if((_recognized == LEFT || _recognized ==RIGHT )){
+            if([self openMenu])
             [self sideRecognizedWithStartPoint:_firstTouch withCurrentPoint:currentPoint];
-            return;
-        }
-        else if((_recognized == LEFT || _recognized ==RIGHT )&& ![self shouldRecognizeRight] && [self stop]){
-            if(_recognized  == LEFT)
+            else if(![self stop]){
+                [self.navigationController popViewControllerAnimated:YES];
+                _stop = YES;
+            }
                 return;
-            [self newMethodToRight];
         }
+      
         return;
     }
     if(sender.state == UIGestureRecognizerStateEnded){
+        _openMenu = NO;
+        _backView = NO;
+        _stop = NO;
         _recognized =-1;
         if(_direction == VERTICAL)
             [self checkPositionLeftMenu];
@@ -205,12 +213,7 @@
     [self changePositionView:_leftMenu toPoint:CGPointMake(barNewPoint, _leftMenu.frame.origin.y)];
     
 }
--(void)newMethodToRight{
-   
-    [self setStop:YES];
-    [self.panLeft setEnabled:NO];
-    [self.navigationController popViewControllerAnimated:YES];
-}
+
 -(void)checkPositionTabBar{
     CGSize screenSize= [[UIScreen mainScreen] bounds].size;
 
@@ -620,7 +623,8 @@
         [array addObject:startButton];
         
     }    [self setArrayOfButtons:[NSArray arrayWithArray:array]];
-
+    UIButton *btn  = [array objectAtIndex:4];
+    [btn addTarget:self action:@selector(configuracoes) forControlEvents:UIControlEventTouchUpInside];
     array = [NSMutableArray array];
     [self setArrayFirstButton:[self alocaAndReturn:1 :M1]];
     [self setSecondFirstButton:[self alocaAndReturn:2 :M2]];
@@ -842,5 +846,8 @@
 }
 -(void)exercicioRealizadoButton{
     
+}
+-(void)configuracoes{
+    [self callViewWithName:@"Configuracoes"];
 }
 @end

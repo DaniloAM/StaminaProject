@@ -21,7 +21,9 @@
     self.table.delegate = self;
     self.table.dataSource=self;
     [self.table setBackgroundColor:[UIColor clearColor]];
-
+    [self.table setSeparatorStyle:UITableViewCellSeparatorStyleSingleLineEtched];
+    [self hideBarWithAnimation:1];
+    [self changeBarNameWith:@"Categoria"];
 }
 
 
@@ -32,7 +34,8 @@
     CGRect rect = [self.table frame];
     rect.origin = [self pointStart];
     [self.table setFrame:rect];
-    //[self removeGestureFromMenuVC];
+    [self hideBarWithAnimation:1];
+
 
 }
 -(void)viewDidAppear:(BOOL)animated{
@@ -70,7 +73,6 @@
         cell.textLabel.text = [[self traseiro] objectAtIndex:indexPath.row];
     }
     cell.accessoryType = UITableViewCellAccessoryNone;
-    
     return cell;
 }
 - (void)tableView: (UITableView*)tableView willDisplayCell: (UITableViewCell*)cell forRowAtIndexPath: (NSIndexPath*)indexPath
@@ -108,12 +110,13 @@
     NSArray *array;
     ExercisesList *temp = [ExercisesList alloc];
     if(indexPath.section==0){
-        
-        array = [[temp exercisesMatrix] objectAtIndex:indexPath.row + 1];
+        [myVC setStrMuscle:[[self frontal] objectAtIndex:indexPath.row]];
+        array = [[temp exercisesMatrix] objectAtIndex:indexPath.row];
         
     }
     else{
-        array = [[temp exercisesMatrix] objectAtIndex:indexPath.row + frontalCategoryCount + 1];
+        [myVC setStrMuscle:[[self traseiro] objectAtIndex:indexPath.row]];
+        array = [[temp exercisesMatrix] objectAtIndex:indexPath.row + frontalCategoryCount];
         
     }
     [myVC setArrayOfExercises:array];
@@ -129,12 +132,13 @@
     [header.textLabel setTextColor:[UIColor colorWithRed:250 green:217 blue:0 alpha:1]];
 }
 -(void)scrollViewDidScroll:(UIScrollView *)scrollView{
-    
-    [super hideBarWithAnimation:YES];
+    [self hideBarWithAnimation:0];
+
+//    [super hideBarWithAnimation:YES];
 }
 
 -(void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView{
-    [super showBarWithAnimation:YES];
+  //  [super showBarWithAnimation:YES];
 }
 
 @end

@@ -11,6 +11,9 @@
 #import "CreateTrainTemp.h"
 #import "AppDelegate.h"
 #import "TrainingExercises.h"
+#import "ExerciseTemporary.h"
+#import "SaveTrainingCD.h"
+#import "Traning.h"
 @interface CriaTreinoVC : HideBBVC <CustomIOS7AlertViewDelegate, UITextFieldDelegate, UITableViewDataSource, UITableViewDelegate>
 @property (weak, nonatomic) IBOutlet UITextField *trainoNomeTxt;
 @property (weak, nonatomic) IBOutlet UIButton *btnDias;

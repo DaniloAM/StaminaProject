@@ -2,7 +2,7 @@
 //  TrainingExercises.m
 //  Stamina
 //
-//  Created by Danilo Augusto Mative on 17/09/14.
+//  Created by João Lucas Sisanoski on 19/11/14.
 //  Copyright (c) 2014 Danilo Augusto Mative. All rights reserved.
 //
 
@@ -15,5 +15,6 @@
 @dynamic repetitions;
 @dynamic series;
 @dynamic training_name;
+@dynamic time;
 
 @end

@@ -45,7 +45,11 @@
 @property int groupID;
 @property int userID;
 @property int age;
+@property int language;
+@property int alerta;
+@property NSInteger timeAlarmBeforeTraining;
 @property BOOL sex;
+@property BOOL nextExercise;
 @property NSString *lastTrainName;
 @property NSDate *lastTrainDate, *startAppUse;
 @property NSString *nickName;

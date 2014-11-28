@@ -24,6 +24,7 @@
    // [self hide]
     }
 -(void)function1{
+    
     [self.navigationController popToRootViewControllerAnimated:YES];
 }
 -(void)function2{
@@ -43,7 +44,7 @@
     [super viewDidLoad];
     NSDateComponents *components = [[NSCalendar currentCalendar] components:NSCalendarUnitDay | NSCalendarUnitMonth | NSCalendarUnitYear fromDate:[NSDate date]];
     NSInteger day = [components day];
-    NSString *str = [NSString stringWithFormat:@"icone_calendario_%2d.png", day];
+    NSString *str = [NSString stringWithFormat:@"icone_calendario_%2ld.png", (long)day];
     [self.navigationItem setTitle:@"Academia"];
     [[self btnCalendar] setBackgroundImage:[UIImage imageNamed:str] forState:UIControlStateNormal];
     [self btn1].backgroundColor = [UIColor staminaBlackColor];

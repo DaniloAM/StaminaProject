@@ -15,27 +15,22 @@
 @implementation CriaTreinoVC
 
 - (void)viewDidLoad {
-
-
+    
+    
     [super viewDidLoad];
     [self.navigationItem setTitle:@"Criar Treino"];
     
     _selected =1;
     [self setInicio:nil];
     [self.view setBackgroundColor:[UIColor staminaYellowColor]];
-       CreateTrainTemp *create = [CreateTrainTemp alloc];
-    [create setName:[NSMutableArray array]];
-    [create setIdentification:[NSMutableArray array]];
-    [create setSer:[NSMutableArray array]];
-    [create setRep:[NSMutableArray array]];
+    CreateTrainTemp *create = [CreateTrainTemp alloc];
     _trainoNomeTxt.delegate = self;
     _tableExercicios.rowHeight = 30;
     _tableExercicios.delegate = self;
     _tableExercicios.dataSource = self;
     _tableExercicios.backgroundColor = [UIColor clearColor];
-    _tableExercicios.contentSize = CGSizeMake(_tableExercicios.frame.size.width, [[create ser] count]*31);
     _arrayOfDays = [NSMutableArray array];
-
+    [[create arrayOfExercises] removeAllObjects];
     for(int x = 0 ; x < 7; x++){
         NSNumber *num = [NSNumber numberWithInt:0];
         [_arrayOfDays addObject:num];
@@ -46,28 +41,33 @@
     [self viewDays].layer.cornerRadius =7;
     for(UIView *btn in [[self viewDays] subviews]){
         if([btn isKindOfClass:[UIButton class]]){
-        [btn layer].cornerRadius = 7;
-        [btn.layer setBorderWidth:1.0f];
-        [btn layer].borderColor = [UIColor staminaYellowColor].CGColor;
+            [btn layer].cornerRadius = 7;
+            [btn.layer setBorderWidth:1.0f];
+            [btn layer].borderColor = [UIColor staminaYellowColor].CGColor;
         }
     }
-//    _inicioHoraTxt.layer.cornerRadius =7;
-//    _trainoNomeTxt.layer.cornerRadius = 7;
+    //    _inicioHoraTxt.layer.cornerRadius =7;
+    //    _trainoNomeTxt.layer.cornerRadius = 7;
     _tableExercicios.backgroundColor = [UIColor staminaBlackColor];
+    [self.tableExercicios layer].cornerRadius = 10;
+    [self preload];
+
 }
 -(void)function2{
+    CreateTrainTemp *temp = [CreateTrainTemp alloc];
+    [[temp arrayOfExercises] removeAllObjects];
     UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
     UIViewController *myVC;
     myVC= (UIViewController *)[storyboard instantiateViewControllerWithIdentifier:@"CategoriaTVC"];
     [self.navigationController pushViewController:myVC animated:YES];
-
     
-
+    
+    
 }
 
 -(void)viewDidAppear:(BOOL)animated{
     [super viewDidAppear:animated];
-
+    
 }
 -(NSNumber *)checkAndChange: (NSNumber *)number andButton :(UIButton *)btn{
     int x = [number intValue];
@@ -81,97 +81,140 @@
     else{
         [btn setBackgroundColor:[UIColor staminaYellowColor]];
         [btn layer].borderColor = [UIColor staminaBlackColor].CGColor;
-                [btn setTitleColor:[UIColor staminaBlackColor] forState:UIControlStateNormal];
+        [btn setTitleColor:[UIColor staminaBlackColor] forState:UIControlStateNormal];
         return [NSNumber numberWithInt:1];
     }
 }
 -(IBAction)seg : (UIButton *)sender{
     [[self arrayOfDays] replaceObjectAtIndex:1 withObject:[self checkAndChange:[[self arrayOfDays] objectAtIndex:1] andButton:sender]];
-
+    
     
 }
 -(IBAction)ter: (UIButton *)sender{
     [[self arrayOfDays] replaceObjectAtIndex:2 withObject:[self checkAndChange:[[self arrayOfDays] objectAtIndex:2] andButton:sender]];
-;
+    ;
     
 }
 -(IBAction)qua: (UIButton *)sender{
     [[self arrayOfDays] replaceObjectAtIndex:3 withObject:[self checkAndChange:[[self arrayOfDays] objectAtIndex:3] andButton:sender]];
-
+    
     
 }
 -(IBAction)qui: (UIButton *)sender{
     [[self arrayOfDays] replaceObjectAtIndex:4 withObject:[self checkAndChange:[[self arrayOfDays] objectAtIndex:4] andButton:sender]];
-
+    
     
 }
 -(IBAction)sex: (UIButton *)sender{
     [[self arrayOfDays] replaceObjectAtIndex:5 withObject:[self checkAndChange:[[self arrayOfDays] objectAtIndex:5] andButton:sender]];
-
+    
     
 }
 -(IBAction)sab: (UIButton *)sender{
     [[self arrayOfDays] replaceObjectAtIndex:6 withObject:[self checkAndChange:[[self arrayOfDays] objectAtIndex:6] andButton:sender]];
-
+    
     
 }
 -(IBAction)dom: (UIButton *)sender{
     [[self arrayOfDays] replaceObjectAtIndex:0 withObject:[self checkAndChange:[[self arrayOfDays] objectAtIndex:0] andButton:sender]];
-
+    
     
 }
-
+-(void)displayAlertWithString: (NSString *)str comCabecalho: (NSString *)cabe{
+    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:cabe message:str delegate:self cancelButtonTitle:@"Ok" otherButtonTitles:nil, nil];
+    [alert show];
+}
 -(void)function1{
     CreateTrainTemp *create = [CreateTrainTemp alloc];
-    [create setTrainingName:[[self trainoNomeTxt] text]];
-
-    if([[create ser] count]==0){
-        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Erro" message:@"Adicione ao menos um exercicio." delegate:self cancelButtonTitle:@"Ok" otherButtonTitles:nil, nil];
-        [alert show];
+    
+    if([[create exercise] count]==0){
+        [self displayAlertWithString:@"Adicione algum exercício na lista" comCabecalho:@"Erro"];
         return;
     }
-    if (create.trainingName.length == 0)
-    {
+    if([self trainoNomeTxt].text.length==0){
+        [self displayAlertWithString:@"Seu treino precisa de algum nome" comCabecalho:@"Erro"];
 
-        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Erro" message:@"Cheque o nome do treino." delegate:self cancelButtonTitle:@"Ok" otherButtonTitles:nil, nil];
-        [alert show];
         return;
     }
-   
-    AppDelegate *delegate= [[UIApplication sharedApplication] delegate];
+    if([self hasTrainingWithName:[self trainoNomeTxt].text]){
+        [self displayAlertWithString:@"Ja existe um treino com esse" comCabecalho:@"Escolha outro nome"];
+        return;
+    }
+    BOOL hasDay = false;
+    for (int x =0 ; x< [[self arrayOfDays] count]; x++) {
+        if([[[self arrayOfDays] objectAtIndex:x] boolValue]){
+            hasDay=true;
+            break;
+        }
+    }
+    if(!hasDay){
+        [self displayAlertWithString:@"Adicione algum dia para fazer o exercicio" comCabecalho:@"Erro"];
+        return;
+    }
+    [self saveTraining];
+    [self.navigationController popViewControllerAnimated:YES];
+}
+-(void)saveTraining{
+    UserData *data = [UserData alloc];
+    CalendarObject *calendarObject = [CalendarObject alloc];
+    AppDelegate *delegate = [[UIApplication sharedApplication] delegate];
     NSManagedObjectContext *context = [delegate managedObjectContext];
-    if([create trainingName])
-    for (int x = 0; x < [[create name] count];x++){
-        TrainingExercises *exercise = [NSEntityDescription insertNewObjectForEntityForName:@"TrainingExercises" inManagedObjectContext:context];
-        NSNumber *rep = [NSNumber numberWithInt:[[[create rep] objectAtIndex:x] intValue]];
-        NSNumber *ser = [NSNumber numberWithInt:[[[create ser] objectAtIndex:x] intValue]];
-        NSNumber *identification = [NSNumber numberWithInt:[[[create identification] objectAtIndex:x] intValue]];
-        [exercise setRepetitions:rep];
-        [exercise setId_exercise:identification];
-        [exercise setSeries:ser];
-        [exercise setTraining_name:[create trainingName]];
-        
-        NSError *error;
-        
-        [context save:&error];
+    CreateTrainTemp *create = [CreateTrainTemp alloc];
+    for (int x = 0 ; x < [[create arrayOfExercises] count];x++){
+        TrainingExercises *newTraining = [NSEntityDescription insertNewObjectForEntityForName:@"TrainingExercises" inManagedObjectContext:context];
+        ExerciseTemporary *exerc = [[create exercise] objectAtIndex:x   ];
+        Exercises *exercise = [exerc exercicio];
+        [newTraining setId_exercise:exercise.exerciseID];
+        [newTraining setTraining_name:[self.trainoNomeTxt text]];
+        [newTraining setSeries:[NSNumber numberWithInteger:exerc.serie]];
+        [newTraining setTime:[NSNumber numberWithInteger:exerc.segundos+exerc.minutos*60]];
+        [newTraining setRepetitions:[NSNumber numberWithInteger:exerc.repeticoes]];
+        [data addExerciseWithTrainingExercise:newTraining];
     }
-    [[create ser] removeAllObjects];
-        [[create rep] removeAllObjects];
-        [[create identification] removeAllObjects];
-    [create setTrainingName:nil];
+    NSCalendar *calendar = [NSCalendar currentCalendar];
+    
+    NSDate *date = [NSDate dateWithTimeInterval:0 sinceDate:[self startDate].date];
+    
+    NSDateComponents *comp = [calendar components:NSWeekdayCalendarUnit fromDate:date];
+    NSDateComponents *addDay = [[NSDateComponents alloc] init];
+    
+    [addDay setDay:1];
+    
+    for(;;) {
+        
+        comp = [calendar components:NSWeekdayCalendarUnit fromDate:date];
+        
+        if([[[self arrayOfDays] objectAtIndex:comp.weekday-1] boolValue]) {
+            [calendarObject scheduleTrainingNamed:[self trainoNomeTxt].text inDate:date];
+        }
+        
+        date = [calendar dateByAddingComponents:addDay toDate:date options:0];
+        
+        if([[self finalDate].date compare:date] == NSOrderedAscending)
+            break;
+        
+    }
     
 }
-
+-(BOOL)hasTrainingWithName: (NSString *)str{
+    AppDelegate *appDelegate = [[UIApplication sharedApplication] delegate];
+    NSManagedObjectContext *context = [appDelegate managedObjectContext];
+    NSFetchRequest *request = [NSFetchRequest fetchRequestWithEntityName:@"Training"];
+    NSPredicate *pred = [NSPredicate predicateWithFormat:@"(trainingName = %@)", str];
+    [request setPredicate:pred];
+    
+    NSError *error;
+    NSArray *array = [context executeFetchRequest:request error:&error];
+    if([array count]!=0)
+        return YES;
+    return NO;
+}
 -(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event{
     [self.trainoNomeTxt resignFirstResponder];
 }
 - (BOOL)textFieldShouldReturn:(UITextField*)aTextField
 {
     [aTextField resignFirstResponder];
-    return YES;
-}
-- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
-    // Return YES if you want the specified item to be editable.
     return YES;
 }
 -(IBAction)btn1 : (UIButton *)sender{
@@ -181,33 +224,40 @@
 }
 -(IBAction)btn2 : (UIButton *)sender{
     _selected = 1;
-        [self atualiza];
+    [self atualiza];
 }
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
     CreateTrainTemp *tem = [CreateTrainTemp alloc];
-
-    return [[tem ser] count];
+    
+    return [[tem exercise] count];
 }
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     static NSString *simpleTableIdentifier;
     CreateTrainTemp *temp = [CreateTrainTemp  alloc];
- 
-    
+    ExerciseTemporary *exerc = [[temp exercise] objectAtIndex:indexPath.row];
+    Exercises *exercise = [exerc exercicio];
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:simpleTableIdentifier];
     
     if (cell == nil) {
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:simpleTableIdentifier];
     }
-
-    NSString *str = [NSString stringWithFormat:@"%@ - %@x%@",[[temp name] objectAtIndex:indexPath.row],[[temp ser] objectAtIndex:indexPath.row],[[temp rep] objectAtIndex:indexPath.row]];
+    NSString *str;
+    if([exerc time]){
+        str = [NSString stringWithFormat:@"%ld. %@ - %02ld:%02ld",indexPath.row+1,[exercise name],[exerc minutos],[exerc segundos]];
+        
+    }
+    else {
+        str = [NSString stringWithFormat:@"%ld. %@ - %02ld x %02ld",indexPath.row+1,[exercise name] ,(long)[exerc serie],(long)[exerc repeticoes]];
+        
+    }
     cell.textLabel.text = str;
-    [cell.textLabel setFont:[UIFont fontWithName:@"Lato" size:18]];
+    [cell.textLabel setFont:[UIFont fontWithName:@"Lato" size:16]];
+    cell.textLabel.textColor = [UIColor staminaYellowColor];
     cell.accessoryType = UITableViewCellAccessoryNone;
     cell.backgroundColor = [UIColor clearColor];
-    [cell.textLabel setTextColor:[UIColor blackColor]];
     return cell;
-
+    
 }
 -(UIDatePicker *)criaRetornaPicker{
     UIDatePicker *temp = [[UIDatePicker alloc] initWithFrame:CGRectMake(0, 0, 250, 200)];
@@ -234,24 +284,27 @@
     
     [_tableExercicios reloadData];
     
-    [self firstButtonMethod:@selector(function1)  fromClass:self withImage:nil];
-    [self secondButtonMethod:@selector(function2) fromClass:self  withImage:[UIImage imageNamed:@"icon_adicionar.png"]];
+        [self atualiza];
     
-    [self atualiza];
-
+}
+-(void)function3{
+    
 }
 -(void)viewWillAppear:(BOOL)animated{
     [self hideBarWithAnimation:1];
-
+    
     [super viewWillAppear:animated];
     self.navigationController.navigationBar.translucent = YES;
-
-    [self preload];
+    [self firstButtonMethod:@selector(function1)  fromClass:self withImage:[UIImage imageNamed:@"icone_ok_tab.png"]];
+    [self secondButtonMethod:@selector(function2) fromClass:self  withImage:[UIImage imageNamed:@"icon_adicionar.png"]];
+    [self thirdButtonMethod:@selector(function3) fromClass:self withImage:[UIImage imageNamed:@"icone_adicionar_tab.png"]];
 }
 -(void)viewWillDisappear:(BOOL)animated{
     [super viewWillDisappear:animated];
+    CreateTrainTemp *tem = [CreateTrainTemp alloc];
+    [tem setExercise:nil];
     self.navigationController.navigationBar.translucent = NO;
-
+    
 }
 -(IBAction)horaInicial: (id)sender{
     [self launchDialog:sender];
@@ -266,18 +319,13 @@
 - (void)launchDialog:(id)sender
 {   CustomIOS7AlertView *alertView = [[CustomIOS7AlertView alloc] init];
     [alertView setContainerView:[self createDemoViewWithSender:sender]];
-    // Modify the parameters
     [alertView setButtonTitles:[NSMutableArray arrayWithObjects:@"OK",nil]];
     [alertView setDelegate:self];
-    
-    // You may use a Block, rather than a delegate.
-    [alertView setOnButtonTouchUpInside:^(CustomIOS7AlertView *alertView, int buttonIndex) {
+        [alertView setOnButtonTouchUpInside:^(CustomIOS7AlertView *alertView, int buttonIndex) {
         [alertView close];
     }];
     
     [alertView setUseMotionEffects:true];
-    
-    // And launch the dialog
     [alertView show];
 }
 - (void)customIOS7dialogButtonTouchUpInside: (CustomIOS7AlertView *)alertView clickedButtonAtIndex: (NSInteger)buttonIndex
@@ -300,14 +348,14 @@
             myDate = _startDate.date;
             [dateFormat setDateFormat:@"dd/MM/yyyy"];
             btn = _buttonStartDate;
-
+            
             break;
             
         default:
             break;
     }
     NSString *dateString = [dateFormat stringFromDate:myDate];
-
+    
     if([_startDate.date compare:_finalDate.date]==NSOrderedDescending){
         if(_whichView==1){
             [_buttonStartDate setTitle:dateString forState:UIControlStateNormal];
@@ -316,14 +364,14 @@
             [_buttonFinalDay setTitle:dateString forState:UIControlStateNormal];
         }
     }
-        [btn setTitle:dateString forState:UIControlStateNormal];
-        [alertView close];
-
+    [btn setTitle:dateString forState:UIControlStateNormal];
+    [alertView close];
+    
 }
 -(void)atualiza{
-
-      
-
+    
+    
+    
     if(!_selected){
         [self viewDays].hidden = NO;
         [self btnDias].backgroundColor = [UIColor staminaBlackColor];
@@ -339,7 +387,7 @@
     }
     
     else {
-   
+        
         [self btnExercicio].backgroundColor = [UIColor staminaBlackColor];
         [[self btnExercicio] setTitleColor:[UIColor staminaYellowColor] forState:UIControlStateNormal];
         [self btnDias].backgroundColor = [UIColor staminaYellowColor];
@@ -351,7 +399,7 @@
         self.viewAux5.hidden = YES;
         self.viewAux4.hidden = NO;
     }
-   
+    
 }
 - (UIView *)createDemoViewWithSender:(UIButton *)btn
 {
@@ -366,7 +414,7 @@
     else if (btn == _buttonStartDate){
         _whichView = 2;
         return _startDate;
-
+        
     }
     
     return _datepicker;

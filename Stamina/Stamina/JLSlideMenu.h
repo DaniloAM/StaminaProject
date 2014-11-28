@@ -19,26 +19,37 @@ typedef enum gestureRecognizedTypes
     HORIZONTAL,
     UNDEFINED
 } GestureRecognized;
-@property CGSize startSizeBar;
-@property NSArray *arrayOfViewsControllers;
-@property UIView *leftMenu;
-@property UIPanGestureRecognizer *panLeft;
-@property int recognized, direction;
-@property CGPoint firstTouch;
-@property float leftWidthSize, tabHeightSize;
-@property NSMutableArray *arrayOfViews;
 @property UIView *tabBar;
+@property UIView *leftMenu;
+
+@property UIPanGestureRecognizer *panLeft;
+
+@property CGSize startSizeBar;
+@property CGPoint firstTouch;
 @property NSArray *arrayOfButtons;
-@property BOOL menuOpen;
+
+@property BOOL menuOpen, stop;
+@property BOOL openMenu, backView;
 @property int open;
+@property int recognized, direction;
+
+@property float leftWidthSize, tabHeightSize;
+
 @property NSArray *arrayFirstButton;
 @property NSArray *secondFirstButton;
 @property NSArray *thirdFirstButton;
 @property NSArray *fourthFirstButton;
+@property NSArray *arrayOfViewsControllers;
+@property NSMutableArray *arrayOfViews;
+
 @property UIViewController *presenting;
 @property NSArray *arrayTabBar;
-@property BOOL shouldRecognizeRight;
-@property BOOL stop;
+
+
+
+
+
+
 -(void)showBarWithAnimation : (BOOL)animated;
 -(void)hideBarWithAnimation : (BOOL)animated;
 -(void)firstButtonMethod: (void *)metodo fromClass:(UIViewController *)view  withImage: (UIImage *)image;

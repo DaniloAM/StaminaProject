@@ -36,21 +36,21 @@
     
     UISwipeGestureRecognizer *gestDown = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(previousDayInformation)];
     
-    UISwipeGestureRecognizer *gestRight = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(backToCalendar)];
+    //UISwipeGestureRecognizer *gestRight = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(backToCalendar)];
     
     gestUp.direction = UISwipeGestureRecognizerDirectionUp;
     gestDown.direction = UISwipeGestureRecognizerDirectionDown;
-    gestRight.direction = UISwipeGestureRecognizerDirectionRight;
+    //gestRight.direction = UISwipeGestureRecognizerDirectionRight;
 
     [self.view addGestureRecognizer:gestUp];
     [self.view addGestureRecognizer:gestDown];
-    [self.view addGestureRecognizer:gestRight];
+    //[self.view addGestureRecognizer:gestRight];
     
 }
 
 -(void)viewWillAppear:(BOOL)animated {
     
-    [super viewWillAppear:animated withGesture:false];
+    [super viewWillAppear:animated withGesture:true];
     
     [self loadDayInformation];
     

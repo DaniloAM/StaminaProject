@@ -2,7 +2,7 @@
 //  TrainingExercises.h
 //  Stamina
 //
-//  Created by Danilo Augusto Mative on 17/09/14.
+//  Created by João Lucas Sisanoski on 19/11/14.
 //  Copyright (c) 2014 Danilo Augusto Mative. All rights reserved.
 //
 
@@ -16,5 +16,6 @@
 @property (nonatomic, retain) NSNumber * repetitions;
 @property (nonatomic, retain) NSNumber * series;
 @property (nonatomic, retain) NSString * training_name;
+@property (nonatomic, retain) NSNumber * time;
 
 @end

@@ -428,10 +428,10 @@
     NSDate *date = [dformat dateFromString:str];
     
     
-    //TrainingExercises *ex;
+    TrainingExercises *ex;
     
     //Make a loop and add all exercises from training needed
-    //[data addExerciseWithTrainingExercise:ex];
+    [data addExerciseWithTrainingExercise:ex];
     
     
     //Then a second loop of schedules in dates

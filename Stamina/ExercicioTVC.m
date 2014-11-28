@@ -26,7 +26,7 @@
     if(![exe arrayOfExercises]){
         [exe setArrayOfExercises:[NSMutableArray array]];
     }
-    [self firstButtonMethod:@selector(function1) fromClass:self withImage:nil];
+    //[self firstButtonMethod:@selector(function1) fromClass:self withImage:nil];
     [super hideBarWithAnimation:1];
     UILongPressGestureRecognizer *lpgr = [[UILongPressGestureRecognizer alloc]
                                           initWithTarget:self action:@selector(handleLongPress:)];
@@ -34,10 +34,12 @@
     lpgr.delegate = self;
     [self.table addGestureRecognizer:lpgr];
     [self showBarWithAnimation:YES];
-
-
+    [self changeBarNameWith:[self strMuscle]];
 }
 
+-(void)firstButton{
+    [self.navigationController  popToRootViewControllerAnimated:YES];
+}
 -(void)handleLongPress:(UILongPressGestureRecognizer *)gestureRecognizer
 {
     CGPoint p = [gestureRecognizer locationInView:self.table];
@@ -60,16 +62,7 @@
     }else {
     }
 }
--(void)adicionaTreino{
-    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
-    UIViewController *myVC;
-    myVC= (UIViewController *)[storyboard instantiateViewControllerWithIdentifier:@"AddExercise"];
-    [self.navigationController pushViewController:myVC animated:YES];
 
-}
--(void)function1{
-    
-}
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
 }
@@ -159,19 +152,6 @@
 
 -(void)viewDidAppear:(BOOL)animated{
     [super viewDidAppear:animated];
-
-    
-//    
-//    [btn addTarget:self action:@selector(function1) forControlEvents:UIControlEventTouchUpInside];
-//    btn = [array objectAtIndex:1];
-//    //  [btn addTarget:self action:@selector(adicionaTreino) forControlEvents:UIControlEventTouchUpInside];
-//    btn = [array objectAtIndex:2];
-//    [btn addTarget:self action:@selector(adicionaTreino) forControlEvents:UIControlEventTouchUpInside];
-//    [btn setBackgroundColor:[UIColor    blackColor]];
-//    UIImageView *image = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, btn.frame.size.height*0.85, btn.frame.size.height*0.85)];
-//    [image  setImage:[UIImage imageNamed:@"icone_ok.png"]];
-//    [btn addSubview:image];
-//    [image setCenter:CGPointMake(btn.frame.size.width/2, btn.frame.size.height/2)];
     [super hideBarWithAnimation:1];
     UILongPressGestureRecognizer *lpgr = [[UILongPressGestureRecognizer alloc]
                                           initWithTarget:self action:@selector(handleLongPress:)];
@@ -179,7 +159,16 @@
     lpgr.delegate = self;
     [self.table addGestureRecognizer:lpgr];
     [self showBarWithAnimation:YES];
-
+    [self firstButtonMethod:@selector(firstButton) fromClass:self withImage:[UIImage imageNamed:@"icon_home.png"]];
+    [self secondButtonMethod:@selector(secondButton) fromClass:self withImage:[UIImage imageNamed:@"icone_adicionar_tab.png"]];
 }
+-(void)secondButton{
+    AddExerciseVC *add = (AddExerciseVC *)[self returnViewWithName:@"AddExercise"];
 
+    CreateTrainTemp *temp = [CreateTrainTemp alloc];
+
+    [add setArrayOfExercises:[temp arrayOfExercises]];
+    
+    [self callViewWithName:@"AddExercise"];
+}
 @end

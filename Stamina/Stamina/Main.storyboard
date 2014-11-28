@@ -4,6 +4,17 @@
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6244"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <mutableArray key="Lato-Light.ttf">
+            <string>Lato-Light</string>
+        </mutableArray>
+        <mutableArray key="Lato-Regular.ttf">
+            <string>Lato-Regular</string>
+        </mutableArray>
+        <mutableArray key="Lato-Semibold.ttf">
+            <string>Lato-Semibold</string>
+        </mutableArray>
+    </customFonts>
     <scenes>
         <!--Left Menu ExpandedVC-->
         <scene sceneID="V35-eR-sGV">
@@ -548,6 +559,38 @@
             </objects>
             <point key="canvasLocation" x="3005" y="-3639"/>
         </scene>
+        <!--ConfiguracoesVC-->
+        <scene sceneID="YTS-ud-uWR">
+            <objects>
+                <viewController storyboardIdentifier="Configuracoes" id="mX2-A7-51o" customClass="ConfiguracoesVC" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="eWL-8E-jgM">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="OXk-X4-8pi">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <sections/>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                    </view>
+                    <connections>
+                        <outlet property="table" destination="OXk-X4-8pi" id="aTU-Y8-xm4"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="g7f-K4-nTx" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="wBz-ZB-jsB">
+                    <rect key="frame" x="0.0" y="0.0" width="42" height="21"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </objects>
+            <point key="canvasLocation" x="3412" y="-3595"/>
+        </scene>
         <!--Navigation Controller-->
         <scene sceneID="lV8-Gp-hWW">
             <objects>
@@ -564,30 +607,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cuT-0c-wJa" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1168" y="-3639"/>
-        </scene>
-        <!--Slide Menu-->
-        <scene sceneID="9vM-51-cRf">
-            <objects>
-                <viewController id="bLY-23-hrx" customClass="JLSlideMenu" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="exO-zm-Uzt">
-                        <rect key="frame" x="0.0" y="64" width="320" height="568"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Bo3-f7-5Q6">
-                                <rect key="frame" x="94" y="154" width="42" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </view>
-                    <navigationItem key="navigationItem" id="2Ce-5H-pK3"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="sLp-ME-OEB" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="2505" y="-5436"/>
         </scene>
         <!--Running MapVC-->
         <scene sceneID="hBC-1x-cGS">
@@ -625,13 +644,13 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" id="Hxh-iD-IrK">
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </mapView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="Lmf-ti-4rb">
                                 <rect key="frame" x="32" y="437" width="256" height="36"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" backgroundImage="button_iniciar.png">
+                                <color key="backgroundColor" red="1" green="0.82631386100000004" blue="0.090270110929999994" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="15"/>
+                                <state key="normal" title="Iniciar">
+                                    <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
@@ -661,6 +680,10 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                             </button>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" id="Hxh-iD-IrK">
+                                <rect key="frame" x="0.0" y="77" width="320" height="161"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </mapView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
@@ -1218,6 +1241,107 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9cl-6u-Cs6" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3177" y="-2758"/>
+        </scene>
+        <!--Add ExerciseVC-->
+        <scene sceneID="Bgb-js-CBl">
+            <objects>
+                <viewController storyboardIdentifier="AddExercise" id="1uX-ES-914" customClass="AddExerciseVC" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="LBv-eO-q8d">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" id="6Cm-1l-u4F">
+                                <rect key="frame" x="92" y="369" width="193" height="112"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="1" green="0.82352941180000006" blue="0.08235294118" alpha="1" colorSpace="calibratedRGB"/>
+                            </view>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" minimumFontSize="17" id="ulh-Vj-cJs">
+                                <rect key="frame" x="205" y="394" width="62" height="63"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" minimumFontSize="17" id="CIi-wg-UDH">
+                                <rect key="frame" x="109" y="394" width="62" height="63"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="PMl-ob-vaE">
+                                <rect key="frame" x="38" y="280" width="266" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="Lato-Semibold" family="Lato" pointSize="22"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="baT-xU-dTt">
+                                <rect key="frame" x="38" y="309" width="266" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="Lato-Light" family="Lato" pointSize="19"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="MAT-lw-NbX">
+                                <rect key="frame" x="0.0" y="65" width="320" height="207"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="z3j-Bg-4nM">
+                                <rect key="frame" x="34" y="369" width="54" height="54"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="cronometer" destination="1uX-ES-914" eventType="touchUpInside" id="san-D5-hpt"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="Ddb-gO-k7x">
+                                <rect key="frame" x="34" y="427" width="54" height="54"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="ser" destination="1uX-ES-914" eventType="touchUpInside" id="Hjc-zr-dz0"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="X" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="quh-Xr-O6X">
+                                <rect key="frame" x="171" y="422" width="35" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" minimumFontSize="17" id="OYl-JM-GlK">
+                                <rect key="frame" x="110" y="393" width="101" height="63"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <connections>
+                        <outlet property="bigView" destination="6Cm-1l-u4F" id="AcN-Gj-0e0"/>
+                        <outlet property="imageCronometer" destination="z3j-Bg-4nM" id="pDN-xe-EG6"/>
+                        <outlet property="imageExplain" destination="MAT-lw-NbX" id="FpV-01-6Y1"/>
+                        <outlet property="imageSeries" destination="Ddb-gO-k7x" id="f5y-GT-h3w"/>
+                        <outlet property="labelCategory" destination="baT-xU-dTt" id="esk-d8-2NW"/>
+                        <outlet property="labelExercise" destination="PMl-ob-vaE" id="oM4-Oa-N9Y"/>
+                        <outlet property="lblX" destination="quh-Xr-O6X" id="cKs-eU-dMM"/>
+                        <outlet property="txt1" destination="CIi-wg-UDH" id="4I7-xm-kvX"/>
+                        <outlet property="txt2" destination="ulh-Vj-cJs" id="5S4-yy-IHk"/>
+                        <outlet property="txt3" destination="OYl-JM-GlK" id="J7H-gP-ow4"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="VfN-pM-VnR" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3746" y="-2765"/>
         </scene>
         <!--Calendar InformationVC-->
         <scene sceneID="NMJ-Pw-R4N">

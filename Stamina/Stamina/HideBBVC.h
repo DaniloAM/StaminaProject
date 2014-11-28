@@ -9,7 +9,9 @@
 #import <UIKit/UIKit.h>
 #import "MenuShouldOpen.h"
 #import "JLSlideMenu.h"
-@interface HideBBVC : UIViewController
+#import "ExercisesList.h"
+#import "UIStaminaImages.h"
+@interface HideBBVC : UIViewController <UITextFieldDelegate>
 @property UIView *tabBar;
 
 @property int lastDirection;
@@ -25,4 +27,8 @@
 -(CGPoint)pointStart;
 -(void)enableRightToOpenMenu;
 -(void)callViewWithName: (NSString *)string;
+-(void)changeBarNameWith: (NSString *)str;
+-(void)callView: (UIViewController *)view;
+-(UIViewController *)returnViewWithName: (NSString *)string;
+-(void)addImage: (UIImage * )image toButton: (UIButton *)btn;
 @end

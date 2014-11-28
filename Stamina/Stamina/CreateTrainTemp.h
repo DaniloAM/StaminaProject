@@ -10,7 +10,5 @@
 @interface CreateTrainTemp : NSObject
 +(CreateTrainTemp *)sharedStore;
 @property NSMutableArray *arrayOfExercises;
-@property NSString *trainingName;
-@property NSMutableArray *name, *rep, *ser, *identification;
-
+@property NSArray *exercise;
 @end

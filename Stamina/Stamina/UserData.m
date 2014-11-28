@@ -50,7 +50,7 @@
     
     TrainingExercises *exercise = [NSEntityDescription insertNewObjectForEntityForName:@"TrainingExercises" inManagedObjectContext:context];
     
-    
+    [exercise setTime:newExercise.time];
     [exercise setTraining_name:newExercise.training_name];
     [exercise setId_exercise:newExercise.id_exercise];
     [exercise setRepetitions:newExercise.repetitions];
@@ -145,7 +145,7 @@
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     
     
-    
+    [defaults setInteger:[self timeAlarmBeforeTraining] forKey:@"ud_timebefore"];
     [defaults setInteger:[self currentObjective] forKey:@"ud_co"];
     [defaults setInteger:[self completedTrainings] forKey:@"ud_ct"];
     
@@ -153,15 +153,15 @@
     [defaults setInteger:[self initialWeight] forKey:@"ud_initialweight"];
     [defaults setInteger:[self weightInKilograms] forKey:@"ud_weight"];
     [defaults setInteger:[self heightInCentimeters] forKey:@"ud_height"];
-    
+    [defaults setInteger:[self language] forKey:@"ud_language"];
+    [defaults setInteger:[self alerta] forKey:@"ud_alerta"];
     [defaults setBool:[self sex] forKey:@"ud_sex"];
-    
+    [defaults setBool:[self nextExercise] forKey:@"ud_next"];
     [defaults setObject:[self startAppUse] forKey:@"ud_sap"];
     [defaults setObject:[self password] forKey:@"ud_pass"];
     [defaults setObject:[self nickName] forKey:@"ud_nickname"];
     [defaults setObject:[self email] forKey:@"ud_email"];
     [defaults setObject:[self name] forKey:@"ud_name"];
- 
     
     
     [defaults synchronize];
@@ -179,14 +179,15 @@
     _email = [defaults objectForKey:@"ud_email"];
     _nickName = [defaults objectForKey:@"ud_nickname"];
     _password = [defaults objectForKey:@"ud_pass"];
-    
+    _language = (int)[defaults integerForKey:@"ud_language"];
+    _alerta = (int)[defaults integerForKey:@"ud_alerta"];
+    _nextExercise  = [defaults boolForKey:@"ud_next"];
     _initialWeight = (int)[defaults integerForKey:@"ud_initialweight"];
-    _heightInCentimeters = (int)[defaults integerForKey:@"ud_weight"];
-    _initialWeight = (int)[defaults integerForKey:@"ud_height"];
+    _heightInCentimeters = (int)[defaults integerForKey:@"ud_height"];
+    _weightInKilograms =(int)[defaults integerForKey:@"ud_weight"];
     _sex  = [defaults boolForKey:@"ud_sex"];
     _age  = (int)[defaults integerForKey:@"ud_age"];
-    
-    
+    _timeAlarmBeforeTraining = (int)[defaults integerForKey:@"ud_timebefore"];
 }
 
 
