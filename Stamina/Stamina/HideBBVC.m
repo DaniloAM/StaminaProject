@@ -15,8 +15,9 @@
 @implementation HideBBVC
 
 -(void)viewWillAppear:(BOOL)animated{
+    if(animated)
     [self viewWillAppear:animated withGesture:1];
-    
+   
 }
 
 -(void)viewDidLoad{
@@ -132,11 +133,4 @@
     [temp thirdButtonMethod:metodo fromClass:view withImage:image];
 
 }
--(void)enableRightToBack{
-    JLSlideMenu *temp = [self.navigationController.viewControllers objectAtIndex:0];
-}
--(void)enableRightToOpenMenu{
-    JLSlideMenu *temp = [self.navigationController.viewControllers objectAtIndex:0];
-}
-
 @end
