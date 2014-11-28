@@ -140,6 +140,27 @@
 		FF951BDF1A28E52A00E581AB /* GraphUpdater.m in Sources */ = {isa = PBXBuildFile; fileRef = FF951BDA1A28E52A00E581AB /* GraphUpdater.m */; };
 		FF951BE01A28E52A00E581AB /* TestUpdater.m in Sources */ = {isa = PBXBuildFile; fileRef = FF951BDC1A28E52A00E581AB /* TestUpdater.m */; };
 		FF951BE31A28E52F00E581AB /* TrajectoryHistory.m in Sources */ = {isa = PBXBuildFile; fileRef = FF951BE21A28E52F00E581AB /* TrajectoryHistory.m */; };
+		FF951BE91A28EDE800E581AB /* icone_camera_girar.png in Resources */ = {isa = PBXBuildFile; fileRef = FF951BE51A28EDE800E581AB /* icone_camera_girar.png */; };
+		FF951BEA1A28EDE800E581AB /* icone_camera_ok.png in Resources */ = {isa = PBXBuildFile; fileRef = FF951BE61A28EDE800E581AB /* icone_camera_ok.png */; };
+		FF951BEB1A28EDE800E581AB /* icone_camera_voltar.png in Resources */ = {isa = PBXBuildFile; fileRef = FF951BE71A28EDE800E581AB /* icone_camera_voltar.png */; };
+		FF951BEC1A28EDE800E581AB /* icone_camerar_capturar.png in Resources */ = {isa = PBXBuildFile; fileRef = FF951BE81A28EDE800E581AB /* icone_camerar_capturar.png */; };
+		FF951BF71A28EDFE00E581AB /* icoen_tempo.png in Resources */ = {isa = PBXBuildFile; fileRef = FF951BEE1A28EDFE00E581AB /* icoen_tempo.png */; };
+		FF951BF81A28EDFE00E581AB /* icone_bpm.png in Resources */ = {isa = PBXBuildFile; fileRef = FF951BEF1A28EDFE00E581AB /* icone_bpm.png */; };
+		FF951BF91A28EDFE00E581AB /* icone_calorias.png in Resources */ = {isa = PBXBuildFile; fileRef = FF951BF01A28EDFE00E581AB /* icone_calorias.png */; };
+		FF951BFA1A28EDFE00E581AB /* icone_foto_trajeto_selected.png in Resources */ = {isa = PBXBuildFile; fileRef = FF951BF11A28EDFE00E581AB /* icone_foto_trajeto_selected.png */; };
+		FF951BFB1A28EDFE00E581AB /* icone_foto_trajeto.png in Resources */ = {isa = PBXBuildFile; fileRef = FF951BF21A28EDFE00E581AB /* icone_foto_trajeto.png */; };
+		FF951BFC1A28EDFE00E581AB /* icone_km.png in Resources */ = {isa = PBXBuildFile; fileRef = FF951BF31A28EDFE00E581AB /* icone_km.png */; };
+		FF951BFD1A28EDFE00E581AB /* icone_pontuacao.png in Resources */ = {isa = PBXBuildFile; fileRef = FF951BF41A28EDFE00E581AB /* icone_pontuacao.png */; };
+		FF951BFE1A28EDFE00E581AB /* icone_usuario.png in Resources */ = {isa = PBXBuildFile; fileRef = FF951BF51A28EDFE00E581AB /* icone_usuario.png */; };
+		FF951BFF1A28EDFE00E581AB /* icone_velocimetro.png in Resources */ = {isa = PBXBuildFile; fileRef = FF951BF61A28EDFE00E581AB /* icone_velocimetro.png */; };
+		FF951C091A28F0C400E581AB /* icone_add_trajeto_selected.png in Resources */ = {isa = PBXBuildFile; fileRef = FF951C011A28F0C400E581AB /* icone_add_trajeto_selected.png */; };
+		FF951C0A1A28F0C400E581AB /* icone_add_trajeto.png in Resources */ = {isa = PBXBuildFile; fileRef = FF951C021A28F0C400E581AB /* icone_add_trajeto.png */; };
+		FF951C0B1A28F0C400E581AB /* icone_compartilhar_trajeto_selected.png in Resources */ = {isa = PBXBuildFile; fileRef = FF951C031A28F0C400E581AB /* icone_compartilhar_trajeto_selected.png */; };
+		FF951C0C1A28F0C400E581AB /* icone_compartilhar_trajeto.png in Resources */ = {isa = PBXBuildFile; fileRef = FF951C041A28F0C400E581AB /* icone_compartilhar_trajeto.png */; };
+		FF951C0D1A28F0C400E581AB /* icone_foto_selected.png in Resources */ = {isa = PBXBuildFile; fileRef = FF951C051A28F0C400E581AB /* icone_foto_selected.png */; };
+		FF951C0E1A28F0C400E581AB /* icone_foto.png in Resources */ = {isa = PBXBuildFile; fileRef = FF951C061A28F0C400E581AB /* icone_foto.png */; };
+		FF951C0F1A28F0C400E581AB /* icone_trajeto_compartilhar_selected.png in Resources */ = {isa = PBXBuildFile; fileRef = FF951C071A28F0C400E581AB /* icone_trajeto_compartilhar_selected.png */; };
+		FF951C101A28F0C400E581AB /* icone_trajeto_compartilhar.png in Resources */ = {isa = PBXBuildFile; fileRef = FF951C081A28F0C400E581AB /* icone_trajeto_compartilhar.png */; };
 		FFAC18FF19DB200E00B17487 /* FinishedRunningVC.m in Sources */ = {isa = PBXBuildFile; fileRef = FFAC18FE19DB200E00B17487 /* FinishedRunningVC.m */; };
 		FFAC190B19DC86C400B17487 /* SocialSharingVC.m in Sources */ = {isa = PBXBuildFile; fileRef = FFAC190A19DC86C400B17487 /* SocialSharingVC.m */; };
 		FFAC193D19E3171C00B17487 /* HomeScreenVC.m in Sources */ = {isa = PBXBuildFile; fileRef = FFAC193C19E3171C00B17487 /* HomeScreenVC.m */; };
@@ -352,6 +373,27 @@
 		FF951BDC1A28E52A00E581AB /* TestUpdater.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestUpdater.m; sourceTree = "<group>"; };
 		FF951BE11A28E52F00E581AB /* TrajectoryHistory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TrajectoryHistory.h; sourceTree = "<group>"; };
 		FF951BE21A28E52F00E581AB /* TrajectoryHistory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TrajectoryHistory.m; sourceTree = "<group>"; };
+		FF951BE51A28EDE800E581AB /* icone_camera_girar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icone_camera_girar.png; sourceTree = "<group>"; };
+		FF951BE61A28EDE800E581AB /* icone_camera_ok.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icone_camera_ok.png; sourceTree = "<group>"; };
+		FF951BE71A28EDE800E581AB /* icone_camera_voltar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icone_camera_voltar.png; sourceTree = "<group>"; };
+		FF951BE81A28EDE800E581AB /* icone_camerar_capturar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icone_camerar_capturar.png; sourceTree = "<group>"; };
+		FF951BEE1A28EDFE00E581AB /* icoen_tempo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icoen_tempo.png; sourceTree = "<group>"; };
+		FF951BEF1A28EDFE00E581AB /* icone_bpm.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icone_bpm.png; sourceTree = "<group>"; };
+		FF951BF01A28EDFE00E581AB /* icone_calorias.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icone_calorias.png; sourceTree = "<group>"; };
+		FF951BF11A28EDFE00E581AB /* icone_foto_trajeto_selected.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icone_foto_trajeto_selected.png; sourceTree = "<group>"; };
+		FF951BF21A28EDFE00E581AB /* icone_foto_trajeto.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icone_foto_trajeto.png; sourceTree = "<group>"; };
+		FF951BF31A28EDFE00E581AB /* icone_km.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icone_km.png; sourceTree = "<group>"; };
+		FF951BF41A28EDFE00E581AB /* icone_pontuacao.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icone_pontuacao.png; sourceTree = "<group>"; };
+		FF951BF51A28EDFE00E581AB /* icone_usuario.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icone_usuario.png; sourceTree = "<group>"; };
+		FF951BF61A28EDFE00E581AB /* icone_velocimetro.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icone_velocimetro.png; sourceTree = "<group>"; };
+		FF951C011A28F0C400E581AB /* icone_add_trajeto_selected.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icone_add_trajeto_selected.png; sourceTree = "<group>"; };
+		FF951C021A28F0C400E581AB /* icone_add_trajeto.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icone_add_trajeto.png; sourceTree = "<group>"; };
+		FF951C031A28F0C400E581AB /* icone_compartilhar_trajeto_selected.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icone_compartilhar_trajeto_selected.png; sourceTree = "<group>"; };
+		FF951C041A28F0C400E581AB /* icone_compartilhar_trajeto.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icone_compartilhar_trajeto.png; sourceTree = "<group>"; };
+		FF951C051A28F0C400E581AB /* icone_foto_selected.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icone_foto_selected.png; sourceTree = "<group>"; };
+		FF951C061A28F0C400E581AB /* icone_foto.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icone_foto.png; sourceTree = "<group>"; };
+		FF951C071A28F0C400E581AB /* icone_trajeto_compartilhar_selected.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icone_trajeto_compartilhar_selected.png; sourceTree = "<group>"; };
+		FF951C081A28F0C400E581AB /* icone_trajeto_compartilhar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icone_trajeto_compartilhar.png; sourceTree = "<group>"; };
 		FFAC18FD19DB200E00B17487 /* FinishedRunningVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FinishedRunningVC.h; sourceTree = "<group>"; };
 		FFAC18FE19DB200E00B17487 /* FinishedRunningVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FinishedRunningVC.m; sourceTree = "<group>"; };
 		FFAC190919DC86C400B17487 /* SocialSharingVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SocialSharingVC.h; sourceTree = "<group>"; };
@@ -558,6 +600,9 @@
 				C53AAC061A1BB725000AD02C /* academia_5.png */,
 				C53AAC071A1BB725000AD02C /* academia_6.png */,
 				C52024481A26690B00DDF73B /* Exercicio.png */,
+				FF951C001A28F0B500E581AB /* trajeto */,
+				FF951BED1A28EDF300E581AB /* corrida */,
+				FF951BE41A28EDDC00E581AB /* camera */,
 				C53AAC131A1BC4B7000AD02C /* academia */,
 				C53AABF01A1BA5D9000AD02C /* tab_bar */,
 				C5B62BF61A15235200F969D8 /* Fonts */,
@@ -736,6 +781,48 @@
 			name = GraphicScroller;
 			sourceTree = "<group>";
 		};
+		FF951BE41A28EDDC00E581AB /* camera */ = {
+			isa = PBXGroup;
+			children = (
+				FF951BE51A28EDE800E581AB /* icone_camera_girar.png */,
+				FF951BE61A28EDE800E581AB /* icone_camera_ok.png */,
+				FF951BE71A28EDE800E581AB /* icone_camera_voltar.png */,
+				FF951BE81A28EDE800E581AB /* icone_camerar_capturar.png */,
+			);
+			name = camera;
+			sourceTree = "<group>";
+		};
+		FF951BED1A28EDF300E581AB /* corrida */ = {
+			isa = PBXGroup;
+			children = (
+				FF951BEE1A28EDFE00E581AB /* icoen_tempo.png */,
+				FF951BEF1A28EDFE00E581AB /* icone_bpm.png */,
+				FF951BF01A28EDFE00E581AB /* icone_calorias.png */,
+				FF951BF11A28EDFE00E581AB /* icone_foto_trajeto_selected.png */,
+				FF951BF21A28EDFE00E581AB /* icone_foto_trajeto.png */,
+				FF951BF31A28EDFE00E581AB /* icone_km.png */,
+				FF951BF41A28EDFE00E581AB /* icone_pontuacao.png */,
+				FF951BF51A28EDFE00E581AB /* icone_usuario.png */,
+				FF951BF61A28EDFE00E581AB /* icone_velocimetro.png */,
+			);
+			name = corrida;
+			sourceTree = "<group>";
+		};
+		FF951C001A28F0B500E581AB /* trajeto */ = {
+			isa = PBXGroup;
+			children = (
+				FF951C011A28F0C400E581AB /* icone_add_trajeto_selected.png */,
+				FF951C021A28F0C400E581AB /* icone_add_trajeto.png */,
+				FF951C031A28F0C400E581AB /* icone_compartilhar_trajeto_selected.png */,
+				FF951C041A28F0C400E581AB /* icone_compartilhar_trajeto.png */,
+				FF951C051A28F0C400E581AB /* icone_foto_selected.png */,
+				FF951C061A28F0C400E581AB /* icone_foto.png */,
+				FF951C071A28F0C400E581AB /* icone_trajeto_compartilhar_selected.png */,
+				FF951C081A28F0C400E581AB /* icone_trajeto_compartilhar.png */,
+			);
+			name = trajeto;
+			sourceTree = "<group>";
+		};
 		FFAC193E19E3172300B17487 /* Exercitar */ = {
 			isa = PBXGroup;
 			children = (
@@ -865,6 +952,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FF951C101A28F0C400E581AB /* icone_trajeto_compartilhar.png in Resources */,
+				FF951C0B1A28F0C400E581AB /* icone_compartilhar_trajeto_selected.png in Resources */,
 				C5B62C591A1527F600F969D8 /* icone_calendario_31.png in Resources */,
 				C5B62C091A1525F400F969D8 /* Lato-Black.ttf in Resources */,
 				C53AAC091A1BB725000AD02C /* academia_6.png in Resources */,
@@ -872,18 +961,24 @@
 				C53AAC1D1A1BC4B7000AD02C /* icone_serie_selected.png in Resources */,
 				C5B62C0A1A1525F400F969D8 /* Lato-BlackItalic.ttf in Resources */,
 				C53AAC1C1A1BC4B7000AD02C /* icone_serie.png in Resources */,
+				FF951BEB1A28EDE800E581AB /* icone_camera_voltar.png in Resources */,
 				C5B62C4D1A1527F600F969D8 /* icone_calendario_19.png in Resources */,
 				C5B62C0B1A1525F400F969D8 /* Lato-Bold.ttf in Resources */,
 				C5B62C0C1A1525F400F969D8 /* Lato-BoldItalic.ttf in Resources */,
+				FF951C0C1A28F0C400E581AB /* icone_compartilhar_trajeto.png in Resources */,
 				C5DB392F1A28D7400066E1BC /* icone_hamburguer.png in Resources */,
 				C5B62C0D1A1525F400F969D8 /* Lato-Hairline.ttf in Resources */,
+				FF951BFE1A28EDFE00E581AB /* icone_usuario.png in Resources */,
 				C5B62C541A1527F600F969D8 /* icone_calendario_26.png in Resources */,
 				C5B62C4A1A1527F600F969D8 /* icone_calendario_16.png in Resources */,
 				C53AAC1A1A1BC4B7000AD02C /* icone_alternar.png in Resources */,
 				C5B62C431A1527F600F969D8 /* icone_calendario_09.png in Resources */,
+				FF951BFF1A28EDFE00E581AB /* icone_velocimetro.png in Resources */,
 				C5B62C3E1A1527F600F969D8 /* icone_calendario_04.png in Resources */,
+				FF951C0F1A28F0C400E581AB /* icone_trajeto_compartilhar_selected.png in Resources */,
 				C53AAC081A1BB725000AD02C /* academia_5.png in Resources */,
 				C53AABFD1A1BA5D9000AD02C /* icone_compartilhar_tab.png in Resources */,
+				FF951C0E1A28F0C400E581AB /* icone_foto.png in Resources */,
 				C5B62C511A1527F600F969D8 /* icone_calendario_23.png in Resources */,
 				C5B62C0E1A1525F400F969D8 /* Lato-HairlineItalic.ttf in Resources */,
 				C5B62C411A1527F600F969D8 /* icone_calendario_07.png in Resources */,
@@ -892,17 +987,23 @@
 				C5B62C0F1A1525F400F969D8 /* Lato-Heavy.ttf in Resources */,
 				C5B62C501A1527F600F969D8 /* icone_calendario_22.png in Resources */,
 				C5B62C451A1527F600F969D8 /* icone_calendario_11.png in Resources */,
+				FF951BE91A28EDE800E581AB /* icone_camera_girar.png in Resources */,
 				C5B62C401A1527F600F969D8 /* icone_calendario_06.png in Resources */,
 				C5B62C101A1525F400F969D8 /* Lato-HeavyItalic.ttf in Resources */,
 				C5B62C4E1A1527F600F969D8 /* icone_calendario_20.png in Resources */,
+				FF951C091A28F0C400E581AB /* icone_add_trajeto_selected.png in Resources */,
 				C5B62C421A1527F600F969D8 /* icone_calendario_08.png in Resources */,
 				C5B62C111A1525F400F969D8 /* Lato-Italic.ttf in Resources */,
+				FF951BFA1A28EDFE00E581AB /* icone_foto_trajeto_selected.png in Resources */,
 				C5B62C4C1A1527F600F969D8 /* icone_calendario_18.png in Resources */,
 				C53AAC1E1A1BC4B7000AD02C /* icone_tempo_selected.png in Resources */,
 				C5B62C121A1525F400F969D8 /* Lato-Light.ttf in Resources */,
 				C5B62C581A1527F600F969D8 /* icone_calendario_30.png in Resources */,
+				FF951BFC1A28EDFE00E581AB /* icone_km.png in Resources */,
 				C5B62C131A1525F400F969D8 /* Lato-LightItalic.ttf in Resources */,
 				C5B62C3D1A1527F600F969D8 /* icone_calendario_03.png in Resources */,
+				FF951BF81A28EDFE00E581AB /* icone_bpm.png in Resources */,
+				FF951BFD1A28EDFE00E581AB /* icone_pontuacao.png in Resources */,
 				C5B62C471A1527F600F969D8 /* icone_calendario_13.png in Resources */,
 				C5B62C141A1525F400F969D8 /* Lato-Medium.ttf in Resources */,
 				C5B62C151A1525F400F969D8 /* Lato-MediumItalic.ttf in Resources */,
@@ -912,11 +1013,15 @@
 				C53AAC031A1BA5D9000AD02C /* icone_pontuacao_tab.png in Resources */,
 				C53AABFC1A1BA5D9000AD02C /* icone_cancelar_tab.png in Resources */,
 				C5B62C181A1525F400F969D8 /* Lato-SemiboldItalic.ttf in Resources */,
+				FF951C0D1A28F0C400E581AB /* icone_foto_selected.png in Resources */,
 				C5B62C191A1525F400F969D8 /* Lato-Thin.ttf in Resources */,
 				C5B62C3F1A1527F600F969D8 /* icone_calendario_05.png in Resources */,
 				C5B62C1A1A1525F400F969D8 /* Lato-ThinItalic.ttf in Resources */,
+				FF951BFB1A28EDFE00E581AB /* icone_foto_trajeto.png in Resources */,
+				FF951C0A1A28F0C400E581AB /* icone_add_trajeto.png in Resources */,
 				C5B62C571A1527F600F969D8 /* icone_calendario_29.png in Resources */,
 				C5B62C4F1A1527F600F969D8 /* icone_calendario_21.png in Resources */,
+				FF951BEA1A28EDE800E581AB /* icone_camera_ok.png in Resources */,
 				C5B62BED1A14056000F969D8 /* Main.storyboard in Resources */,
 				C5B62C441A1527F600F969D8 /* icone_calendario_10.png in Resources */,
 				C5B62C461A1527F600F969D8 /* icone_calendario_12.png in Resources */,
@@ -925,6 +1030,8 @@
 				C5B62C4B1A1527F600F969D8 /* icone_calendario_17.png in Resources */,
 				C5B62C3B1A1527F600F969D8 /* icone_calendario_01.png in Resources */,
 				C5B62C521A1527F600F969D8 /* icone_calendario_24.png in Resources */,
+				FF951BEC1A28EDE800E581AB /* icone_camerar_capturar.png in Resources */,
+				FF951BF71A28EDFE00E581AB /* icoen_tempo.png in Resources */,
 				C53AABFF1A1BA5D9000AD02C /* icone_home_tab.png in Resources */,
 				C53AAC041A1BA5D9000AD02C /* icone_voltar_tab.png in Resources */,
 				C5B62C481A1527F600F969D8 /* icone_calendario_14.png in Resources */,
@@ -935,6 +1042,7 @@
 				C53AABFE1A1BA5D9000AD02C /* icone_editar_tab.png in Resources */,
 				C53AAC011A1BA5D9000AD02C /* icone_info_user_tab.png in Resources */,
 				C5B62C491A1527F600F969D8 /* icone_calendario_15.png in Resources */,
+				FF951BF91A28EDFE00E581AB /* icone_calorias.png in Resources */,
 				C53AAC001A1BA5D9000AD02C /* icone_ideia_tab.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
