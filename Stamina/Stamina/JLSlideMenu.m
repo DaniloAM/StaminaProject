@@ -13,7 +13,6 @@
 #define tabBarHeightPer 13/100
 #define cellMenuHeight 11.3/100
 #define cellSubMenuHeight 8.3/100
-#define navigationBarSize 10.6/100
 #define perMenuOpen 10.0/100.0
 #define perBackView 20.0/100.0
 #define M1 4
@@ -28,7 +27,6 @@
 @implementation JLSlideMenu
 //start will/did appear and something like that
 -(void)viewDidLoad{
-    [self setStartSizeBar:self.navigationController.navigationBar.frame.size];
     [super viewDidLoad];
     [self.navigationItem setTitle:@"Início"];
 }
@@ -97,7 +95,6 @@
 -(void)createNavigationBar{
     CGSize screenSize = [[UIScreen mainScreen] bounds].size;
     self.navigationController.navigationBar.translucent = NO;
-    [self.navigationController.navigationBar setFrame:CGRectMake(0, 20, screenSize.width, screenSize.height*navigationBarSize)];
     float btnXStart =screenSize.width*32/885;
     float btnWidth =screenSize.width*80/885*1.5;
     float btnyStart =-20+self.navigationController.navigationBar.frame.size.height/2+btnWidth/10;

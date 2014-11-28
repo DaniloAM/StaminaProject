@@ -31,18 +31,13 @@
 
 -(void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
-    CGRect rect = [self.table frame];
-    rect.origin = [self pointStart];
-    [self.table setFrame:rect];
     [self hideBarWithAnimation:1];
 
 
 }
 -(void)viewDidAppear:(BOOL)animated{
     [super viewDidAppear:animated];
-    CGRect rect = [self.table frame];
-    rect.origin = [self pointStart];
-    [self.table setFrame:rect];
+
 
 }
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
@@ -103,9 +98,9 @@
     return 40;
 }
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
-{UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+{
+    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
     ExercicioTVC *myVC;
-    
     myVC= (ExercicioTVC *)[storyboard instantiateViewControllerWithIdentifier:@"ExercicioTVC"];
     NSArray *array;
     ExercisesList *temp = [ExercisesList alloc];

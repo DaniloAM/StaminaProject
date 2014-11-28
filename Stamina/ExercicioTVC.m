@@ -16,7 +16,6 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    [self setTable:[[UITableView alloc] init]];
     self.table.delegate = self;
     self.table.dataSource=self;
     [self.table setSeparatorStyle:UITableViewCellSeparatorStyleNone];
@@ -26,12 +25,14 @@
     if(![exe arrayOfExercises]){
         [exe setArrayOfExercises:[NSMutableArray array]];
     }
+    
     //[self firstButtonMethod:@selector(function1) fromClass:self withImage:nil];
     [super hideBarWithAnimation:1];
     UILongPressGestureRecognizer *lpgr = [[UILongPressGestureRecognizer alloc]
                                           initWithTarget:self action:@selector(handleLongPress:)];
     lpgr.minimumPressDuration = 1.0; //seconds
     lpgr.delegate = self;
+
     [self.table addGestureRecognizer:lpgr];
     [self showBarWithAnimation:YES];
     [self changeBarNameWith:[self strMuscle]];
@@ -68,8 +69,9 @@
 }
 -(void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
-    CGSize size = [[UIScreen mainScreen] bounds].size;
-    [self.table setFrame:CGRectMake(0, 20, size.width, size.height- self.navigationController.navigationBar.frame.size.height)];
+    self.table.delegate = self;
+    self.table.dataSource=self;
+
 }
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
     return 1;
@@ -104,7 +106,7 @@
             return cell;
         }
     }
-   
+    cell.textLabel.textColor = [UIColor staminaBlackColor];
     return cell;
 }
 

@@ -244,11 +244,11 @@
     }
     NSString *str;
     if([exerc time]){
-        str = [NSString stringWithFormat:@"%ld. %@ - %02ld:%02ld",indexPath.row+1,[exercise name],[exerc minutos],[exerc segundos]];
+        str = [NSString stringWithFormat:@"%d. %@ - %02ld:%02ld",indexPath.row+1,[exercise name],[exerc minutos],(long)[exerc segundos]];
         
     }
     else {
-        str = [NSString stringWithFormat:@"%ld. %@ - %02ld x %02ld",indexPath.row+1,[exercise name] ,(long)[exerc serie],(long)[exerc repeticoes]];
+        str = [NSString stringWithFormat:@"%d. %@ - %02ld x %02ld",indexPath.row+1,[exercise name] ,(long)[exerc serie],(long)[exerc repeticoes]];
         
     }
     cell.textLabel.text = str;

@@ -116,7 +116,7 @@
     NSInteger hour = [components hour];
     NSInteger minute = [components minute];
     [user setTimeAlarmBeforeTraining:hour*60+minute];
-    [_lbl setText:[NSString stringWithFormat:@"  Lembrete                                         %02ldh:%02ldm",hour,minute]];
+    [_lbl setText:[NSString stringWithFormat:@"  Lembrete                                         %02ldh:%02ldm",(long)hour,(long)minute]];
 }
 -(BOOL)textFieldShouldBeginEditing:(UITextField *)textField{
     NSString *newStr;
@@ -284,7 +284,7 @@
     
     switch (x) {
         case 0:
-            return [NSString stringWithFormat:@"  Lembrete                                         %02ldh:%02ldm", [user timeAlarmBeforeTraining]/60,(long)[user timeAlarmBeforeTraining]%60];
+            return [NSString stringWithFormat:@"  Lembrete                                         %02dh:%02ldm", [user timeAlarmBeforeTraining]/60,(long)[user timeAlarmBeforeTraining]%60];
         case 1:
             return @"  Idioma";
         case 2:
