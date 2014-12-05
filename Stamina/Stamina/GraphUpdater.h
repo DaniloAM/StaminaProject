@@ -32,6 +32,12 @@ typedef enum DateIncreaser {
 @property NSDate *graphCenterDate;
 @property CGRect graphFrame;
 
+@property UIFont *labelFont;
+
+@property NSMutableArray *currentComponents;
+@property NSMutableArray *previousComponents;
+@property NSMutableArray *nextComponents;
+
 -(id)initWithGraphFrame: (CGRect)frame;
 
 -(NSArray *)currentNumberArrayWithComponents: (NSMutableArray *)array;

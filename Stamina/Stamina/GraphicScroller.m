@@ -8,10 +8,12 @@
 
 #import "GraphicScroller.h"
 
+//Graphic size constant
 #define graphHeight 280.0
-#define graphWidth 270.0
+#define graphWidth 300.0
 #define borderIncrease 60.0
 
+//Graphic animation constant
 #define animationDuration 0.8
 #define expandFactor 1.1
 
@@ -19,16 +21,45 @@
 @implementation GraphicScroller
 
 
+#pragma mark - graphic init
+
+-(id)init {
+    self = [super init];
+    
+    if(self) {
+        
+        [self setFont:[UIFont fontWithName:@"Avenir" size:13.0]];
+        [self setLineColor:[UIColor staminaBlackColor]];
+    }
+    
+    return self;
+
+}
+
 
 -(void)initGraphic {
     
-    [self setMonthLabel:[[UILabel alloc] initWithFrame:CGRectMake(20, 100, 140, 100)]];
+    [self setMonthDate:[NSDate date]];
+    [self setGraphDrawer:[[GraphicDrawer alloc] init]];
+    
+    //Set graphic font
+    [[self graphDrawer] setGraphFont:[self font]];
+    [[self updater] setLabelFont:[self font]];
+    
+    //set graphic line color
+    [[self graphDrawer] setLineColor:[self lineColor]];
+    
+    //set graphic frame
+    [[self graphDrawer] setGraphicFrame:CGRectMake(0, 0, graphWidth, graphHeight)];
+    
+    //prepare month label
+    [self setMonthLabel:[[UILabel alloc] initWithFrame:CGRectMake(20, 50, 140, 100)]];
     [[self monthLabel] setNumberOfLines:2];
     [[self monthLabel] setFont:[UIFont fontWithName:@"Avenir" size:20.0]];
     [[self monthLabel] setText:@"TESTA"];
     
+    //basics inits
     [self setGraphLoadState:GSNormal];
-    [self setLineColor:[UIColor blackColor]];
     [self setGraphicFrame:CGRectMake(0, 0, graphWidth, graphHeight)];
     
     [self setGraphicScrollView:[[UIScrollView alloc] init]];
@@ -37,8 +68,10 @@
     [[self graphicScrollView] setDelegate:self];
     [[self graphicScrollView] setFrame:[self graphicFrame]];
     [[self graphicScrollView] setContentSize:CGSizeMake(graphWidth * viewSizeNumber, graphHeight)];
-    [[self graphicScrollView] setContentOffset:CGPointMake(graphWidth * 2, 0)];
     
+    
+    
+    //double tap gesture
     UITapGestureRecognizer *doubleTap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(doubleTapAction)];
 
     [doubleTap setNumberOfTapsRequired:2];
@@ -47,21 +80,12 @@
 }
 
 
+#pragma mark - graphic creation and customization
 
--(void)doubleTapAction {
+
+-(void)setGraphicFont:(UIFont *)font {
     
-    if([self graphLoadState] == GSExpanding || [self graphLoadState] == GSContracting) {
-        return;
-    }
-    
-    if([[self updater] isExpanded]) {
-        [self setGraphLoadState:GSContracting];
-    }
-    
-    else [self setGraphLoadState:GSExpanding];
-    
-    [self performAnimationByGraphState];
-    
+    [self setFont:font];
 }
 
 
@@ -73,8 +97,8 @@
 
 -(void)startNewGraphicScrollViewWithUpdater: (GraphUpdater *)updater expanded:(BOOL)expanded {
     
-    [self initGraphic];
     [self setUpdater:updater];
+    [self initGraphic];
     [[self updater] setIsExpanded:expanded];
     
     CGRect viewFrame = CGRectMake(0, 0, graphWidth * viewSizeNumber, graphHeight);
@@ -85,10 +109,11 @@
     
     [self prepareGraphicViews];
     [self reloadScrollViewGraphic];
-    [self changeMonthText];
     
 }
 
+
+#pragma mark - graphic preparation
 
 
 -(void)prepareGraphicViews {
@@ -98,16 +123,13 @@
     
     
     //Images of the graphics and month labels
-    UIImageView *previous = [self generateGraphImageWithNumbers:
-                             [[self updater] previousNumberArray] numberShowingInView:number];
+    UIImageView *previous = [[self graphDrawer] generateGraphImageWithComponents:[[self updater] previousNumberArray] numberShowingInView:number];
     
     
-    UIImageView *current = [self generateGraphImageWithNumbers:
-                            [[self updater] currentNumberArray] numberShowingInView:number];
+    UIImageView *current = [[self graphDrawer] generateGraphImageWithComponents:[[self updater] currentNumberArray] numberShowingInView:number];
     
     
-    UIImageView *next = [self generateGraphImageWithNumbers:
-                         [[self updater] nextNumberArray] numberShowingInView:number];
+    UIImageView *next = [[self graphDrawer] generateGraphImageWithComponents:[[self updater] nextNumberArray] numberShowingInView:number];
     
     
     //Add the images inside the views
@@ -116,56 +138,18 @@
     [[self previousGraphicView] addSubview:previous];
     
     //Add bottom labels inside the views
-    [self addBottomLabels:[[self updater] currentBottomLabels] inView:[self currentGraphicView]];
-    [self addBottomLabels:[[self updater] nextBottomLabels] inView:[self nextGraphicView]];
-    [self addBottomLabels:[[self updater] previousBottomLabels] inView:[self previousGraphicView]];
+    [[self graphDrawer] addGraphBottomImageWithLabelArray:[[self updater] currentBottomLabels] numberShowingInVier:[[self updater] numberInView] inView:[self currentGraphicView]];
+    [[self graphDrawer] addGraphBottomImageWithLabelArray:[[self updater] nextBottomLabels] numberShowingInVier:[[self updater] numberInView] inView:[self nextGraphicView]];
+    [[self graphDrawer] addGraphBottomImageWithLabelArray:[[self updater] previousBottomLabels] numberShowingInVier:[[self updater] numberInView] inView:[self previousGraphicView]];
+    
+    
+    //set the array components so the graphic knows what month is current showing
+    [self setGraphicComponents:[[self updater] currentComponents]];
     
 }
 
 
--(void)addBottomLabels: (NSArray *)labelArray inView: (UIView *)view  {
-    
-    UIImage *image;
-    
-    double widthFactor = [self graphicFrame].size.width / _updater.numberInView;
-    
-    CGSize contextSize = CGSizeMake(_graphicFrame.size.width * viewSizeNumber, borderIncrease);
-    
-    UIGraphicsBeginImageContextWithOptions(contextSize, NO, 0.0);
-    
-    CGRect frame = CGRectMake(-widthFactor / 2, 0, widthFactor, borderIncrease / 1.5);
-    
-    for(int x = 0; x < [labelArray count]; x++) {
-        
-        UILabel *label = [labelArray objectAtIndex:x];
-        [label drawTextInRect:frame];
-        frame.origin.x += widthFactor;
-        
-        if(frame.origin.x > (graphWidth * 5) + widthFactor) {
-            break;
-        }
-
-    }
-    
-    image = UIGraphicsGetImageFromCurrentImageContext();
-    UIGraphicsEndImageContext();
-    
-    UIImageView *bottomImage = [[UIImageView alloc] initWithFrame:CGRectMake(0, graphHeight - borderIncrease, graphWidth * 5, borderIncrease)];
-    
-    bottomImage.image = image;
-    
-    [view addSubview:bottomImage];
-    
-}
-
-
--(void)addSubviews: (NSArray *)subviews inView: (UIView *)view {
-    
-    for(int x = 0; x < [subviews count]; x++) {
-        [view addSubview:[subviews objectAtIndex:x]];
-    }
-}
-
+#pragma mark - graphic reloaders
 
 
 -(void)reloadScrollViewGraphic {
@@ -180,6 +164,11 @@
         [self setCurrentGraphicView:[self nextGraphicView]];
         
         [self setGraphLoadState:GSLoadingNext];
+        
+        [self setMonthDate:[NSDate dateWithTimeInterval:0 sinceDate:[[[self graphicComponents] lastObject] GNDate]]];
+        
+        [[self updater] setPreviousComponents:[NSMutableArray arrayWithArray:[self graphicComponents]]];
+        [self setGraphicComponents:[NSMutableArray arrayWithArray:[[self updater] nextComponents]]];
     }
     
     else if([self graphLoadState] == GSBackwarding) {
@@ -190,7 +179,15 @@
         [self setCurrentGraphicView:[self previousGraphicView]];
         
         [self setGraphLoadState:GSLoadingPrevious];
+        
+        [self setMonthDate:[NSDate dateWithTimeInterval:0 sinceDate:[[[self graphicComponents] objectAtIndex:1] GNDate]]];
+        
+        [[self updater] setNextComponents:[NSMutableArray arrayWithArray:[self graphicComponents]]];
+        [self setGraphicComponents:[NSMutableArray arrayWithArray:[[self updater] previousComponents]]];
     }
+    
+    
+    [self changeMonthLabelText];
     
     
     [[self graphicScrollView] addSubview:[self currentGraphicView]];
@@ -198,6 +195,44 @@
     [[self graphicScrollView] setContentOffset:CGPointMake(graphWidth * 2, 0)];
     
     [self performSelectorInBackground:@selector(loadNewGraphicByState) withObject:nil];
+    
+}
+
+
+
+-(void)loadNewGraphicByState {
+    
+    if([self graphLoadState] == GSLoadingNext) {
+        
+        CGRect viewFrame = CGRectMake(0, 0, graphWidth * viewSizeNumber, graphHeight);
+        [self setNextGraphicView:[[UIView alloc] initWithFrame:viewFrame]];
+        
+        [self removeAllSubviewsFromView:[self nextGraphicView]];
+        
+        UIImageView *next = [[self graphDrawer] generateGraphImageWithComponents:[[self updater] nextNumberArray] numberShowingInView:[[self updater] numberInView]];
+        
+        [[self nextGraphicView] addSubview:next];
+        
+        [[self graphDrawer] addGraphBottomImageWithLabelArray:[[self updater] nextBottomLabels] numberShowingInVier:[[self updater] numberInView] inView:[self nextGraphicView]];
+        
+        [self setGraphLoadState:GSNormal];
+        
+    }
+    
+    else if([self graphLoadState] == GSLoadingPrevious) {
+        
+        CGRect viewFrame = CGRectMake(0, 0, graphWidth * viewSizeNumber, graphHeight);
+        [self setPreviousGraphicView:[[UIView alloc] initWithFrame:viewFrame]];
+        
+        UIImageView *previous = [[self graphDrawer] generateGraphImageWithComponents:[[self updater] previousNumberArray] numberShowingInView:[[self updater] numberInView]];
+        
+        [[self previousGraphicView] addSubview:previous];
+        
+        [[self graphDrawer] addGraphBottomImageWithLabelArray:[[self updater] previousBottomLabels] numberShowingInVier:[[self updater] numberInView] inView:[self previousGraphicView]];
+        
+        [self setGraphLoadState:GSNormal];
+        
+    }
     
 }
 
@@ -215,221 +250,18 @@
     
 }
 
--(void)checkMonthLabel {
+
+-(void)addSubviews: (NSArray *)subviews inView: (UIView *)view {
     
-    double point = [[self graphicScrollView] contentOffset].x + (graphWidth / 2);
-    
-    
-    if(point < _rightLabelInterval || point > _leftLabelInterval) {
-        return;
+    for(int x = 0; x < [subviews count]; x++) {
+        [view addSubview:[subviews objectAtIndex:x]];
     }
-    
-    else [self changeMonthText];
-    
-}
-
-
--(void)changeMonthText {
-    
-    //get the center point offset of graphic
-    double point = [[self graphicScrollView] contentOffset].x + (graphWidth / 2);
-    
-    //get the graphic center date
-    NSDate *graphDate =  [NSDate dateWithTimeInterval:0 sinceDate:[[self updater] graphCenterDate]];
-    
-    NSDateComponents *comp = [[NSDateComponents alloc] init];
-    
-    [comp setDay:[[self updater] numberInView] / 2];
-    
-    //change the date to the date in the view center
-    graphDate = [[NSCalendar currentCalendar] dateByAddingComponents:comp toDate:graphDate options:0];
-    
-    //prepare to get month name string
-    NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
-    [formatter setDateFormat:@"MMMM"];
-    
-    //get date components
-    comp = [[NSCalendar currentCalendar] components:NSDayCalendarUnit | NSMonthCalendarUnit | NSYearCalendarUnit fromDate:graphDate];
-    
-    
-    //set label text with month and year
-    [[self monthLabel] setText:[NSString stringWithFormat: @"%@\n%d", [formatter stringFromDate:graphDate],(int) comp.year]];
-    
-    //get day count of month
-    NSRange dayRange = [[NSCalendar currentCalendar] rangeOfUnit:NSDayCalendarUnit
-                                                          inUnit:NSMonthCalendarUnit
-                                                         forDate:graphDate];
-    
-    //calculate the limits of this month
-    double widthFactor = [self graphicFrame].size.width / [[self updater] numberInView];
-    
-    NSInteger right = dayRange.length - (comp.day - 1);
-    NSInteger left = comp.day - 1;
-    
-    _rightLabelInterval = point + (right * widthFactor);
-    _leftLabelInterval = point - (left * widthFactor);
-    
-  
-    
-}
-
-
--(void)loadNewGraphicByState {
-    
-    if([self graphLoadState] == GSLoadingNext) {
-        
-        CGRect viewFrame = CGRectMake(0, 0, graphWidth * viewSizeNumber, graphHeight);
-        [self setNextGraphicView:[[UIView alloc] initWithFrame:viewFrame]];
-        
-        [self removeAllSubviewsFromView:[self nextGraphicView]];
-        
-        UIImageView *next = [self generateGraphImageWithNumbers:
-                             [[self updater] nextNumberArray] numberShowingInView:[[self updater] numberInView]];
-        
-        [[self nextGraphicView] addSubview:next];
-        
-        [self addBottomLabels:[[self updater] nextBottomLabels] inView:[self nextGraphicView]];
-        
-        [self changeMonthText];
-        
-        [self setGraphLoadState:GSNormal];
-        
-    }
-    
-    else if([self graphLoadState] == GSLoadingPrevious) {
-        
-        CGRect viewFrame = CGRectMake(0, 0, graphWidth * viewSizeNumber, graphHeight);
-        [self setPreviousGraphicView:[[UIView alloc] initWithFrame:viewFrame]];
-        
-        UIImageView *previous = [self generateGraphImageWithNumbers:
-                                 [[self updater] previousNumberArray] numberShowingInView:[[self updater] numberInView]];
-        
-        [[self previousGraphicView] addSubview:previous];
-        
-        [self addBottomLabels:[[self updater] previousBottomLabels] inView:[self previousGraphicView]];
-        
-        [self changeMonthText];
-        
-        [self setGraphLoadState:GSNormal];
-        
-    }
-    
-    [self changeMonthText];
-    
 }
 
 
 
--(UIImageView *)generateGraphImageWithNumbers: (NSArray *)array numberShowingInView: (NSInteger)numberView {
-    
-    
-    if([array count] < numberView * viewSizeNumber) {
-        return nil;
-    }
-    
-    NSInteger max = 0;
-    
-    
-    
-    for(NSNumber *number in array) {
-        
-        if(number.integerValue > max) {
-            max = number.integerValue;
-        }
-        
-    }
-    
-    /*  Increase the frame by the size of the line,
-     so the line doesnt cross the frame limit.    */
-    
-    
-    _graphicFrame.size.height += borderIncrease;
-    
-    
-    //Factors for the graphic
-    double heightFactor = (graphHeight - borderIncrease) / max;
-    double widthFactor = [self graphicFrame].size.width / numberView;
-    double radius = [self graphicFrame].size.width / 20.0;
-    double lineSize = (graphHeight - borderIncrease) / 40.0;
-    
-    //Case of math error
-    if(max == 0) {
-        heightFactor = 0;
-    }
+#pragma mark - graphic transitions
 
-    
-    UIImage *image = [[UIImage alloc] init];
-    
-    CGSize contextSize = CGSizeMake(_graphicFrame.size.width * viewSizeNumber, _graphicFrame.size.height);
-    
-    //UIGraphicsBeginImageContext(contextSize);
-    UIGraphicsBeginImageContextWithOptions(contextSize, NO, 0.0);
-    CGContextSetStrokeColorWithColor(UIGraphicsGetCurrentContext(), [self lineColor].CGColor);
-    
-    for(NSInteger index = 0; index < [array count]; index++) {
-        
-        
-        //Set point (A)
-        CGPoint pointA = CGPointMake(index * widthFactor,(graphHeight - borderIncrease) - ([[array objectAtIndex:index] doubleValue] * heightFactor) + (graphHeight / 20));
-        
-        //Draw the point (A)
-        CGContextFillEllipseInRect (UIGraphicsGetCurrentContext(), CGRectMake(pointA.x - (radius / 2), pointA.y - (radius / 2), radius, radius));
-        
-        
-        if(index + 1 >= [array count]) {
-            break;
-        }
-        
-        //Set point (B)
-        CGPoint pointB = CGPointMake((index + 1) * widthFactor,(graphHeight - borderIncrease) - ([[array objectAtIndex:index+1] doubleValue] * heightFactor) + (graphHeight / 20));
-        
-        
-        //Draw the line from point (A)
-        CGContextMoveToPoint(UIGraphicsGetCurrentContext(), pointA.x, pointA.y);
-        //to point (B)
-        CGContextAddLineToPoint(UIGraphicsGetCurrentContext(), pointB.x, pointB.y);
-        
-        CGContextSetLineCap(UIGraphicsGetCurrentContext(), kCGLineCapRound);
-        CGContextSetLineWidth(UIGraphicsGetCurrentContext(), lineSize);
-        CGContextStrokePath(UIGraphicsGetCurrentContext());
-        
-    }
-
-    
-    image = UIGraphicsGetImageFromCurrentImageContext();
-    UIGraphicsEndImageContext();
-    
-    
-    _graphicFrame.size.height -= borderIncrease;
-    
-    UIImageView *view = [[UIImageView alloc] initWithFrame:CGRectMake(_graphicFrame.origin.x, _graphicFrame.origin.y, _graphicFrame.size.width * viewSizeNumber, _graphicFrame.size.height)];
-    
-    [view setImage:image];
-    
-    return view;
-    
-}
-
-
-
--(void)scrollViewDidScroll:(UIScrollView *)scrollView {
-    
-    [self checkMonthLabel];
-    
-    if(scrollView.contentOffset.x <= 0 && _graphLoadState == GSNormal) {
-        
-        _graphLoadState = GSBackwarding;
-        [self reloadScrollViewGraphic];
-    }
-    
-    
-    else if(scrollView.contentOffset.x >= graphWidth * 4 && _graphLoadState == GSNormal){
-        
-        _graphLoadState = GSForwarding;
-        [self reloadScrollViewGraphic];
-    }
-    
-}
 
 
 -(void)performAnimationByGraphState {
@@ -468,7 +300,7 @@
                 [sub setAlpha:0.0];
                 
             }
-        
+            
         } completion:^(BOOL finished) {
             
             if(finished) {
@@ -486,10 +318,10 @@
         [[self graphicScrollView] addSubview:view];
         
         [self performSelectorInBackground:@selector(prepareNewGraphicForm) withObject:nil];
-    
+        
         
         [UIView animateWithDuration:animationDuration animations:^{
-                
+            
             for(UIView *sub in [view subviews]) {
                 
                 CGRect frame = sub.frame;
@@ -534,15 +366,16 @@
     [self setCurrentGraphicView:[[UIView alloc] initWithFrame:viewFrame]];
     [self setNextGraphicView:[[UIView alloc] initWithFrame:viewFrame]];
     [self setPreviousGraphicView:[[UIView alloc] initWithFrame:viewFrame]];
-
+    
     [self prepareGraphicViews];
     
     [[self graphicScrollView] setAlpha:0.0];
     
     [self reloadScrollViewGraphic];
     
+    
     while([self isAnimating]) {
-
+        
     }
     
     [self setGraphLoadState:GSNormal];
@@ -560,7 +393,94 @@
     
     NSData* viewCopyData = [NSKeyedArchiver archivedDataWithRootObject:viewToCopy];
     return [NSKeyedUnarchiver unarchiveObjectWithData:viewCopyData];
+    
+}
 
+
+#pragma mark - graphic action
+
+
+-(void)doubleTapAction {
+    
+    if([self graphLoadState] == GSExpanding || [self graphLoadState] == GSContracting) {
+        return;
+    }
+    
+    if([[self updater] isExpanded]) {
+        [self setGraphLoadState:GSContracting];
+    }
+    
+    else [self setGraphLoadState:GSExpanding];
+    
+    [self performAnimationByGraphState];
+    
+}
+
+
+#pragma mark - scrollview delegate
+
+
+-(void)scrollViewDidScroll:(UIScrollView *)scrollView {
+    
+    
+    [self checkMonthLabel];
+    
+    if(scrollView.contentOffset.x <= 0 && _graphLoadState == GSNormal) {
+        
+        _graphLoadState = GSBackwarding;
+        [self reloadScrollViewGraphic];
+    }
+    
+    
+    else if(scrollView.contentOffset.x >= graphWidth * 4 && _graphLoadState == GSNormal){
+        
+        _graphLoadState = GSForwarding;
+        [self reloadScrollViewGraphic];
+    }
+    
+}
+
+
+#pragma mark - graphic month label
+
+
+
+-(void)checkMonthLabel {
+    
+    double widthFactor = [self graphicFrame].size.width / [[self updater] numberInView];
+    double point = [[self graphicScrollView] contentOffset].x + (graphWidth / 2);
+    
+    
+    if([[self updater] numberInView] % 2 != 0) {
+        point += widthFactor;
+    }
+
+    NSInteger componentIndex = point / widthFactor;
+    
+    GNComponent *component = [[self graphicComponents] objectAtIndex:componentIndex];
+    
+    NSInteger currentMonth = [[NSCalendar currentCalendar] component:NSMonthCalendarUnit fromDate:[self monthDate]];
+    NSInteger compMonth = [[NSCalendar currentCalendar] component:NSMonthCalendarUnit fromDate:component.GNDate];
+    
+    if(currentMonth != compMonth) {
+        [self setMonthDate:component.GNDate];
+        [self changeMonthLabelText];
+    }
+    
+}
+
+
+
+-(void)changeMonthLabelText {
+    
+    NSDateComponents *comp = [[NSCalendar currentCalendar] components:NSYearCalendarUnit fromDate:[self monthDate]];
+    
+    NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
+    [formatter setDateFormat:@"MMMM"];
+    
+    //set label text with month and year
+    [[self monthLabel] setText:[NSString stringWithFormat: @"%@\n%d", [formatter stringFromDate:[self monthDate]],(int) comp.year]];
+    
 }
 
 

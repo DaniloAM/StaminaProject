@@ -13,7 +13,7 @@
 +(UILabel *)staminaLabelWithFrame: (CGRect)frame fontSize: (double)size color:(UIColor *)color {
     
     UILabel *label = [[UILabel alloc] initWithFrame:frame];
-    [label setFont:[UIFont fontWithName:@"Avenir" size:size]];
+    [label setFont:[UIFont fontWithName:@"Lato" size:size]];
     [label setTextColor:color];
     
     return label;

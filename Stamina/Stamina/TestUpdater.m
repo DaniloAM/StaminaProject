@@ -11,6 +11,20 @@
 @implementation TestUpdater
 
 
+-(id)init {
+    
+    self = [super init];
+    
+    if(self) {
+        
+        [self setGraphType:GSDistanceGraph];
+        
+    }
+    
+    return self;
+}
+
+
 -(NSArray *)currentNumberArray {
     
     return [super currentNumberArrayWithComponents:[self returnArrayOfComonents]];
@@ -19,7 +33,9 @@
 
 -(NSArray *)nextNumberArray {
     
-    return [super nextNumberArrayWithComponents:[self returnArrayOfComonents]];
+    NSArray *array = [super nextNumberArrayWithComponents:[self returnArrayOfComonents]];
+    
+    return array;
 }
 
 
@@ -54,7 +70,22 @@
         
         GNComponent *component = [[GNComponent alloc] init];
         component.GNDate = [[history objectAtIndex:x] dateDone];
-        component.GraphicNumber = [[history objectAtIndex:x] distance];
+        
+        
+        //Graphic type (distance, points or calories)
+        switch ([self graphType]) {
+            case GSPointsGraph:
+                //component.GraphicNumber = [[history objectAtIndex:x] points];
+                break;
+            case GSDistanceGraph:
+                component.GraphicNumber = [[history objectAtIndex:x] distance];
+                break;
+            case GSCaloriesGraph:
+                //component.GraphicNumber = [[history objectAtIndex:x] calo];
+                break;
+            default:
+                break;
+        }
         
         [array addObject:component];
     }

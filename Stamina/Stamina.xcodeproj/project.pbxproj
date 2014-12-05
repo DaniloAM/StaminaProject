@@ -161,6 +161,8 @@
 		FF951C0E1A28F0C400E581AB /* icone_foto.png in Resources */ = {isa = PBXBuildFile; fileRef = FF951C061A28F0C400E581AB /* icone_foto.png */; };
 		FF951C0F1A28F0C400E581AB /* icone_trajeto_compartilhar_selected.png in Resources */ = {isa = PBXBuildFile; fileRef = FF951C071A28F0C400E581AB /* icone_trajeto_compartilhar_selected.png */; };
 		FF951C101A28F0C400E581AB /* icone_trajeto_compartilhar.png in Resources */ = {isa = PBXBuildFile; fileRef = FF951C081A28F0C400E581AB /* icone_trajeto_compartilhar.png */; };
+		FF951C131A28F50F00E581AB /* GraphicsVC.m in Sources */ = {isa = PBXBuildFile; fileRef = FF951C121A28F50F00E581AB /* GraphicsVC.m */; };
+		FF951C4B1A2F788B00E581AB /* GraphicDrawer.m in Sources */ = {isa = PBXBuildFile; fileRef = FF951C4A1A2F788B00E581AB /* GraphicDrawer.m */; };
 		FFAC18FF19DB200E00B17487 /* FinishedRunningVC.m in Sources */ = {isa = PBXBuildFile; fileRef = FFAC18FE19DB200E00B17487 /* FinishedRunningVC.m */; };
 		FFAC190B19DC86C400B17487 /* SocialSharingVC.m in Sources */ = {isa = PBXBuildFile; fileRef = FFAC190A19DC86C400B17487 /* SocialSharingVC.m */; };
 		FFAC193D19E3171C00B17487 /* HomeScreenVC.m in Sources */ = {isa = PBXBuildFile; fileRef = FFAC193C19E3171C00B17487 /* HomeScreenVC.m */; };
@@ -394,6 +396,10 @@
 		FF951C061A28F0C400E581AB /* icone_foto.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icone_foto.png; sourceTree = "<group>"; };
 		FF951C071A28F0C400E581AB /* icone_trajeto_compartilhar_selected.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icone_trajeto_compartilhar_selected.png; sourceTree = "<group>"; };
 		FF951C081A28F0C400E581AB /* icone_trajeto_compartilhar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icone_trajeto_compartilhar.png; sourceTree = "<group>"; };
+		FF951C111A28F50F00E581AB /* GraphicsVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GraphicsVC.h; sourceTree = "<group>"; };
+		FF951C121A28F50F00E581AB /* GraphicsVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GraphicsVC.m; sourceTree = "<group>"; };
+		FF951C491A2F788B00E581AB /* GraphicDrawer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GraphicDrawer.h; sourceTree = "<group>"; };
+		FF951C4A1A2F788B00E581AB /* GraphicDrawer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GraphicDrawer.m; sourceTree = "<group>"; };
 		FFAC18FD19DB200E00B17487 /* FinishedRunningVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FinishedRunningVC.h; sourceTree = "<group>"; };
 		FFAC18FE19DB200E00B17487 /* FinishedRunningVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FinishedRunningVC.m; sourceTree = "<group>"; };
 		FFAC190919DC86C400B17487 /* SocialSharingVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SocialSharingVC.h; sourceTree = "<group>"; };
@@ -652,8 +658,8 @@
 		FF15972B19C0D9EE00D9236F /* Classes */ = {
 			isa = PBXGroup;
 			children = (
-				FF951BD41A28E51300E581AB /* GraphicScroller */,
 				FF794D7819CA28BA00808144 /* CoreData */,
+				FF951BD41A28E51300E581AB /* GraphicScroller */,
 				FF15977719C0DA3B00D9236F /* NSObjects */,
 				FF15972C19C0D9FF00D9236F /* ViewControllers */,
 			);
@@ -695,8 +701,6 @@
 		FF15977719C0DA3B00D9236F /* NSObjects */ = {
 			isa = PBXGroup;
 			children = (
-				C53AAC0D1A1BBC39000AD02C /* UIStaminaImages.h */,
-				C53AAC0E1A1BBC39000AD02C /* UIStaminaImages.m */,
 				C5EB6BEC19D9DB5600C528FC /* Calendar */,
 				C56632541A03F3110006309D /* WeatherCondition.h */,
 				C56632551A03F3110006309D /* WeatherCondition.m */,
@@ -704,6 +708,8 @@
 				32F57C7119EC6838001BF6B2 /* MenuShouldOpen.m */,
 				C5DFD4E819DC7B48000EA19C /* Cadastro.h */,
 				C5DFD4E919DC7B48000EA19C /* Cadastro.m */,
+				C53AAC0D1A1BBC39000AD02C /* UIStaminaImages.h */,
+				C53AAC0E1A1BBC39000AD02C /* UIStaminaImages.m */,
 				FF17BDBE19CA2E5600B5EF46 /* UserTraining.h */,
 				FF17BDBF19CA2E5600B5EF46 /* UserTraining.m */,
 				C52C810619CA1E47006EAFCF /* WebServiceResponse.h */,
@@ -769,14 +775,18 @@
 		FF951BD41A28E51300E581AB /* GraphicScroller */ = {
 			isa = PBXGroup;
 			children = (
-				FF951BD51A28E52A00E581AB /* GNComponent.h */,
-				FF951BD61A28E52A00E581AB /* GNComponent.m */,
 				FF951BD71A28E52A00E581AB /* GraphicScroller.h */,
 				FF951BD81A28E52A00E581AB /* GraphicScroller.m */,
+				FF951C491A2F788B00E581AB /* GraphicDrawer.h */,
+				FF951C4A1A2F788B00E581AB /* GraphicDrawer.m */,
+				FF951BD51A28E52A00E581AB /* GNComponent.h */,
+				FF951BD61A28E52A00E581AB /* GNComponent.m */,
 				FF951BD91A28E52A00E581AB /* GraphUpdater.h */,
 				FF951BDA1A28E52A00E581AB /* GraphUpdater.m */,
 				FF951BDB1A28E52A00E581AB /* TestUpdater.h */,
 				FF951BDC1A28E52A00E581AB /* TestUpdater.m */,
+				FF951C111A28F50F00E581AB /* GraphicsVC.h */,
+				FF951C121A28F50F00E581AB /* GraphicsVC.m */,
 			);
 			name = GraphicScroller;
 			sourceTree = "<group>";
@@ -918,7 +928,6 @@
 				TargetAttributes = {
 					FF1596E919C0CBC900D9236F = {
 						CreatedOnToolsVersion = 6.0;
-						DevelopmentTeam = H7TBMF35F6;
 					};
 					FF15970219C0CBC900D9236F = {
 						CreatedOnToolsVersion = 6.0;
@@ -1105,11 +1114,13 @@
 				FF1C5D0A1A03F6E600032DC9 /* UIStaminaLabel.m in Sources */,
 				C5EB6BFA19D9DB6B00C528FC /* CalendarPreparer.m in Sources */,
 				FF951BDE1A28E52A00E581AB /* GraphicScroller.m in Sources */,
+				FF951C4B1A2F788B00E581AB /* GraphicDrawer.m in Sources */,
 				C5968D981A225EB400092176 /* Traning.m in Sources */,
 				C53A353119D3411F00AC1383 /* Reachability.m in Sources */,
 				FF13E9DD19E5BF840005BA49 /* SharingResponse.m in Sources */,
 				C5DFD4EA19DC7B48000EA19C /* Cadastro.m in Sources */,
 				C5EB6BF719D9DB6B00C528FC /* DayObject.m in Sources */,
+				FF951C131A28F50F00E581AB /* GraphicsVC.m in Sources */,
 				C5B62BF31A14111C00F969D8 /* MenuLViews.m in Sources */,
 				FF13E9E319E70B9B0005BA49 /* TrajectoryFile.m in Sources */,
 				32F7237E19FABCD6006170CD /* CreateTrainTemp.m in Sources */,

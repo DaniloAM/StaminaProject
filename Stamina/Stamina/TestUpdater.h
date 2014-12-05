@@ -11,4 +11,14 @@
 
 @interface TestUpdater : GraphUpdater
 
+typedef enum Graphic {
+    GSDistanceGraph,
+    GSPointsGraph,
+    GSCaloriesGraph
+}Graphic;
+
+@property Graphic graph;
+
+@property NSInteger graphType;
+
 @end

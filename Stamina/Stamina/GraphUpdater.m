@@ -60,48 +60,49 @@
 
 -(NSArray *)currentNumberArrayWithComponents: (NSMutableArray *)array {
     
-    return [self generateGraphicPatternWithComponents:array];
+    [self setCurrentComponents:[self generateGraphicPatternWithComponents:array]];
+    return [self currentComponents];
 }
 
 -(NSArray *)nextNumberArrayWithComponents: (NSMutableArray *)array {
     
     [self advanceGraphicDate];
     
-    NSArray *numberArray = [self generateGraphicPatternWithComponents:array];
+    [self setNextComponents:[self generateGraphicPatternWithComponents:array]];
     
     [self regressGraphicDate];
     
-    return numberArray;
+    return [self nextComponents];
 }
 
 -(NSArray *)previousNumberArrayWithComponents: (NSMutableArray *)array {
 
     [self regressGraphicDate];
     
-    NSArray *numberArray = [self generateGraphicPatternWithComponents:array];
+    [self setPreviousComponents:[self generateGraphicPatternWithComponents:array]];
     
     [self advanceGraphicDate];
     
-    return numberArray;
+    return [self previousComponents];
 }
 
 //------------------------------------------------------------------------------
 
 -(void)advanceGraphicDate {
     
-    [self setGraphCenterDate:[self advanceDate:[self graphCenterDate]]];
+    [self setGraphCenterDate:[self advanceDate:[self graphCenterDate] withFormat:0]];
     
 }
 
 -(void)regressGraphicDate {
     
-    [self setGraphCenterDate:[self regressDate:[self graphCenterDate]]];
+    [self setGraphCenterDate:[self regressDate:[self graphCenterDate] withFormat:0]];
     
 }
 
 //------------------------------------------------------------------------------
 
--(NSDate *)advanceDate: (NSDate *)date {
+-(NSDate *)advanceDate: (NSDate *)date withFormat:(NSInteger)format  {
     
     if(!date) {
         return nil;
@@ -109,9 +110,17 @@
     
     //Increase the date based on days in week views
     if([self dayIncreaser] == DIDaysInWeeks) {
-        NSInteger increase = 60*60*24;
         
-        NSInteger factor = [self numberInView] * VSDist;
+        NSInteger increase = 60*60*24;
+        NSInteger factor;
+        
+        if(format == 1) {
+            factor = 1;
+        }
+        
+        else {
+            factor = [self numberInView] * VSDist;
+        }
         
         date = [date dateByAddingTimeInterval:increase * factor];
     }
@@ -120,12 +129,29 @@
     //Increase the date based on weeks in month views
     else if([self dayIncreaser] == DIWeeksInMonths) {
         
-        NSCalendar *calendar = [NSCalendar currentCalendar];
+        NSDateComponents *components;
         
-        NSDateComponents *components = [[NSDateComponents alloc] init];
-        [components setMonth:VSDist];
+        if(format == 1) {
+            components = [_calendar components:NSDayCalendarUnit | NSMonthCalendarUnit | NSYearCalendarUnit fromDate:date];
+            
+            if(components.day >= 22) {
+                [components setMonth:components.month + 1];
+                [components setDay:1];
+            }
+            
+            else {
+                [components setDay:components.day + 7];
+            }
+            
+            date = [_calendar dateFromComponents:components];
+        }
         
-        date = [calendar dateByAddingComponents:components toDate:date options:0];
+        else {
+            components = [[NSDateComponents alloc] init];
+            [components setMonth:VSDist];
+            
+            date = [_calendar dateByAddingComponents:components toDate:date options:0];
+        }
         
     }
     
@@ -133,7 +159,7 @@
     
 }
 
--(NSDate *)regressDate: (NSDate *)date  {
+-(NSDate *)regressDate: (NSDate *)date withFormat:(NSInteger)format {
     
     if(!date) {
         return nil;
@@ -142,8 +168,15 @@
     //Decrease the date based on days in week views
     if([self dayIncreaser] == DIDaysInWeeks) {
         NSInteger increase = -60*60*24;
+        NSInteger factor;
         
-        NSInteger factor = [self numberInView] * VSDist;
+        if(format == 1) {
+            factor = 1;
+        }
+        
+        else {
+            factor = [self numberInView] * VSDist;
+        }
         
         date = [date dateByAddingTimeInterval:increase * factor];
     }
@@ -152,12 +185,36 @@
     //Decrease the date based on weeks in month views
     else if([self dayIncreaser] == DIWeeksInMonths) {
         
-        NSCalendar *calendar = [NSCalendar currentCalendar];
-       
-        NSDateComponents *components = [[NSDateComponents alloc] init];
-        [components setMonth:-VSDist];
+        NSDateComponents *components;
         
-        date = [calendar dateByAddingComponents:components toDate:date options:0];
+        if(format == 1) {
+            components = [_calendar components:NSDayCalendarUnit | NSMonthCalendarUnit | NSYearCalendarUnit fromDate:date];
+            
+            if(components.day <= 7) {
+                
+                NSInteger day = components.day;
+                
+                [components setMonth:components.month - 1];
+                
+                date = [_calendar dateFromComponents:components];
+                components = [[NSDateComponents alloc] init];
+                [components setDay:-day];
+                date = [_calendar dateByAddingComponents:components toDate:date options:0];
+            }
+            
+            else {
+                [components setDay:components.day - 7];
+                date = [_calendar dateFromComponents:components];
+            }
+            
+        }
+        
+        else {
+            components = [[NSDateComponents alloc] init];
+            [components setMonth:-VSDist];
+            
+            date = [_calendar dateByAddingComponents:components toDate:date options:0];
+        }
         
     }
     
@@ -174,12 +231,12 @@
 
 -(NSArray *)nextBottomLabels {
     
-    return [self getGraphBottomLabelByDate:[self advanceDate:[self graphCenterDate]]];
+    return [self getGraphBottomLabelByDate:[self advanceDate:[self graphCenterDate] withFormat:0]];
 }
 
 -(NSArray *)previousBottomLabels {
     
-    return [self getGraphBottomLabelByDate:[self regressDate:[self graphCenterDate]]];
+    return [self getGraphBottomLabelByDate:[self regressDate:[self graphCenterDate] withFormat:0]];
 }
 
 //------------------------------------------------------------------------------
@@ -226,12 +283,12 @@
     
     
     NSInteger arrayCount = [graphicArray count];
+
     
     //Removes the files with date that is not on the interval
     for(int x = 0; x < arrayCount; x++) {
         
         GNComponent *component = [graphicArray objectAtIndex:x];
-        
         
         if([component GNDate]) {
             
@@ -248,12 +305,18 @@
     }
     
     
-    //Prepare the number array
+    //Prepare the new array
     NSMutableArray *numberArray = [NSMutableArray array];
     
+    NSDate *compDate = [NSDate dateWithTimeInterval:0 sinceDate:initialDate];
+    
     for(int x = 0; x < ([self numberInView] *5) + 2; x++) {
-        NSNumber *number = [NSNumber numberWithInteger:0];
-        [numberArray addObject:number];
+        GNComponent *comp = [[GNComponent alloc] init];
+        [comp setGraphicNumber:[NSNumber numberWithInteger:0]];
+        [comp setGNDate:compDate];
+        [numberArray addObject:comp];
+        
+        compDate = [self advanceDate:compDate withFormat:1];
     }
     
     
@@ -264,16 +327,21 @@
         
         NSInteger index = [self getNumberArrayPositionWithInitialDate:initialDate andGNComponent:component];
         
+        //Case of a serious error
         if(index < 0 || index >= [numberArray count]) {
-            NSLog(@"Something went wrong and the index returned an invalid value. The method will cease for no further errors. Please check what's wrong with the indexes method (aka getNumberArrayPositionWithInitialDate:  andGNComponent: ).");
+            NSLog(@"Something went wrong and the index returned an invalid value. The method will cease for no further errors. Please check what's wrong with the indexes method (getNumberArrayPositionWithInitialDate:  andGNComponent: ).");
             
             break;
         }
         
         
-        NSInteger newValue = component.GraphicNumber.integerValue + [[numberArray objectAtIndex:index] integerValue];
+        NSInteger newValue = component.GraphicNumber.integerValue + [[[numberArray objectAtIndex:index] GraphicNumber] integerValue];
         
-        [numberArray replaceObjectAtIndex:index withObject:[NSNumber numberWithInteger:newValue]];
+        GNComponent *new = [[GNComponent alloc] init];
+        [new setGraphicNumber:[NSNumber numberWithInteger:newValue]];
+        [new setGNDate:component.GNDate];
+        
+        [numberArray replaceObjectAtIndex:index withObject:new];
         
         
     }
@@ -393,12 +461,12 @@
 
 -(NSMutableArray *)getGraphBottomLabelByDate: (NSDate *)dateFilter {
     
-    NSDate *date = [self regressDate:dateFilter];
+    NSDate *date = [self regressDate:dateFilter withFormat:0];
     
     NSMutableArray *labelArray = [NSMutableArray array];
     NSCalendar *calendar = [NSCalendar currentCalendar];
     
-    //Create labels for the information array
+    //Create labels for the information arrayR
     if([self dayIncreaser] == DIDaysInWeeks) {
         
         for(int x = 0; x < ([self numberInView] * 5) + 2; x++) {
@@ -413,7 +481,8 @@
             [label setText:[NSString stringWithFormat:@"%d\n%@", (int) comp.day, [weekday stringFromDate:date]]];
             [label setNumberOfLines:2];
             [label setTextAlignment:NSTextAlignmentCenter];
-            [label setFont:[UIFont fontWithName:@"Avenir" size:14.0]];
+            
+            [label setFont:[self labelFont]];
             
             date = [date dateByAddingTimeInterval:60*60*24];
             
@@ -533,6 +602,11 @@
     return [difference month];
 }
 
+
+
+-(void)t: (CGRect)frame {
+    
+}
 
 
 @end

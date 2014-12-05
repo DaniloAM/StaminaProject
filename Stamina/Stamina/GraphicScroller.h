@@ -8,7 +8,10 @@
 
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
-#import"GraphUpdater.h"
+#import "GraphUpdater.h"
+#import "UIStaminaLabel.h"
+#import "UIStaminaColor.h"
+#import "GraphicDrawer.h"
 
 @interface GraphicScroller : NSObject <UIScrollViewDelegate>
 
@@ -25,13 +28,16 @@ typedef enum GraphicState {
 @property GraphicState state;
 
 @property UILabel *monthLabel;
+@property NSDate *monthDate;
+
+@property UIFont *font;
+@property UIColor *lineColor;
 
 @property UIView *nextGraphicView;
 @property UIView *previousGraphicView;
 @property UIView *currentGraphicView;
 
-@property NSMutableArray *graphicData;
-@property NSMutableArray *infoData;
+@property NSMutableArray *graphicComponents;
 
 @property double leftLabelInterval;
 @property double rightLabelInterval;
@@ -45,12 +51,14 @@ typedef enum GraphicState {
 @property NSInteger graphLoadState;
 
 @property CGRect graphicFrame;
-@property UIColor *lineColor;
 @property GraphUpdater *updater;
+@property GraphicDrawer *graphDrawer;
 
 @property BOOL isAnimating;
+@property BOOL showZeroValue;
 
 -(void)startNewGraphicScrollViewWithUpdater: (GraphUpdater *)updater expanded:(BOOL)expanded;
 -(void)setGraphicLineColor: (UIColor *)color;
+-(void)setGraphicFont:(UIFont *)font;
 
 @end

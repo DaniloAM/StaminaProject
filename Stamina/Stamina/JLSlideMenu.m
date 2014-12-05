@@ -835,13 +835,13 @@
     
 }
 -(void)fisicosButton{
-    
+    [self callViewWithName:@"graphicView"];
 }
 -(void)pontuacoesButton{
-    
+    [self callViewWithName:@"graphicView"];
 }
 -(void)premiacoesButton{
-    
+    [self callViewWithName:@"graphicView"];
 }
 -(void)criarButton{
     
