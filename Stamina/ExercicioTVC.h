@@ -17,4 +17,5 @@
 @property float lastContentOffset;
 @property (weak, nonatomic) IBOutlet UITableView *table;
 @property NSString *strMuscle;
+@property BOOL createTraining;
 @end

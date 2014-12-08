@@ -34,6 +34,7 @@
     lpgr.delegate = self;
 
     [self.table addGestureRecognizer:lpgr];
+    if(_createTraining)
     [self showBarWithAnimation:YES];
     [self changeBarNameWith:[self strMuscle]];
 }
@@ -68,6 +69,9 @@
     [super viewWillAppear:animated];
     self.table.delegate = self;
     self.table.dataSource=self;
+    [self firstButtonMethod:@selector(firstButton) fromClass:self withImage:[UIImage imageNamed:@"icon_home.png"]];
+    [self secondButtonMethod:@selector(secondButton) fromClass:self withImage:[UIImage imageNamed:@"icone_adicionar_tab.png"]];
+
 
 }
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
@@ -75,7 +79,9 @@
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return [[self arrayOfExercises] count]+2;
+    if(_createTraining)
+        return [[self arrayOfExercises] count]+2;
+    return [[self arrayOfExercises] count];
 }
 
 
@@ -126,6 +132,8 @@
     return [obj firstObject];
 }
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    if(indexPath.row>[[self arrayOfExercises] count])
+        return;
     UITableViewCell *cell = [tableView cellForRowAtIndexPath:indexPath];
     NSString *str = cell.textLabel.text;
     Exercises *temp =[self returnExerciseWithIdentifier:str];
@@ -138,25 +146,25 @@
 
 
 -(void)scrollViewDidScroll:(UIScrollView *)scrollView{
-
+    if(_createTraining)
     [self hideBarWithAnimation:YES];
 }
 
 -(void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView{
+    if(_createTraining)
     [self showBarWithAnimation:YES];
 }
 
 -(void)viewDidAppear:(BOOL)animated{
-    [super viewDidAppear:animated];
+    [super viewDidAppear:0];
     [super hideBarWithAnimation:1];
     UILongPressGestureRecognizer *lpgr = [[UILongPressGestureRecognizer alloc]
                                           initWithTarget:self action:@selector(handleLongPress:)];
     lpgr.minimumPressDuration = 1.0; //seconds
     lpgr.delegate = self;
     [self.table addGestureRecognizer:lpgr];
+    if(_createTraining)
     [self showBarWithAnimation:YES];
-    [self firstButtonMethod:@selector(firstButton) fromClass:self withImage:[UIImage imageNamed:@"icon_home.png"]];
-    [self secondButtonMethod:@selector(secondButton) fromClass:self withImage:[UIImage imageNamed:@"icone_adicionar_tab.png"]];
 }
 -(void)secondButton{
     AddExerciseVC *add = (AddExerciseVC *)[self returnViewWithName:@"AddExercise"];

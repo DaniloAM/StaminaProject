@@ -230,8 +230,12 @@
         
     }
 }
-// end gesture recognizers
-//start show or hide bar and left menu
+-(void)removeGesture{
+    [self.navigationController.view removeGestureRecognizer:_panLeft];
+}
+-(void)addGesture{
+    [self.navigationController.view addGestureRecognizer:_panLeft];
+}
 -(void)hideBarWithAnimation : (BOOL)animated{
     CGSize screenSize= [[UIScreen mainScreen] bounds].size;
     if(animated)

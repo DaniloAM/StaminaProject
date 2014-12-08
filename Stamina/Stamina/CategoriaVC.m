@@ -17,7 +17,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self setFrontal:[NSArray arrayWithObjects:@"Abdominal",@"Ante-Braço",@"Bíceps",@"Ombros",@"Peitoral",@"Quadríceps",@"Trapézio",@"Tríceps", nil]];
-    [self setTraseiro:[NSArray arrayWithObjects:@"Ante-Braço",@"Bíceps",@"Dorsal",@"Glúteos",@"Lombar",@"Ombros",@"Panturrilha",@"Posterior de Coxa", @"Rombóides",@"Trapézio",@"Tríceps",@"",@"",nil]];
+    [self setTraseiro:[NSArray arrayWithObjects:@"Ante-Braço",@"Bíceps",@"Dorsal",@"Glúteos",@"Lombar",@"Ombros",@"Panturrilha",@"Posterior de Coxa", @"Rombóides",@"Trapézio",@"Tríceps",nil]];
     self.table.delegate = self;
     self.table.dataSource=self;
     [self.table setBackgroundColor:[UIColor clearColor]];
@@ -89,10 +89,7 @@
         case 1:
             sectionName = NSLocalizedString(@"Traseiro", @"Traseiro");
             break;
-            // ...
-        default:
-            sectionName = @"";
-            break;
+
     }
     return sectionName;
 }
@@ -110,16 +107,14 @@
         [myVC setStrMuscle:[[self frontal] objectAtIndex:indexPath.row]];
         
         array = [temp getArrayForCategory:[temp getStringToIndex:(int)indexPath.row]];
-            NSLog(@"%@", [temp getStringToIndex:(int)indexPath.row]);
     }
     else{
         [myVC setStrMuscle:[[self traseiro] objectAtIndex:indexPath.row]];
         array = [temp getArrayForCategory:[temp getStringToIndex:(int)indexPath.row+frontalCategoryCount]];
-            NSLog(@"%@", [temp getStringToIndex:(int)indexPath.row+frontalCategoryCount]);
     }
 
     [myVC setArrayOfExercises:array];
-
+    [myVC setCreateTraining:_createTraining];
     [self.navigationController pushViewController:myVC animated:YES];
 }
 -(void)tableView:(UITableView *)tableView willDisplayHeaderView:(UIView *)view forSection:(NSInteger)section {
@@ -131,13 +126,9 @@
     [header.textLabel setTextColor:[UIColor colorWithRed:250 green:217 blue:0 alpha:1]];
 }
 -(void)scrollViewDidScroll:(UIScrollView *)scrollView{
-    [self hideBarWithAnimation:0];
+    [self hideBarWithAnimation:1];
 
-//    [super hideBarWithAnimation:YES];
 }
 
--(void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView{
-  //  [super showBarWithAnimation:YES];
-}
 
 @end

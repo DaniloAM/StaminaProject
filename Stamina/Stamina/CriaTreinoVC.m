@@ -57,8 +57,9 @@
     CreateTrainTemp *temp = [CreateTrainTemp alloc];
     [[temp arrayOfExercises] removeAllObjects];
     UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
-    UIViewController *myVC;
-    myVC= (UIViewController *)[storyboard instantiateViewControllerWithIdentifier:@"CategoriaTVC"];
+    ExercicioTVC *myVC;
+    myVC= (ExercicioTVC *)[storyboard instantiateViewControllerWithIdentifier:@"CategoriaTVC"];
+    [myVC setCreateTraining:1];
     [self.navigationController pushViewController:myVC animated:YES];
     
     
@@ -244,11 +245,11 @@
     }
     NSString *str;
     if([exerc time]){
-        str = [NSString stringWithFormat:@"%d. %@ - %02ld:%02ld",indexPath.row+1,[exercise name],[exerc minutos],(long)[exerc segundos]];
+        str = [NSString stringWithFormat:@"%ld. %@ - %02ld:%02ld",indexPath.row+1,[exercise name],[exerc minutos],(long)[exerc segundos]];
         
     }
     else {
-        str = [NSString stringWithFormat:@"%d. %@ - %02ld x %02ld",indexPath.row+1,[exercise name] ,(long)[exerc serie],(long)[exerc repeticoes]];
+        str = [NSString stringWithFormat:@"%ld. %@ - %02ld x %02ld",indexPath.row+1,[exercise name] ,(long)[exerc serie],(long)[exerc repeticoes]];
         
     }
     cell.textLabel.text = str;

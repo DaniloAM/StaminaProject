@@ -119,7 +119,6 @@
 		FF13E9DA19E5BE330005BA49 /* FinishedRoute.m in Sources */ = {isa = PBXBuildFile; fileRef = FF13E9D919E5BE330005BA49 /* FinishedRoute.m */; };
 		FF13E9DD19E5BF840005BA49 /* SharingResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = FF13E9DC19E5BF840005BA49 /* SharingResponse.m */; };
 		FF13E9E319E70B9B0005BA49 /* TrajectoryFile.m in Sources */ = {isa = PBXBuildFile; fileRef = FF13E9E219E70B9B0005BA49 /* TrajectoryFile.m */; };
-		FF13E9EB19E71FFA0005BA49 /* PushedViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FF13E9EA19E71FFA0005BA49 /* PushedViewController.m */; };
 		FF1596F019C0CBC900D9236F /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = FF1596EF19C0CBC900D9236F /* main.m */; };
 		FF1596F319C0CBC900D9236F /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = FF1596F219C0CBC900D9236F /* AppDelegate.m */; };
 		FF1596F619C0CBC900D9236F /* Stamina.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = FF1596F419C0CBC900D9236F /* Stamina.xcdatamodeld */; };
@@ -131,7 +130,6 @@
 		FF15998519C0E32200D9236F /* FacebookSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FF15987519C0E32100D9236F /* FacebookSDK.framework */; };
 		FF159A4C19C21D1B00D9236F /* CoreDataLoading.m in Sources */ = {isa = PBXBuildFile; fileRef = FF159A4B19C21D1B00D9236F /* CoreDataLoading.m */; };
 		FF159A5219C22BD400D9236F /* ExercisesList.m in Sources */ = {isa = PBXBuildFile; fileRef = FF159A5119C22BD400D9236F /* ExercisesList.m */; };
-		FF17BD5C19C8C18200B5EF46 /* StartVC.m in Sources */ = {isa = PBXBuildFile; fileRef = FF17BD5B19C8C18200B5EF46 /* StartVC.m */; };
 		FF17BDBA19C9F78F00B5EF46 /* TrainingDayObject.m in Sources */ = {isa = PBXBuildFile; fileRef = FF17BDB919C9F78F00B5EF46 /* TrainingDayObject.m */; };
 		FF17BDC019CA2E5600B5EF46 /* UserTraining.m in Sources */ = {isa = PBXBuildFile; fileRef = FF17BDBF19CA2E5600B5EF46 /* UserTraining.m */; };
 		FF1C5C3A19FADD3D00032DC9 /* CalendarInformationVC.m in Sources */ = {isa = PBXBuildFile; fileRef = FF1C5C3919FADD3D00032DC9 /* CalendarInformationVC.m */; };
@@ -245,8 +243,8 @@
 		C5A2418419CB512700064E54 /* TemporaryVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TemporaryVC.h; sourceTree = "<group>"; };
 		C5A2418519CB512700064E54 /* TemporaryVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TemporaryVC.m; sourceTree = "<group>"; };
 		C5B62BEC1A14056000F969D8 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
-		C5B62BF11A14111C00F969D8 /* MenuLViews.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MenuLViews.h; sourceTree = "<group>"; };
-		C5B62BF21A14111C00F969D8 /* MenuLViews.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MenuLViews.m; sourceTree = "<group>"; };
+		C5B62BF11A14111C00F969D8 /* MenuLViews.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MenuLViews.h; path = ../MenuLViews.h; sourceTree = "<group>"; };
+		C5B62BF21A14111C00F969D8 /* MenuLViews.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MenuLViews.m; path = ../MenuLViews.m; sourceTree = "<group>"; };
 		C5B62BF71A15236200F969D8 /* Lato-Black.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lato-Black.ttf"; sourceTree = "<group>"; };
 		C5B62BF81A15236200F969D8 /* Lato-BlackItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lato-BlackItalic.ttf"; sourceTree = "<group>"; };
 		C5B62BF91A15236200F969D8 /* Lato-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lato-Bold.ttf"; sourceTree = "<group>"; };
@@ -338,8 +336,6 @@
 		FF13E9DC19E5BF840005BA49 /* SharingResponse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SharingResponse.m; sourceTree = "<group>"; };
 		FF13E9E119E70B9B0005BA49 /* TrajectoryFile.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TrajectoryFile.h; sourceTree = "<group>"; };
 		FF13E9E219E70B9B0005BA49 /* TrajectoryFile.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TrajectoryFile.m; sourceTree = "<group>"; };
-		FF13E9E919E71FFA0005BA49 /* PushedViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PushedViewController.h; sourceTree = "<group>"; };
-		FF13E9EA19E71FFA0005BA49 /* PushedViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PushedViewController.m; sourceTree = "<group>"; };
 		FF1596EA19C0CBC900D9236F /* Stamina.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Stamina.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FF1596EE19C0CBC900D9236F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FF1596EF19C0CBC900D9236F /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -361,8 +357,6 @@
 		FF159A4B19C21D1B00D9236F /* CoreDataLoading.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CoreDataLoading.m; sourceTree = "<group>"; };
 		FF159A5019C22BD400D9236F /* ExercisesList.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ExercisesList.h; sourceTree = "<group>"; };
 		FF159A5119C22BD400D9236F /* ExercisesList.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ExercisesList.m; sourceTree = "<group>"; };
-		FF17BD5A19C8C18200B5EF46 /* StartVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StartVC.h; sourceTree = "<group>"; };
-		FF17BD5B19C8C18200B5EF46 /* StartVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StartVC.m; sourceTree = "<group>"; };
 		FF17BDB819C9F78F00B5EF46 /* TrainingDayObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TrainingDayObject.h; sourceTree = "<group>"; };
 		FF17BDB919C9F78F00B5EF46 /* TrainingDayObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TrainingDayObject.m; sourceTree = "<group>"; };
 		FF17BDBE19CA2E5600B5EF46 /* UserTraining.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserTraining.h; sourceTree = "<group>"; };
@@ -582,6 +576,29 @@
 			name = TipsVC;
 			sourceTree = "<group>";
 		};
+		C5D4DA911A3560C200FE2182 /* JLSlideMenu */ = {
+			isa = PBXGroup;
+			children = (
+				C5B62BF11A14111C00F969D8 /* MenuLViews.h */,
+				C5B62BF21A14111C00F969D8 /* MenuLViews.m */,
+				C53F23411A0D95BC00697FB4 /* JLSlideMenu.h */,
+				C53F23421A0D95BC00697FB4 /* JLSlideMenu.m */,
+				325F1FE719E7229C00001EB0 /* HideBBVC.h */,
+				325F1FE819E7229C00001EB0 /* HideBBVC.m */,
+			);
+			name = JLSlideMenu;
+			sourceTree = "<group>";
+		};
+		C5D4DA921A3560DC00FE2182 /* Academia */ = {
+			isa = PBXGroup;
+			children = (
+				325F1FD919E7091C00001EB0 /* AcademiaVC.m */,
+				325F1FD819E7091C00001EB0 /* AcademiaVC.h */,
+				C55E5C8A19FBC6E90019CD0F /* CriarTreino */,
+			);
+			name = Academia;
+			sourceTree = "<group>";
+		};
 		C5EB6BEC19D9DB5600C528FC /* Calendar */ = {
 			isa = PBXGroup;
 			children = (
@@ -602,8 +619,6 @@
 			children = (
 				FF951BE11A28E52F00E581AB /* TrajectoryHistory.h */,
 				FF951BE21A28E52F00E581AB /* TrajectoryHistory.m */,
-				C5B62BF11A14111C00F969D8 /* MenuLViews.h */,
-				C5B62BF21A14111C00F969D8 /* MenuLViews.m */,
 				C5DB392E1A28D7400066E1BC /* icone_hamburguer.png */,
 				FF1596EC19C0CBC900D9236F /* Stamina */,
 				C5B62C1B1A1527F600F969D8 /* Icones Calendario */,
@@ -629,10 +644,6 @@
 				FF15972B19C0D9EE00D9236F /* Classes */,
 				FF1596F119C0CBC900D9236F /* AppDelegate.h */,
 				FF1596F219C0CBC900D9236F /* AppDelegate.m */,
-				C53A352F19D3411F00AC1383 /* Reachability.h */,
-				C53A353019D3411F00AC1383 /* Reachability.m */,
-				C52C27851A07EB690030BEA4 /* CadastroVC.h */,
-				C52C27861A07EB690030BEA4 /* CadastroVC.m */,
 				C52024451A26434300DDF73B /* ConfiguracoesVC.h */,
 				C52024461A26434300DDF73B /* ConfiguracoesVC.m */,
 				C5B62BEC1A14056000F969D8 /* Main.storyboard */,
@@ -705,29 +716,20 @@
 		FF15972C19C0D9FF00D9236F /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				C5D4DA921A3560DC00FE2182 /* Academia */,
+				C5D4DA911A3560C200FE2182 /* JLSlideMenu */,
 				FFAC194119E319F300B17487 /* Cadastro */,
-				C55E5C8A19FBC6E90019CD0F /* CriarTreino */,
 				FFAC193E19E3172300B17487 /* Exercitar */,
-				325F1FD919E7091C00001EB0 /* AcademiaVC.m */,
-				325F1FD819E7091C00001EB0 /* AcademiaVC.h */,
 				C5EB6C0019D9DBD300C528FC /* AVCamPreviewView.h */,
 				C5EB6C0119D9DBD300C528FC /* AVCamPreviewView.m */,
 				FF1C5C3819FADD3D00032DC9 /* CalendarInformationVC.h */,
 				FF1C5C3919FADD3D00032DC9 /* CalendarInformationVC.m */,
 				C5EB6BFE19D9DBD300C528FC /* FBLoginVC.h */,
 				C5EB6BFF19D9DBD300C528FC /* FBLoginVC.m */,
-				325F1FE719E7229C00001EB0 /* HideBBVC.h */,
-				325F1FE819E7229C00001EB0 /* HideBBVC.m */,
 				FFAC193B19E3171C00B17487 /* HomeScreenVC.h */,
 				FFAC193C19E3171C00B17487 /* HomeScreenVC.m */,
-				C53F23411A0D95BC00697FB4 /* JLSlideMenu.h */,
-				C53F23421A0D95BC00697FB4 /* JLSlideMenu.m */,
-				FF13E9E919E71FFA0005BA49 /* PushedViewController.h */,
-				FF13E9EA19E71FFA0005BA49 /* PushedViewController.m */,
 				FFAC190919DC86C400B17487 /* SocialSharingVC.h */,
 				FFAC190A19DC86C400B17487 /* SocialSharingVC.m */,
-				FF17BD5A19C8C18200B5EF46 /* StartVC.h */,
-				FF17BD5B19C8C18200B5EF46 /* StartVC.m */,
 				C5EB6BFC19D9DBD300C528FC /* UserCalendarVC.h */,
 				C5EB6BFD19D9DBD300C528FC /* UserCalendarVC.m */,
 			);
@@ -737,6 +739,8 @@
 		FF15977719C0DA3B00D9236F /* NSObjects */ = {
 			isa = PBXGroup;
 			children = (
+				C53A352F19D3411F00AC1383 /* Reachability.h */,
+				C53A353019D3411F00AC1383 /* Reachability.m */,
 				C5EB6BEC19D9DB5600C528FC /* Calendar */,
 				C56632541A03F3110006309D /* WeatherCondition.h */,
 				C56632551A03F3110006309D /* WeatherCondition.m */,
@@ -910,6 +914,8 @@
 		FFAC194119E319F300B17487 /* Cadastro */ = {
 			isa = PBXGroup;
 			children = (
+				C52C27851A07EB690030BEA4 /* CadastroVC.h */,
+				C52C27861A07EB690030BEA4 /* CadastroVC.m */,
 				C5A2418419CB512700064E54 /* TemporaryVC.h */,
 				C5A2418519CB512700064E54 /* TemporaryVC.m */,
 				C53A351B19D33B7700AC1383 /* LoginViewController.h */,
@@ -1123,9 +1129,7 @@
 				32F57C6F19EC4D16001BF6B2 /* ExercicioTVC.m in Sources */,
 				C56632561A03F3110006309D /* WeatherCondition.m in Sources */,
 				32F57C7219EC6838001BF6B2 /* MenuShouldOpen.m in Sources */,
-				FF13E9EB19E71FFA0005BA49 /* PushedViewController.m in Sources */,
 				C5D4DA801A34D91A00FE2182 /* ReadTXT.m in Sources */,
-				FF17BD5C19C8C18200B5EF46 /* StartVC.m in Sources */,
 				FF1596F619C0CBC900D9236F /* Stamina.xcdatamodeld in Sources */,
 				C52C27871A07EB690030BEA4 /* CadastroVC.m in Sources */,
 				FFB8BCC51A0AA17C00F9D8A7 /* RoutePicture.m in Sources */,

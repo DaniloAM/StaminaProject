@@ -99,7 +99,14 @@
     [temp hideBarWithAnimation:animation];
 }
 
-
+-(void)removeGesture{
+    JLSlideMenu *temp = [self.navigationController.viewControllers objectAtIndex:0];
+    [temp removeGesture];
+}
+-(void)addGesture{
+    JLSlideMenu *temp = [self.navigationController.viewControllers objectAtIndex:0];
+    [temp addGesture];
+}
 -(CGSize)navigationSize{
     return [self.navigationController navigationBar].frame.size;
 }

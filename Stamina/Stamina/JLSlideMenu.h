@@ -52,6 +52,8 @@ typedef enum gestureRecognizedTypes
 
 -(void)showBarWithAnimation : (BOOL)animated;
 -(void)hideBarWithAnimation : (BOOL)animated;
+-(void)removeGesture;
+-(void)addGesture;
 -(void)firstButtonMethod: (void *)metodo fromClass:(UIViewController *)view  withImage: (UIImage *)image;
 -(void)secondButtonMethod: (void *)metodo fromClass:(UIViewController *)view withImage: (UIImage *)image;
 -(void)thirdButtonMethod: (void *)metodo  fromClass:(UIViewController *)view withImage: (UIImage *)image;
