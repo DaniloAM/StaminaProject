@@ -587,8 +587,6 @@
 			children = (
 				C5B62BF11A14111C00F969D8 /* MenuLViews.h */,
 				C5B62BF21A14111C00F969D8 /* MenuLViews.m */,
-				C53F23411A0D95BC00697FB4 /* JLSlideMenu.h */,
-				C53F23421A0D95BC00697FB4 /* JLSlideMenu.m */,
 				325F1FE719E7229C00001EB0 /* HideBBVC.h */,
 				325F1FE819E7229C00001EB0 /* HideBBVC.m */,
 				C5D4DA961A356C7100FE2182 /* MainMenuVC.h */,
@@ -600,8 +598,6 @@
 		C5D4DA921A3560DC00FE2182 /* Academia */ = {
 			isa = PBXGroup;
 			children = (
-				325F1FD919E7091C00001EB0 /* AcademiaVC.m */,
-				325F1FD819E7091C00001EB0 /* AcademiaVC.h */,
 				C55E5C8A19FBC6E90019CD0F /* CriarTreino */,
 			);
 			name = Academia;
@@ -724,42 +720,25 @@
 		FF15972C19C0D9FF00D9236F /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
-<<<<<<< HEAD
 				FF1D8D521A36011C00E52110 /* Resultados */,
 				FF1D8D4A1A36004700E52110 /* Calendario */,
 				FF1D8D491A36003100E52110 /* Compartilhar */,
-=======
 				C5D4DA921A3560DC00FE2182 /* Academia */,
 				C5D4DA911A3560C200FE2182 /* JLSlideMenu */,
->>>>>>> FETCH_HEAD
 				FFAC194119E319F300B17487 /* Cadastro */,
 				FFAC193E19E3172300B17487 /* Exercitar */,
-<<<<<<< HEAD
 				325F1FD919E7091C00001EB0 /* AcademiaVC.m */,
 				325F1FD819E7091C00001EB0 /* AcademiaVC.h */,
-=======
-				C5EB6C0019D9DBD300C528FC /* AVCamPreviewView.h */,
-				C5EB6C0119D9DBD300C528FC /* AVCamPreviewView.m */,
 				FF1C5C3819FADD3D00032DC9 /* CalendarInformationVC.h */,
 				FF1C5C3919FADD3D00032DC9 /* CalendarInformationVC.m */,
->>>>>>> FETCH_HEAD
 				C5EB6BFE19D9DBD300C528FC /* FBLoginVC.h */,
 				C5EB6BFF19D9DBD300C528FC /* FBLoginVC.m */,
 				FFAC193B19E3171C00B17487 /* HomeScreenVC.h */,
 				FFAC193C19E3171C00B17487 /* HomeScreenVC.m */,
-<<<<<<< HEAD
 				C53F23411A0D95BC00697FB4 /* JLSlideMenu.h */,
 				C53F23421A0D95BC00697FB4 /* JLSlideMenu.m */,
-				FF13E9E919E71FFA0005BA49 /* PushedViewController.h */,
-				FF13E9EA19E71FFA0005BA49 /* PushedViewController.m */,
-				FF17BD5A19C8C18200B5EF46 /* StartVC.h */,
-				FF17BD5B19C8C18200B5EF46 /* StartVC.m */,
-=======
-				FFAC190919DC86C400B17487 /* SocialSharingVC.h */,
-				FFAC190A19DC86C400B17487 /* SocialSharingVC.m */,
 				C5EB6BFC19D9DBD300C528FC /* UserCalendarVC.h */,
 				C5EB6BFD19D9DBD300C528FC /* UserCalendarVC.m */,
->>>>>>> FETCH_HEAD
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -767,15 +746,12 @@
 		FF15977719C0DA3B00D9236F /* NSObjects */ = {
 			isa = PBXGroup;
 			children = (
-<<<<<<< HEAD
 				FF1D8D4E1A3600A300E52110 /* Web */,
 				FF1D8D4D1A36009700E52110 /* Route */,
 				FF1D8D4C1A36008900E52110 /* User */,
 				FF1D8D4B1A36006D00E52110 /* UIStamina */,
-=======
 				C53A352F19D3411F00AC1383 /* Reachability.h */,
 				C53A353019D3411F00AC1383 /* Reachability.m */,
->>>>>>> FETCH_HEAD
 				C5EB6BEC19D9DB5600C528FC /* Calendar */,
 				32F57C7019EC6838001BF6B2 /* MenuShouldOpen.h */,
 				32F57C7119EC6838001BF6B2 /* MenuShouldOpen.m */,
@@ -818,10 +794,6 @@
 		FF1D8D4A1A36004700E52110 /* Calendario */ = {
 			isa = PBXGroup;
 			children = (
-				FF1C5C3819FADD3D00032DC9 /* CalendarInformationVC.h */,
-				FF1C5C3919FADD3D00032DC9 /* CalendarInformationVC.m */,
-				C5EB6BFC19D9DBD300C528FC /* UserCalendarVC.h */,
-				C5EB6BFD19D9DBD300C528FC /* UserCalendarVC.m */,
 			);
 			name = Calendario;
 			sourceTree = "<group>";
@@ -1245,11 +1217,7 @@
 				325F1FDA19E7091C00001EB0 /* AcademiaVC.m in Sources */,
 				3276F1CD19F6CE2D00B2F93D /* CriaTreinoVC.m in Sources */,
 				C5A2418619CB512700064E54 /* TemporaryVC.m in Sources */,
-<<<<<<< HEAD
-=======
 				C5D4DA8F1A34EC1900FE2182 /* TipsVC.m in Sources */,
-				FF951BE01A28E52A00E581AB /* TestUpdater.m in Sources */,
->>>>>>> FETCH_HEAD
 				C53F23431A0D95BC00697FB4 /* JLSlideMenu.m in Sources */,
 				FF1596F319C0CBC900D9236F /* AppDelegate.m in Sources */,
 				FFAC18FF19DB200E00B17487 /* FinishedRunningVC.m in Sources */,
@@ -1265,11 +1233,7 @@
 				C5D4DA891A34DA3E00FE2182 /* Exercises.m in Sources */,
 				C5DFD4EA19DC7B48000EA19C /* Cadastro.m in Sources */,
 				C5EB6BF719D9DB6B00C528FC /* DayObject.m in Sources */,
-<<<<<<< HEAD
-=======
-				FF951C131A28F50F00E581AB /* GraphicsVC.m in Sources */,
 				C5D4DA861A34DA3E00FE2182 /* ExerciseTip.m in Sources */,
->>>>>>> FETCH_HEAD
 				C5B62BF31A14111C00F969D8 /* MenuLViews.m in Sources */,
 				C5D4DA981A356C7100FE2182 /* MainMenuVC.m in Sources */,
 				FF13E9E319E70B9B0005BA49 /* TrajectoryFile.m in Sources */,

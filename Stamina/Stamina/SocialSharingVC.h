@@ -24,9 +24,10 @@
 
 @property (weak, nonatomic) IBOutlet UIButton *pictureButton;
 @property (weak, nonatomic) IBOutlet UIButton *cameraButton;
-@property (weak, nonatomic) IBOutlet UIImageView *cameraIcon;
-@property (weak, nonatomic) IBOutlet UIImageView *returnIcon;
-@property (weak, nonatomic) IBOutlet UIImageView *pictureIcon;
+@property (weak, nonatomic) IBOutlet UIButton *backButton;
+//@property (weak, nonatomic) IBOutlet UIImageView *cameraIcon;
+//@property (weak, nonatomic) IBOutlet UIImageView *returnIcon;
+//@property (weak, nonatomic) IBOutlet UIImageView *pictureIcon;
 
 @property UIImage *userPicture;
 @property UIImageView *userPictureView;

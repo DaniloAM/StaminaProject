@@ -8,17 +8,10 @@
 
 #import <UIKit/UIKit.h>
 #import "GraphicScroller.h"
-<<<<<<< HEAD:Stamina/Stamina/GraphResultsVC.h
 #import "StaminaUpdater.h"
-#import "JLSlideMenu.h"
-
-@interface GraphResultsVC : JLSlideMenu
-=======
-#import "TestUpdater.h"
 #import "HideBBVC.h"
 
-@interface GraphicsVC : HideBBVC
->>>>>>> FETCH_HEAD:Stamina/Stamina/GraphicsVC.h
+@interface GraphResultsVC : HideBBVC
 
 @property GraphicScroller *graphic;
 

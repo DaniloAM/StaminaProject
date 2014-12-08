@@ -1,14 +1,15 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="13F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="Efd-qe-Nr2">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6245" systemVersion="13F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="Efd-qe-Nr2">
     <dependencies>
-        <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
+        <deployment defaultVersion="1808" identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6238"/>
     </dependencies>
     <customFonts key="customFonts">
         <mutableArray key="Lato-Light.ttf">
             <string>Lato-Light</string>
         </mutableArray>
         <mutableArray key="Lato-Regular.ttf">
+            <string>Lato-Regular</string>
             <string>Lato-Regular</string>
             <string>Lato-Regular</string>
             <string>Lato-Regular</string>
@@ -125,22 +126,6 @@
             </objects>
             <point key="canvasLocation" x="-636" y="-2271"/>
         </scene>
-<<<<<<< HEAD
-        <!--Navigation Controller-->
-        <scene sceneID="Q8T-eB-8Ah">
-            <objects>
-                <navigationController id="Und-yg-HZa" sceneMemberID="viewController">
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Kar-Wz-Sfd">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="x9F-Hz-axx" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1580" y="9"/>
-        </scene>
-=======
->>>>>>> FETCH_HEAD
         <!--User CalendarVC-->
         <scene sceneID="Mmo-Mq-xjo">
             <objects>
@@ -241,47 +226,46 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" id="cg0-0p-TwB" customClass="AVCamPreviewView">
-                                <rect key="frame" x="-25" y="0.0" width="370" height="495"/>
+                                <rect key="frame" x="-25" y="12" width="370" height="495"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="yim-5L-tS1">
-                                        <rect key="frame" x="154" y="407" width="63" height="63"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <state key="normal" backgroundImage="icone_camerar_capturar.png">
-                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                        </state>
-                                        <connections>
-                                            <action selector="snapStillImage:" destination="RfZ-Bh-jM0" eventType="touchUpInside" id="f9c-Kw-yX0"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="QVP-qB-Ntd">
-                                        <rect key="frame" x="265" y="407" width="63" height="63"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <state key="normal" backgroundImage="icone_camera_voltar.png">
-                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                        </state>
-                                        <connections>
-                                            <action selector="returnToPreviousView" destination="RfZ-Bh-jM0" eventType="touchUpInside" id="ohB-PL-GjX"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="TKm-u3-4Ez">
-                                        <rect key="frame" x="40" y="407" width="63" height="63"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <state key="normal" backgroundImage="icone_camera_girar.png">
-                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                        </state>
-                                        <connections>
-                                            <action selector="changeCamera" destination="RfZ-Bh-jM0" eventType="touchUpInside" id="ama-Nj-b9D"/>
-                                        </connections>
-                                    </button>
-                                </subviews>
                                 <color key="backgroundColor" red="1" green="0.9314516129" blue="0.2196078598" alpha="1" colorSpace="deviceRGB"/>
                             </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="yim-5L-tS1">
+                                <rect key="frame" x="128" y="430" width="63" height="63"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" backgroundImage="icone_camerar_capturar.png">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="snapStillImage:" destination="RfZ-Bh-jM0" eventType="touchUpInside" id="f9c-Kw-yX0"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="QVP-qB-Ntd">
+                                <rect key="frame" x="241" y="430" width="63" height="63"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" backgroundImage="icone_camera_voltar.png">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="returnToPreviousView" destination="RfZ-Bh-jM0" eventType="touchUpInside" id="ohB-PL-GjX"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="TKm-u3-4Ez">
+                                <rect key="frame" x="16" y="430" width="63" height="63"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" backgroundImage="icone_camera_girar.png">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="changeCamera" destination="RfZ-Bh-jM0" eventType="touchUpInside" id="ama-Nj-b9D"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.9960784912109375" green="0.84705889225006104" blue="0.19215688109397888" alpha="1" colorSpace="deviceRGB"/>
                     </view>
                     <navigationItem key="navigationItem" id="Ked-XD-yd5"/>
                     <connections>
+                        <outlet property="backButton" destination="QVP-qB-Ntd" id="cnb-Li-NEE"/>
                         <outlet property="cameraButton" destination="TKm-u3-4Ez" id="w5i-bk-hsc"/>
                         <outlet property="cameraView" destination="cg0-0p-TwB" id="suG-sa-xBk"/>
                         <outlet property="pictureButton" destination="yim-5L-tS1" id="8Iw-b0-2qf"/>
@@ -289,7 +273,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ulX-ns-onx" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3195" y="-1388"/>
+            <point key="canvasLocation" x="3214" y="-1664"/>
         </scene>
         <!--Menu RunningVC-->
         <scene sceneID="qGL-og-Det">
@@ -811,24 +795,7 @@
             </objects>
             <point key="canvasLocation" x="-365" y="-1637"/>
         </scene>
-<<<<<<< HEAD
-        <!--Navigation Controller-->
-        <scene sceneID="cR4-Kx-5UD">
-            <objects>
-                <navigationController navigationBarHidden="YES" id="9sA-uq-h1s" sceneMemberID="viewController">
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="oHr-YW-Hei">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="883-Wk-C6u" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1580" y="-624"/>
-        </scene>
         <!--Graph ResultsVC-->
-=======
-        <!--GraphicsVC-->
->>>>>>> FETCH_HEAD
         <scene sceneID="CX3-b8-t2S">
             <objects>
                 <viewController storyboardIdentifier="graphicView" id="vMO-5Z-Xaz" customClass="GraphResultsVC" sceneMemberID="viewController">
@@ -853,24 +820,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nLP-wI-FVd" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-<<<<<<< HEAD
             <point key="canvasLocation" x="1975" y="-624"/>
-        </scene>
-        <!--Navigation Controller-->
-        <scene sceneID="5NL-yJ-TXv">
-            <objects>
-                <navigationController id="iL3-9h-S14" sceneMemberID="viewController">
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="aAR-7T-mDK">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="nc9-uQ-C9Y" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1527" y="489"/>
-=======
-            <point key="canvasLocation" x="3324" y="-2069"/>
->>>>>>> FETCH_HEAD
         </scene>
         <!--Cria TreinoVC-->
         <scene sceneID="jKo-6n-GGA">

@@ -23,9 +23,9 @@
     [self setUserPictureView:[[UIImageView alloc] initWithFrame:_cameraView.frame]];
     [self.view addSubview:[self userPictureView]];
     
-    [self.view bringSubviewToFront:[self returnIcon]];
-    [self.view bringSubviewToFront:[self cameraIcon]];
-    [self.view bringSubviewToFront:[self pictureIcon]];
+//    [self.view bringSubviewToFront:[self returnIcon]];
+//    [self.view bringSubviewToFront:[self cameraIcon]];
+//    [self.view bringSubviewToFront:[self pictureIcon]];
     
     AVCaptureStillImageOutput *stillImageOutput = [[AVCaptureStillImageOutput alloc] init];
     [stillImageOutput setOutputSettings:@{AVVideoCodecKey : AVVideoCodecJPEG}];
@@ -45,11 +45,21 @@
     [super hideBarWithAnimation:true];
     [[self userPictureView] setHidden:true];
     
+    [self bringButtonsToFront];
+    
     //----- SHOW LIVE CAMERA PREVIEW -----
     _usingFrontCamera = true;
     [self startCameraPreviewWithCamera:[self frontCamera]];
     
 }
+
+
+-(void)bringButtonsToFront {
+    [self.view bringSubviewToFront:[self pictureButton]];
+    [self.view bringSubviewToFront:[self cameraButton]];
+    [self.view bringSubviewToFront:[self backButton]];
+}
+
 
 -(void)startCameraPreviewWithCamera: (AVCaptureDevice *)camera {
     
@@ -76,6 +86,8 @@
     
     [_session addInput:input];
     [_session startRunning];
+    
+    [self bringButtonsToFront];
     
     //[self.view addSubview:[self imageView]];
     
@@ -162,7 +174,9 @@
             }
             
             [[self userPictureView] setImage:[self userPicture]];
-            [[self pictureIcon] setImage:[UIImage imageNamed:@"icone_ok_photo.png"]];
+        
+            [[self pictureButton] setBackgroundImage:[UIImage imageNamed:@"icone_ok_photo.png"] forState:UIControlStateNormal];
+            
             [[self userPictureView] setHidden:false];
             
         }
@@ -248,7 +262,8 @@
 
 -(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
     
-    [[self pictureIcon] setImage:[UIImage imageNamed:@"icone_camera.png"]];
+    [[self pictureButton] setBackgroundImage:[UIImage imageNamed:@"icone_camera.png"] forState:UIControlStateNormal];
+    
     [self returnToCamera];
     
 }
