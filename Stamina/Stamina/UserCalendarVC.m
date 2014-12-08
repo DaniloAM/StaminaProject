@@ -74,7 +74,7 @@
     
     [super viewDidLoad];
     
-    [self setInfoTableView: [[UITableView alloc] initWithFrame:CGRectMake(20, 420, 271, 148)]];
+    [self setInfoTableView: [[UITableView alloc] initWithFrame:CGRectMake(20, 370, 271, 148)]];
     [[self infoTableView] setRowHeight:35.0];
     
     [[self infoTableView] setDelegate:self];
