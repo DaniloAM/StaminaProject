@@ -46,7 +46,6 @@
 @interface ExercisesList : NSObject
 
 -(NSString *)getStringToIndex: (int )x;
--(void)addExercise: (Exercises *)exercise inCategory: (NSString*)string;
 -(NSMutableArray *)getArrayForCategory: (NSString *)string;
 -(Exercises *)returnExerciseWithIdentifier: (int)identifier;
 +(ExercisesList *)sharedStore;

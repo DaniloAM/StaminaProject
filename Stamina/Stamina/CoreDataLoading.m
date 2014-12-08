@@ -104,10 +104,7 @@
                                    entityForName:@"Exercises" inManagedObjectContext:context];
     [fetchRequest setEntity:entity];
     NSArray *objects = [context executeFetchRequest:fetchRequest error:&error];
-    for(Exercises *exe in objects){
-        NSLog(@"%@",exe.exerciseID);
-    }
-    
+
     if([objects count] == 0) {
         return false;
     }
