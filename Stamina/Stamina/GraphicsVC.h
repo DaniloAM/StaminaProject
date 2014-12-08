@@ -9,9 +9,9 @@
 #import <UIKit/UIKit.h>
 #import "GraphicScroller.h"
 #import "TestUpdater.h"
-#import "JLSlideMenu.h"
+#import "HideBBVC.h"
 
-@interface GraphicsVC : JLSlideMenu
+@interface GraphicsVC : HideBBVC
 
 @property GraphicScroller *graphic;
 

@@ -42,6 +42,7 @@ typedef enum gestureRecognizedTypes
 @property NSArray *arrayOfViewsControllers;
 @property NSMutableArray *arrayOfViews;
 
+@property NSString *str;
 @property UIViewController *presenting;
 @property NSArray *arrayTabBar;
 

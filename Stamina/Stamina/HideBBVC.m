@@ -16,8 +16,12 @@
 
 -(void)viewWillAppear:(BOOL)animated{
     if(animated)
-    [self viewWillAppear:animated withGesture:1];
-   
+    [super viewWillAppear:animated];
+    else [self viewWillAppear:animated withGesture:1];
+    JLSlideMenu *temp = [self.navigationController.viewControllers objectAtIndex:0];
+    NSLog(@"WILL APPEAR");
+    [temp cleanButtons];
+    [self.navigationItem setHidesBackButton:YES];
 }
 
 -(void)viewDidLoad{
@@ -43,6 +47,7 @@
  
     [self.navigationController pushViewController:view  animated:YES];
 }
+
 -(void)viewWillAppear:(BOOL)animated withGesture: (BOOL)gesture{
     [super viewWillAppear:animated];
     JLSlideMenu *temp = [self.navigationController.viewControllers objectAtIndex:0];
@@ -51,24 +56,9 @@
     [temp cleanButtons];
     [self.navigationItem setHidesBackButton:YES];
 }
-//-(void)unblock{
-//    JLSlideMenu *temp = [self.navigationController.viewControllers objectAtIndex:0];
-//    [temp setStop:YES];
-//    [temp panLeft].enabled = YES;
-//    [self.navigationController.view setUserInteractionEnabled:YES];
-//    [self.view setUserInteractionEnabled:YES];
-//    [self.navigationController.view addGestureRecognizer:[temp panLeft]];
-//}
-//-(void)block{
-//    JLSlideMenu *temp = [self.navigationController.viewControllers objectAtIndex:0];
-//    [temp setStop:NO];
-//    [temp panLeft].enabled = NO;
-//    [self.navigationController.view removeGestureRecognizer:[temp panLeft]];
-//    [self.navigationController.view setUserInteractionEnabled:NO];
-//    [self.view setUserInteractionEnabled:NO];
-//}
+
 -(void)viewDidAppear:(BOOL)animated{
-    [super viewDidAppear:YES];
+    [super viewDidAppear:animated];
     JLSlideMenu *temp = [self.navigationController.viewControllers objectAtIndex:0];
     [temp panLeft].enabled = YES;
 

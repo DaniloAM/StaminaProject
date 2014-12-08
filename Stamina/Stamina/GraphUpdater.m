@@ -408,7 +408,9 @@
     
     NSDate *date, *initialDate, *finalDate;
     NSDateComponents *changeDate = [[NSDateComponents alloc] init];
-    
+
+    initialDate = [NSDate date];
+    finalDate = [NSDate date];
     
     
     //*******************************

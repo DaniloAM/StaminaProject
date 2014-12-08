@@ -178,7 +178,7 @@
     
     NSDateComponents *comp = [calendar components:NSWeekdayCalendarUnit fromDate:date];
     NSDateComponents *addDay = [[NSDateComponents alloc] init];
-    
+    comp = comp;
     [addDay setDay:1];
     
     for(;;) {
@@ -273,7 +273,6 @@
     [[self trainoNomeTxt] setPlaceholder:@"     Qual o nome do treino ?"];
     _datepicker =[self criaRetornaPicker];
     _datepicker.datePickerMode = UIDatePickerModeTime;
-    //self.navigationController.navigationBar.translucent = YES;
     _startDate = [self criaRetornaPicker];
     _finalDate = [self criaRetornaPicker];
     _startDate.datePickerMode = UIDatePickerModeDate;
@@ -296,7 +295,6 @@
     [self hideBarWithAnimation:1];
     
     [super viewWillAppear:animated];
-    self.navigationController.navigationBar.translucent = YES;
     [self firstButtonMethod:@selector(function1)  fromClass:self withImage:[UIImage imageNamed:@"icone_ok_tab.png"]];
     [self secondButtonMethod:@selector(function2) fromClass:self  withImage:[UIImage imageNamed:@"icon_adicionar.png"]];
     [self thirdButtonMethod:@selector(function3) fromClass:self withImage:[UIImage imageNamed:@"icone_adicionar_tab.png"]];
@@ -304,9 +302,7 @@
 -(void)viewWillDisappear:(BOOL)animated{
     [super viewWillDisappear:animated];
     CreateTrainTemp *tem = [CreateTrainTemp alloc];
-    [tem setExercise:nil];
-    self.navigationController.navigationBar.translucent = NO;
-    
+    [tem setExercise:nil];    
 }
 -(IBAction)horaInicial: (id)sender{
     [self launchDialog:sender];

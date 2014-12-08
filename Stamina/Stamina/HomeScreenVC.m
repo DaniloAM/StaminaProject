@@ -27,6 +27,7 @@
     [self firstButtonMethod:nil  fromClass:self  withImage:[UIImage imageNamed:str]];
     [self secondButtonMethod:nil fromClass:self  withImage:[UIImage imageNamed:@"icon_compartilhar.png"]];
     [self thirdButtonMethod:nil  fromClass:self withImage:[UIImage imageNamed:@"icon_pontuacao.png"]];
+    self.navigationItem.hidesBackButton = YES;
 }
 -(void)viewDidAppear:(BOOL)animated{
     [super viewDidAppear:animated];

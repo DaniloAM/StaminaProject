@@ -102,6 +102,7 @@
 		C5D4DA891A34DA3E00FE2182 /* Exercises.m in Sources */ = {isa = PBXBuildFile; fileRef = C5D4DA881A34DA3E00FE2182 /* Exercises.m */; };
 		C5D4DA8F1A34EC1900FE2182 /* TipsVC.m in Sources */ = {isa = PBXBuildFile; fileRef = C5D4DA8C1A34EC1900FE2182 /* TipsVC.m */; };
 		C5D4DA901A34EC1900FE2182 /* TipsContentPVC.m in Sources */ = {isa = PBXBuildFile; fileRef = C5D4DA8E1A34EC1900FE2182 /* TipsContentPVC.m */; };
+		C5D4DA981A356C7100FE2182 /* MainMenuVC.m in Sources */ = {isa = PBXBuildFile; fileRef = C5D4DA971A356C7100FE2182 /* MainMenuVC.m */; };
 		C5DB392F1A28D7400066E1BC /* icone_hamburguer.png in Resources */ = {isa = PBXBuildFile; fileRef = C5DB392E1A28D7400066E1BC /* icone_hamburguer.png */; };
 		C5DFD4EA19DC7B48000EA19C /* Cadastro.m in Sources */ = {isa = PBXBuildFile; fileRef = C5DFD4E919DC7B48000EA19C /* Cadastro.m */; };
 		C5EB6BF719D9DB6B00C528FC /* DayObject.m in Sources */ = {isa = PBXBuildFile; fileRef = C5EB6BED19D9DB6B00C528FC /* DayObject.m */; };
@@ -305,6 +306,8 @@
 		C5D4DA8C1A34EC1900FE2182 /* TipsVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TipsVC.m; sourceTree = "<group>"; };
 		C5D4DA8D1A34EC1900FE2182 /* TipsContentPVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TipsContentPVC.h; sourceTree = "<group>"; };
 		C5D4DA8E1A34EC1900FE2182 /* TipsContentPVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TipsContentPVC.m; sourceTree = "<group>"; };
+		C5D4DA961A356C7100FE2182 /* MainMenuVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainMenuVC.h; sourceTree = "<group>"; };
+		C5D4DA971A356C7100FE2182 /* MainMenuVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainMenuVC.m; sourceTree = "<group>"; };
 		C5DB392E1A28D7400066E1BC /* icone_hamburguer.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icone_hamburguer.png; sourceTree = "<group>"; };
 		C5DFD4E819DC7B48000EA19C /* Cadastro.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Cadastro.h; sourceTree = "<group>"; };
 		C5DFD4E919DC7B48000EA19C /* Cadastro.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Cadastro.m; sourceTree = "<group>"; };
@@ -585,6 +588,8 @@
 				C53F23421A0D95BC00697FB4 /* JLSlideMenu.m */,
 				325F1FE719E7229C00001EB0 /* HideBBVC.h */,
 				325F1FE819E7229C00001EB0 /* HideBBVC.m */,
+				C5D4DA961A356C7100FE2182 /* MainMenuVC.h */,
+				C5D4DA971A356C7100FE2182 /* MainMenuVC.m */,
 			);
 			name = JLSlideMenu;
 			sourceTree = "<group>";
@@ -1170,6 +1175,7 @@
 				FF951C131A28F50F00E581AB /* GraphicsVC.m in Sources */,
 				C5D4DA861A34DA3E00FE2182 /* ExerciseTip.m in Sources */,
 				C5B62BF31A14111C00F969D8 /* MenuLViews.m in Sources */,
+				C5D4DA981A356C7100FE2182 /* MainMenuVC.m in Sources */,
 				FF13E9E319E70B9B0005BA49 /* TrajectoryFile.m in Sources */,
 				32F7237E19FABCD6006170CD /* CreateTrainTemp.m in Sources */,
 				FF13E9D719E5BE160005BA49 /* RoutePointsCartesian.m in Sources */,
