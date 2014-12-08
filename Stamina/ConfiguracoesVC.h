@@ -6,9 +6,9 @@
 //  Copyright (c) 2014 Danilo Augusto Mative. All rights reserved.
 //
 
-#import "JLSlideMenu.h"
+#import "HideBBVC.h"
 #import "UserData.h"
-@interface ConfiguracoesVC : JLSlideMenu <UITableViewDataSource, UITableViewDelegate, UITextFieldDelegate>
+@interface ConfiguracoesVC : HideBBVC <UITableViewDataSource, UITableViewDelegate, UITextFieldDelegate>
 @property (weak, nonatomic) IBOutlet UITableView *table;
 @property UISegmentedControl *segIdioma, *segAlerta;
 @property UISwitch *swiProx;

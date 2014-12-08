@@ -51,8 +51,6 @@
     
 }
 
-
-
 -(void)startCameraPreviewWithCamera: (AVCaptureDevice *)camera {
     
     AVCaptureVideoPreviewLayer *captureVideoPreviewLayer = [[AVCaptureVideoPreviewLayer alloc] initWithSession:_session];

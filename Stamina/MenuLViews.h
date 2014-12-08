@@ -10,6 +10,6 @@
 #import <UIKit/UIKit.h>
 
 @interface MenuLViews : NSObject
-@property NSString *temp;
+@property UIView *temp;
 +(MenuLViews *)sharedStore;
 @end

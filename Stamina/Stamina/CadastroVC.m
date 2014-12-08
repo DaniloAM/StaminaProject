@@ -17,7 +17,6 @@
 @implementation CadastroVC
 -(void)viewDidAppear:(BOOL)animated{
     [super viewDidAppear:animated];
-    [self enableRightToBack];
 }
 - (void)viewDidLoad {
     [super viewDidLoad];

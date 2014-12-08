@@ -103,7 +103,7 @@
     
 
     //Prepare image
-    UIImage *image = [[UIImage alloc] init];
+    UIImage *image;
     
     CGSize contextSize = CGSizeMake(_graphicFrame.size.width * viewSizeNumber, _graphicFrame.size.height);
     

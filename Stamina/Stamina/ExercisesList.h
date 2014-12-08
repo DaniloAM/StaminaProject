@@ -39,19 +39,17 @@
 
 #import <Foundation/Foundation.h>
 #import "Exercises.h"
-
+#import "AppDelegate.h"
 #define exercisesCategoryCount 19
 #define frontalCategoryCount 8
 
 @interface ExercisesList : NSObject
 
-@property NSMutableArray *exercisesMatrix;
-
+-(NSString *)getStringToIndex: (int )x;
 -(void)addExercise: (Exercises *)exercise inCategory: (NSString*)string;
 -(NSMutableArray *)getArrayForCategory: (NSString *)string;
 -(Exercises *)returnExerciseWithIdentifier: (int)identifier;
 +(ExercisesList *)sharedStore;
--(void)allocArrays;
 +(NSString *)returnCategoryNameWithId :(int )identifier;
 
 @end

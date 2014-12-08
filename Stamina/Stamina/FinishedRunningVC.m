@@ -25,6 +25,7 @@
 #pragma mark - ViewController methods
 
 -(void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
     [super viewWillAppear:animated withGesture:true];
     
     [[self routeNameTextField] setDelegate:self];
@@ -203,17 +204,16 @@
 
 -(void)rightSlideAction {
     
-    int state;
     
-    if(state == 0) {
+    if(_state == 0) {
         [self.navigationController popViewControllerAnimated:true];
     }
     
-    if(state == 1) {
+    if(_state == 1) {
         _saveRoute = false;
     }
     
-    if(state == 1 || state == 2) {
+    if(_state == 1 || _state == 2) {
        
         [self setButtonImageNameLeft:@"icon_add_unable.png" andRight:@"icon_compartilha_unable.png"];
         

@@ -34,6 +34,7 @@
     lpgr.delegate = self;
 
     [self.table addGestureRecognizer:lpgr];
+    if(_createTraining)
     [self showBarWithAnimation:YES];
     [self changeBarNameWith:[self strMuscle]];
 }
@@ -50,7 +51,7 @@
     } else if (gestureRecognizer.state == UIGestureRecognizerStateBegan) {
         [super showBarWithAnimation:YES];
         UITableViewCell *cell = [self.table cellForRowAtIndexPath:indexPath];
-        Exercises *exe = [self retornaExercicioComNome:cell.textLabel.text];
+        Exercises *exe = [self returnExerciseWithIdentifier:cell.textLabel.text];
         
         if(cell.accessoryType == UITableViewCellAccessoryCheckmark){
             cell.accessoryType = UITableViewCellAccessoryNone;
@@ -64,13 +65,13 @@
     }
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-}
 -(void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
     self.table.delegate = self;
     self.table.dataSource=self;
+    [self firstButtonMethod:@selector(firstButton) fromClass:self withImage:[UIImage imageNamed:@"icon_home.png"]];
+    [self secondButtonMethod:@selector(secondButton) fromClass:self withImage:[UIImage imageNamed:@"icone_adicionar_tab.png"]];
+
 
 }
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
@@ -78,7 +79,9 @@
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return [[self arrayOfExercises] count]+2;
+    if(_createTraining)
+        return [[self arrayOfExercises] count]+2;
+    return [[self arrayOfExercises] count];
 }
 
 
@@ -107,6 +110,7 @@
         }
     }
     cell.textLabel.textColor = [UIColor staminaBlackColor];
+    cell.selectionStyle = UITableViewCellSelectionStyleNone;
     return cell;
 }
 
@@ -116,53 +120,51 @@
     cell.textLabel.backgroundColor = [UIColor clearColor];
     cell.detailTextLabel.backgroundColor = [UIColor clearColor];
 }
--(Exercises *)retornaExercicioComNome : (NSString   *)nome{
-    for (int x = 0; x < [[self arrayOfExercises] count]; x++) {
-        
-        Exercises *temp =[[self arrayOfExercises] objectAtIndex:x];
-        if([[temp name] isEqualToString:nome]){
-            return temp;
-        }
+-(Exercises *)returnExerciseWithIdentifier: (NSString *)str {
+    AppDelegate *delegate = [[UIApplication sharedApplication] delegate];
+    NSManagedObjectContext *context = [delegate managedObjectContext];
+    NSFetchRequest *request = [NSFetchRequest fetchRequestWithEntityName:@"Exercises"];
+    NSPredicate *pred = [NSPredicate predicateWithFormat:@"name=%@", str];
+    [request setPredicate:pred];
+    NSError *error;
+    NSArray *obj = [context executeFetchRequest:request error:&error];
 
-    }
-    return nil;
+    return [obj firstObject];
 }
-- (NSIndexPath *)tableView:(UITableView *)tableView willSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    if(indexPath.row>[[self arrayOfExercises] count])
+        return;
     UITableViewCell *cell = [tableView cellForRowAtIndexPath:indexPath];
     NSString *str = cell.textLabel.text;
-    
-            Exercises *temp =[self retornaExercicioComNome:str];
-    
-            UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
-            UIViewController *myVC;
-                myVC= (UIViewController *)[storyboard instantiateViewControllerWithIdentifier:@"TipsPVC"];
-                [self.navigationController pushViewController:myVC animated:YES];
-    
-    return nil;
- 
+    Exercises *temp =[self returnExerciseWithIdentifier:str];
+    NSLog(@"%@", temp.exerciseID);
+    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+    TipsVC *myVC=(TipsVC *)[storyboard instantiateViewControllerWithIdentifier:@"TipsVC"];
+    [myVC setExercise:temp];
+    [self.navigationController pushViewController:myVC animated:YES];
 }
 
 
 -(void)scrollViewDidScroll:(UIScrollView *)scrollView{
-
+    if(_createTraining)
     [self hideBarWithAnimation:YES];
 }
 
 -(void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView{
+    if(_createTraining)
     [self showBarWithAnimation:YES];
 }
 
 -(void)viewDidAppear:(BOOL)animated{
-    [super viewDidAppear:animated];
+    [super viewDidAppear:0];
     [super hideBarWithAnimation:1];
     UILongPressGestureRecognizer *lpgr = [[UILongPressGestureRecognizer alloc]
                                           initWithTarget:self action:@selector(handleLongPress:)];
     lpgr.minimumPressDuration = 1.0; //seconds
     lpgr.delegate = self;
     [self.table addGestureRecognizer:lpgr];
+    if(_createTraining)
     [self showBarWithAnimation:YES];
-    [self firstButtonMethod:@selector(firstButton) fromClass:self withImage:[UIImage imageNamed:@"icon_home.png"]];
-    [self secondButtonMethod:@selector(secondButton) fromClass:self withImage:[UIImage imageNamed:@"icone_adicionar_tab.png"]];
 }
 -(void)secondButton{
     AddExerciseVC *add = (AddExerciseVC *)[self returnViewWithName:@"AddExercise"];

@@ -28,7 +28,16 @@
 //start will/did appear and something like that
 -(void)viewDidLoad{
     [super viewDidLoad];
+    _str = @"Inicio";
     [self.navigationItem setTitle:@"Início"];
+    if([self tabBar]==nil){
+        [self createBarButton];
+        [self createNavigationBar];
+        [self createLeftView];
+        [self createPanGesture];
+        [self createViewsToPresent];
+    }
+   
 }
 -(void)viewWillDisappear:(BOOL)animated{
     [super viewWillDisappear:animated];
@@ -37,21 +46,17 @@
 -(void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
     [self cleanButtons];
+    [self.navigationItem setLeftBarButtonItem:nil];
+    self.navigationItem.hidesBackButton = YES;
+    [self.navigationItem setHidesBackButton:YES];
 }
 -(void)viewDidAppear:(BOOL)animated{
     [super viewDidAppear:NO];
-
-    if([self tabBar]==nil){
-        [self createBarButton];
-        [self createNavigationBar];
-        [self createLeftView];
-        [self createPanGesture];
-        [self createViewsToPresent];
-    }
+    
     [self.panLeft setEnabled:1];
     _recognized = UNDEFINED;
     _open = -1;
-    [self.navigationItem setHidesBackButton:YES];
+    [self callViewWithName:_str];
 
 }
 //end will/did appear and something like that
@@ -81,18 +86,18 @@
     _leftMenu.backgroundColor = [UIColor staminaBlackColor];
     [self.navigationController.view addSubview:_leftMenu];
     _leftWidthSize = _leftMenu.frame.size.width;
-    MenuLViews *views = [MenuLViews alloc];
-    if([views temp]!=nil)
-        return;
-       NSString *CurrentSelectedCViewController = NSStringFromClass(self.class);
-    [views setTemp:CurrentSelectedCViewController];
-   
+    MenuLViews *temp= [MenuLViews alloc];
+    [temp setTemp:self.navigationController.view];
 }
 -(void)createPanGesture{
     _panLeft = [[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(panRecognized:)];
     [self.navigationController.view addGestureRecognizer:_panLeft];
 }
 -(void)createNavigationBar{
+    UIView *viewNavigation = [[UIView alloc] initWithFrame:CGRectMake(0, 0, self.navigationController.navigationBar.frame.size.width, self.navigationController.navigationBar.frame.size.height)];
+    [viewNavigation setBackgroundColor:[UIColor staminaYellowColor]];
+    [self.navigationController.navigationBar addSubview:viewNavigation];
+
     CGSize screenSize = [[UIScreen mainScreen] bounds].size;
     self.navigationController.navigationBar.translucent = NO;
     float btnXStart =screenSize.width*32/885;
@@ -105,7 +110,9 @@
     [self.navigationController.navigationBar addSubview:btn];
     [btn addTarget:self action:@selector(leftMenuOpen) forControlEvents:UIControlEventTouchUpInside];
     self.navigationController.navigationBar.tintColor = [UIColor staminaYellowColor];
-    
+    UIView *view = [[UIView alloc] initWithFrame:CGRectMake(0, self.navigationController.navigationBar.frame.size.height-3, self.navigationController.navigationBar.frame.size.width,5)];
+    [view setBackgroundColor:[UIColor staminaYellowColor]];
+    [self.navigationController.navigationBar addSubview:view];
     
 }
 //end initializing methods
@@ -154,6 +161,10 @@
             if([self openMenu])
             [self sideRecognizedWithStartPoint:_firstTouch withCurrentPoint:currentPoint];
             else if(![self stop] && _recognized == RIGHT){
+           
+            NSInteger count = [self.navigationController.viewControllers count];
+                if(count==2)
+                    return;
                 [self.navigationController popViewControllerAnimated:YES];
                 _stop = YES;
             }
@@ -228,8 +239,12 @@
         
     }
 }
-// end gesture recognizers
-//start show or hide bar and left menu
+-(void)removeGesture{
+    [self.navigationController.view removeGestureRecognizer:_panLeft];
+}
+-(void)addGesture{
+    [self.navigationController.view addGestureRecognizer:_panLeft];
+}
 -(void)hideBarWithAnimation : (BOOL)animated{
     CGSize screenSize= [[UIScreen mainScreen] bounds].size;
     if(animated)
@@ -399,6 +414,31 @@
             button.alpha = 1;
         }];
         
+    }
+}
+-(void)closeEverything{
+    CGSize size = [[UIScreen mainScreen] bounds].size;
+
+    for(int x = 0 ; x < [[self arrayOfButtons] count];x++){
+        UIButton *button = [[self arrayOfButtons] objectAtIndex:x];
+        CGRect rect = CGRectMake(0, x*cellMenuHeight*size.height, _leftWidthSize, cellMenuHeight*size.height);
+        [self moveView:button withPoint:rect.origin withDuration:0.1];
+    }
+    for (int x = 0 ; x < [[self arrayFirstButton] count];x++){
+        UIButton *button = [[self arrayFirstButton] objectAtIndex:x];
+        [button removeFromSuperview];
+    }
+    for (int x = 0 ; x < [[self secondFirstButton] count];x++){
+        UIButton *button = [[self secondFirstButton] objectAtIndex:x];
+        [button removeFromSuperview];
+    }
+    for (int x = 0 ; x < [[self thirdFirstButton] count];x++){
+        UIButton *button = [[self thirdFirstButton] objectAtIndex:x];
+        [button removeFromSuperview];
+    }
+    for (int x = 0 ; x < [[self fourthFirstButton] count];x++){
+        UIButton *button = [[self fourthFirstButton] objectAtIndex:x];
+        [button removeFromSuperview];
     }
 }
 -(void)close : (int )x{
@@ -601,10 +641,12 @@
             default:
                 break;
         }
+        [btn setTitleColor:[UIColor staminaYellowColor] forState:UIControlStateNormal];
         [btn setTitle:strBtn forState:UIControlStateNormal];
         btn.contentHorizontalAlignment = UIControlContentHorizontalAlignmentLeft;
         [btn addTarget:self action:[self returnSelectorToButton:x :y] forControlEvents:UIControlEventTouchUpInside];
         [array addObject:btn];
+        [[btn titleLabel] setFont:[UIFont fontWithName:@"Lato-Light" size:18]];
     }
     return [NSArray arrayWithArray:array];
     
@@ -615,7 +657,7 @@
     NSMutableArray *array = [NSMutableArray array];
     for(int x = 0 ; x < 5;x++){
         UIButton *startButton = [[UIButton alloc] initWithFrame:CGRectMake(0, x*cellMenuHeight*size.height, _leftWidthSize, cellMenuHeight*size.height)];
-        [[startButton titleLabel] setFont:[UIFont fontWithName:@"Avenir" size:22]];
+        [[startButton titleLabel] setFont:[UIFont fontWithName:@"Lato" size:22]];
         [startButton setTitleColor:[UIColor staminaYellowColor] forState:UIControlStateNormal];
         [startButton setTitle:[self returnStringToButton:x] forState:UIControlStateNormal];
         startButton.contentHorizontalAlignment = UIControlContentHorizontalAlignmentLeft;
@@ -627,39 +669,24 @@
     }    [self setArrayOfButtons:[NSArray arrayWithArray:array]];
     UIButton *btn  = [array objectAtIndex:4];
     [btn addTarget:self action:@selector(configuracoes) forControlEvents:UIControlEventTouchUpInside];
-    array = [NSMutableArray array];
     [self setArrayFirstButton:[self alocaAndReturn:1 :M1]];
     [self setSecondFirstButton:[self alocaAndReturn:2 :M2]];
     [self setThirdFirstButton:[self alocaAndReturn:3 :M3]];
     [self setFourthFirstButton:[self alocaAndReturn:4 :M4]];
 }
+
 -(void)callViewWithName: (NSString *)str{
+    [self closeEverything];
+    [self hideBarWithAnimation:1];
+    [self hideLeftMenuAnimated:1];
+    _str = str;
     UIViewController *viewController = [self createViewWithName:str];
-    
-    MenuLViews *view = [MenuLViews alloc];
-    if([[view temp]isEqualToString:NSStringFromClass(viewController.class)]){
-        [self hideLeftMenuAnimated:0];
-        return;
-    }
-    else {
-        [_leftMenu removeFromSuperview];
-        [_tabBar removeFromSuperview];
-        UIViewController *vc = self.navigationController.presentingViewController;
-        vc = nil;
-        _leftMenu = nil;
-        _tabBar = nil;
-        [view setTemp:NSStringFromClass(viewController.class)];
-        [self.navigationController setViewControllers:@[viewController] animated:NO];
-        return;
-    }
+    [self.navigationController popToRootViewControllerAnimated:NO];
+    _presenting = viewController;
+     [self.navigationController pushViewController:viewController animated:NO];
+
 }
 -(UIViewController *)createViewWithName: (NSString *)str{
-    NSMutableArray* navArray = [[NSMutableArray alloc] initWithArray:self.navigationController.viewControllers];
-    //_leftMenu.hidden=YES;
-    for(int x =1 ; x <[navArray count];x++){
-        [navArray removeObjectAtIndex:x];
-    }
-    [self.navigationController setViewControllers:navArray animated:YES];
     UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
     UIViewController *myVC= (UIViewController *)[storyboard instantiateViewControllerWithIdentifier:str];
     return myVC;

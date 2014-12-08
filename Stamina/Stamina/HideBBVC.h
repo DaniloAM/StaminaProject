@@ -23,12 +23,12 @@
 -(void)firstButtonMethod: (void *)metodo fromClass:(UIViewController *)view withImage: (UIImage *)image;
 -(void)secondButtonMethod: (void *)metodo fromClass:(UIViewController *)view withImage: (UIImage *)image;
 -(void)thirdButtonMethod: (void *)metodo fromClass:(UIViewController *)view withImage: (UIImage *)image;
--(void)enableRightToBack;
 -(CGPoint)pointStart;
--(void)enableRightToOpenMenu;
 -(void)callViewWithName: (NSString *)string;
 -(void)changeBarNameWith: (NSString *)str;
 -(void)callView: (UIViewController *)view;
 -(UIViewController *)returnViewWithName: (NSString *)string;
 -(void)addImage: (UIImage * )image toButton: (UIButton *)btn;
+-(void)removeGesture;
+-(void)addGesture;
 @end

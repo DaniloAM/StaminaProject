@@ -26,7 +26,7 @@
 #import "CalendarObject.h"
 #import "UserData.h"
 #import "ExercisesList.h"
-
+#import "ReadTXT.h"
 @interface CoreDataLoading : NSObject
 
 @property AppDelegate *appdel;

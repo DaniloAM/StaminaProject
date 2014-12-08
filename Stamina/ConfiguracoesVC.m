@@ -25,6 +25,7 @@
     [self createTxtAltura];
     [self createTxtPeso];
     [self createDatePicker];
+    [self.view setBackgroundColor:[UIColor staminaBlackColor]];
 }
 -(void)createTable{
     self.table.delegate = self;

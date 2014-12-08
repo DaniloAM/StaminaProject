@@ -57,8 +57,9 @@
     CreateTrainTemp *temp = [CreateTrainTemp alloc];
     [[temp arrayOfExercises] removeAllObjects];
     UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
-    UIViewController *myVC;
-    myVC= (UIViewController *)[storyboard instantiateViewControllerWithIdentifier:@"CategoriaTVC"];
+    ExercicioTVC *myVC;
+    myVC= (ExercicioTVC *)[storyboard instantiateViewControllerWithIdentifier:@"CategoriaTVC"];
+    [myVC setCreateTraining:1];
     [self.navigationController pushViewController:myVC animated:YES];
     
     
@@ -177,7 +178,7 @@
     
     NSDateComponents *comp = [calendar components:NSWeekdayCalendarUnit fromDate:date];
     NSDateComponents *addDay = [[NSDateComponents alloc] init];
-    
+    comp = comp;
     [addDay setDay:1];
     
     for(;;) {
@@ -244,11 +245,11 @@
     }
     NSString *str;
     if([exerc time]){
-        str = [NSString stringWithFormat:@"%d. %@ - %02ld:%02ld",indexPath.row+1,[exercise name],[exerc minutos],(long)[exerc segundos]];
+        str = [NSString stringWithFormat:@"%d. %@ - %02d:%02d",(int)indexPath.row+1,[exercise name],(int)[exerc minutos],(int)[exerc segundos]];
         
     }
     else {
-        str = [NSString stringWithFormat:@"%d. %@ - %02ld x %02ld",indexPath.row+1,[exercise name] ,(long)[exerc serie],(long)[exerc repeticoes]];
+        str = [NSString stringWithFormat:@"%d. %@ - %02d x %02d",(int)indexPath.row+1,[exercise name] ,(int)[exerc serie],(int)[exerc repeticoes]];
         
     }
     cell.textLabel.text = str;
@@ -256,6 +257,7 @@
     cell.textLabel.textColor = [UIColor staminaYellowColor];
     cell.accessoryType = UITableViewCellAccessoryNone;
     cell.backgroundColor = [UIColor clearColor];
+    [cell setSelectionStyle:UITableViewCellSelectionStyleNone];
     return cell;
     
 }
@@ -271,7 +273,6 @@
     [[self trainoNomeTxt] setPlaceholder:@"     Qual o nome do treino ?"];
     _datepicker =[self criaRetornaPicker];
     _datepicker.datePickerMode = UIDatePickerModeTime;
-    //self.navigationController.navigationBar.translucent = YES;
     _startDate = [self criaRetornaPicker];
     _finalDate = [self criaRetornaPicker];
     _startDate.datePickerMode = UIDatePickerModeDate;
@@ -294,7 +295,6 @@
     [self hideBarWithAnimation:1];
     
     [super viewWillAppear:animated];
-    self.navigationController.navigationBar.translucent = YES;
     [self firstButtonMethod:@selector(function1)  fromClass:self withImage:[UIImage imageNamed:@"icone_ok_tab.png"]];
     [self secondButtonMethod:@selector(function2) fromClass:self  withImage:[UIImage imageNamed:@"icon_adicionar.png"]];
     [self thirdButtonMethod:@selector(function3) fromClass:self withImage:[UIImage imageNamed:@"icone_adicionar_tab.png"]];
@@ -302,9 +302,7 @@
 -(void)viewWillDisappear:(BOOL)animated{
     [super viewWillDisappear:animated];
     CreateTrainTemp *tem = [CreateTrainTemp alloc];
-    [tem setExercise:nil];
-    self.navigationController.navigationBar.translucent = NO;
-    
+    [tem setExercise:nil];    
 }
 -(IBAction)horaInicial: (id)sender{
     [self launchDialog:sender];

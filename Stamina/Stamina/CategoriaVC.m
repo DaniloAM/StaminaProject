@@ -17,7 +17,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self setFrontal:[NSArray arrayWithObjects:@"Abdominal",@"Ante-Braço",@"Bíceps",@"Ombros",@"Peitoral",@"Quadríceps",@"Trapézio",@"Tríceps", nil]];
-    [self setTraseiro:[NSArray arrayWithObjects:@"Ante-Braço",@"Bíceps",@"Dorsal",@"Glúteos",@"Lombar",@"Ombros",@"Panturrilha",@"Posterior de Coxa", @"Rombóides",@"Trapézio",@"Tríceps",@"",@"",nil]];
+    [self setTraseiro:[NSArray arrayWithObjects:@"Ante-Braço",@"Bíceps",@"Dorsal",@"Glúteos",@"Lombar",@"Ombros",@"Panturrilha",@"Posterior de Coxa", @"Rombóides",@"Trapézio",@"Tríceps",nil]];
     self.table.delegate = self;
     self.table.dataSource=self;
     [self.table setBackgroundColor:[UIColor clearColor]];
@@ -68,6 +68,8 @@
         cell.textLabel.text = [[self traseiro] objectAtIndex:indexPath.row];
     }
     cell.accessoryType = UITableViewCellAccessoryNone;
+    [cell setSelectionStyle:UITableViewCellSelectionStyleNone];
+
     return cell;
 }
 - (void)tableView: (UITableView*)tableView willDisplayCell: (UITableViewCell*)cell forRowAtIndexPath: (NSIndexPath*)indexPath
@@ -87,10 +89,7 @@
         case 1:
             sectionName = NSLocalizedString(@"Traseiro", @"Traseiro");
             break;
-            // ...
-        default:
-            sectionName = @"";
-            break;
+
     }
     return sectionName;
 }
@@ -106,16 +105,16 @@
     ExercisesList *temp = [ExercisesList alloc];
     if(indexPath.section==0){
         [myVC setStrMuscle:[[self frontal] objectAtIndex:indexPath.row]];
-        array = [[temp exercisesMatrix] objectAtIndex:indexPath.row];
         
+        array = [temp getArrayForCategory:[temp getStringToIndex:(int)indexPath.row]];
     }
     else{
         [myVC setStrMuscle:[[self traseiro] objectAtIndex:indexPath.row]];
-        array = [[temp exercisesMatrix] objectAtIndex:indexPath.row + frontalCategoryCount];
-        
+        array = [temp getArrayForCategory:[temp getStringToIndex:(int)indexPath.row+frontalCategoryCount]];
     }
-    [myVC setArrayOfExercises:array];
 
+    [myVC setArrayOfExercises:array];
+    [myVC setCreateTraining:_createTraining];
     [self.navigationController pushViewController:myVC animated:YES];
 }
 -(void)tableView:(UITableView *)tableView willDisplayHeaderView:(UIView *)view forSection:(NSInteger)section {
@@ -127,13 +126,9 @@
     [header.textLabel setTextColor:[UIColor colorWithRed:250 green:217 blue:0 alpha:1]];
 }
 -(void)scrollViewDidScroll:(UIScrollView *)scrollView{
-    [self hideBarWithAnimation:0];
+    [self hideBarWithAnimation:1];
 
-//    [super hideBarWithAnimation:YES];
 }
 
--(void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView{
-  //  [super showBarWithAnimation:YES];
-}
 
 @end

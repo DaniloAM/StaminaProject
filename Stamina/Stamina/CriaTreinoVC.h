@@ -13,6 +13,7 @@
 #import "TrainingExercises.h"
 #import "ExerciseTemporary.h"
 #import "Traning.h"
+#import "ExercicioTVC.h"
 @interface CriaTreinoVC : HideBBVC <CustomIOS7AlertViewDelegate, UITextFieldDelegate, UITableViewDataSource, UITableViewDelegate>
 @property (weak, nonatomic) IBOutlet UITextField *trainoNomeTxt;
 @property (weak, nonatomic) IBOutlet UIButton *btnDias;

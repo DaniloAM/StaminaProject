@@ -2,7 +2,7 @@
 //  Exercises.h
 //  Stamina
 //
-//  Created by Danilo Augusto Mative on 23/10/14.
+//  Created by João Lucas Sisanoski on 07/12/14.
 //  Copyright (c) 2014 Danilo Augusto Mative. All rights reserved.
 //
 
@@ -13,8 +13,7 @@
 @interface Exercises : NSManagedObject
 
 @property (nonatomic, retain) NSNumber * exerciseID;
-@property (nonatomic, retain) NSString * exerciseInfo;
-@property (nonatomic, retain) NSString * imageName;
+@property (nonatomic, retain) NSNumber * numberImages;
 @property (nonatomic, retain) NSString * name;
 @property (nonatomic, retain) NSString * primaryMuscle;
 @property (nonatomic, retain) NSString * secondaryMuscle;
