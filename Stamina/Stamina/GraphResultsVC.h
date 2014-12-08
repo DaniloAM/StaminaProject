@@ -1,17 +1,17 @@
 //
-//  GraphicsVC.h
+//  GraphResultsVC.h
 //  Stamina
 //
-//  Created by Danilo Augusto Mative on 28/11/14.
+//  Created by Danilo Augusto Mative on 08/12/14.
 //  Copyright (c) 2014 Danilo Augusto Mative. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>
 #import "GraphicScroller.h"
-#import "TestUpdater.h"
+#import "StaminaUpdater.h"
 #import "JLSlideMenu.h"
 
-@interface GraphicsVC : JLSlideMenu
+@interface GraphResultsVC : JLSlideMenu
 
 @property GraphicScroller *graphic;
 

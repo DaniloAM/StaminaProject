@@ -9,10 +9,12 @@
 #import "GraphicDrawer.h"
 
 #define viewSizeNumber 5
-#define borderIncrease 60.0
+#define borderIncrease 55.0
 #define bottomSize 1.0
 
 #define labelHeight 25.0
+
+#define lineSizeFactor 1.15
 
 @implementation GraphicDrawer
 
@@ -82,7 +84,7 @@
     double heightFactor = (graphHeight - borderIncrease) / max;
     double widthFactor = _graphicFrame.size.width / numberView;
     double radius = _graphicFrame.size.width / 25.0;
-    double lineSize = (graphHeight - borderIncrease) / 40.0;
+    double lineSize = ((graphHeight - borderIncrease) / 40.0) * lineSizeFactor;
     
     
     

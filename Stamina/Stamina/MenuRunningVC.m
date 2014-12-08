@@ -36,7 +36,26 @@
 -(void)viewWillAppear:(BOOL)animated {
     
     [super viewWillAppear:animated];
-    //[self removeGestureFromMenuVC];
+    
+    WeatherCondition *condition = [[WeatherCondition alloc] init];
+    
+    NSInteger temperature = [condition returnTemperatureInCurrentLocation];
+    
+    if(temperature <= 0) {
+        [[self temperatureLabel] setHidden:true];
+        [[self temperatureImage] setHidden:true];
+        
+    }
+    
+    else {
+        [[self temperatureLabel] setHidden:false];
+        [[self temperatureImage] setHidden:false];
+        
+        temperature -= 273;
+        
+        NSString *temp = [NSString stringWithFormat:@"%d °C", (int) temperature];
+        [[self temperatureLabel] setText:temp];
+    }
     
 }
 

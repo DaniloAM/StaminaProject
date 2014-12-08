@@ -1,14 +1,14 @@
 //
-//  TestUpdater.m
+//  StaminaUpdater.m
 //  Stamina
 //
-//  Created by Danilo Augusto Mative on 19/11/14.
+//  Created by Danilo Augusto Mative on 08/12/14.
 //  Copyright (c) 2014 Danilo Augusto Mative. All rights reserved.
 //
 
-#import "TestUpdater.h"
+#import "StaminaUpdater.h"
 
-@implementation TestUpdater
+@implementation StaminaUpdater
 
 
 -(id)init {

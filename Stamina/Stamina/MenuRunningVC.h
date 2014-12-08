@@ -9,11 +9,13 @@
 #import <UIKit/UIKit.h>
 #import "HideBBVC.h"
 #import "TrajectorySelectionVC.h"
+#import "WeatherCondition.h"
+#import "WebServiceResponse.h"
 
 @interface MenuRunningVC : HideBBVC
 
 @property (weak, nonatomic) IBOutlet UILabel *temperatureLabel;
 @property (weak, nonatomic) IBOutlet UIImageView *calendarIcon;
-
+@property (weak, nonatomic) IBOutlet UIImageView *temperatureImage;
 
 @end

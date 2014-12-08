@@ -42,7 +42,6 @@
 		C53AAC1E1A1BC4B7000AD02C /* icone_tempo_selected.png in Resources */ = {isa = PBXBuildFile; fileRef = C53AAC181A1BC4B7000AD02C /* icone_tempo_selected.png */; };
 		C53AAC1F1A1BC4B7000AD02C /* icone_tempo.png in Resources */ = {isa = PBXBuildFile; fileRef = C53AAC191A1BC4B7000AD02C /* icone_tempo.png */; };
 		C53F23431A0D95BC00697FB4 /* JLSlideMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = C53F23421A0D95BC00697FB4 /* JLSlideMenu.m */; };
-		C56632561A03F3110006309D /* WeatherCondition.m in Sources */ = {isa = PBXBuildFile; fileRef = C56632551A03F3110006309D /* WeatherCondition.m */; };
 		C5968D981A225EB400092176 /* Traning.m in Sources */ = {isa = PBXBuildFile; fileRef = C5968D971A225EB400092176 /* Traning.m */; };
 		C5A2418619CB512700064E54 /* TemporaryVC.m in Sources */ = {isa = PBXBuildFile; fileRef = C5A2418519CB512700064E54 /* TemporaryVC.m */; };
 		C5B62BED1A14056000F969D8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C5B62BEC1A14056000F969D8 /* Main.storyboard */; };
@@ -135,10 +134,13 @@
 		FF1C5D071A02B22B00032DC9 /* UIStaminaColor.m in Sources */ = {isa = PBXBuildFile; fileRef = FF1C5D061A02B22B00032DC9 /* UIStaminaColor.m */; };
 		FF1C5D0A1A03F6E600032DC9 /* UIStaminaLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = FF1C5D091A03F6E600032DC9 /* UIStaminaLabel.m */; };
 		FF1C5D181A07EE6F00032DC9 /* StaminaExpandTV.m in Sources */ = {isa = PBXBuildFile; fileRef = FF1C5D171A07EE6F00032DC9 /* StaminaExpandTV.m */; };
+		FF1D8D511A3600CA00E52110 /* StaminaUpdater.m in Sources */ = {isa = PBXBuildFile; fileRef = FF1D8D501A3600CA00E52110 /* StaminaUpdater.m */; };
+		FF1D8D551A36014B00E52110 /* GraphResultsVC.m in Sources */ = {isa = PBXBuildFile; fileRef = FF1D8D541A36014B00E52110 /* GraphResultsVC.m */; };
+		FF1D8D581A36083B00E52110 /* WeatherObject.m in Sources */ = {isa = PBXBuildFile; fileRef = FF1D8D571A36083B00E52110 /* WeatherObject.m */; };
+		FF1D8D5B1A36095500E52110 /* WeatherCondition.m in Sources */ = {isa = PBXBuildFile; fileRef = FF1D8D5A1A36095500E52110 /* WeatherCondition.m */; };
 		FF951BDD1A28E52A00E581AB /* GNComponent.m in Sources */ = {isa = PBXBuildFile; fileRef = FF951BD61A28E52A00E581AB /* GNComponent.m */; };
 		FF951BDE1A28E52A00E581AB /* GraphicScroller.m in Sources */ = {isa = PBXBuildFile; fileRef = FF951BD81A28E52A00E581AB /* GraphicScroller.m */; };
 		FF951BDF1A28E52A00E581AB /* GraphUpdater.m in Sources */ = {isa = PBXBuildFile; fileRef = FF951BDA1A28E52A00E581AB /* GraphUpdater.m */; };
-		FF951BE01A28E52A00E581AB /* TestUpdater.m in Sources */ = {isa = PBXBuildFile; fileRef = FF951BDC1A28E52A00E581AB /* TestUpdater.m */; };
 		FF951BE31A28E52F00E581AB /* TrajectoryHistory.m in Sources */ = {isa = PBXBuildFile; fileRef = FF951BE21A28E52F00E581AB /* TrajectoryHistory.m */; };
 		FF951BE91A28EDE800E581AB /* icone_camera_girar.png in Resources */ = {isa = PBXBuildFile; fileRef = FF951BE51A28EDE800E581AB /* icone_camera_girar.png */; };
 		FF951BEA1A28EDE800E581AB /* icone_camera_ok.png in Resources */ = {isa = PBXBuildFile; fileRef = FF951BE61A28EDE800E581AB /* icone_camera_ok.png */; };
@@ -161,7 +163,6 @@
 		FF951C0E1A28F0C400E581AB /* icone_foto.png in Resources */ = {isa = PBXBuildFile; fileRef = FF951C061A28F0C400E581AB /* icone_foto.png */; };
 		FF951C0F1A28F0C400E581AB /* icone_trajeto_compartilhar_selected.png in Resources */ = {isa = PBXBuildFile; fileRef = FF951C071A28F0C400E581AB /* icone_trajeto_compartilhar_selected.png */; };
 		FF951C101A28F0C400E581AB /* icone_trajeto_compartilhar.png in Resources */ = {isa = PBXBuildFile; fileRef = FF951C081A28F0C400E581AB /* icone_trajeto_compartilhar.png */; };
-		FF951C131A28F50F00E581AB /* GraphicsVC.m in Sources */ = {isa = PBXBuildFile; fileRef = FF951C121A28F50F00E581AB /* GraphicsVC.m */; };
 		FF951C4B1A2F788B00E581AB /* GraphicDrawer.m in Sources */ = {isa = PBXBuildFile; fileRef = FF951C4A1A2F788B00E581AB /* GraphicDrawer.m */; };
 		FFAC18FF19DB200E00B17487 /* FinishedRunningVC.m in Sources */ = {isa = PBXBuildFile; fileRef = FFAC18FE19DB200E00B17487 /* FinishedRunningVC.m */; };
 		FFAC190B19DC86C400B17487 /* SocialSharingVC.m in Sources */ = {isa = PBXBuildFile; fileRef = FFAC190A19DC86C400B17487 /* SocialSharingVC.m */; };
@@ -233,8 +234,6 @@
 		C53AAC191A1BC4B7000AD02C /* icone_tempo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icone_tempo.png; sourceTree = "<group>"; };
 		C53F23411A0D95BC00697FB4 /* JLSlideMenu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JLSlideMenu.h; sourceTree = "<group>"; };
 		C53F23421A0D95BC00697FB4 /* JLSlideMenu.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JLSlideMenu.m; sourceTree = "<group>"; };
-		C56632541A03F3110006309D /* WeatherCondition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WeatherCondition.h; path = ../WeatherCondition.h; sourceTree = "<group>"; };
-		C56632551A03F3110006309D /* WeatherCondition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WeatherCondition.m; path = ../WeatherCondition.m; sourceTree = "<group>"; };
 		C5968D961A225EB400092176 /* Traning.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Traning.h; sourceTree = "<group>"; };
 		C5968D971A225EB400092176 /* Traning.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Traning.m; sourceTree = "<group>"; };
 		C5A2418419CB512700064E54 /* TemporaryVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TemporaryVC.h; sourceTree = "<group>"; };
@@ -365,14 +364,20 @@
 		FF1C5D091A03F6E600032DC9 /* UIStaminaLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UIStaminaLabel.m; sourceTree = "<group>"; };
 		FF1C5D161A07EE6F00032DC9 /* StaminaExpandTV.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StaminaExpandTV.h; sourceTree = "<group>"; };
 		FF1C5D171A07EE6F00032DC9 /* StaminaExpandTV.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StaminaExpandTV.m; sourceTree = "<group>"; };
+		FF1D8D4F1A3600CA00E52110 /* StaminaUpdater.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StaminaUpdater.h; sourceTree = "<group>"; };
+		FF1D8D501A3600CA00E52110 /* StaminaUpdater.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StaminaUpdater.m; sourceTree = "<group>"; };
+		FF1D8D531A36014B00E52110 /* GraphResultsVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GraphResultsVC.h; sourceTree = "<group>"; };
+		FF1D8D541A36014B00E52110 /* GraphResultsVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GraphResultsVC.m; sourceTree = "<group>"; };
+		FF1D8D561A36083B00E52110 /* WeatherObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WeatherObject.h; sourceTree = "<group>"; };
+		FF1D8D571A36083B00E52110 /* WeatherObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WeatherObject.m; sourceTree = "<group>"; };
+		FF1D8D591A36095500E52110 /* WeatherCondition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WeatherCondition.h; sourceTree = "<group>"; };
+		FF1D8D5A1A36095500E52110 /* WeatherCondition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WeatherCondition.m; sourceTree = "<group>"; };
 		FF951BD51A28E52A00E581AB /* GNComponent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GNComponent.h; sourceTree = "<group>"; };
 		FF951BD61A28E52A00E581AB /* GNComponent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GNComponent.m; sourceTree = "<group>"; };
 		FF951BD71A28E52A00E581AB /* GraphicScroller.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GraphicScroller.h; sourceTree = "<group>"; };
 		FF951BD81A28E52A00E581AB /* GraphicScroller.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GraphicScroller.m; sourceTree = "<group>"; };
 		FF951BD91A28E52A00E581AB /* GraphUpdater.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GraphUpdater.h; sourceTree = "<group>"; };
 		FF951BDA1A28E52A00E581AB /* GraphUpdater.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GraphUpdater.m; sourceTree = "<group>"; };
-		FF951BDB1A28E52A00E581AB /* TestUpdater.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestUpdater.h; sourceTree = "<group>"; };
-		FF951BDC1A28E52A00E581AB /* TestUpdater.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestUpdater.m; sourceTree = "<group>"; };
 		FF951BE11A28E52F00E581AB /* TrajectoryHistory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TrajectoryHistory.h; sourceTree = "<group>"; };
 		FF951BE21A28E52F00E581AB /* TrajectoryHistory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TrajectoryHistory.m; sourceTree = "<group>"; };
 		FF951BE51A28EDE800E581AB /* icone_camera_girar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icone_camera_girar.png; sourceTree = "<group>"; };
@@ -396,8 +401,6 @@
 		FF951C061A28F0C400E581AB /* icone_foto.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icone_foto.png; sourceTree = "<group>"; };
 		FF951C071A28F0C400E581AB /* icone_trajeto_compartilhar_selected.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icone_trajeto_compartilhar_selected.png; sourceTree = "<group>"; };
 		FF951C081A28F0C400E581AB /* icone_trajeto_compartilhar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icone_trajeto_compartilhar.png; sourceTree = "<group>"; };
-		FF951C111A28F50F00E581AB /* GraphicsVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GraphicsVC.h; sourceTree = "<group>"; };
-		FF951C121A28F50F00E581AB /* GraphicsVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GraphicsVC.m; sourceTree = "<group>"; };
 		FF951C491A2F788B00E581AB /* GraphicDrawer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GraphicDrawer.h; sourceTree = "<group>"; };
 		FF951C4A1A2F788B00E581AB /* GraphicDrawer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GraphicDrawer.m; sourceTree = "<group>"; };
 		FFAC18FD19DB200E00B17487 /* FinishedRunningVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FinishedRunningVC.h; sourceTree = "<group>"; };
@@ -669,15 +672,14 @@
 		FF15972C19C0D9FF00D9236F /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				FF1D8D521A36011C00E52110 /* Resultados */,
+				FF1D8D4A1A36004700E52110 /* Calendario */,
+				FF1D8D491A36003100E52110 /* Compartilhar */,
 				FFAC194119E319F300B17487 /* Cadastro */,
 				C55E5C8A19FBC6E90019CD0F /* CriarTreino */,
 				FFAC193E19E3172300B17487 /* Exercitar */,
 				325F1FD919E7091C00001EB0 /* AcademiaVC.m */,
 				325F1FD819E7091C00001EB0 /* AcademiaVC.h */,
-				C5EB6C0019D9DBD300C528FC /* AVCamPreviewView.h */,
-				C5EB6C0119D9DBD300C528FC /* AVCamPreviewView.m */,
-				FF1C5C3819FADD3D00032DC9 /* CalendarInformationVC.h */,
-				FF1C5C3919FADD3D00032DC9 /* CalendarInformationVC.m */,
 				C5EB6BFE19D9DBD300C528FC /* FBLoginVC.h */,
 				C5EB6BFF19D9DBD300C528FC /* FBLoginVC.m */,
 				325F1FE719E7229C00001EB0 /* HideBBVC.h */,
@@ -688,12 +690,8 @@
 				C53F23421A0D95BC00697FB4 /* JLSlideMenu.m */,
 				FF13E9E919E71FFA0005BA49 /* PushedViewController.h */,
 				FF13E9EA19E71FFA0005BA49 /* PushedViewController.m */,
-				FFAC190919DC86C400B17487 /* SocialSharingVC.h */,
-				FFAC190A19DC86C400B17487 /* SocialSharingVC.m */,
 				FF17BD5A19C8C18200B5EF46 /* StartVC.h */,
 				FF17BD5B19C8C18200B5EF46 /* StartVC.m */,
-				C5EB6BFC19D9DBD300C528FC /* UserCalendarVC.h */,
-				C5EB6BFD19D9DBD300C528FC /* UserCalendarVC.m */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -701,33 +699,15 @@
 		FF15977719C0DA3B00D9236F /* NSObjects */ = {
 			isa = PBXGroup;
 			children = (
+				FF1D8D4E1A3600A300E52110 /* Web */,
+				FF1D8D4D1A36009700E52110 /* Route */,
+				FF1D8D4C1A36008900E52110 /* User */,
+				FF1D8D4B1A36006D00E52110 /* UIStamina */,
 				C5EB6BEC19D9DB5600C528FC /* Calendar */,
-				C56632541A03F3110006309D /* WeatherCondition.h */,
-				C56632551A03F3110006309D /* WeatherCondition.m */,
 				32F57C7019EC6838001BF6B2 /* MenuShouldOpen.h */,
 				32F57C7119EC6838001BF6B2 /* MenuShouldOpen.m */,
-				C5DFD4E819DC7B48000EA19C /* Cadastro.h */,
-				C5DFD4E919DC7B48000EA19C /* Cadastro.m */,
-				C53AAC0D1A1BBC39000AD02C /* UIStaminaImages.h */,
-				C53AAC0E1A1BBC39000AD02C /* UIStaminaImages.m */,
-				FF17BDBE19CA2E5600B5EF46 /* UserTraining.h */,
-				FF17BDBF19CA2E5600B5EF46 /* UserTraining.m */,
-				C52C810619CA1E47006EAFCF /* WebServiceResponse.h */,
-				C52C810719CA1E47006EAFCF /* WebServiceResponse.m */,
-				FF15979D19C0DA5A00D9236F /* UserData.h */,
-				FF15979E19C0DA5A00D9236F /* UserData.m */,
 				FF159A5019C22BD400D9236F /* ExercisesList.h */,
 				FF159A5119C22BD400D9236F /* ExercisesList.m */,
-				FF13E9D519E5BE160005BA49 /* RoutePointsCartesian.h */,
-				FF13E9D619E5BE160005BA49 /* RoutePointsCartesian.m */,
-				FF13E9D819E5BE330005BA49 /* FinishedRoute.h */,
-				FF13E9D919E5BE330005BA49 /* FinishedRoute.m */,
-				FF13E9DB19E5BF840005BA49 /* SharingResponse.h */,
-				FF13E9DC19E5BF840005BA49 /* SharingResponse.m */,
-				FF1C5D051A02B22B00032DC9 /* UIStaminaColor.h */,
-				FF1C5D061A02B22B00032DC9 /* UIStaminaColor.m */,
-				FF1C5D081A03F6E600032DC9 /* UIStaminaLabel.h */,
-				FF1C5D091A03F6E600032DC9 /* UIStaminaLabel.m */,
 			);
 			name = NSObjects;
 			sourceTree = "<group>";
@@ -749,6 +729,89 @@
 				FF15987519C0E32100D9236F /* FacebookSDK.framework */,
 			);
 			path = FacebookSDK;
+			sourceTree = "<group>";
+		};
+		FF1D8D491A36003100E52110 /* Compartilhar */ = {
+			isa = PBXGroup;
+			children = (
+				C5EB6C0019D9DBD300C528FC /* AVCamPreviewView.h */,
+				C5EB6C0119D9DBD300C528FC /* AVCamPreviewView.m */,
+				FFAC190919DC86C400B17487 /* SocialSharingVC.h */,
+				FFAC190A19DC86C400B17487 /* SocialSharingVC.m */,
+			);
+			name = Compartilhar;
+			sourceTree = "<group>";
+		};
+		FF1D8D4A1A36004700E52110 /* Calendario */ = {
+			isa = PBXGroup;
+			children = (
+				FF1C5C3819FADD3D00032DC9 /* CalendarInformationVC.h */,
+				FF1C5C3919FADD3D00032DC9 /* CalendarInformationVC.m */,
+				C5EB6BFC19D9DBD300C528FC /* UserCalendarVC.h */,
+				C5EB6BFD19D9DBD300C528FC /* UserCalendarVC.m */,
+			);
+			name = Calendario;
+			sourceTree = "<group>";
+		};
+		FF1D8D4B1A36006D00E52110 /* UIStamina */ = {
+			isa = PBXGroup;
+			children = (
+				C53AAC0D1A1BBC39000AD02C /* UIStaminaImages.h */,
+				C53AAC0E1A1BBC39000AD02C /* UIStaminaImages.m */,
+				FF1C5D051A02B22B00032DC9 /* UIStaminaColor.h */,
+				FF1C5D061A02B22B00032DC9 /* UIStaminaColor.m */,
+				FF1C5D081A03F6E600032DC9 /* UIStaminaLabel.h */,
+				FF1C5D091A03F6E600032DC9 /* UIStaminaLabel.m */,
+			);
+			name = UIStamina;
+			sourceTree = "<group>";
+		};
+		FF1D8D4C1A36008900E52110 /* User */ = {
+			isa = PBXGroup;
+			children = (
+				C5DFD4E819DC7B48000EA19C /* Cadastro.h */,
+				C5DFD4E919DC7B48000EA19C /* Cadastro.m */,
+				FF17BDBE19CA2E5600B5EF46 /* UserTraining.h */,
+				FF17BDBF19CA2E5600B5EF46 /* UserTraining.m */,
+				FF15979D19C0DA5A00D9236F /* UserData.h */,
+				FF15979E19C0DA5A00D9236F /* UserData.m */,
+			);
+			name = User;
+			sourceTree = "<group>";
+		};
+		FF1D8D4D1A36009700E52110 /* Route */ = {
+			isa = PBXGroup;
+			children = (
+				FF13E9D519E5BE160005BA49 /* RoutePointsCartesian.h */,
+				FF13E9D619E5BE160005BA49 /* RoutePointsCartesian.m */,
+				FF13E9D819E5BE330005BA49 /* FinishedRoute.h */,
+				FF13E9D919E5BE330005BA49 /* FinishedRoute.m */,
+			);
+			name = Route;
+			sourceTree = "<group>";
+		};
+		FF1D8D4E1A3600A300E52110 /* Web */ = {
+			isa = PBXGroup;
+			children = (
+				C52C810619CA1E47006EAFCF /* WebServiceResponse.h */,
+				C52C810719CA1E47006EAFCF /* WebServiceResponse.m */,
+				FF13E9DB19E5BF840005BA49 /* SharingResponse.h */,
+				FF13E9DC19E5BF840005BA49 /* SharingResponse.m */,
+				FF1D8D561A36083B00E52110 /* WeatherObject.h */,
+				FF1D8D571A36083B00E52110 /* WeatherObject.m */,
+				FF1D8D591A36095500E52110 /* WeatherCondition.h */,
+				FF1D8D5A1A36095500E52110 /* WeatherCondition.m */,
+			);
+			name = Web;
+			sourceTree = "<group>";
+		};
+		FF1D8D521A36011C00E52110 /* Resultados */ = {
+			isa = PBXGroup;
+			children = (
+				FF1D8D531A36014B00E52110 /* GraphResultsVC.h */,
+				FF1D8D541A36014B00E52110 /* GraphResultsVC.m */,
+			);
+			name = Resultados;
 			sourceTree = "<group>";
 		};
 		FF794D7819CA28BA00808144 /* CoreData */ = {
@@ -783,10 +846,8 @@
 				FF951BD61A28E52A00E581AB /* GNComponent.m */,
 				FF951BD91A28E52A00E581AB /* GraphUpdater.h */,
 				FF951BDA1A28E52A00E581AB /* GraphUpdater.m */,
-				FF951BDB1A28E52A00E581AB /* TestUpdater.h */,
-				FF951BDC1A28E52A00E581AB /* TestUpdater.m */,
-				FF951C111A28F50F00E581AB /* GraphicsVC.h */,
-				FF951C121A28F50F00E581AB /* GraphicsVC.m */,
+				FF1D8D4F1A3600CA00E52110 /* StaminaUpdater.h */,
+				FF1D8D501A3600CA00E52110 /* StaminaUpdater.m */,
 			);
 			name = GraphicScroller;
 			sourceTree = "<group>";
@@ -1077,11 +1138,11 @@
 				FF1C5C3A19FADD3D00032DC9 /* CalendarInformationVC.m in Sources */,
 				C5EB6C0819D9DBD300C528FC /* UserCalendarVC.m in Sources */,
 				C5EB6C0D19D9DBD300C528FC /* RunningMapVC.m in Sources */,
+				FF1D8D511A3600CA00E52110 /* StaminaUpdater.m in Sources */,
 				FF951BE31A28E52F00E581AB /* TrajectoryHistory.m in Sources */,
 				FF15972919C0D96E00D9236F /* CustomIOS7AlertView.m in Sources */,
 				FF13E9DA19E5BE330005BA49 /* FinishedRoute.m in Sources */,
 				32F57C6F19EC4D16001BF6B2 /* ExercicioTVC.m in Sources */,
-				C56632561A03F3110006309D /* WeatherCondition.m in Sources */,
 				32F57C7219EC6838001BF6B2 /* MenuShouldOpen.m in Sources */,
 				FF13E9EB19E71FFA0005BA49 /* PushedViewController.m in Sources */,
 				FF17BD5C19C8C18200B5EF46 /* StartVC.m in Sources */,
@@ -1106,7 +1167,6 @@
 				325F1FDA19E7091C00001EB0 /* AcademiaVC.m in Sources */,
 				3276F1CD19F6CE2D00B2F93D /* CriaTreinoVC.m in Sources */,
 				C5A2418619CB512700064E54 /* TemporaryVC.m in Sources */,
-				FF951BE01A28E52A00E581AB /* TestUpdater.m in Sources */,
 				C53F23431A0D95BC00697FB4 /* JLSlideMenu.m in Sources */,
 				FF1596F319C0CBC900D9236F /* AppDelegate.m in Sources */,
 				FFAC18FF19DB200E00B17487 /* FinishedRunningVC.m in Sources */,
@@ -1114,17 +1174,18 @@
 				FF1C5D0A1A03F6E600032DC9 /* UIStaminaLabel.m in Sources */,
 				C5EB6BFA19D9DB6B00C528FC /* CalendarPreparer.m in Sources */,
 				FF951BDE1A28E52A00E581AB /* GraphicScroller.m in Sources */,
+				FF1D8D551A36014B00E52110 /* GraphResultsVC.m in Sources */,
 				FF951C4B1A2F788B00E581AB /* GraphicDrawer.m in Sources */,
 				C5968D981A225EB400092176 /* Traning.m in Sources */,
 				C53A353119D3411F00AC1383 /* Reachability.m in Sources */,
 				FF13E9DD19E5BF840005BA49 /* SharingResponse.m in Sources */,
 				C5DFD4EA19DC7B48000EA19C /* Cadastro.m in Sources */,
 				C5EB6BF719D9DB6B00C528FC /* DayObject.m in Sources */,
-				FF951C131A28F50F00E581AB /* GraphicsVC.m in Sources */,
 				C5B62BF31A14111C00F969D8 /* MenuLViews.m in Sources */,
 				FF13E9E319E70B9B0005BA49 /* TrajectoryFile.m in Sources */,
 				32F7237E19FABCD6006170CD /* CreateTrainTemp.m in Sources */,
 				FF13E9D719E5BE160005BA49 /* RoutePointsCartesian.m in Sources */,
+				FF1D8D5B1A36095500E52110 /* WeatherCondition.m in Sources */,
 				FFAC190B19DC86C400B17487 /* SocialSharingVC.m in Sources */,
 				FF17BDBA19C9F78F00B5EF46 /* TrainingDayObject.m in Sources */,
 				FF1596F019C0CBC900D9236F /* main.m in Sources */,
@@ -1133,6 +1194,7 @@
 				FF951BDD1A28E52A00E581AB /* GNComponent.m in Sources */,
 				C5EBA8041A1D283C0033076C /* TrainingExercises.m in Sources */,
 				324E23C219E87FC400DA2FDE /* CategoriaVC.m in Sources */,
+				FF1D8D581A36083B00E52110 /* WeatherObject.m in Sources */,
 				FF951BDF1A28E52A00E581AB /* GraphUpdater.m in Sources */,
 				FF159A5219C22BD400D9236F /* ExercisesList.m in Sources */,
 			);

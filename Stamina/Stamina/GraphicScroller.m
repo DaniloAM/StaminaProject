@@ -9,7 +9,7 @@
 #import "GraphicScroller.h"
 
 //Graphic size constant
-#define graphHeight 280.0
+#define graphHeight 240.0
 #define graphWidth 300.0
 #define borderIncrease 60.0
 

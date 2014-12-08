@@ -91,15 +91,22 @@
     return [self doTheRequest:post andUrl:url];
     
 }
-+(WeatherCondition *)previsaoDoTempoNaLatitude : (float)lat eLongitude:(float)lon{
++(WeatherObject *)previsaoDoTempoNaLatitude : (float)lat eLongitude:(float)lon{
     NSString *url = [NSString stringWithFormat:@"http://api.openweathermap.org/data/2.5/weather?lat=%f&lon=%f",lat, lon ];
     NSData *jsonDados = [[NSData alloc] initWithContentsOfURL:
                   [NSURL URLWithString:url]];
+    
+    if(!jsonDados) {
+        return nil;
+    }
+    
     NSError *error;
     NSMutableDictionary *jsonDadosUsuario = [NSJSONSerialization
                                              JSONObjectWithData:jsonDados
                                              options:NSJSONReadingMutableContainers
                                              error:&error];
+    
+    
     NSDictionary *main = [[NSDictionary  alloc] initWithDictionary:[jsonDadosUsuario objectForKey:@"main"]];
     NSArray *array = [jsonDadosUsuario objectForKey:@"weather"];
     
@@ -111,7 +118,7 @@
     float temp_max = [tempMax floatValue];
     float temp = [tempAtual floatValue];
     float humidade = [humidity floatValue];
-    WeatherCondition *novo = [[WeatherCondition alloc] init];
+    WeatherObject *novo = [[WeatherObject alloc] init];
     [novo setTempAtual:temp];
     [novo setTempMin:temp_min];
     [novo setTempMax:temp_max];
