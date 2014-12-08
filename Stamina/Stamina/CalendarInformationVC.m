@@ -50,7 +50,6 @@
 
 -(void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
-    [super viewWillAppear:animated withGesture:true];
     
     [self loadDayInformation];
     

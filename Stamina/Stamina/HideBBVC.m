@@ -15,9 +15,7 @@
 @implementation HideBBVC
 
 -(void)viewWillAppear:(BOOL)animated{
-    if(animated)
     [super viewWillAppear:animated];
-    else [self viewWillAppear:animated withGesture:1];
     JLSlideMenu *temp = [self.navigationController.viewControllers objectAtIndex:0];
     [temp cleanButtons];
     [self addGesture];
@@ -46,16 +44,6 @@
 -(void)callView: (UIViewController *)view{
  
     [self.navigationController pushViewController:view  animated:YES];
-}
-
--(void)viewWillAppear:(BOOL)animated withGesture: (BOOL)gesture{
-    [super viewWillAppear:animated];
-    JLSlideMenu *temp = [self.navigationController.viewControllers objectAtIndex:0];
-    if(!gesture)
-        [self.navigationController.view removeGestureRecognizer:[temp panLeft]];
-    [temp cleanButtons];
-    [self addGesture];
-    [self.navigationItem setHidesBackButton:YES];
 }
 
 -(void)viewDidAppear:(BOOL)animated{

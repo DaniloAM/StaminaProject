@@ -15,7 +15,6 @@
 @property UIView *tabBar;
 
 @property int lastDirection;
--(void)viewWillAppear:(BOOL)animated withGesture: (BOOL)gesture;
 -(void)showBarWithAnimation: (BOOL)animation;
 -(void)hideBarWithAnimation: (BOOL)animation;
 -(CGSize)navigationSize;
