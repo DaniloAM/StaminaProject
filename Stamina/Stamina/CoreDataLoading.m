@@ -16,10 +16,10 @@
     [self setAppdel:[[UIApplication sharedApplication] delegate]];
     
     if(![self checkExercisesOnDatabase]) {
-        [self createExerciseDatabase];
+        ReadTXT *tx = [[ReadTXT alloc] init];
+        [tx criaBancoDeDados];
     }
     
-    [self loadExercisesList];
     [self loadCalendarInfo];
     [self loadTrainingsAndRoutesCreated];
 }
@@ -58,29 +58,6 @@
 }
 
 
-#pragma mark - Load Exercises
-
-
--(void)loadExercisesList {
-    
-    ExercisesList *list = [ExercisesList alloc];
-    
-    [list allocArrays];
-    NSManagedObjectContext *context = [[self appdel] managedObjectContext];
-    NSFetchRequest *request = [NSFetchRequest fetchRequestWithEntityName:@"Exercises"];
-    NSError *error;
-    
-    NSArray *objectArray = [context executeFetchRequest:request error:&error];
-    
-    for(int x = 0; x < [objectArray count]; x++) {
-        
-        Exercises *exercise = [objectArray objectAtIndex:x];
-        
-        [list addExercise:exercise inCategory:exercise.primaryMuscle];
-         
-    }
-
-}
 
 #pragma mark - Load Trainings
 
@@ -118,79 +95,6 @@
 
 #pragma mark - Create Exercise Database
 
--(void)createExerciseDatabase {
-    for(int x = 0; x < 10 ; x++){
-        
-        
-        NSString *str = [CalendarMath returnMonthName:x+1];
-        
-        
-        [NSString stringWithFormat:@"exercicio %@", str];
-        
-        [self addExerciseOnDatabaseWithName:[NSString stringWithFormat:@"exercicio %@ %d", str, x] primMuscle:@"fr_abdominal" secMuscle:@"" image:@"" info:@"" andID:101000 + (x + 1)];
-        
-        [self addExerciseOnDatabaseWithName:[NSString stringWithFormat:@"exercicio %@ %d", str, x] primMuscle:@"fr_ante-braco" secMuscle:@"" image:@"" info:@"" andID:102000 + (x + 1)];
-        
-        [self addExerciseOnDatabaseWithName:[NSString stringWithFormat:@"exercicio %@ %d", str, x] primMuscle:@"fr_biceps" secMuscle:@"" image:@"" info:@"" andID:103000 + (x + 1)];
-        
-        [self addExerciseOnDatabaseWithName:[NSString stringWithFormat:@"exercicio %@ %d", str, x] primMuscle:@"fr_peitoral" secMuscle:@"" image:@"" info:@"" andID:104000 + (x + 1)];
-        
-        [self addExerciseOnDatabaseWithName:[NSString stringWithFormat:@"exercicio %@ %d", str, x] primMuscle:@"fr_quadriceps" secMuscle:@"" image:@"" info:@"" andID:105000 + (x + 1)];
-        
-        [self addExerciseOnDatabaseWithName:[NSString stringWithFormat:@"exercicio %@ %d", str, x] primMuscle:@"fr_ombros" secMuscle:@"" image:@"" info:@"" andID:106000 + (x + 1)];
-        
-        [self addExerciseOnDatabaseWithName:[NSString stringWithFormat:@"exercicio %@ %d", str, x] primMuscle:@"fr_trapezio" secMuscle:@"" image:@"" info:@"" andID:107000 + (x + 1)];
-        
-        [self addExerciseOnDatabaseWithName:[NSString stringWithFormat:@"exercicio %@ %d", str, x] primMuscle:@"fr_triceps" secMuscle:@"" image:@"" info:@"" andID:108000 + (x + 1)];
-        
-        [self addExerciseOnDatabaseWithName:[NSString stringWithFormat:@"exercicio %@ %d", str, x] primMuscle:@"tr_ante-braco" secMuscle:@"" image:@"" info:@"" andID:109000 + (x + 1)];
-        
-        [self addExerciseOnDatabaseWithName:[NSString stringWithFormat:@"exercicio %@ %d", str, x] primMuscle:@"tr_biceps" secMuscle:@"" image:@"" info:@"" andID:110000 + (x + 2)];
-        
-        [self addExerciseOnDatabaseWithName:[NSString stringWithFormat:@"exercicio %@ %d", str, x] primMuscle:@"tr_biceps" secMuscle:@"" image:@"" info:@"" andID:110000 + (x + 1)];
-        
-        [self addExerciseOnDatabaseWithName:[NSString stringWithFormat:@"exercicio %@ %d", str, x] primMuscle:@"tr_dorsal" secMuscle:@"" image:@"" info:@"" andID:111000 + (x + 1)];
-        
-        [self addExerciseOnDatabaseWithName:[NSString stringWithFormat:@"exercicio %@ %d", str, x] primMuscle:@"tr_gluteos" secMuscle:@"" image:@"" info:@"" andID:112000 + (x + 1)];
-        
-        [self addExerciseOnDatabaseWithName:[NSString stringWithFormat:@"exercicio %@ %d", str, x] primMuscle:@"tr_lombar" secMuscle:@"" image:@"" info:@"" andID:113000 + (x + 1)];
-        
-        [self addExerciseOnDatabaseWithName:[NSString stringWithFormat:@"exercicio %@ %d", str, x] primMuscle:@"tr_ombros" secMuscle:@"" image:@"" info:@"" andID:114000 + (x + 1)];
-        
-        [self addExerciseOnDatabaseWithName:[NSString stringWithFormat:@"exercicio %@ %d", str, x] primMuscle:@"tr_panturrilha" secMuscle:@"" image:@"" info:@"" andID:115000 + (x + 1)];
-        
-        [self addExerciseOnDatabaseWithName:[NSString stringWithFormat:@"exercicio %@ %d", str, x] primMuscle:@"tr_posterior-de-coxa" secMuscle:@"" image:@"" info:@"" andID:116000 + (x + 1)];
-        
-        [self addExerciseOnDatabaseWithName:[NSString stringWithFormat:@"exercicio %@ %d", str, x] primMuscle:@"tr_romboides" secMuscle:@"" image:@"" info:@"" andID:117000 + (x + 1)];
-        
-        [self addExerciseOnDatabaseWithName:[NSString stringWithFormat:@"exercicio %@ %d", str, x] primMuscle:@"tr_trapezio" secMuscle:@"" image:@"" info:@"" andID:118000 + (x + 1)];
-        
-        [self addExerciseOnDatabaseWithName:[NSString stringWithFormat:@"exercicio %@ %d", str, x] primMuscle:@"tr_triceps" secMuscle:@"" image:@"" info:@"" andID:119000 + (x + 1)];
-    }
-}
-
--(void)addExerciseOnDatabaseWithName:(NSString *)name primMuscle: (NSString *)muscle1 secMuscle:
-(NSString *)muscle2 image: (NSString *)image info: (NSString *)info andID: (int)identifier {
-    
-
-    NSManagedObjectContext *context = [[self appdel] managedObjectContext];
-    
-    Exercises *exercise = [NSEntityDescription insertNewObjectForEntityForName:@"Exercises" inManagedObjectContext:context];
-    
-    [exercise setName:name];
-    [exercise setPrimaryMuscle:muscle1];
-    [exercise setSecondaryMuscle:muscle2];
-    [exercise setImageName:image];
-    [exercise setExerciseInfo:info];
-    [exercise setExerciseID:[NSNumber numberWithInt:identifier]];
-    
-    NSError *error;
-    
-    [context save:&error];
-    
-}
-
-
 -(BOOL)checkExercisesOnDatabase {
     
     NSError *error;
@@ -200,7 +104,9 @@
                                    entityForName:@"Exercises" inManagedObjectContext:context];
     [fetchRequest setEntity:entity];
     NSArray *objects = [context executeFetchRequest:fetchRequest error:&error];
-    
+    for(Exercises *exe in objects){
+        NSLog(@"%@",exe.exerciseID);
+    }
     
     if([objects count] == 0) {
         return false;

@@ -105,7 +105,9 @@
     [self.navigationController.navigationBar addSubview:btn];
     [btn addTarget:self action:@selector(leftMenuOpen) forControlEvents:UIControlEventTouchUpInside];
     self.navigationController.navigationBar.tintColor = [UIColor staminaYellowColor];
-    
+    UIView *view = [[UIView alloc] initWithFrame:CGRectMake(0, self.navigationController.navigationBar.frame.size.height-3, self.navigationController.navigationBar.frame.size.width,5)];
+    [view setBackgroundColor:[UIColor staminaYellowColor]];
+    [self.navigationController.navigationBar addSubview:view];
     
 }
 //end initializing methods

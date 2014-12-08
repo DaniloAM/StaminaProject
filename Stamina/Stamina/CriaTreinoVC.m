@@ -256,6 +256,7 @@
     cell.textLabel.textColor = [UIColor staminaYellowColor];
     cell.accessoryType = UITableViewCellAccessoryNone;
     cell.backgroundColor = [UIColor clearColor];
+    [cell setSelectionStyle:UITableViewCellSelectionStyleNone];
     return cell;
     
 }

@@ -26,21 +26,7 @@
     
 }
 
--(void)allocArrays {
-    
-    [self setExercisesMatrix:[NSMutableArray array]];
-    
-    for(int x = 0; x <= exercisesCategoryCount; x++) {
-        [[self exercisesMatrix] addObject:[NSMutableArray array]];
-    }
-}
 
-
--(void)addExercise: (Exercises *)exercise inCategory: (NSString*)string {
-    
-    [[self getArrayForCategory:string] addObject:exercise];
-    
-}
 +(NSString *)returnCategoryNameWithId :(int )identifier{
     int index = (identifier / 1000);
     switch (index) {
@@ -108,90 +94,107 @@
     return nil;
 }
 
+-(NSString *)getStringToIndex: (int )x{
+    NSString *str = nil;
+    switch (x) {
+        case 0:
+            str = @"fr_abdominal";
+            break;
+        case 1:
+            str = @"fr_antebraco";
+            break;
+        case 2:
+            str = @"fr_biceps";
+            break;
+        case 3:
+            str = @"fr_ombro";
+            break;
+        case 4:
+            str = @"fr_peitoral";
+            break;
+        case 5:
+            str = @"fr_quadriceps";
+            break;
+        case 6:
+            str = @"fr_trapezio";
+            break;
+        case 7:
+            str = @"fr_triceps";
+            break;
+        case 9:
+            str = @"tr_biceps";
+            break;
+        case  10:
+            str = @"tr_dorsal";
+            break;
+        case 11:
+            str = @"tr_gluteos";
+            break;
+        case 12:
+            str = @"tr_lombar";
+            break;
+        case 13:
+            str = @"tr_ombros";
+            break;
+        case 14:
+            str = @"tr_panturrilha";
+            break;
+        case 15:
+            str = @"tr_posteriorcoxa";
+            break;
+        case 16:
+            str = @"tr_romboides";
+            break;
+        case 17:
+            str = @"tr_trapezio";
+            break;
+        case 18:
+            str = @"tr_triceps";
+            break;
+        case 8:
+            str = @"tr_antebraco";
+            break;
+    }
+    // trazeiro ante braco - 109
+    // trazeiro biceps - 110
+    // trazeiro dorsal - 111
+    // trazeiro gluteos - 112
+    // trazeiro lombar - 113
+    // trazeiro ombros - 114
+    // trazeiro panturrilha - 115
+    // trazeiro posterior coxa - 116
+    // trazeiro romboides - 117
+    // trazeiro trapezio - 118
+    // trazeiro triceps - 119
+
+    return str;
+}
 -(NSMutableArray *)getArrayForCategory: (NSString *)string {
+    AppDelegate *delegate = [[UIApplication sharedApplication] delegate];
+    NSManagedObjectContext *context = [delegate managedObjectContext];
+    NSFetchRequest *request = [NSFetchRequest fetchRequestWithEntityName:@"Exercises"];
+    NSPredicate *pred = [NSPredicate predicateWithFormat:@"primaryMuscle = %@", string];
+    [request setPredicate:pred];
     
-    if([string isEqualToString:@"fr_abdominal"]) {
-        return [[self exercisesMatrix] objectAtIndex:1];
-    }
-    
-    else if([string isEqualToString:@"fr_ante-braco"]) {
-        return [[self exercisesMatrix] objectAtIndex:2];
-    }
-    
-    else if([string isEqualToString:@"fr_biceps"]) {
-        return [[self exercisesMatrix] objectAtIndex:3];
-    }
-    
-    else if([string isEqualToString:@"fr_peitoral"]) {
-        return [[self exercisesMatrix] objectAtIndex:4];
-    }
-    
-    else if([string isEqualToString:@"fr_quadriceps"]) {
-        return [[self exercisesMatrix] objectAtIndex:5];
-    }
-    else if([string isEqualToString:@"fr_ombros"]) {
-        return [[self exercisesMatrix] objectAtIndex:6];
-    }
-    else if([string isEqualToString:@"fr_trapezio"]) {
-        return [[self exercisesMatrix] objectAtIndex:7];
-    }
-    else if([string isEqualToString:@"fr_triceps"]) {
-        return [[self exercisesMatrix] objectAtIndex:8];
-    }
-    else if([string isEqualToString:@"tr_ante-braco"]) {
-        return [[self exercisesMatrix] objectAtIndex:9];
-    }
-    else if([string isEqualToString:@"tr_biceps"]) {
-        return [[self exercisesMatrix] objectAtIndex:10];
-    }
-    else if([string isEqualToString:@"tr_dorsal"]) {
-        return [[self exercisesMatrix] objectAtIndex:11];
-    }
-    else if([string isEqualToString:@"tr_gluteos"]) {
-        return [[self exercisesMatrix] objectAtIndex:12];
-    }
-    else if([string isEqualToString:@"tr_lombar"]) {
-        return [[self exercisesMatrix] objectAtIndex:13];
-    }
-    else if([string isEqualToString:@"tr_ombros"]) {
-        return [[self exercisesMatrix] objectAtIndex:14];
-    }
-    else if([string isEqualToString:@"tr_panturrilha"]) {
-        return [[self exercisesMatrix] objectAtIndex:15];
-    }
-    else if([string isEqualToString:@"tr_posterior-de-coxa"]) {
-        return [[self exercisesMatrix] objectAtIndex:16];
-    }
-    else if([string isEqualToString:@"tr_romboides"]) {
-        return [[self exercisesMatrix] objectAtIndex:17];
-    }
-    else if([string isEqualToString:@"tr_trapezio"]) {
-        return [[self exercisesMatrix] objectAtIndex:18];
-    }
-    else if([string isEqualToString:@"tr_triceps"]) {
-        return [[self exercisesMatrix] objectAtIndex:19];
-    }
-    
-    else return nil;
+    NSError *error;
+    NSArray *obj = [context executeFetchRequest:request error:&error];
+    return [NSMutableArray arrayWithArray:obj];
 }
 
 
 
 -(Exercises *)returnExerciseWithIdentifier: (int)identifier {
+    AppDelegate *delegate = [[UIApplication sharedApplication] delegate];
+    NSManagedObjectContext *context = [delegate managedObjectContext];
+    NSFetchRequest *request = [NSFetchRequest fetchRequestWithEntityName:@"Exercises"];
+    NSPredicate *pred = [NSPredicate predicateWithFormat:@"exerciseID = %d", identifier];
+    [request setPredicate:pred];
     
-    int index = (identifier / 1000) - 100;
-    
-    for(Exercises *ex in [[self exercisesMatrix] objectAtIndex:index]) {
-        
-        if(ex.exerciseID.intValue == identifier) {
-            
-            return ex;
-            
-        }
-        
-    }
-    
-    return nil;
+    NSError *error;
+    NSArray *obj = [context executeFetchRequest:request error:&error];
+    if([obj count]==0)
+        return nil;
+    return [obj firstObject];
 }
 
 

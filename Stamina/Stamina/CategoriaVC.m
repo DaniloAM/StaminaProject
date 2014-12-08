@@ -68,6 +68,8 @@
         cell.textLabel.text = [[self traseiro] objectAtIndex:indexPath.row];
     }
     cell.accessoryType = UITableViewCellAccessoryNone;
+    [cell setSelectionStyle:UITableViewCellSelectionStyleNone];
+
     return cell;
 }
 - (void)tableView: (UITableView*)tableView willDisplayCell: (UITableViewCell*)cell forRowAtIndexPath: (NSIndexPath*)indexPath
@@ -106,14 +108,16 @@
     ExercisesList *temp = [ExercisesList alloc];
     if(indexPath.section==0){
         [myVC setStrMuscle:[[self frontal] objectAtIndex:indexPath.row]];
-        array = [[temp exercisesMatrix] objectAtIndex:indexPath.row];
         
+        array = [temp getArrayForCategory:[temp getStringToIndex:(int)indexPath.row]];
+            NSLog(@"%@", [temp getStringToIndex:(int)indexPath.row]);
     }
     else{
         [myVC setStrMuscle:[[self traseiro] objectAtIndex:indexPath.row]];
-        array = [[temp exercisesMatrix] objectAtIndex:indexPath.row + frontalCategoryCount];
-        
+        array = [temp getArrayForCategory:[temp getStringToIndex:(int)indexPath.row+frontalCategoryCount]];
+            NSLog(@"%@", [temp getStringToIndex:(int)indexPath.row+frontalCategoryCount]);
     }
+
     [myVC setArrayOfExercises:array];
 
     [self.navigationController pushViewController:myVC animated:YES];
