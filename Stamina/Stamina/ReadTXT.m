@@ -42,7 +42,6 @@
         primMuscle = [array objectAtIndex:x];
         x++;
         secMuscle = [array objectAtIndex:x];
-        NSLog(@"id%@, num%@, nam%@, pri%@, sec%@", exerciseId,numberOfImages,name,primMuscle,secMuscle);
         [self addExerciseOnDatabaseWithExerciseId:exerciseId numberOfImages:numberOfImages name:name primMuscle:primMuscle secMuscle:secMuscle];
     }
 }

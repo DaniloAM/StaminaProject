@@ -137,7 +137,6 @@
     UITableViewCell *cell = [tableView cellForRowAtIndexPath:indexPath];
     NSString *str = cell.textLabel.text;
     Exercises *temp =[self returnExerciseWithIdentifier:str];
-    NSLog(@"%@", temp.exerciseID);
     UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
     TipsVC *myVC=(TipsVC *)[storyboard instantiateViewControllerWithIdentifier:@"TipsVC"];
     [myVC setExercise:temp];

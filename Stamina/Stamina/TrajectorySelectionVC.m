@@ -44,7 +44,6 @@
                               0,
                               
                               //origin Y
-#warning arrumar aqui depois
                               [self navigationSize].height / 2,
                               
                               //size width
@@ -122,9 +121,6 @@
     
     [imageView setFrame:CGRectMake(imageView.frame.origin.x, tableViewRowHeight * 2, imageView.frame.size.width, imageView.frame.size.height)];
 
-     NSLog(@"height: %f", imageView.frame.size.height);
-     NSLog(@"width: %f", imageView.frame.size.width);
-    
     
     UIButton *goToRoute = [[UIButton alloc] initWithFrame:imageView.frame];
     

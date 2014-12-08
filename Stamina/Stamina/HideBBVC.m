@@ -19,8 +19,8 @@
     [super viewWillAppear:animated];
     else [self viewWillAppear:animated withGesture:1];
     JLSlideMenu *temp = [self.navigationController.viewControllers objectAtIndex:0];
-    NSLog(@"WILL APPEAR");
     [temp cleanButtons];
+    [self addGesture];
     [self.navigationItem setHidesBackButton:YES];
 }
 
@@ -54,6 +54,7 @@
     if(!gesture)
         [self.navigationController.view removeGestureRecognizer:[temp panLeft]];
     [temp cleanButtons];
+    [self addGesture];
     [self.navigationItem setHidesBackButton:YES];
 }
 
