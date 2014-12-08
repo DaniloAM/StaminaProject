@@ -271,8 +271,7 @@
 -(IBAction)returnToPreviousView {
     
     
-    [self.navigationController popToRootViewControllerAnimated:true];
-    
+    [self popToRoot];
 }
 
 -(void)sharePictureOnInstagram {

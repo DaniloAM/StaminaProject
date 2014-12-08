@@ -40,7 +40,7 @@
 }
 
 -(void)firstButton{
-    [self.navigationController  popToRootViewControllerAnimated:YES];
+    [self popToRoot];
 }
 -(void)handleLongPress:(UILongPressGestureRecognizer *)gestureRecognizer
 {

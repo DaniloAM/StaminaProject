@@ -60,5 +60,5 @@ typedef enum gestureRecognizedTypes
 -(void)thirdButtonMethod: (void *)metodo  fromClass:(UIViewController *)view withImage: (UIImage *)image;
 -(void)hideLeftMenuAnimated: (BOOL)animated;
 -(void)cleanButtons;
-
+-(UIViewController *)createViewWithName: (NSString *)str;
 @end

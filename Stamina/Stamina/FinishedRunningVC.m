@@ -246,8 +246,7 @@
 
 -(void)goHome {
     
-    [self.navigationController popToRootViewControllerAnimated:true];
-    
+    [self popToRoot];
 }
 
 
