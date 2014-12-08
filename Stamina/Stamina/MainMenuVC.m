@@ -39,11 +39,11 @@
 - (void)navigationController:(UINavigationController *)navigationController
       willShowViewController:(UIViewController *)viewController animated:(BOOL)animated
 {
-    [viewController viewWillAppear:animated];
+    //[viewController viewWillAppear:animated];
 }
 - (void)navigationController:(UINavigationController *)navigationController
        didShowViewController:(UIViewController *)viewController animated:(BOOL)animated
 {
-    [viewController viewDidAppear:animated];
+   // [viewController viewDidAppear:animated];
 }
 @end

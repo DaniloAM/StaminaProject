@@ -416,6 +416,31 @@
         
     }
 }
+-(void)closeEverything{
+    CGSize size = [[UIScreen mainScreen] bounds].size;
+
+    for(int x = 0 ; x < [[self arrayOfButtons] count];x++){
+        UIButton *button = [[self arrayOfButtons] objectAtIndex:x];
+        CGRect rect = CGRectMake(0, x*cellMenuHeight*size.height, _leftWidthSize, cellMenuHeight*size.height);
+        [self moveView:button withPoint:rect.origin withDuration:0.1];
+    }
+    for (int x = 0 ; x < [[self arrayFirstButton] count];x++){
+        UIButton *button = [[self arrayFirstButton] objectAtIndex:x];
+        [button removeFromSuperview];
+    }
+    for (int x = 0 ; x < [[self secondFirstButton] count];x++){
+        UIButton *button = [[self secondFirstButton] objectAtIndex:x];
+        [button removeFromSuperview];
+    }
+    for (int x = 0 ; x < [[self thirdFirstButton] count];x++){
+        UIButton *button = [[self thirdFirstButton] objectAtIndex:x];
+        [button removeFromSuperview];
+    }
+    for (int x = 0 ; x < [[self fourthFirstButton] count];x++){
+        UIButton *button = [[self fourthFirstButton] objectAtIndex:x];
+        [button removeFromSuperview];
+    }
+}
 -(void)close : (int )x{
     CGSize size = [[UIScreen mainScreen] bounds].size;
     _open = -1;
@@ -616,10 +641,12 @@
             default:
                 break;
         }
+        [btn setTitleColor:[UIColor staminaYellowColor] forState:UIControlStateNormal];
         [btn setTitle:strBtn forState:UIControlStateNormal];
         btn.contentHorizontalAlignment = UIControlContentHorizontalAlignmentLeft;
         [btn addTarget:self action:[self returnSelectorToButton:x :y] forControlEvents:UIControlEventTouchUpInside];
         [array addObject:btn];
+        [[btn titleLabel] setFont:[UIFont fontWithName:@"Lato-Light" size:18]];
     }
     return [NSArray arrayWithArray:array];
     
@@ -630,7 +657,7 @@
     NSMutableArray *array = [NSMutableArray array];
     for(int x = 0 ; x < 5;x++){
         UIButton *startButton = [[UIButton alloc] initWithFrame:CGRectMake(0, x*cellMenuHeight*size.height, _leftWidthSize, cellMenuHeight*size.height)];
-        [[startButton titleLabel] setFont:[UIFont fontWithName:@"Avenir" size:22]];
+        [[startButton titleLabel] setFont:[UIFont fontWithName:@"Lato" size:22]];
         [startButton setTitleColor:[UIColor staminaYellowColor] forState:UIControlStateNormal];
         [startButton setTitle:[self returnStringToButton:x] forState:UIControlStateNormal];
         startButton.contentHorizontalAlignment = UIControlContentHorizontalAlignmentLeft;
@@ -649,7 +676,7 @@
 }
 
 -(void)callViewWithName: (NSString *)str{
-    [self close:0];
+    [self closeEverything];
     [self hideBarWithAnimation:1];
     [self hideLeftMenuAnimated:1];
     _str = str;
