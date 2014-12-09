@@ -133,8 +133,8 @@
 
 -(void)viewWillDisappear:(BOOL)animated{
     [super viewWillDisappear:animated];
-    
-    [self.navigationController.navigationBar setTranslucent:NO];
+    CreateTrainTemp *emp = [CreateTrainTemp alloc];
+    [emp setArrayOfExercises:_arrayOfExercises];
 }
 -(void)viewDidAppear:(BOOL)animated{
     [super viewDidAppear:animated];
@@ -223,6 +223,7 @@
 
 
 }
+
 -(void)textFieldDidEndEditing:(UITextField *)textField{
     if(textField ==_txt1||textField ==_txt2){
         if([[textField text] integerValue]>50)
