@@ -663,7 +663,6 @@
 		C5D4DAA11A364A8600FE2182 /* home */ = {
 			isa = PBXGroup;
 			children = (
-<<<<<<< HEAD
 				FF1D8D6C1A375A4400E52110 /* icone_academia.png */,
 				FF1D8D6D1A375A4400E52110 /* icone_caminhada.png */,
 				FF1D8D6E1A375A4400E52110 /* s_icone_academia.png */,
@@ -672,13 +671,6 @@
 				FF1D8D651A375A3800E52110 /* icone_caminhada.png */,
 				FF1D8D661A375A3800E52110 /* s_icone_academia.png */,
 				FF1D8D671A375A3800E52110 /* s_icone_caminhada.png */,
-=======
-				C50043141A3761070072834C /* stamina_logo.png */,
-				C500430C1A3758F80072834C /* icone_academia.png */,
-				C500430D1A3758F80072834C /* icone_caminhada.png */,
-				C500430E1A3758F80072834C /* s_icone_academia.png */,
-				C500430F1A3758F80072834C /* s_icone_caminhada.png */,
->>>>>>> FETCH_HEAD
 			);
 			name = home;
 			sourceTree = "<group>";
@@ -734,9 +726,9 @@
 				FF1596FD19C0CBC900D9236F /* Images.xcassets */,
 				FF1596F419C0CBC900D9236F /* Stamina.xcdatamodeld */,
 				C53AAC061A1BB725000AD02C /* academia_5.png */,
-				C50043161A378A0A0072834C /* teste_gif */,
 				C53AAC071A1BB725000AD02C /* academia_6.png */,
 				C52024481A26690B00DDF73B /* Exercicio.png */,
+				C50043161A378A0A0072834C /* teste_gif */,
 				C5D4DAA11A364A8600FE2182 /* home */,
 				FF951C001A28F0B500E581AB /* trajeto */,
 				FF951BED1A28EDF300E581AB /* corrida */,
@@ -1154,10 +1146,7 @@
 				FF951C101A28F0C400E581AB /* icone_trajeto_compartilhar.png in Resources */,
 				FF951C0B1A28F0C400E581AB /* icone_compartilhar_trajeto_selected.png in Resources */,
 				C5B62C591A1527F600F969D8 /* icone_calendario_31.png in Resources */,
-<<<<<<< HEAD
-=======
 				C50043131A3758F80072834C /* s_icone_caminhada.png in Resources */,
->>>>>>> FETCH_HEAD
 				C5B62C091A1525F400F969D8 /* Lato-Black.ttf in Resources */,
 				C5D4DA821A34D92700FE2182 /* exercises.txt in Resources */,
 				C53AAC091A1BB725000AD02C /* academia_6.png in Resources */,
@@ -1166,10 +1155,7 @@
 				C5B62C0A1A1525F400F969D8 /* Lato-BlackItalic.ttf in Resources */,
 				C53AAC1C1A1BC4B7000AD02C /* icone_serie.png in Resources */,
 				FF951BEB1A28EDE800E581AB /* icone_camera_voltar.png in Resources */,
-<<<<<<< HEAD
-=======
 				C50043121A3758F80072834C /* s_icone_academia.png in Resources */,
->>>>>>> FETCH_HEAD
 				C5B62C4D1A1527F600F969D8 /* icone_calendario_19.png in Resources */,
 				C5B62C0B1A1525F400F969D8 /* Lato-Bold.ttf in Resources */,
 				C5B62C0C1A1525F400F969D8 /* Lato-BoldItalic.ttf in Resources */,
@@ -1222,11 +1208,8 @@
 				C5B62C471A1527F600F969D8 /* icone_calendario_13.png in Resources */,
 				C5B62C141A1525F400F969D8 /* Lato-Medium.ttf in Resources */,
 				C5B62C151A1525F400F969D8 /* Lato-MediumItalic.ttf in Resources */,
-<<<<<<< HEAD
-=======
 				C500431F1A378A170072834C /* 102300_03.png in Resources */,
 				C50043111A3758F80072834C /* icone_caminhada.png in Resources */,
->>>>>>> FETCH_HEAD
 				C5B62C161A1525F400F969D8 /* Lato-Regular.ttf in Resources */,
 				C5B62C171A1525F400F969D8 /* Lato-Semibold.ttf in Resources */,
 				C53AAC1F1A1BC4B7000AD02C /* icone_tempo.png in Resources */,
@@ -1270,10 +1253,7 @@
 				C53AABFE1A1BA5D9000AD02C /* icone_editar_tab.png in Resources */,
 				C53AAC011A1BA5D9000AD02C /* icone_info_user_tab.png in Resources */,
 				C5B62C491A1527F600F969D8 /* icone_calendario_15.png in Resources */,
-<<<<<<< HEAD
-=======
 				C50043101A3758F80072834C /* icone_academia.png in Resources */,
->>>>>>> FETCH_HEAD
 				FF951BF91A28EDFE00E581AB /* icone_calorias.png in Resources */,
 				C53AAC001A1BA5D9000AD02C /* icone_ideia_tab.png in Resources */,
 			);
