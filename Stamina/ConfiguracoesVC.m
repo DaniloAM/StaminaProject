@@ -81,7 +81,7 @@
     [_txtAltura setBackgroundColor:[UIColor whiteColor]];
     _txtAltura.layer.cornerRadius = 7;
     _txtAltura.textAlignment = NSTextAlignmentCenter;
-    [_txtAltura setFont:[UIFont fontWithName:@"Avenir" size:18]];
+    [_txtAltura setFont:[UIFont fontWithName:@"Lato" size:18]];
     _txtAltura.text = [NSString stringWithFormat:@"%d CM", [user heightInCentimeters]];
 
 }
@@ -95,7 +95,7 @@
     [_txtPeso setBackgroundColor:[UIColor whiteColor]];
     _txtPeso.layer.cornerRadius = 7;
     _txtPeso.textAlignment = NSTextAlignmentCenter;
-    [_txtPeso setFont:[UIFont fontWithName:@"Avenir" size:18]];
+    [_txtPeso setFont:[UIFont fontWithName:@"Lato" size:18]];
     _txtPeso.text = [NSString stringWithFormat:@"%d KG", [user weightInKilograms]];
 
 }

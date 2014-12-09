@@ -91,7 +91,7 @@
     NSString *text = [NSString stringWithFormat:@"%d. %@", (int)indexPath.row + 1, [[[self exercisesList] objectAtIndex:indexPath.row] name]];
     
     cell.textLabel.text = text;
-    cell.textLabel.font = [UIFont fontWithName:@"Avenir" size:20.0];
+    cell.textLabel.font = [UIFont fontWithName:@"Lato" size:20.0];
     cell.textLabel.textColor = [UIColor blackColor];
     cell.backgroundColor = [UIColor clearColor];
     

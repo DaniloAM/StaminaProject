@@ -50,7 +50,15 @@
     NSArray *array = [CalendarPreparer getCalendarScrollViewWithLabelsButtons];
     
     [self setCalendarScrollView:[[array objectAtIndex:0] firstObject]];
+    
     [[self calendarScrollView] setCenter:self.view.center];
+    
+    CGRect frame = [[self calendarScrollView] frame];
+    
+    frame.origin.y -= 60;
+    
+    [[self calendarScrollView] setFrame:frame];
+    
     [self setLabelMatrix:[array objectAtIndex:1]];
     [self setButtonMatrix:[array objectAtIndex:2]];
     
@@ -74,7 +82,7 @@
     
     [super viewDidLoad];
     
-    [self setInfoTableView: [[UITableView alloc] initWithFrame:CGRectMake(20, 370, 271, 148)]];
+    [self setInfoTableView: [[UITableView alloc] initWithFrame:CGRectMake(20, 335, 271, 148)]];
     [[self infoTableView] setRowHeight:35.0];
     
     [[self infoTableView] setDelegate:self];
@@ -107,6 +115,8 @@
     
     [super viewWillAppear:animated];
     
+    [self removeGesture];
+    
     [self calendarWillChangeMonth];
     
     //[self removeGestureFromMenuVC];
@@ -137,7 +147,7 @@
             
             //remove actions of the button.
             [button removeTarget:nil action:NULL forControlEvents:UIControlEventAllEvents];
-            [label setFont:[UIFont fontWithName:@"Avenir" size:18.0]];
+            [label setFont:[UIFont fontWithName:@"Lato-Light" size:18.0]];
             
             
             if(date) {
@@ -186,7 +196,7 @@
                         
                         //This tag represents the Y and X position to get the correct training based on the DayObjects
                         //[label setTextColor:[UIColor redColor]];
-                        [label setFont:[UIFont fontWithName:@"Avenir" size:23.0]];
+                        [label setFont:[UIFont fontWithName:@"Lato" size:18.0]];
                         
                         
                     }
@@ -403,7 +413,7 @@
     NSString *text = [NSString stringWithFormat:@"%d. %@", (int)indexPath.row + 1, [[[self exercisesArray] objectAtIndex:indexPath.row] name]];
     
     cell.textLabel.text = text;
-    cell.textLabel.font = [UIFont fontWithName:@"Avenir" size:20.0];
+    cell.textLabel.font = [UIFont fontWithName:@"Lato" size:20.0];
     cell.textLabel.textColor = [UIColor blackColor];
     cell.backgroundColor = [UIColor clearColor];
     

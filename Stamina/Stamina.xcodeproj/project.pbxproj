@@ -731,14 +731,10 @@
 				FF1D8D521A36011C00E52110 /* Resultados */,
 				325F1FD819E7091C00001EB0 /* AcademiaVC.h */,
 				325F1FD919E7091C00001EB0 /* AcademiaVC.m */,
-				FF1C5C3819FADD3D00032DC9 /* CalendarInformationVC.h */,
-				FF1C5C3919FADD3D00032DC9 /* CalendarInformationVC.m */,
 				C5EB6BFE19D9DBD300C528FC /* FBLoginVC.h */,
 				C5EB6BFF19D9DBD300C528FC /* FBLoginVC.m */,
 				FFAC193B19E3171C00B17487 /* HomeScreenVC.h */,
 				FFAC193C19E3171C00B17487 /* HomeScreenVC.m */,
-				C5EB6BFC19D9DBD300C528FC /* UserCalendarVC.h */,
-				C5EB6BFD19D9DBD300C528FC /* UserCalendarVC.m */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -794,6 +790,10 @@
 		FF1D8D4A1A36004700E52110 /* Calendario */ = {
 			isa = PBXGroup;
 			children = (
+				FF1C5C3819FADD3D00032DC9 /* CalendarInformationVC.h */,
+				FF1C5C3919FADD3D00032DC9 /* CalendarInformationVC.m */,
+				C5EB6BFC19D9DBD300C528FC /* UserCalendarVC.h */,
+				C5EB6BFD19D9DBD300C528FC /* UserCalendarVC.m */,
 			);
 			name = Calendario;
 			sourceTree = "<group>";

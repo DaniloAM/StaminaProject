@@ -55,8 +55,7 @@
     //prepare month label
     [self setMonthLabel:[[UILabel alloc] initWithFrame:CGRectMake(20, 50, 140, 100)]];
     [[self monthLabel] setNumberOfLines:2];
-    [[self monthLabel] setFont:[UIFont fontWithName:@"Avenir" size:20.0]];
-    [[self monthLabel] setText:@"TESTA"];
+    [[self monthLabel] setFont:[UIFont fontWithName:[[self font] fontName] size:20.0]];
     
     //basics inits
     [self setGraphLoadState:GSNormal];

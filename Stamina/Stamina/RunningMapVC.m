@@ -299,7 +299,7 @@
     
     else {
         
-        [sender setTitle:@"Iniciar" forState:UIControlStateNormal];
+        //[sender setTitle:@"Iniciar" forState:UIControlStateNormal];
         
         UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Parar" message:@"Deseja parar a corrida?" delegate:self cancelButtonTitle:@"Não" otherButtonTitles:@"Sim", nil];
         

@@ -141,8 +141,8 @@
     
     UIImageView *routeImage = [self returnDrawedViewWithCurrentRoute];
     
-    NSLog(@"height ACart: %f", routeImage.frame.size.height);
-    NSLog(@"width ACart: %f", routeImage.frame.size.width);
+    //NSLog(@"height ACart: %f", routeImage.frame.size.height);
+    //NSLog(@"width ACart: %f", routeImage.frame.size.width);
     
     double fator;
     
@@ -163,8 +163,8 @@
     
     [routeImage setFrame:CGRectMake(0, 0, routeImage.frame.size.width * fator , routeImage.frame.size.height * fator)];
     
-    NSLog(@"height DEPCART: %f", routeImage.frame.size.height);
-    NSLog(@"width DEPCART: %f", routeImage.frame.size.width);
+    //NSLog(@"height DEPCART: %f", routeImage.frame.size.height);
+    //NSLog(@"width DEPCART: %f", routeImage.frame.size.width);
     
     return routeImage;
     

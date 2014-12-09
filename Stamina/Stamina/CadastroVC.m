@@ -89,7 +89,7 @@
         [view setBackgroundColor:[UIColor whiteColor]];
         view.layer.cornerRadius = 7;
         view.textAlignment = NSTextAlignmentCenter;
-        [view setFont:[UIFont fontWithName:@"Avenir" size:18]];
+        [view setFont:[UIFont fontWithName:@"Lato" size:18]];
         view.delegate = self;
     }
     
@@ -327,7 +327,7 @@
     for(int x = 0 ; x < _numberOfViews;x++){
         UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(65*size.width/largura, 655*size.height/altura, 510*size.width/largura, 73*size.height/altura)];
         [label setTextAlignment:NSTextAlignmentCenter];
-        [label setFont:[UIFont fontWithName:@"Avenir" size:22]];
+        [label setFont:[UIFont fontWithName:@"Lato" size:22]];
         UIView *view = [[UIView alloc] initWithFrame:CGRectMake(x*size.width, 0, size.width, size.height)];
         [_arrayView addObject:view];
         [self.scroll addSubview:view];

@@ -36,6 +36,11 @@
 -(void)viewWillAppear:(BOOL)animated {
     
     [super viewWillAppear:animated];
+    [self performSelectorInBackground:@selector(showCurrentWeather) withObject:nil];
+}
+
+
+-(void)showCurrentWeather {
     
     WeatherCondition *condition = [[WeatherCondition alloc] init];
     
@@ -58,6 +63,7 @@
     }
     
 }
+
 
 -(void)backToHomeScreen {
     

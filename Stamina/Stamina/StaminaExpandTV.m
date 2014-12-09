@@ -22,7 +22,7 @@
     _expandHeight = 200;
     _openRowIndex = -1;
     _tableViewBackgroundColor = [UIColor staminaYellowColor];
-    _rowFont = [UIFont fontWithName:@"Avenir" size:fontLabelSize];
+    _rowFont = [UIFont fontWithName:@"Lato" size:fontLabelSize];
     _rowTextColor = [UIColor staminaBlackColor];
     
     
@@ -98,8 +98,8 @@
     //Else loads the title of the other routes
     else {
         
-        cell.textLabel.text = [[self titlesArray] objectAtIndex:indexPath.row];
-        cell.textLabel.font = [UIFont fontWithName:@"Avenir" size:20.0];
+        cell.textLabel.text = [NSString stringWithFormat:@"     %@",[[self titlesArray] objectAtIndex:indexPath.row]];
+        cell.textLabel.font = [UIFont fontWithName:@"Lato" size:20.0];
         cell.textLabel.textColor = _rowTextColor;
         
     }
@@ -173,10 +173,9 @@
     CGRect titleFrame = CGRectMake(0, 0, [self tableView].frame.size.width, tableViewRowHeight);
     UILabel *title = [UILabel staminaLabelWithFrame:titleFrame fontSize:22.0 color:[UIColor staminaYellowColor]];
     
-    [title setText:[[self titlesArray] objectAtIndex:_openRowIndex]];
+    [title setText:[NSString stringWithFormat:@"     %@",[[self titlesArray] objectAtIndex:_openRowIndex]]];
     [title setBackgroundColor:[UIColor staminaBlackColor]];
-    [title setTextAlignment:NSTextAlignmentCenter];
-    
+    [title setTextAlignment:NSTextAlignmentLeft];
     
     
     //Closing gesture

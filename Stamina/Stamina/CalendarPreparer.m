@@ -8,10 +8,10 @@
 
 #import "CalendarPreparer.h"
 
-#define spacementDayLabelInX 5
+#define spacementDayLabelInX 10
 #define spacementDayLabelInY 5
-#define dayLabelSizeX 35
-#define dayLabelSizeY 35
+#define dayLabelSizeX 30
+#define dayLabelSizeY 30
 #define maxLines 17
 
 
@@ -63,7 +63,7 @@
             UILabel *label = [[UILabel alloc] initWithFrame:frame];
             UIButton *button = [[UIButton alloc]initWithFrame:frame];
             
-            [label setFont:[UIFont fontWithName:@"Avenir" size:18.0]];
+            [label setFont:[UIFont fontWithName:@"Lato-Light" size:18.0]];
             [label setTextAlignment:NSTextAlignmentCenter];
             [label setTextColor:[UIColor blackColor]];
             

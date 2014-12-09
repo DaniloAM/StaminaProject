@@ -44,7 +44,7 @@
                               0,
                               
                               //origin Y
-                              [self navigationSize].height / 2,
+                              0,
                               
                               //size width
                               [[UIScreen mainScreen] bounds].size.width,
@@ -153,38 +153,37 @@
         imageFrame.origin.y = infoFrame.origin.y;
         
         
-        UILabel *infoLabel = [UILabel staminaLabelWithFrame:infoFrame fontSize:22.0 color:[UIColor staminaBlackColor]];
+        UILabel *infoLabel = [UILabel staminaLabelWithFrame:infoFrame fontSize:19.0 color:[UIColor staminaBlackColor]];
         
         int value = [[array objectAtIndex:x] intValue];
         
-        if(x != 2) {
-            infoLabel.text = [NSString stringWithFormat:@"%03d", value];
-        }
-        
-        else {
-            infoLabel.text = [NSString stringWithFormat:@"%02d:%02d:%02d", value/60/60, value/60, value%60];
-        }
-        
-        [[super cellContentsArray] addObject:infoLabel];
         
         NSString *imageName;
         
         switch (x) {
-            case 0:
+            case 0:{
                 imageName = @"icon_calorias.png";
+                infoLabel.text = [NSString stringWithFormat:@"%03d cal", value];
+            }
                 break;
             case 1:
                 imageName = @"icon_km.png";
+                infoLabel.text = [NSString stringWithFormat:@"%03d Km", value];
                 break;
             case 2:
                 imageName = @"icon_cronometro.png";
+                infoLabel.text = [NSString stringWithFormat:@"%02d:%02d:%02d", value/60/60, value/60, value%60];
                 break;
             case 3:
                 imageName = @"icon_pontos.png";
+                infoLabel.text = [NSString stringWithFormat:@"%04d pts", value];
                 break;
             default:
                 break;
         }
+        
+        
+        [[super cellContentsArray] addObject:infoLabel];
         
         
         UIImageView *iconView = [[UIImageView alloc]
