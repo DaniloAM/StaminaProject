@@ -413,7 +413,7 @@
                 [label setText:@"Idade:"];
                 [view addSubview:label];
                 [view addSubview:[self txtAge]];
-                [[self txtAge] setPlaceholder:@"Cm"];
+                [[self txtAge] setPlaceholder:@"An"];
 
                 
                 break;

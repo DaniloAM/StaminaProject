@@ -29,9 +29,18 @@
     [self.navigationItem setTitle:_exerciseName];
     self.backgroundImageView.image = [UIImage imageNamed:self.imageFile];
     self.titleLabel.text = self.titleText;
+    [self performSelector:@selector(changeImage) withObject:self afterDelay:0];
 
 }
-
+-(void)changeImage{
+    NSString *str = [NSString stringWithFormat:@"%@_%02d.png", [self exe].exerciseID, _current];
+    [[self backgroundImageView] setImage:[UIImage imageNamed:str]];
+    _current++;
+    if(_current >= [[_exe numberImages] intValue])
+        _current=0;
+    [self performSelector:@selector(changeImage) withObject:self afterDelay:0.3];
+    
+}
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];

@@ -19,6 +19,7 @@ typedef enum selected
 @property NSMutableArray *arrayOfExercises, *backupOfExercises;
 @property NSMutableArray *fullArray;
 @property (weak, nonatomic) IBOutlet UIImageView *imageExplain;
+@property Exercises *exeCurrent;
 @property (weak, nonatomic) IBOutlet UILabel *labelExercise;
 @property (weak, nonatomic) IBOutlet UILabel *labelCategory;
 @property (weak, nonatomic) IBOutlet UIButton *imageCronometer;
@@ -30,5 +31,7 @@ typedef enum selected
 @property (weak, nonatomic) IBOutlet UITextField *txt3;
 @property (weak, nonatomic) IBOutlet UILabel *lblX;
 @property NSMutableArray *stack;
+@property CGPoint startPoint;
 @property BOOL hasSpace;
+@property int currentPic;
 @end

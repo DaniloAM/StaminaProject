@@ -14,9 +14,6 @@
 
 @implementation AddExerciseVC
 -(void)preload{
-    CreateTrainTemp *temp1 = [CreateTrainTemp alloc];
-    [self setArrayOfExercises:[NSMutableArray arrayWithArray:[temp1 arrayOfExercises]]];
-    [self.navigationController.navigationBar setTranslucent:YES];
     Exercises *temp = [self.arrayOfExercises firstObject];
     [self carregaCom:temp];
     [self.bigView setBackgroundColor:[UIColor staminaBlackColor]];
@@ -52,8 +49,16 @@
     [self.txt3 setTextAlignment:NSTextAlignmentCenter];
     [self.lblX setTextColor:[UIColor staminaYellowColor]];
     [_txt3 addTarget:self action:@selector(textFieldDidChange) forControlEvents:UIControlEventEditingChanged];
-    
+    [self performSelectorInBackground:@selector(changeImage) withObject:self];
     [self carregaTime];
+}
+-(void)changeImage{
+    NSString *str = [NSString stringWithFormat:@"%@_%02d.png",[self exeCurrent].exerciseID,_currentPic];
+    [[self imageExplain] setImage:[UIImage imageNamed:str]];
+    _currentPic++;
+    if(_currentPic >= [_exeCurrent.numberImages intValue])
+        _currentPic=0;
+    [self performSelector:@selector(changeImage) withObject:self afterDelay:0.2];
 }
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -102,10 +107,16 @@
     NSDictionary* keyboardInfo = [notification userInfo];
     NSValue* keyboardFrameBegin = [keyboardInfo valueForKey:UIKeyboardFrameBeginUserInfoKey];
     CGRect keyboardFrameBeginRect = [keyboardFrameBegin CGRectValue];
+    NSLog(@"pro %f", self.view.frame.origin.y);
     [self moveView:self.view withPoint:CGPointMake(0, -keyboardFrameBeginRect.size.height) withDuration:0.3];
 }
 -(void)keyboardWillHide:(NSNotification*)notification{
-    [self moveView:self.view withPoint:CGPointMake(0,0) withDuration:0.3];
+    NSDictionary* keyboardInfo = [notification userInfo];
+    NSValue* keyboardFrameBegin = [keyboardInfo valueForKey:UIKeyboardFrameBeginUserInfoKey];
+    CGRect keyboardFrameBeginRect = [keyboardFrameBegin CGRectValue];
+    NSLog(@"pro %f", self.view.frame.origin.y+keyboardFrameBeginRect.size.height);
+
+    [self moveView:self.view withPoint:CGPointMake(0,64) withDuration:0.3];
     
 }
 -(void)moveView: (UIView *)bigView withPoint: (CGPoint )point withDuration: (float)duration{
@@ -179,7 +190,7 @@
         NSMutableArray *array = [NSMutableArray arrayWithArray:[cre exercise]];
         [array addObjectsFromArray:[self fullArray]];
         [cre setExercise:[NSArray arrayWithArray:array]];
-        [self.navigationController popToViewController:[[self.navigationController viewControllers] objectAtIndex:2] animated:YES];
+        [self.navigationController popToViewController:[[self.navigationController viewControllers] objectAtIndex:3] animated:YES];
         return;
     }
     [self carregaCom:[self.arrayOfExercises firstObject]];
@@ -192,6 +203,7 @@
     
 }
 -(void)carregaCom: (Exercises *)exe{
+    _exeCurrent = exe;
     [self.labelCategory setText:[ExercisesList returnCategoryNameWithId:[[exe exerciseID] intValue]]];
     [self.labelExercise setText:[exe name]];
 

@@ -30,7 +30,7 @@
     [super hideBarWithAnimation:1];
     UILongPressGestureRecognizer *lpgr = [[UILongPressGestureRecognizer alloc]
                                           initWithTarget:self action:@selector(handleLongPress:)];
-    lpgr.minimumPressDuration = 1.0; //seconds
+    lpgr.minimumPressDuration = 0.4; //seconds
     lpgr.delegate = self;
 
     [self.table addGestureRecognizer:lpgr];
@@ -43,7 +43,8 @@
     [self popToRoot];
 }
 -(void)handleLongPress:(UILongPressGestureRecognizer *)gestureRecognizer
-{
+{   if(![self createTraining])
+        return;
     CGPoint p = [gestureRecognizer locationInView:self.table];
     CreateTrainTemp *temp = [CreateTrainTemp alloc];
     NSIndexPath *indexPath = [self.table indexPathForRowAtPoint:p];
@@ -169,9 +170,10 @@
     AddExerciseVC *add = (AddExerciseVC *)[self returnViewWithName:@"AddExercise"];
 
     CreateTrainTemp *temp = [CreateTrainTemp alloc];
-
+    if([[temp arrayOfExercises] count]==0)
+        return;
     [add setArrayOfExercises:[temp arrayOfExercises]];
     
-    [self callViewWithName:@"AddExercise"];
+    [self callView:add];
 }
 @end
