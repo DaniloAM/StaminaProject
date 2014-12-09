@@ -350,6 +350,8 @@
             return @"    Resultados";
         case 4:
             return @"    Configurações";
+        case 5:
+            return @"    Sair";
 
     }
     return nil;
@@ -366,9 +368,21 @@
             return @selector(fourthButton);
         case 4:
             return @selector(fifthButton);
+        case 5:
+            return @selector(logout);
             
     }
     return nil;
+}
+-(void)logout{
+    UserData *user = [UserData alloc];
+    [user eraseData];
+    [self.navigationController dismissViewControllerAnimated:YES completion:nil];
+    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+    UIViewController *myVC;
+    myVC= (UIViewController *)[storyboard instantiateViewControllerWithIdentifier:@"LoginVC"];
+    
+    [self presentViewController:myVC animated:YES completion:nil];
 }
 -(void)openfirst{
     [self rearruma:M1 : 1 ];
@@ -655,7 +669,7 @@
 -(void)createViewsToPresent{
     CGSize size = [UIScreen mainScreen].bounds.size;
     NSMutableArray *array = [NSMutableArray array];
-    for(int x = 0 ; x < 5;x++){
+    for(int x = 0 ; x < 6;x++){
         UIButton *startButton = [[UIButton alloc] initWithFrame:CGRectMake(0, x*cellMenuHeight*size.height, _leftWidthSize, cellMenuHeight*size.height)];
         [[startButton titleLabel] setFont:[UIFont fontWithName:@"Lato" size:22]];
         [startButton setTitleColor:[UIColor staminaYellowColor] forState:UIControlStateNormal];

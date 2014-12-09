@@ -18,6 +18,7 @@
 		C50043111A3758F80072834C /* icone_caminhada.png in Resources */ = {isa = PBXBuildFile; fileRef = C500430D1A3758F80072834C /* icone_caminhada.png */; };
 		C50043121A3758F80072834C /* s_icone_academia.png in Resources */ = {isa = PBXBuildFile; fileRef = C500430E1A3758F80072834C /* s_icone_academia.png */; };
 		C50043131A3758F80072834C /* s_icone_caminhada.png in Resources */ = {isa = PBXBuildFile; fileRef = C500430F1A3758F80072834C /* s_icone_caminhada.png */; };
+		C50043151A3761070072834C /* stamina_logo.png in Resources */ = {isa = PBXBuildFile; fileRef = C50043141A3761070072834C /* stamina_logo.png */; };
 		C52024471A26434300DDF73B /* ConfiguracoesVC.m in Sources */ = {isa = PBXBuildFile; fileRef = C52024461A26434300DDF73B /* ConfiguracoesVC.m */; };
 		C52024491A26690B00DDF73B /* Exercicio.png in Resources */ = {isa = PBXBuildFile; fileRef = C52024481A26690B00DDF73B /* Exercicio.png */; };
 		C52C27871A07EB690030BEA4 /* CadastroVC.m in Sources */ = {isa = PBXBuildFile; fileRef = C52C27861A07EB690030BEA4 /* CadastroVC.m */; };
@@ -209,6 +210,7 @@
 		C500430D1A3758F80072834C /* icone_caminhada.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icone_caminhada.png; sourceTree = "<group>"; };
 		C500430E1A3758F80072834C /* s_icone_academia.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = s_icone_academia.png; sourceTree = "<group>"; };
 		C500430F1A3758F80072834C /* s_icone_caminhada.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = s_icone_caminhada.png; sourceTree = "<group>"; };
+		C50043141A3761070072834C /* stamina_logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = stamina_logo.png; sourceTree = "<group>"; };
 		C52024451A26434300DDF73B /* ConfiguracoesVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ConfiguracoesVC.h; path = ../ConfiguracoesVC.h; sourceTree = "<group>"; };
 		C52024461A26434300DDF73B /* ConfiguracoesVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ConfiguracoesVC.m; path = ../ConfiguracoesVC.m; sourceTree = "<group>"; };
 		C52024481A26690B00DDF73B /* Exercicio.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Exercicio.png; sourceTree = "<group>"; };
@@ -617,6 +619,7 @@
 		C5D4DAA11A364A8600FE2182 /* home */ = {
 			isa = PBXGroup;
 			children = (
+				C50043141A3761070072834C /* stamina_logo.png */,
 				C500430C1A3758F80072834C /* icone_academia.png */,
 				C500430D1A3758F80072834C /* icone_caminhada.png */,
 				C500430E1A3758F80072834C /* s_icone_academia.png */,
@@ -1124,6 +1127,7 @@
 				FF951C0E1A28F0C400E581AB /* icone_foto.png in Resources */,
 				C5B62C511A1527F600F969D8 /* icone_calendario_23.png in Resources */,
 				C5B62C0E1A1525F400F969D8 /* Lato-HairlineItalic.ttf in Resources */,
+				C50043151A3761070072834C /* stamina_logo.png in Resources */,
 				C5B62C411A1527F600F969D8 /* icone_calendario_07.png in Resources */,
 				C53AAC1B1A1BC4B7000AD02C /* icone_alternar_selected.png in Resources */,
 				C53AABFB1A1BA5D9000AD02C /* icone_adicionar_tab.png in Resources */,

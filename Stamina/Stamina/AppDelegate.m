@@ -17,7 +17,8 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-    
+    self.window.backgroundColor = [UIColor colorWithRed:249.0/255/0 green:216.0/255.0 blue:0 alpha:1];
+
     [FBLoginView class];
     
     UIPageControl *pageControl = [UIPageControl appearance];

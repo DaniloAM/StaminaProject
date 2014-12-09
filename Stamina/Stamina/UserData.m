@@ -27,7 +27,36 @@
 //exercise_id index 0
 //repetitions index 1
 //series index 2
+-(void)eraseData{
+    _trainingsArray = nil;
+    _routesArray = nil;
+    _name = nil;
+    _heightInCentimeters=0;
+    _weightInKilograms = 0;
+    _currentObjective = 0;
+    _completedTrainings = 0;
+    _bestSequence = 0;
+    _currentSequence = 0;
+    _userPoints = 0;
+    _burnedCalories = 0;
+    _lostWeight = 0;
+    _initialWeight = 0;
+    _groupID = 0;
+    _userID = 0;
+    _age = 0;
+    _language = 0;
+    _alerta = 0;
+    _timeAlarmBeforeTraining = 0;
+    _sex = 0 ;
+    _nextExercise = 0;
+    _lastTrainName = nil;
+    _lastTrainDate = nil;
+    _startAppUse = nil;
+    _nickName = nil;
+    _email = nil;
+    _password = nil;
 
+}
 -(void)addExerciseWithTrainingExercise: (TrainingExercises *)newExercise {
 
     AppDelegate *app = [[UIApplication sharedApplication] delegate];

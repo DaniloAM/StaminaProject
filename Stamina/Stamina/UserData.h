@@ -63,7 +63,7 @@
 -(void)removeTraning: (NSString *)trainingName;
 -(void)addExerciseWithTrainingExercise: (TrainingExercises *)newExercise;
 -(void)allocArray;
-
+-(void)eraseData;
 -(void)loadFromUserDefaults;
 -(void)saveOnUserDefaults;
 
