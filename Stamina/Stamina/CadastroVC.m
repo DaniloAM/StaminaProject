@@ -7,7 +7,7 @@
 //
 
 #import "CadastroVC.h"
-#define altura 1136
+#define ALTURA 1136
 #define largura 640
 
 @interface CadastroVC ()
@@ -17,7 +17,9 @@
 @implementation CadastroVC
 -(void)viewDidAppear:(BOOL)animated{
     [super viewDidAppear:animated];
-    [self cadastra];
+}
+-(IBAction)voltar{
+    [self dismissViewControllerAnimated:YES completion:nil];
 }
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -27,10 +29,10 @@
     [[self page] setNumberOfPages:_numberOfViews];
     _numberOfViews = 8;
     CGSize size = [[UIScreen mainScreen] bounds].size;
-    UIImageView *image = [[UIImageView alloc] initWithFrame:CGRectMake(179*size.width/largura, 212*size.height/altura, 284*size.width/largura, 240*size.height/altura)];
-    [image setImage:[UIImage imageNamed:@"Logo_Stamina.png"]];
+    UIImageView *image = [[UIImageView alloc] initWithFrame:CGRectMake(179*size.width/largura, 212*size.height/ALTURA, 284*size.width/largura, 284*size.width/largura)];
+    [image setImage:[UIImage imageNamed:@"stamina_logo.png"]];
     [self.view addSubview:image];
-    [self setPage:[[UIPageControl alloc] initWithFrame:CGRectMake(0, 800*size.height/altura, 100, 200)]];
+    [self setPage:[[UIPageControl alloc] initWithFrame:CGRectMake(0, 800*size.height/ALTURA, 100, 200)]];
     CGPoint p = [self page].frame.origin;
     p.x = size.width/2 - self.page.frame.size.width/2;
     CGRect rect = [self page].frame;
@@ -69,27 +71,28 @@
     CGSize size = [[UIScreen mainScreen] bounds].size;
     int yUp = 655;
     int yDown = 763;
-    [self setTxtName:[[UITextField alloc] initWithFrame:CGRectMake(65*size.width/largura, yUp*size.height/altura, 510*size.width/largura, 73*size.height/altura)]];
-    [self setTxtEmail:[[UITextField alloc] initWithFrame:CGRectMake(65*size.width/largura, yUp*size.height/altura, 510*size.width/largura, 73*size.height/altura)]];
-    [self setTxtPassword:[[UITextField alloc] initWithFrame:CGRectMake(65*size.width/largura, yUp*size.height/altura, 510*size.width/largura, 73*size.height/altura)]];
+    [self setTxtName:[[UITextField alloc] initWithFrame:CGRectMake(65*size.width/largura, yUp*size.height/ALTURA, 510*size.width/largura, 73*size.height/ALTURA)]];
+    [self setTxtEmail:[[UITextField alloc] initWithFrame:CGRectMake(65*size.width/largura, yUp*size.height/ALTURA, 510*size.width/largura, 73*size.height/ALTURA)]];
+    [self setTxtPassword:[[UITextField alloc] initWithFrame:CGRectMake(65*size.width/largura, yUp*size.height/ALTURA, 510*size.width/largura, 73*size.height/ALTURA)]];
     [self txtPassword].secureTextEntry =    YES;
-    [self setTxtNick:[[UITextField alloc] initWithFrame:CGRectMake(65*size.width/largura, yDown*size.height/altura, 510*size.width/largura, 73*size.height/altura)]];
-    [self setTxtConfPass:[[UITextField alloc] initWithFrame:CGRectMake(65*size.width/largura, yDown*size.height/altura, 510*size.width/largura, 73*size.height/altura)]];
+    [self setTxtNick:[[UITextField alloc] initWithFrame:CGRectMake(65*size.width/largura, yDown*size.height/ALTURA, 510*size.width/largura, 73*size.height/ALTURA)]];
+    [self setTxtConfPass:[[UITextField alloc] initWithFrame:CGRectMake(65*size.width/largura, yDown*size.height/ALTURA, 510*size.width/largura, 73*size.height/ALTURA)]];
         [self txtConfPass].secureTextEntry =    YES;
-    [self setTxtConfEmail:[[UITextField alloc] initWithFrame:CGRectMake(65*size.width/largura, yDown*size.height/altura, 510*size.width/largura, 73*size.height/altura)]];
-    [self setTxtKg:[[UITextField alloc] initWithFrame:CGRectMake(250*size.width/largura, yDown*size.height/altura, 141*size.width/largura, 73*size.height/altura)]];
+    [self setTxtConfEmail:[[UITextField alloc] initWithFrame:CGRectMake(65*size.width/largura, yDown*size.height/ALTURA, 510*size.width/largura, 73*size.height/ALTURA)]];
+    [self setTxtKg:[[UITextField alloc] initWithFrame:CGRectMake(250*size.width/largura, yDown*size.height/ALTURA, 141*size.width/largura, 73*size.height/ALTURA)]];
     _txtKg.keyboardType = UIKeyboardTypeNumberPad;
-    [self setTxtCm:[[UITextField alloc] initWithFrame:CGRectMake(250*size.width/largura, yDown*size.height/altura, 141*size.width/largura, 73*size.height/altura)]];
+    [self setTxtCm:[[UITextField alloc] initWithFrame:CGRectMake(250*size.width/largura, yDown*size.height/ALTURA, 141*size.width/largura, 73*size.height/ALTURA)]];
     _txtCm.keyboardType = UIKeyboardTypeNumberPad;
 
-    [self setTxtAge:[[UITextField alloc] initWithFrame:CGRectMake(250*size.width/largura, yDown*size.height/altura, 141*size.width/largura, 73*size.height/altura)]];
+    [self setTxtAge:[[UITextField alloc] initWithFrame:CGRectMake(250*size.width/largura, yDown*size.height/ALTURA, 141*size.width/largura, 73*size.height/ALTURA)]];
+    _txtNick.autocorrectionType =UITextAutocorrectionTypeNo;
     _txtAge.keyboardType = UIKeyboardTypeNumberPad;
     UISegmentedControl *seg = [[UISegmentedControl alloc] initWithItems:[NSArray arrayWithObjects:@"H" , @"M", nil]];
-    [seg setFrame:CGRectMake(216*size.width/largura, 763*size.height/altura, 200*size.width/largura, 67*size.height/altura)];
+    [seg setFrame:CGRectMake(216*size.width/largura, 763*size.height/ALTURA, 200*size.width/largura, 67*size.height/ALTURA)];
     seg.selectedSegmentIndex = 0;
     [[UISegmentedControl appearance] setTintColor:[UIColor staminaBlackColor]];
     [[UISegmentedControl appearance] setTitleTextAttributes:@{NSForegroundColorAttributeName:[UIColor staminaBlackColor]} forState:UIControlStateNormal];
-    _btn = [[UIButton alloc] initWithFrame:CGRectMake(251*size.width/largura, 684*size.height/altura, 137*size.width/largura, 137*size.width/largura)];
+    _btn = [[UIButton alloc] initWithFrame:CGRectMake(251*size.width/largura, 684*size.height/ALTURA, 137*size.width/largura, 137*size.width/largura)];
     [_btn setBackgroundColor:[UIColor staminaBlackColor]];
     [_btn addTarget:self action:@selector(cadastra) forControlEvents:UIControlEventTouchUpInside];
     _seg     = seg;
@@ -106,20 +109,36 @@
     
     
 }
+-(void)cadastraUsuario{
+    NSString *str = [WebServiceResponse cadastrarComNome:[self txtName].text eSenha:[self txtPassword].text email:[self txtEmail].text sexo:[self seg].selectedSegmentIndex nickName:[self txtNick].text];
+   
+    if([str isEqualToString:@"Adicionado"]){
+        [WebServiceResponse atualizaComEmail:[self txtEmail].text peso:[[self txtKg].text floatValue] sexo:[self seg].selectedSegmentIndex altura:[[[self txtCm] text] intValue] idade:[[[self txtAge] text] intValue]];
+        [_temp removeFromSuperview];
+        [_activity removeFromSuperview];
+        UserData *user = [UserData alloc];
+        [user setNickName:_txtNick.text];
+        [user setEmail:_txtEmail.text];
+        [user setPassword:_txtPassword.text];
+        [user setHeightInCentimeters:[_txtCm.text intValue]];
+        [user setSex:[self seg].selectedSegmentIndex];
+        [user setName:_txtName.text];
+        [user setWeightInKilograms:[[self txtKg].text intValue]];
+        [self dismissViewControllerAnimated:YES completion:nil];
+            }
+    else {
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Erro" message:str delegate:self cancelButtonTitle:@"Ok" otherButtonTitles:nil, nil];
+        [alert show];
+        [_temp removeFromSuperview];
+        [_activity removeFromSuperview];
+    }
+
+}
 -(void)cadastra{
     [self.view addSubview:_temp];
     [self.view addSubview:_activity];
     [_activity startAnimating];
-
-    NSString *str = [WebServiceResponse cadastrarComNome:[self txtName].text eSenha:[self txtPassword].text email:[self txtEmail].text sexo:[self seg].selectedSegmentIndex nickName:[self txtName].text];
-    [_temp removeFromSuperview];
-    [_activity removeFromSuperview];
-    if([str isEqualToString:@"Adicionado"]||[str isEqualToString:@""]){
-    }
-    else {
-        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Erro" message:str delegate:self cancelButtonTitle:@"Ok" otherButtonTitles:nil, nil];
-        [alert show];
-    }
+    [self performSelectorInBackground:@selector(cadastraUsuario) withObject:self];
     
 }
 -(void)scrollViewWillBeginDragging:(UIScrollView *)scrollView{
@@ -283,7 +302,7 @@
 
             break;
         case 10:
-            [[self lblError] setText:@"Cheque sua altura"];
+            [[self lblError] setText:@"Cheque sua ALTURA"];
 
             break;
         case 11:
@@ -351,7 +370,7 @@
 
     
     for(int x = 0 ; x < _numberOfViews;x++){
-        UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(65*size.width/largura, 655*size.height/altura, 510*size.width/largura, 73*size.height/altura)];
+        UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(65*size.width/largura, 655*size.height/ALTURA, 510*size.width/largura, 73*size.height/ALTURA)];
         [label setTextAlignment:NSTextAlignmentCenter];
         [label setFont:[UIFont fontWithName:@"Lato" size:22]];
         UIView *view = [[UIView alloc] initWithFrame:CGRectMake(x*size.width, 0, size.width, size.height)];
@@ -383,7 +402,7 @@
                 
                 break;
             case 4:
-                [label setText:@"Altura:"];
+                [label setText:@"ALTURA:"];
                 [view addSubview:label];
                 [view addSubview:[self txtCm]];
                 [[self txtCm] setPlaceholder:@"Cm"];
@@ -394,7 +413,7 @@
                 [label setText:@"Idade:"];
                 [view addSubview:label];
                 [view addSubview:[self txtAge]];
-                [[self txtAge] setPlaceholder:@"Cm"];
+                [[self txtAge] setPlaceholder:@"An"];
 
                 
                 break;

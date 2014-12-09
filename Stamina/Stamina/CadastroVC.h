@@ -25,4 +25,5 @@
 @property UISegmentedControl *seg;
 @property UIButton *btn;
 @property UIActivityIndicatorView *activity;
+@property UIViewController *viewController;
 @end

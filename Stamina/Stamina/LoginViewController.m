@@ -103,6 +103,7 @@
     UIGraphicsEndImageContext();
     return myimage;
 }
+
 -(void)checkConnection{
     UserData *userData = [UserData alloc];
     [self activity].hidden=NO;

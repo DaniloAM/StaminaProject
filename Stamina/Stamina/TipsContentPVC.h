@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-
+#import "Exercises.h"
 @interface TipsContentPVC : UIViewController
 @property (weak, nonatomic) IBOutlet UIImageView *backgroundImageView;
 @property (weak, nonatomic) IBOutlet UILabel *titleLabel;
@@ -15,4 +15,6 @@
 @property NSString *titleText;
 @property NSString *imageFile;
 @property NSString *exerciseName;
+@property Exercises *exe;
+@property int current;
 @end

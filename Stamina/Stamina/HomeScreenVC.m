@@ -22,7 +22,8 @@
     [super viewWillAppear:animated];
     NSDateComponents *components = [[NSCalendar currentCalendar] components:NSCalendarUnitDay | NSCalendarUnitMonth | NSCalendarUnitYear fromDate:[NSDate date]];
     NSInteger day = [components day];
-    
+    UserData *user = [UserData alloc];
+    [[self nickName] setText:[user nickName]];
     NSString *str = [NSString stringWithFormat:@"icone_calendario_%02ld.png",(long)day];
     [self firstButtonMethod:nil  fromClass:self  withImage:[UIImage imageNamed:str]];
     [self secondButtonMethod:nil fromClass:self  withImage:[UIImage imageNamed:@"icon_compartilhar.png"]];

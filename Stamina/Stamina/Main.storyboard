@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6245" systemVersion="13F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="Efd-qe-Nr2">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="13F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="h6A-wv-HXR">
     <dependencies>
-        <deployment defaultVersion="1808" identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6238"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
     </dependencies>
     <customFonts key="customFonts">
         <mutableArray key="Lato-Light.ttf">
@@ -65,7 +65,7 @@
         <!--Login View Controller-->
         <scene sceneID="IZ7-N9-5oB">
             <objects>
-                <viewController id="h6A-wv-HXR" customClass="LoginViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="LoginVC" id="h6A-wv-HXR" customClass="LoginViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="0GZ-hz-m6x">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -94,10 +94,11 @@
                                 <rect key="frame" x="118" y="523" width="84" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Cadastre-se">
+                                    <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="TXz-Pj-H87" kind="modal" id="yui-t2-OvR"/>
+                                    <segue destination="TXz-Pj-H87" kind="modal" id="1dd-Yc-w51"/>
                                 </connections>
                             </button>
                             <view contentMode="scaleToFill" id="DYK-Se-g6V">
@@ -132,12 +133,12 @@
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Logo_Stamina.png" id="CNY-vg-X6n">
-                                <rect key="frame" x="86" y="85" width="148" height="125"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="stamina_logo.png" id="CNY-vg-X6n">
+                                <rect key="frame" x="75" y="78" width="170" height="170"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <view alpha="0.59999999999999964" contentMode="scaleToFill" id="pc1-NZ-ySM">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <rect key="frame" x="-1" y="0.0" width="320" height="568"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
                                     <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="white" id="cx9-nj-BAz">
@@ -392,7 +393,7 @@
         <!--Main MenuVC-->
         <scene sceneID="yt8-hy-S5B">
             <objects>
-                <viewController useStoryboardIdentifierAsRestorationIdentifier="YES" id="Efd-qe-Nr2" customClass="MainMenuVC" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="mainVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Efd-qe-Nr2" customClass="MainMenuVC" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="6K3-H9-0N6">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -586,7 +587,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="biZ-JN-b7S">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="504"/>
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </tableView>
@@ -724,7 +725,7 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="nickname" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="91z-Kl-1l5">
-                                <rect key="frame" x="68" y="38" width="115" height="21"/>
+                                <rect key="frame" x="71" y="38" width="236" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="22"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -784,7 +785,11 @@
                     <navigationItem key="navigationItem" id="RGQ-tE-vRn"/>
                     <connections>
                         <outlet property="academiaBtn" destination="8IQ-Vn-83q" id="nOJ-UL-8jG"/>
+                        <outlet property="caloria" destination="Pro-Ra-zAw" id="Que-gF-6Mg"/>
+                        <outlet property="nickName" destination="91z-Kl-1l5" id="cJY-8o-cod"/>
+                        <outlet property="points" destination="fqq-VY-Iit" id="36i-3B-Zfj"/>
                         <outlet property="runningBtn" destination="Lb2-Gf-nBp" id="99C-LY-Vh9"/>
+                        <outlet property="time" destination="7NF-fG-CVv" id="fGd-Q5-LKN"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Om7-7Q-Ry4" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -794,25 +799,11 @@
         <!--CadastroVC-->
         <scene sceneID="i2S-yT-GgI">
             <objects>
-                <viewController id="TXz-Pj-H87" customClass="CadastroVC" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="Cadastro" id="TXz-Pj-H87" customClass="CadastroVC" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="R4z-fU-Cch">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="wireframe_cadastro.jpg" id="w5z-AG-wr9">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="QEj-xY-d41">
-                                <rect key="frame" x="137" y="530" width="46" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="voltar" destination="TXz-Pj-H87" eventType="touchUpInside" id="csd-va-UAi"/>
-                                </connections>
-                            </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="BIH-ek-VfL">
                                 <rect key="frame" x="47" y="221" width="227" height="37"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -820,6 +811,17 @@
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="QEj-xY-d41">
+                                <rect key="frame" x="16" y="503" width="288" height="45"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Voltar">
+                                    <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="voltar" destination="TXz-Pj-H87" eventType="touchUpInside" id="csd-va-UAi"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
@@ -881,24 +883,24 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" id="IKe-fT-awH">
-                                <rect key="frame" x="36" y="231" width="118" height="13"/>
+                                <rect key="frame" x="36" y="134" width="118" height="13"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
                             <view contentMode="scaleToFill" id="apU-V1-wWO">
-                                <rect key="frame" x="166" y="231" width="118" height="13"/>
+                                <rect key="frame" x="166" y="134" width="118" height="13"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" minimumFontSize="17" id="sZC-Zy-N1g">
-                                <rect key="frame" x="36" y="137" width="248" height="36"/>
+                                <rect key="frame" x="36" y="40" width="248" height="36"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="22"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="ifD-sE-LSE">
-                                <rect key="frame" x="166" y="197" width="118" height="41"/>
+                                <rect key="frame" x="166" y="100" width="118" height="41"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="21"/>
                                 <state key="normal" title="Dias">
@@ -910,7 +912,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="J2b-SL-ABw">
-                                <rect key="frame" x="36" y="423" width="112" height="38"/>
+                                <rect key="frame" x="36" y="326" width="112" height="38"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="22"/>
@@ -923,7 +925,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="dNK-vx-MPJ">
-                                <rect key="frame" x="172" y="423" width="112" height="38"/>
+                                <rect key="frame" x="172" y="326" width="112" height="38"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="22"/>
@@ -936,7 +938,7 @@
                                 </connections>
                             </button>
                             <view contentMode="scaleToFill" id="PRe-rW-tYO">
-                                <rect key="frame" x="36" y="246" width="248" height="158"/>
+                                <rect key="frame" x="36" y="149" width="248" height="158"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" id="mVA-GQ-84C">
@@ -1041,7 +1043,7 @@
                                 <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="fJg-y0-v3E">
-                                <rect key="frame" x="36" y="197" width="118" height="41"/>
+                                <rect key="frame" x="36" y="100" width="118" height="41"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="21"/>
                                 <state key="normal" title="Exercicios">
@@ -1053,12 +1055,12 @@
                                 </connections>
                             </button>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="QZM-HN-qky">
-                                <rect key="frame" x="36" y="246" width="248" height="158"/>
+                                <rect key="frame" x="36" y="149" width="248" height="158"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </tableView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="Epr-Km-3Rg">
-                                <rect key="frame" x="36" y="476" width="112" height="38"/>
+                                <rect key="frame" x="36" y="379" width="112" height="38"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="22"/>
@@ -1091,7 +1093,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="b48-CT-jyA" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3838" y="-3606"/>
+            <point key="canvasLocation" x="3956" y="-3464"/>
         </scene>
         <!--ExercicioTVC-->
         <scene sceneID="xuh-er-yP5">
@@ -1126,44 +1128,44 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" id="6Cm-1l-u4F">
-                                <rect key="frame" x="92" y="369" width="193" height="112"/>
+                                <rect key="frame" x="92" y="304" width="193" height="112"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="1" green="0.82352941180000006" blue="0.08235294118" alpha="1" colorSpace="calibratedRGB"/>
                             </view>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" minimumFontSize="17" id="ulh-Vj-cJs">
-                                <rect key="frame" x="205" y="394" width="62" height="63"/>
+                                <rect key="frame" x="205" y="329" width="62" height="63"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" minimumFontSize="17" id="CIi-wg-UDH">
-                                <rect key="frame" x="109" y="394" width="62" height="63"/>
+                                <rect key="frame" x="109" y="329" width="62" height="63"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="PMl-ob-vaE">
-                                <rect key="frame" x="38" y="280" width="266" height="21"/>
+                                <rect key="frame" x="38" y="215" width="266" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="Lato-Semibold" family="Lato" pointSize="22"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="baT-xU-dTt">
-                                <rect key="frame" x="38" y="309" width="266" height="21"/>
+                                <rect key="frame" x="38" y="244" width="266" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="Lato-Light" family="Lato" pointSize="19"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="MAT-lw-NbX">
-                                <rect key="frame" x="0.0" y="65" width="320" height="207"/>
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="207"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="z3j-Bg-4nM">
-                                <rect key="frame" x="34" y="369" width="54" height="54"/>
+                                <rect key="frame" x="34" y="304" width="54" height="54"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <state key="normal">
@@ -1174,7 +1176,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="Ddb-gO-k7x">
-                                <rect key="frame" x="34" y="427" width="54" height="54"/>
+                                <rect key="frame" x="34" y="362" width="54" height="54"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <state key="normal">
@@ -1185,14 +1187,14 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="X" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="quh-Xr-O6X">
-                                <rect key="frame" x="171" y="422" width="35" height="21"/>
+                                <rect key="frame" x="171" y="357" width="35" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" minimumFontSize="17" id="OYl-JM-GlK">
-                                <rect key="frame" x="110" y="393" width="101" height="63"/>
+                                <rect key="frame" x="110" y="328" width="101" height="63"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -1333,7 +1335,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bCL-7C-zgz" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="601" y="-2508"/>
+            <point key="canvasLocation" x="613" y="-2448"/>
         </scene>
         <!--Tips ContentPVC-->
         <scene sceneID="v5i-mK-YEB">
@@ -1343,16 +1345,16 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="CTk-yL-qAI">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="267"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="11" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="wuI-zx-kfD">
                                 <rect key="frame" x="0.0" y="265" width="320" height="178"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="22"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="CTk-yL-qAI">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="267"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" red="0.97647058823529409" green="0.84705882352941175" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
@@ -1375,7 +1377,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="Logo_Stamina.png" width="813" height="688"/>
         <image name="fb_sign.png" width="454" height="71"/>
         <image name="icoen_tempo.png" width="116" height="116"/>
         <image name="icone_add_trajeto.png" width="296" height="296"/>
@@ -1388,7 +1389,7 @@
         <image name="icone_pontuacao.png" width="116" height="116"/>
         <image name="icone_usuario.png" width="116" height="116"/>
         <image name="icone_velocimetro.png" width="116" height="116"/>
-        <image name="wireframe_cadastro.jpg" width="876" height="1567"/>
+        <image name="stamina_logo.png" width="400" height="400"/>
     </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>

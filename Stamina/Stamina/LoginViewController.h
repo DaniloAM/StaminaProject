@@ -11,7 +11,7 @@
 #import "UserData.h"
 #import "Reachability.h"
 #import <SystemConfiguration/SystemConfiguration.h>
-
+#import "CadastroVC.h"
 @interface LoginViewController : UIViewController <UITextFieldDelegate, UIAlertViewDelegate>
 @property (weak, nonatomic) IBOutlet UITextField *login;
 @property (weak, nonatomic) IBOutlet UITextField *password;
