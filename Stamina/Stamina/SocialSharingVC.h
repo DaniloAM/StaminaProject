@@ -17,25 +17,25 @@
 
 @interface SocialSharingVC : HideBBVC  <UIDocumentInteractionControllerDelegate>
 
+
 @property (nonatomic, retain) UIDocumentInteractionController *dic;
-@property (weak, nonatomic) IBOutlet AVCamPreviewView *cameraView;
+@property AVCamPreviewView *cameraView;
 @property (nonatomic) AVCaptureStillImageOutput *stillImageOutput;
 @property AVCaptureSession *session;
 
-@property (weak, nonatomic) IBOutlet UIButton *pictureButton;
-@property (weak, nonatomic) IBOutlet UIButton *cameraButton;
-@property (weak, nonatomic) IBOutlet UIButton *backButton;
-//@property (weak, nonatomic) IBOutlet UIImageView *cameraIcon;
-//@property (weak, nonatomic) IBOutlet UIImageView *returnIcon;
-//@property (weak, nonatomic) IBOutlet UIImageView *pictureIcon;
+@property UIButton *pictureButton;
+@property UIButton *cameraButton;
+@property UIButton *backButton;
 
 @property UIImage *userPicture;
 @property UIImageView *userPictureView;
 @property UIView *shareView;
 
+
 @property BOOL hasPicture;
 @property BOOL isOnShareMenu;
 @property BOOL usingFrontCamera;
+@property BOOL routePicture;
 
 
 

@@ -156,7 +156,7 @@
         if([[[array objectAtIndex:index] GraphicNumber] integerValue] > 0.0 || _showZeroValue) {
             
             //Prepare the label value
-            UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, radius * 5, radius * 5)];
+            UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, radius * 5, radius * 7)];
             [label setFont:[self graphFont]];
             [label setTextAlignment:NSTextAlignmentLeft];
             [label setText:[NSString stringWithFormat:@"%dm",[[[array objectAtIndex:index] GraphicNumber] intValue]]];

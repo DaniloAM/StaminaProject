@@ -71,6 +71,11 @@
     UISwipeGestureRecognizer *gestureDown = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(previousMonth)];
     [gestureDown setDirection:UISwipeGestureRecognizerDirectionDown];
     
+    UISwipeGestureRecognizer *gestureRight = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(returnToView)];
+    [gestureRight setDirection:UISwipeGestureRecognizerDirectionRight];
+    
+    
+    [self.view addGestureRecognizer:gestureRight];
     [self.view addGestureRecognizer:gestureUp];
     [self.view addGestureRecognizer:gestureDown];
     
@@ -418,6 +423,11 @@
     cell.backgroundColor = [UIColor clearColor];
     
     return cell;
+}
+
+
+-(void)returnToView {
+    [self.navigationController popViewControllerAnimated:YES];
 }
 
 

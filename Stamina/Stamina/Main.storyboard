@@ -265,56 +265,13 @@
                     <view key="view" contentMode="scaleToFill" id="vAB-WH-iWv">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <view contentMode="scaleToFill" id="cg0-0p-TwB" customClass="AVCamPreviewView">
-                                <rect key="frame" x="-25" y="12" width="370" height="495"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="1" green="0.9314516129" blue="0.2196078598" alpha="1" colorSpace="deviceRGB"/>
-                            </view>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="yim-5L-tS1">
-                                <rect key="frame" x="128" y="427" width="63" height="63"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" backgroundImage="icone_camerar_capturar.png">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="snapStillImage:" destination="RfZ-Bh-jM0" eventType="touchUpInside" id="f9c-Kw-yX0"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="QVP-qB-Ntd">
-                                <rect key="frame" x="241" y="427" width="63" height="63"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" backgroundImage="icone_camera_voltar.png">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="returnToPreviousView" destination="RfZ-Bh-jM0" eventType="touchUpInside" id="ohB-PL-GjX"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="TKm-u3-4Ez">
-                                <rect key="frame" x="16" y="427" width="63" height="63"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" backgroundImage="icone_camera_girar.png">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="changeCamera" destination="RfZ-Bh-jM0" eventType="touchUpInside" id="ama-Nj-b9D"/>
-                                </connections>
-                            </button>
-                        </subviews>
                         <color key="backgroundColor" red="0.9960784912109375" green="0.84705889225006104" blue="0.19215688109397888" alpha="1" colorSpace="deviceRGB"/>
                     </view>
                     <navigationItem key="navigationItem" id="Ked-XD-yd5"/>
-                    <connections>
-                        <outlet property="backButton" destination="QVP-qB-Ntd" id="cnb-Li-NEE"/>
-                        <outlet property="cameraButton" destination="TKm-u3-4Ez" id="w5i-bk-hsc"/>
-                        <outlet property="cameraView" destination="cg0-0p-TwB" id="suG-sa-xBk"/>
-                        <outlet property="pictureButton" destination="yim-5L-tS1" id="8Iw-b0-2qf"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ulX-ns-onx" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3214" y="-1664"/>
+            <point key="canvasLocation" x="3202" y="-1680"/>
         </scene>
         <!--Menu RunningVC-->
         <scene sceneID="qGL-og-Det">
@@ -337,10 +294,6 @@
                                     <segue destination="Hoc-Hi-pFE" kind="push" id="pHS-mL-7YM"/>
                                 </connections>
                             </button>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icone_calendario_01.png" id="cxV-Vu-DFh">
-                                <rect key="frame" x="60" y="94" width="84" height="90"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="mac-Rp-8jk">
                                 <rect key="frame" x="32" y="317" width="256" height="36"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -355,22 +308,32 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="rXf-If-RHb">
-                                <rect key="frame" x="194" y="122" width="73" height="33"/>
+                                <rect key="frame" x="194" y="117" width="73" height="33"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="23"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="DVM-9O-FO6">
-                                <rect key="frame" x="165" y="123" width="30" height="30"/>
+                                <rect key="frame" x="165" y="118" width="30" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="q3J-yu-RCi">
+                                <rect key="frame" x="60" y="89" width="84" height="90"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" backgroundImage="icone_calendario_01.png">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="callCalendar" destination="PSP-iH-gXQ" eventType="touchUpInside" id="Wjy-XK-aWi"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.97647058823529409" green="0.84705882352941175" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
                     <navigationItem key="navigationItem" id="rKg-2n-dgf"/>
                     <connections>
-                        <outlet property="calendarIcon" destination="cxV-Vu-DFh" id="z2M-Hx-AgY"/>
+                        <outlet property="calendarButton" destination="q3J-yu-RCi" id="Azz-Le-tbj"/>
                         <outlet property="temperatureImage" destination="DVM-9O-FO6" id="Zht-UM-kHt"/>
                         <outlet property="temperatureLabel" destination="rXf-If-RHb" id="8eq-Le-Epz"/>
                     </connections>
@@ -1419,9 +1382,6 @@
         <image name="icone_bpm.png" width="116" height="116"/>
         <image name="icone_calendario_01.png" width="301" height="322"/>
         <image name="icone_calorias.png" width="116" height="116"/>
-        <image name="icone_camera_girar.png" width="296" height="296"/>
-        <image name="icone_camera_voltar.png" width="296" height="296"/>
-        <image name="icone_camerar_capturar.png" width="296" height="296"/>
         <image name="icone_compartilhar_trajeto.png" width="296" height="296"/>
         <image name="icone_foto_trajeto.png" width="296" height="296"/>
         <image name="icone_km.png" width="116" height="116"/>

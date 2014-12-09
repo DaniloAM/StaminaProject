@@ -68,6 +68,9 @@
     [[self graphicScrollView] setFrame:[self graphicFrame]];
     [[self graphicScrollView] setContentSize:CGSizeMake(graphWidth * viewSizeNumber, graphHeight)];
     
+    [[self graphicScrollView] setShowsHorizontalScrollIndicator:NO];
+    [[self graphicScrollView] setShowsVerticalScrollIndicator:NO];
+    
     
     
     //double tap gesture
@@ -165,9 +168,7 @@
         [self setGraphLoadState:GSLoadingNext];
         
         [self setMonthDate:[NSDate dateWithTimeInterval:0 sinceDate:[[[self graphicComponents] lastObject] GNDate]]];
-        
-        [[self updater] setPreviousComponents:[NSMutableArray arrayWithArray:[self graphicComponents]]];
-        [self setGraphicComponents:[NSMutableArray arrayWithArray:[[self updater] nextComponents]]];
+
     }
     
     else if([self graphLoadState] == GSBackwarding) {
@@ -180,13 +181,11 @@
         [self setGraphLoadState:GSLoadingPrevious];
         
         [self setMonthDate:[NSDate dateWithTimeInterval:0 sinceDate:[[[self graphicComponents] objectAtIndex:1] GNDate]]];
-        
-        [[self updater] setNextComponents:[NSMutableArray arrayWithArray:[self graphicComponents]]];
-        [self setGraphicComponents:[NSMutableArray arrayWithArray:[[self updater] previousComponents]]];
+
     }
     
     
-    [self changeMonthLabelText];
+    [self checkMonthLabel];
     
     
     [[self graphicScrollView] addSubview:[self currentGraphicView]];
@@ -202,6 +201,13 @@
 -(void)loadNewGraphicByState {
     
     if([self graphLoadState] == GSLoadingNext) {
+        
+        [self setMonthDate:[NSDate dateWithTimeInterval:0 sinceDate:[[[self graphicComponents] lastObject] GNDate]]];
+        
+        [[self updater] setPreviousComponents:[NSMutableArray arrayWithArray:[self graphicComponents]]];
+        [self setGraphicComponents:[NSMutableArray arrayWithArray:[[self updater] nextComponents]]];
+        
+        [self changeMonthLabelText];
         
         CGRect viewFrame = CGRectMake(0, 0, graphWidth * viewSizeNumber, graphHeight);
         [self setNextGraphicView:[[UIView alloc] initWithFrame:viewFrame]];
@@ -220,6 +226,13 @@
     
     else if([self graphLoadState] == GSLoadingPrevious) {
         
+        [self setMonthDate:[NSDate dateWithTimeInterval:0 sinceDate:[[[self graphicComponents] objectAtIndex:1] GNDate]]];
+        
+        [[self updater] setNextComponents:[NSMutableArray arrayWithArray:[self graphicComponents]]];
+        [self setGraphicComponents:[NSMutableArray arrayWithArray:[[self updater] previousComponents]]];
+        
+        [self changeMonthLabelText];
+        
         CGRect viewFrame = CGRectMake(0, 0, graphWidth * viewSizeNumber, graphHeight);
         [self setPreviousGraphicView:[[UIView alloc] initWithFrame:viewFrame]];
         
@@ -232,6 +245,9 @@
         [self setGraphLoadState:GSNormal];
         
     }
+    
+    
+    
     
 }
 
@@ -445,6 +461,10 @@
 
 
 -(void)checkMonthLabel {
+    
+    if([self graphLoadState] == GSLoadingNext || [self graphLoadState] ==  GSLoadingPrevious) {
+        return;
+    }
     
     double widthFactor = [self graphicFrame].size.width / [[self updater] numberInView];
     double point = [[self graphicScrollView] contentOffset].x + (graphWidth / 2);

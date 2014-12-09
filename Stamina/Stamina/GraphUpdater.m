@@ -329,21 +329,38 @@
         
         //Case of a serious error
         if(index < 0 || index >= [numberArray count]) {
-            NSLog(@"Something went wrong and the index returned an invalid value. The method will cease for no further errors. Please check what's wrong with the indexes method (getNumberArrayPositionWithInitialDate:  andGNComponent: ).");
             
-            break;
+            //Case of the initial reference of graphics, wich is the -1 array position
+            if([self daysBetweenDate:initialDate andDate:component.GNDate] == 0 && index == -1) {
+            
+            }
+            
+            else {
+            
+                NSLog(@"Something went wrong and the index returned an invalid value. The method will cease for no further errors. Please check what's wrong with the indexes method (getNumberArrayPositionWithInitialDate:  andGNComponent: ).");
+            
+                break;
+                
+            }
+           
         }
         
+        if([self daysBetweenDate:initialDate andDate:component.GNDate] == 0 && index == -1) {
+            
+        }
         
-        NSInteger newValue = component.GraphicNumber.integerValue + [[[numberArray objectAtIndex:index] GraphicNumber] integerValue];
+        else {
         
-        GNComponent *new = [[GNComponent alloc] init];
-        [new setGraphicNumber:[NSNumber numberWithInteger:newValue]];
-        [new setGNDate:component.GNDate];
-        
-        [numberArray replaceObjectAtIndex:index withObject:new];
-        
-        
+            NSInteger newValue = component.GraphicNumber.integerValue + [[[numberArray objectAtIndex:index] GraphicNumber] integerValue];
+            
+            GNComponent *new = [[GNComponent alloc] init];
+            [new setGraphicNumber:[NSNumber numberWithInteger:newValue]];
+            [new setGNDate:component.GNDate];
+            
+            [numberArray replaceObjectAtIndex:index withObject:new];
+            
+        }
+
     }
     
     return [NSMutableArray arrayWithArray:numberArray];

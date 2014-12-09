@@ -20,7 +20,7 @@
     NSDate *date = [NSDate date];
      NSDateComponents *comp = [[NSCalendar currentCalendar] components: NSCalendarUnitDay fromDate:date];
     
-    [[self calendarIcon] setImage:[UIImage imageNamed:[NSString stringWithFormat:@"icone_calendario_%02d.png", (int) comp.day]]];
+    [[self calendarButton] setBackgroundImage:[UIImage imageNamed:[NSString stringWithFormat:@"icone_calendario_%02d.png", (int) comp.day]] forState:UIControlStateNormal];
 
     
     UISwipeGestureRecognizer *backGest = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(backToHomeScreen)];
@@ -47,12 +47,18 @@
     NSInteger temperature = [condition returnTemperatureInCurrentLocation];
     
     if(temperature <= 0) {
+        CGRect frame = [[self calendarButton] frame];
+        frame.origin.x = 118;
+        [[self calendarButton] setFrame:frame];
         [[self temperatureLabel] setHidden:true];
         [[self temperatureImage] setHidden:true];
         
     }
     
     else {
+        CGRect frame = [[self calendarButton] frame];
+        frame.origin.x = 60;
+        [[self calendarButton] setFrame:frame];
         [[self temperatureLabel] setHidden:false];
         [[self temperatureImage] setHidden:false];
         
@@ -61,6 +67,9 @@
         NSString *temp = [NSString stringWithFormat:@"%d °C", (int) temperature];
         [[self temperatureLabel] setText:temp];
     }
+    
+    
+    [self performSelector:@selector(showCurrentWeather) withObject:nil afterDelay:30.0];
     
 }
 
@@ -71,7 +80,9 @@
     
 }
 
-
+-(IBAction)callCalendar {
+    [self callViewWithName:@"Calendario"];
+}
 
 
 @end

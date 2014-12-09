@@ -16,16 +16,39 @@
 
 #pragma mark - View and Camera Preview
 
-- (void)viewDidLoad  {
+
+
+- (void)viewDidLoad {
     
     [super viewDidLoad];
+    
+    [self setCameraView:[[AVCamPreviewView alloc] initWithFrame:CGRectMake(-25, 12, 370, 495)]];
+    
+    
+    [self setPictureButton:[[UIButton alloc] initWithFrame:CGRectMake(128, 427, 63, 63)]];
+    [self setCameraButton:[[UIButton alloc] initWithFrame:CGRectMake(16, 427, 63, 63)]];
+    [self setBackButton:[[UIButton alloc] initWithFrame:CGRectMake(241, 427, 63, 63)]];
+    
+    
+    [[self pictureButton] setBackgroundImage:[UIImage imageNamed:@"icone_camerar_capturar.png"] forState:UIControlStateNormal];
+    [[self cameraButton] setBackgroundImage:[UIImage imageNamed:@"icone_camera_girar.png"] forState:UIControlStateNormal];
+    [[self backButton] setBackgroundImage:[UIImage imageNamed:@"icone_camera_voltar.png"] forState:UIControlStateNormal];
+
+    
+    [[self pictureButton] addTarget:self action:@selector(snapStillImage:) forControlEvents:UIControlEventTouchUpInside];
+    [[self cameraButton] addTarget:self action:@selector(changeCamera) forControlEvents:UIControlEventTouchUpInside];
+    [[self backButton] addTarget:self action:@selector(returnToPreviousView) forControlEvents:UIControlEventTouchUpInside];
+    
+    
+    [self.view addSubview:[self cameraView]];
+    [self.view addSubview:[self pictureButton]];
+    [self.view addSubview:[self backButton]];
+    [self.view addSubview:[self cameraButton]];
+    
     
     [self setUserPictureView:[[UIImageView alloc] initWithFrame:_cameraView.frame]];
     [self.view addSubview:[self userPictureView]];
     
-//    [self.view bringSubviewToFront:[self returnIcon]];
-//    [self.view bringSubviewToFront:[self cameraIcon]];
-//    [self.view bringSubviewToFront:[self pictureIcon]];
     
     AVCaptureStillImageOutput *stillImageOutput = [[AVCaptureStillImageOutput alloc] init];
     [stillImageOutput setOutputSettings:@{AVVideoCodecKey : AVVideoCodecJPEG}];
@@ -37,6 +60,8 @@
     
     
 }
+
+
 
 
 - (void)viewDidAppear:(BOOL)animated {
@@ -88,14 +113,13 @@
     [_session startRunning];
     
     [self bringButtonsToFront];
-    
-    //[self.view addSubview:[self imageView]];
+
     
 }
 
 #pragma mark - Changing Camera
 
--(IBAction)changeCamera {
+-(void)changeCamera {
     
     AVCaptureDevice *device;
     
@@ -137,7 +161,7 @@
 
 #pragma mark - Take Picture
 
-- (IBAction)snapStillImage:(id)sender  {
+- (void)snapStillImage:(id)sender  {
 
     if(_isOnShareMenu) {
         return;
@@ -145,6 +169,11 @@
     
     //Present share view
     if(_hasPicture) {
+        
+        if(_routePicture) {
+            [self returnToPreviousView];
+        }
+        
         [self presentShareMenu];
         return;
     }
@@ -162,20 +191,23 @@
     // Capture a still image.
     [[self stillImageOutput] captureStillImageAsynchronouslyFromConnection:[[self stillImageOutput] connectionWithMediaType:AVMediaTypeVideo] completionHandler:^(CMSampleBufferRef imageDataSampleBuffer, NSError *error) {
         
-        if (imageDataSampleBuffer)
-        {
+        if (imageDataSampleBuffer) {
+            
             NSData *imageData = [AVCaptureStillImageOutput jpegStillImageNSDataRepresentation:imageDataSampleBuffer];
             
             _userPicture = [[UIImage alloc] initWithData:imageData];
             
+            
             if(_usingFrontCamera) {
+                
                 _userPicture = [UIImage imageWithCGImage:_userPicture.CGImage
                                                    scale:_userPicture.scale orientation: UIImageOrientationLeftMirrored];
             }
             
+            
             [[self userPictureView] setImage:[self userPicture]];
         
-            [[self pictureButton] setBackgroundImage:[UIImage imageNamed:@"icone_ok_photo.png"] forState:UIControlStateNormal];
+            [[self pictureButton] setBackgroundImage:[UIImage imageNamed:@"icone_camera_ok.png"] forState:UIControlStateNormal];
             
             [[self userPictureView] setHidden:false];
             
@@ -215,7 +247,7 @@
     instagramBtn.center = CGPointMake((_shareView.frame.size.width / 2) + facebookBtn.center.x, _shareView.frame.size.height / 2);
     
     
-    facebookIcon = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"icone_facebook.png"]];
+    facebookIcon = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"Icone_facebook.png"]];
     instagramIcon = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"icone_instagram.png"]];
     
     facebookIcon.frame = facebookBtn.frame;
@@ -262,16 +294,15 @@
 
 -(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
     
-    [[self pictureButton] setBackgroundImage:[UIImage imageNamed:@"icone_camera.png"] forState:UIControlStateNormal];
+    [[self pictureButton] setBackgroundImage:[UIImage imageNamed:@"icone_camerar_capturar.png"] forState:UIControlStateNormal];
     
     [self returnToCamera];
     
 }
 
--(IBAction)returnToPreviousView {
+-(void)returnToPreviousView {
     
-    
-    [self popToRoot];
+    [self.navigationController popViewControllerAnimated:YES];
 }
 
 -(void)sharePictureOnInstagram {

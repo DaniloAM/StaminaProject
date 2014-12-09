@@ -50,7 +50,7 @@
                               [[UIScreen mainScreen] bounds].size.width,
                               
                               //size height
-                              [[UIScreen mainScreen] bounds].size.height - [self tabBarSize].height - [self navigationSize].height);
+                              [[UIScreen mainScreen] bounds].size.height - [self tabBarSize].height - ([self navigationSize].height * 1.5));
     
     
     [[self routeTableView] setFrame:frame];

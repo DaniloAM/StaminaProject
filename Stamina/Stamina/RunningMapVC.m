@@ -50,6 +50,8 @@
     [super viewDidLoad];
     
     [self setPictureViewController:[[SocialSharingVC alloc] init]];
+    [[self pictureViewController] setRoutePicture:true];
+    
     [self.view setBackgroundColor:[UIColor staminaYellowColor]];
     [[UIApplication sharedApplication] setIdleTimerDisabled:true];
     
@@ -150,6 +152,10 @@
     
     if([newLocation speed] >= 0)
         [[self speedLabel] setText:[NSString stringWithFormat:@"%.01f Km/h", ([newLocation speed] * 3.6)]];
+    
+    else {
+        [[self speedLabel] setText:[NSString stringWithFormat:@"", ([newLocation speed] * 3.6)]];
+    }
     
     [self updateTextInDistanceLabel];
     
@@ -269,18 +275,26 @@
 
 -(IBAction)takePlacePicture {
     
-    [self.navigationController pushViewController:[self pictureViewController] animated:true];
+    if(![self isRunning]) {
+        return;
+    }
+    
     [self setIsWaitingForPicture:YES];
+    [self callView:[self pictureViewController]];
+  
 
 }
 
 
 -(void)savePictureOfRoutePlace: (UIImage *)pic {
     
-    [pic setValue:[NSNumber numberWithInteger:[[self locationsArray] count] - 1] forKey:@"array_position"];
-    [[self picturesArray] addObject:pic];
+    UIImageView *view = [[UIImageView alloc] init];
+    view.tag = [[self locationsArray] count] - 1;
+    
+    [[self picturesArray] addObject:view];
     
     [self setPictureViewController:[[SocialSharingVC alloc] init]];
+    [[self pictureViewController] setRoutePicture:true];
 }
 
 
