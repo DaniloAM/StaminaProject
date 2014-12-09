@@ -14,4 +14,5 @@
 @property NSUInteger pageIndex;
 @property NSString *titleText;
 @property NSString *imageFile;
+@property NSString *exerciseName;
 @end

@@ -10,22 +10,22 @@
 
 @implementation WebServiceResponse
 +(NSString*)cadastrarComNome: (NSString *)nome eSenha: (NSString *)password email: (NSString *)email sexo:(BOOL) sexo nickName: (NSString *)nickName {
-    NSString *url = @"http://equipemoacir.com.br/servidor/cadastro.php";
+    NSString *url = @"http://54.207.112.185/joao/cadastro.php";
     NSString *post = [NSString stringWithFormat:@"password=%@&nome=%@&email=%@&sexo=%d&nickname=%@",password, nome, email, sexo, nickName];
     return [WebServiceResponse doTheRequest:post andUrl:url];
 }
 +(NSString*)loginComEmailOuNickName: (NSString *)anything eSenha: (NSString *)password{
-    NSString *url = @"http://equipemoacir.com.br/servidor/login.php";
+    NSString *url = @"http://54.207.112.185/joaologin.php";
     NSString *post = [NSString stringWithFormat:@"password=%@&emailOrNick=%@",password, anything];
     return [WebServiceResponse doTheRequest:post andUrl:url];
 }
 +(NSString*)getJsonComNickName: (NSString *)anything eSenha: (NSString *)password{
-    NSString *url = @"http://equipemoacir.com.br/servidor/getJson.php";
+    NSString *url = @"http://54.207.112.185/joao/getJson.php";
     NSString *post = [NSString stringWithFormat:@"password=%@&emailOrNick=%@",password, anything];
     return [WebServiceResponse doTheRequest:post andUrl:url];
 }
 +(NSString*)inserirExercicioComId: (int )idExercicio serie: (int )serie repeticoes: (int )repeticoes treino: (int )treino emailOrNickName: (NSString *)anything{
-    NSString *url = @"http://equipemoacir.com.br/servidor/insereExercicio.php";
+    NSString *url = @"http://54.207.112.185/joao/insereExercicio.php";
     NSString *post = [NSString stringWithFormat:@"emailOrNick=%@&id_exercicio=%d&series=%d&repeticoes=%d&treino=%d",anything, idExercicio,serie,repeticoes,treino];
     return [WebServiceResponse doTheRequest:post andUrl:url];
 }
@@ -65,27 +65,27 @@
     return [WebServiceResponse cadastrar:jsonData :login :password];
 }
 +(NSString*)cadastrar:(NSData*)jsonCadastro : (NSString *)strUser : (NSString *)password{
-    NSString *url = @"http://equipemoacir.com.br/servidor/teste.php";
+    NSString *url = @"http://54.207.112.185/joao/teste.php";
     NSString *strJson = [[NSString alloc] initWithData:jsonCadastro encoding:NSUTF8StringEncoding];
     NSString *post = [NSString stringWithFormat:@"emailOrNick=%@&password=%@&json=%@", strUser, password, strJson];
     return [self doTheRequest:post andUrl:url];
 }
 +(NSString*)checkStart: (NSString *)email eSenha: (NSString *)password{
-    NSString *url = @"http://equipemoacir.com.br/servidor/startCheck.php";
+    NSString *url = @"http://54.207.112.185/joao/startCheck.php";
     
     NSString *post = [NSString stringWithFormat:@"email=%@&password=%@", email, password];
     return [self doTheRequest:post andUrl:url];
 
 }
 +(NSString*)atualizaComEmail: (NSString *)email peso: (float )peso_atual sexo: (BOOL )sexo altura: (int )altura idade: (int )idade{
-    NSString *url = @"http://equipemoacir.com.br/servidor/atualiza.php";
+    NSString *url = @"http://54.207.112.185/joao/atualiza.php";
     
     NSString *post = [NSString stringWithFormat:@"email=%@&sexo=%d&idade=%d&peso_atual=%f&altura=%d", email, sexo, idade, peso_atual,altura];
     return [self doTheRequest:post andUrl:url];
     
 }
 +(NSString*)criaComEmail: (NSString *)email peso: (float )peso_atual sexo: (BOOL )sexo altura: (int )altura idade: (int )idade{
-    NSString *url = @"http://equipemoacir.com.br/servidor/cadastra.php";
+    NSString *url = @"http://54.207.112.185/joao/cadastra.php";
     
     NSString *post = [NSString stringWithFormat:@"email=%@&sexo=%d&idade=%d&peso_atual=%f&altura=%d", email, sexo, idade, peso_atual,altura];
     return [self doTheRequest:post andUrl:url];

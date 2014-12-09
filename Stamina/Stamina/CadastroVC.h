@@ -14,6 +14,7 @@
 @property int currentIndex;
 @property int numberOfViews;
 @property UITextField *txtName, *txtNick, *txtEmail, *txtConfEmail, *txtPassword, *txtConfPass, *txtKg, *txtCm, *txtAge;
+@property UIView *temp;
 @property NSMutableArray *arrayOfViews;
 @property UIPageControl *page;
 @property BOOL keyboardUp;
@@ -23,4 +24,5 @@
 @property UIImageView *logo;
 @property UISegmentedControl *seg;
 @property UIButton *btn;
+@property UIActivityIndicatorView *activity;
 @end

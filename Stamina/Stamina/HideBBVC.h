@@ -22,6 +22,7 @@
 -(void)firstButtonMethod: (void *)metodo fromClass:(UIViewController *)view withImage: (UIImage *)image;
 -(void)secondButtonMethod: (void *)metodo fromClass:(UIViewController *)view withImage: (UIImage *)image;
 -(void)thirdButtonMethod: (void *)metodo fromClass:(UIViewController *)view withImage: (UIImage *)image;
+-(void)addToButton: (UIButton *)btn imageWhenPressed:(UIImage *)pressed andNormal:(UIImage *)image;
 -(CGPoint)pointStart;
 -(void)callViewWithName: (NSString *)string;
 -(void)changeBarNameWith: (NSString *)str;
@@ -30,4 +31,5 @@
 -(void)addImage: (UIImage * )image toButton: (UIButton *)btn;
 -(void)removeGesture;
 -(void)addGesture;
+-(void)popToRoot;
 @end

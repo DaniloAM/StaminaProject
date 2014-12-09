@@ -67,7 +67,7 @@
 
 -(void)backToHomeScreen {
     
-    [self.navigationController popToRootViewControllerAnimated:true];
+    [self popToRoot];
     
 }
 

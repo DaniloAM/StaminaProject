@@ -139,8 +139,7 @@
     [self.navigationController.navigationBar setTranslucent:NO];
     CreateTrainTemp *temp = [CreateTrainTemp alloc];
     [temp setArrayOfExercises:nil];
-    [self.navigationController popToRootViewControllerAnimated:YES];
-    
+    [self popToRoot];
 }
 -(void)explain{
     

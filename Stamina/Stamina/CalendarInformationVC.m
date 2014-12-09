@@ -195,9 +195,7 @@
     
     calendar.calendarMonth = (int) comp.month;
     calendar.calendarYear = (int) comp.year;
-    
-    [self.navigationController popToRootViewControllerAnimated:true];
-    
+    [self popToRoot];
 }
 
 

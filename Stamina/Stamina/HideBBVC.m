@@ -21,7 +21,10 @@
     [self addGesture];
     [self.navigationItem setHidesBackButton:YES];
 }
-
+-(void)popToRoot{
+    
+[self.navigationController popToViewController:[[self.navigationController viewControllers] objectAtIndex:1] animated:YES];
+}
 -(void)viewDidLoad{
     [super viewDidLoad];
     [self.view setBackgroundColor:[UIColor staminaYellowColor]];
@@ -68,7 +71,14 @@
     return [temp tabBar].frame.size;
 }
 
+-(void)addToButton: (UIButton *)btn imageWhenPressed:(UIImage *)pressed andNormal:(UIImage *)image{
+    UIButton *submitbutton = btn;
+    UIImage * btnImage1 = image;
+    [submitbutton setImage:btnImage1 forState:UIControlStateNormal];
+    UIImage * btnImage2 = pressed;
+    [submitbutton setImage:btnImage2 forState:UIControlStateHighlighted];
 
+}
 -(void)showBarWithAnimation: (BOOL)animation{
     JLSlideMenu *temp = [self.navigationController.viewControllers objectAtIndex:0];
     [temp showBarWithAnimation:animation];

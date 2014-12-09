@@ -21,11 +21,10 @@
     [self secondButtonMethod:@selector(function2) fromClass:self  withImage:[UIImage imageNamed:@"icon_adicionar.png"]];
     [self thirdButtonMethod:@selector(function3) fromClass:self  withImage:[UIImage imageNamed:@"icon_editar.png"]];
     [self showBarWithAnimation:1];
-   // [self hide]
     }
 -(void)function1{
     
-    [self.navigationController popToRootViewControllerAnimated:YES];
+    [self popToRoot];
 }
 -(void)function2{
     UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];

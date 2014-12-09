@@ -17,6 +17,7 @@
 @implementation CadastroVC
 -(void)viewDidAppear:(BOOL)animated{
     [super viewDidAppear:animated];
+    [self cadastra];
 }
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -53,7 +54,15 @@
     _logo = image;
     _page.userInteractionEnabled = NO;
     
-   
+    UIActivityIndicatorView *activityIndicator = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleWhite];
+    activityIndicator.alpha = 1.0;
+    activityIndicator.center = self.view.center;
+    [activityIndicator startAnimating];
+    _activity = activityIndicator;
+    _temp = [[UIView alloc] initWithFrame:self.view.frame];
+    _temp.alpha = 0.6;
+    _temp.backgroundColor = [UIColor staminaBlackColor];
+    _temp.opaque = NO;
 }
 
 -(void)loadTxt{
@@ -82,6 +91,7 @@
     [[UISegmentedControl appearance] setTitleTextAttributes:@{NSForegroundColorAttributeName:[UIColor staminaBlackColor]} forState:UIControlStateNormal];
     _btn = [[UIButton alloc] initWithFrame:CGRectMake(251*size.width/largura, 684*size.height/altura, 137*size.width/largura, 137*size.width/largura)];
     [_btn setBackgroundColor:[UIColor staminaBlackColor]];
+    [_btn addTarget:self action:@selector(cadastra) forControlEvents:UIControlEventTouchUpInside];
     _seg     = seg;
     _arrayOfViews = [NSMutableArray arrayWithObjects:_txtAge,_txtCm,_txtConfEmail,_txtConfPass,_txtEmail,_txtKg,_txtName,_txtNick,_txtPassword, nil];
     for(int x = 0 ; x < [[self arrayOfViews] count];x++){
@@ -94,6 +104,22 @@
     }
     
     
+    
+}
+-(void)cadastra{
+    [self.view addSubview:_temp];
+    [self.view addSubview:_activity];
+    [_activity startAnimating];
+
+    NSString *str = [WebServiceResponse cadastrarComNome:[self txtName].text eSenha:[self txtPassword].text email:[self txtEmail].text sexo:[self seg].selectedSegmentIndex nickName:[self txtName].text];
+    [_temp removeFromSuperview];
+    [_activity removeFromSuperview];
+    if([str isEqualToString:@"Adicionado"]||[str isEqualToString:@""]){
+    }
+    else {
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Erro" message:str delegate:self cancelButtonTitle:@"Ok" otherButtonTitles:nil, nil];
+        [alert show];
+    }
     
 }
 -(void)scrollViewWillBeginDragging:(UIScrollView *)scrollView{

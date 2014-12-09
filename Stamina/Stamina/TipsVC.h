@@ -11,7 +11,7 @@
 #import "Exercises.h"
 #import "AppDelegate.h"
 #import "ExerciseTip.h"
-#import "JLSlideMenu.h"
+#import "HideBBVC.h"
 @interface TipsVC: UIViewController <UIPageViewControllerDataSource>
 
 - (IBAction)startWalkthrough:(id)sender;
