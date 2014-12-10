@@ -340,7 +340,7 @@ CGFloat buttonSpacerHeight = 0;
             rotation = CGAffineTransformMakeRotation(-startRotation + 0.0);
             break;
     }
-    
+
     [UIView animateWithDuration:0.2f delay:0.0 options:UIViewAnimationOptionTransitionNone
 					 animations:^{
                          dialogView.transform = rotation;
@@ -358,6 +358,7 @@ CGFloat buttonSpacerHeight = 0;
 
 }
 
+// Handle keyboard show/hide changes
 - (void)keyboardWillShow: (NSNotification *)notification
 {
     CGSize screenSize = [self countScreenSize];
